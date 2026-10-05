@@ -1,0 +1,1011 @@
+﻿id_cliente,cliente_nombre,ciudad,es_premium,frecuencia,monetario,unidades,ultima_compra,recencia_dias,ticket_promedio,puntaje_r,puntaje_f,puntaje_m,segmento,regla
+1306,Diego Rojas,Puebla,False,3,886657.62,34,2026-05-23,200,295552.54,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+221,Camila Solis,Monterrey,False,2,861845.48,22,2026-05-25,198,430922.74,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+375,Leticia Aguilar,Guadalajara,False,2,847246.85,15,2025-01-25,683,423623.425,2,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1249,Luis Campos,Tijuana,True,2,803304.12,27,2024-08-22,839,401652.06,1,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1503,Raul Herrera,Queretaro,False,2,757473.8899999999,29,2024-11-05,764,378736.94499999995,1,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+770,Ignacio Herrera,Puebla,False,2,754748.6599999999,36,2025-11-27,377,377374.32999999996,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+831,Rodrigo Gomez,Tijuana,True,2,742850.58,33,2026-09-26,74,371425.29,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+632,Andres Torres,Tijuana,False,2,731369.8099999999,33,2026-06-02,190,365684.90499999997,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+24,JULIO AGUILAR,Veracruz,True,2,706934.33,21,2026-05-28,195,353467.165,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1880,Raul Garcia,Puebla,False,2,689177.9199999999,31,2025-09-24,441,344588.95999999996,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1603,Sofia Gomez,Cancun,True,2,676757.64,39,2026-08-29,102,338378.82,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+342,Rodrigo Cruz,Ciudad de Mexico,False,1,673084.27,29,2025-12-12,362,673084.27,3,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1339,Ana Navarro,Ciudad de Mexico,True,3,671402.94,32,2025-08-19,477,223800.97999999998,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+874,Renata Gonzalez,Monterrey,False,1,660183.98,16,2026-01-08,335,660183.98,4,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1794,Camila Rivera,Tijuana,False,3,657967.38,36,2026-07-14,148,219322.46,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1477,Fernanda Ramirez,Monterrey,True,1,649854.65,22,2026-07-03,159,649854.65,5,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+605,Javier Gonzalez,Cancun,False,2,644405.28,16,2026-01-24,319,322202.64,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+933,Paola Martinez,Tijuana,False,4,639057.8999999999,31,2026-09-23,77,159764.47499999998,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1393,Renata Torres,Queretaro,False,5,606296.14,34,2026-06-19,173,121259.228,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+163,Gabriela Molina,Merida,False,2,564232.24,27,2026-06-07,185,282116.12,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1068,Ximena Morales,Leon,True,2,557989.5099999999,24,2026-03-26,258,278994.75499999995,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+636,Samantha Pineda,Cancun,False,2,549711.0499999999,20,2026-09-10,90,274855.52499999997,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1332,Andres Rivera,Tijuana,True,1,543244.42,15,2025-01-29,679,543244.42,2,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1715,Javier Rodriguez,Monterrey,True,3,532659.88,24,2026-08-12,119,177553.29333333333,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1469,RODRIGO CAMPOS,Veracruz,False,1,531002.19,8,2025-11-23,381,531002.19,3,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1869,Alonso Cruz,Tijuana,False,3,529432.36,28,2026-01-22,321,176477.45333333334,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+914,Emmanuel Contreras,Puebla,False,1,529017.96,8,2025-08-30,466,529017.96,3,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1638,Leandro Mendez,Guadalajara,True,1,524147.85,20,2026-05-06,217,524147.85,4,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1462,Hector Hernandez,Tijuana,False,2,516309.11999999994,22,2025-08-15,481,258154.55999999997,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+463,Leandro Aguilar,Guadalajara,True,3,511558.93,46,2025-05-05,583,170519.64333333334,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+118,Lorena Guerrero,Merida,True,4,510403.36999999994,25,2026-01-16,327,127600.84249999998,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1691,Diana Ruiz,Queretaro,True,1,507856.16000000003,17,2024-04-18,965,507856.16000000003,1,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+227,Maria Hernandez,Ciudad de Mexico,True,1,501320.47,8,2025-12-21,353,501320.47,3,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+690,Natalia Ortiz,Tijuana,False,1,500813.08,25,2025-10-14,421,500813.08,3,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1240,Luis Lopez,Merida,True,3,484795.3,24,2026-05-28,195,161598.43333333332,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+458,Sofia Morales,Monterrey,False,3,481915.33,25,2025-11-02,402,160638.44333333333,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+801,Octavio Herrera,Guadalajara,True,3,481225.33,37,2026-08-24,107,160408.44333333333,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1149,Paola Gonzalez,Monterrey,True,2,478539.68,16,2025-06-14,543,239269.84,2,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+620,Maria Hernandez,Veracruz,True,1,476701.76,8,2024-02-03,1040,476701.76,1,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+931,Alejandra Ramirez,Ciudad de Mexico,False,1,474722.84,15,2025-09-20,445,474722.84,3,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+244,Regina Campos,Monterrey,False,1,472564.36,25,2024-03-15,999,472564.36,1,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+269,Briana Gomez,Merida,False,2,465239.16000000003,24,2025-10-18,417,232619.58000000002,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+350,Regina Bautista,Puebla,True,3,464658.56,12,2025-05-04,584,154886.18666666668,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1687,Octavio Castillo,Cancun,True,5,461924.45,27,2026-08-02,129,92384.89,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1293,Rodrigo Castillo,Veracruz,True,3,458054.77,26,2024-12-20,719,152684.92333333334,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1516,LUIS NAVARRO,Monterrey,False,1,457541.82,14,2024-09-16,814,457541.82,1,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1942,Citlali Martinez,Veracruz,False,2,455520.63,14,2025-08-18,478,227760.315,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1925,Miguel Lozano,Guadalajara,True,3,446508.83,47,2026-03-20,264,148836.27666666667,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1074,Hector Iglesias,Cancun,True,2,443127.85,18,2025-04-02,616,221563.925,2,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1981,Ana Cardona,Puebla,False,2,440850.01999999996,16,2026-06-26,166,220425.00999999998,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1217,Emiliano Lopez,Ciudad de Mexico,False,4,439750.64999999997,55,2026-01-31,312,109937.66249999999,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+270,Maria Diaz,Guadalajara,False,3,437879.57,32,2026-06-10,182,145959.85666666666,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+887,Diana Gonzalez,Guadalajara,False,1,436182.82,8,2026-01-14,329,436182.82,4,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1945,Leticia Lozano,Guadalajara,True,2,430787.12,18,2026-02-21,291,215393.56,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+499,Norma Hernandez,Puebla,True,3,428456.25,33,2026-02-05,307,142818.75,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+501,Javier Ruiz,Cancun,False,3,425897.26,26,2025-06-17,540,141965.75333333333,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1769,Diego Hernandez,Queretaro,True,1,425344.08,8,2024-04-27,956,425344.08,1,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+308,Luis Campos,Cancun,True,1,422972.41,15,2024-05-19,934,422972.41,1,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1547,Regina Rendon,Cancun,True,3,419139.54,28,2026-06-05,187,139713.18,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1735,MARIA RIVERA,Monterrey,True,2,418523.94,12,2026-08-23,108,209261.97,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1086,Gabriela Cardona,Monterrey,False,2,418140.4,22,2026-08-23,108,209070.2,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1721,Rodrigo Salazar,Tijuana,True,1,415666.1,13,2024-06-22,900,415666.1,1,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1665,Ana Rendon,Guadalajara,True,2,415627.56,18,2024-10-04,796,207813.78,1,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+894,Hector Gomez,Queretaro,False,1,414592.99,16,2026-04-29,224,414592.99,4,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1078,Lorena Sanchez,Cancun,True,2,409223.12,10,2026-06-05,187,204611.56,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+745,Diana Ramirez,Cancun,False,2,408280.85,29,2024-09-22,808,204140.425,1,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+89,Julio Rivera,Guadalajara,True,2,408263.27,23,2026-02-27,285,204131.635,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+415,Samantha Perez,Leon,False,1,408125.36,16,2025-09-09,456,408125.36,3,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1913,Guillermo Gomez,Monterrey,False,1,405714.80000000005,20,2026-06-26,166,405714.80000000005,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1357,Ricardo Solis,Puebla,True,2,405165.19999999995,22,2026-10-09,61,202582.59999999998,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1857,Ricardo Rivera,Queretaro,False,2,403858.5,22,2025-02-24,653,201929.25,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1893,Miguel Bautista,Guadalajara,True,1,396577.0,11,2026-08-02,129,396577.0,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+927,Emmanuel Campos,Cancun,False,2,389753.31000000006,17,2026-09-18,82,194876.65500000003,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1598,itzel hernandez,Queretaro,False,2,388918.85000000003,17,2026-04-23,230,194459.42500000002,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1424,Oscar Lopez,Queretaro,False,2,388912.85,8,2024-05-25,928,194456.425,1,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+610,Abril Torres,Leon,False,1,387216.98,8,2024-08-10,851,387216.98,1,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+529,Emmanuel Castillo,Leon,True,2,386624.43000000005,10,2024-05-08,945,193312.21500000003,1,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1549,Ricardo Lopez,Monterrey,False,1,383058.71,7,2026-06-05,187,383058.71,4,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1918,Ricardo Ortiz,Ciudad de Mexico,True,2,382107.24,8,2026-09-21,79,191053.62,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1821,Leandro Martinez,Merida,False,2,379813.16,25,2026-08-29,102,189906.58,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+297,Norma Garcia,Veracruz,False,2,376993.69999999995,20,2025-09-14,451,188496.84999999998,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1015,Ignacio Diaz,Veracruz,True,2,376354.93,20,2025-12-11,363,188177.465,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1060,Mariana Castillo,Leon,False,5,370993.26,47,2026-09-20,80,74198.652,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1950,Raul Sanchez,Veracruz,False,2,370448.81,19,2025-05-28,560,185224.405,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+425,Hector Diaz,Puebla,True,2,368236.18,34,2025-10-30,405,184118.09,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1625,Mariana Cardona,Tijuana,False,1,367676.76,14,2026-05-29,194,367676.76,4,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+114,Guillermo Ramirez,Tijuana,True,2,365664.66,13,2025-09-15,450,182832.33,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+670,Javier Gomez,Leon,False,2,364600.42,20,2026-07-13,149,182300.21,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+743,Sofia Martinez,Ciudad de Mexico,True,1,359971.85,13,2025-05-30,558,359971.85,2,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1346,Octavio Salazar,Cancun,False,3,358803.5,20,2026-07-27,135,119601.16666666667,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1813,Leticia Mendez,Monterrey,False,1,353445.45,9,2024-08-19,842,353445.45,1,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1030,Rodrigo Garcia,Puebla,False,1,349350.96,7,2026-03-05,279,349350.96,4,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1528,Ernesto Castillo,Ciudad de Mexico,True,1,349350.96,7,2024-06-15,907,349350.96,1,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+10,Oscar Lozano,Guadalajara,True,2,348361.92,25,2026-06-08,184,174180.96,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+527,Alejandra Vega,Leon,True,2,341279.68,14,2026-08-15,116,170639.84,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1171,Carlos Bautista,Veracruz,False,1,340014.63,13,2024-08-11,850,340014.63,1,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+268,Julio Vargas,Veracruz,True,2,338153.55,20,2026-07-10,152,169076.775,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+980,Lorena Mendez,Veracruz,False,2,336663.74,19,2026-05-14,209,168331.87,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1908,Citlali Gomez,Queretaro,False,1,334004.22,14,2026-09-03,97,334004.22,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+886,Valeria Ortiz,Ciudad de Mexico,True,2,329816.8,8,2026-09-05,95,164908.4,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1104,Camila Torres,Ciudad de Mexico,False,2,326997.39,7,2025-07-17,510,163498.695,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1195,Javier Navarro,Guadalajara,True,2,326144.25999999995,10,2026-01-06,337,163072.12999999998,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+250,Norma Garcia,Merida,False,4,325082.3,43,2026-04-13,240,81270.575,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1127,Ignacio Alvarez,Merida,True,2,325059.38,27,2025-03-18,631,162529.69,2,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1013,OCTAVIO SANCHEZ,Monterrey,False,2,324455.7,17,2026-02-23,289,162227.85,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+389,Citlali Navarro,Queretaro,True,3,321880.69,35,2026-08-31,100,107293.56333333334,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+179,Samantha Bautista,Leon,False,3,319390.98,37,2026-07-10,152,106463.65999999999,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+888,Diego Cruz,Tijuana,True,2,317841.52999999997,13,2024-10-12,788,158920.76499999998,1,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1472,Citlali Solis,Tijuana,True,2,317707.81,27,2026-06-16,176,158853.905,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+372,Briana Navarro,Cancun,False,1,316687.77999999997,12,2026-12-09,0,316687.77999999997,5,1,5,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+378,Diego Rendon,Guadalajara,True,1,316214.66,20,2025-02-11,666,316214.66,2,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1852,Camila Pineda,Veracruz,False,2,315983.6,18,2025-04-09,609,157991.8,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1296,Itzel Vargas,Puebla,True,3,314957.59,40,2026-09-06,94,104985.86333333334,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1476,Emiliano Reyes,Monterrey,True,1,314280.49,19,2026-06-29,163,314280.49,5,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1102,Alonso Lopez,Puebla,True,2,313951.23,23,2026-08-30,101,156975.615,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+2058,Regina Salazar,Tijuana,False,1,313055.58999999997,22,2024-12-08,731,313055.58999999997,2,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+805,Ana Ramirez,Guadalajara,False,5,312728.34,33,2026-07-20,142,62545.668000000005,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+776,Rodrigo Solis,Tijuana,True,2,307709.98,24,2025-03-10,639,153854.99,2,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+76,Abril Garcia,Leon,False,1,307498.0,12,2026-01-03,340,307498.0,4,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+395,Octavio Morales,Cancun,False,3,305910.37,47,2025-12-17,357,101970.12333333334,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1847,Javier Lopez,Leon,False,2,305504.67,13,2025-02-05,672,152752.335,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1103,Carlos Herrera,Tijuana,False,3,305130.14,33,2026-04-22,231,101710.04666666668,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+971,Julio Aguilar,Cancun,False,1,302110.86000000004,19,2026-04-14,239,302110.86000000004,4,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+751,Carlos Navarro,Leon,True,1,300446.70999999996,9,2026-05-13,210,300446.70999999996,4,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1385,Victor Ruiz,Monterrey,True,2,298523.08999999997,17,2025-08-05,491,149261.54499999998,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+885,Octavio Sanchez,Guadalajara,True,2,297326.2,7,2026-06-08,184,148663.1,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+667,Rodrigo Lozano,Queretaro,False,1,297082.7,7,2024-04-16,967,297082.7,1,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+821,Diego Ruiz,Veracruz,False,1,296407.19,10,2026-06-28,164,296407.19,5,2,5,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1076,Alberto Vargas,Merida,False,4,295189.16,39,2026-03-16,268,73797.29,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+53,natalia solis,Tijuana,True,1,294589.70999999996,13,2024-08-29,832,294589.70999999996,1,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1819,Leandro Herrera,Guadalajara,True,2,293553.44,18,2026-06-09,183,146776.72,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+233,Norma Mendez,Veracruz,False,2,293440.6,23,2025-12-21,353,146720.3,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+66,Guillermo Vega,Guadalajara,True,1,291751.06,14,2024-04-16,967,291751.06,1,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1329,Briana Martinez,Veracruz,True,1,291053.49,7,2025-05-04,584,291053.49,2,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+90,Ximena Lozano,Queretaro,False,3,290958.26,24,2026-03-11,273,96986.08666666667,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1284,Samantha Lozano,Veracruz,True,3,289892.98,21,2026-05-18,205,96630.99333333333,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1381,Guillermo Cardona,Monterrey,False,1,289410.49,16,2026-08-02,129,289410.49,5,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1838,itzel torres,Tijuana,True,3,289355.68,24,2026-05-30,193,96451.89333333333,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+631,Maria Contreras,Merida,False,1,287723.31,11,2025-06-11,546,287723.31,2,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+142,Lorena Rendon,Guadalajara,False,2,287483.4,15,2025-10-30,405,143741.7,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+696,Paulina Molina,Veracruz,False,2,284254.57,20,2025-09-01,464,142127.285,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+612,Natalia Rendon,Tijuana,True,2,283290.23,27,2026-12-09,0,141645.115,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1112,Diana Guerrero,Monterrey,True,3,279873.3,18,2025-04-25,593,93291.09999999999,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1519,Gabriela Aguilar,Puebla,False,3,279056.13,21,2026-03-14,270,93018.71,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1786,Daniela Ruiz,Tijuana,True,4,278281.33999999997,26,2025-12-27,347,69570.33499999999,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1805,Valeria Herrera,Puebla,True,3,278130.84,25,2026-04-24,229,92710.28000000001,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1023,Hector Lozano,Veracruz,True,2,276160.92,11,2026-04-14,239,138080.46,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+294,Raul Ruiz,Tijuana,True,4,275819.6,29,2026-03-04,280,68954.9,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+981,Gerardo Diaz,Veracruz,False,2,273450.42000000004,13,2026-01-05,338,136725.21000000002,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+495,Fernanda Rivera,Queretaro,False,1,271617.26,5,2024-08-22,839,271617.26,1,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1088,Andres Garcia,Cancun,True,2,270008.69,19,2026-03-17,267,135004.345,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+276,Alonso Herrera,Veracruz,False,2,269888.23,11,2026-07-03,159,134944.115,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1331,LORENA NAVARRO,Leon,False,2,269116.10000000003,19,2026-07-09,153,134558.05000000002,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1672,Mariana Cardona,Ciudad de Mexico,False,1,268665.24,19,2025-10-29,406,268665.24,3,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1180,Ricardo Molina,Queretaro,True,3,268111.08,27,2026-04-16,237,89370.36,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1276,Briana Gonzalez,Veracruz,False,2,267009.0,12,2025-04-26,592,133504.5,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+407,Octavio Pineda,Guadalajara,False,3,265371.53,22,2026-07-24,138,88457.17666666668,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1500,Fernanda Rojas,Tijuana,True,2,264456.74,20,2026-07-20,142,132228.37,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1285,Carlos Guerrero,Guadalajara,False,1,264384.0,6,2025-04-23,595,264384.0,2,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1446,Ernesto Vega,Merida,True,2,262670.2,10,2026-05-16,207,131335.1,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+982,Diego Salazar,Tijuana,False,2,261047.72,16,2025-09-02,463,130523.86,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1367,NATALIA RUIZ,Guadalajara,False,2,259715.66,30,2026-06-08,184,129857.83,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+332,Daniela Garcia,Leon,True,1,258397.94999999998,16,2026-02-06,306,258397.94999999998,4,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+703,Gabriela Rendon,Queretaro,True,2,255056.46,19,2026-05-06,217,127528.23,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1742,Diana Vargas,Veracruz,False,3,254783.22999999998,8,2026-07-21,141,84927.74333333333,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+18,Norma Torres,Tijuana,True,1,253297.59999999998,9,2026-07-25,137,253297.59999999998,5,1,5,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1954,Regina Torres,Cancun,True,2,252683.84000000003,12,2026-05-20,203,126341.92000000001,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+557,Citlali Salazar,Ciudad de Mexico,False,1,250921.3,7,2025-07-25,502,250921.3,3,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1308,Renata Bautista,Leon,True,3,248294.00999999998,20,2025-10-02,433,82764.67,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+897,Valeria Alvarez,Guadalajara,False,1,245096.75,9,2025-08-24,472,245096.75,3,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1278,Diego Garcia,Puebla,False,2,244216.2,26,2025-01-15,693,122108.1,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1287,Fernanda Flores,Monterrey,False,3,243486.75,22,2026-06-01,191,81162.25,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+685,Alberto Flores,Merida,True,1,239749.83,5,2025-03-14,635,239749.83,2,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+811,Norma Cruz,Guadalajara,True,1,235113.69,15,2024-05-07,946,235113.69,1,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1894,Fernanda Morales,Ciudad de Mexico,False,2,234669.64,14,2026-07-29,133,117334.82,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1444,Ernesto Guerrero,Tijuana,False,1,233946.41,11,2025-10-30,405,233946.41,3,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1592,Paulina Cardona,Cancun,True,1,233907.69,12,2026-08-05,126,233907.69,5,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+271,Oscar Lozano,Veracruz,False,3,233880.73,18,2026-04-02,251,77960.24333333333,4,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1653,Daniela Mendez,Leon,True,1,233457.32,11,2025-04-28,590,233457.32,2,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+964,Natalia Gonzalez,Cancun,True,1,232502.25,12,2025-03-05,644,232502.25,2,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+824,victor cardona,Cancun,False,2,232216.56,7,2025-05-03,585,116108.28,2,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+329,Raul Vargas,Veracruz,True,3,231289.44,17,2025-08-24,472,77096.48,3,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+106,Ximena Cruz,Guadalajara,False,1,229282.72999999998,27,2026-02-13,299,229282.72999999998,4,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1377,Hector Alvarez,Ciudad de Mexico,False,3,228741.12,27,2025-03-02,647,76247.04,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+521,Mariana Vega,Guadalajara,True,2,227473.22,21,2026-08-08,123,113736.61,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1737,Norma Ramirez,Puebla,False,1,226152.16,16,2025-01-06,702,226152.16,2,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+169,Valeria Alvarez,Merida,False,1,225731.6,8,2024-03-01,1013,225731.6,1,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1175,Paola Vargas,Cancun,False,2,224067.47,23,2026-03-07,277,112033.735,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1485,Diana Campos,Puebla,False,1,223640.48,7,2025-05-04,584,223640.48,2,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1064,Rodrigo Ruiz,Guadalajara,False,2,222215.77000000002,25,2026-04-23,230,111107.88500000001,4,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1184,Alonso Mendez,Leon,True,1,219543.38,12,2024-03-12,1002,219543.38,1,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1342,Daniela Hernandez,Puebla,False,2,219514.99000000002,7,2026-06-19,173,109757.49500000001,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1723,Emmanuel Reyes,Tijuana,True,1,218268.88,10,2026-05-21,202,218268.88,4,3,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1031,Javier Pineda,Cancun,False,2,217231.23,15,2025-08-09,487,108615.615,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+65,Ricardo Vargas,Ciudad de Mexico,False,2,217210.62,18,2026-06-08,184,108605.31,5,4,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1968,Diego Guerrero,Veracruz,True,2,215427.54,16,2026-07-20,142,107713.77,5,5,5,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+388,Raul Torres,Guadalajara,False,1,214781.38,11,2025-09-07,458,214781.38,3,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+639,Regina Torres,Tijuana,True,1,214083.54,15,2025-08-19,477,214083.54,3,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1457,Valeria Garcia,Guadalajara,False,2,213588.0,10,2025-01-22,686,106794.0,2,5,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+313,Alonso Garcia,Merida,False,2,213228.72,19,2025-11-06,398,106614.36,3,4,5,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+640,Abril Iglesias,Leon,False,1,212564.08,8,2024-07-10,882,212564.08,1,2,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+306,ana campos,Ciudad de Mexico,False,1,212530.83000000002,19,2024-07-02,890,212530.83000000002,1,1,5,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1552,CARLOS RODRIGUEZ,Leon,False,2,211483.94999999998,18,2026-09-19,81,105741.97499999999,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+675,Itzel Castillo,Veracruz,True,1,211006.86,12,2026-03-30,254,211006.86,4,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+511,Ana Solis,Monterrey,False,1,210970.98,20,2025-10-18,417,210970.98,3,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+183,victor vega,Veracruz,True,3,210761.68,19,2026-09-16,84,70253.89333333333,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+945,Julio Rivera,Puebla,True,1,209628.79,14,2025-07-13,514,209628.79,3,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+657,Victor Pineda,Cancun,True,2,208640.49000000002,12,2025-08-21,475,104320.24500000001,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+652,Rodrigo Ortiz,Cancun,True,1,208103.54,18,2026-02-19,293,208103.54,4,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+139,Andres Reyes,Guadalajara,True,3,207084.85,17,2026-06-10,182,69028.28333333334,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1490,Octavio Lopez,Monterrey,True,2,205765.58000000002,25,2026-07-03,159,102882.79000000001,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1340,Citlali Martinez,Veracruz,True,1,205675.04,13,2026-05-15,208,205675.04,4,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1452,Alberto Iglesias,Queretaro,False,1,204320.64,8,2025-01-17,691,204320.64,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+374,Daniela Pineda,Ciudad de Mexico,False,2,204242.57,23,2024-10-14,786,102121.285,1,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1391,Valeria Ruiz,Puebla,True,2,204099.38999999998,17,2026-05-08,215,102049.69499999999,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+387,Andres Campos,Cancun,True,1,204000.0,3,2026-04-20,233,204000.0,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+698,Javier Solis,Tijuana,True,2,203191.86,17,2025-04-19,599,101595.93,2,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1281,Gabriela Flores,Leon,False,2,203027.56,16,2026-06-26,166,101513.78,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1703,Andres Morales,Ciudad de Mexico,True,1,201504.08000000002,16,2025-02-24,653,201504.08000000002,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+485,Hector Delgado,Tijuana,False,2,201092.22,19,2025-09-14,451,100546.11,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+551,Ricardo Ruiz,Leon,False,2,199142.11,11,2025-10-06,429,99571.055,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1661,Briana Garcia,Cancun,False,2,199101.07,19,2025-12-03,371,99550.535,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+962,Ernesto Ortiz,Leon,True,2,198354.72999999998,20,2026-01-30,313,99177.36499999999,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1972,lorena hernandez,Guadalajara,False,2,196890.56,14,2025-06-18,539,98445.28,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1253,Raul Diaz,Tijuana,False,2,196028.9,13,2026-09-08,92,98014.45,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+810,Gerardo Lopez,Tijuana,True,2,195585.7,19,2024-10-03,797,97792.85,1,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1530,Maria Aguilar,Cancun,True,1,195236.18,8,2025-06-27,530,195236.18,3,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+300,Ignacio Ramirez,Puebla,False,2,194970.62,16,2026-05-24,199,97485.31,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1073,Fernanda Contreras,Monterrey,False,1,194410.51,14,2025-03-01,648,194410.51,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+267,Ximena Reyes,Leon,False,1,193681.44,4,2025-10-16,419,193681.44,3,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+519,Gabriela Perez,Tijuana,False,1,193195.03,7,2024-04-07,976,193195.03,1,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+41,Itzel Morales,Veracruz,False,2,192281.2,14,2026-07-03,159,96140.6,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1757,Gabriela Hernandez,Guadalajara,True,1,191985.34999999998,14,2025-04-15,603,191985.34999999998,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1188,MIGUEL VARGAS,Cancun,True,2,191449.68,23,2025-10-04,431,95724.84,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+865,Gabriela Rendon,Tijuana,False,2,191392.19999999998,22,2026-03-08,276,95696.09999999999,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1878,Regina Gomez,Monterrey,False,1,191130.65,5,2025-05-18,570,191130.65,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+231,Regina Gonzalez,Puebla,True,2,190209.88,14,2025-05-04,584,95104.94,2,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1478,Julio Castillo,Merida,True,1,189778.41,8,2026-06-20,172,189778.41,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+363,Sofia Martinez,Merida,True,1,189277.32,9,2026-05-07,216,189277.32,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+828,Camila Sanchez,Monterrey,True,1,188953.87,7,2024-08-26,835,188953.87,1,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1479,Gabriela Rivera,Puebla,True,1,188166.26,22,2024-04-08,975,188166.26,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+16,Fernanda Reyes,Veracruz,True,1,188164.83000000002,14,2026-01-26,317,188164.83000000002,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+676,sofia ruiz,Puebla,True,1,185993.57,7,2025-12-07,367,185993.57,3,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1657,Natalia Molina,Tijuana,False,1,185960.31,7,2024-10-13,787,185960.31,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1606,Guillermo Jimenez,Cancun,True,2,184423.69999999998,13,2026-09-09,91,92211.84999999999,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+627,Valeria Martinez,Ciudad de Mexico,False,1,183160.53,15,2025-07-27,500,183160.53,3,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+23,Raul Pineda,Leon,False,1,182830.72,9,2026-08-18,113,182830.72,5,1,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+444,Lorena Perez,Leon,True,2,181574.39,8,2026-02-07,305,90787.195,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+778,Carlos Lopez,Cancun,False,1,179700.32,7,2025-02-26,651,179700.32,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+359,Ignacio Salazar,Ciudad de Mexico,True,1,179612.2,9,2026-05-26,197,179612.2,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1343,Javier Rodriguez,Merida,False,1,179365.19999999998,12,2024-10-24,776,179365.19999999998,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1840,Diana Rivera,Ciudad de Mexico,False,1,179151.14,14,2024-07-23,869,179151.14,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1827,Andres Iglesias,Guadalajara,False,2,179064.86000000002,17,2025-11-22,382,89532.43000000001,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+82,Guillermo Gonzalez,Leon,True,1,178551.91,21,2025-04-29,589,178551.91,2,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1423,Renata Rendon,Merida,True,1,178422.4,8,2024-12-26,713,178422.4,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+975,Paola Navarro,Ciudad de Mexico,False,1,178228.15,12,2025-04-17,601,178228.15,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+536,Ernesto Contreras,Cancun,True,1,176257.44,4,2026-01-11,332,176257.44,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+883,Maria Vargas,Leon,True,2,176237.15,10,2026-06-15,177,88118.575,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+492,Samantha Ruiz,Puebla,True,2,175435.64,9,2026-01-21,322,87717.82,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+513,Camila Cruz,Queretaro,False,1,175433.86,13,2024-11-12,757,175433.86,2,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+210,DIANA RIVERA,Ciudad de Mexico,True,2,175008.66,11,2026-07-16,146,87504.33,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1655,Itzel Lozano,Leon,True,1,174927.0,5,2026-08-13,118,174927.0,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+830,Citlali Rojas,Puebla,False,2,174769.77000000002,20,2025-01-08,700,87384.88500000001,2,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+345,Julio Lopez,Veracruz,False,4,174429.87,15,2026-02-28,284,43607.4675,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+579,Diego Rodriguez,Queretaro,True,2,173821.46,38,2026-12-02,7,86910.73,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1471,Alonso Rivera,Tijuana,False,1,173716.97,7,2026-07-20,142,173716.97,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1726,Alberto Torres,Leon,True,3,172772.06,11,2025-09-13,452,57590.68666666667,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1891,Victor Molina,Ciudad de Mexico,False,2,171521.2,14,2025-06-20,537,85760.6,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1286,Rodrigo Vargas,Leon,False,1,171489.40000000002,11,2025-02-04,673,171489.40000000002,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1800,Octavio Perez,Ciudad de Mexico,False,1,170229.31,11,2024-08-17,844,170229.31,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1300,Alejandra Rojas,Ciudad de Mexico,False,2,168919.22999999998,15,2025-10-24,411,84459.61499999999,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1213,Julio Iglesias,Cancun,False,3,167696.5,25,2026-04-26,227,55898.833333333336,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+266,Ignacio Molina,Cancun,True,3,167188.61,16,2026-05-31,192,55729.53666666666,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+338,Andres Guerrero,Merida,False,1,164456.76,6,2026-02-17,295,164456.76,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+978,Emiliano Cardona,Puebla,True,1,163794.14,10,2026-04-28,225,163794.14,4,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1730,Rodrigo Gonzalez,Cancun,True,1,163483.03999999998,11,2025-04-16,602,163483.03999999998,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1220,Briana Alvarez,Veracruz,False,4,162472.07,32,2026-07-03,159,40618.0175,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+302,Paola Cardona,Merida,False,3,162122.00999999998,10,2026-06-22,170,54040.66999999999,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1637,Regina Rojas,Veracruz,True,1,161822.16999999998,21,2025-04-01,617,161822.16999999998,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1107,Carlos Ortiz,Veracruz,False,2,160823.05000000002,12,2025-08-12,484,80411.52500000001,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1534,Raul Iglesias,Ciudad de Mexico,True,3,160649.37,17,2026-01-16,327,53549.79,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+186,Julio Molina,Monterrey,False,3,158518.87,16,2025-04-07,611,52839.62333333333,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1866,rodrigo hernandez,Merida,False,1,158115.72999999998,9,2025-10-21,414,158115.72999999998,3,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+22,Valeria Cruz,Guadalajara,False,3,157438.93,20,2026-08-04,127,52479.64333333333,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1624,Natalia Vega,Tijuana,True,2,156907.0,14,2025-10-08,427,78453.5,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1812,Ricardo Delgado,Monterrey,False,3,156845.91999999998,23,2026-09-15,85,52281.97333333333,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+861,Gabriela Alvarez,Veracruz,True,1,156330.44,5,2026-09-02,98,156330.44,5,2,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+497,Oscar Lopez,Tijuana,False,1,155009.72,6,2024-04-04,979,155009.72,1,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1862,Leandro Lopez,Tijuana,False,2,154922.13,11,2025-10-02,433,77461.065,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1746,citlali diaz,Ciudad de Mexico,False,1,154062.89,7,2026-09-04,96,154062.89,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+166,Sofia Sanchez,Ciudad de Mexico,True,2,153975.96000000002,11,2025-12-12,362,76987.98000000001,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+647,Daniela Torres,Tijuana,True,3,153953.90999999997,30,2026-03-10,274,51317.969999999994,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1685,Hector Ruiz,Cancun,True,1,151824.28999999998,19,2024-01-09,1065,151824.28999999998,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+486,Gerardo Gonzalez,Veracruz,False,2,151614.78,8,2025-12-16,358,75807.39,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+60,Ximena Herrera,Queretaro,True,1,151219.89,8,2026-07-16,146,151219.89,5,1,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1366,Alejandra Campos,Monterrey,False,2,148837.15,16,2026-03-05,279,74418.575,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+908,Citlali Castillo,Merida,True,2,148312.28999999998,11,2026-03-05,279,74156.14499999999,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+383,Ximena Reyes,Puebla,True,1,147810.21,3,2024-09-15,815,147810.21,1,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1755,JAVIER VARGAS,Puebla,True,1,147754.57,11,2025-12-23,351,147754.57,3,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+35,Regina Mendez,Puebla,True,2,147597.84000000003,18,2025-08-30,466,73798.92000000001,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1958,Norma Navarro,Guadalajara,False,1,147006.88,8,2025-07-13,514,147006.88,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1451,Oscar Aguilar,Leon,True,1,146839.23,18,2026-09-09,91,146839.23,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1017,Leticia Rodriguez,Monterrey,False,2,145145.59,13,2025-08-23,473,72572.795,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1265,Camila Reyes,Monterrey,False,1,144669.95,8,2026-06-15,177,144669.95,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1531,Alonso Rendon,Cancun,False,1,144390.24000000002,13,2026-03-23,261,144390.24000000002,4,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+617,Citlali Cruz,Cancun,False,2,143661.63999999998,10,2025-11-25,379,71830.81999999999,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1867,Octavio Herrera,Guadalajara,True,3,142924.97999999998,24,2026-05-23,200,47641.659999999996,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+88,Maria Lozano,Monterrey,False,1,142083.62,16,2024-05-02,951,142083.62,1,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1032,Renata Rendon,Monterrey,False,2,142015.24000000002,17,2026-08-20,111,71007.62000000001,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1635,Mariana Garcia,Veracruz,False,3,141385.91,19,2026-09-29,71,47128.636666666665,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1679,Ernesto Aguilar,Merida,True,2,141160.55,15,2025-12-20,354,70580.275,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+216,Camila Vargas,Cancun,False,1,141018.0,12,2026-04-25,228,141018.0,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1111,Paola Guerrero,Monterrey,True,1,139967.41,8,2025-12-11,363,139967.41,3,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+996,Octavio Vega,Ciudad de Mexico,False,2,139637.69,16,2025-10-29,406,69818.845,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1970,Emiliano Rodriguez,Monterrey,False,1,137979.27000000002,15,2024-03-24,990,137979.27000000002,1,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+257,Guillermo Contreras,Veracruz,True,1,137958.94,20,2026-07-19,143,137958.94,5,1,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1397,Paulina Vargas,Merida,True,1,137854.02000000002,9,2024-05-31,922,137854.02000000002,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1604,Leticia Contreras,Veracruz,True,2,137795.11,14,2026-05-15,208,68897.555,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1659,Ignacio Gomez,Guadalajara,True,2,137074.62,6,2025-04-26,592,68537.31,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1873,Ricardo Alvarez,Merida,True,2,136887.46,26,2026-08-17,114,68443.73,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1578,Ignacio Flores,Puebla,False,2,136880.46,11,2026-03-13,271,68440.23,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1536,Emmanuel Lopez,Leon,True,1,136780.5,6,2024-09-04,826,136780.5,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1693,julio lozano,Guadalajara,True,2,135728.46,15,2024-04-08,975,67864.23,1,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+825,Ximena Perez,Ciudad de Mexico,True,2,133402.38,15,2025-09-30,435,66701.19,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+898,Diego Solis,Leon,False,2,133319.9,10,2025-07-05,522,66659.95,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+739,sergio campos,Monterrey,True,1,133285.5,8,2026-06-24,168,133285.5,5,2,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+180,Daniela Bautista,Merida,True,2,132899.08000000002,13,2026-09-16,84,66449.54000000001,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+432,Luis Flores,Merida,True,1,132299.34,11,2026-03-13,271,132299.34,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1370,Ernesto Rendon,Cancun,True,1,131762.08,4,2025-09-26,439,131762.08,3,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1492,javier gonzalez,Tijuana,True,3,131758.13999999998,12,2026-07-20,142,43919.38,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+582,Guillermo Garcia,Monterrey,False,1,131686.03999999998,10,2025-09-01,464,131686.03999999998,3,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1095,Mariana Rendon,Ciudad de Mexico,True,2,131644.29,15,2026-02-28,284,65822.145,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1375,Abril Ruiz,Tijuana,True,2,130961.73000000001,18,2025-08-09,487,65480.865000000005,3,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+406,Emmanuel Jimenez,Puebla,False,1,130479.2,10,2026-01-20,323,130479.2,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+729,Julio Torres,Cancun,True,1,130424.36,10,2024-06-13,909,130424.36,1,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1182,Lorena Salazar,Queretaro,True,1,130348.3,5,2024-09-05,825,130348.3,1,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+158,Paola Mendez,Leon,False,1,130082.22,14,2025-12-16,358,130082.22,3,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1997,Rodrigo Martinez,Veracruz,False,1,129923.29,20,2024-10-26,774,129923.29,1,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1889,Emmanuel Gomez,Queretaro,True,2,129237.62,7,2026-08-12,119,64618.81,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+756,Renata Lopez,Puebla,True,1,128615.12,9,2024-06-25,897,128615.12,1,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+176,Guillermo Castillo,Merida,False,1,128327.49,15,2025-06-10,547,128327.49,2,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+901,Leandro Alvarez,Tijuana,True,2,128128.38,11,2025-07-22,505,64064.19,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1710,Miguel Lozano,Merida,False,1,128125.45999999999,10,2026-09-02,98,128125.45999999999,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+47,Oscar Vega,Veracruz,True,3,127334.23999999999,14,2024-11-07,762,42444.746666666666,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1822,Sergio Vargas,Puebla,False,1,127248.89,5,2025-03-03,646,127248.89,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+193,Briana Ortiz,Monterrey,True,1,126330.79999999999,18,2025-12-09,365,126330.79999999999,3,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1601,GABRIELA MENDEZ,Monterrey,False,1,126063.19000000002,15,2025-11-21,383,126063.19000000002,3,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+79,Leticia Hernandez,Puebla,True,1,125841.2,12,2024-12-28,711,125841.2,2,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+68,Abril Hernandez,Monterrey,False,3,125562.78,23,2026-05-06,217,41854.26,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1681,Guillermo Diaz,Veracruz,True,2,125423.32,6,2026-07-01,161,62711.66,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1589,Norma Pineda,Monterrey,True,2,124803.97,12,2024-11-04,765,62401.985,1,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1551,Hector Lozano,Veracruz,True,1,124543.03,27,2026-05-21,202,124543.03,4,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+798,Alejandra Diaz,Merida,False,1,124473.7,5,2025-12-21,353,124473.7,3,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+786,Abril Rodriguez,Guadalajara,False,1,123579.64,7,2024-11-29,740,123579.64,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1268,Citlali Cardona,Ciudad de Mexico,True,2,122961.22,14,2025-04-25,593,61480.61,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1264,Victor Molina,Leon,False,2,121828.88,31,2025-06-12,545,60914.44,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+816,CARLOS MARTINEZ,Ciudad de Mexico,False,1,121788.9,7,2024-11-19,750,121788.9,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+39,Valeria Pineda,Leon,False,2,121544.94,13,2024-08-23,838,60772.47,1,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1522,Diego Perez,Queretaro,True,1,121196.24,8,2025-02-13,664,121196.24,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1628,Victor Molina,Puebla,True,2,120321.25,12,2024-10-25,775,60160.625,1,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1387,Renata Delgado,Puebla,True,2,118324.55,10,2024-12-30,709,59162.275,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+648,Alberto Pineda,Tijuana,False,1,117117.70999999999,14,2026-06-21,171,117117.70999999999,5,2,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1283,Renata Morales,Leon,False,1,116936.22,5,2024-05-13,940,116936.22,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1899,Daniela Guerrero,Monterrey,False,1,116721.0,3,2025-10-02,433,116721.0,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+354,Emmanuel Delgado,Veracruz,False,2,116421.58,11,2025-03-25,624,58210.79,2,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+174,Renata Rendon,Merida,False,2,116073.01999999999,6,2025-07-06,521,58036.509999999995,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+663,Ricardo Lozano,Puebla,True,1,114901.83,11,2024-08-29,832,114901.83,1,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1414,Paulina Iglesias,Ciudad de Mexico,False,2,114843.47,7,2026-01-14,329,57421.735,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+156,Valeria Ramirez,Tijuana,True,1,114735.74,13,2026-05-23,200,114735.74,4,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+160,LETICIA CONTRERAS,Guadalajara,False,2,114593.56,4,2026-08-21,110,57296.78,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+199,Samantha Guerrero,Ciudad de Mexico,True,1,114033.89,8,2024-07-05,887,114033.89,1,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1234,Ricardo Flores,Merida,True,1,113764.1,10,2026-03-08,276,113764.1,4,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1513,Briana Rodriguez,Veracruz,False,2,113680.98,14,2024-10-03,797,56840.49,1,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+893,Samantha Rojas,Puebla,False,2,112757.45999999999,24,2025-01-04,704,56378.729999999996,2,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1939,Ricardo Perez,Queretaro,False,2,112237.15,12,2026-07-18,144,56118.575,5,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1169,Mariana Flores,Tijuana,True,1,111869.82,6,2024-12-25,714,111869.82,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+731,Gerardo Contreras,Cancun,False,2,110978.34,5,2026-09-19,81,55489.17,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+37,Gabriela Ramirez,Puebla,False,1,110882.17,14,2025-01-22,686,110882.17,2,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+119,Daniela Gonzalez,Monterrey,True,2,110272.23999999999,12,2025-01-24,684,55136.119999999995,2,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+912,Briana Vargas,Monterrey,True,2,109831.83,14,2026-07-10,152,54915.915,5,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+763,Ximena Guerrero,Merida,False,1,109444.84,2,2026-05-21,202,109444.84,4,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1728,Camila Rendon,Veracruz,True,1,108918.82,10,2026-09-02,98,108918.82,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1012,Andres Guerrero,Cancun,True,1,108723.66,3,2024-08-19,842,108723.66,1,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1319,Abril Cardona,Puebla,False,1,108649.29,8,2025-01-06,702,108649.29,2,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+972,Victor Gomez,Queretaro,True,2,108546.6,13,2025-09-17,448,54273.3,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1807,Valeria Vega,Ciudad de Mexico,True,2,107522.21,9,2024-12-30,709,53761.105,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1712,Alonso Iglesias,Tijuana,True,1,107077.75,6,2025-12-13,361,107077.75,3,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1975,Ana Morales,Cancun,False,1,106631.0,7,2026-01-21,322,106631.0,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+461,Briana Aguilar,Ciudad de Mexico,False,1,106541.15,15,2024-10-16,784,106541.15,1,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+86,Ernesto Perez,Tijuana,False,1,106262.87999999999,6,2026-08-01,130,106262.87999999999,5,1,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1197,Maria Pineda,Leon,True,1,105513.59,10,2024-12-28,711,105513.59,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+177,Itzel Garcia,Merida,True,1,105232.0,8,2025-12-17,357,105232.0,3,1,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+660,citlali cruz,Veracruz,True,1,105205.84999999999,8,2025-12-10,364,105205.84999999999,3,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1903,Abril Morales,Cancun,False,3,104760.45000000001,16,2026-05-16,207,34920.15,4,5,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1962,Alejandra Lozano,Queretaro,True,1,104113.33,13,2025-08-12,484,104113.33,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+872,Samantha Ramirez,Tijuana,True,2,104108.41,11,2026-03-03,281,52054.205,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1617,Mariana Campos,Cancun,False,1,103392.36,6,2026-07-07,155,103392.36,5,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+237,Gerardo Garcia,Guadalajara,False,2,103066.38,19,2026-04-13,240,51533.19,4,4,4,Campeones,"R>=4 y F>=4 y M>=4: compran reciente, frecuente y alto"
+1209,Ernesto Iglesias,Cancun,True,1,102959.97,4,2026-02-03,309,102959.97,4,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1114,Emiliano Molina,Guadalajara,True,1,102912.93,3,2025-01-11,697,102912.93,2,2,4,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1743,javier gomez,Cancun,True,2,101035.57999999999,10,2024-12-10,729,50517.78999999999,2,5,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1861,Diego Contreras,Tijuana,False,1,100891.37,6,2024-07-12,880,100891.37,1,3,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1179,Mariana Lopez,Leon,True,1,100688.88,6,2026-07-15,147,100688.88,5,2,4,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+402,Samantha Lopez,Ciudad de Mexico,False,2,100496.11,12,2025-08-27,469,50248.055,3,4,4,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+752,Luis Diaz,Veracruz,True,3,99668.1,24,2026-08-28,103,33222.700000000004,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+154,Ernesto Rivera,Tijuana,False,3,99615.31,13,2026-07-15,147,33205.10333333333,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+796,Citlali Vega,Monterrey,True,2,99381.28,23,2025-06-06,551,49690.64,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+552,Mariana Herrera,Monterrey,False,1,99268.0,4,2024-11-23,746,99268.0,2,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+672,Maria Ruiz,Monterrey,True,1,98460.2,2,2026-09-27,73,98460.2,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1506,Leticia Delgado,Ciudad de Mexico,False,1,97907.2,4,2024-11-02,767,97907.2,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+491,Hector Rojas,Queretaro,True,2,97882.7,19,2025-06-02,555,48941.35,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1783,Briana Rodriguez,Puebla,True,1,97270.67,7,2024-05-18,935,97270.67,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+207,Carlos Navarro,Queretaro,False,2,97199.19,11,2026-07-11,151,48599.595,5,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+643,Diego Diaz,Queretaro,True,1,96493.08,7,2025-02-08,669,96493.08,2,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+692,Gerardo Cruz,Merida,False,2,96086.48999999999,6,2025-08-17,479,48043.244999999995,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+768,Abril Cruz,Monterrey,False,1,95893.84,7,2025-12-26,348,95893.84,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+875,Emmanuel Torres,Queretaro,False,1,95805.0,5,2025-07-11,516,95805.0,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+707,VALERIA FLORES,Ciudad de Mexico,True,1,95399.58,9,2024-12-22,717,95399.58,2,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1434,Miguel Castillo,Ciudad de Mexico,True,3,95277.53,18,2026-07-09,153,31759.176666666666,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1070,Victor Herrera,Guadalajara,False,1,94609.54,5,2026-09-01,99,94609.54,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+766,Maria Martinez,Leon,False,3,93395.08,20,2026-06-26,166,31131.693333333333,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+892,Fernanda Flores,Tijuana,False,1,93110.91,7,2024-07-05,887,93110.91,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+19,Javier Lopez,Monterrey,False,2,92905.34999999999,11,2025-07-02,525,46452.674999999996,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+218,Ana Gonzalez,Ciudad de Mexico,False,2,92254.25,6,2026-02-15,297,46127.125,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1550,Maria Diaz,Monterrey,True,2,91525.73999999999,18,2026-02-28,284,45762.869999999995,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1483,Alberto Ramirez,Guadalajara,True,1,91214.1,5,2025-10-11,424,91214.1,3,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1338,Ricardo Diaz,Puebla,True,1,91066.18,2,2024-09-17,813,91066.18,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+576,Miguel Molina,Ciudad de Mexico,False,1,91038.40000000001,16,2025-10-04,431,91038.40000000001,3,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+561,ignacio solis,Queretaro,False,1,90718.33,6,2025-06-18,539,90718.33,2,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1491,Ximena Lopez,Monterrey,False,1,90205.34,15,2024-11-06,763,90205.34,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1401,Natalia Martinez,Puebla,False,1,89664.71,8,2026-07-22,140,89664.71,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+420,Sergio Ruiz,Puebla,True,2,89422.39,16,2026-02-01,311,44711.195,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+505,Norma Perez,Ciudad de Mexico,False,1,89160.37,5,2026-06-26,166,89160.37,5,1,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1853,Citlali Pineda,Puebla,True,1,88500.2,8,2024-09-29,801,88500.2,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1740,Mariana Perez,Guadalajara,False,1,88480.73,16,2026-01-14,329,88480.73,4,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+574,Citlali Rendon,Tijuana,True,1,88143.36,6,2024-03-29,985,88143.36,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1680,Andres Jimenez,Ciudad de Mexico,True,1,87914.04,3,2024-01-16,1058,87914.04,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1186,Valeria Ruiz,Veracruz,True,1,87902.48,14,2026-07-03,159,87902.48,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+459,Andres Castillo,Ciudad de Mexico,False,1,87554.22,21,2024-06-28,894,87554.22,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+299,Daniela Solis,Guadalajara,False,3,87420.19,16,2026-03-17,267,29140.063333333335,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+601,Natalia Diaz,Puebla,False,1,86965.25,11,2026-08-25,106,86965.25,5,1,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+494,Javier Guerrero,Tijuana,False,2,86797.08,10,2025-05-31,557,43398.54,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1832,Emmanuel Delgado,Guadalajara,False,4,85547.16,28,2026-04-23,230,21386.79,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1636,Maria Pineda,Monterrey,True,2,85446.75,16,2026-03-28,256,42723.375,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+336,Julio Alvarez,Tijuana,True,1,85146.77,4,2026-03-30,254,85146.77,4,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1525,Lorena Solis,Queretaro,True,1,84837.72,28,2026-07-31,131,84837.72,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1890,Camila Rojas,Veracruz,True,2,83870.85,24,2025-02-14,663,41935.425,2,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+265,Gabriela Alvarez,Ciudad de Mexico,False,1,83729.33,17,2025-04-27,591,83729.33,2,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+749,Emmanuel Solis,Tijuana,True,2,83704.89,27,2026-02-25,287,41852.445,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+628,Paola Flores,Veracruz,False,1,83017.65000000001,11,2026-07-26,136,83017.65000000001,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1115,Sergio Cardona,Veracruz,True,1,82626.18000000001,11,2026-04-19,234,82626.18000000001,4,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1883,Alberto Ramirez,Tijuana,True,1,82592.19,8,2026-09-08,92,82592.19,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+949,Paola Salazar,Merida,True,2,81599.31,12,2026-05-18,205,40799.655,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1741,Abril Lopez,Queretaro,False,2,81053.04,4,2024-12-12,727,40526.52,2,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1154,Paulina Garcia,Cancun,False,1,81020.27,4,2025-09-04,461,81020.27,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1333,Sofia Hernandez,Ciudad de Mexico,False,1,80450.37,13,2024-06-17,905,80450.37,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1237,Camila Aguilar,Cancun,True,1,80420.01,13,2024-07-13,879,80420.01,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1929,Sergio Campos,Cancun,True,2,79723.93,7,2026-11-05,34,39861.965,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+712,OCTAVIO TORRES,Cancun,True,2,79717.56999999999,9,2025-02-20,657,39858.784999999996,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1998,Guillermo Rivera,Cancun,False,2,79450.23000000001,5,2026-08-02,129,39725.115000000005,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1560,Alejandra Flores,Queretaro,False,1,79366.56,7,2024-06-15,907,79366.56,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1277,Carlos Contreras,Monterrey,False,1,78473.21,6,2024-10-07,793,78473.21,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+608,Sofia Mendez,Merida,True,2,78403.64,9,2026-08-24,107,39201.82,5,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+197,Oscar Delgado,Ciudad de Mexico,True,2,78276.76999999999,9,2025-03-02,647,39138.384999999995,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+256,Miguel Jimenez,Ciudad de Mexico,False,2,78218.2,6,2025-07-18,509,39109.1,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+702,Guillermo Lopez,Veracruz,False,2,77983.56,11,2025-09-19,446,38991.78,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+341,Javier Iglesias,Ciudad de Mexico,True,1,77845.18,22,2026-04-07,246,77845.18,4,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+673,Hector Garcia,Queretaro,False,1,77257.28,11,2025-12-13,361,77257.28,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1010,NATALIA LOPEZ,Queretaro,True,1,76755.55,12,2025-07-31,496,76755.55,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1940,Briana Guerrero,Cancun,True,1,76477.29000000001,13,2024-12-10,729,76477.29000000001,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1863,Hector Martinez,Leon,False,1,76346.92,5,2025-07-21,506,76346.92,3,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+434,Raul Flores,Puebla,True,3,75997.23,20,2026-09-03,97,25332.41,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1888,Alberto Hernandez,Leon,True,1,75750.0,5,2025-12-08,366,75750.0,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1354,Hector Torres,Leon,False,3,75722.54000000001,16,2026-01-02,341,25240.846666666668,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1255,Javier Torres,Monterrey,True,1,75260.35,5,2025-02-24,653,75260.35,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+243,Sergio Lozano,Veracruz,False,1,75022.19,3,2024-08-02,859,75022.19,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+951,Norma Ruiz,Merida,True,3,74817.37,14,2024-07-29,863,24939.123333333333,1,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+222,GABRIELA CASTILLO,Leon,True,2,74587.51,21,2025-09-22,443,37293.755,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1933,raul molina,Guadalajara,True,1,74579.88,4,2026-02-26,286,74579.88,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+641,Gerardo Aguilar,Veracruz,True,2,74020.25,16,2024-08-22,839,37010.125,1,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+278,Mariana Martinez,Puebla,False,2,74002.41,12,2026-04-04,249,37001.205,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+642,Ana Ortiz,Guadalajara,False,1,73758.44,9,2025-03-03,646,73758.44,2,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+503,Leticia Diaz,Cancun,False,2,73632.48,9,2026-01-28,315,36816.24,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+44,Ximena Contreras,Tijuana,False,2,73510.17,8,2026-03-10,274,36755.085,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1749,Ignacio Rojas,Cancun,True,1,73023.28,8,2024-02-03,1040,73023.28,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1316,Ana Rojas,Ciudad de Mexico,True,1,72496.48999999999,12,2025-03-08,641,72496.48999999999,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1554,Miguel Gomez,Queretaro,False,1,72281.56,10,2024-11-24,745,72281.56,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+181,Itzel Gomez,Merida,False,2,71987.63,11,2025-08-02,494,35993.815,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+92,Ximena Morales,Tijuana,False,1,71787.38,14,2026-06-14,178,71787.38,5,1,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+869,Daniela Guerrero,Tijuana,False,1,71653.61,13,2025-08-19,477,71653.61,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1322,ANA SANCHEZ,Ciudad de Mexico,True,2,71034.8,15,2026-03-03,281,35517.4,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1642,Emiliano Iglesias,Puebla,True,1,70693.93000000001,17,2025-06-17,540,70693.93000000001,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1419,Carlos Gonzalez,Cancun,False,1,70196.84,13,2026-05-18,205,70196.84,4,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+609,Norma Jimenez,Ciudad de Mexico,True,2,70049.52,29,2025-09-08,457,35024.76,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1361,Ignacio Ramirez,Cancun,True,1,69818.23000000001,10,2025-01-28,680,69818.23000000001,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+554,Alberto Bautista,Monterrey,False,1,69796.8,5,2024-06-10,912,69796.8,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+890,Carlos Cruz,Puebla,True,1,69691.96,4,2026-08-29,102,69691.96,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+225,Regina Alvarez,Merida,True,1,69469.55,3,2026-09-23,77,69469.55,5,1,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+259,Emiliano Cardona,Queretaro,False,1,69468.4,8,2026-09-21,79,69468.4,5,1,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1759,Ana Ortiz,Leon,True,2,69172.47,11,2026-06-13,179,34586.235,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1116,Emmanuel Castillo,Guadalajara,True,2,68929.14,15,2026-04-21,232,34464.57,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+974,Gabriela Jimenez,Cancun,False,2,68639.42,8,2024-08-21,840,34319.71,1,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+973,Maria Flores,Queretaro,True,1,68585.81,4,2026-09-01,99,68585.81,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1906,Alberto Morales,Tijuana,True,1,68542.45,5,2025-02-01,676,68542.45,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+200,Gerardo Perez,Cancun,False,3,68502.64,17,2025-07-13,514,22834.213333333333,3,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1563,Paulina Sanchez,Guadalajara,False,1,68279.68000000001,7,2026-08-05,126,68279.68000000001,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+429,Ricardo Rivera,Veracruz,True,2,68075.43000000001,17,2025-08-13,483,34037.715000000004,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+730,Norma Navarro,Tijuana,True,1,67741.76000000001,8,2025-02-14,663,67741.76000000001,2,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+462,Paulina Delgado,Queretaro,True,1,67634.85,8,2025-06-14,543,67634.85,2,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+881,Leticia Vargas,Tijuana,True,2,67613.28,5,2026-06-26,166,33806.64,5,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1546,Emmanuel Vargas,Queretaro,True,2,67611.81,9,2025-10-04,431,33805.905,3,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+205,Octavio Rendon,Monterrey,True,1,67228.98999999999,11,2024-06-25,897,67228.98999999999,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+38,Itzel Pineda,Leon,True,1,67134.0,5,2025-11-09,395,67134.0,3,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1590,Raul Contreras,Monterrey,True,2,66427.52,11,2026-08-06,125,33213.76,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1461,Briana Iglesias,Cancun,False,2,66395.26,7,2025-07-08,519,33197.63,3,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+573,Maria Rojas,Tijuana,False,1,66303.06,9,2024-09-27,803,66303.06,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+460,Hector Flores,Ciudad de Mexico,False,2,66266.45,12,2024-08-16,845,33133.225,1,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1707,miguel torres,Veracruz,False,1,66007.34,5,2024-09-11,819,66007.34,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+224,Ximena Alvarez,Guadalajara,True,1,65881.04,2,2025-12-26,348,65881.04,3,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1152,Ignacio Ramirez,Puebla,True,1,65733.13,7,2026-05-19,204,65733.13,4,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+355,Camila Cruz,Leon,True,2,65551.34999999999,5,2025-10-25,410,32775.674999999996,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1049,Gerardo Bautista,Tijuana,False,2,65380.83,2,2025-04-28,590,32690.415,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+523,samantha sanchez,Cancun,False,1,65292.71,8,2024-09-05,825,65292.71,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1347,Maria Lopez,Guadalajara,False,3,64828.81,15,2026-09-28,72,21609.603333333333,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1874,Daniela Ruiz,Tijuana,False,2,64807.81,9,2026-07-24,138,32403.905,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+611,Norma Navarro,Queretaro,True,1,64770.54,7,2026-07-23,139,64770.54,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1610,Luis Contreras,Leon,True,2,64440.84,12,2026-02-01,311,32220.42,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+683,Emmanuel Alvarez,Puebla,False,1,63408.38,7,2025-07-28,499,63408.38,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+619,Carlos Gomez,Leon,False,1,62896.64,14,2025-03-27,622,62896.64,2,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+822,Abril Cardona,Guadalajara,False,2,62690.08,5,2026-09-25,75,31345.04,5,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1189,Daniela Molina,Tijuana,False,1,62340.0,3,2025-10-27,408,62340.0,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+295,Alonso Ramirez,Puebla,False,1,62257.899999999994,20,2026-05-30,193,62257.899999999994,4,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+646,Ignacio Guerrero,Guadalajara,False,1,60853.920000000006,8,2025-11-25,379,60853.920000000006,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1035,Valeria Bautista,Leon,True,1,60700.43,7,2026-08-04,127,60700.43,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1204,Samantha Martinez,Cancun,False,1,60509.32,12,2024-06-04,918,60509.32,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+522,Fernanda Morales,Veracruz,False,3,60502.86,12,2026-08-07,124,20167.62,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+915,Citlali Lopez,Monterrey,False,1,60232.0,8,2024-07-15,877,60232.0,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1052,Lorena Aguilar,Veracruz,False,1,59613.82,10,2026-05-25,198,59613.82,4,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1564,Gabriela Castillo,Merida,False,1,59298.55,5,2024-03-09,1005,59298.55,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+549,Ignacio Rivera,Leon,False,2,58882.920000000006,9,2025-04-02,616,29441.460000000003,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1212,Carlos Ramirez,Monterrey,True,1,58824.62,6,2025-03-23,626,58824.62,2,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1585,Ana Iglesias,Guadalajara,True,2,58063.59,6,2025-06-23,534,29031.795,2,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+917,Rodrigo Rivera,Guadalajara,True,3,58022.66,17,2025-06-12,545,19340.88666666667,2,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1727,Sofia Diaz,Leon,False,1,57963.590000000004,2,2024-05-29,924,57963.590000000004,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+283,Renata Lozano,Queretaro,False,1,57391.28,8,2026-01-15,328,57391.28,4,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1421,Ricardo Aguilar,Merida,True,2,57141.79,15,2024-11-27,742,28570.895,2,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1923,Oscar Ramirez,Monterrey,True,1,57000.869999999995,12,2024-02-04,1039,57000.869999999995,1,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+33,Diego Rojas,Queretaro,True,2,56707.06,10,2025-09-05,460,28353.53,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+385,REGINA RIVERA,Monterrey,False,1,56550.9,1,2024-10-09,791,56550.9,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1458,Paulina Rivera,Queretaro,True,1,56399.94,10,2026-01-07,336,56399.94,4,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+716,OSCAR REYES,Cancun,False,1,55950.35,3,2024-02-04,1039,55950.35,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1448,Sofia Diaz,Ciudad de Mexico,True,1,55934.91,3,2024-02-07,1036,55934.91,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1053,VICTOR TORRES,Puebla,False,1,55934.91,3,2026-09-04,96,55934.91,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+689,LEANDRO AGUILAR,Merida,True,1,55867.02,1,2026-04-05,248,55867.02,4,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1142,LORENA GUERRERO,Leon,True,1,55693.56,12,2026-03-25,259,55693.56,4,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+105,Samantha Castillo,Puebla,True,1,55349.77,13,2024-08-16,845,55349.77,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+149,Maria Sanchez,Guadalajara,False,1,55345.9,7,2025-12-20,354,55345.9,3,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1545,Paola Cruz,Merida,False,2,55103.280000000006,16,2026-06-24,168,27551.640000000003,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+333,Leticia Flores,Merida,True,1,54930.49,5,2025-06-21,536,54930.49,2,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1046,natalia aguilar,Leon,True,2,54847.42,9,2025-11-07,397,27423.71,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+192,Hector Alvarez,Queretaro,True,3,54704.58,18,2025-09-14,451,18234.86,3,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1615,Octavio Jimenez,Leon,True,2,54459.3,11,2025-03-17,632,27229.65,2,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+666,Javier Navarro,Guadalajara,True,2,54317.27,19,2025-11-14,390,27158.635,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1683,Ximena Guerrero,Veracruz,False,1,53504.39,4,2025-10-03,432,53504.39,3,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+328,Ximena Delgado,Queretaro,True,1,53491.04,4,2025-09-05,460,53491.04,3,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1656,Abril Delgado,Tijuana,True,1,53137.28,7,2026-04-03,250,53137.28,4,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1646,Rodrigo Lopez,Queretaro,True,1,52849.14,7,2024-05-19,934,52849.14,1,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1432,Gerardo Vega,Guadalajara,False,2,52759.35,6,2026-12-03,6,26379.675,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1382,Ximena Solis,Guadalajara,True,1,52256.94,9,2026-07-21,141,52256.94,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1765,Regina Castillo,Guadalajara,True,1,52163.719999999994,7,2026-06-26,166,52163.719999999994,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1766,Samantha Rodriguez,Veracruz,True,1,52101.3,6,2025-09-14,451,52101.3,3,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1392,Mariana Rojas,Leon,False,1,51970.090000000004,3,2026-02-26,286,51970.090000000004,4,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+531,Diego Rivera,Tijuana,True,2,51670.380000000005,12,2025-10-15,420,25835.190000000002,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+346,Alberto Solis,Veracruz,False,2,51650.229999999996,13,2026-07-31,131,25825.114999999998,5,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1700,IGNACIO SANCHEZ,Queretaro,True,1,51421.86,14,2024-11-11,758,51421.86,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+638,Emiliano Vega,Tijuana,True,1,50917.62,3,2026-06-01,191,50917.62,4,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1571,Raul Torres,Leon,False,1,50857.880000000005,10,2026-07-10,152,50857.880000000005,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+17,Julio Diaz,Monterrey,True,1,50500.02,2,2024-05-10,943,50500.02,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+802,Hector Lozano,Veracruz,False,1,50500.02,2,2025-06-25,532,50500.02,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+709,Leandro Garcia,Puebla,False,3,50283.16,25,2026-07-19,143,16761.053333333333,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+500,Citlali Morales,Tijuana,True,1,50135.84,6,2024-03-12,1002,50135.84,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1770,Javier Rendon,Leon,True,1,49970.45,16,2024-11-19,750,49970.45,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+440,Guillermo Herrera,Monterrey,True,1,49930.06,4,2024-05-13,940,49930.06,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1395,Abril Lopez,Cancun,False,1,49906.36,13,2025-11-09,395,49906.36,3,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+998,Diana Jimenez,Ciudad de Mexico,True,1,49640.46,13,2024-06-08,914,49640.46,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+550,Ana Diaz,Veracruz,True,1,49633.42,2,2024-08-11,850,49633.42,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1482,Oscar Ramirez,Ciudad de Mexico,False,1,49344.72,8,2026-09-23,77,49344.72,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+422,Norma Vargas,Cancun,False,1,49340.97,13,2026-02-05,307,49340.97,4,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+542,Hector Rodriguez,Queretaro,True,1,49233.11,2,2024-05-14,939,49233.11,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+626,Diana Torres,Monterrey,False,1,49217.88,6,2026-09-18,82,49217.88,5,2,3,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+578,Norma Morales,Merida,False,1,48693.94,10,2024-11-27,742,48693.94,2,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1961,Ximena Delgado,Queretaro,True,2,48270.240000000005,17,2026-04-10,243,24135.120000000003,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1764,Julio Mendez,Guadalajara,True,2,48129.28,16,2026-04-25,228,24064.64,4,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1947,Paola Lopez,Cancun,False,2,48100.73,11,2026-09-19,81,24050.365,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1591,Emmanuel Sanchez,Cancun,False,1,47693.12,2,2024-11-22,747,47693.12,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1034,Valeria Aguilar,Tijuana,True,2,47657.1,5,2025-10-24,411,23828.55,3,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+959,Leticia Rivera,Ciudad de Mexico,False,2,47576.880000000005,8,2026-01-03,340,23788.440000000002,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1548,Sofia Rojas,Leon,False,2,47416.28,8,2025-09-10,455,23708.14,3,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+727,Alonso Reyes,Cancun,False,1,46897.5,6,2024-03-23,991,46897.5,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+1324,Ricardo Cruz,Leon,False,2,46753.43,13,2025-03-06,643,23376.715,2,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1645,Renata Contreras,Ciudad de Mexico,False,1,46030.619999999995,4,2025-05-10,578,46030.619999999995,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1960,Guillermo Diaz,Veracruz,True,1,45865.02,6,2025-05-31,557,45865.02,2,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1520,Carlos Molina,Cancun,False,2,45334.48,17,2026-06-24,168,22667.24,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1147,Mariana Lopez,Queretaro,False,1,45307.95,9,2024-02-21,1022,45307.95,1,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+779,Ana Pineda,Leon,True,1,44750.0,2,2025-06-15,542,44750.0,2,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+109,Emiliano Bautista,Tijuana,False,2,44638.33,8,2026-01-12,331,22319.165,4,4,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
+1365,Luis Cardona,Leon,False,1,44604.05,5,2025-11-14,390,44604.05,3,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+134,Regina Mendez,Leon,False,1,44569.81,7,2024-10-26,774,44569.81,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+251,Guillermo Iglesias,Veracruz,True,2,44387.6,10,2025-12-20,354,22193.8,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1223,Alberto Morales,Merida,False,1,44160.51,3,2026-08-08,123,44160.51,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1222,Fernanda Bautista,Merida,False,1,44064.36,1,2024-12-25,714,44064.36,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+168,Alberto Mendez,Tijuana,True,2,43982.66,7,2026-02-11,301,21991.33,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1543,Javier Diaz,Ciudad de Mexico,False,3,43866.26,23,2025-10-10,425,14622.086666666668,3,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+604,Javier Ramirez,Merida,False,1,43519.71,7,2026-07-02,160,43519.71,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+238,paulina reyes,Monterrey,True,2,43463.84,13,2025-06-14,543,21731.92,2,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+720,Daniela Jimenez,Puebla,False,1,43429.68,13,2025-06-28,529,43429.68,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+988,Octavio Solis,Guadalajara,True,2,43200.79,14,2026-02-17,295,21600.395,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1232,Julio Rojas,Tijuana,True,1,43118.83,9,2025-12-30,344,43118.83,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1386,Octavio Torres,Ciudad de Mexico,True,1,42944.96,4,2024-10-04,796,42944.96,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1002,Paulina Rojas,Leon,False,1,42710.1,3,2026-12-08,1,42710.1,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1529,Leticia Alvarez,Guadalajara,True,1,42588.020000000004,12,2024-07-31,861,42588.020000000004,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+983,Rodrigo Solis,Tijuana,True,2,42517.65,10,2025-09-27,438,21258.825,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1498,Alberto Ortiz,Monterrey,False,2,41706.44,6,2025-05-01,587,20853.22,2,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+769,Rodrigo Contreras,Queretaro,True,2,41289.39,10,2025-11-11,393,20644.695,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+129,Abril Rendon,Queretaro,False,1,41240.34,2,2026-05-09,214,41240.34,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1356,Gerardo Jimenez,Tijuana,False,1,41085.86,6,2025-07-02,525,41085.86,3,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1252,Paulina Ortiz,Queretaro,True,1,41030.3,4,2025-10-20,415,41030.3,3,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1218,Diego Iglesias,Queretaro,False,1,40805.7,6,2025-09-06,459,40805.7,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+599,Andres Diaz,Monterrey,False,1,40231.96,6,2024-02-09,1034,40231.96,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+12,Ximena Pineda,Queretaro,True,1,40213.16,8,2024-02-21,1022,40213.16,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+55,Ricardo Navarro,Tijuana,False,1,39983.530000000006,7,2025-11-23,381,39983.530000000006,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+602,Ricardo Mendez,Tijuana,True,1,39858.97,12,2024-03-12,1002,39858.97,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1898,Alonso Cardona,Leon,False,2,39221.69,5,2026-08-19,112,19610.845,5,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+435,Paulina Delgado,Puebla,True,1,39188.04,6,2025-06-02,555,39188.04,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+618,norma rodriguez,Puebla,False,2,39049.740000000005,4,2025-12-20,354,19524.870000000003,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+101,Carlos Salazar,Leon,False,1,38680.64,4,2026-05-01,222,38680.64,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+371,ignacio delgado,Monterrey,True,1,38494.89,8,2026-07-12,150,38494.89,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+317,Mariana Aguilar,Guadalajara,False,1,38438.66,8,2025-10-26,409,38438.66,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1412,Paola Martinez,Queretaro,True,2,38351.35,13,2024-07-29,863,19175.675,1,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+808,Raul Gomez,Tijuana,False,2,38306.06,19,2026-01-31,312,19153.03,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+726,Samantha Vargas,Monterrey,False,1,38179.2,5,2025-05-13,575,38179.2,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+838,Samantha Cruz,Puebla,True,1,38080.88,10,2026-08-28,103,38080.88,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+706,Regina Salazar,Tijuana,True,1,38058.75,8,2025-07-06,521,38058.75,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+834,Abril Reyes,Puebla,True,1,37826.090000000004,12,2024-03-26,988,37826.090000000004,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+906,victor ortiz,Leon,False,2,37650.93,21,2025-02-05,672,18825.465,2,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1535,Renata Martinez,Leon,False,3,37488.68,9,2025-12-26,348,12496.226666666667,3,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1193,Daniela Ortiz,Queretaro,True,1,37330.79,5,2025-01-25,683,37330.79,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1921,Paulina Castillo,Queretaro,False,2,37096.69,18,2026-04-30,223,18548.345,4,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+593,norma flores,Veracruz,False,1,37029.71,5,2026-02-21,291,37029.71,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+530,Diego Jimenez,Ciudad de Mexico,False,1,36945.5,5,2025-05-08,580,36945.5,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+108,Lorena Contreras,Tijuana,False,1,36818.55,5,2024-06-08,914,36818.55,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1294,Regina Cardona,Queretaro,True,1,36680.0,8,2025-03-29,620,36680.0,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+289,Rodrigo Navarro,Guadalajara,False,2,36645.42,7,2025-08-21,475,18322.71,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1402,Guillermo Mendez,Monterrey,True,1,36472.89,6,2026-06-09,183,36472.89,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+467,Luis Rojas,Cancun,False,1,36374.380000000005,9,2025-08-07,489,36374.380000000005,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+555,Luis Cardona,Queretaro,True,1,36353.39,12,2026-05-18,205,36353.39,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+171,Octavio Torres,Guadalajara,False,1,35841.83,3,2026-01-22,321,35841.83,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+965,Octavio Flores,Tijuana,True,2,35815.43,21,2025-03-01,648,17907.715,2,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+483,Victor Castillo,Monterrey,True,1,35579.13,3,2025-01-30,678,35579.13,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+453,Diana Garcia,Veracruz,True,1,35456.8,8,2024-03-16,998,35456.8,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1344,Alonso Ruiz,Tijuana,False,2,35327.619999999995,8,2026-06-30,162,17663.809999999998,5,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+967,Citlali Jimenez,Queretaro,True,1,35327.54,10,2026-05-18,205,35327.54,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+615,Mariana Hernandez,Guadalajara,True,1,35316.39,9,2025-05-30,558,35316.39,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+823,Guillermo Jimenez,Leon,True,1,35315.68,4,2025-07-06,521,35315.68,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1351,Samantha Castillo,Queretaro,True,1,34969.42,5,2025-10-08,427,34969.42,3,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1663,Andres Vargas,Veracruz,True,1,34965.27,6,2026-01-22,321,34965.27,4,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1160,Samantha Martinez,Ciudad de Mexico,True,1,34735.869999999995,2,2026-02-10,302,34735.869999999995,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1562,Julio Ortiz,Leon,False,2,34512.47,7,2026-06-25,167,17256.235,5,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1587,Julio Vega,Guadalajara,False,2,34432.39,20,2025-06-26,531,17216.195,3,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+668,Alejandra Diaz,Tijuana,False,2,34086.21,16,2026-07-19,143,17043.105,5,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1170,Leandro Rendon,Ciudad de Mexico,True,1,34081.43,3,2024-04-13,970,34081.43,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1303,Rodrigo Delgado,Tijuana,True,1,33699.13,6,2025-01-30,678,33699.13,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1254,Javier Ortiz,Puebla,False,1,33665.67,7,2024-05-03,950,33665.67,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+128,Fernanda Lozano,Ciudad de Mexico,True,1,33278.17,13,2024-03-14,1000,33278.17,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1518,Maria Solis,Ciudad de Mexico,True,1,32747.089999999997,6,2026-03-09,275,32747.089999999997,4,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1454,NORMA MORALES,Merida,True,2,32643.32,20,2025-02-24,653,16321.66,2,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1233,Lorena Salazar,Tijuana,False,1,32480.38,3,2024-01-13,1061,32480.38,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1420,ana jimenez,Cancun,True,2,32434.5,12,2025-07-23,504,16217.25,3,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1823,Guillermo Rendon,Ciudad de Mexico,False,1,32371.15,13,2024-10-22,778,32371.15,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+137,Ana Cardona,Monterrey,True,2,32271.32,10,2025-12-19,355,16135.66,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+538,Maria Gomez,Queretaro,False,1,32128.59,5,2025-01-06,702,32128.59,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+923,maria vargas,Cancun,True,1,32090.56,9,2026-05-04,219,32090.56,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1205,Itzel Rivera,Merida,False,1,32072.809999999998,3,2026-05-21,202,32072.809999999998,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1752,Renata Pineda,Tijuana,False,2,31999.2,8,2025-10-17,418,15999.6,3,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1162,Leticia Flores,Leon,False,1,31948.64,1,2024-02-20,1023,31948.64,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+11,Emmanuel Campos,Merida,True,1,31472.68,2,2025-05-10,578,31472.68,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1364,Ricardo Navarro,Queretaro,True,2,31421.18,3,2026-01-31,312,15710.59,4,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+13,Alonso Diaz,Veracruz,True,2,31413.09,4,2025-12-04,370,15706.545,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1216,Luis Rodriguez,Queretaro,True,2,31307.45,14,2024-08-25,836,15653.725,1,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1990,Fernanda Diaz,Merida,True,1,31103.449999999997,12,2026-01-19,324,31103.449999999997,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+954,Camila Iglesias,Queretaro,False,1,30817.55,13,2026-08-19,112,30817.55,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1588,Gabriela Gomez,Veracruz,True,1,30479.12,8,2026-06-10,182,30479.12,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+95,Oscar Rendon,Tijuana,False,1,30116.0,4,2025-02-21,656,30116.0,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+360,ERNESTO RUIZ,Tijuana,True,2,30080.050000000003,8,2025-12-26,348,15040.025000000001,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+913,Citlali Sanchez,Puebla,True,1,29913.61,5,2024-04-18,965,29913.61,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1979,Ana Pineda,Guadalajara,True,1,29825.760000000002,10,2024-09-07,823,29825.760000000002,1,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1136,Hector Morales,Puebla,True,1,29414.82,6,2025-04-29,589,29414.82,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+14,regina iglesias,Queretaro,True,1,29414.82,6,2026-09-05,95,29414.82,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1688,Julio Mendez,Queretaro,False,2,29160.96,12,2026-04-25,228,14580.48,4,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+6,Camila Solis,Guadalajara,True,1,28744.88,8,2024-01-23,1051,28744.88,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1851,Guillermo Sanchez,Tijuana,False,1,28692.96,2,2024-11-09,760,28692.96,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+920,Hector Martinez,Monterrey,True,1,28539.05,5,2026-02-13,299,28539.05,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+75,Javier Cardona,Puebla,False,3,28489.929999999997,21,2025-05-17,571,9496.643333333332,2,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1716,Valeria Vega,Veracruz,False,1,28431.12,7,2025-01-18,690,28431.12,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1376,Ana Vargas,Ciudad de Mexico,True,2,28172.870000000003,9,2026-07-02,160,14086.435000000001,5,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1041,Andres Guerrero,Tijuana,False,1,27809.88,7,2024-08-17,844,27809.88,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1977,Valeria Ramirez,Cancun,False,1,27752.64,13,2025-01-24,684,27752.64,2,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+254,Carlos Lopez,Veracruz,False,2,27593.21,2,2025-08-22,474,13796.605,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1131,Diana Vega,Leon,True,1,27524.67,4,2025-09-12,453,27524.67,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1582,Rodrigo Alvarez,Merida,True,1,27471.18,5,2025-04-21,597,27471.18,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+219,Briana Alvarez,Puebla,True,1,27177.629999999997,10,2026-02-14,298,27177.629999999997,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1459,Miguel Salazar,Veracruz,True,1,27124.37,7,2024-06-04,918,27124.37,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+761,Camila Ortiz,Leon,True,1,27116.71,10,2025-06-22,535,27116.71,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1206,DANIELA HERRERA,Guadalajara,True,1,26847.84,1,2024-03-14,1000,26847.84,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+173,Natalia Guerrero,Monterrey,True,2,26670.95,10,2026-02-11,301,13335.475,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+788,Renata Rendon,Merida,True,1,26664.0,6,2026-04-04,249,26664.0,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+719,gerardo ramirez,Guadalajara,False,1,26380.91,1,2026-03-17,267,26380.91,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1227,Diana Navarro,Monterrey,True,1,26308.0,2,2026-04-14,239,26308.0,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+261,Citlali Navarro,Veracruz,False,1,26069.66,1,2026-09-23,77,26069.66,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+950,Camila Ortiz,Cancun,True,1,26050.65,3,2026-09-24,76,26050.65,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+253,Miguel Ortiz,Cancun,True,1,25712.88,3,2024-12-08,731,25712.88,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+562,Victor Jimenez,Cancun,False,1,25375.31,1,2026-06-24,168,25375.31,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+421,EMMANUEL RAMIREZ,Veracruz,False,2,25147.670000000002,19,2025-04-15,603,12573.835000000001,2,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1834,Sofia Delgado,Guadalajara,False,1,25024.4,7,2026-05-25,198,25024.4,4,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+880,Raul Navarro,Cancun,False,1,24888.07,15,2025-02-11,666,24888.07,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1173,Natalia Navarro,Ciudad de Mexico,False,1,24776.99,7,2024-02-27,1016,24776.99,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+820,Alberto Guerrero,Veracruz,True,1,24522.76,2,2024-10-14,786,24522.76,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1632,Paola Castillo,Leon,False,1,24320.7,5,2026-07-07,155,24320.7,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+992,Victor Bautista,Merida,True,1,24256.23,2,2025-07-23,504,24256.23,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1183,ERNESTO VEGA,Leon,False,1,24021.61,6,2025-11-23,381,24021.61,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1859,Leticia Herrera,Cancun,True,2,23893.32,12,2025-10-15,420,11946.66,3,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+362,Paola Herrera,Leon,True,1,23862.93,14,2025-11-05,399,23862.93,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1775,Hector Flores,Ciudad de Mexico,True,1,23662.77,4,2026-01-26,317,23662.77,4,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1579,Ana Perez,Queretaro,True,1,23581.04,7,2024-07-25,867,23581.04,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1441,Victor Rendon,Leon,False,1,23472.18,6,2026-09-16,84,23472.18,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1137,Raul Molina,Monterrey,True,1,23450.39,3,2025-08-09,487,23450.39,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1509,Norma Ortiz,Tijuana,True,1,23248.45,10,2024-05-14,939,23248.45,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1350,Diana Vega,Guadalajara,False,1,22978.14,2,2024-08-13,848,22978.14,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1736,Alonso Ruiz,Queretaro,False,1,22935.09,15,2025-05-18,570,22935.09,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+526,Gabriela Contreras,Queretaro,False,2,22727.34,15,2026-02-01,311,11363.67,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+789,Paulina Vargas,Merida,True,2,21943.12,12,2026-04-16,237,10971.56,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+204,Andres Salazar,Guadalajara,True,1,21927.36,6,2025-11-01,403,21927.36,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+64,Gerardo Torres,Queretaro,True,1,21782.9,5,2025-04-20,598,21782.9,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+447,Oscar Vega,Tijuana,True,1,21412.95,3,2024-12-16,723,21412.95,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+603,Sofia Flores,Veracruz,True,1,21383.8,4,2026-05-07,216,21383.8,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1879,Samantha Lozano,Veracruz,False,1,21383.68,8,2024-05-28,925,21383.68,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+293,Hector Castillo,Puebla,True,2,21356.03,17,2026-01-18,325,10678.015,4,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+535,Citlali Hernandez,Ciudad de Mexico,False,1,21325.0,5,2024-03-16,998,21325.0,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+424,Paola Cardona,Queretaro,True,1,21099.68,11,2025-07-16,511,21099.68,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+61,Gabriela Castillo,Guadalajara,False,1,20924.76,7,2024-03-23,991,20924.76,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1833,Julio Perez,Merida,False,2,20900.0,16,2024-12-29,710,10450.0,2,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+209,Luis Reyes,Guadalajara,False,1,20664.269999999997,16,2025-02-09,668,20664.269999999997,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1199,gerardo herrera,Merida,False,1,20496.36,4,2025-12-05,369,20496.36,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+405,NORMA CARDONA,Guadalajara,True,1,20438.8,8,2024-06-25,897,20438.8,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1439,Diana Bautista,Cancun,True,1,20436.99,8,2025-05-09,579,20436.99,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+792,oscar castillo,Ciudad de Mexico,True,1,20307.010000000002,9,2025-09-13,452,20307.010000000002,3,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1016,Renata Cardona,Monterrey,True,1,20181.56,1,2024-05-18,935,20181.56,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1001,Abril Gomez,Guadalajara,False,1,20073.55,8,2024-11-22,747,20073.55,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+398,Ximena Cardona,Puebla,False,1,20034.19,10,2026-06-28,164,20034.19,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+466,Luis Bautista,Queretaro,True,1,20031.9,1,2026-03-23,261,20031.9,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1798,norma rivera,Monterrey,False,1,19659.03,6,2026-01-12,331,19659.03,4,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+239,ITZEL LOPEZ,Leon,True,1,19594.02,3,2025-06-19,538,19594.02,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1777,julio navarro,Leon,True,1,19593.0,7,2025-06-21,536,19593.0,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1816,Maria Delgado,Veracruz,True,1,19375.14,1,2026-04-20,233,19375.14,4,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1576,Paulina Lozano,Merida,True,1,19301.91,14,2024-08-08,853,19301.91,1,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1312,Alejandra Sanchez,Veracruz,False,2,18874.69,6,2026-06-30,162,9437.345,5,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+419,Ximena Vega,Queretaro,True,1,18644.97,1,2024-08-20,841,18644.97,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1902,GERARDO REYES,Ciudad de Mexico,True,2,18587.02,4,2026-08-17,114,9293.51,5,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+113,Hector Rojas,Tijuana,True,1,18557.69,9,2024-08-25,836,18557.69,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1750,Gabriela Torres,Ciudad de Mexico,False,1,18456.04,2,2026-01-31,312,18456.04,4,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+588,Alberto Salazar,Merida,False,1,18423.86,1,2025-10-05,430,18423.86,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1886,Gabriela Rodriguez,Cancun,False,1,18340.0,4,2025-09-06,459,18340.0,3,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+943,Renata Molina,Guadalajara,True,1,18044.0,8,2025-04-11,607,18044.0,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1266,ernesto ramirez,Merida,False,1,17829.579999999998,7,2026-07-11,151,17829.579999999998,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1442,Mariana Rodriguez,Puebla,True,2,17817.84,11,2026-05-25,198,8908.92,4,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
+684,Lorena Castillo,Merida,False,1,17603.64,3,2026-05-23,200,17603.64,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+98,Oscar Ortiz,Queretaro,True,1,17599.61,7,2026-04-20,233,17599.61,4,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+787,Briana Molina,Merida,True,1,17456.44,2,2024-07-31,861,17456.44,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1087,Luis Contreras,Merida,False,1,17399.53,8,2026-08-16,115,17399.53,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1575,Emmanuel Alvarez,Cancun,False,1,17323.7,8,2025-06-26,531,17323.7,3,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+918,Emiliano Ortiz,Ciudad de Mexico,False,1,17213.78,7,2026-02-24,288,17213.78,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1230,Leandro Herrera,Cancun,False,1,17211.6,7,2024-10-06,794,17211.6,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+170,Ana Lozano,Puebla,True,1,17133.120000000003,8,2024-02-10,1033,17133.120000000003,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1674,Guillermo Castillo,Queretaro,False,1,17124.0,3,2025-02-06,671,17124.0,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+760,Gerardo Guerrero,Puebla,True,1,17123.43,3,2024-08-01,860,17123.43,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+217,Paulina Delgado,Ciudad de Mexico,False,1,17119.78,7,2024-08-18,843,17119.78,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+868,Diana Rojas,Monterrey,False,1,17061.27,2,2026-02-25,287,17061.27,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1630,Octavio Sanchez,Ciudad de Mexico,False,1,17047.85,8,2026-08-20,111,17047.85,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+806,Diana Vargas,Puebla,True,1,17018.15,2,2024-12-06,733,17018.15,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+167,Samantha Gonzalez,Puebla,False,1,17009.12,9,2024-10-13,787,17009.12,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+93,Sofia Sanchez,Tijuana,False,1,16873.25,9,2026-07-22,140,16873.25,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+600,Carlos Lozano,Queretaro,False,1,16830.12,3,2026-08-20,111,16830.12,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1566,Valeria Aguilar,Merida,False,1,16762.68,6,2025-08-01,495,16762.68,3,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+1302,Renata Cardona,Monterrey,True,1,16589.24,1,2026-06-21,171,16589.24,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+629,IGNACIO HERNANDEZ,Puebla,False,1,16513.22,14,2026-02-03,309,16513.22,4,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+386,MARIA ALVAREZ,Veracruz,True,1,16375.0,5,2024-05-16,937,16375.0,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+441,Ernesto Mendez,Veracruz,False,1,16295.69,8,2025-10-29,406,16295.69,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+258,Leandro Gonzalez,Merida,True,1,16204.09,5,2025-07-08,519,16204.09,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1791,RICARDO DIAZ,Merida,True,1,16089.25,12,2025-04-14,604,16089.25,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+758,Maria Diaz,Merida,True,1,16037.76,6,2026-09-28,72,16037.76,5,2,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1614,luis mendez,Monterrey,False,1,16003.75,1,2026-08-05,126,16003.75,5,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+416,Octavio Rivera,Ciudad de Mexico,True,1,15629.29,3,2025-08-04,492,15629.29,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1634,Emmanuel Diaz,Guadalajara,True,1,15623.73,3,2024-11-20,749,15623.73,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
+581,Leandro Molina,Guadalajara,False,1,15329.1,6,2025-06-30,527,15329.1,3,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1061,Luis Ortiz,Tijuana,False,1,15295.0,7,2024-10-28,772,15295.0,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1201,Mariana Vega,Queretaro,True,1,15287.9,9,2025-05-05,583,15287.9,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1971,hector mendez,Cancun,False,1,15052.07,1,2025-03-06,643,15052.07,2,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
+81,Miguel Lozano,Tijuana,False,1,15046.97,7,2025-02-25,652,15046.97,2,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
+1733,Ana Cruz,Merida,False,1,15035.28,2,2025-08-09,487,15035.28,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1556,Alberto Sanchez,Merida,False,1,14966.4,6,2024-05-30,923,14966.4,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+989,Maria Flores,Cancun,False,1,14852.1,6,2024-03-22,992,14852.1,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+25,Guillermo Bautista,Ciudad de Mexico,False,2,14827.07,7,2025-08-11,485,7413.535,3,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+247,Carlos Solis,Queretaro,True,1,14723.55,5,2024-03-31,983,14723.55,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+353,Alberto Pineda,Leon,False,1,14676.16,4,2026-09-20,80,14676.16,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+941,Emiliano Cruz,Tijuana,False,1,14676.16,4,2025-08-12,484,14676.16,3,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1985,Norma Pineda,Veracruz,False,1,14643.61,7,2024-05-20,933,14643.61,1,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+744,Carlos Navarro,Veracruz,True,1,14531.76,4,2024-07-08,884,14531.76,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1904,Camila Gomez,Merida,False,1,14530.27,6,2025-01-08,700,14530.27,2,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1739,Maria Contreras,Veracruz,False,1,14490.38,1,2024-02-17,1026,14490.38,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1649,Diego Aguilar,Cancun,True,1,14291.3,3,2025-08-05,491,14291.3,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1100,Miguel Cruz,Puebla,True,1,14023.02,3,2025-05-08,580,14023.02,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+966,Oscar Flores,Queretaro,False,2,13993.710000000001,2,2025-08-12,484,6996.8550000000005,3,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1992,ALEJANDRA SOLIS,Cancun,True,2,13958.25,11,2025-05-24,564,6979.125,2,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1360,Diego Cruz,Veracruz,True,1,13895.81,1,2025-12-31,343,13895.81,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1106,Lorena Sanchez,Veracruz,True,2,13761.58,3,2025-05-18,570,6880.79,2,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1168,Ernesto Contreras,Merida,True,1,13669.45,1,2025-12-22,352,13669.45,3,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+870,Leandro Flores,Veracruz,False,1,13590.36,4,2024-02-20,1023,13590.36,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+853,ITZEL GUERRERO,Queretaro,True,1,13585.49,6,2025-04-10,608,13585.49,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+280,RICARDO CRUZ,Cancun,True,2,13486.529999999999,8,2026-05-19,204,6743.264999999999,4,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1435,Abril Hernandez,Merida,False,1,13385.650000000001,5,2026-07-10,152,13385.650000000001,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+120,Rodrigo Ruiz,Leon,False,2,13359.75,14,2025-11-28,376,6679.875,3,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1801,Mariana Cardona,Puebla,True,1,13331.55,5,2026-06-21,171,13331.55,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1467,Alberto Flores,Leon,True,1,13107.27,9,2025-07-10,517,13107.27,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+57,Luis Diaz,Tijuana,True,1,13103.97,3,2026-06-19,173,13103.97,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+936,Sofia Rendon,Leon,False,1,13103.97,3,2024-10-12,788,13103.97,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1371,Alejandra Lopez,Merida,False,1,13098.92,4,2026-03-05,279,13098.92,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+367,Daniela Lozano,Cancun,True,1,13062.68,2,2026-08-16,115,13062.68,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+288,Miguel Cruz,Tijuana,True,1,12922.14,3,2025-03-06,643,12922.14,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1754,Emiliano Ramirez,Monterrey,False,2,12501.939999999999,5,2026-03-13,271,6250.969999999999,4,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+155,emiliano jimenez,Merida,True,1,12470.0,5,2024-12-21,718,12470.0,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+514,Carlos Cruz,Monterrey,False,1,12319.2,5,2026-04-27,226,12319.2,4,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1051,fernanda rendon,Queretaro,False,1,12203.119999999999,4,2024-11-20,749,12203.119999999999,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1507,Ricardo Navarro,Leon,False,1,12115.95,11,2026-04-15,238,12115.95,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1297,Citlali Herrera,Puebla,False,1,12102.88,1,2025-08-01,495,12102.88,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+575,Julio Pineda,Guadalajara,False,1,11839.05,7,2025-04-18,600,11839.05,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1892,Alberto Vega,Ciudad de Mexico,True,1,11399.92,4,2026-09-21,79,11399.92,5,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+43,Paola Sanchez,Veracruz,False,1,11170.8,5,2025-01-26,682,11170.8,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1964,Renata Cruz,Ciudad de Mexico,True,1,11160.0,8,2024-08-29,832,11160.0,1,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1959,Renata Morales,Monterrey,True,2,10913.470000000001,4,2026-07-14,148,5456.735000000001,5,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+864,Ximena Ramirez,Leon,True,1,10808.22,3,2024-07-11,881,10808.22,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1702,Alejandra Cardona,Queretaro,False,1,10808.22,3,2024-12-20,719,10808.22,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1957,Natalia Contreras,Veracruz,True,1,10780.3,9,2026-04-01,252,10780.3,4,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1267,Oscar Ortiz,Leon,False,1,10691.84,4,2026-07-28,134,10691.84,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+5,Javier Cruz,Merida,True,1,10652.72,4,2026-09-15,85,10652.72,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1572,Mariana Cruz,Queretaro,False,1,10551.57,2,2025-10-10,425,10551.57,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1353,Daniela Aguilar,Ciudad de Mexico,False,2,10512.04,6,2025-11-20,384,5256.02,3,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+859,Alonso Sanchez,Guadalajara,True,1,10504.84,2,2025-01-25,683,10504.84,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1731,Luis Castillo,Puebla,False,1,10458.0,7,2025-08-29,467,10458.0,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+565,Raul Gomez,Merida,False,1,10289.22,1,2024-05-31,922,10289.22,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+316,Leticia Lopez,Queretaro,True,1,10039.17,3,2026-05-21,202,10039.17,4,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+725,Victor Mendez,Puebla,True,1,9970.6,4,2025-03-10,639,9970.6,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1505,Andres Torres,Tijuana,True,1,9855.36,4,2025-04-09,609,9855.36,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1427,Samantha Ortiz,Merida,False,1,9824.19,3,2025-01-09,699,9824.19,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+952,Rodrigo Molina,Puebla,True,1,9804.94,2,2026-04-12,241,9804.94,4,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+774,sofia molina,Queretaro,False,2,9750.33,7,2025-03-12,637,4875.165,2,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+161,Hector Castillo,Tijuana,False,1,9347.63,7,2026-04-24,229,9347.63,4,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+99,Alejandra Garcia,Queretaro,False,1,9223.76,2,2025-12-02,372,9223.76,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1289,Victor Rivera,Merida,False,1,9139.0,11,2025-07-26,501,9139.0,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+230,Natalia Ramirez,Veracruz,True,1,8828.92,1,2024-04-07,976,8828.92,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+315,Paulina Mendez,Monterrey,False,1,8720.08,6,2024-08-26,835,8720.08,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1192,Rodrigo Morales,Guadalajara,True,1,8707.52,7,2024-11-12,757,8707.52,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1772,MIGUEL CONTRERAS,Leon,True,1,8681.6,15,2024-06-30,892,8681.6,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1806,Daniela Rendon,Guadalajara,True,1,8429.83,1,2024-05-24,929,8429.83,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1922,Gerardo Rodriguez,Veracruz,False,1,8297.28,9,2024-05-19,934,8297.28,1,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1909,Sofia Alvarez,Merida,True,2,8287.130000000001,7,2026-03-21,263,4143.5650000000005,4,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+211,Mariana Castillo,Merida,False,2,8045.09,5,2026-02-03,309,4022.545,4,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1027,ITZEL GUERRERO,Tijuana,False,1,7990.03,5,2024-04-20,963,7990.03,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1802,Victor Cruz,Puebla,False,1,7971.0,3,2026-06-18,174,7971.0,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+563,Carlos Herrera,Tijuana,True,1,7848.26,2,2026-07-26,136,7848.26,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1713,Ernesto Pineda,Puebla,False,2,7692.219999999999,10,2025-09-11,454,3846.1099999999997,3,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1380,Abril Rodriguez,Ciudad de Mexico,False,1,7687.67,2,2024-10-01,799,7687.67,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+498,Hector Gonzalez,Queretaro,False,1,7658.51,7,2026-01-28,315,7658.51,4,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1263,Lorena Rojas,Queretaro,False,1,7476.08,4,2026-09-02,98,7476.08,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1415,Diana Perez,Tijuana,False,1,7457.22,8,2024-10-11,789,7457.22,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+545,Guillermo Alvarez,Ciudad de Mexico,True,1,7449.15,2,2024-07-12,880,7449.15,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+248,Samantha Diaz,Cancun,False,1,7446.030000000001,13,2024-08-18,843,7446.030000000001,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+206,Lorena Flores,Merida,False,1,7310.0,2,2025-11-11,393,7310.0,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1362,GABRIELA CAMPOS,Puebla,True,1,7186.0,2,2025-09-18,447,7186.0,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1211,Citlali Campos,Leon,False,1,7132.67,2,2026-06-18,174,7132.67,5,2,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+664,Alonso Salazar,Ciudad de Mexico,False,1,7086.0,1,2024-01-14,1060,7086.0,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1210,Paola Rojas,Puebla,False,1,6993.530000000001,8,2024-11-22,747,6993.530000000001,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1896,Regina Ortiz,Guadalajara,True,1,6990.6,3,2025-03-23,626,6990.6,2,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+832,Ricardo Rendon,Ciudad de Mexico,False,1,6872.8,5,2025-02-21,656,6872.8,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+31,Raul Reyes,Guadalajara,True,1,6658.1,2,2025-09-09,456,6658.1,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+803,Ana Sanchez,Cancun,True,2,6577.3,7,2026-06-25,167,3288.65,5,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+84,Samantha Iglesias,Queretaro,True,1,6557.79,2,2024-09-29,801,6557.79,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1673,Ximena Aguilar,Ciudad de Mexico,False,1,6518.36,4,2025-01-31,677,6518.36,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1245,ximena jimenez,Queretaro,False,1,6369.64,3,2024-08-09,852,6369.64,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+970,Renata Aguilar,Puebla,False,1,6336.06,3,2026-03-26,258,6336.06,4,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1841,Javier Contreras,Leon,True,1,6276.58,9,2026-08-18,113,6276.58,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+391,Octavio Martinez,Tijuana,False,1,6195.37,3,2026-08-04,127,6195.37,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+566,diego sanchez,Veracruz,False,1,6163.48,3,2025-07-17,510,6163.48,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1586,Gabriela Ramirez,Veracruz,True,2,6141.32,9,2025-04-17,601,3070.66,2,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+344,Octavio Contreras,Tijuana,False,1,6125.0,7,2025-03-09,640,6125.0,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+438,Sofia Cardona,Leon,True,1,6083.46,3,2024-05-06,947,6083.46,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+546,Ernesto Torres,Tijuana,False,1,6080.0,8,2024-09-26,804,6080.0,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+151,Camila Herrera,Puebla,True,1,6062.64,1,2025-09-21,444,6062.64,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+568,Lorena Bautista,Guadalajara,True,1,6009.65,5,2026-08-15,116,6009.65,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1291,Mariana Lozano,Ciudad de Mexico,True,1,5996.89,6,2024-10-02,798,5996.89,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1725,gabriela lopez,Leon,True,1,5972.48,1,2025-07-11,516,5972.48,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1738,Carlos Mendez,Queretaro,True,2,5958.72,3,2024-09-28,802,2979.36,1,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
+339,Diana Vargas,Tijuana,True,1,5887.35,7,2025-09-06,459,5887.35,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+997,ABRIL RODRIGUEZ,Veracruz,True,1,5884.85,5,2024-09-12,818,5884.85,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+470,Fernanda Perez,Guadalajara,True,1,5849.79,2,2024-04-20,963,5849.79,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+747,Valeria Herrera,Merida,False,2,5797.88,4,2024-10-16,784,2898.94,1,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+312,Andres Salazar,Merida,True,1,5632.0,8,2024-03-05,1009,5632.0,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1014,Norma Flores,Cancun,True,1,5436.0,1,2025-02-06,671,5436.0,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+819,Diego Pineda,Monterrey,False,1,5352.0,8,2026-05-13,210,5352.0,4,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1565,Miguel Pineda,Ciudad de Mexico,True,1,5168.79,1,2026-07-01,161,5168.79,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+662,Leandro Iglesias,Cancun,False,1,5138.16,6,2024-05-05,948,5138.16,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1260,Luis Guerrero,Guadalajara,True,1,5046.3,6,2024-11-14,755,5046.3,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+884,Javier Herrera,Leon,False,2,4933.21,10,2025-08-15,481,2466.605,3,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+215,Ignacio Martinez,Leon,True,1,4931.8,4,2024-12-04,735,4931.8,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+947,Ricardo Molina,Merida,True,1,4926.4,8,2024-12-07,732,4926.4,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1484,Leticia Torres,Tijuana,True,1,4900.7,7,2026-01-06,337,4900.7,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+479,Carlos Contreras,Puebla,True,1,4878.65,5,2024-07-31,861,4878.65,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1569,Valeria Bautista,Leon,False,1,4828.3,2,2024-08-04,857,4828.3,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1900,Emiliano Sanchez,Tijuana,True,1,4807.72,4,2025-08-18,478,4807.72,3,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+127,Ximena Pineda,Guadalajara,True,2,4747.68,10,2026-03-06,278,2373.84,4,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1063,Diego Cardona,Puebla,True,1,4585.28,1,2025-05-26,562,4585.28,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1643,Raul Mendez,Veracruz,False,1,4585.0,1,2024-03-09,1005,4585.0,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1877,Javier Campos,Cancun,False,1,4548.98,2,2025-02-18,659,4548.98,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+598,Diego Contreras,Puebla,True,1,4503.52,1,2025-03-04,645,4503.52,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1973,Citlali Perez,Puebla,True,1,4489.8,2,2026-05-18,205,4489.8,4,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+194,Diego Campos,Queretaro,False,1,4400.0,8,2026-05-17,206,4400.0,4,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1428,ignacio ramirez,Veracruz,False,1,4378.23,3,2026-03-23,261,4378.23,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+427,Natalia Castillo,Cancun,False,1,4343.96,1,2024-10-10,790,4343.96,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1026,Paola Herrera,Guadalajara,True,1,4302.0,6,2025-05-02,586,4302.0,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1011,Julio Cruz,Monterrey,False,1,4300.74,6,2024-04-04,979,4300.74,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1938,Leandro Cardona,Tijuana,True,1,4289.28,3,2026-09-07,93,4289.28,5,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1667,Gerardo Cardona,Ciudad de Mexico,True,1,4268.11,1,2024-11-02,767,4268.11,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+655,Luis Rojas,Merida,False,1,4081.2799999999997,2,2026-08-29,102,4081.2799999999997,5,2,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1363,Ernesto Torres,Merida,True,1,4059.34,1,2025-08-11,485,4059.34,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1126,Diana Flores,Guadalajara,False,1,4016.75,5,2024-08-13,848,4016.75,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+62,Regina Sanchez,Tijuana,False,1,3995.8,7,2025-03-31,618,3995.8,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1148,Abril Lopez,Monterrey,False,1,3991.61,2,2025-06-09,548,3991.61,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1684,Citlali Hernandez,Queretaro,True,1,3936.31,3,2026-05-06,217,3936.31,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+115,Julio Torres,Veracruz,False,1,3913.0,7,2025-11-12,392,3913.0,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+54,Paulina Morales,Merida,True,1,3910.27,7,2025-10-28,407,3910.27,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+946,Abril Pineda,Cancun,True,1,3847.68,1,2024-11-13,756,3847.68,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+80,Gerardo Contreras,Merida,False,1,3779.45,5,2024-02-19,1024,3779.45,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+506,Carlos Flores,Puebla,True,1,3772.28,4,2024-04-17,966,3772.28,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1132,Valeria Cardona,Monterrey,False,1,3750.48,6,2026-03-19,265,3750.48,4,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+226,Miguel Rojas,Monterrey,False,1,3669.04,1,2024-04-24,959,3669.04,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+72,Ximena Vargas,Queretaro,False,1,3669.04,1,2026-07-21,141,3669.04,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1480,Renata Morales,Veracruz,True,1,3654.56,1,2025-09-20,445,3654.56,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+472,XIMENA REYES,Monterrey,True,1,3496.51,2,2026-09-18,82,3496.51,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1845,Oscar Rivera,Queretaro,True,1,3491.7,3,2025-07-06,521,3491.7,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1605,Daniela Bautista,Cancun,False,1,3383.6000000000004,2,2024-11-27,742,3383.6000000000004,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1072,Guillermo Lozano,Leon,False,1,3366.45,8,2024-12-08,731,3366.45,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+52,Alberto Navarro,Cancun,True,1,3276.28,7,2025-11-06,398,3276.28,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1358,Ignacio Gomez,Veracruz,False,1,3274.73,1,2026-04-03,250,3274.73,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+273,RAUL SANCHEZ,Tijuana,False,1,3150.67,5,2025-08-31,465,3150.67,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+510,Carlos Ortiz,Queretaro,True,1,3052.5499999999997,4,2024-06-10,912,3052.5499999999997,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+857,gerardo lopez,Veracruz,True,1,3023.56,4,2024-06-28,894,3023.56,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1969,Ximena Navarro,Guadalajara,True,1,2948.64,6,2024-09-10,820,2948.64,1,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+813,Victor Torres,Veracruz,True,1,2943.06,2,2024-08-31,830,2943.06,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1651,Emmanuel Morales,Tijuana,True,1,2787.84,5,2025-12-12,362,2787.84,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+319,Diana Hernandez,Puebla,False,1,2721.95,6,2024-11-05,764,2721.95,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+351,Citlali Aguilar,Puebla,False,1,2719.6,10,2024-04-22,961,2719.6,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1422,Guillermo Diaz,Merida,False,1,2710.39,1,2026-04-08,245,2710.39,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1952,Leticia Morales,Monterrey,True,1,2456.32,8,2026-02-16,296,2456.32,4,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+624,Regina Rojas,Leon,False,1,2447.27,1,2026-05-06,217,2447.27,4,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1325,Ana Martinez,Tijuana,False,1,2414.0,1,2024-03-16,998,2414.0,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+616,Victor Iglesias,Veracruz,False,1,2403.86,2,2025-01-07,701,2403.86,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1,Ernesto Diaz,Puebla,True,1,2383.5,8,2025-05-04,584,2383.5,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1567,Daniela Molina,Merida,True,1,2339.97,1,2024-07-17,875,2339.97,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+153,Briana Jimenez,Leon,True,1,2331.0,7,2026-06-07,185,2331.0,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+100,Regina Reyes,Puebla,False,1,2291.73,1,2026-07-21,141,2291.73,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1327,Rodrigo Hernandez,Tijuana,True,1,2239.12,2,2025-05-04,584,2239.12,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+851,Lorena Rivera,Queretaro,True,1,2185.34,1,2024-12-25,714,2185.34,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1135,Citlali Hernandez,Leon,False,1,2181.84,1,2024-12-20,719,2181.84,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+634,Samantha Iglesias,Merida,False,1,2085.66,2,2024-01-23,1051,2085.66,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1313,Samantha Pineda,Puebla,True,1,2081.28,7,2025-11-01,403,2081.28,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1307,Daniela Ramirez,Cancun,True,1,2024.85,2,2025-10-12,423,2024.85,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+393,Maria Guerrero,Cancun,True,2,1989.4699999999998,2,2024-09-15,815,994.7349999999999,1,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1595,Briana Diaz,Merida,True,1,1988.07,1,2026-06-14,178,1988.07,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+645,Ignacio Herrera,Ciudad de Mexico,False,1,1968.86,1,2025-06-01,556,1968.86,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1747,Mariana Vargas,Ciudad de Mexico,True,1,1780.87,1,2025-08-31,465,1780.87,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+533,Renata Castillo,Queretaro,False,1,1716.28,2,2025-01-03,705,1716.28,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+694,Regina Torres,Ciudad de Mexico,True,1,1682.1,2,2024-11-04,765,1682.1,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+473,Norma Gomez,Ciudad de Mexico,True,1,1651.52,4,2025-11-15,389,1651.52,3,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1130,Maria Campos,Puebla,False,1,1454.7,3,2026-09-20,80,1454.7,5,2,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+340,Camila Contreras,Leon,True,1,1403.52,2,2026-04-11,242,1403.52,4,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+800,Sergio Lozano,Veracruz,False,1,1245.16,2,2024-01-01,1073,1245.16,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1980,FERNANDA MORALES,Tijuana,True,1,1158.0,2,2026-07-01,161,1158.0,5,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
+303,Guillermo Cruz,Ciudad de Mexico,True,1,1141.0,1,2024-10-11,789,1141.0,1,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1058,Lorena Alvarez,Leon,False,1,1042.83,1,2025-08-12,484,1042.83,3,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+116,luis solis,Tijuana,False,1,884.39,1,2024-12-22,717,884.39,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1644,Daniela Sanchez,Monterrey,False,1,843.37,1,2026-04-02,251,843.37,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1229,Oscar Castillo,Guadalajara,True,1,765.56,2,2025-06-20,537,765.56,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+196,Emmanuel Martinez,Ciudad de Mexico,False,1,764.82,3,2025-04-04,614,764.82,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+401,SAMANTHA VARGAS,Queretaro,False,1,708.0,3,2025-02-08,669,708.0,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1641,miguel vargas,Guadalajara,False,1,622.77,1,2024-08-11,850,622.77,1,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+1153,Gerardo Rivera,Merida,False,1,520.41,1,2024-11-27,742,520.41,2,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+71,Ana Aguilar,Guadalajara,False,1,480.82,1,2025-12-30,344,480.82,4,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
+926,Raul Alvarez,Monterrey,False,1,403.2,2,2026-01-12,331,403.2,4,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+48,Victor Cruz,Queretaro,True,1,329.36,2,2026-06-14,178,329.36,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+839,Diego Herrera,Puebla,False,1,291.56,1,2024-03-10,1004,291.56,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+1261,Rodrigo Guerrero,Leon,False,1,185.9,1,2026-09-05,95,185.9,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"

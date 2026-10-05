@@ -1,0 +1,642 @@
+id_producto,nombre,categoria,precio,id_proveedor,margen_bruto,activo,fecha_lanzamiento,costo_fabricacion_interno,sku_fabricante_obsoleto,peso_envio_kg_bruto
+581,Adaptador WiFi Auric Neo,redes,"$14,758",2,0.3587,false,2024-01-24,6465.75,SKU41133,7.68
+438,Webcam Nimbus Nova,ACCESORIOS,"$1,452",10,0.2279,1,05/23/2024,1082.30,SKU13479,0.21
+250,Bocina Bluetooth Praxis Edge,Audio ,"1361,18",8,0.2324,No,2024-02-21,1009.79,SKU44333,9.13
+348,Monitor Gamer Vertex Ultra,monitores,$21842.43,4,0.2429,Si,12 de enero de 2025,9339.72,SKU50139,0.56
+117,Smartphone Zylo Pulse Pro,SMARTPHONES,"28856,54",7,0.387,0,2024-07-16,12909.02,SKU52805,9.68
+157,Smartphone Nimbus Pulse Pro,smartphones,$13768.16,7,0.3421,false,22-12-2024,7742.86,SKU70151,1.78
+596,Adaptador WiFi Auric Fury,Redes,15149.53,2,0.2959,TRUE,04-02-2024,11925.04,SKU75510,4.62
+546,Adaptador WiFi Onyx Plus,redes ,2515.65 MXN,2,0.2876,true,2024-05-02,1482.43,SKU47924,7.52
+494,Hub USB-C Cobalto SE,Perifericos,2411.10 MXN,5,0.2869,TRUE,2024-01-11,1570.93,SKU22735,9.12
+382,Monitor Zylo Prime,Monitor,2447.27 MXN,9,0.3462,Si,12/29/2024,1882.08,SKU64964,2.29
+401,Monitor Portatil Orbit Neo,PANTALLAS,11640.28,4,0.4029,true,31 de mayo de 2024,6180.78,SKU87520,1.12
+78,Workstation Vertex Nova,Computadoras,49993.67 MXN,1,0.3494,Si,04/05/2024,21590.94,SKU41051,5.57
+29,Mini PC Auric Core,COMPUTADORAS,$16972.54,1,null,1,2024-04-10,7692.14,SKU25988,4.24
+560,Access Point Onyx One,REDES,"$4,585",2,0.2415,1,10 de mayo de 2024,1924.25,SKU20249,6.36
+62,Desktop Vertex Prime,computadoras,27227.97,1,0.3035,false,09/20/2024,20550.53,SKU33687,5.3
+104,Mini PC Zylo Air,Cómputo,$38907.41,1,0.3446,No,2024-02-11,26107.15,SKU94356,4.15
+277,Barra de Sonido Onyx Pulse,Audífonos,7528.53,8,0.3799,TRUE,17/04/2024,3600.64,SKU62010,3.16
+604,Switch Kortex Air,Redes,$5124.09,2,0.2669,true,16-05-2024,2420.05,SKU84857,11.36
+508,Webcam Delta Ultra,accesorios ,164.68,5,0.1835,TRUE,2024-05-06,73.36,SKU53561,7.64
+479,Hub USB-C Helix Vertex,ACCESORIOS,"$3,243",10,0.3467,Si,11/06/2024,1555.39,SKU58193,4.73
+105,Smartphone Zylo Max,Smart Phone,"$4,935",7,0.1925,Si,22/03/2024,3131.11,SKU69133,9.88
+429,Hub USB-C Nimbus Core,Accesorios,402.84,10,0.1803,Si,29 de septiembre de 2024,190.88,SKU88223,1.92
+605,Access Point Kortex Max,REDES,$741.12,2,0.354,No,19/03/2024,463.50,SKU84723,0.46
+297,Barra de Sonido Nova Pulse,Audio,  3306.83  ,8,0.2262,false,2024-09-30 00:00:00,1772.79,SKU19107,8.07
+118,Foldable Zylo Nova,Telefonos,  24476.80  ,2,0.2393,Si,2024-05-06,16609.40,SKU77180,9.32
+152,Smartphone Nimbus Pro Pro,Celulares,$8926.77,7,0.3105,0,12/22/2024,6163.23,SKU20633,2.31
+123,Foldable Orbit Elite,Telefonos,"$18,645",2,0.2654,No,2024-01-21,14814.26,SKU46505,0.81
+532,Cable de Red Praxis Pro,redes,"$11,522",2,0.3116,1,2024-09-30,8337.77,SKU73936,8.53
+191,Tablet Helix Zen,SMARTPHONES,28453.03 MXN,2,0.2384,No,30-07-2024,13003.65,SKU53856,2.84
+60,All-in-One Kortex One,Computadoras,"48462,73",6,0.3325,1,10/04/2024,25540.81,SKU35131,9.97
+529,Switch Praxis Core,Networking,2494.40,2,0.2966,Si,03/03/2024,1573.55,SKU84316,3.35
+585,Access Point Auric Max,REDES,"2782,78",2,0.2977,false,2024-05-01,1857.99,SKU76343,7.54
+243,Microfono Praxis Elite,Headphones,"$7,122",3,0.3254,Si,24/01/2025,4364.30,SKU61694,2.47
+347,Monitor Vertex Lite,monitores,"27599,29",9,0.3998,false,2025-01-06,15175.81,SKU92971,0.36
+166,Tablet Quartz Plus,Celulares,"9127,91",7,0.2251,1,12/12/2024,5259.46,SKU90928,9.33
+404,Monitor Ultrawide Orbit Air,monitores,6531.34 MXN,4,0.2668,TRUE,04/11/2024,5020.49,SKU60985,5.39
+84,Mini PC Lumen Air,Computadoras ,  16273.21  ,6,0.2674,false,05/18/2024,11607.63,SKU40240,11.68
+440,Teclado Mecanico Nimbus One,Accesorios,"$1,344",10,0.3958,false,29 de marzo de 2024,721.51,SKU82815,4.31
+128,Foldable Orbit Ultra,smartphones,  29282.83  ,2,0.2961,Si,05/25/2024,14069.09,SKU98609,7.72
+255,Bocina Bluetooth Praxis Mini,Audífonos,"$9,337",3,0.2528,No,15 de junio de 2024,7290.78,SKU23698,11.78
+307,Barra de Sonido Auric Lite,audio,1429.76 MXN,3,0.2904,true,15/07/2024,1076.69,SKU87882,8.7
+52,Desktop Kortex Pro,Computadoras ,$38900.13,1,0.3322,No,25/06/2024,28773.19,SKU82148,10.33
+326,Monitor Portatil Kortex Plus,Pantallas,"10465,54",4,0.2991,false,2024-03-01 00:00:00,5262.64,SKU22946,10.48
+415,Teclado Mecanico Orbit Mini,Accesorios,"1413,02",5,0.2156,1,18/01/2024,948.70,SKU15027,7.27
+523,Router Praxis Elite,redes ,  2831.84  ,6,0.2534,1,2024-12-27,1268.73,SKU56048,6.78
+2,Desktop Nova Prime,COMPUTADORAS,25250.01 MXN,6,NULL,TRUE,2024-06-03,13577.55,SKU26234,0.53
+567,Cable de Red Nova Lite,REDES,978.47,2,0.3583,1,2024-02-19,727.08,SKU56549,11.55
+614,Switch Kortex SE,redes,"17084,74",6,0.2382,false,19 de marzo de 2024,10685.94,SKU96809,2.4
+464,Hub USB-C Helix Air,accesorios,$225,10,0.3149,No,14 de marzo de 2024,152.75,SKU90459,11.24
+588,Router Auric Ultra,redes,  11407.11  ,2,0.1884,false,11-11-2024,4814.65,SKU18665,9.45
+465,Teclado Mecanico Helix Max,Accesorios y Perifericos,  1413.81  ,10,0.3737,true,1 de agosto de 2024,935.86,SKU16562,8.06
+398,Monitor Gamer Zylo Nova,PANTALLAS,"2143,84",9,0.4176,0,2024-08-22,1000.58,SKU86476,9.44
+452,Mousepad Quartz Pro,Accesorios y Perifericos,"$3,108",5,0.2238,Si,05-12-2024,2104.31,SKU96591,6.11
+552,Cable de Red Onyx Pro,redes,6261.42,2,0.2284,false,09/16/2024,3602.37,SKU87770,7.25
+19,Mini PC Nova Vertex,PC,"52611,56",1,0.3433,TRUE,11/06/2024,30249.00,SKU34885,3.97
+110,Smartphone Zylo Edge,smartphones,25540.08 MXN,7,0.293,1,04/26/2024,15636.35,SKU67695,2.5
+367,Monitor Lumen Lite,PANTALLAS,  2279.64  ,9,0.3111,1,24/01/2024,1202.07,SKU56729,3.93
+437,Mousepad Nimbus Pulse,ACCESORIOS,"2181,84",10,0.4164,true,8 de junio de 2024,1565.21,SKU61857,11.88
+422,Mousepad Nimbus Prime,accesorios,225.65,10,0.2754,Si,17-11-2024,160.13,SKU84609,1.35
+334,Monitor Ultrawide Kortex SE,monitores,sin precio,9,0.2939,No,2024-10-13,1722.09,SKU93814,4.2
+385,Monitor 4K Zylo Max,Monitor,1800.00 MXN,9,0.385,false,02/27/2024,1086.94,SKU53578,10.11
+350,Monitor 4K Vertex Edge,Monitor,"$7,902",4,0.2786,TRUE,2024-03-20 00:00:00,4473.74,SKU13169,4.02
+370,Monitor 4K Lumen Edge,monitores,  8863.69  ,4,0.3966,false,8 de marzo de 2024,4116.13,SKU28779,2.74
+497,Mousepad Cobalto Pulse,accesorios,$2080.14,10,0.3333,1,05/06/2024,978.29,SKU97664,0.89
+20,All-in-One Nova One,COMPUTADORAS,"48420,36",1,0.3167,No,30 de enero de 2025,30901.22,SKU42096,6.27
+247,Barra de Sonido Praxis Lite,Audifonos,3196.01,8,0.3998,false,21 de enero de 2025,2446.00,SKU82339,9.0
+339,Monitor Ultrawide Kortex Vertex,PANTALLAS,  20051.22  ,4,0.3746,false,17-03-2024,13178.44,SKU97412,2.15
+498,Webcam Cobalto Nova,ACCESORIOS,943.07 MXN,10,0.3412,No,08/14/2024,567.54,SKU73785,2.79
+505,Teclado Mecanico Delta Max,Accesorios,"1346,46",5,0.2768,TRUE,2024-03-09,880.18,SKU64318,11.77
+571,Adaptador WiFi Nova Zen,Redes,"$5,252",6,0.3958,Si,09/05/2024,2244.04,SKU80148,1.39
+293,Microfono Nova GT,Audifonos,"2795,96",3,0.3764,false,2024-06-27 00:00:00,1257.11,SKU23279,3.8
+193,Foldable Helix GT,Telefonos,"$11,432",2,0.371,TRUE,2024-02-25,8965.79,SKU98762,2.86
+397,Monitor Zylo Pulse,Pantallas,6557.49 MXN,4,0.1974,true,08-08-2024,2764.16,SKU17780,6.86
+620,Access Point Kortex One,REDES,$3513.09,6,0.3138,false,11/07/2024,2258.91,SKU27789,0.47
+183,Foldable Helix Elite,SMARTPHONES,"9228,02",7,0.3977,Si,05/04/2024,7340.61,SKU20445,1.02
+481,Mouse Cobalto Neo,ACCESORIOS,"$3,251",10,0.3915,TRUE,28-01-2025,2342.93,SKU63674,3.99
+395,Monitor 4K Zylo Mini,monitores,11207.81 MXN,4,0.3099,1,29-10-2024,7318.52,SKU54418,2.32
+381,Monitor Portatil Zylo Neo,Pantallas,$3809.89,9,0.4181,false,2024-09-24,1574.04,SKU26894,4.07
+267,Barra de Sonido Onyx Lite,Audífonos,7520.58,8,0.3926,Si,26 de diciembre de 2024,5626.55,SKU88610,5.96
+170,Smartphone Quartz Edge,Smart Phone,20780.00 MXN,7,0.1834,1,1 de febrero de 2025,10777.58,SKU25346,2.09
+48,Workstation Kortex Ultra,PC,"31235,81",1,0.2856,No,2024-05-23 00:00:00,24716.59,SKU61631,11.76
+173,Foldable Quartz GT,Smartphones,13426.80 MXN,2,0.1913,false,2024-07-16,8267.49,SKU48031,5.68
+447,Mousepad Quartz Lite,Accesorios,$196,5,0.2169,false,2 de agosto de 2024,115.93,SKU64614,9.41
+576,Adaptador WiFi Nova Fury,REDES,"3131,05",6,0.3217,No,2025-01-17,2453.91,SKU66689,9.82
+218,Microfono Cobalto Nova,Headphones,2497.50,3,0.4052,No,2024-01-27 00:00:00,1130.46,SKU28165,5.26
+541,Adaptador WiFi Onyx Neo,Redes y Conectividad,  2040.51  ,6,0.3434,Si,2024-11-25 00:00:00,1597.26,SKU20158,11.96
+100,All-in-One Lumen One,Computadoras ,"17834,23",1,0.2305,Si,2024-10-27 00:00:00,10181.48,SKU79668,10.16
+424,Hub USB-C Nimbus Air,Perifericos,1995.03 MXN,10,0.3969,1,2024-06-22,1062.77,SKU80690,2.32
+182,Smartphone Helix Prime Pro,smart phone,5269.41 MXN,7,0.3541,0,11/27/2024,2175.02,SKU64163,1.17
+435,Teclado Mecanico Nimbus Mini,Perifericos,235.67,10,0.2415,0,01-02-2024,185.60,SKU94270,3.85
+386,Monitor Portatil Zylo Plus,PANTALLAS,15529.88,4,0.3217,0,02/02/2025,10825.56,SKU62101,5.87
+600,Access Point Auric One,Redes,  14080.43  ,6,0.2512,Si,2024-10-21,6533.77,SKU37541,4.96
+610,Access Point Kortex Edge,Networking,  926.86  ,6,0.2339,1,7 de enero de 2024,693.52,SKU36217,6.05
+147,Smartphone Nimbus Lite Pro,smart phone,"8671,49",7,0.3043,true,25 de julio de 2024,6862.65,SKU86240,0.18
+39,Mini PC Auric Vertex,COMPUTADORAS,  18868.93  ,6,0.3065,Si,2024-03-19,11525.08,SKU64265,11.86
+136,Tablet Orbit Fury,Celulares,"20224,22",7,0.2835,true,2024-02-11 00:00:00,14144.97,SKU54224,0.89
+528,Router Praxis Ultra,Networking,  1560.80  ,2,0.2772,0,24 de julio de 2024,1247.31,SKU57961,11.56
+24,-,Computadoras,"$30,773",1,0.2239,true,2024-10-26,21462.27,SKU90568,5.25
+89,Mini PC Lumen Core,COMPUTADORAS,23366.80 MXN,1,0.3258,TRUE,11 de octubre de 2024,16662.97,SKU32888,9.26
+423,Webcam Nimbus Elite,Accesorios y Perifericos,"250,67",10,0.3237,false,2024-08-06,195.17,SKU68709,4.23
+221,Auriculares Gaming Delta Neo,Audio ,"$1,737",8,0.4169,No,5 de septiembre de 2024,1175.98,SKU57212,5.38
+176,Tablet Quartz Fury,Telefonos,  5435.69  ,2,0.3522,TRUE,11 de enero de 2024,2974.78,SKU29135,5.34
+253,Microfono Praxis GT,Audio ,4812.80 MXN,8,0.3947,1,2024-02-01 00:00:00,3518.16,SKU66906,2.77
+106,Tablet Zylo Plus,Telefonos,$33800.82,2,0.4185,No,04/11/2024,22555.54,SKU17862,3.62
+205,Smartphone Cobalto Max,Smartphones,28895.45,7,0.1948,Si,08/23/2024,18854.12,SKU71080,0.62
+417,Mousepad Orbit Pulse,ACCESORIOS,$351.91,5,0.3075,No,31 de mayo de 2024,187.52,SKU81911,3.67
+553,Router Onyx GT,REDES,1255.27,6,0.3222,1,20/08/2024,811.80,SKU42499,10.33
+519,Switch Delta Vertex,Networking,2234.16 MXN,2,0.2161,true,2025-01-06 00:00:00,1305.97,SKU39572,9.57
+462,Mousepad Helix Prime,ACCESORIOS,  558.61  ,5,0.2797,true,15-01-2025,381.37,SKU14693,0.62
+5,All-in-One Nova Max,computacion,"26069,66",1,0.2093,0,23/12/2024,19113.23,SKU32577,5.34
+59,Mini PC Kortex Vertex,computadoras,$31948.64,1,0.2253,1,12 de agosto de 2024,17239.16,SKU35914,7.44
+200,Smartphone Helix One,Telefonos,4786.57,7,0.3527,TRUE,27/08/2024,2138.38,SKU34614,7.55
+167,Smartphone Quartz Lite Pro,SMARTPHONES,"4609,55",7,0.3215,false,2025-01-26,1953.43,SKU57140,0.2
+112,Smartphone Zylo Pro Pro,SMARTPHONES,$10289.22,2,0.4097,true,2024-05-19,6099.18,SKU94861,4.47
+616,Adaptador WiFi Kortex Fury,redes ,$7381.39,6,0.3741,0,03/02/2024,5471.53,SKU35305,4.34
+542,Cable de Red Onyx Prime,Networking,"7389,25",6,0.4183,No,10/05/2024,4851.19,SKU93871,1.38
+342,Monitor Vertex Prime,monitores,7644.17,4,0.3157,0,2024-12-26 00:00:00,3165.62,SKU31147,7.96
+612,Cable de Red Kortex Pro,Networking,"$3,095",2,0.2044,No,21 de septiembre de 2024,1368.72,SKU50390,10.23
+412,Monitor Orbit Pro,PANTALLAS,23899.28,4,0.3115,0,2024-01-05,11875.26,SKU41317,10.11
+181,Tablet Helix Neo,smartphones,  23260.26  ,7,0.3545,No,02/04/2025,12418.03,SKU39366,6.21
+280,Bocina Bluetooth Onyx One,AUDIO,$5190.10,8,0.3883,0,2024-08-12,2449.46,SKU72519,4.44
+620,Access Point Kortex One,REDES,$3513.09,6,0.3138,false,11/07/2024,2258.91,SKU27789,0.47
+314,Monitor Ultrawide Auric SE,PANTALLAS,"$15,052",4,0.2327,Si,13 de agosto de 2024,7124.22,SKU75049,7.24
+268,Microfono Onyx Ultra,audio,#VALOR!,8,0.2103,1,2024-03-01,229.49,SKU61080,7.6
+365,Monitor 4K Lumen Max,Pantallas,$5591.15,9,0.2734,No,01/19/2025,3197.05,SKU65588,7.18
+137,Smartphone Orbit Pulse Pro,smartphones,$42000.00,7,0.3925,true,2024-02-17,29953.36,SKU69958,2.21
+151,Tablet Nimbus Zen,Telefonos,18718.93 MXN,7,0.3366,TRUE,2024-09-07,14411.45,SKU65952,10.58
+531,Adaptador WiFi Praxis Zen,Redes y Conectividad,"2414,15",2,0.1906,Si,27 de septiembre de 2024,1148.99,SKU56407,3.91
+368,Monitor Gamer Lumen Ultra,Monitor,2004.61,9,0.3433,false,28/12/2024,922.77,SKU13929,6.04
+359,Monitor Ultrawide Vertex Vertex,Pantallas,16986.90 MXN,4,0.241,1,24/11/2024,9173.22,SKU64267,0.76
+545,Access Point Onyx Max,redes,11443.06 MXN,6,0.3574,false,22 de diciembre de 2024,5068.80,SKU55654,5.13
+474,Hub USB-C Helix SE,accesorios,$3638.88,5,0.266,0,2024-04-18,2545.72,SKU59529,6.37
+86,Laptop Lumen Plus,Computadoras,37053.65 MXN,6,0.2993,true,03/31/2024,20123.19,SKU20119,11.24
+428,Webcam Nimbus Ultra,Accesorios,  3924.13  ,5,0.3392,Si,05-04-2024,2342.90,SKU78729,10.4
+164,Smartphone Quartz Air Lite,SMARTPHONES,"$13,854",7,0.361,No,2024-03-11 00:00:00,9019.20,SKU65082,2.4
+113,Foldable Zylo GT,smartphones,  24816.71  ,7,0.4067,TRUE,2024-03-10,16576.95,SKU32833,3.97
+308,Microfono Auric Ultra,Audífonos,  2045.61  ,8,0.3894,TRUE,2024-01-25 00:00:00,1571.98,SKU92571,6.51
+413,Monitor Gamer Orbit GT,monitores,"4440,77",4,0.2487,No,27/04/2024,3438.16,SKU43419,11.15
+238,Microfono Delta Nova,AUDIO,6129.02,8,0.4121,false,01-06-2024,2764.43,SKU45482,7.12
+187,Smartphone Helix Lite Pro,smartphones,15407.88,7,0.2788,0,06/30/2024,6823.86,SKU38655,9.47
+133,Foldable Orbit GT,SMARTPHONES,"$21,142",7,0.2633,No,2025-01-28 00:00:00,10243.47,SKU21771,5.13
+158,Foldable Nimbus Nova,Celulares,"4265,11",7,0.2915,1,04/02/2024,2028.83,SKU47141,9.15
+448,Webcam Quartz Ultra,accesorios ,1395.04 MXN,5,0.2996,TRUE,2024-05-05 00:00:00,577.18,SKU98511,6.65
+335,Monitor 4K Kortex Mini,PANTALLAS,"18537,78",4,0.4131,No,2024-11-23,12051.60,SKU27059,1.03
+325,Monitor 4K Kortex Max,monitores,  24602.67  ,9,0.2547,Si,08/14/2024,10958.22,SKU69189,8.8
+417,Mousepad Orbit Pulse,ACCESORIOS,$351.91,5,0.3075,No,31 de mayo de 2024,187.52,SKU81911,3.67
+286,Auriculares Gaming Nova Plus,Audio ,"713,47",3,0.387,1,2024-06-16,463.42,SKU91442,9.53
+49,Mini PC Kortex Core,computadoras,51081.62,6,0.2093,No,2024-11-05 00:00:00,26090.12,SKU56719,2.26
+246,Auriculares Gaming Praxis Plus,AUDIO,"639,20",3,0.3467,TRUE,2024-12-19,279.04,SKU84835,3.02
+75,All-in-One Vertex Mini,PC,21890.65 MXN,1,0.38,Si,2024-10-30 00:00:00,15181.39,SKU70284,5.58
+43,Workstation Kortex Elite,Computadoras ,"13400,48",1,0.3131,TRUE,2 de agosto de 2024,8173.65,SKU92021,11.81
+496,Mouse Cobalto Fury,Accesorios,"1891,04",10,0.2285,true,2024-05-28,772.29,SKU35072,0.45
+3,NULL,PC,16901.48 MXN,6,N/A,TRUE,2024-09-21,10801.50,SKU80149,6.39
+249,Audifonos Praxis Core,audio,N/D,3,0.2234,0,2025-01-10,2045.00,SKU15899,6.54
+190,Smartphone Helix Edge,Smart Phone,"$17,229",7,0.3201,Si,05/12/2024,10465.74,SKU72715,6.43
+97,Desktop Lumen Pulse,computacion,"$44,347",6,0.334,No,2024-12-10,23604.71,SKU23664,2.58
+204,Smartphone Cobalto Air Lite,SMARTPHONES,17470.25 MXN,2,0.2299,Si,24 de junio de 2024,10308.72,SKU44431,9.89
+209,Audifonos Cobalto Core,Audio,5109.77 MXN,3,0.3898,true,5 de junio de 2024,2534.51,SKU32805,1.95
+312,Monitor Auric Pro,monitores,2695.52 MXN,9,0.3658,true,2024-02-01,2050.63,SKU69785,0.57
+258,Microfono Praxis Nova,audio,5972.48,3,0.3773,TRUE,28 de diciembre de 2024,2702.08,SKU66485,6.48
+594,Switch Auric SE,Redes,"1737,94",6,0.2903,false,2024-10-04,754.81,SKU81585,2.94
+318,Monitor Gamer Auric Nova,Pantallas,$2672.96,4,0.3171,0,2024-06-03 00:00:00,2044.20,SKU52026,2.94
+300,Bocina Bluetooth Nova One,Audífonos,  1629.59  ,8,0.2328,1,4 de marzo de 2024,1065.12,SKU50737,6.81
+11,Laptop Nova Zen,Computadoras,"$13,708",1,null,No,15 de abril de 2024,10498.47,SKU47228,5.82
+121,Tablet Orbit Neo,Telefonos,"12917,12",2,0.3262,false,2024-10-14,8796.50,SKU69325,8.85
+239,Audifonos Delta Vertex,Audio,"$6,240",3,0.4105,No,25-05-2024,2946.13,SKU42874,4.01
+390,Monitor 4K Zylo Edge,monitores,  11337.65  ,4,0.2313,Si,31 de marzo de 2024,6561.74,SKU54183,9.03
+272,Barra de Sonido Onyx Pro,AUDIO,$4993.05,3,0.2776,true,29-09-2024,3564.85,SKU52935,9.46
+67,Desktop Vertex Lite,Computadoras,"$15,836",6,0.1852,false,2025-01-26 00:00:00,6818.79,SKU48708,0.5
+194,Smartphone Helix SE Lite,SMARTPHONES,"35912,42",7,0.2109,No,10/03/2024,19411.91,SKU48374,3.15
+445,Teclado Mecanico Quartz Max,accesorios ,716.79 MXN,10,0.3107,true,21-11-2024,562.84,SKU76439,9.96
+387,Monitor Zylo Lite,PANTALLAS,4885.24 MXN,4,0.2467,0,09/21/2024,2688.47,SKU70642,3.78
+8,Workstation Nova Ultra,Computadoras,57478.79,6,0.2462,1,12 de septiembre de 2024,33047.96,SKU93642,3.09
+473,Webcam Helix GT,Accesorios,"$2,346",10,0.414,1,25/09/2024,1712.50,SKU38229,11.61
+557,Cable de Red Onyx Pulse,Redes,"700,10",2,0.2187,Si,2024-10-23,386.69,SKU81621,0.57
+289,Audifonos Nova Core,Audífonos,"$1,021",3,0.3202,true,2024-12-24,539.80,SKU31827,1.33
+163,Foldable Quartz Elite,SMARTPHONES,"34985,40",2,0.2959,0,2024-12-30,24585.91,SKU39106,7.53
+516,Mouse Delta Fury,Perifericos,1869.02 MXN,10,0.4093,false,11 de enero de 2024,1135.10,SKU53702,9.09
+354,Monitor Ultrawide Vertex SE,monitores,$8202.98,4,0.3127,false,09/02/2024,5439.74,SKU34888,5.92
+388,Monitor Gamer Zylo Ultra,Monitor,$5732.64,4,0.213,true,11-12-2024,3490.56,SKU31729,4.92
+215,Bocina Bluetooth Cobalto Mini,Audio ,1216.35 MXN,8,0.3323,No,2024-01-19,919.36,SKU84421,4.11
+68,Workstation Vertex Ultra,Cómputo,  17497.71  ,1,0.285,No,2024-12-23,9598.09,SKU40506,10.1
+573,Router Nova GT,redes,"2616,22",6,0.3876,true,12-11-2024,1057.58,SKU70248,7.45
+578,Router Nova Nova,REDES,$5427.05,6,0.2126,Si,24-02-2024,4283.17,SKU67491,2.73
+217,Barra de Sonido Cobalto Pulse,Audifonos,"2671,55",3,0.2005,0,2025-01-15,1819.75,SKU31751,6.56
+270,Bocina Bluetooth Onyx Edge,Audio ,874.94 MXN,3,0.4023,No,24 de enero de 2024,644.68,SKU80648,7.41
+330,Monitor 4K Kortex Edge,PANTALLAS,  7517.64  ,9,0.3595,No,2024-11-27 00:00:00,4580.71,SKU10749,6.38
+512,Mousepad Delta Pro,Perifericos,  1287.31  ,10,0.3848,Si,27 de abril de 2024,685.37,SKU85308,2.42
+345,Monitor 4K Vertex Max,monitores,2800.57,9,0.3176,0,04/02/2024,1244.22,SKU59449,1.6
+478,Webcam Helix Nova,Perifericos,$401.93,5,0.2732,No,03/04/2024,233.59,SKU68576,4.2
+1,Laptop Nova Neo,Computadoras,"$14,453",1,,Si,15 de octubre de 2024,10201.72,SKU86585,10.27
+61,Laptop Vertex Neo,computacion,37742.13,6,0.2531,TRUE,2025-01-16,19119.50,SKU47709,5.96
+472,Mousepad Helix Pro,Accesorios y Perifericos,"3233,70",5,0.3694,TRUE,9 de enero de 2024,1987.61,SKU48845,1.04
+178,Foldable Quartz Nova,Smartphones,29863.52,7,0.3784,false,2024-05-31 00:00:00,12866.46,SKU71461,0.38
+449,Hub USB-C Quartz Core,accesorios ,"2103,36",5,0.1935,false,24/01/2025,1322.99,SKU31061,7.12
+469,Hub USB-C Helix Core,Accesorios y Perifericos,4056.55,10,0.2963,0,2024-09-08 00:00:00,3033.30,SKU57500,7.48
+72,Desktop Vertex Pro,computadoras,  19375.14  ,6,0.361,false,29-07-2024,12415.69,SKU27154,11.97
+547,Cable de Red Onyx Lite,Networking,622.58 MXN,2,0.3816,No,26/09/2024,489.54,SKU76328,11.74
+303,Microfono Auric Elite,Audio ,$4985.61,8,0.249,No,12 de mayo de 2024,3204.55,SKU36357,2.7
+327,Monitor Kortex Lite,Monitor,  14660.89  ,9,0.3377,false,2024-09-22,11297.08,SKU80419,2.13
+22,Desktop Auric Prime,PC,  14001.33  ,1,N/A,1,14/01/2024,6692.16,SKU99448,6.18
+538,Router Praxis Nova,Redes y Conectividad,"16124,03",2,0.3656,TRUE,2024-12-23,12427.34,SKU65750,7.29
+338,Monitor Gamer Kortex Nova,monitores,  2541.00  ,4,0.309,0,02-11-2024,1935.06,SKU94353,3.74
+436,Mouse Nimbus Fury,Accesorios y Perifericos,195.05,5,0.3035,false,2024-07-09,80.35,SKU81448,6.94
+525,Access Point Praxis Max,Networking,9670.16 MXN,2,0.2553,1,15-01-2024,5829.98,SKU60645,2.26
+607,Cable de Red Kortex Lite,redes,  9522.34  ,2,0.2616,TRUE,2025-02-02,4723.57,SKU13267,0.8
+141,Tablet Nimbus Neo,Celulares,$4045.73,2,0.1927,1,2025-02-03 00:00:00,2642.18,SKU30976,6.92
+168,Foldable Quartz Ultra,smart phone,$11578.76,7,0.3356,Si,26-01-2024,4904.57,SKU79379,10.57
+555,Access Point Onyx Mini,redes ,  1011.56  ,6,0.3528,1,2024-01-28,785.58,SKU83479,0.98
+361,Monitor Portatil Lumen Neo,PANTALLAS,2199.63 MXN,9,0.2296,No,2025-01-08,1258.88,SKU36255,5.91
+446,Mouse Quartz Plus,ACCESORIOS,$3256.03,5,0.2588,0,19/07/2024,1799.36,SKU54804,1.21
+180,Smartphone Quartz One,smartphones,$29210.55,7,0.3312,No,2024-02-22,18082.23,SKU29581,2.12
+540,Access Point Praxis One,REDES,  17228.60  ,2,0.1955,0,2024-05-21,9746.51,SKU54010,4.49
+470,Teclado Mecanico Helix Edge,Accesorios,"610,57",10,0.2576,true,15-04-2024,426.46,SKU93354,10.6
+425,Teclado Mecanico Nimbus Max,accesorios ,"1199,26",10,0.3751,TRUE,03/07/2024,825.54,SKU65338,5.41
+81,Laptop Lumen Neo,computacion,  33449.39  ,6,0.1913,false,07/08/2024,21232.52,SKU46185,7.29
+379,Monitor Ultrawide Lumen Vertex,Monitores,2571.64 MXN,4,0.1888,No,2024-08-24,1302.41,SKU88675,3.78
+44,Mini PC Kortex Air,COMPUTADORAS,$32249.20,1,0.1828,0,02/02/2025,25340.37,SKU20887,8.54
+544,Switch Onyx Air,Redes y Conectividad,$13372.76,6,0.412,1,2024-09-20,7165.17,SKU97097,2.3
+430,Teclado Mecanico Nimbus Edge,Accesorios y Perifericos,  999.52  ,5,0.314,No,2024-10-15,493.61,SKU45597,3.7
+392,Monitor Zylo Pro,Monitores,  16781.48  ,9,0.4067,true,06/10/2024,12646.48,SKU57238,0.48
+346,Monitor Portatil Vertex Plus,monitores,8515.94 MXN,4,0.3663,Si,26-09-2024,5870.13,SKU19543,8.99
+391,Monitor Portatil Zylo Zen,PANTALLAS,  11122.21  ,9,0.4094,Si,2024-05-22 00:00:00,5977.55,SKU44253,8.3
+306,Auriculares Gaming Auric Plus,AUDIO,$1972.78,3,0.3108,true,18-04-2024,996.75,SKU36615,11.96
+263,Microfono Onyx Elite,Headphones,  5730.99  ,3,0.1852,true,01/30/2025,2637.95,SKU10719,5.97
+554,Switch Onyx SE,Networking,"$10,738",6,0.2532,No,2024-09-03,8526.72,SKU32680,5.23
+227,Barra de Sonido Delta Lite,Audio,"$7,709",3,0.322,true,14/02/2024,5187.06,SKU88115,4.72
+202,Smartphone Cobalto Prime Pro,smartphones,9188.59 MXN,7,0.2137,No,01/12/2024,6230.95,SKU32899,11.77
+35,All-in-One Auric Mini,Cómputo,$22374.88,6,0.3796,1,2024-01-02 00:00:00,11872.76,SKU72516,7.78
+537,Cable de Red Praxis Pulse,Networking,2027.40 MXN,2,0.3995,1,19 de enero de 2024,1026.57,SKU40968,11.69
+142,Smartphone Nimbus Prime Pro,SMARTPHONES,31449.79,7,0.3383,Si,2024-02-04,22029.33,SKU48706,4.47
+467,Mousepad Helix Lite,Perifericos,841.05 MXN,10,0.2107,TRUE,04/27/2024,351.52,SKU56414,10.57
+274,Audifonos Onyx SE,Headphones,$5610.04,3,0.4116,false,01/19/2025,3105.04,SKU99366,6.49
+211,Auriculares Gaming Cobalto Zen,AUDIO,$2399.20,3,0.1823,Si,01/08/2024,1797.80,SKU91630,1.79
+593,Router Auric GT,redes,2171.89 MXN,6,0.3116,Si,08/07/2024,1344.98,SKU95883,8.24
+101,Laptop Zylo Neo,computacion,"36744,16",6,0.2022,1,07/14/2024,18829.04,SKU13236,1.97
+140,Smartphone Orbit One,Celulares,23235.91 MXN,7,0.3603,TRUE,05/16/2024,15922.51,SKU79446,9.55
+310,Bocina Bluetooth Auric Edge,Headphones,"4367,99",3,0.2606,1,07/10/2024,2426.56,SKU50178,11.53
+551,Adaptador WiFi Onyx Zen,Redes y Conectividad,10480.07,6,0.3757,No,10/31/2024,6293.49,SKU18466,3.55
+169,Smartphone Quartz Core Lite,SMARTPHONES,4684.61,7,0.3735,1,17/04/2024,3464.55,SKU36008,6.23
+471,Mouse Helix Zen,Accesorios y Perifericos,615.80 MXN,10,0.3023,1,01/18/2024,333.51,SKU99750,8.54
+230,Bocina Bluetooth Delta Edge,Audífonos,"$2,364",3,0.4008,Si,27/04/2024,1630.79,SKU68995,9.93
+480,Teclado Mecanico Helix One,Accesorios y Perifericos,1139.96,10,0.3823,TRUE,18 de febrero de 2024,599.87,SKU37366,10.53
+207,Smartphone Cobalto Lite Pro,smart phone,  4901.39  ,7,0.2072,1,27 de enero de 2024,3552.47,SKU53914,4.4
+175,Smartphone Quartz Mini,Telefonos,$6971.32,7,0.3077,false,2025-01-31,3891.00,SKU93700,3.06
+227,Barra de Sonido Delta Lite,Audio,"$7,709",3,0.322,true,14/02/2024,5187.06,SKU88115,4.72
+129,Smartphone Orbit Core Lite,Telefonos,$24143.58,2,0.2392,0,14-12-2024,17709.94,SKU76515,4.27
+260,Bocina Bluetooth Praxis One,Headphones,$644.34,3,0.2453,1,20-08-2024,442.99,SKU34340,0.31
+366,Monitor Portatil Lumen Plus,monitores,  5166.06  ,9,0.3214,true,06/04/2024,3283.72,SKU45411,9.56
+41,Laptop Kortex Neo,Cómputo,49158.25,6,0.2404,false,29-01-2024,28433.21,SKU45702,9.65
+353,Monitor Gamer Vertex GT,Pantallas,"18839,36",4,0.3981,TRUE,2024-08-02,14176.74,SKU65941,2.67
+548,Router Onyx Ultra,redes ,1106.78 MXN,2,0.337,true,2024-10-29,747.33,SKU24798,4.98
+566,Adaptador WiFi Nova Plus,Redes,7865.94 MXN,6,0.3202,1,08/27/2024,3893.66,SKU35159,10.74
+281,Auriculares Gaming Nova Neo,AUDIO,2873.68 MXN,8,0.215,0,17-11-2024,1526.21,SKU66983,7.36
+23,,Cómputo,$52234.68,6,N/A,No,2024-12-01,41434.15,SKU22518,8.19
+459,Hub USB-C Quartz Vertex,accesorios ,$1255.48,10,0.305,false,14 de abril de 2024,909.89,SKU64901,11.34
+304,Audifonos Auric Air,Audio,$475.47,3,0.3281,1,23/12/2024,315.73,SKU84188,6.99
+476,Mouse Helix Fury,accesorios ,484.90 MXN,5,0.1989,Si,2024-12-05,245.10,SKU37458,6.02
+120,Smartphone Zylo One,SMARTPHONES,"36962,01",7,0.2004,true,2024-04-29,22745.33,SKU24276,11.11
+426,Mouse Nimbus Plus,accesorios ,554.04 MXN,10,0.3167,false,2024-08-09,313.90,SKU50226,1.03
+399,Monitor Ultrawide Zylo Vertex,PANTALLAS,"26570,51",9,0.2447,No,2024-09-01 00:00:00,13155.51,SKU82894,8.59
+53,Workstation Kortex GT,COMPUTADORAS,16779.87 MXN,6,0.3249,1,07/19/2024,11055.55,SKU80511,7.48
+271,Auriculares Gaming Onyx Zen,Headphones,7591.04,8,0.2449,0,2024-09-26,5660.70,SKU71209,10.81
+396,Monitor Portatil Zylo Fury,Monitores,$4864.14,4,0.2633,true,2024-07-26,2269.30,SKU33603,10.3
+434,Hub USB-C Nimbus SE,accesorios,"$2,493",5,0.3839,No,12/13/2024,1377.56,SKU19568,4.45
+71,Laptop Vertex Zen,Cómputo,$15201.53,1,0.3181,No,2024-06-23 00:00:00,11997.68,SKU18113,0.48
+213,Microfono Cobalto GT,Audio ,  1117.04  ,3,0.4129,0,12/09/2024,693.72,SKU40190,8.23
+510,Teclado Mecanico Delta Edge,Accesorios,$307,10,0.3682,0,10/03/2024,229.62,SKU97273,7.11
+324,Monitor Ultrawide Kortex Air,Monitor,4902.47 MXN,4,0.1813,No,2024-05-30,3163.06,SKU41771,1.09
+275,Bocina Bluetooth Onyx Mini,Headphones,"2036,34",8,0.2646,No,16 de noviembre de 2024,1400.53,SKU50617,9.35
+493,Webcam Cobalto GT,accesorios ,615.51 MXN,10,0.4054,No,01/03/2025,256.75,SKU85697,1.03
+363,Monitor Gamer Lumen Elite,Monitor,  2614.49  ,4,0.2036,TRUE,2024-01-24,1949.27,SKU21449,5.5
+285,Bocina Bluetooth Nova Max,Headphones,1459.41,3,0.2219,false,2024-08-03,1002.95,SKU29067,9.48
+477,Mousepad Helix Pulse,ACCESORIOS,$185.90,10,0.3812,Si,13/04/2024,85.03,SKU67847,6.93
+416,Mouse Orbit Fury,Perifericos,$542,5,0.2633,true,07/13/2024,255.06,SKU49561,0.2
+453,Webcam Quartz GT,ACCESORIOS,"1833,28",10,0.3376,true,06/01/2024,1243.34,SKU92504,8.7
+575,Access Point Nova Mini,redes ,1968.00,6,0.2193,1,1 de enero de 2024,1166.29,SKU86768,2.57
+543,Router Onyx Elite,redes,14943.37 MXN,2,0.3861,true,2024-10-09 00:00:00,10368.88,SKU23391,0.44
+356,Monitor Portatil Vertex Fury,monitores,10557.55 MXN,9,0.337,1,11-06-2024,8415.14,SKU33541,0.16
+376,Monitor Portatil Lumen Fury,Monitor,2246.87 MXN,9,0.2858,1,2024-04-05,1507.84,SKU84399,0.8
+12,,Computadoras ,"30314,90",1,,No,02-05-2024,19152.31,SKU31008,7.61
+74,Mini PC Vertex SE,Cómputo,"$44,781",6,0.392,true,25 de septiembre de 2024,31479.13,SKU97874,9.03
+30,All-in-One Auric Edge,Computadoras ,20336.55 MXN,6,0.2088,false,2024-03-03,15564.17,SKU57215,3.02
+611,Adaptador WiFi Kortex Zen,Networking,"$7,642",6,0.1936,true,08/04/2024,5214.83,SKU90881,3.98
+16,NULL,PC,  31476.59  ,1,,true,23 de enero de 2024,20708.12,SKU24153,8.56
+231,Auriculares Gaming Delta Zen,Headphones,$2027.82,8,0.1901,TRUE,06/06/2024,1475.01,SKU37558,7.88
+377,Monitor Lumen Pulse,monitores,3602.74,4,0.362,0,21-07-2024,2070.44,SKU99616,2.08
+7,Desktop Nova Lite,Computadoras ,"27100,03",1,0.2845,false,27-01-2025,13576.30,SKU78592,2.24
+73,Workstation Vertex GT,Computadoras ,"33688,65",6,0.2231,false,2024-08-12 00:00:00,18150.24,SKU15510,10.68
+442,Mousepad Quartz Prime,ACCESORIOS,"803,35",10,0.2868,0,9 de octubre de 2024,326.69,SKU16512,10.12
+419,Hub USB-C Orbit Vertex,Accesorios,$280,5,0.3519,0,2024-08-21,136.35,SKU68778,0.66
+580,Access Point Nova One,Redes,$6653.35,2,0.3436,Si,2025-01-19,4238.66,SKU64344,1.31
+69,Mini PC Vertex Core,Computadoras,  33168.84  ,6,0.2655,true,2025-01-24 00:00:00,24546.84,SKU14530,2.04
+177,Smartphone Quartz Pulse Pro,Smart Phone,$25698.47,7,0.3571,true,2024-11-21,18841.72,SKU72748,8.15
+337,Monitor Kortex Pulse,monitores,"$15,431",4,0.2984,TRUE,07/25/2024,10082.70,SKU71189,6.32
+549,Switch Onyx Core,Redes y Conectividad,3539.57,6,0.2609,No,04/26/2024,2008.95,SKU56348,11.94
+299,Audifonos Nova Vertex,Audífonos,"$1,601",8,0.4114,0,27 de octubre de 2024,1081.37,SKU32424,2.89
+87,Desktop Lumen Lite,computadoras,"22796,75",6,0.2273,true,03/29/2024,12613.34,SKU47049,7.28
+10,All-in-One Nova Edge,Cómputo,"$17,123",6,N/A,1,2024-08-24,9160.63,SKU48192,3.03
+433,Webcam Nimbus GT,Perifericos,2339.97,5,0.4029,TRUE,26/05/2024,1768.91,SKU99060,9.28
+240,Bocina Bluetooth Delta One,Audífonos,$6081.11,3,0.2217,1,22 de septiembre de 2024,4431.22,SKU12417,1.32
+450,Teclado Mecanico Quartz Edge,Accesorios y Perifericos,  296.55  ,10,0.2259,Si,24 de febrero de 2024,166.95,SKU68679,3.76
+161,Tablet Quartz Neo,smartphones,$13668.91,7,0.3378,1,2024-08-05 00:00:00,8142.70,SKU58642,0.11
+32,Desktop Auric Pro,COMPUTADORAS,  56222.67  ,1,0.3453,Si,2024-09-19 00:00:00,22637.42,SKU67886,1.24
+443,Webcam Quartz Elite,accesorios,1039.38,10,0.2596,No,2025-01-05,439.95,SKU49164,9.3
+513,Webcam Delta GT,accesorios,291.56 MXN,10,0.2592,1,2024-09-05 00:00:00,209.51,SKU11606,7.79
+201,Tablet Cobalto Neo,Smart Phone,  12657.76  ,7,0.2555,No,03/18/2024,7571.32,SKU42950,10.3
+358,Monitor Gamer Vertex Nova,Pantallas,2475.35,4,0.274,true,21-10-2024,1030.52,SKU42906,8.91
+188,Foldable Helix Ultra,Telefonos,$6551.92,2,0.272,0,2024-01-06 00:00:00,3237.30,SKU63822,9.37
+143,Foldable Nimbus Elite,smart phone,19160.64 MXN,2,0.257,false,05/06/2024,9794.64,SKU80671,5.15
+360,Monitor 4K Vertex One,Monitores,"$13,154",9,0.3354,true,09/16/2024,7139.75,SKU37359,1.41
+282,Barra de Sonido Nova Prime,Audio,"$4,805",8,0.2563,true,2024-07-17,2073.85,SKU19856,10.56
+162,Smartphone Quartz Prime Pro,Smartphones,$32940.52,2,0.2672,TRUE,04/24/2024,21054.26,SKU46993,0.33
+266,Auriculares Gaming Onyx Plus,Audifonos,"2657,04",3,0.2467,1,20/09/2024,1747.34,SKU70256,11.69
+125,Smartphone Orbit Max,smart phone,$5757.78,7,0.2091,false,09/01/2024,3119.92,SKU64043,6.68
+107,Smartphone Zylo Lite Pro,Celulares,36858.64,2,0.2928,No,24/02/2024,16907.46,SKU19128,11.77
+252,Barra de Sonido Praxis Pro,Audio ,1423.19,8,0.2283,1,11 de octubre de 2024,651.00,SKU62591,4.91
+237,Barra de Sonido Delta Pulse,audio,$904.98,3,0.2129,Si,12/11/2024,459.25,SKU13934,4.61
+521,Adaptador WiFi Praxis Neo,Networking,$7452.11,2,0.3741,No,11 de junio de 2024,3786.58,SKU68080,0.94
+369,Monitor Ultrawide Lumen Core,Pantallas,8683.55,4,0.3365,No,25 de junio de 2024,5365.86,SKU69325,5.96
+9,,Cómputo,27655.76,1,null,false,2024-09-16 00:00:00,21349.59,SKU40300,8.15
+245,Bocina Bluetooth Praxis Max,Headphones,"3654,56",3,0.1827,1,2 de diciembre de 2024,2639.67,SKU71111,5.52
+577,Cable de Red Nova Pulse,Redes y Conectividad,7085.73,2,0.3751,Si,16/11/2024,5191.65,SKU89601,11.55
+393,Monitor Gamer Zylo GT,PANTALLAS,2250.85,4,0.3708,No,6 de febrero de 2024,1142.79,SKU65354,3.94
+159,Smartphone Nimbus Vertex Lite,Celulares,  3901.05  ,7,0.3035,1,2024-02-19 00:00:00,2812.29,SKU45277,3.52
+578,Router Nova Nova,REDES,$5427.05,6,0.2126,Si,24-02-2024,4283.17,SKU67491,2.73
+340,Monitor 4K Kortex One,monitores,"11113,88",9,0.1979,true,18-11-2024,7919.10,SKU55886,5.89
+315,Monitor 4K Auric Mini,PANTALLAS,"$11,703",9,0.285,No,02-09-2024,6243.26,SKU32947,2.0
+196,Tablet Helix Fury,smart phone,  6746.66  ,7,0.2005,false,2024-04-19 00:00:00,4480.09,SKU44256,8.35
+408,Monitor Gamer Orbit Ultra,PANTALLAS,25253.16,9,0.2919,true,2024-04-01 00:00:00,17746.58,SKU55041,0.12
+582,Cable de Red Auric Prime,redes,$5334.40,2,0.3282,No,28/02/2024,3373.76,SKU83532,7.51
+31,Laptop Auric Zen,computadoras,"$38,226",1,,TRUE,02-12-2024,19998.76,SKU25991,9.81
+501,Mouse Delta Neo,accesorios,"480,82",10,0.2662,false,18-03-2024,269.19,SKU83659,8.36
+122,Smartphone Orbit Prime Pro,Telefonos,4404.82 MXN,2,0.3315,false,29 de octubre de 2024,1977.68,SKU20243,7.09
+522,Cable de Red Praxis Prime,Redes y Conectividad,"$1,520",6,0.3427,0,2024-12-31,908.60,SKU24495,6.19
+261,Auriculares Gaming Onyx Neo,Audífonos,"6917,86",3,0.4074,TRUE,2025-01-05 00:00:00,5156.99,SKU37780,0.49
+234,Audifonos Delta SE,AUDIO,  1042.83  ,3,0.3361,No,08/01/2025,822.87,SKU67812,11.9
+457,Mousepad Quartz Pulse,Accesorios,$183.15,5,0.3778,true,19 de julio de 2024,105.51,SKU56714,4.3
+244,Audifonos Praxis Air,audio,"8672,97",8,0.2657,No,2024-01-10,6454.56,SKU42129,3.62
+25,All-in-One Auric Max,COMPUTADORAS,  44064.36  ,1,-,false,9 de enero de 2024,31851.33,SKU50524,9.74
+248,Microfono Praxis Ultra,Headphones,"1659,37",3,0.3522,0,02-03-2024,776.61,SKU55797,10.24
+154,Smartphone Nimbus SE Lite,Smart Phone,19828.54,2,0.3343,Si,8 de enero de 2024,8757.86,SKU67474,3.35
+468,Webcam Helix Ultra,accesorios ,  367.66  ,5,0.2354,TRUE,09/19/2024,220.77,SKU33582,10.91
+262,Barra de Sonido Onyx Prime,Audio ,$596.20,3,0.217,false,11/03/2024,324.38,SKU44119,8.28
+264,Audifonos Onyx Air,Audio ,N/D,8,0.3891,1,2024-10-01,2727.67,SKU93549,0.13
+311,Auriculares Gaming Auric Zen,Audio ,742.92 MXN,8,0.2029,false,2024-11-18,346.71,SKU53414,7.27
+442,Mousepad Quartz Prime,ACCESORIOS,"803,35",10,0.2868,0,9 de octubre de 2024,326.69,SKU16512,10.12
+90,All-in-One Lumen Edge,Cómputo,"55867,02",6,0.417,0,2024-05-16 00:00:00,42276.42,SKU83668,8.34
+333,Monitor Gamer Kortex GT,monitores,7242.48,4,0.2497,1,27 de octubre de 2024,5020.74,SKU92891,8.35
+609,Switch Kortex Core,Networking,"3487,98",2,0.307,1,02-01-2024,1706.60,SKU47081,4.07
+241,Auriculares Gaming Praxis Neo,Audifonos,"432,19",8,0.2361,true,2024-06-28,327.51,SKU32886,11.71
+290,Bocina Bluetooth Nova Edge,AUDIO,  3593.11  ,8,0.3863,No,12 de enero de 2025,2079.90,SKU74387,4.78
+57,Desktop Kortex Pulse,Cómputo,"17856,88",1,0.214,Si,01/30/2025,7427.16,SKU70346,8.59
+346,Monitor Portatil Vertex Plus,monitores,8515.94 MXN,4,0.3663,Si,26-09-2024,5870.13,SKU19543,8.99
+51,Laptop Kortex Zen,COMPUTADORAS,$68000.00,6,0.3342,1,22 de agosto de 2024,37065.10,SKU51807,3.41
+226,Auriculares Gaming Delta Plus,Audifonos,3996.67,3,0.1941,TRUE,2024-05-20,3168.39,SKU56338,11.27
+534,Switch Praxis SE,redes ,2916.16 MXN,6,0.352,false,2024-07-27,1773.25,SKU67627,4.57
+99,Mini PC Lumen Vertex,computacion,"$18,069",1,0.2707,Si,08/08/2024,13839.60,SKU85383,9.18
+131,Tablet Orbit Zen,smartphones,26459.89,2,0.3609,0,4 de abril de 2024,12136.68,SKU76028,4.85
+617,Cable de Red Kortex Pulse,Networking,  2036.34  ,2,0.377,1,06/20/2024,1480.91,SKU82151,4.7
+54,Mini PC Kortex SE,COMPUTADORAS,65038.31,6,0.2946,true,05-10-2024,47225.92,SKU26353,3.8
+276,Auriculares Gaming Onyx Fury,audio,468.04 MXN,3,0.2086,TRUE,11 de febrero de 2024,265.29,SKU90408,3.62
+550,Access Point Onyx Edge,Networking,12661.44 MXN,2,0.3652,No,2024-09-29,5568.53,SKU42810,2.68
+487,Mousepad Cobalto Lite,Perifericos,1140.99,5,0.2757,1,22 de noviembre de 2024,753.83,SKU59467,8.93
+460,Teclado Mecanico Quartz One,Perifericos,"327,82",5,0.2351,false,2024-10-20,200.95,SKU98807,10.11
+524,Switch Praxis Air,REDES,$750.28,2,0.3348,No,2025-01-09,503.61,SKU63125,7.38
+489,Hub USB-C Cobalto Core,Accesorios,722.97,5,0.2885,false,03/14/2024,461.10,SKU84575,1.76
+507,Mousepad Delta Lite,Accesorios,"572,23",10,0.3221,0,2024-11-16,427.02,SKU20052,0.21
+371,Monitor Portatil Lumen Zen,Monitores,$23441.01,9,0.3871,false,29 de enero de 2024,9634.94,SKU48910,0.54
+377,Monitor Lumen Pulse,monitores,3602.74,4,0.362,0,21-07-2024,2070.44,SKU99616,2.08
+559,Switch Onyx Vertex,Networking,6280.70,6,0.2056,Si,27/09/2024,5022.04,SKU28409,8.86
+38,Workstation Auric Nova,computadoras,  32293.58  ,6,0.2098,Si,2024-11-13,24592.50,SKU62859,8.21
+279,Audifonos Onyx Vertex,Headphones,"1716,99",8,0.3001,No,08/20/2024,1022.56,SKU30243,1.06
+344,Monitor Ultrawide Vertex Air,monitores,"$8,738",9,0.2148,TRUE,2025-01-22,4871.61,SKU89794,1.94
+18,Workstation Nova Nova,Cómputo,"$49,907",1,0.2686,TRUE,07/06/2024,21885.79,SKU59756,11.04
+362,Monitor Lumen Prime,Pantallas,  20003.47  ,9,0.2822,true,2024-01-23,9490.53,SKU73604,4.3
+192,Smartphone Helix Pro Pro,Telefonos,4268.11 MXN,2,0.216,false,03/10/2024,3286.75,SKU62670,3.38
+36,Laptop Auric Fury,Computadoras,"$28,216",1,0.3867,TRUE,2025-01-18 00:00:00,19155.87,SKU29239,8.65
+197,Smartphone Helix Pulse Pro,Smartphones,37861.79 MXN,7,0.2494,0,2024-10-16,28941.38,SKU75100,4.44
+40,All-in-One Auric One,computacion,"$33,097",6,0.305,true,02/06/2024,16083.80,SKU49908,8.96
+206,Tablet Cobalto Plus,Celulares,  35845.90  ,7,0.3129,1,25/09/2024,21095.57,SKU95982,5.11
+56,Laptop Kortex Fury,COMPUTADORAS,18375.86,6,0.2758,1,2024-03-31,8744.66,SKU99628,11.27
+383,Monitor Gamer Zylo Elite,PANTALLAS,  3894.90  ,9,0.2545,Si,30/08/2024,1572.92,SKU49500,7.93
+499,Hub USB-C Cobalto Vertex,accesorios,938.22,10,0.315,0,30 de agosto de 2024,558.22,SKU25396,5.16
+411,Monitor Portatil Orbit Zen,Monitor,25253.96 MXN,9,0.1902,true,2 de octubre de 2024,17119.60,SKU42224,5.38
+530,Access Point Praxis Edge,Networking,619.16 MXN,6,0.32,1,11/25/2024,456.22,SKU13906,0.27
+336,Monitor Portatil Kortex Fury,Pantallas,3813.68,4,0.3501,true,01/17/2024,1954.80,SKU71929,7.83
+179,Smartphone Quartz Vertex Lite,Celulares,24894.74 MXN,2,0.2835,TRUE,2025-01-09,14985.61,SKU72353,7.8
+563,Router Nova Elite,redes,11445.00,6,0.3626,No,5 de enero de 2025,4603.22,SKU73287,5.85
+329,Monitor Ultrawide Kortex Core,Pantallas,$2798.95,4,0.314,TRUE,9 de julio de 2024,1684.69,SKU22549,6.3
+309,Audifonos Auric Core,audio,579.38,3,0.3974,No,2024-10-07,427.35,SKU21087,6.96
+535,Access Point Praxis Mini,Redes y Conectividad,"$2,210",2,0.2428,Si,2024-11-20,1286.68,SKU87820,4.08
+373,Monitor Gamer Lumen GT,PANTALLAS,  20620.17  ,4,0.374,Si,2024-08-04,9741.15,SKU79256,8.78
+127,Smartphone Orbit Lite Pro,Smartphones,  5053.47  ,2,0.2328,true,2024-09-04 00:00:00,2684.53,SKU89005,10.21
+606,Adaptador WiFi Kortex Plus,Networking,"1587,17",2,0.2616,false,5 de abril de 2024,930.88,SKU54384,2.58
+352,Monitor Vertex Pro,Pantallas,17190.19 MXN,4,0.3747,Si,02/04/2024,12887.83,SKU85888,0.39
+145,Smartphone Nimbus Max,Celulares,41579.07,2,0.3768,Si,2024-01-02,22185.20,SKU49871,1.35
+587,Cable de Red Auric Lite,Redes,"$6,063",6,0.3104,0,26/04/2024,4781.32,SKU86903,2.84
+153,Foldable Nimbus GT,SMARTPHONES,$35631.03,2,0.3023,true,2025-01-05,17504.59,SKU84072,10.74
+421,Mouse Nimbus Neo,accesorios ,863.95 MXN,5,0.3831,TRUE,2024-08-08 00:00:00,403.10,SKU97193,5.2
+568,Router Nova Ultra,REDES,$7363.71,2,0.3604,TRUE,2024-03-19,5073.64,SKU66540,2.08
+351,Monitor Portatil Vertex Zen,monitores,"2168,74",9,0.264,Si,30-03-2024,952.78,SKU44829,9.32
+414,Monitor Ultrawide Orbit SE,monitores,$27836.07,9,0.3551,0,2024-03-31,22168.46,SKU18785,10.81
+83,Workstation Lumen Elite,Computadoras,$56550.90,1,0.2781,true,16 de mayo de 2024,37880.20,SKU97078,3.62
+402,Monitor Orbit Prime,Pantallas,5207.91,9,0.403,false,25/06/2024,3929.29,SKU25840,3.13
+495,Teclado Mecanico Cobalto Mini,ACCESORIOS,"775,96",5,0.32,Si,9 de abril de 2024,563.30,SKU59879,9.9
+212,Barra de Sonido Cobalto Pro,Audio,$485,3,0.2075,Si,2024-01-14,264.14,SKU50222,10.66
+511,Mouse Delta Zen,ACCESORIOS,"852,71",10,0.3081,Si,2024-12-08 00:00:00,498.23,SKU28868,2.18
+146,Tablet Nimbus Plus,SMARTPHONES,  7276.84  ,7,0.2316,TRUE,12/28/2024,4254.13,SKU58862,0.79
+320,Monitor 4K Auric One,Monitores,10504.52,9,0.3262,true,2024-03-21 00:00:00,4694.41,SKU11443,9.0
+115,Smartphone Zylo Mini,SMARTPHONES,28828.44,2,0.3677,TRUE,30/09/2024,17598.62,SKU45226,5.2
+149,Smartphone Nimbus Core Lite,Telefonos,"27409,46",7,0.3604,Si,2024-01-15,20026.75,SKU12938,5.03
+103,Workstation Zylo Elite,COMPUTADORAS,  17033.51  ,6,0.3111,true,2025-01-17 00:00:00,10987.48,SKU73770,7.32
+564,Switch Nova Air,Redes y Conectividad,16332.52,6,0.3455,No,02/24/2024,11417.24,SKU39689,4.06
+160,Smartphone Nimbus One,SMARTPHONES,$26414.66,2,0.4022,1,2024-02-26,11538.01,SKU89858,6.56
+598,Router Auric Nova,Networking,3274.73 MXN,2,0.3674,1,21-11-2024,2513.89,SKU16803,11.97
+42,Desktop Kortex Prime,computacion,44549.41,1,0.3772,1,2024-06-27,25964.60,SKU31922,8.77
+343,Monitor Gamer Vertex Elite,Pantallas,19021.91 MXN,4,0.3997,true,2025-01-24,13205.83,SKU54615,11.42
+321,Monitor Portatil Kortex Neo,monitores,"$2,794",4,0.2838,1,06/24/2024,1519.15,SKU72825,6.47
+273,Microfono Onyx GT,Audio ,$2849.98,8,0.2867,TRUE,06/02/2024,1654.41,SKU60756,8.14
+331,Monitor Portatil Kortex Zen,Monitores,  12535.65  ,9,0.3718,Si,04/30/2024,9987.71,SKU22871,8.06
+441,Mouse Quartz Neo,accesorios ,"$2,503",5,0.3264,1,2024-11-14 00:00:00,1592.58,SKU93776,11.42
+569,Switch Nova Core,Redes y Conectividad,903.22,2,0.2689,true,2025-01-14 00:00:00,509.10,SKU80304,5.21
+82,Desktop Lumen Prime,COMPUTADORAS,$26390.10,1,0.3018,TRUE,2024-12-29,10960.28,SKU81554,11.77
+420,Teclado Mecanico Orbit One,accesorios,180.56,5,0.2143,false,24 de marzo de 2024,106.56,SKU23984,0.21
+456,Mouse Quartz Fury,ACCESORIOS,"$1,043",5,0.4134,1,23-04-2024,524.52,SKU34577,7.46
+618,Router Kortex Nova,Redes,  5073.43  ,6,0.3318,true,26-08-2024,2506.26,SKU84463,4.7
+492,Mousepad Cobalto Pro,Accesorios,  3107.03  ,5,0.1992,false,2024-07-21 00:00:00,1390.21,SKU45975,6.92
+291,Auriculares Gaming Nova Zen,Audifonos,"439,93",3,0.2971,No,3 de julio de 2024,221.64,SKU17971,0.29
+63,Workstation Vertex Elite,Cómputo,"$61,098",1,0.2171,0,14 de mayo de 2024,33262.66,SKU26296,6.79
+122,Smartphone Orbit Prime Pro,Telefonos,4404.82 MXN,2,0.3315,false,29 de octubre de 2024,1977.68,SKU20243,7.09
+403,Monitor Gamer Orbit Elite,Monitor,N/D,4,0.2723,TRUE,2024-07-23 00:00:00,3140.00,SKU53795,10.38
+482,Mousepad Cobalto Prime,accesorios ,$1201.93,10,0.3877,TRUE,2024-11-10 00:00:00,735.55,SKU53163,0.28
+14,Mini PC Nova SE,PC,$28475.90,1,0.3228,TRUE,2024-08-01 00:00:00,19338.54,SKU82875,8.19
+79,Mini PC Vertex Vertex,computacion,  54722.42  ,6,0.3215,1,2024-11-08 00:00:00,22993.55,SKU97104,8.24
+77,Desktop Vertex Pulse,COMPUTADORAS,$17232.06,6,0.3855,TRUE,06/01/2025,12129.91,SKU50899,5.96
+461,Mouse Helix Neo,accesorios,"$3,021",5,0.2224,false,3 de noviembre de 2024,1717.87,SKU96541,6.3
+37,Desktop Auric Pulse,PC,  16371.57  ,6,0.42,TRUE,02-10-2024,8681.22,SKU93424,3.04
+561,Adaptador WiFi Nova Neo,Networking,"13291,26",6,0.4153,TRUE,05/09/2024,7159.93,SKU21337,11.58
+225,Bocina Bluetooth Delta Max,Audio ,1331.67 MXN,3,0.2592,Si,2024-05-14 00:00:00,685.58,SKU88607,2.76
+64,Mini PC Vertex Air,computadoras,"13895,81",1,0.354,Si,2024-11-13,8228.41,SKU97638,9.29
+242,Barra de Sonido Praxis Prime,Audio,  975.73  ,3,0.2564,1,2024-07-16 00:00:00,680.89,SKU94118,11.64
+148,Foldable Nimbus Ultra,Celulares,9601.21 MXN,7,0.4073,false,21 de enero de 2024,5203.18,SKU35333,0.71
+341,Monitor Portatil Vertex Neo,Pantallas,  4244.16  ,4,0.3357,1,11 de febrero de 2024,3301.86,SKU26518,10.7
+134,Smartphone Orbit SE Lite,SMARTPHONES,"$3,973",2,0.2163,0,12/04/2024,3104.71,SKU59130,1.42
+278,Microfono Onyx Nova,Audio ,$1910.50,3,0.382,No,2024-01-08,1446.95,SKU23379,6.26
+27,Desktop Auric Lite,computadoras,  26993.41  ,6,0.3525,No,2025-01-01,14965.12,SKU87056,0.31
+518,Router Delta Nova,redes,$884.39,2,0.3513,0,2024-01-06,690.58,SKU86463,7.45
+466,Mouse Helix Plus,Accesorios y Perifericos,361.84 MXN,5,0.3915,0,20 de diciembre de 2024,177.20,SKU13035,11.97
+406,Monitor Portatil Orbit Plus,monitores,"$6,801",9,0.2459,1,04/01/2024,3318.35,SKU47940,6.6
+287,Barra de Sonido Nova Lite,Audio ,"$1,656",3,0.3541,No,04/12/2024,935.53,SKU83873,5.26
+599,Switch Auric Vertex,Redes y Conectividad,$1634.01,6,0.3021,1,10/13/2024,798.01,SKU23206,5.94
+33,Workstation Auric GT,computadoras,45533.09 MXN,1,0.229,Si,01-06-2024,20820.94,SKU41769,8.98
+574,Switch Nova SE,Redes,11070.22,2,0.3107,0,03-03-2024,5052.74,SKU10813,10.18
+509,Hub USB-C Delta Core,Accesorios y Perifericos,603.92,5,0.4092,true,2024-01-01,280.47,SKU72761,4.01
+6,null,COMPUTADORAS,  26395.60  ,6,0.2694,false,31-03-2024,13149.00,SKU45622,2.89
+124,Smartphone Orbit Air Lite,smartphones,  36262.62  ,7,0.2018,true,10/31/2024,27661.38,SKU92042,9.17
+570,Access Point Nova Edge,REDES,$2235.17,6,0.3013,false,23/05/2024,1105.38,SKU19917,9.0
+506,Mouse Delta Plus,ACCESORIOS,597.95,5,0.3319,true,2024-05-09,387.82,SKU97157,9.37
+156,Tablet Nimbus Fury,smartphones,$36447.38,2,0.3019,Si,13-10-2024,23542.89,SKU56630,4.45
+589,Switch Auric Core,redes ,"3442,70",6,0.1861,No,15 de febrero de 2024,2511.38,SKU12912,6.58
+454,Hub USB-C Quartz SE,Accesorios y Perifericos,$333,10,0.2944,TRUE,22-01-2024,262.62,SKU95434,5.42
+558,Router Onyx Nova,Networking,2486.26 MXN,6,0.4067,Si,27/08/2024,1644.85,SKU16528,10.3
+85,All-in-One Lumen Max,COMPUTADORAS,26796.69,6,0.3156,1,10/18/2024,18496.17,SKU67674,5.58
+328,Monitor Gamer Kortex Ultra,Pantallas,13737.01,9,0.2496,1,2025-01-21 00:00:00,5916.10,SKU77807,5.14
+58,Workstation Kortex Nova,computacion,65036.76,1,0.2608,0,2025-01-08,40729.67,SKU46173,4.92
+388,Monitor Gamer Zylo Ultra,Monitor,$5732.64,4,0.213,true,11-12-2024,3490.56,SKU31729,4.92
+296,Auriculares Gaming Nova Fury,Audio ,2185.34 MXN,8,0.2832,false,2024-09-06,1203.98,SKU86966,2.03
+555,Access Point Onyx Mini,redes ,  1011.56  ,6,0.3528,1,2024-01-28,785.58,SKU83479,0.98
+375,Monitor 4K Lumen Mini,PANTALLAS,$5026.26,9,0.2878,true,09/10/2024,2470.12,SKU67337,3.91
+590,Access Point Auric Edge,Networking,2112.02,6,0.2513,false,07/23/2024,1681.35,SKU66575,7.13
+427,Mousepad Nimbus Lite,Accesorios y Perifericos,$152,10,0.3301,1,25/12/2024,87.37,SKU59387,11.61
+298,Microfono Nova Nova,Audífonos,747.43,3,0.3936,No,2024-11-07 00:00:00,595.78,SKU92006,11.88
+502,Mousepad Delta Prime,Accesorios y Perifericos,1187.68,5,0.2934,false,27-02-2024,653.33,SKU25315,7.95
+198,Foldable Helix Nova,Smartphones,$14532.61,7,0.2753,TRUE,2024-03-28,9400.53,SKU78432,8.23
+572,Cable de Red Nova Pro,Redes y Conectividad,  649.84  ,6,0.2345,0,2024-06-01 00:00:00,426.82,SKU83264,5.46
+322,Monitor Kortex Prime,PANTALLAS,"5883,98",4,0.2478,0,05/16/2024,4019.09,SKU31871,6.38
+384,Monitor Ultrawide Zylo Air,monitores,$10968.12,4,0.3092,false,09/17/2024,5465.38,SKU30273,10.2
+357,Monitor Vertex Pulse,monitores,"$11,860",9,0.356,No,09/03/2024,9035.76,SKU16050,10.45
+294,Audifonos Nova SE,Audio,  755.89  ,8,0.3869,No,29-04-2024,565.72,SKU13188,11.61
+228,Microfono Delta Ultra,Audio ,  1374.56  ,3,0.4171,No,2024-09-25,642.77,SKU33867,8.96
+431,Mouse Nimbus Zen,Perifericos,  254.94  ,10,0.3559,0,2024-12-03 00:00:00,148.33,SKU16091,6.71
+517,Mousepad Delta Pulse,Accesorios,  2835.58  ,10,0.2908,0,06/03/2024,1674.04,SKU16173,4.17
+409,Monitor Ultrawide Orbit Core,Monitores,"$13,699",4,0.2147,0,2024-02-22 00:00:00,6502.47,SKU26528,10.78
+405,Monitor 4K Orbit Max,Monitor,"$26,381",9,0.3702,0,06-02-2024,15068.99,SKU13748,6.37
+269,Audifonos Onyx Core,Audífonos,  4544.06  ,8,0.2342,1,14 de febrero de 2024,3105.65,SKU89210,11.27
+349,Monitor Ultrawide Vertex Core,Monitores,  8218.80  ,9,0.1805,No,2024-07-24,4836.29,SKU76506,3.35
+95,All-in-One Lumen Mini,computadoras,  51105.77  ,1,0.2399,TRUE,01/03/2025,20824.13,SKU63010,3.12
+94,Mini PC Lumen SE,computacion,  58178.52  ,1,0.2275,No,2024-02-29,23648.15,SKU74027,3.52
+410,Monitor 4K Orbit Edge,monitores,  2824.30  ,4,0.2737,1,2024-05-28,1271.44,SKU15369,8.28
+288,Microfono Nova Ultra,Audio ,"5296,45",8,0.2167,0,13/06/2024,3263.09,SKU52373,3.88
+186,Tablet Helix Plus,smartphones,$28945.11,2,0.3148,1,04-01-2024,14691.52,SKU27922,3.65
+98,Workstation Lumen Nova,Computadoras,$39575.72,1,0.3047,TRUE,5 de enero de 2025,23098.90,SKU91159,0.7
+138,Foldable Orbit Nova,Telefonos,7002.61 MXN,2,0.3891,true,2024-10-17 00:00:00,5069.85,SKU85611,1.19
+172,Smartphone Quartz Pro Pro,Celulares,3632.94 MXN,2,0.2404,true,2024-07-04,1591.21,SKU32922,0.37
+155,Smartphone Nimbus Mini,Telefonos,  36068.08  ,2,0.3604,TRUE,02-02-2025,18407.55,SKU93637,10.7
+126,Tablet Orbit Plus,Smartphones,6207.95,2,0.3824,Si,2024-03-15 00:00:00,3770.91,SKU28004,11.55
+224,Audifonos Delta Air,Audífonos,$3092.44,3,0.2016,true,8 de diciembre de 2024,1586.40,SKU80794,10.46
+500,Teclado Mecanico Cobalto One,ACCESORIOS,2257.03 MXN,5,0.3073,0,2024-02-13,1447.17,SKU34255,0.28
+114,Smartphone Zylo SE Lite,Smart Phone,"$28,091",7,0.2081,No,21/07/2024,11936.89,SKU78930,2.45
+254,Audifonos Praxis SE,AUDIO,  1176.97  ,8,0.357,1,11/12/2024,547.89,SKU65351,7.13
+259,Audifonos Praxis Vertex,Audífonos,"625,08",8,0.3956,true,2024-06-17,254.85,SKU77897,3.81
+613,Router Kortex GT,REDES,"$3,168",6,0.3044,0,2024-08-28 00:00:00,1429.05,SKU39699,3.89
+102,Desktop Zylo Prime,Computadoras,"$27,580",6,0.2987,true,21/01/2025,14848.62,SKU67485,2.67
+597,Cable de Red Auric Pulse,Redes,1471.53,2,0.3704,No,2024-02-20 00:00:00,949.92,SKU92530,6.19
+486,Mouse Cobalto Plus,Accesorios y Perifericos,201.17 MXN,5,0.2768,No,01-01-2025,130.77,SKU21085,10.55
+26,Laptop Auric Plus,Cómputo,"53168,01",1,NULL,true,01-10-2024,29005.98,SKU31948,3.61
+372,Monitor Lumen Pro,monitores,"7389,10",9,0.2475,true,2024-01-04,5223.51,SKU33094,4.54
+565,Access Point Nova Max,redes ,2302.59,2,0.2579,1,15/04/2024,1167.69,SKU84945,11.51
+15,null,computadoras,"$33,777",6,-,1,08/08/2024,19075.57,SKU46536,3.13
+514,Hub USB-C Delta SE,ACCESORIOS,$244,5,0.2087,true,30/09/2024,188.63,SKU45361,3.44
+526,Adaptador WiFi Praxis Plus,Networking,  7635.84  ,2,0.294,TRUE,07/16/2024,5018.17,SKU47454,8.69
+355,Monitor 4K Vertex Mini,PANTALLAS,"$14,691",9,0.2734,Si,20/01/2025,6227.89,SKU79740,2.93
+608,Router Kortex Ultra,REDES,$550.00,2,0.2377,false,2024-06-01,264.21,SKU57842,11.17
+591,Adaptador WiFi Auric Zen,redes,827.84,2,0.2006,true,2024-12-23 00:00:00,662.22,SKU26878,9.33
+520,Access Point Delta One,redes ,$3360.51,2,0.2924,TRUE,07-08-2024,2383.45,SKU46162,10.59
+76,Laptop Vertex Fury,COMPUTADORAS,  18729.75  ,6,0.2269,0,2024-06-14 00:00:00,12075.09,SKU54263,3.61
+283,Microfono Nova Elite,Audífonos,"596,91",8,0.3173,true,2024-03-08,285.41,SKU65412,5.84
+60,All-in-One Kortex One,Computadoras,"48462,73",6,0.3325,1,10/04/2024,25540.81,SKU35131,9.97
+323,Monitor Gamer Kortex Elite,monitores,"2463,84",9,0.2121,true,2024-05-03,1228.84,SKU69708,6.85
+292,Barra de Sonido Nova Pro,Audifonos,"$4,444",8,0.3162,No,2024-09-11 00:00:00,3143.53,SKU34589,10.15
+222,Barra de Sonido Delta Prime,AUDIO,5707.81,8,0.2015,No,2024-11-14,3236.74,SKU40177,4.52
+28,Workstation Auric Ultra,Cómputo,24190.36 MXN,6,0.2777,1,03/28/2024,16635.53,SKU61681,1.86
+34,Mini PC Auric SE,computadoras,"63820,31",1,0.3042,0,2024-02-06 00:00:00,32924.40,SKU28461,6.1
+70,All-in-One Vertex Edge,computadoras,N/D,1,0.3306,0,2025-01-21,10240.98,SKU95540,7.24
+592,Cable de Red Auric Pro,Redes y Conectividad,"$1,729",2,0.2519,1,2024-07-24 00:00:00,1274.15,SKU49779,9.31
+109,Smartphone Zylo Core Lite,smart phone,  9060.59  ,2,0.2791,No,2024-12-15,7247.70,SKU61519,6.47
+256,Auriculares Gaming Praxis Fury,Headphones,$1021.80,3,0.2884,true,10/01/2024,640.21,SKU78608,10.36
+96,Laptop Lumen Fury,Cómputo,  14490.38  ,6,0.4103,false,24 de mayo de 2024,8004.23,SKU25346,2.13
+451,Mouse Quartz Zen,ACCESORIOS,"2041,42",5,0.3295,Si,2024-07-22 00:00:00,1031.34,SKU53454,9.46
+150,Smartphone Nimbus Edge,SMARTPHONES,  4357.07  ,7,0.2509,0,05/07/2024,1968.22,SKU12918,2.16
+403,Monitor Gamer Orbit Elite,Monitor,N/D,4,0.2723,TRUE,2024-07-23 00:00:00,3140.00,SKU53795,10.38
+389,Monitor Ultrawide Zylo Core,Monitores,  3131.91  ,4,0.3887,Si,2024-10-21 00:00:00,2482.24,SKU35388,3.18
+533,Router Praxis GT,Redes,2016.78,6,0.3662,TRUE,2024-12-10,1414.13,SKU97990,4.1
+132,Smartphone Orbit Pro Pro,Smartphones,  5345.95  ,2,0.2293,No,2024-09-20,3203.72,SKU76020,7.82
+539,Switch Praxis Vertex,REDES,3494.06,2,0.3081,No,01/16/2025,2752.36,SKU79134,6.22
+295,Bocina Bluetooth Nova Mini,Audio,2244.90,8,0.1928,true,2024-05-17,1059.13,SKU95487,4.43
+491,Mouse Cobalto Zen,accesorios,"205,58",10,0.1815,No,2024-06-17,90.26,SKU94619,0.38
+135,Smartphone Orbit Mini,smartphones,$8232.79,7,0.3796,TRUE,2024-10-22,6077.49,SKU24906,2.82
+332,Monitor Kortex Pro,Monitores,"$16,589",9,0.2619,Si,12-05-2024,8520.00,SKU36591,6.63
+595,Access Point Auric Mini,REDES,13669.45,2,0.3462,1,18-05-2024,10076.01,SKU77911,1.19
+483,Webcam Cobalto Elite,accesorios ,"2656,31",10,0.3163,false,23-08-2024,2008.75,SKU52607,11.05
+92,Desktop Lumen Pro,computacion,"$29,023",6,0.1952,0,2024-04-21,14111.67,SKU51572,1.65
+432,Mousepad Nimbus Pro,ACCESORIOS,$236.92,5,0.3303,1,05/08/2024,133.42,SKU15573,0.8
+116,Tablet Zylo Fury,smartphones,  4629.96  ,2,0.3087,0,13/06/2024,2050.81,SKU81757,9.5
+439,Hub USB-C Nimbus Vertex,accesorios ,$407.43,10,0.3099,true,2024-02-03 00:00:00,246.42,SKU70388,0.45
+17,Desktop Nova Pulse,computacion,15188.00 MXN,6,,TRUE,2024-06-18,7138.70,SKU66799,5.92
+199,Smartphone Helix Vertex Lite,SMARTPHONES,  24765.63  ,7,0.249,true,2025-01-18,15964.36,SKU49511,5.49
+527,Cable de Red Praxis Lite,Redes,"$16,171",2,0.247,0,2024-07-11,7469.02,SKU87438,2.42
+91,Laptop Lumen Zen,computadoras,16734.15,6,0.2832,0,2024-05-21,8873.41,SKU30699,7.75
+119,Smartphone Zylo Vertex Lite,Smart Phone,$5867.88,2,0.2239,Si,22/11/2024,3312.52,SKU56979,6.65
+373,Monitor Gamer Lumen GT,PANTALLAS,  20620.17  ,4,0.374,Si,2024-08-04,9741.15,SKU79256,8.78
+80,All-in-One Vertex One,computadoras,13070.40,1,0.2753,false,18/08/2024,8059.13,SKU14000,6.19
+463,Webcam Helix Elite,accesorios,$339.83,5,0.2261,Si,22 de febrero de 2024,263.57,SKU40284,2.84
+515,Teclado Mecanico Delta Mini,Perifericos,"3368,72",5,0.219,1,25 de marzo de 2024,1377.41,SKU76138,10.27
+235,Bocina Bluetooth Delta Mini,Audio ,1119.56,3,0.3042,Si,29 de diciembre de 2024,677.36,SKU84099,4.15
+210,Bocina Bluetooth Cobalto Edge,AUDIO,  1643.04  ,8,0.3348,Si,14-01-2024,883.24,SKU53277,10.68
+229,Audifonos Delta Core,Audio ,  843.37  ,8,0.2877,0,04/22/2024,483.59,SKU51140,6.83
+208,Foldable Cobalto Ultra,Smart Phone,3669.04 MXN,7,0.2064,0,24-04-2024,2656.88,SKU82156,2.3
+485,Teclado Mecanico Cobalto Max,accesorios,  3397.59  ,10,0.2091,No,2025-02-03,2377.83,SKU81601,10.27
+364,Monitor Ultrawide Lumen Air,monitores,  9453.57  ,9,0.4191,false,25/09/2024,6788.06,SKU27636,10.97
+223,Microfono Delta Elite,Headphones,$563.70,8,0.4184,false,07/14/2024,388.49,SKU24586,10.28
+93,Workstation Lumen GT,Cómputo,  43980.89  ,6,0.4174,TRUE,13-01-2025,25621.86,SKU54535,0.41
+47,Desktop Kortex Lite,COMPUTADORAS,18423.86,6,0.2602,0,11-02-2024,13382.97,SKU11577,9.49
+220,Bocina Bluetooth Cobalto One,Audífonos,4307.38,3,0.2163,Si,24 de enero de 2025,2596.86,SKU95673,3.88
+407,Monitor Orbit Lite,monitores,  19163.47  ,9,0.293,true,2024-08-11,12479.38,SKU27679,5.39
+378,Monitor Gamer Lumen Nova,Monitores,"$8,470",4,0.2052,1,05/18/2024,4966.59,SKU94327,1.93
+458,Webcam Quartz Nova,Accesorios y Perifericos,"372,52",10,0.1917,Si,13/09/2024,163.35,SKU52309,7.71
+319,Monitor Ultrawide Auric Vertex,monitores,3774.97 MXN,9,0.2177,true,2025-01-06 00:00:00,2922.24,SKU96549,4.9
+301,Auriculares Gaming Auric Neo,Audífonos,$911,8,0.2588,1,2024-02-04,392.86,SKU48963,4.67
+313,Monitor Gamer Auric GT,Monitor,"$22,303",4,0.2916,true,09/09/2024,13253.83,SKU13689,7.61
+484,Hub USB-C Cobalto Air,ACCESORIOS,491.44 MXN,5,0.193,TRUE,27 de agosto de 2024,197.59,SKU49528,5.39
+130,Smartphone Orbit Edge,SMARTPHONES,"$12,494",7,0.3076,TRUE,12-03-2024,9611.32,SKU15317,9.0
+586,Adaptador WiFi Auric Plus,Networking,$17660.57,2,0.381,1,2024-08-01 00:00:00,7923.50,SKU57054,11.01
+265,Bocina Bluetooth Onyx Max,Audífonos,$760,3,0.1899,Si,15 de febrero de 2024,465.82,SKU86400,7.82
+305,Bocina Bluetooth Auric Max,Headphones,"$1,008",8,0.2582,1,2024-10-21,540.89,SKU87200,4.72
+584,Switch Auric Air,Networking,$14346.48,2,0.1968,No,20 de octubre de 2024,9233.47,SKU20949,11.34
+174,Smartphone Quartz SE Lite,Telefonos,11259.21,7,0.2268,No,04/23/2024,7070.30,SKU75426,4.98
+342,Monitor Vertex Prime,monitores,7644.17,4,0.3157,0,2024-12-26 00:00:00,3165.62,SKU31147,7.96
+374,Monitor Ultrawide Lumen SE,PANTALLAS,22016.61 MXN,4,0.3716,0,2025-01-15,14869.26,SKU93469,3.89
+185,Smartphone Helix Max,smart phone,"$11,060",7,0.2737,true,09/01/2025,5628.28,SKU16583,4.09
+165,Smartphone Quartz Max,SMARTPHONES,8728.22,7,0.2326,false,23/11/2024,4875.44,SKU62709,1.19
+4,Mini PC Nova Air,computadoras,"59704,35",6,0.2269,false,2024-07-26,43152.24,SKU93304,11.87
+490,Teclado Mecanico Cobalto Edge,ACCESORIOS,$701.76,5,0.2765,1,2024-06-28 00:00:00,331.41,SKU23806,0.51
+171,Tablet Quartz Zen,Smartphones,"4674,34",2,0.2325,0,10/25/2024,3594.06,SKU36688,3.18
+536,Adaptador WiFi Praxis Fury,REDES,566.31,6,0.1872,true,2024-12-07 00:00:00,361.82,SKU64444,2.86
+601,Adaptador WiFi Kortex Neo,Redes,$2666.31,6,0.3044,0,2025-01-05,1946.66,SKU37450,10.6
+214,Audifonos Cobalto SE,Audio ,$412.88,8,0.2242,1,03/05/2024,209.26,SKU67562,9.92
+301,Auriculares Gaming Auric Neo,Audífonos,$911,8,0.2588,1,2024-02-04,392.86,SKU48963,4.67
+504,Hub USB-C Delta Air,Accesorios,  2625.64  ,5,0.2784,Si,2024-05-11,1965.26,SKU11346,4.67
+475,Teclado Mecanico Helix Mini,accesorios ,  2554.85  ,10,0.3474,TRUE,2024-03-27 00:00:00,1486.30,SKU16675,7.61
+423,Webcam Nimbus Elite,Accesorios y Perifericos,"250,67",10,0.3237,false,2024-08-06,195.17,SKU68709,4.23
+216,Auriculares Gaming Cobalto Fury,audio,  1493.81  ,8,0.2178,Si,28 de abril de 2024,1043.54,SKU89187,11.88
+380,Monitor 4K Lumen One,Monitor,  25375.31  ,4,0.2289,Si,05/11/2024,16710.68,SKU75892,11.41
+236,Auriculares Gaming Delta Fury,Audifonos,"3329,05",8,0.4098,0,23-10-2024,2201.08,SKU87124,2.23
+55,All-in-One Kortex Mini,computadoras,"$49,270",6,0.3755,Si,2024-03-21,35120.13,SKU48788,6.93
+21,Laptop Auric Neo,Computadoras ,$41665.57,6,,true,01/20/2025,30426.81,SKU48093,8.84
+316,Monitor Portatil Auric Fury,monitores,"17090,97",9,0.3936,TRUE,03/24/2024,10422.74,SKU40310,2.32
+203,Foldable Cobalto Elite,Smartphones,"$8,829",2,0.1877,Si,2024-07-14 00:00:00,5282.11,SKU96466,0.8
+9,,Cómputo,27655.76,1,null,false,2024-09-16 00:00:00,21349.59,SKU40300,8.15
+400,Monitor 4K Zylo One,Monitor,2268.61 MXN,9,0.3419,1,2024-07-21,966.76,SKU33027,1.0
+444,Hub USB-C Quartz Air,Accesorios y Perifericos,389.88,5,0.281,true,2024-01-18 00:00:00,306.26,SKU79902,6.96
+379,Monitor Ultrawide Lumen Vertex,Monitores,2571.64 MXN,4,0.1888,No,2024-08-24,1302.41,SKU88675,3.78
+144,Smartphone Nimbus Air Lite,smartphones,13818.03,2,0.3618,0,3 de enero de 2025,10787.23,SKU55628,11.99
+219,Audifonos Cobalto Vertex,AUDIO,$404,8,0.2576,TRUE,2024-12-28,320.78,SKU69873,1.77
+232,Barra de Sonido Delta Pro,Audifonos,$681,3,0.2387,Si,30-03-2024,314.25,SKU25943,5.57
+615,Access Point Kortex Mini,Redes,"7556,52",2,0.2719,0,2024-08-18,5256.36,SKU48021,0.67
+108,Foldable Zylo Ultra,Celulares,12828.66,2,0.4149,true,4 de mayo de 2024,10256.16,SKU72851,11.38
+455,Teclado Mecanico Quartz Mini,accesorios ,241.52 MXN,5,0.2356,true,2024-07-20,175.66,SKU69597,4.57
+45,All-in-One Kortex Max,computadoras,45333.45,1,0.2314,1,07/10/2024,34982.08,SKU13386,2.1
+603,Router Kortex Elite,Networking,1952.88 MXN,6,0.3298,No,13/11/2024,1175.88,SKU98987,8.73
+195,Smartphone Helix Mini,SMARTPHONES,"5464,68",7,0.4114,false,03/10/2024,3469.19,SKU31168,11.28
+251,Auriculares Gaming Praxis Zen,Audio ,$2586.41,3,0.3119,Si,2024-10-11 00:00:00,1796.17,SKU71100,10.55
+579,Switch Nova Vertex,REDES,3346.39 MXN,2,0.2622,true,2024-02-09,1970.53,SKU94976,9.08
+556,Adaptador WiFi Onyx Fury,redes ,$858.14,2,0.3206,Si,2024-04-03,509.21,SKU65211,5.94
+583,Router Auric Elite,Redes,4356.58 MXN,2,0.3388,No,26/09/2024,3361.14,SKU72382,4.1
+46,Laptop Kortex Plus,computadoras,24673.40 MXN,6,0.3097,Si,13-05-2024,15013.46,SKU59815,6.84
+185,Smartphone Helix Max,smart phone,"$11,060",7,0.2737,true,09/01/2025,5628.28,SKU16583,4.09
+418,Webcam Orbit Nova,accesorios,"$2,576",10,0.3087,1,08/16/2024,2056.95,SKU62986,5.93
+284,Audifonos Nova Air,Audífonos,"704,15",3,0.3994,0,06/27/2024,357.14,SKU19386,9.81
+111,Tablet Zylo Zen,Telefonos,  7068.08  ,7,0.2192,No,08/01/2024,5164.70,SKU73638,7.86
+401,Monitor Portatil Orbit Neo,PANTALLAS,11640.28,4,0.4029,true,31 de mayo de 2024,6180.78,SKU87520,1.12
+189,Smartphone Helix Core Lite,smart phone,  18090.73  ,7,0.2417,false,2025-01-10 00:00:00,13703.34,SKU55506,8.08
+602,Cable de Red Kortex Prime,redes ,$8429.83,2,0.3979,true,21/05/2024,4115.34,SKU67355,1.43
+488,Webcam Cobalto Ultra,accesorios ,$668.51,10,0.2378,Si,05-01-2025,296.38,SKU96432,10.93
+302,Barra de Sonido Auric Prime,Headphones,  2861.27  ,3,0.2837,1,2024-06-03 00:00:00,2001.35,SKU67011,3.76
+13,Workstation Nova GT,computadoras,$22061.28,6,NULL,0,27 de septiembre de 2024,11058.84,SKU75910,2.93
+66,Laptop Vertex Plus,PC,"$15,233",1,0.2536,No,20-01-2024,9455.54,SKU98069,9.23
+65,All-in-One Vertex Max,Computadoras,15736.34,1,0.241,true,01-10-2024,9145.46,SKU27812,5.45
+503,Webcam Delta Elite,Accesorios y Perifericos,4099.95 MXN,5,0.3325,Si,2024-12-26,2231.33,SKU26149,7.81
+317,Monitor Auric Pulse,Monitores,4957.78 MXN,4,0.2268,No,2024-01-30 00:00:00,2208.70,SKU16432,6.35
+257,Barra de Sonido Praxis Pulse,Audio,  2514.23  ,3,0.3485,Si,04/02/2024,1337.13,SKU69919,5.12
+619,Switch Kortex Vertex,redes ,14276.10,2,0.3867,1,2024-12-31,9938.02,SKU57562,7.75
+562,Cable de Red Nova Prime,Redes,  7816.25  ,6,0.3376,true,2024-12-18,5986.47,SKU79726,2.39
+611,Adaptador WiFi Kortex Zen,Networking,"$7,642",6,0.1936,true,08/04/2024,5214.83,SKU90881,3.98
+50,All-in-One Kortex Edge,computadoras,$22069.52,6,0.3247,1,26-11-2024,11869.79,SKU96667,2.56
+184,Smartphone Helix Air Lite,smartphones,  14525.98  ,7,0.2015,0,2025-01-20,10273.74,SKU92550,6.42
+233,Microfono Delta GT,Audio ,  1137.67  ,8,0.3965,No,14/03/2024,792.37,SKU52005,1.96
+88,Workstation Lumen Ultra,computacion,"$29,305",6,0.1991,true,2024-12-29,22278.35,SKU24229,3.98
+139,Smartphone Orbit Vertex Lite,smart phone,22592.32 MXN,2,0.3012,1,2024-11-22 00:00:00,9525.43,SKU68551,0.26
+394,Monitor Ultrawide Zylo SE,PANTALLAS,2442.57 MXN,4,0.314,true,07/17/2024,1943.58,SKU14504,5.29

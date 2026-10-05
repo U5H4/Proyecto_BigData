@@ -1,0 +1,13 @@
+﻿fuente,archivo,formato,sistema_origen,registros,columnas,nulos,duplicados_exactos,muestra_valores_crudos
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,1508,80,2006 | Itzel Ramirez | itzel.ramirez@yahoo.com.mx | 5564883266 | Qro. | 2025-03-07
+A,productos.csv,CSV,Sistema de inventario,641,11,19,21,"581 | Adaptador WiFi Auric Neo | redes | $14,758 | 2 | 0.3587"
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,4269,108,70 | 2024-11-24 | 1551 | tienda_fisica | 10 | cancelado
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,3805,161,3881 | 2620 | 420 | -3 | $181 | 0
+A,pagos.csv,CSV,Pasarela de pagos,3672,6,36,72,2751 | 2751 | tarjeta_credito |   44603.61   | 17-10-2024 | aprobado
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,21757,18,"97 | Desktop Lumen Pulse | Computadoras | [""nuevo""] | True | 2025-01-15 00:00:00"
+B,resenas.json,JSON,App movil / Web,3075,8,61,75,875 | 313 | 4 | recomendado | 2024-12-09 | Si
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,0,126,507 | 2026-06-05T16:55:09 | producto_comprado | 614 | Android | GUADALAJARA
+C,sucursales.xlsx,XLSX (Google Sheets),Google Sheets - Direccion de Operaciones,12,6,0,0,1 | 2023-01-22 00:00:00 | 3409 | Sucursal NovaCommerce Veracruz 1 | VERACRUZ | Norte
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,0,0,1 | Distribuidora Ana S.A. | Electrónica / Audio | Alemania | ventas.proveedor1@logisticaindustrial.mx | 39
+C,promociones.xlsx,XLSX (Google Sheets),Google Sheets - Marketing,14,6,0,0,"1 | Dia del Padre | 27 | 12-09-2025 | 07/26/2025 | Accesorios, Monitores"
+C,objetivos_venta.xlsx,XLSX (Google Sheets),Google Sheets - Direccion Comercial,9,5,0,0,2024 | 1 | Audio | 4019897.61 | 694

@@ -1,0 +1,118 @@
+﻿destino,columna,tipo_sql,no_nulos,nulos,valores_distintos,min,max
+dataset_postgresql.csv,id_detalle,Int64,3891,0,3891,1,4600
+dataset_postgresql.csv,id_pedido,Int64,3891,0,2259,1,3600
+dataset_postgresql.csv,id_cliente,Int64,3891,0,1314,1,2058
+dataset_postgresql.csv,id_producto,Int64,3891,0,551,1,608
+dataset_postgresql.csv,id_categoria,int64,3891,0,6,1,6
+dataset_postgresql.csv,id_sucursal,Int64,3891,0,12,1,12
+dataset_postgresql.csv,fecha_pedido,datetime64[ns],3891,0,909,2024-01-01 00:00:00,2026-12-09 00:00:00
+dataset_postgresql.csv,anio,Int64,3891,0,3,2024,2026
+dataset_postgresql.csv,mes,Int64,3891,0,12,1,12
+dataset_postgresql.csv,mes_nombre,object,3891,0,12,Abril,Setiembre
+dataset_postgresql.csv,trimestre,Int64,3891,0,4,1,4
+dataset_postgresql.csv,anio_mes,object,3891,0,36,2024-01,2026-12
+dataset_postgresql.csv,cliente_nombre,object,3891,0,1055,ABRIL RODRIGUEZ,ximena jimenez
+dataset_postgresql.csv,correo,object,3891,0,1292,SIN_DATO@novatech.mx,ximena.vega@hotmail.com
+dataset_postgresql.csv,ciudad,object,3891,0,10,Cancun,Veracruz
+dataset_postgresql.csv,region,object,3891,0,4,Centro,Sureste
+dataset_postgresql.csv,canal_registro,object,3891,0,3,app_movil,web
+dataset_postgresql.csv,es_premium,boolean,3891,0,2,False,True
+dataset_postgresql.csv,fecha_alta_cliente,datetime64[ns],3891,0,541,2024-01-01 00:00:00,2025-12-01 00:00:00
+dataset_postgresql.csv,producto_nombre,object,3891,0,551,Access Point Auric Edge,Workstation Zylo Elite
+dataset_postgresql.csv,categoria,object,3891,0,6,Accesorios,Smartphones
+dataset_postgresql.csv,descripcion_categoria,object,3891,0,6,Accesorios,Smartphones
+dataset_postgresql.csv,rango_precio,object,3891,0,6,Alto,Ultra Premium
+dataset_postgresql.csv,precio_lista,float64,3891,0,551,152.0,68000.0
+dataset_postgresql.csv,margen_bruto_producto,float64,3891,0,476,0.1803,0.42
+dataset_postgresql.csv,costo_estimado,float64,3891,0,551,101.82,48075.17
+dataset_postgresql.csv,utilidad_bruta,float64,3891,0,549,30.22,23296.55
+dataset_postgresql.csv,cantidad,int64,3891,0,8,1,8
+dataset_postgresql.csv,precio_unitario,float64,3891,0,819,152.0,68000.0
+dataset_postgresql.csv,descuento,float64,3891,0,1269,0.0,15208.85
+dataset_postgresql.csv,porcentaje_descuento,float64,3891,0,767,0.0,24.98
+dataset_postgresql.csv,subtotal,float64,3891,0,2469,152.24,544000.0
+dataset_postgresql.csv,total,float64,3891,0,3126,140.68,544000.0
+dataset_postgresql.csv,canal_venta,object,3891,0,3,app_movil,web
+dataset_postgresql.csv,estado,object,3891,0,4,cancelado,pendiente
+dataset_postgresql.csv,es_completado,bool,3891,0,2,False,True
+dataset_postgresql.csv,total_pedido,float64,3891,0,2161,161.37,846105.86
+dataset_postgresql.csv,unidades,Int64,3891,0,31,1,31
+dataset_postgresql.csv,lineas,Int64,3891,0,6,1,6
+dataset_postgresql.csv,categorias_distintas,Int64,3891,0,6,1,6
+dataset_postgresql.csv,ticket_promedio_linea,float64,3891,0,2161,161.37,531577.09
+dataset_postgresql.csv,metodo,object,3891,0,6,efectivo,transferencia
+dataset_postgresql.csv,monto,float64,3891,0,2258,160.0,960261.85
+dataset_postgresql.csv,estado_pago,object,3891,0,4,APROBADO,rechazado
+dataset_postgresql.csv,diferencia_pago,float64,3891,0,885,-5.65,452405.69
+dataset_postgresql.csv,conciliado,bool,3891,0,2,False,True
+dataset_postgresql.csv,id_ciudad,int64,3891,0,10,1,10
+tablas/categorias.csv,id_categoria,int64,6,0,6,1,6
+tablas/categorias.csv,nombre,object,6,0,6,Accesorios,Smartphones
+tablas/categorias.csv,descripcion,object,6,0,6,"Audifonos, bocinas y equipo de sonido",Telefonos inteligentes y tablets
+tablas/dim_ciudades.csv,id_ciudad,int64,10,0,10,1,10
+tablas/dim_ciudades.csv,nombre,object,10,0,10,Cancun,Veracruz
+tablas/dim_ciudades.csv,region,object,10,0,4,Centro,Sureste
+tablas/dim_sucursales.csv,id_sucursal,Int64,12,0,12,1,12
+tablas/dim_sucursales.csv,nombre,object,12,0,12,Sucursal NovaCommerce Cancun 7,Sucursal NovaCommerce Veracruz 11
+tablas/dim_sucursales.csv,ciudad,object,12,0,10,Cancun,Veracruz
+tablas/dim_sucursales.csv,region,object,12,0,4,Centro,Sureste
+tablas/dim_sucursales.csv,region_origen,object,12,0,4,Centro,Sureste
+tablas/dim_sucursales.csv,metros_cuadrados,Int64,12,0,12,96,4209
+tablas/dim_sucursales.csv,fecha_apertura,datetime64[ns],12,0,12,2018-07-24 00:00:00,2023-10-14 00:00:00
+tablas/clientes.csv,id_cliente,Int64,1862,0,1862,1,2059
+tablas/clientes.csv,nombre,object,1862,0,1389,ABRIL RODRIGUEZ,ximena jimenez
+tablas/clientes.csv,correo,object,1862,0,1826,SIN_DATO@novatech.mx,ximena.vega@outlook.com
+tablas/clientes.csv,telefono,object,1862,0,1828,5510059909,SIN_DATO
+tablas/clientes.csv,ciudad,object,1862,0,10,Cancun,Veracruz
+tablas/clientes.csv,fecha_alta,datetime64[ns],1862,0,584,2024-01-01 00:00:00,2025-12-06 00:00:00
+tablas/clientes.csv,canal_registro,object,1862,0,3,app_movil,web
+tablas/clientes.csv,es_premium,boolean,1862,0,2,False,True
+tablas/clientes.csv,anio_alta,Int64,1862,0,2,2024,2025
+tablas/clientes.csv,mes_alta,Int64,1862,0,12,1,12
+tablas/clientes.csv,antiguedad_dias,Int64,1862,0,584,298,1003
+tablas/productos.csv,id_producto,Int64,606,0,606,1,620
+tablas/productos.csv,nombre,object,606,0,606,Access Point Auric Edge,Workstation Zylo Elite
+tablas/productos.csv,categoria,object,606,0,6,Accesorios,Smartphones
+tablas/productos.csv,id_categoria,int64,606,0,6,1,6
+tablas/productos.csv,precio,float64,606,0,605,152.0,68000.0
+tablas/productos.csv,margen_bruto,float64,606,0,519,0.1803,0.42
+tablas/productos.csv,costo_estimado,float64,606,0,606,101.82,48075.17
+tablas/productos.csv,utilidad_bruta,float64,606,0,604,30.22,23296.55
+tablas/productos.csv,rango_precio,object,606,0,6,Alto,Ultra Premium
+tablas/productos.csv,id_proveedor,Int64,606,0,10,1,10
+tablas/productos.csv,activo,boolean,606,0,2,False,True
+tablas/productos.csv,fecha_lanzamiento,datetime64[ns],606,0,316,2024-01-01 00:00:00,2025-04-02 00:00:00
+tablas/pedidos.csv,id_pedido,Int64,3277,0,3277,1,3600
+tablas/pedidos.csv,id_cliente,Int64,3277,0,1536,1,2058
+tablas/pedidos.csv,fecha_pedido,datetime64[ns],3277,0,974,2024-01-01 00:00:00,2026-12-09 00:00:00
+tablas/pedidos.csv,anio,Int64,3277,0,3,2024,2026
+tablas/pedidos.csv,mes,Int64,3277,0,12,1,12
+tablas/pedidos.csv,mes_nombre,object,3277,0,12,Abril,Setiembre
+tablas/pedidos.csv,trimestre,Int64,3277,0,4,1,4
+tablas/pedidos.csv,anio_mes,object,3277,0,36,2024-01,2026-12
+tablas/pedidos.csv,canal_venta,object,3277,0,3,app_movil,web
+tablas/pedidos.csv,id_sucursal,Int64,3277,0,12,1,12
+tablas/pedidos.csv,estado,object,3277,0,4,cancelado,pendiente
+tablas/pedidos.csv,es_completado,bool,3277,0,2,False,True
+tablas/pedidos.csv,total_pedido,float64,3277,0,2162,0.0,846105.86
+tablas/pedidos.csv,unidades,Int64,3277,0,32,0,31
+tablas/pedidos.csv,lineas,Int64,3277,0,7,0,6
+tablas/pedidos.csv,categorias_distintas,Int64,3277,0,7,0,6
+tablas/pedidos.csv,ticket_promedio_linea,float64,3277,0,2162,0.0,531577.09
+tablas/detalle_pedido.csv,id_detalle,Int64,3891,0,3891,1,4600
+tablas/detalle_pedido.csv,id_pedido,Int64,3891,0,2259,1,3600
+tablas/detalle_pedido.csv,id_producto,Int64,3891,0,551,1,608
+tablas/detalle_pedido.csv,cantidad,int64,3891,0,8,1,8
+tablas/detalle_pedido.csv,precio_unitario,float64,3891,0,819,152.0,68000.0
+tablas/detalle_pedido.csv,descuento,float64,3891,0,1269,0.0,15208.85
+tablas/detalle_pedido.csv,subtotal,float64,3891,0,2469,152.24,544000.0
+tablas/detalle_pedido.csv,total,float64,3891,0,3126,140.68,544000.0
+tablas/detalle_pedido.csv,porcentaje_descuento,float64,3891,0,767,0.0,24.98
+tablas/pagos.csv,id_pago,Int64,3277,0,3277,1,3600
+tablas/pagos.csv,id_pedido,Int64,3277,0,3277,1,3600
+tablas/pagos.csv,metodo,object,3277,0,6,efectivo,transferencia
+tablas/pagos.csv,monto,float64,3277,0,2571,0.0,960261.85
+tablas/pagos.csv,fecha_pago,datetime64[ns],3277,0,969,2024-01-01 00:00:00,2026-12-03 00:00:00
+tablas/pagos.csv,estado_pago,object,3277,0,4,APROBADO,rechazado
+tablas/pagos.csv,diferencia_pago,float64,3277,0,989,-5.65,452405.69
+tablas/pagos.csv,conciliado,bool,3277,0,2,False,True

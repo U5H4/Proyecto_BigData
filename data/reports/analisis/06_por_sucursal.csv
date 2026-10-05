@@ -1,0 +1,13 @@
+﻿id_sucursal,facturacion,pedidos,unidades,ticket_promedio,nombre,ciudad,region,participacion_pct
+9,13082825.41,140,956,93448.75292857143,Sucursal NovaCommerce Tijuana 9,Tijuana,Norte,10.274238387157055
+12,11173934.02,124,906,90112.37112903225,Sucursal NovaCommerce Ciudad de Mexico 12,Ciudad de Mexico,Centro,8.775142849196223
+6,11018661.94,110,821,100169.654,Sucursal NovaCommerce Queretaro 6,Queretaro,Centro,8.653204176562838
+8,10909052.4,113,805,96540.28672566373,Sucursal NovaCommerce Merida 8,Merida,Sureste,8.567125328288533
+2,10786714.54,126,906,85608.84555555556,Sucursal NovaCommerce Ciudad de Mexico 2,Ciudad de Mexico,Centro,8.471050642735218
+7,10640205.76,127,965,83781.14771653543,Sucursal NovaCommerce Cancun 7,Cancun,Sureste,8.355993987589382
+4,10380095.76,131,930,79237.37221374045,Sucursal NovaCommerce Monterrey 4,Monterrey,Norte,8.151723727677428
+1,10338226.84,117,864,88360.91316239316,Sucursal NovaCommerce Veracruz 1,Veracruz,Sureste,8.118843118817205
+5,10122840.08,119,929,85065.88302521009,Sucursal NovaCommerce Puebla 5,Puebla,Centro,7.949695029751834
+3,9894064.77,124,893,79790.84491935483,Sucursal NovaCommerce Guadalajara 3,Guadalajara,Occidente,7.770032609871253
+11,9822047.28,135,914,72755.90577777778,Sucursal NovaCommerce Veracruz 11,Veracruz,Sureste,7.713475647814789
+10,9167537.709999999,117,893,78355.02316239316,Sucursal NovaCommerce Leon 10,Leon,Occidente,7.199474494538246

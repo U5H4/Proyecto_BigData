@@ -1,0 +1,18 @@
+# Entorno virtual: 229 MB y contiene rutas absolutas a esta maquina.
+# Se recrea con:  python -m venv .venv
+#                  .venv\Scripts\python -m pip install -r requirements.txt
+.venv/
+venv/
+env/
+
+# Credenciales reales. Solo se versiona .env.example
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Salidas de ejecucion: se regeneran con src\run_all.py
+logs/*.log

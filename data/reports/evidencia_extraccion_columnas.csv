@@ -1,0 +1,131 @@
+﻿fuente,archivo,formato,sistema_origen,registros,columnas,columna,tipo_inferido
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,id_cliente,entero
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,nombre,texto
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,correo,texto
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,telefono,entero
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,ciudad,texto
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,fecha_alta,fecha_texto
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,canal_registro,texto
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,es_premium,booleano_texto
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,telefono_secundario,entero
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,fax,entero
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,codigo_interno_legacy,codigo
+A,clientes.csv,CSV,Tienda fisica + App movil,2143,12,usuario_sistema,texto
+A,productos.csv,CSV,Sistema de inventario,641,11,id_producto,entero
+A,productos.csv,CSV,Sistema de inventario,641,11,nombre,texto
+A,productos.csv,CSV,Sistema de inventario,641,11,categoria,texto
+A,productos.csv,CSV,Sistema de inventario,641,11,precio,texto
+A,productos.csv,CSV,Sistema de inventario,641,11,id_proveedor,entero
+A,productos.csv,CSV,Sistema de inventario,641,11,margen_bruto,numero_texto
+A,productos.csv,CSV,Sistema de inventario,641,11,activo,booleano_texto
+A,productos.csv,CSV,Sistema de inventario,641,11,fecha_lanzamiento,fecha_texto
+A,productos.csv,CSV,Sistema de inventario,641,11,costo_fabricacion_interno,numero_texto
+A,productos.csv,CSV,Sistema de inventario,641,11,sku_fabricante_obsoleto,codigo
+A,productos.csv,CSV,Sistema de inventario,641,11,peso_envio_kg_bruto,numero_texto
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,id_pedido,entero
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,fecha_pedido,fecha_texto
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,id_cliente,entero
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,canal_venta,texto
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,id_sucursal,entero
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,estado,texto
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,referencia_bancaria,codigo
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,cupon_descuento_raw,texto
+A,pedidos.csv,CSV,Punto de venta (web/tienda),3708,9,hora_impresion_ticket,fecha_texto
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,id_detalle,entero
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,id_pedido,entero
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,id_producto,entero
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,cantidad,texto
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,precio_unitario,numero_texto
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,descuento,texto
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,estanteria_almacen,texto
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,serial_interno_caja,codigo
+A,detalle_pedido.csv,CSV,Punto de venta (web/tienda),4761,9,estatus_devolucion_bruto,texto
+A,pagos.csv,CSV,Pasarela de pagos,3672,6,id_pago,entero
+A,pagos.csv,CSV,Pasarela de pagos,3672,6,id_pedido,entero
+A,pagos.csv,CSV,Pasarela de pagos,3672,6,metodo,texto
+A,pagos.csv,CSV,Pasarela de pagos,3672,6,monto,texto
+A,pagos.csv,CSV,Pasarela de pagos,3672,6,fecha_pago,fecha_texto
+A,pagos.csv,CSV,Pasarela de pagos,3672,6,estado_pago,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,id_producto,entero
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,nombre,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,categoria,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,etiquetas,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,disponible,booleano_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,fecha_registro,fecha_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.procesador,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.ram_gb,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.almacenamiento,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.sistema_operativo,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.pantalla_pulgadas,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.campo_legacy_desconocido,booleano_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.dpi,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.sensor,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.botones_programables,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.peso_g,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.puertos,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.velocidad_mbps,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.poe,booleano_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.administrable,booleano_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.resolucion,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.curvatura,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.hz_ajustable,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.wifi,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.banda,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.potencia_dbm,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.camara_mp,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.bateria_mah,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.conectividad,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.resistencia_agua,codigo
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.gpu,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.teclas,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.layout,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.iluminacion,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.conexion,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.almacenamiento_gb,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.tipo,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.bateria_horas,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.microfono,booleano_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.panel,texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.tasa_refresco_hz,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.pulgadas,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.potencia_w,numero_texto
+B,productos_semiestructurados.json,JSON,Catalogo de producto (API interna),638,44,atributos.canales,numero_texto
+B,resenas.json,JSON,App movil / Web,3075,8,id_resena,entero
+B,resenas.json,JSON,App movil / Web,3075,8,id_producto,entero
+B,resenas.json,JSON,App movil / Web,3075,8,calificacion,texto
+B,resenas.json,JSON,App movil / Web,3075,8,comentario,texto
+B,resenas.json,JSON,App movil / Web,3075,8,fecha,fecha_texto
+B,resenas.json,JSON,App movil / Web,3075,8,verificada,booleano_texto
+B,resenas.json,JSON,App movil / Web,3075,8,cliente.id,entero
+B,resenas.json,JSON,App movil / Web,3075,8,cliente.nombre,texto
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,usuario,entero
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,fecha,fecha_texto
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,evento,texto
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,producto,entero
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,dispositivo,texto
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,ubicacion,texto
+B,actividad_usuario.json,JSON,Logs de aplicacion,4854,7,duracion_seg,entero
+C,sucursales.xlsx,XLSX (Google Sheets),Google Sheets - Direccion de Operaciones,12,6,id_sucursal,entero
+C,sucursales.xlsx,XLSX (Google Sheets),Google Sheets - Direccion de Operaciones,12,6,fecha_apertura,fecha_texto
+C,sucursales.xlsx,XLSX (Google Sheets),Google Sheets - Direccion de Operaciones,12,6,metros_cuadrados,entero
+C,sucursales.xlsx,XLSX (Google Sheets),Google Sheets - Direccion de Operaciones,12,6,nombre,texto
+C,sucursales.xlsx,XLSX (Google Sheets),Google Sheets - Direccion de Operaciones,12,6,ciudad,texto
+C,sucursales.xlsx,XLSX (Google Sheets),Google Sheets - Direccion de Operaciones,12,6,region,texto
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,id_proveedor,entero
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,nombre,texto
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,rubro,texto
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,pais,texto
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,contacto_email,texto
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,dias_entrega_promedio,entero
+C,proveedores.xlsx,XLSX (Google Sheets),Google Sheets - Compras,10,7,activo,booleano_texto
+C,promociones.xlsx,XLSX (Google Sheets),Google Sheets - Marketing,14,6,id_promocion,entero
+C,promociones.xlsx,XLSX (Google Sheets),Google Sheets - Marketing,14,6,nombre,texto
+C,promociones.xlsx,XLSX (Google Sheets),Google Sheets - Marketing,14,6,descuento_pct,entero
+C,promociones.xlsx,XLSX (Google Sheets),Google Sheets - Marketing,14,6,fecha_inicio,fecha_texto
+C,promociones.xlsx,XLSX (Google Sheets),Google Sheets - Marketing,14,6,fecha_fin,fecha_texto
+C,promociones.xlsx,XLSX (Google Sheets),Google Sheets - Marketing,14,6,categorias,texto
+C,objetivos_venta.xlsx,XLSX (Google Sheets),Google Sheets - Direccion Comercial,9,5,anio,entero
+C,objetivos_venta.xlsx,XLSX (Google Sheets),Google Sheets - Direccion Comercial,9,5,mes,entero
+C,objetivos_venta.xlsx,XLSX (Google Sheets),Google Sheets - Direccion Comercial,9,5,categoria,texto
+C,objetivos_venta.xlsx,XLSX (Google Sheets),Google Sheets - Direccion Comercial,9,5,meta_ingresos,numero_texto
+C,objetivos_venta.xlsx,XLSX (Google Sheets),Google Sheets - Direccion Comercial,9,5,meta_unidades,entero

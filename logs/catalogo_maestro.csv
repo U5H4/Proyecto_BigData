@@ -1,0 +1,621 @@
+id_producto,nombre,categoria,precio,id_proveedor,_margen
+1,Laptop Nova Neo,Computadoras,14452.98,1,0.3875
+2,Desktop Nova Prime,Computadoras,25250.01,6,0.3419
+3,Workstation Nova Elite,Computadoras,16901.48,6,0.1938
+4,Mini PC Nova Air,Computadoras,59704.35,6,0.2269
+5,All-in-One Nova Max,Computadoras,26069.66,1,0.2093
+6,Laptop Nova Plus,Computadoras,26395.6,6,0.2694
+7,Desktop Nova Lite,Computadoras,27100.03,1,0.2845
+8,Workstation Nova Ultra,Computadoras,57478.79,6,0.2462
+9,Mini PC Nova Core,Computadoras,27655.76,1,0.2839
+10,All-in-One Nova Edge,Computadoras,17123.45,6,0.2383
+11,Laptop Nova Zen,Computadoras,13708.49,1,0.3415
+12,Desktop Nova Pro,Computadoras,30314.9,1,0.3841
+13,Workstation Nova GT,Computadoras,22061.28,6,0.3148
+14,Mini PC Nova SE,Computadoras,28475.9,1,0.3228
+15,All-in-One Nova Mini,Computadoras,33776.77,6,0.4141
+16,Laptop Nova Fury,Computadoras,31476.59,1,0.3823
+17,Desktop Nova Pulse,Computadoras,15188.0,6,0.3395
+18,Workstation Nova Nova,Computadoras,49907.28,1,0.2686
+19,Mini PC Nova Vertex,Computadoras,52611.56,1,0.3433
+20,All-in-One Nova One,Computadoras,48420.36,1,0.3167
+21,Laptop Auric Neo,Computadoras,41665.57,6,0.3472
+22,Desktop Auric Prime,Computadoras,14001.33,1,0.1884
+23,Workstation Auric Elite,Computadoras,52234.68,6,0.3186
+24,Mini PC Auric Air,Computadoras,30772.59,1,0.2239
+25,All-in-One Auric Max,Computadoras,44064.36,1,0.2778
+26,Laptop Auric Plus,Computadoras,53168.01,1,0.2145
+27,Desktop Auric Lite,Computadoras,26993.41,6,0.3525
+28,Workstation Auric Ultra,Computadoras,24190.36,6,0.2777
+29,Mini PC Auric Core,Computadoras,16972.54,1,0.2728
+30,All-in-One Auric Edge,Computadoras,20336.55,6,0.2088
+31,Laptop Auric Zen,Computadoras,38226.13,1,0.357
+32,Desktop Auric Pro,Computadoras,56222.67,1,0.3453
+33,Workstation Auric GT,Computadoras,45533.09,1,0.229
+34,Mini PC Auric SE,Computadoras,63820.31,1,0.3042
+35,All-in-One Auric Mini,Computadoras,22374.88,6,0.3796
+36,Laptop Auric Fury,Computadoras,28216.45,1,0.3867
+37,Desktop Auric Pulse,Computadoras,16371.57,6,0.42
+38,Workstation Auric Nova,Computadoras,32293.58,6,0.2098
+39,Mini PC Auric Vertex,Computadoras,18868.93,6,0.3065
+40,All-in-One Auric One,Computadoras,33096.61,6,0.305
+41,Laptop Kortex Neo,Computadoras,49158.25,6,0.2404
+42,Desktop Kortex Prime,Computadoras,44549.41,1,0.3772
+43,Workstation Kortex Elite,Computadoras,13400.48,1,0.3131
+44,Mini PC Kortex Air,Computadoras,32249.2,1,0.1828
+45,All-in-One Kortex Max,Computadoras,45333.45,1,0.2314
+46,Laptop Kortex Plus,Computadoras,24673.4,6,0.3097
+47,Desktop Kortex Lite,Computadoras,18423.86,6,0.2602
+48,Workstation Kortex Ultra,Computadoras,31235.81,1,0.2856
+49,Mini PC Kortex Core,Computadoras,51081.62,6,0.2093
+50,All-in-One Kortex Edge,Computadoras,22069.52,6,0.3247
+51,Laptop Kortex Zen,Computadoras,68000.0,6,0.3342
+52,Desktop Kortex Pro,Computadoras,38900.13,1,0.3322
+53,Workstation Kortex GT,Computadoras,16779.87,6,0.3249
+54,Mini PC Kortex SE,Computadoras,65038.31,6,0.2946
+55,All-in-One Kortex Mini,Computadoras,49270.07,6,0.3755
+56,Laptop Kortex Fury,Computadoras,18375.86,6,0.2758
+57,Desktop Kortex Pulse,Computadoras,17856.88,1,0.214
+58,Workstation Kortex Nova,Computadoras,65036.76,1,0.2608
+59,Mini PC Kortex Vertex,Computadoras,31948.64,1,0.2253
+60,All-in-One Kortex One,Computadoras,48462.73,6,0.3325
+61,Laptop Vertex Neo,Computadoras,37742.13,6,0.2531
+62,Desktop Vertex Prime,Computadoras,27227.97,1,0.3035
+63,Workstation Vertex Elite,Computadoras,61097.96,1,0.2171
+64,Mini PC Vertex Air,Computadoras,13895.81,1,0.354
+65,All-in-One Vertex Max,Computadoras,15736.34,1,0.241
+66,Laptop Vertex Plus,Computadoras,15232.59,1,0.2536
+67,Desktop Vertex Lite,Computadoras,15835.57,6,0.1852
+68,Workstation Vertex Ultra,Computadoras,17497.71,1,0.285
+69,Mini PC Vertex Core,Computadoras,33168.84,6,0.2655
+70,All-in-One Vertex Edge,Computadoras,18373.87,1,0.3306
+71,Laptop Vertex Zen,Computadoras,15201.53,1,0.3181
+72,Desktop Vertex Pro,Computadoras,19375.14,6,0.361
+73,Workstation Vertex GT,Computadoras,33688.65,6,0.2231
+74,Mini PC Vertex SE,Computadoras,44780.52,6,0.392
+75,All-in-One Vertex Mini,Computadoras,21890.65,1,0.38
+76,Laptop Vertex Fury,Computadoras,18729.75,6,0.2269
+77,Desktop Vertex Pulse,Computadoras,17232.06,6,0.3855
+78,Workstation Vertex Nova,Computadoras,49993.67,1,0.3494
+79,Mini PC Vertex Vertex,Computadoras,54722.42,6,0.3215
+80,All-in-One Vertex One,Computadoras,13070.4,1,0.2753
+81,Laptop Lumen Neo,Computadoras,33449.39,6,0.1913
+82,Desktop Lumen Prime,Computadoras,26390.1,1,0.3018
+83,Workstation Lumen Elite,Computadoras,56550.9,1,0.2781
+84,Mini PC Lumen Air,Computadoras,16273.21,6,0.2674
+85,All-in-One Lumen Max,Computadoras,26796.69,6,0.3156
+86,Laptop Lumen Plus,Computadoras,37053.65,6,0.2993
+87,Desktop Lumen Lite,Computadoras,22796.75,6,0.2273
+88,Workstation Lumen Ultra,Computadoras,29304.68,6,0.1991
+89,Mini PC Lumen Core,Computadoras,23366.8,1,0.3258
+90,All-in-One Lumen Edge,Computadoras,55867.02,6,0.417
+91,Laptop Lumen Zen,Computadoras,16734.15,6,0.2832
+92,Desktop Lumen Pro,Computadoras,29022.84,6,0.1952
+93,Workstation Lumen GT,Computadoras,43980.89,6,0.4174
+94,Mini PC Lumen SE,Computadoras,58178.52,1,0.2275
+95,All-in-One Lumen Mini,Computadoras,51105.77,1,0.2399
+96,Laptop Lumen Fury,Computadoras,14490.38,6,0.4103
+97,Desktop Lumen Pulse,Computadoras,44347.38,6,0.334
+98,Workstation Lumen Nova,Computadoras,39575.72,1,0.3047
+99,Mini PC Lumen Vertex,Computadoras,18068.67,1,0.2707
+100,All-in-One Lumen One,Computadoras,17834.23,1,0.2305
+101,Laptop Zylo Neo,Computadoras,36744.16,6,0.2022
+102,Desktop Zylo Prime,Computadoras,27579.79,6,0.2987
+103,Workstation Zylo Elite,Computadoras,17033.51,6,0.3111
+104,Mini PC Zylo Air,Computadoras,38907.41,1,0.3446
+105,Smartphone Zylo Max,Smartphones,4935.31,7,0.1925
+106,Tablet Zylo Plus,Smartphones,33800.82,2,0.4185
+107,Smartphone Zylo Lite Pro,Smartphones,36858.64,2,0.2928
+108,Foldable Zylo Ultra,Smartphones,12828.66,2,0.4149
+109,Smartphone Zylo Core Lite,Smartphones,9060.59,2,0.2791
+110,Smartphone Zylo Edge,Smartphones,25540.08,7,0.293
+111,Tablet Zylo Zen,Smartphones,7068.08,7,0.2192
+112,Smartphone Zylo Pro Pro,Smartphones,10289.22,2,0.4097
+113,Foldable Zylo GT,Smartphones,24816.71,7,0.4067
+114,Smartphone Zylo SE Lite,Smartphones,28090.65,7,0.2081
+115,Smartphone Zylo Mini,Smartphones,28828.44,2,0.3677
+116,Tablet Zylo Fury,Smartphones,4629.96,2,0.3087
+117,Smartphone Zylo Pulse Pro,Smartphones,28856.54,7,0.387
+118,Foldable Zylo Nova,Smartphones,24476.8,2,0.2393
+119,Smartphone Zylo Vertex Lite,Smartphones,5867.88,2,0.2239
+120,Smartphone Zylo One,Smartphones,36962.01,7,0.2004
+121,Tablet Orbit Neo,Smartphones,12917.12,2,0.3262
+122,Smartphone Orbit Prime Pro,Smartphones,4404.82,2,0.3315
+123,Foldable Orbit Elite,Smartphones,18644.97,2,0.2654
+124,Smartphone Orbit Air Lite,Smartphones,36262.62,7,0.2018
+125,Smartphone Orbit Max,Smartphones,5757.78,7,0.2091
+126,Tablet Orbit Plus,Smartphones,6207.95,2,0.3824
+127,Smartphone Orbit Lite Pro,Smartphones,5053.47,2,0.2328
+128,Foldable Orbit Ultra,Smartphones,29282.83,2,0.2961
+129,Smartphone Orbit Core Lite,Smartphones,24143.58,2,0.2392
+130,Smartphone Orbit Edge,Smartphones,12493.91,7,0.3076
+131,Tablet Orbit Zen,Smartphones,26459.89,2,0.3609
+132,Smartphone Orbit Pro Pro,Smartphones,5345.95,2,0.2293
+133,Foldable Orbit GT,Smartphones,21141.62,7,0.2633
+134,Smartphone Orbit SE Lite,Smartphones,3972.84,2,0.2163
+135,Smartphone Orbit Mini,Smartphones,8232.79,7,0.3796
+136,Tablet Orbit Fury,Smartphones,20224.22,7,0.2835
+137,Smartphone Orbit Pulse Pro,Smartphones,42000.0,7,0.3925
+138,Foldable Orbit Nova,Smartphones,7002.61,2,0.3891
+139,Smartphone Orbit Vertex Lite,Smartphones,22592.32,2,0.3012
+140,Smartphone Orbit One,Smartphones,23235.91,7,0.3603
+141,Tablet Nimbus Neo,Smartphones,4045.73,2,0.1927
+142,Smartphone Nimbus Prime Pro,Smartphones,31449.79,7,0.3383
+143,Foldable Nimbus Elite,Smartphones,19160.64,2,0.257
+144,Smartphone Nimbus Air Lite,Smartphones,13818.03,2,0.3618
+145,Smartphone Nimbus Max,Smartphones,41579.07,2,0.3768
+146,Tablet Nimbus Plus,Smartphones,7276.84,7,0.2316
+147,Smartphone Nimbus Lite Pro,Smartphones,8671.49,7,0.3043
+148,Foldable Nimbus Ultra,Smartphones,9601.21,7,0.4073
+149,Smartphone Nimbus Core Lite,Smartphones,27409.46,7,0.3604
+150,Smartphone Nimbus Edge,Smartphones,4357.07,7,0.2509
+151,Tablet Nimbus Zen,Smartphones,18718.93,7,0.3366
+152,Smartphone Nimbus Pro Pro,Smartphones,8926.77,7,0.3105
+153,Foldable Nimbus GT,Smartphones,35631.03,2,0.3023
+154,Smartphone Nimbus SE Lite,Smartphones,19828.54,2,0.3343
+155,Smartphone Nimbus Mini,Smartphones,36068.08,2,0.3604
+156,Tablet Nimbus Fury,Smartphones,36447.38,2,0.3019
+157,Smartphone Nimbus Pulse Pro,Smartphones,13768.16,7,0.3421
+158,Foldable Nimbus Nova,Smartphones,4265.11,7,0.2915
+159,Smartphone Nimbus Vertex Lite,Smartphones,3901.05,7,0.3035
+160,Smartphone Nimbus One,Smartphones,26414.66,2,0.4022
+161,Tablet Quartz Neo,Smartphones,13668.91,7,0.3378
+162,Smartphone Quartz Prime Pro,Smartphones,32940.52,2,0.2672
+163,Foldable Quartz Elite,Smartphones,34985.4,2,0.2959
+164,Smartphone Quartz Air Lite,Smartphones,13854.22,7,0.361
+165,Smartphone Quartz Max,Smartphones,8728.22,7,0.2326
+166,Tablet Quartz Plus,Smartphones,9127.91,7,0.2251
+167,Smartphone Quartz Lite Pro,Smartphones,4609.55,7,0.3215
+168,Foldable Quartz Ultra,Smartphones,11578.76,7,0.3356
+169,Smartphone Quartz Core Lite,Smartphones,4684.61,7,0.3735
+170,Smartphone Quartz Edge,Smartphones,20780.0,7,0.1834
+171,Tablet Quartz Zen,Smartphones,4674.34,2,0.2325
+172,Smartphone Quartz Pro Pro,Smartphones,3632.94,2,0.2404
+173,Foldable Quartz GT,Smartphones,13426.8,2,0.1913
+174,Smartphone Quartz SE Lite,Smartphones,11259.21,7,0.2268
+175,Smartphone Quartz Mini,Smartphones,6971.32,7,0.3077
+176,Tablet Quartz Fury,Smartphones,5435.69,2,0.3522
+177,Smartphone Quartz Pulse Pro,Smartphones,25698.47,7,0.3571
+178,Foldable Quartz Nova,Smartphones,29863.52,7,0.3784
+179,Smartphone Quartz Vertex Lite,Smartphones,24894.74,2,0.2835
+180,Smartphone Quartz One,Smartphones,29210.55,7,0.3312
+181,Tablet Helix Neo,Smartphones,23260.26,7,0.3545
+182,Smartphone Helix Prime Pro,Smartphones,5269.41,7,0.3541
+183,Foldable Helix Elite,Smartphones,9228.02,7,0.3977
+184,Smartphone Helix Air Lite,Smartphones,14525.98,7,0.2015
+185,Smartphone Helix Max,Smartphones,11059.51,7,0.2737
+186,Tablet Helix Plus,Smartphones,28945.11,2,0.3148
+187,Smartphone Helix Lite Pro,Smartphones,15407.88,7,0.2788
+188,Foldable Helix Ultra,Smartphones,6551.92,2,0.272
+189,Smartphone Helix Core Lite,Smartphones,18090.73,7,0.2417
+190,Smartphone Helix Edge,Smartphones,17228.7,7,0.3201
+191,Tablet Helix Zen,Smartphones,28453.03,2,0.2384
+192,Smartphone Helix Pro Pro,Smartphones,4268.11,2,0.216
+193,Foldable Helix GT,Smartphones,11432.43,2,0.371
+194,Smartphone Helix SE Lite,Smartphones,35912.42,7,0.2109
+195,Smartphone Helix Mini,Smartphones,5464.68,7,0.4114
+196,Tablet Helix Fury,Smartphones,6746.66,7,0.2005
+197,Smartphone Helix Pulse Pro,Smartphones,37861.79,7,0.2494
+198,Foldable Helix Nova,Smartphones,14532.61,7,0.2753
+199,Smartphone Helix Vertex Lite,Smartphones,24765.63,7,0.249
+200,Smartphone Helix One,Smartphones,4786.57,7,0.3527
+201,Tablet Cobalto Neo,Smartphones,12657.76,7,0.2555
+202,Smartphone Cobalto Prime Pro,Smartphones,9188.59,7,0.2137
+203,Foldable Cobalto Elite,Smartphones,8828.92,2,0.1877
+204,Smartphone Cobalto Air Lite,Smartphones,17470.25,2,0.2299
+205,Smartphone Cobalto Max,Smartphones,28895.45,7,0.1948
+206,Tablet Cobalto Plus,Smartphones,35845.9,7,0.3129
+207,Smartphone Cobalto Lite Pro,Smartphones,4901.39,7,0.2072
+208,Foldable Cobalto Ultra,Smartphones,3669.04,7,0.2064
+209,Audifonos Cobalto Core,Audio,5109.77,3,0.3898
+210,Bocina Bluetooth Cobalto Edge,Audio,1643.04,8,0.3348
+211,Auriculares Gaming Cobalto Zen,Audio,2399.2,3,0.1823
+212,Barra de Sonido Cobalto Pro,Audio,485.05,3,0.2075
+213,Microfono Cobalto GT,Audio,1117.04,3,0.4129
+214,Audifonos Cobalto SE,Audio,412.88,8,0.2242
+215,Bocina Bluetooth Cobalto Mini,Audio,1216.35,8,0.3323
+216,Auriculares Gaming Cobalto Fury,Audio,1493.81,8,0.2178
+217,Barra de Sonido Cobalto Pulse,Audio,2671.55,3,0.2005
+218,Microfono Cobalto Nova,Audio,2497.5,3,0.4052
+219,Audifonos Cobalto Vertex,Audio,403.99,8,0.2576
+220,Bocina Bluetooth Cobalto One,Audio,4307.38,3,0.2163
+221,Auriculares Gaming Delta Neo,Audio,1736.69,8,0.4169
+222,Barra de Sonido Delta Prime,Audio,5707.81,8,0.2015
+223,Microfono Delta Elite,Audio,563.7,8,0.4184
+224,Audifonos Delta Air,Audio,3092.44,3,0.2016
+225,Bocina Bluetooth Delta Max,Audio,1331.67,3,0.2592
+226,Auriculares Gaming Delta Plus,Audio,3996.67,3,0.1941
+227,Barra de Sonido Delta Lite,Audio,7709.07,3,0.322
+228,Microfono Delta Ultra,Audio,1374.56,3,0.4171
+229,Audifonos Delta Core,Audio,843.37,8,0.2877
+230,Bocina Bluetooth Delta Edge,Audio,2364.14,3,0.4008
+231,Auriculares Gaming Delta Zen,Audio,2027.82,8,0.1901
+232,Barra de Sonido Delta Pro,Audio,681.28,3,0.2387
+233,Microfono Delta GT,Audio,1137.67,8,0.3965
+234,Audifonos Delta SE,Audio,1042.83,3,0.3361
+235,Bocina Bluetooth Delta Mini,Audio,1119.56,3,0.3042
+236,Auriculares Gaming Delta Fury,Audio,3329.05,8,0.4098
+237,Barra de Sonido Delta Pulse,Audio,904.98,3,0.2129
+238,Microfono Delta Nova,Audio,6129.02,8,0.4121
+239,Audifonos Delta Vertex,Audio,6239.94,3,0.4105
+240,Bocina Bluetooth Delta One,Audio,6081.11,3,0.2217
+241,Auriculares Gaming Praxis Neo,Audio,432.19,8,0.2361
+242,Barra de Sonido Praxis Prime,Audio,975.73,3,0.2564
+243,Microfono Praxis Elite,Audio,7122.31,3,0.3254
+244,Audifonos Praxis Air,Audio,8672.97,8,0.2657
+245,Bocina Bluetooth Praxis Max,Audio,3654.56,3,0.1827
+246,Auriculares Gaming Praxis Plus,Audio,639.2,3,0.3467
+247,Barra de Sonido Praxis Lite,Audio,3196.01,8,0.3998
+248,Microfono Praxis Ultra,Audio,1659.37,3,0.3522
+249,Audifonos Praxis Core,Audio,3120.87,3,0.2234
+250,Bocina Bluetooth Praxis Edge,Audio,1361.18,8,0.2324
+251,Auriculares Gaming Praxis Zen,Audio,2586.41,3,0.3119
+252,Barra de Sonido Praxis Pro,Audio,1423.19,8,0.2283
+253,Microfono Praxis GT,Audio,4812.8,8,0.3947
+254,Audifonos Praxis SE,Audio,1176.97,8,0.357
+255,Bocina Bluetooth Praxis Mini,Audio,9337.11,3,0.2528
+256,Auriculares Gaming Praxis Fury,Audio,1021.8,3,0.2884
+257,Barra de Sonido Praxis Pulse,Audio,2514.23,3,0.3485
+258,Microfono Praxis Nova,Audio,5972.48,3,0.3773
+259,Audifonos Praxis Vertex,Audio,625.08,8,0.3956
+260,Bocina Bluetooth Praxis One,Audio,644.34,3,0.2453
+261,Auriculares Gaming Onyx Neo,Audio,6917.86,3,0.4074
+262,Barra de Sonido Onyx Prime,Audio,596.2,3,0.217
+263,Microfono Onyx Elite,Audio,5730.99,3,0.1852
+264,Audifonos Onyx Air,Audio,4408.93,8,0.3891
+265,Bocina Bluetooth Onyx Max,Audio,759.78,3,0.1899
+266,Auriculares Gaming Onyx Plus,Audio,2657.04,3,0.2467
+267,Barra de Sonido Onyx Lite,Audio,7520.58,8,0.3926
+268,Microfono Onyx Ultra,Audio,551.87,8,0.2103
+269,Audifonos Onyx Core,Audio,4544.06,8,0.2342
+270,Bocina Bluetooth Onyx Edge,Audio,874.94,3,0.4023
+271,Auriculares Gaming Onyx Zen,Audio,7591.04,8,0.2449
+272,Barra de Sonido Onyx Pro,Audio,4993.05,3,0.2776
+273,Microfono Onyx GT,Audio,2849.98,8,0.2867
+274,Audifonos Onyx SE,Audio,5610.04,3,0.4116
+275,Bocina Bluetooth Onyx Mini,Audio,2036.34,8,0.2646
+276,Auriculares Gaming Onyx Fury,Audio,468.04,3,0.2086
+277,Barra de Sonido Onyx Pulse,Audio,7528.53,8,0.3799
+278,Microfono Onyx Nova,Audio,1910.5,3,0.382
+279,Audifonos Onyx Vertex,Audio,1716.99,8,0.3001
+280,Bocina Bluetooth Onyx One,Audio,5190.1,8,0.3883
+281,Auriculares Gaming Nova Neo,Audio,2873.68,8,0.215
+282,Barra de Sonido Nova Prime,Audio,4805.06,8,0.2563
+283,Microfono Nova Elite,Audio,596.91,8,0.3173
+284,Audifonos Nova Air,Audio,704.15,3,0.3994
+285,Bocina Bluetooth Nova Max,Audio,1459.41,3,0.2219
+286,Auriculares Gaming Nova Plus,Audio,713.47,3,0.387
+287,Barra de Sonido Nova Lite,Audio,1656.26,3,0.3541
+288,Microfono Nova Ultra,Audio,5296.45,8,0.2167
+289,Audifonos Nova Core,Audio,1020.85,3,0.3202
+290,Bocina Bluetooth Nova Edge,Audio,3593.11,8,0.3863
+291,Auriculares Gaming Nova Zen,Audio,439.93,3,0.2971
+292,Barra de Sonido Nova Pro,Audio,4443.62,8,0.3162
+293,Microfono Nova GT,Audio,2795.96,3,0.3764
+294,Audifonos Nova SE,Audio,755.89,8,0.3869
+295,Bocina Bluetooth Nova Mini,Audio,2244.9,8,0.1928
+296,Auriculares Gaming Nova Fury,Audio,2185.34,8,0.2832
+297,Barra de Sonido Nova Pulse,Audio,3306.83,8,0.2262
+298,Microfono Nova Nova,Audio,747.43,3,0.3936
+299,Audifonos Nova Vertex,Audio,1600.51,8,0.4114
+300,Bocina Bluetooth Nova One,Audio,1629.59,8,0.2328
+301,Auriculares Gaming Auric Neo,Audio,911.04,8,0.2588
+302,Barra de Sonido Auric Prime,Audio,2861.27,3,0.2837
+303,Microfono Auric Elite,Audio,4985.61,8,0.249
+304,Audifonos Auric Air,Audio,475.47,3,0.3281
+305,Bocina Bluetooth Auric Max,Audio,1008.2,8,0.2582
+306,Auriculares Gaming Auric Plus,Audio,1972.78,3,0.3108
+307,Barra de Sonido Auric Lite,Audio,1429.76,3,0.2904
+308,Microfono Auric Ultra,Audio,2045.61,8,0.3894
+309,Audifonos Auric Core,Audio,579.38,3,0.3974
+310,Bocina Bluetooth Auric Edge,Audio,4367.99,3,0.2606
+311,Auriculares Gaming Auric Zen,Audio,742.92,8,0.2029
+312,Monitor Auric Pro,Monitores,2695.52,9,0.3658
+313,Monitor Gamer Auric GT,Monitores,22302.8,4,0.2916
+314,Monitor Ultrawide Auric SE,Monitores,15052.07,4,0.2327
+315,Monitor 4K Auric Mini,Monitores,11703.09,9,0.285
+316,Monitor Portatil Auric Fury,Monitores,17090.97,9,0.3936
+317,Monitor Auric Pulse,Monitores,4957.78,4,0.2268
+318,Monitor Gamer Auric Nova,Monitores,2672.96,4,0.3171
+319,Monitor Ultrawide Auric Vertex,Monitores,3774.97,9,0.2177
+320,Monitor 4K Auric One,Monitores,10504.52,9,0.3262
+321,Monitor Portatil Kortex Neo,Monitores,2793.78,4,0.2838
+322,Monitor Kortex Prime,Monitores,5883.98,4,0.2478
+323,Monitor Gamer Kortex Elite,Monitores,2463.84,9,0.2121
+324,Monitor Ultrawide Kortex Air,Monitores,4902.47,4,0.1813
+325,Monitor 4K Kortex Max,Monitores,24602.67,9,0.2547
+326,Monitor Portatil Kortex Plus,Monitores,10465.54,4,0.2991
+327,Monitor Kortex Lite,Monitores,14660.89,9,0.3377
+328,Monitor Gamer Kortex Ultra,Monitores,13737.01,9,0.2496
+329,Monitor Ultrawide Kortex Core,Monitores,2798.95,4,0.314
+330,Monitor 4K Kortex Edge,Monitores,7517.64,9,0.3595
+331,Monitor Portatil Kortex Zen,Monitores,12535.65,9,0.3718
+332,Monitor Kortex Pro,Monitores,16589.24,9,0.2619
+333,Monitor Gamer Kortex GT,Monitores,7242.48,4,0.2497
+334,Monitor Ultrawide Kortex SE,Monitores,2210.0,9,0.2939
+335,Monitor 4K Kortex Mini,Monitores,18537.78,4,0.4131
+336,Monitor Portatil Kortex Fury,Monitores,3813.68,4,0.3501
+337,Monitor Kortex Pulse,Monitores,15431.18,4,0.2984
+338,Monitor Gamer Kortex Nova,Monitores,2541.0,4,0.309
+339,Monitor Ultrawide Kortex Vertex,Monitores,20051.22,4,0.3746
+340,Monitor 4K Kortex One,Monitores,11113.88,9,0.1979
+341,Monitor Portatil Vertex Neo,Monitores,4244.16,4,0.3357
+342,Monitor Vertex Prime,Monitores,7644.17,4,0.3157
+343,Monitor Gamer Vertex Elite,Monitores,19021.91,4,0.3997
+344,Monitor Ultrawide Vertex Air,Monitores,8737.86,9,0.2148
+345,Monitor 4K Vertex Max,Monitores,2800.57,9,0.3176
+346,Monitor Portatil Vertex Plus,Monitores,8515.94,4,0.3663
+347,Monitor Vertex Lite,Monitores,27599.29,9,0.3998
+348,Monitor Gamer Vertex Ultra,Monitores,21842.43,4,0.2429
+349,Monitor Ultrawide Vertex Core,Monitores,8218.8,9,0.1805
+350,Monitor 4K Vertex Edge,Monitores,7901.71,4,0.2786
+351,Monitor Portatil Vertex Zen,Monitores,2168.74,9,0.264
+352,Monitor Vertex Pro,Monitores,17190.19,4,0.3747
+353,Monitor Gamer Vertex GT,Monitores,18839.36,4,0.3981
+354,Monitor Ultrawide Vertex SE,Monitores,8202.98,4,0.3127
+355,Monitor 4K Vertex Mini,Monitores,14690.56,9,0.2734
+356,Monitor Portatil Vertex Fury,Monitores,10557.55,9,0.337
+357,Monitor Vertex Pulse,Monitores,11859.71,9,0.356
+358,Monitor Gamer Vertex Nova,Monitores,2475.35,4,0.274
+359,Monitor Ultrawide Vertex Vertex,Monitores,16986.9,4,0.241
+360,Monitor 4K Vertex One,Monitores,13154.0,9,0.3354
+361,Monitor Portatil Lumen Neo,Monitores,2199.63,9,0.2296
+362,Monitor Lumen Prime,Monitores,20003.47,9,0.2822
+363,Monitor Gamer Lumen Elite,Monitores,2614.49,4,0.2036
+364,Monitor Ultrawide Lumen Air,Monitores,9453.57,9,0.4191
+365,Monitor 4K Lumen Max,Monitores,5591.15,9,0.2734
+366,Monitor Portatil Lumen Plus,Monitores,5166.06,9,0.3214
+367,Monitor Lumen Lite,Monitores,2279.64,9,0.3111
+368,Monitor Gamer Lumen Ultra,Monitores,2004.61,9,0.3433
+369,Monitor Ultrawide Lumen Core,Monitores,8683.55,4,0.3365
+370,Monitor 4K Lumen Edge,Monitores,8863.69,4,0.3966
+371,Monitor Portatil Lumen Zen,Monitores,23441.01,9,0.3871
+372,Monitor Lumen Pro,Monitores,7389.1,9,0.2475
+373,Monitor Gamer Lumen GT,Monitores,20620.17,4,0.374
+374,Monitor Ultrawide Lumen SE,Monitores,22016.61,4,0.3716
+375,Monitor 4K Lumen Mini,Monitores,5026.26,9,0.2878
+376,Monitor Portatil Lumen Fury,Monitores,2246.87,9,0.2858
+377,Monitor Lumen Pulse,Monitores,3602.74,4,0.362
+378,Monitor Gamer Lumen Nova,Monitores,8469.68,4,0.2052
+379,Monitor Ultrawide Lumen Vertex,Monitores,2571.64,4,0.1888
+380,Monitor 4K Lumen One,Monitores,25375.31,4,0.2289
+381,Monitor Portatil Zylo Neo,Monitores,3809.89,9,0.4181
+382,Monitor Zylo Prime,Monitores,2447.27,9,0.3462
+383,Monitor Gamer Zylo Elite,Monitores,3894.9,9,0.2545
+384,Monitor Ultrawide Zylo Air,Monitores,10968.12,4,0.3092
+385,Monitor 4K Zylo Max,Monitores,1800.0,9,0.385
+386,Monitor Portatil Zylo Plus,Monitores,15529.88,4,0.3217
+387,Monitor Zylo Lite,Monitores,4885.24,4,0.2467
+388,Monitor Gamer Zylo Ultra,Monitores,5732.64,4,0.213
+389,Monitor Ultrawide Zylo Core,Monitores,3131.91,4,0.3887
+390,Monitor 4K Zylo Edge,Monitores,11337.65,4,0.2313
+391,Monitor Portatil Zylo Zen,Monitores,11122.21,9,0.4094
+392,Monitor Zylo Pro,Monitores,16781.48,9,0.4067
+393,Monitor Gamer Zylo GT,Monitores,2250.85,4,0.3708
+394,Monitor Ultrawide Zylo SE,Monitores,2442.57,4,0.314
+395,Monitor 4K Zylo Mini,Monitores,11207.81,4,0.3099
+396,Monitor Portatil Zylo Fury,Monitores,4864.14,4,0.2633
+397,Monitor Zylo Pulse,Monitores,6557.49,4,0.1974
+398,Monitor Gamer Zylo Nova,Monitores,2143.84,9,0.4176
+399,Monitor Ultrawide Zylo Vertex,Monitores,26570.51,9,0.2447
+400,Monitor 4K Zylo One,Monitores,2268.61,9,0.3419
+401,Monitor Portatil Orbit Neo,Monitores,11640.28,4,0.4029
+402,Monitor Orbit Prime,Monitores,5207.91,9,0.403
+403,Monitor Gamer Orbit Elite,Monitores,4965.72,4,0.2723
+404,Monitor Ultrawide Orbit Air,Monitores,6531.34,4,0.2668
+405,Monitor 4K Orbit Max,Monitores,26380.91,9,0.3702
+406,Monitor Portatil Orbit Plus,Monitores,6800.95,9,0.2459
+407,Monitor Orbit Lite,Monitores,19163.47,9,0.293
+408,Monitor Gamer Orbit Ultra,Monitores,25253.16,9,0.2919
+409,Monitor Ultrawide Orbit Core,Monitores,13699.12,4,0.2147
+410,Monitor 4K Orbit Edge,Monitores,2824.3,4,0.2737
+411,Monitor Portatil Orbit Zen,Monitores,25253.96,9,0.1902
+412,Monitor Orbit Pro,Monitores,23899.28,4,0.3115
+413,Monitor Gamer Orbit GT,Monitores,4440.77,4,0.2487
+414,Monitor Ultrawide Orbit SE,Monitores,27836.07,9,0.3551
+415,Teclado Mecanico Orbit Mini,Accesorios,1413.02,5,0.2156
+416,Mouse Orbit Fury,Accesorios,541.52,5,0.2633
+417,Mousepad Orbit Pulse,Accesorios,351.91,5,0.3075
+418,Webcam Orbit Nova,Accesorios,2575.77,10,0.3087
+419,Hub USB-C Orbit Vertex,Accesorios,279.73,5,0.3519
+420,Teclado Mecanico Orbit One,Accesorios,180.56,5,0.2143
+421,Mouse Nimbus Neo,Accesorios,863.95,5,0.3831
+422,Mousepad Nimbus Prime,Accesorios,225.65,10,0.2754
+423,Webcam Nimbus Elite,Accesorios,250.67,10,0.3237
+424,Hub USB-C Nimbus Air,Accesorios,1995.03,10,0.3969
+425,Teclado Mecanico Nimbus Max,Accesorios,1199.26,10,0.3751
+426,Mouse Nimbus Plus,Accesorios,554.04,10,0.3167
+427,Mousepad Nimbus Lite,Accesorios,152.24,10,0.3301
+428,Webcam Nimbus Ultra,Accesorios,3924.13,5,0.3392
+429,Hub USB-C Nimbus Core,Accesorios,402.84,10,0.1803
+430,Teclado Mecanico Nimbus Edge,Accesorios,999.52,5,0.314
+431,Mouse Nimbus Zen,Accesorios,254.94,10,0.3559
+432,Mousepad Nimbus Pro,Accesorios,236.92,5,0.3303
+433,Webcam Nimbus GT,Accesorios,2339.97,5,0.4029
+434,Hub USB-C Nimbus SE,Accesorios,2492.65,5,0.3839
+435,Teclado Mecanico Nimbus Mini,Accesorios,235.67,10,0.2415
+436,Mouse Nimbus Fury,Accesorios,195.05,5,0.3035
+437,Mousepad Nimbus Pulse,Accesorios,2181.84,10,0.4164
+438,Webcam Nimbus Nova,Accesorios,1451.81,10,0.2279
+439,Hub USB-C Nimbus Vertex,Accesorios,407.43,10,0.3099
+440,Teclado Mecanico Nimbus One,Accesorios,1344.29,10,0.3958
+441,Mouse Quartz Neo,Accesorios,2502.58,5,0.3264
+442,Mousepad Quartz Prime,Accesorios,803.35,10,0.2868
+443,Webcam Quartz Elite,Accesorios,1039.38,10,0.2596
+444,Hub USB-C Quartz Air,Accesorios,389.88,5,0.281
+445,Teclado Mecanico Quartz Max,Accesorios,716.79,10,0.3107
+446,Mouse Quartz Plus,Accesorios,3256.03,5,0.2588
+447,Mousepad Quartz Lite,Accesorios,195.51,5,0.2169
+448,Webcam Quartz Ultra,Accesorios,1395.04,5,0.2996
+449,Hub USB-C Quartz Core,Accesorios,2103.36,5,0.1935
+450,Teclado Mecanico Quartz Edge,Accesorios,296.55,10,0.2259
+451,Mouse Quartz Zen,Accesorios,2041.42,5,0.3295
+452,Mousepad Quartz Pro,Accesorios,3107.94,5,0.2238
+453,Webcam Quartz GT,Accesorios,1833.28,10,0.3376
+454,Hub USB-C Quartz SE,Accesorios,332.74,10,0.2944
+455,Teclado Mecanico Quartz Mini,Accesorios,241.52,5,0.2356
+456,Mouse Quartz Fury,Accesorios,1042.89,5,0.4134
+457,Mousepad Quartz Pulse,Accesorios,183.15,5,0.3778
+458,Webcam Quartz Nova,Accesorios,372.52,10,0.1917
+459,Hub USB-C Quartz Vertex,Accesorios,1255.48,10,0.305
+460,Teclado Mecanico Quartz One,Accesorios,327.82,5,0.2351
+461,Mouse Helix Neo,Accesorios,3021.14,5,0.2224
+462,Mousepad Helix Prime,Accesorios,558.61,5,0.2797
+463,Webcam Helix Elite,Accesorios,339.83,5,0.2261
+464,Hub USB-C Helix Air,Accesorios,224.52,10,0.3149
+465,Teclado Mecanico Helix Max,Accesorios,1413.81,10,0.3737
+466,Mouse Helix Plus,Accesorios,361.84,5,0.3915
+467,Mousepad Helix Lite,Accesorios,841.05,10,0.2107
+468,Webcam Helix Ultra,Accesorios,367.66,5,0.2354
+469,Hub USB-C Helix Core,Accesorios,4056.55,10,0.2963
+470,Teclado Mecanico Helix Edge,Accesorios,610.57,10,0.2576
+471,Mouse Helix Zen,Accesorios,615.8,10,0.3023
+472,Mousepad Helix Pro,Accesorios,3233.7,5,0.3694
+473,Webcam Helix GT,Accesorios,2345.93,10,0.414
+474,Hub USB-C Helix SE,Accesorios,3638.88,5,0.266
+475,Teclado Mecanico Helix Mini,Accesorios,2554.85,10,0.3474
+476,Mouse Helix Fury,Accesorios,484.9,5,0.1989
+477,Mousepad Helix Pulse,Accesorios,185.9,10,0.3812
+478,Webcam Helix Nova,Accesorios,401.93,5,0.2732
+479,Hub USB-C Helix Vertex,Accesorios,3243.27,10,0.3467
+480,Teclado Mecanico Helix One,Accesorios,1139.96,10,0.3823
+481,Mouse Cobalto Neo,Accesorios,3250.6,10,0.3915
+482,Mousepad Cobalto Prime,Accesorios,1201.93,10,0.3877
+483,Webcam Cobalto Elite,Accesorios,2656.31,10,0.3163
+484,Hub USB-C Cobalto Air,Accesorios,491.44,5,0.193
+485,Teclado Mecanico Cobalto Max,Accesorios,3397.59,10,0.2091
+486,Mouse Cobalto Plus,Accesorios,201.17,5,0.2768
+487,Mousepad Cobalto Lite,Accesorios,1140.99,5,0.2757
+488,Webcam Cobalto Ultra,Accesorios,668.51,10,0.2378
+489,Hub USB-C Cobalto Core,Accesorios,722.97,5,0.2885
+490,Teclado Mecanico Cobalto Edge,Accesorios,701.76,5,0.2765
+491,Mouse Cobalto Zen,Accesorios,205.58,10,0.1815
+492,Mousepad Cobalto Pro,Accesorios,3107.03,5,0.1992
+493,Webcam Cobalto GT,Accesorios,615.51,10,0.4054
+494,Hub USB-C Cobalto SE,Accesorios,2411.1,5,0.2869
+495,Teclado Mecanico Cobalto Mini,Accesorios,775.96,5,0.32
+496,Mouse Cobalto Fury,Accesorios,1891.04,10,0.2285
+497,Mousepad Cobalto Pulse,Accesorios,2080.14,10,0.3333
+498,Webcam Cobalto Nova,Accesorios,943.07,10,0.3412
+499,Hub USB-C Cobalto Vertex,Accesorios,938.22,10,0.315
+500,Teclado Mecanico Cobalto One,Accesorios,2257.03,5,0.3073
+501,Mouse Delta Neo,Accesorios,480.82,10,0.2662
+502,Mousepad Delta Prime,Accesorios,1187.68,5,0.2934
+503,Webcam Delta Elite,Accesorios,4099.95,5,0.3325
+504,Hub USB-C Delta Air,Accesorios,2625.64,5,0.2784
+505,Teclado Mecanico Delta Max,Accesorios,1346.46,5,0.2768
+506,Mouse Delta Plus,Accesorios,597.95,5,0.3319
+507,Mousepad Delta Lite,Accesorios,572.23,10,0.3221
+508,Webcam Delta Ultra,Accesorios,164.68,5,0.1835
+509,Hub USB-C Delta Core,Accesorios,603.92,5,0.4092
+510,Teclado Mecanico Delta Edge,Accesorios,307.04,10,0.3682
+511,Mouse Delta Zen,Accesorios,852.71,10,0.3081
+512,Mousepad Delta Pro,Accesorios,1287.31,10,0.3848
+513,Webcam Delta GT,Accesorios,291.56,10,0.2592
+514,Hub USB-C Delta SE,Accesorios,244.13,5,0.2087
+515,Teclado Mecanico Delta Mini,Accesorios,3368.72,5,0.219
+516,Mouse Delta Fury,Accesorios,1869.02,10,0.4093
+517,Mousepad Delta Pulse,Accesorios,2835.58,10,0.2908
+518,Router Delta Nova,Redes,884.39,2,0.3513
+519,Switch Delta Vertex,Redes,2234.16,2,0.2161
+520,Access Point Delta One,Redes,3360.51,2,0.2924
+521,Adaptador WiFi Praxis Neo,Redes,7452.11,2,0.3741
+522,Cable de Red Praxis Prime,Redes,1520.34,6,0.3427
+523,Router Praxis Elite,Redes,2831.84,6,0.2534
+524,Switch Praxis Air,Redes,750.28,2,0.3348
+525,Access Point Praxis Max,Redes,9670.16,2,0.2553
+526,Adaptador WiFi Praxis Plus,Redes,7635.84,2,0.294
+527,Cable de Red Praxis Lite,Redes,16171.21,2,0.247
+528,Router Praxis Ultra,Redes,1560.8,2,0.2772
+529,Switch Praxis Core,Redes,2494.4,2,0.2966
+530,Access Point Praxis Edge,Redes,619.16,6,0.32
+531,Adaptador WiFi Praxis Zen,Redes,2414.15,2,0.1906
+532,Cable de Red Praxis Pro,Redes,11521.68,2,0.3116
+533,Router Praxis GT,Redes,2016.78,6,0.3662
+534,Switch Praxis SE,Redes,2916.16,6,0.352
+535,Access Point Praxis Mini,Redes,2210.07,2,0.2428
+536,Adaptador WiFi Praxis Fury,Redes,566.31,6,0.1872
+537,Cable de Red Praxis Pulse,Redes,2027.4,2,0.3995
+538,Router Praxis Nova,Redes,16124.03,2,0.3656
+539,Switch Praxis Vertex,Redes,3494.06,2,0.3081
+540,Access Point Praxis One,Redes,17228.6,2,0.1955
+541,Adaptador WiFi Onyx Neo,Redes,2040.51,6,0.3434
+542,Cable de Red Onyx Prime,Redes,7389.25,6,0.4183
+543,Router Onyx Elite,Redes,14943.37,2,0.3861
+544,Switch Onyx Air,Redes,13372.76,6,0.412
+545,Access Point Onyx Max,Redes,11443.06,6,0.3574
+546,Adaptador WiFi Onyx Plus,Redes,2515.65,2,0.2876
+547,Cable de Red Onyx Lite,Redes,622.58,2,0.3816
+548,Router Onyx Ultra,Redes,1106.78,2,0.337
+549,Switch Onyx Core,Redes,3539.57,6,0.2609
+550,Access Point Onyx Edge,Redes,12661.44,2,0.3652
+551,Adaptador WiFi Onyx Zen,Redes,10480.07,6,0.3757
+552,Cable de Red Onyx Pro,Redes,6261.42,2,0.2284
+553,Router Onyx GT,Redes,1255.27,6,0.3222
+554,Switch Onyx SE,Redes,10738.36,6,0.2532
+555,Access Point Onyx Mini,Redes,1011.56,6,0.3528
+556,Adaptador WiFi Onyx Fury,Redes,858.14,2,0.3206
+557,Cable de Red Onyx Pulse,Redes,700.1,2,0.2187
+558,Router Onyx Nova,Redes,2486.26,6,0.4067
+559,Switch Onyx Vertex,Redes,6280.7,6,0.2056
+560,Access Point Onyx One,Redes,4585.28,2,0.2415
+561,Adaptador WiFi Nova Neo,Redes,13291.26,6,0.4153
+562,Cable de Red Nova Prime,Redes,7816.25,6,0.3376
+563,Router Nova Elite,Redes,11445.0,6,0.3626
+564,Switch Nova Air,Redes,16332.52,6,0.3455
+565,Access Point Nova Max,Redes,2302.59,2,0.2579
+566,Adaptador WiFi Nova Plus,Redes,7865.94,6,0.3202
+567,Cable de Red Nova Lite,Redes,978.47,2,0.3583
+568,Router Nova Ultra,Redes,7363.71,2,0.3604
+569,Switch Nova Core,Redes,903.22,2,0.2689
+570,Access Point Nova Edge,Redes,2235.17,6,0.3013
+571,Adaptador WiFi Nova Zen,Redes,5252.42,6,0.3958
+572,Cable de Red Nova Pro,Redes,649.84,6,0.2345
+573,Router Nova GT,Redes,2616.22,6,0.3876
+574,Switch Nova SE,Redes,11070.22,2,0.3107
+575,Access Point Nova Mini,Redes,1968.0,6,0.2193
+576,Adaptador WiFi Nova Fury,Redes,3131.05,6,0.3217
+577,Cable de Red Nova Pulse,Redes,7085.73,2,0.3751
+578,Router Nova Nova,Redes,5427.05,6,0.2126
+579,Switch Nova Vertex,Redes,3346.39,2,0.2622
+580,Access Point Nova One,Redes,6653.35,2,0.3436
+581,Adaptador WiFi Auric Neo,Redes,14758.13,2,0.3587
+582,Cable de Red Auric Prime,Redes,5334.4,2,0.3282
+583,Router Auric Elite,Redes,4356.58,2,0.3388
+584,Switch Auric Air,Redes,14346.48,2,0.1968
+585,Access Point Auric Max,Redes,2782.78,2,0.2977
+586,Adaptador WiFi Auric Plus,Redes,17660.57,2,0.381
+587,Cable de Red Auric Lite,Redes,6062.64,6,0.3104
+588,Router Auric Ultra,Redes,11407.11,2,0.1884
+589,Switch Auric Core,Redes,3442.7,6,0.1861
+590,Access Point Auric Edge,Redes,2112.02,6,0.2513
+591,Adaptador WiFi Auric Zen,Redes,827.84,2,0.2006
+592,Cable de Red Auric Pro,Redes,1728.59,2,0.2519
+593,Router Auric GT,Redes,2171.89,6,0.3116
+594,Switch Auric SE,Redes,1737.94,6,0.2903
+595,Access Point Auric Mini,Redes,13669.45,2,0.3462
+596,Adaptador WiFi Auric Fury,Redes,15149.53,2,0.2959
+597,Cable de Red Auric Pulse,Redes,1471.53,2,0.3704
+598,Router Auric Nova,Redes,3274.73,2,0.3674
+599,Switch Auric Vertex,Redes,1634.01,6,0.3021
+600,Access Point Auric One,Redes,14080.43,6,0.2512
+601,Adaptador WiFi Kortex Neo,Redes,2666.31,6,0.3044
+602,Cable de Red Kortex Prime,Redes,8429.83,2,0.3979
+603,Router Kortex Elite,Redes,1952.88,6,0.3298
+604,Switch Kortex Air,Redes,5124.09,2,0.2669
+605,Access Point Kortex Max,Redes,741.12,2,0.354
+606,Adaptador WiFi Kortex Plus,Redes,1587.17,2,0.2616
+607,Cable de Red Kortex Lite,Redes,9522.34,2,0.2616
+608,Router Kortex Ultra,Redes,550.0,2,0.2377
+609,Switch Kortex Core,Redes,3487.98,2,0.307
+610,Access Point Kortex Edge,Redes,926.86,6,0.2339
+611,Adaptador WiFi Kortex Zen,Redes,7642.28,6,0.1936
+612,Cable de Red Kortex Pro,Redes,3094.76,2,0.2044
+613,Router Kortex GT,Redes,3167.93,6,0.3044
+614,Switch Kortex SE,Redes,17084.74,6,0.2382
+615,Access Point Kortex Mini,Redes,7556.52,2,0.2719
+616,Adaptador WiFi Kortex Fury,Redes,7381.39,6,0.3741
+617,Cable de Red Kortex Pulse,Redes,2036.34,2,0.377
+618,Router Kortex Nova,Redes,5073.43,6,0.3318
+619,Switch Kortex Vertex,Redes,14276.1,2,0.3867
+620,Access Point Kortex One,Redes,3513.09,6,0.3138

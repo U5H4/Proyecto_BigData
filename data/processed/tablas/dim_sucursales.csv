@@ -1,0 +1,13 @@
+﻿id_sucursal,nombre,ciudad,region,region_origen,metros_cuadrados,fecha_apertura
+1,Sucursal NovaCommerce Veracruz 1,Veracruz,Sureste,Norte,3409,2023-01-22
+2,Sucursal NovaCommerce Ciudad de Mexico 2,Ciudad de Mexico,Centro,Norte,4209,2019-03-31
+3,Sucursal NovaCommerce Guadalajara 3,Guadalajara,Occidente,Centro,2825,2020-09-16
+4,Sucursal NovaCommerce Monterrey 4,Monterrey,Norte,Occidente,4129,2021-12-23
+5,Sucursal NovaCommerce Puebla 5,Puebla,Centro,Norte,2882,2021-03-11
+6,Sucursal NovaCommerce Queretaro 6,Queretaro,Centro,Sureste,649,2020-07-21
+7,Sucursal NovaCommerce Cancun 7,Cancun,Sureste,Sureste,96,2023-10-14
+8,Sucursal NovaCommerce Merida 8,Merida,Sureste,Occidente,3405,2018-07-24
+9,Sucursal NovaCommerce Tijuana 9,Tijuana,Norte,Occidente,935,2019-03-16
+10,Sucursal NovaCommerce Leon 10,Leon,Occidente,Sureste,2032,2020-06-27
+11,Sucursal NovaCommerce Veracruz 11,Veracruz,Sureste,Occidente,2583,2022-03-31
+12,Sucursal NovaCommerce Ciudad de Mexico 12,Ciudad de Mexico,Centro,Occidente,857,2018-08-23

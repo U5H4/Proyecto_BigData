@@ -1,0 +1,9 @@
+﻿metrica,valor,nota
+Pearson (todos los productos),0.1463232583017092,incluye los que nadie vio y los que nadie compro
+Pearson (solo visitados),0.10381836762163585,"responde: si lo ven, lo compran?"
+Pearson (visitados y vendidos),0.32343496474764805,es la que calcula el pipeline A10; premia al bestseller
+Spearman (todos los productos),0.27008141562669563,rango: inmune a los valores extremos
+Spearman (solo visitados),0.27559183508958746,
+Productos visitados,455.0,con al menos una visualizacion
+Productos visitados y vendidos,392.0,
+Productos sin ninguna visita,122.0,venta que la navegacion no puede explicar

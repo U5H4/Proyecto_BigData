@@ -1,0 +1,21 @@
+{
+  "id_producto": 97,
+  "nombre": "Desktop Lumen Pulse",
+  "categoria": "Computadoras",
+  "precio": 44347.0,
+  "margen_bruto": 0.334,
+  "rango_precio": "Lujo",
+  "atributos": {
+    "procesador": "AMD Ryzen 3",
+    "ram_gb": 4,
+    "almacenamiento": "256 GB SSD",
+    "sistema_operativo": "Ubuntu 24.04",
+    "pantalla_pulgadas": 15.6,
+    "campo_legacy_desconocido": 0
+  },
+  "etiquetas": [
+    "nuevo"
+  ],
+  "disponible": true,
+  "fecha_registro": "2025-01-15"
+}

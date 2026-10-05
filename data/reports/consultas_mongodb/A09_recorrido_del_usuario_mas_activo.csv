@@ -1,0 +1,10 @@
+﻿fecha,evento,producto,nombre_producto,duracion_seg
+2024-03-13T00:00:00,producto_visto,263,Microfono Onyx Elite,315
+2024-07-07T00:00:00,producto_en_carrito,510,Teclado Mecanico Delta Edge,104
+2024-08-07T00:00:00,producto_comprado,510,Teclado Mecanico Delta Edge,269
+2025-01-02T00:00:00,busqueda_realizada,519,Switch Delta Vertex,228
+2025-06-23T00:00:00,favorito_agregado,151,Tablet Nimbus Zen,503
+2025-08-02T00:00:00,producto_visto,251,Auriculares Gaming Praxis Zen,433
+2026-02-13T00:00:00,producto_visto,92,Desktop Lumen Pro,528
+2026-02-18T00:00:00,busqueda_realizada,313,Monitor Gamer Auric GT,128
+2026-08-18T00:00:00,busqueda_realizada,610,Access Point Kortex Edge,243

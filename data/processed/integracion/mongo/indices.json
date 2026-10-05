@@ -1,0 +1,136 @@
+{
+  "productos": [
+    {
+      "claves": [
+        [
+          "id_producto",
+          1
+        ]
+      ],
+      "opciones": "unique",
+      "razon": "Llave natural del documento"
+    },
+    {
+      "claves": [
+        [
+          "categoria",
+          1
+        ],
+        [
+          "precio",
+          -1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Catalogo por categoria y precio"
+    },
+    {
+      "claves": [
+        [
+          "atributos.procesador",
+          1
+        ]
+      ],
+      "opciones": "sparse",
+      "razon": "Busqueda por atributo variable"
+    },
+    {
+      "claves": [
+        [
+          "rango_precio",
+          1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Segmentacion por rango de precio"
+    }
+  ],
+  "resenas": [
+    {
+      "claves": [
+        [
+          "id_producto",
+          1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Resenas de un producto"
+    },
+    {
+      "claves": [
+        [
+          "id_usuario",
+          1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Historial de un usuario"
+    },
+    {
+      "claves": [
+        [
+          "calificacion",
+          -1
+        ]
+      ],
+      "opciones": "",
+      "razon": "ORDER BY calificacion"
+    },
+    {
+      "claves": [
+        [
+          "fecha",
+          -1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Resenas recientes"
+    }
+  ],
+  "actividad_usuario": [
+    {
+      "claves": [
+        [
+          "producto",
+          1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Visitas de un producto (correlacion con ventas)"
+    },
+    {
+      "claves": [
+        [
+          "usuario",
+          1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Recorrido de un usuario"
+    },
+    {
+      "claves": [
+        [
+          "es_visualizacion",
+          1
+        ],
+        [
+          "fecha",
+          -1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Funnel de navegacion"
+    },
+    {
+      "claves": [
+        [
+          "categoria",
+          1
+        ]
+      ],
+      "opciones": "",
+      "razon": "Navegacion por categoria"
+    }
+  ]
+}

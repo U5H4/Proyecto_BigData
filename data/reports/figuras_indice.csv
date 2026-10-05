@@ -1,0 +1,13 @@
+﻿grafico,titulo,archivo,estado,kb,error
+01_ventas_mensuales,Serie temporal de ventas,01_ventas_mensuales.png,OK,120.6,
+02_mix_categoria,Mix por categoria,02_mix_categoria.png,OK,74.9,
+03_ticket_por_canal,Ticket y margen por canal,03_ticket_por_canal.png,OK,56.3,
+04_ley_de_pareto,Ley de Pareto,04_ley_de_pareto.png,OK,116.3,
+05_segmentos_clientes,Segmentacion RFM,05_segmentos_clientes.png,OK,84.0,
+06_embudo_navegacion,Embudo navegacion-compra,06_embudo_navegacion.png,OK,49.7,
+07_correlacion_visitas_ventas,Correlacion navegacion-venta,07_correlacion_visitas_ventas.png,OK,111.0,
+08_inventario_muerto,Visitas sin venta,08_inventario_muerto.png,OK,118.4,
+09_under_exposure,Under-exposure,09_under_exposure.png,OK,130.2,
+10_impacto_descuentos,Descuentos vs margen,10_impacto_descuentos.png,OK,64.9,
+11_satisfaccion,Calificaciones,11_satisfaccion.png,OK,50.1,
+12_por_sucursal,Facturacion por sucursal,12_por_sucursal.png,OK,131.7,

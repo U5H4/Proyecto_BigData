@@ -1,0 +1,3673 @@
+id_pago,id_pedido,metodo,monto,fecha_pago,estado_pago
+2751,2751,tarjeta_credito,  44603.61  ,17-10-2024,aprobado
+2615,2615,tarjeta_credito,  7994.39  ,2026-02-11,aprobado
+2304,2304,efectivo,377595.15 MXN,31-08-2026,APROBADO
+2282,2282,tarjeta_debito,"402,15",11/18/2025,aprobado
+1588,1588,transferencia,"12796,57",03/06/2026,APROBADO
+79,79,tarjeta_credito,111872.07 MXN,15 de mayo de 2025,pendiente
+1401,1401,efectivo,$133799.83,4 de marzo de 2024,APROBADO
+955,955,tarjeta_debito,$199102.12,29-12-2025,aprobado
+2652,2652,tarjeta_debito,$84738.18,2025-12-15,APROBADO
+1778,1778,tarjeta_debito,0.00,08/17/2026,pendiente
+1130,1130,transferencia,$2.92,21/11/2025,rechazado
+23,23,tarjeta_credito,"14690,65",2024-12-10 00:00:00,APROBADO
+734,734,efectivo,"$52,030",02/02/2024,aprobado
+1845,1845,tarjeta_debito,  536585.14  ,02/08/2025,aprobado
+731,731,transferencia,$0.00,05/18/2026,aprobado
+3436,3436,tarjeta_debito,  6009.26  ,14-09-2026,aprobado
+2884,2884,oxxo,$20490.53,16/03/2025,rechazado
+44,44,transferencia,0.26 MXN,25 de agosto de 2025,null
+1322,1322,tarjeta_debito,17101.76,2025-05-07 00:00:00,APROBADO
+428,428,efectivo,"2,69",21-05-2024,aprobado
+2137,2137,tarjeta_debito,$0,26-07-2026,aprobado
+741,741,oxxo,$2.75,10/09/2025,APROBADO
+2352,2352,transferencia,"49074,87",03/09/2026,aprobado
+3352,3352,mpago,"77503,73",2025-02-21,rechazado
+3547,3547,mpago,0.00,2025-06-10 00:00:00,aprobado
+2989,2989,oxxo,0.00 MXN,26 de agosto de 2024,APROBADO
+2398,2398,oxxo,42201.07,2025-12-12 00:00:00,aprobado
+2321,2321,oxxo,$0,2026-05-17 00:00:00,APROBADO
+2393,2393,transferencia,"65881,81",2025-10-16 00:00:00,pendiente
+1720,1720,tarjeta_credito,3118.83 MXN,06/05/2026,rechazado
+1969,1969,transferencia,4928.16 MXN,09/07/2025,pendiente
+1164,1164,transferencia,$4382.04,2025-01-14,rechazado
+3114,3114,mpago,287723.68,07/10/2024,aprobado
+2665,2665,tarjeta_debito,28289.93 MXN,2024-10-03 00:00:00,pendiente
+3309,3309,oxxo,$551334.47,17 de abril de 2024,aprobado
+676,676,tarjeta_debito,$3,2025-02-04,pendiente
+83,83,tarjeta_debito,110364.02,2025-12-04 00:00:00,
+3424,3424,mpago,$0,2026-08-03 00:00:00,aprobado
+889,889,tarjeta_debito,  1.95  ,2026-02-08,pendiente
+1420,1420,efectivo,$0,02/26/2025,aprobado
+892,892,efectivo,$0.00,03/06/2026,APROBADO
+3263,3263,tarjeta_credito,  498220.85  ,2025-06-05 00:00:00,APROBADO
+3571,3571,transferencia,"15295,66",5 de febrero de 2025,aprobado
+358,358,mpago,$20772.02,15/04/2024,pendiente
+2469,2469,mpago,0.13 MXN,2024-02-22 00:00:00,pendiente
+3526,3526,tarjeta_credito,  0.00  ,30/04/2026,aprobado
+2844,2844,transferencia,$200673.95,11/12/2025,aprobado
+1777,1777,tarjeta_credito,2292.06,26-12-2024,APROBADO
+3094,3094,tarjeta_debito,145049.40 MXN,2024-09-08,aprobado
+9,9,oxxo,$2279.32,11 de agosto de 2024,pendiente
+70,70,efectivo,110391.74 MXN,2025-03-05,aprobado
+292,292,tarjeta_debito,"55986,57",2025-12-14,APROBADO
+3561,3561,mpago,"$30,408",29/05/2025,APROBADO
+421,421,oxxo,0.61,2026-03-14,rechazado
+50,50,tarjeta_debito,"$113,763",27 de abril de 2025,pendiente
+1263,1263,tarjeta_credito,"$100,014",23-06-2025,APROBADO
+2272,2272,tarjeta_credito,"$33,177",2026-05-28,aprobado
+3258,3258,efectivo,25347.00,11/11/2025,aprobado
+2349,2349,oxxo,"$390,047",2025-12-09 00:00:00,APROBADO
+401,401,transferencia,178422.82,2025-01-31 00:00:00,rechazado
+64,64,tarjeta_credito,126247.18 MXN,14-06-2025,APROBADO
+102,102,tarjeta_credito,117294.78 MXN,21-10-2024,APROBADO
+2500,2500,transferencia,39978.77,2024-01-12,aprobado
+3124,3124,efectivo,"$291,051",2026-06-14,aprobado
+2971,2971,tarjeta_debito,0.00 MXN,12/29/2024,aprobado
+2776,2776,mpago,66096.08,31 de enero de 2026,aprobado
+1651,1651,transferencia,  160029.48  ,2025-11-15 00:00:00,pendiente
+2210,2210,mpago,"15628,23",06/07/2025,rechazado
+1228,1228,mpago,$0,2026-08-26 00:00:00,rechazado
+194,194,oxxo,$15244.02,26/06/2025,APROBADO
+3490,3490,tarjeta_credito,$0,28 de marzo de 2026,rechazado
+2895,2895,tarjeta_credito,$1,05/26/2024,APROBADO
+2700,2700,efectivo,85922.32,01/22/2026,aprobado
+1569,1569,mpago,$0.00,21/09/2025,aprobado
+2811,2811,efectivo,$0,03/22/2025,pendiente
+2634,2634,transferencia,"55647,41",04/06/2026,aprobado
+3410,3410,transferencia,$403,26 de febrero de 2026,rechazado
+3538,3538,transferencia,"124585,47",12/17/2025,pendiente
+1334,1334,oxxo,"$264,826",08/08/2024,aprobado
+1106,1106,oxxo,0.00,2024-04-18,APROBADO
+3307,3307,tarjeta_credito,  2.51  ,1 de diciembre de 2025,APROBADO
+485,485,oxxo,$1,2026-05-20 00:00:00,pendiente
+3321,3321,mpago,$105520.41,16/06/2024,rechazado
+2795,2795,tarjeta_credito,"$28,633",25 de mayo de 2026,aprobado
+2369,2369,tarjeta_credito,$7387.35,2025-02-06 00:00:00,APROBADO
+839,839,mpago,"2,04",2025-09-29,aprobado
+810,810,mpago,"2,76",19/04/2026,rechazado
+158,158,tarjeta_credito,$2,17/02/2026,pendiente
+74,74,tarjeta_credito,"598763,32",19/09/2024,APROBADO
+1053,1053,transferencia,17046.31 MXN,2025-03-31,aprobado
+1803,1803,tarjeta_debito,18127.12 MXN,12-03-2024,aprobado
+1292,1292,efectivo,33666.71,2024-07-27,pendiente
+375,375,tarjeta_debito,$0.00,2024-06-08 00:00:00,aprobado
+3141,3141,transferencia,  220078.52  ,15 de junio de 2024,rechazado
+1994,1994,oxxo,29105.34,05-05-2026,aprobado
+2785,2785,efectivo,$-0,5 de octubre de 2025,pendiente
+3422,3422,efectivo,"$6,124",2026-07-04,APROBADO
+402,402,tarjeta_debito,  13162.01  ,21 de junio de 2024,APROBADO
+1562,1562,transferencia,0.56,25/02/2026,pendiente
+560,560,efectivo,$36578.62,2026-05-18,pendiente
+1773,1773,tarjeta_credito,"$316,606",2024-11-03 00:00:00,pendiente
+1377,1377,oxxo,"4042,24",2025-08-02,aprobado
+1384,1384,transferencia,2.67,07/03/2026,APROBADO
+625,625,mpago,73555.89 MXN,20-04-2025,rechazado
+3323,3323,tarjeta_credito,414593.48 MXN,2025-08-19 00:00:00,rechazado
+930,930,transferencia,$80100.94,13/11/2025,rechazado
+828,828,tarjeta_debito,28695.40,2026-04-23 00:00:00,aprobado
+1239,1239,mpago,$3,2024-12-18 00:00:00,APROBADO
+173,173,tarjeta_debito,  36744.18  ,2025-10-23,aprobado
+441,441,efectivo,$24525.26,22-07-2026,pendiente
+1058,1058,tarjeta_debito,0.00,2024-08-17,rechazado
+395,395,tarjeta_debito,"9096,99",13 de septiembre de 2024,rechazado
+888,888,tarjeta_credito,"$103,775",23 de mayo de 2024,aprobado
+822,822,transferencia,$0.94,12/26/2024,pendiente
+1568,1568,transferencia,$61978.04,20-12-2024,aprobado
+3348,3348,efectivo,"44154,55",05-11-2025,rechazado
+1708,1708,mpago,"$41,578",2024-05-16,rechazado
+3396,3396,tarjeta_credito,"$1,096",2024-05-22,aprobado
+1513,1513,tarjeta_debito,  5616.52  ,22-08-2025,aprobado
+1899,1899,oxxo,  44333.97  ,2025-02-07,rechazado
+243,243,efectivo,"0,00",04-03-2026,APROBADO
+125,125,tarjeta_debito,"13891,46",24-01-2025,pendiente
+919,919,oxxo,1.02 MXN,09-07-2024,aprobado
+1606,1606,mpago,0.54,3 de marzo de 2026,pendiente
+1262,1262,oxxo,$0.00,2024-04-17,aprobado
+821,821,tarjeta_credito,"$93,920",2025-06-15 00:00:00,aprobado
+3173,3173,tarjeta_credito,$1.90,11-05-2026,aprobado
+1076,1076,transferencia,40439.45 MXN,1 de diciembre de 2025,APROBADO
+2407,2407,mpago,$119734.48,2025-03-06,aprobado
+3229,3229,tarjeta_debito,$0.00,09/26/2025,rechazado
+1671,1671,mpago,"102652,80",2026-03-30,rechazado
+3295,3295,mpago,186456.47,25-06-2025,pendiente
+2319,2319,transferencia,$201296.49,2024-01-26,aprobado
+774,774,mpago,"$121,787",2024-11-24 00:00:00,aprobado
+3233,3233,tarjeta_debito,$3128.18,2024-04-06 00:00:00,pendiente
+271,271,oxxo,"201464,88",19/08/2026,APROBADO
+2953,2953,efectivo,532061.76 MXN,18 de diciembre de 2025,APROBADO
+2472,2472,tarjeta_debito,2.17 MXN,20-12-2024,aprobado
+848,848,mpago,$1,2025-08-18,aprobado
+1996,1996,efectivo,"5336,27",2024-02-29 00:00:00,pendiente
+783,783,tarjeta_credito,622.18 MXN,20-02-2026,rechazado
+3140,3140,tarjeta_debito,  96834.98  ,01/04/2026,aprobado
+2483,2483,tarjeta_debito,  4466.88  ,2024-12-18,APROBADO
+1564,1564,transferencia,11059.50 MXN,2025-07-30,aprobado
+1888,1888,mpago,"$200,412",2025-03-14 00:00:00,aprobado
+2559,2559,efectivo,69372.18 MXN,09-10-2025,aprobado
+2131,2131,transferencia,55935.14,20-06-2026,APROBADO
+2134,2134,transferencia,"$13,334",2025-08-27,rechazado
+1609,1609,transferencia,24377.68 MXN,07/05/2026,pendiente
+2522,2522,tarjeta_debito,  191128.75  ,08-11-2025,APROBADO
+27,27,efectivo,151804.33,25/09/2026,aprobado
+3591,3591,efectivo,  24701.51  ,2024-12-24,rechazado
+3421,3421,tarjeta_debito,$38910.06,21/09/2024,pendiente
+739,739,tarjeta_credito,1.65,2025-04-02,APROBADO
+1903,1903,tarjeta_debito,"76808,95",03/03/2024,pendiente
+2950,2950,efectivo,$0,2025-12-07,rechazado
+3214,3214,transferencia,1.97,2024-02-25,pendiente
+443,443,transferencia,$0.15,2026-04-30 00:00:00,APROBADO
+1346,1346,tarjeta_debito,"$24,964",29-08-2024,APROBADO
+3585,3585,tarjeta_credito,"0,00",2025-09-22 00:00:00,aprobado
+3259,3259,oxxo,0.92 MXN,2024-01-06,rechazado
+1436,1436,tarjeta_debito,"47615,77",29-07-2026,aprobado
+2104,2104,tarjeta_credito,65751.49 MXN,2026-01-19 00:00:00,APROBADO
+911,911,mpago,0.70,2025-11-01,pendiente
+903,903,transferencia,0.00,06/02/2026,rechazado
+3267,3267,mpago,49343.34 MXN,5 de abril de 2026,APROBADO
+1582,1582,tarjeta_credito,$0,29 de junio de 2025,pendiente
+342,342,oxxo,"$191,934",10/29/2024,rechazado
+3517,3517,oxxo,  90203.05  ,04/05/2026,rechazado
+3351,3351,oxxo,  0.24  ,2024-01-14 00:00:00,rechazado
+1749,1749,tarjeta_debito,"$19,955",30/04/2024,pendiente
+3236,3236,mpago,"$37,328",2025-02-16,aprobado
+975,975,oxxo,$56104.75,2025-05-22,aprobado
+1721,1721,tarjeta_debito,16979.54 MXN,22/11/2024,aprobado
+1424,1424,mpago,$53518.41,2024-02-24 00:00:00,aprobado
+3418,3418,oxxo,"162374,73",2026-05-03,APROBADO
+384,384,tarjeta_credito,"$361,878",2026-06-26,aprobado
+2177,2177,tarjeta_credito,$18417.69,2024-12-25 00:00:00,aprobado
+254,254,oxxo,0.00 MXN,04-09-2026,APROBADO
+3552,3552,mpago,  408505.30  ,2025-08-29 00:00:00,APROBADO
+2017,2017,transferencia,  0.00  ,02/02/2025,rechazado
+1838,1838,efectivo,"0,15",2025-11-14,pendiente
+3208,3208,transferencia,  126443.70  ,14 de agosto de 2025,rechazado
+814,814,tarjeta_credito,  44760.23  ,2025-01-04,pendiente
+1382,1382,tarjeta_credito,"847,50",10-09-2026,rechazado
+636,636,tarjeta_debito,$2.86,10/11/2025,APROBADO
+1848,1848,oxxo,  29066.13  ,2024-08-11,aprobado
+585,585,transferencia,"97018,58",29 de agosto de 2026,aprobado
+936,936,tarjeta_credito,11787.64,2024-05-24,rechazado
+3235,3235,tarjeta_debito,  41125.24  ,04-09-2025,aprobado
+2729,2729,oxxo,$1,13-02-2024,aprobado
+310,310,mpago,67552.10 MXN,2024-03-21,aprobado
+450,450,mpago,$1650.02,30-11-2024,aprobado
+1833,1833,oxxo,$0.00,2026-09-23 00:00:00,APROBADO
+377,377,mpago,295615.46,06/30/2025,APROBADO
+3580,3580,transferencia,  27980.08  ,14/10/2024,aprobado
+1433,1433,tarjeta_credito,"28747,60",23/02/2026,rechazado
+1757,1757,oxxo,"$19,300",2025-02-03,rechazado
+1922,1922,efectivo,74665.25,2024-05-26,APROBADO
+1844,1844,tarjeta_debito,24319.52 MXN,05-10-2024,aprobado
+2869,2869,mpago,"0,00",24/03/2024,APROBADO
+1146,1146,tarjeta_credito,383061.09 MXN,2024-04-25,rechazado
+1748,1748,oxxo,49970.49 MXN,17/03/2026,aprobado
+1950,1950,tarjeta_credito,9127.51 MXN,2026-03-03 00:00:00,aprobado
+3401,3401,oxxo,$18739.29,2024-12-15 00:00:00,pendiente
+1332,1332,efectivo,  26568.25  ,23-01-2024,rechazado
+3423,3423,tarjeta_credito,$1.36,2024-08-19,APROBADO
+3145,3145,transferencia,  163842.86  ,01/09/2026,pendiente
+2248,2248,tarjeta_credito,  31478.79  ,04/22/2024,aprobado
+146,146,tarjeta_debito,$157829.15,2024-07-30,rechazado
+1967,1967,transferencia,50598.92,10-06-2025,aprobado
+2406,2406,transferencia,"$6,932",2025-03-27,APROBADO
+1347,1347,tarjeta_credito,  1.60  ,11-04-2025,aprobado
+880,880,tarjeta_debito,83991.97,2025-01-02,rechazado
+1172,1172,efectivo,"$253,299",2025-09-28 00:00:00,pendiente
+423,423,transferencia,$0,2024-05-31,pendiente
+720,720,transferencia,26071.35,30 de agosto de 2025,rechazado
+928,928,oxxo,  28654.97  ,03-08-2024,rechazado
+2562,2562,tarjeta_credito,$10497.56,2025-08-19 00:00:00,APROBADO
+723,723,transferencia,191983.16 MXN,2026-03-04,aprobado
+156,156,transferencia,  108914.61  ,17/08/2025,aprobado
+3375,3375,oxxo,"$61,339",11/01/2025,aprobado
+2032,2032,tarjeta_debito,"$411,142",2026-01-08,pendiente
+2906,2906,mpago,$1,24 de junio de 2026,aprobado
+941,941,tarjeta_debito,  6078.79  ,2026-06-12,pendiente
+2949,2949,oxxo,92052.85 MXN,2024-04-24,pendiente
+3519,3519,tarjeta_credito,  478.55  ,7 de febrero de 2024,pendiente
+408,408,tarjeta_credito,16932.85 MXN,2025-09-09,APROBADO
+1032,1032,oxxo,6061.86,14-09-2026,aprobado
+3074,3074,oxxo,60538.73,2024-01-23,aprobado
+3499,3499,mpago,$0.00,13 de agosto de 2025,aprobado
+2228,2228,oxxo,"181665,00",04/17/2025,aprobado
+3166,3166,oxxo,$649856.75,22 de junio de 2024,aprobado
+2673,2673,transferencia,86687.70 MXN,07/01/2025,aprobado
+588,588,oxxo,"109491,35",14/04/2026,APROBADO
+2630,2630,tarjeta_debito,"$232,502",07/04/2025,aprobado
+1989,1989,mpago,  6624.49  ,2024-09-11,aprobado
+3389,3389,tarjeta_debito,  3117.05  ,30/07/2025,APROBADO
+1912,1912,transferencia,"0,39",08/03/2024,aprobado
+222,222,efectivo,"0,00",3 de abril de 2026,aprobado
+2077,2077,efectivo,54469.06,2025-07-14 00:00:00,rechazado
+824,824,oxxo,$2.82,2026-05-10,aprobado
+767,767,efectivo,146413.62 MXN,04/10/2025,rechazado
+2066,2066,tarjeta_credito,"$189,798",08-04-2026,APROBADO
+1685,1685,mpago,0.00,2025-12-28 00:00:00,aprobado
+2263,2263,mpago,56999.39 MXN,2025-07-13,pendiente
+830,830,efectivo,1.17 MXN,2024-11-21,rechazado
+3586,3586,tarjeta_credito,0.00,29-09-2026,rechazado
+235,235,efectivo,  55695.66  ,22/05/2025,pendiente
+2444,2444,mpago,  5464.36  ,2025-09-17,APROBADO
+174,174,efectivo,1.81,27-01-2026,aprobado
+1459,1459,transferencia,"19328,95",14-02-2025,aprobado
+655,655,tarjeta_credito,  208749.59  ,10/06/2025,rechazado
+2598,2598,tarjeta_credito,$0,5 de septiembre de 2024,APROBADO
+2689,2689,tarjeta_debito,0.00 MXN,01/24/2025,APROBADO
+2620,2620,tarjeta_credito,$178,2026-04-20,APROBADO
+1449,1449,tarjeta_credito,$209304.11,19 de enero de 2025,pendiente
+1834,1834,tarjeta_debito,$3023.46,2025-12-09,pendiente
+2331,2331,mpago,  223468.95  ,2024-12-05,aprobado
+511,511,oxxo,"1,92",15 de junio de 2025,rechazado
+3426,3426,oxxo,$41777.89,2025-03-19,pendiente
+2447,2447,mpago,$119500.26,2025-11-06,APROBADO
+215,215,efectivo,"0,66",2026-03-31,aprobado
+2390,2390,efectivo,  131901.94  ,2025-12-12,APROBADO
+2471,2471,mpago,83159.57,2025-09-05,APROBADO
+1020,1020,oxxo,"$25,784",2024-06-11,aprobado
+696,696,tarjeta_credito,246000.06 MXN,17 de octubre de 2024,APROBADO
+3091,3091,transferencia,137073.03 MXN,07/07/2026,aprobado
+2557,2557,efectivo,$23305.78,20-02-2025,APROBADO
+3098,3098,tarjeta_debito,  20228.81  ,2026-09-17,rechazado
+587,587,tarjeta_debito,2.26,02/01/2024,aprobado
+2543,2543,mpago,119102.57,10/10/2025,APROBADO
+1284,1284,mpago,"124160,17",04/01/2025,aprobado
+3311,3311,transferencia,  2859.86  ,2026-03-05,rechazado
+3050,3050,tarjeta_debito,47693.49,11 de febrero de 2025,APROBADO
+1796,1796,transferencia,111346.02 MXN,15 de noviembre de 2024,APROBADO
+1547,1547,efectivo,217717.74,18-10-2025,rechazado
+1066,1066,efectivo,$885.09,2026-06-05,pendiente
+2608,2608,tarjeta_credito,  440918.52  ,2026-07-03 00:00:00,rechazado
+3112,3112,efectivo,$0.31,2025-10-25,pendiente
+183,183,transferencia,$1,2025-12-08,pendiente
+1636,1636,tarjeta_debito,$0.37,2025-05-21 00:00:00,aprobado
+29,29,oxxo,  7214.18  ,13 de febrero de 2024,APROBADO
+2740,2740,efectivo,$35442.68,24/12/2024,APROBADO
+2309,2309,oxxo,$0,2024-12-20 00:00:00,APROBADO
+1296,1296,efectivo,16202.13,16 de agosto de 2024,rechazado
+2727,2727,tarjeta_debito,6162.45 MXN,2025-11-10 00:00:00,rechazado
+2817,2817,transferencia,$15467.65,22/09/2026,APROBADO
+1747,1747,tarjeta_debito,$0,06/09/2024,APROBADO
+1561,1561,transferencia,$15182.52,12/11/2025,rechazado
+1091,1091,tarjeta_debito,$0.00,2024-10-11 00:00:00,aprobado
+1005,1005,mpago,"$7,151",2 de septiembre de 2025,aprobado
+1601,1601,efectivo,$1,2024-05-19,APROBADO
+1434,1434,transferencia,"$55,612",28-01-2026,aprobado
+2375,2375,tarjeta_debito,  98069.71  ,16 de marzo de 2026,rechazado
+2484,2484,mpago,$0,12 de diciembre de 2024,rechazado
+1670,1670,efectivo,30643.36 MXN,2026-05-29,aprobado
+1285,1285,tarjeta_debito,10132.28,2024-12-21,aprobado
+3525,3525,mpago,$2.85,1 de junio de 2026,rechazado
+841,841,transferencia,$0,2024-08-28 00:00:00,pendiente
+2358,2358,tarjeta_debito,90720.91,28/05/2026,aprobado
+324,324,transferencia,16090.00 MXN,27-06-2026,pendiente
+615,615,mpago,  43119.30  ,11-01-2025,aprobado
+345,345,tarjeta_debito,2.47,2025-10-17,aprobado
+1615,1615,mpago,9359.52 MXN,26/05/2024,rechazado
+2383,2383,tarjeta_credito,1.73 MXN,14 de septiembre de 2024,APROBADO
+683,683,transferencia,  7034.74  ,2026-08-15,rechazado
+3071,3071,mpago,67508.65 MXN,2026-06-25,pendiente
+2984,2984,efectivo,0.00 MXN,16-12-2024,rechazado
+1354,1354,tarjeta_credito,62960.59,01/29/2024,aprobado
+1205,1205,efectivo,"$147,810",23-01-2024,aprobado
+1223,1223,transferencia,32759.52,28 de febrero de 2025,rechazado
+3458,3458,transferencia,  35329.06  ,26 de septiembre de 2024,aprobado
+449,449,efectivo,"146979,18",21 de marzo de 2024,pendiente
+2103,2103,transferencia,0.90,2024-02-19,rechazado
+1837,1837,efectivo,  59945.54  ,30 de diciembre de 2024,aprobado
+1737,1737,tarjeta_credito,"$281,561",04-10-2024,APROBADO
+332,332,oxxo,  0.13  ,02/13/2024,aprobado
+1587,1587,tarjeta_credito,  103230.62  ,05/15/2026,aprobado
+1208,1208,tarjeta_credito,"0,00",2026-04-12 00:00:00,aprobado
+122,122,transferencia,$9211.40,06-08-2024,aprobado
+899,899,tarjeta_debito,44751.19 MXN,2025-12-08,rechazado
+1673,1673,mpago,"3930,19",17 de abril de 2026,pendiente
+3419,3419,transferencia,  10963.32  ,2026-03-13,pendiente
+3064,3064,tarjeta_credito,39955.39,2024-10-30 00:00:00,APROBADO
+1763,1763,efectivo,0.00,04/01/2024,aprobado
+3106,3106,efectivo,"10431,24",28/09/2024,rechazado
+1086,1086,tarjeta_debito,$1.03,26/01/2025,aprobado
+105,105,mpago,$3,2024-08-24,aprobado
+2048,2048,efectivo,$1.06,18/09/2026,aprobado
+7,7,mpago,147449.13,2026-08-04 00:00:00,aprobado
+1260,1260,mpago,"$64,767",07-10-2025,aprobado
+1423,1423,efectivo,1.41,2025-07-04,pendiente
+121,121,tarjeta_debito,"96003,34",2025-12-23,rechazado
+1147,1147,efectivo,1.98 MXN,2026-08-04 00:00:00,aprobado
+501,501,mpago,78814.31 MXN,2026-01-26 00:00:00,pendiente
+309,309,mpago,$24603.62,2024-09-09 00:00:00,aprobado
+2941,2941,mpago,$12255.23,2024-09-25,aprobado
+1986,1986,mpago,$276183.32,2026-08-18,pendiente
+1704,1704,oxxo,8516.19 MXN,2025-11-02,pendiente
+2920,2920,tarjeta_credito,15697.57,2024-12-11 00:00:00,rechazado
+2670,2670,tarjeta_debito,"235702,74",2025-09-09 00:00:00,rechazado
+817,817,efectivo,1075.71,2024-10-24,aprobado
+371,371,efectivo,"106811,34",2024-11-30,aprobado
+978,978,oxxo,21101.48,2025-12-23 00:00:00,pendiente
+3315,3315,mpago,0.00 MXN,06/11/2025,aprobado
+1344,1344,mpago,400.23 MXN,01/30/2026,aprobado
+1079,1079,mpago,  188166.73  ,15/11/2025,APROBADO
+1620,1620,tarjeta_credito,"$137,983",2026-03-13,pendiente
+2430,2430,oxxo,0.00 MXN,2025-09-07,rechazado
+457,457,oxxo,$20927.20,01/27/2025,APROBADO
+3449,3449,tarjeta_debito,0.31,31 de mayo de 2024,aprobado
+162,162,tarjeta_debito,$66157.47,2026-06-20,pendiente
+2695,2695,mpago,5136.82 MXN,14-02-2026,aprobado
+2692,2692,transferencia,15980.50 MXN,13/03/2024,aprobado
+1018,1018,oxxo,59613.53 MXN,3 de enero de 2024,aprobado
+2200,2200,mpago,81551.55 MXN,2025-12-05,APROBADO
+1414,1414,transferencia,"$17,658",2026-04-04,rechazado
+362,362,oxxo,90791.01 MXN,4 de enero de 2026,aprobado
+52,52,mpago,"$66,894",2026-03-10,N/A
+850,850,tarjeta_credito,461469.13 MXN,2025-04-05 00:00:00,aprobado
+2038,2038,transferencia,"163113,77",2026-07-09,rechazado
+3343,3343,tarjeta_debito,$0,2026-06-15,APROBADO
+3013,3013,tarjeta_credito,392822.61,2026-04-20,APROBADO
+3380,3380,tarjeta_debito,$22990.11,12-03-2026,rechazado
+3495,3495,oxxo,"0,00",04/27/2024,APROBADO
+123,123,transferencia,"$15,329",02/10/2024,aprobado
+2099,2099,efectivo,0.00,26/05/2026,rechazado
+771,771,tarjeta_debito,54932.66,2025-11-10 00:00:00,aprobado
+3061,3061,efectivo,  0.00  ,2025-12-14,APROBADO
+982,982,tarjeta_debito,  14532.22  ,11 de noviembre de 2025,aprobado
+3088,3088,tarjeta_credito,"$6,746",27-02-2025,aprobado
+2778,2778,tarjeta_debito,4879.72,2024-08-08,APROBADO
+3230,3230,transferencia,$1,17-07-2024,rechazado
+979,979,tarjeta_credito,  20434.81  ,10-10-2025,pendiente
+2270,2270,oxxo,  47267.53  ,2026-03-29 00:00:00,aprobado
+3540,3540,tarjeta_credito,$1297.38,02/03/2024,aprobado
+1807,1807,tarjeta_debito,  1247.67  ,10/16/2025,APROBADO
+2354,2354,transferencia,  28217.71  ,2024-10-19,rechazado
+2957,2957,oxxo,6569.43 MXN,2024-09-26 00:00:00,rechazado
+1995,1995,transferencia,1.14 MXN,09/28/2026,pendiente
+553,553,oxxo,111774.08,2026-05-08 00:00:00,rechazado
+1093,1093,mpago,"$74,822",30 de marzo de 2025,APROBADO
+2088,2088,efectivo,19555.12 MXN,2026-09-19 00:00:00,rechazado
+2442,2442,tarjeta_credito,$15374.67,7 de julio de 2024,aprobado
+2101,2101,oxxo,"$165,098",2024-11-18 00:00:00,rechazado
+3226,3226,mpago,"$87,959",04/01/2026,APROBADO
+2111,2111,efectivo,0.00 MXN,27 de octubre de 2024,aprobado
+520,520,tarjeta_debito,173716.37,2026-07-26,aprobado
+2994,2994,efectivo,"$67,692",08/03/2024,aprobado
+605,605,efectivo,132611.00,2024-08-31 00:00:00,rechazado
+2872,2872,efectivo,56723.53 MXN,04-03-2026,aprobado
+1152,1152,oxxo,"0,41",21-01-2025,APROBADO
+2548,2548,oxxo,"$111,733",2024-11-19,pendiente
+1956,1956,efectivo,$2,25-12-2024,rechazado
+2854,2854,efectivo,$363552.02,2024-07-28,rechazado
+3428,3428,transferencia,344540.78 MXN,24-12-2024,rechazado
+471,471,transferencia,"1968,62",2026-08-09,aprobado
+2322,2322,oxxo,137855.29 MXN,7 de febrero de 2026,rechazado
+2966,2966,efectivo,165597.10 MXN,2026-08-02,APROBADO
+2268,2268,transferencia,173718.39 MXN,2025-09-20,APROBADO
+1443,1443,tarjeta_debito,"$55,608",2024-11-02,aprobado
+1505,1505,oxxo,$0.00,03/29/2026,aprobado
+3572,3572,tarjeta_credito,"20622,83",04/12/2025,APROBADO
+876,876,tarjeta_debito,  131663.93  ,16-03-2026,rechazado
+2308,2308,tarjeta_credito,0.00,16/08/2026,aprobado
+3408,3408,oxxo,"1,26",12/14/2025,aprobado
+472,472,oxxo,  103902.13  ,2025-09-27,pendiente
+2883,2883,transferencia,  0.00  ,9 de octubre de 2025,APROBADO
+2591,2591,mpago,0.33 MXN,05/31/2026,aprobado
+2158,2158,mpago,"0,00",2026-06-03 00:00:00,aprobado
+915,915,oxxo,$402.28,2026-04-29,aprobado
+489,489,efectivo,62333.14 MXN,2026-02-28,aprobado
+1180,1180,transferencia,$17055.05,2025-05-22,aprobado
+3482,3482,tarjeta_credito,4014.00 MXN,2026-05-18,rechazado
+3387,3387,efectivo,4413.93 MXN,15/02/2024,pendiente
+1127,1127,mpago,0.54 MXN,21-05-2026,aprobado
+3314,3314,tarjeta_credito,0.69,30-04-2026,rechazado
+3212,3212,tarjeta_debito,51969.66 MXN,05-03-2024,APROBADO
+2773,2773,tarjeta_debito,0.00,08-02-2024,APROBADO
+1692,1692,mpago,"$529,018",20/01/2026,aprobado
+1960,1960,tarjeta_credito,0.95 MXN,2026-01-15,pendiente
+765,765,tarjeta_debito,1890.07 MXN,2024-01-10 00:00:00,aprobado
+2106,2106,oxxo,0.49 MXN,2026-09-28 00:00:00,pendiente
+890,890,transferencia,"$239,072",8 de octubre de 2024,pendiente
+635,635,oxxo,0.00,26/03/2026,pendiente
+1802,1802,transferencia,$0.00,2024-04-08,APROBADO
+3135,3135,tarjeta_debito,"17603,02",21-06-2025,aprobado
+1194,1194,tarjeta_credito,"26738,79",2025-05-01 00:00:00,pendiente
+2741,2741,efectivo,$7530.15,2024-04-09,APROBADO
+95,95,tarjeta_credito,"129344,03",2025-09-28,APROBADO
+2706,2706,transferencia,  0.85  ,2025-11-12,aprobado
+882,882,tarjeta_debito,616.24 MXN,2 de abril de 2026,aprobado
+2364,2364,mpago,$92575.64,31 de agosto de 2025,APROBADO
+812,812,transferencia,$1,13/04/2024,rechazado
+1546,1546,oxxo,"1247,99",12/10/2025,APROBADO
+3576,3576,tarjeta_debito,209805.46 MXN,2025-03-22,aprobado
+2296,2296,tarjeta_credito,"0,00",2026-02-20,pendiente
+2005,2005,mpago,$2614.13,2025-12-21 00:00:00,aprobado
+1788,1788,transferencia,55347.21 MXN,2026-09-09,aprobado
+2167,2167,oxxo,0.00,28 de mayo de 2026,APROBADO
+972,972,oxxo,"159172,07",2025-12-27 00:00:00,APROBADO
+997,997,oxxo,  82592.44  ,29-09-2025,aprobado
+3549,3549,tarjeta_credito,  3.00  ,2025-07-12,APROBADO
+1121,1121,efectivo,"1021,87",30-06-2026,aprobado
+1941,1941,tarjeta_debito,86963.26 MXN,15 de julio de 2026,rechazado
+2495,2495,oxxo,"1,95",2026-08-23 00:00:00,aprobado
+297,297,transferencia,"$107,953",3 de septiembre de 2024,pendiente
+1824,1824,mpago,"$32,900",02-07-2024,aprobado
+31,31,mpago,"1,61",2025-01-07,N/A
+706,706,efectivo,165025.22 MXN,03/11/2026,APROBADO
+1915,1915,efectivo,$201083.65,2026-08-27,pendiente
+188,188,oxxo,"$124,335",2025-06-01,APROBADO
+2274,2274,transferencia,$4675.55,19/11/2025,aprobado
+1477,1477,tarjeta_debito,21410.53,2026-04-24,pendiente
+2437,2437,mpago,"21358,53",2025-12-04 00:00:00,pendiente
+807,807,efectivo,11711.44,12/21/2024,aprobado
+2049,2049,mpago,$0.00,2024-06-02 00:00:00,APROBADO
+2876,2876,oxxo,"1,76",28 de agosto de 2026,APROBADO
+3333,3333,efectivo,"2,45",05-07-2024,rechazado
+1553,1553,tarjeta_debito,$1159.94,2024-05-27,aprobado
+2578,2578,efectivo,78445.67 MXN,2025-05-22,aprobado
+524,524,tarjeta_credito,11325.56,28/02/2026,pendiente
+2164,2164,mpago,0.00,2026-01-27 00:00:00,aprobado
+415,415,efectivo,162301.04,12-11-2024,APROBADO
+340,340,oxxo,  16624.14  ,2025-03-13,pendiente
+3361,3361,transferencia,  13105.40  ,2025-10-26,aprobado
+3513,3513,tarjeta_credito,221812.04,2024-12-13,aprobado
+3443,3443,tarjeta_debito,  134127.97  ,01-04-2026,APROBADO
+1619,1619,oxxo,0.00,15 de abril de 2026,aprobado
+2172,2172,tarjeta_debito,1.32 MXN,2026-08-17 00:00:00,rechazado
+404,404,oxxo,53968.86,02/12/2025,aprobado
+39,39,tarjeta_credito,17121.66 MXN,2025-07-22,APROBADO
+1871,1871,mpago,  10163.44  ,14 de marzo de 2025,APROBADO
+608,608,efectivo,  0.00  ,2024-10-12,aprobado
+718,718,efectivo,"$18,422",07/20/2024,APROBADO
+2021,2021,transferencia,$21241.78,10-07-2025,aprobado
+2642,2642,tarjeta_debito,  14157.26  ,07/17/2026,APROBADO
+1279,1279,tarjeta_credito,1356.34,2024-03-05,aprobado
+1881,1881,oxxo,$1593.34,2024-03-21,pendiente
+3384,3384,tarjeta_credito,"$5,133",2024-09-09,aprobado
+1758,1758,efectivo,$57629.68,15/05/2025,rechazado
+1599,1599,oxxo,  3054.61  ,2024-01-30,aprobado
+2594,2594,transferencia,"$476,701",2024-03-09,aprobado
+3538,3538,transferencia,"124585,47",12/17/2025,pendiente
+1786,1786,transferencia,"52786,26",25-11-2025,APROBADO
+2918,2918,tarjeta_debito,$3,29/06/2025,pendiente
+1145,1145,efectivo,331.63,2025-05-24 00:00:00,rechazado
+2930,2930,tarjeta_debito,"$49,102",09/12/2025,aprobado
+764,764,mpago,  11659.44  ,27/07/2025,APROBADO
+2378,2378,tarjeta_credito,18226.98,08/02/2025,aprobado
+3467,3467,oxxo,  84836.61  ,2026-09-29 00:00:00,APROBADO
+672,672,mpago,"2,22",2025-02-02 00:00:00,aprobado
+2374,2374,transferencia,"17604,81",08/23/2026,pendiente
+1626,1626,efectivo,  4377.81  ,2026-07-08,rechazado
+3037,3037,transferencia,8738.06 MXN,15/07/2026,aprobado
+1386,1386,tarjeta_credito,  4365.62  ,2024-10-22 00:00:00,APROBADO
+3487,3487,oxxo,29235.52,07/06/2024,aprobado
+2502,2502,efectivo,0.00 MXN,08/14/2025,aprobado
+1295,1295,mpago,$33098.33,23/05/2024,APROBADO
+794,794,tarjeta_debito,35101.20 MXN,09/09/2025,APROBADO
+1990,1990,efectivo,2.17,2026-02-28,aprobado
+795,795,tarjeta_credito,"1,30",17-04-2024,aprobado
+3320,3320,transferencia,"3536,80",2024-11-26 00:00:00,aprobado
+1310,1310,oxxo,"84519,04",2025-09-08,aprobado
+100,100,tarjeta_credito,"15725,79",2024-06-17,pendiente
+419,419,transferencia,"842,79",2025-08-17,pendiente
+2253,2253,tarjeta_credito,264386.45,2025-12-25,aprobado
+322,322,tarjeta_debito,2.63,2024-03-28,APROBADO
+2940,2940,transferencia,"0,00",12-08-2024,APROBADO
+3340,3340,tarjeta_credito,  75852.77  ,2025-11-08,APROBADO
+2798,2798,tarjeta_debito,"176063,75",2026-05-19 00:00:00,aprobado
+868,868,mpago,4955.38,2024-02-07 00:00:00,aprobado
+1857,1857,tarjeta_credito,"1,86",20/05/2024,aprobado
+2572,2572,tarjeta_credito,$9349.08,2025-08-15,rechazado
+2576,2576,tarjeta_debito,$212528.57,2026-03-08 00:00:00,aprobado
+2625,2625,oxxo,  249534.21  ,2026-07-25,aprobado
+3168,3168,efectivo,"1,39",30/05/2025,aprobado
+2542,2542,oxxo,0.78,2026-06-23,aprobado
+735,735,efectivo,"105232,55",25/09/2024,aprobado
+527,527,transferencia,$195111.82,01/18/2024,aprobado
+3480,3480,mpago,430992.90,03/04/2024,aprobado
+1870,1870,oxxo,$0,2025-12-02,aprobado
+2416,2416,tarjeta_debito,$2069.70,2026-04-04,rechazado
+761,761,tarjeta_credito,"$3,955",2025-08-18,APROBADO
+2355,2355,oxxo,  9621.59  ,2026-08-05,aprobado
+2946,2946,tarjeta_credito,"0,00",2025-06-14 00:00:00,aprobado
+2277,2277,efectivo,2.59 MXN,29-07-2026,pendiente
+973,973,efectivo,220464.10 MXN,20 de mayo de 2026,pendiente
+601,601,tarjeta_credito,790.60,27 de marzo de 2025,pendiente
+2420,2420,tarjeta_credito,81021.31 MXN,20/02/2026,APROBADO
+3251,3251,efectivo,39856.24 MXN,12-06-2025,aprobado
+996,996,transferencia,"0,00",2025-09-18,APROBADO
+2909,2909,mpago,"$95,660",2026-05-29 00:00:00,aprobado
+2026,2026,tarjeta_debito,35840.10,2025-01-25,rechazado
+514,514,mpago,"782,73",08/30/2025,aprobado
+638,638,transferencia,156328.77,2024-06-21,APROBADO
+2493,2493,efectivo,$17840.70,16/02/2024,APROBADO
+2181,2181,tarjeta_debito,$2627.86,2024-04-04,aprobado
+1944,1944,tarjeta_credito,  187042.75  ,2026-07-27,aprobado
+3105,3105,tarjeta_credito,$5252.74,23-04-2026,aprobado
+2691,2691,mpago,$38682.62,2024-01-27,rechazado
+2489,2489,tarjeta_credito,10637.40 MXN,2024-05-26,rechazado
+634,634,mpago,  36376.07  ,2025-01-10 00:00:00,aprobado
+430,430,oxxo,$2.81,2025-07-26,APROBADO
+2149,2149,mpago,"$3,860",7 de abril de 2024,pendiente
+1203,1203,efectivo,"0,00",07/03/2026,pendiente
+1476,1476,mpago,$225723.32,2025-08-05,rechazado
+918,918,tarjeta_debito,23377.72 MXN,2026-01-14,rechazado
+1886,1886,tarjeta_debito,"12320,58",2024-12-28 00:00:00,aprobado
+2868,2868,efectivo,$0,2025-08-18,rechazado
+1526,1526,transferencia,4401.47 MXN,2025-06-14 00:00:00,APROBADO
+673,673,oxxo,182831.44,2024-03-06,aprobado
+551,551,transferencia,"27618,44",2025-09-29,pendiente
+1816,1816,oxxo,$187517.09,12 de agosto de 2026,aprobado
+1417,1417,oxxo,1.23 MXN,29/07/2024,APROBADO
+155,155,efectivo,"$1,106",11 de julio de 2026,aprobado
+1411,1411,oxxo,  8381.64  ,2025-05-13,pendiente
+3558,3558,oxxo,0.00 MXN,20/06/2025,pendiente
+3585,3585,tarjeta_credito,"0,00",2025-09-22 00:00:00,aprobado
+2622,2622,efectivo,$0,01-06-2025,aprobado
+2130,2130,tarjeta_credito,$0,27/01/2026,APROBADO
+3011,3011,mpago,  3657.47  ,06-05-2024,aprobado
+543,543,tarjeta_debito,  21326.60  ,31/01/2024,APROBADO
+319,319,tarjeta_credito,0.00,10/11/2024,rechazado
+749,749,tarjeta_credito,$304350.13,2024-07-24,pendiente
+2208,2208,tarjeta_credito,12919.55,09/14/2025,aprobado
+303,303,tarjeta_credito,$39350.25,10/20/2025,pendiente
+748,748,tarjeta_credito,9657.86,2026-04-30,rechazado
+2431,2431,efectivo,"117032,47",2024-11-21,rechazado
+643,643,oxxo,"$86,985",17-12-2025,APROBADO
+2064,2064,transferencia,"$1,721",30/09/2024,rechazado
+3562,3562,transferencia,272000.35,02/10/2025,aprobado
+160,160,mpago,$59301.13,2025-10-09,aprobado
+3365,3365,efectivo,$0,11/18/2024,APROBADO
+3167,3167,tarjeta_debito,"$16,763",22/04/2024,aprobado
+3268,3268,mpago,57390.66 MXN,13/01/2025,pendiente
+1142,1142,tarjeta_debito,$35427.44,2025-08-08,aprobado
+932,932,efectivo,  78399.55  ,9 de junio de 2026,aprobado
+2419,2419,tarjeta_debito,5057.44,2024-08-05,APROBADO
+139,139,efectivo,"0,00",05/19/2024,aprobado
+335,335,mpago,$1.83,2025-09-02,pendiente
+412,412,tarjeta_debito,"$39,952",08/02/2024,APROBADO
+288,288,transferencia,16141.64,17/11/2024,aprobado
+2526,2526,mpago,$2.50,2024-06-16,aprobado
+2207,2207,oxxo,0.00 MXN,31-01-2025,aprobado
+1801,1801,tarjeta_credito,"$1,372",2024-05-08,aprobado
+2204,2204,mpago,9768.04,2025-02-09 00:00:00,pendiente
+595,595,efectivo,955.66 MXN,2026-08-27,pendiente
+2807,2807,tarjeta_debito,"0,00",27-05-2026,pendiente
+2219,2219,mpago,"75750,04",20/02/2025,aprobado
+2215,2215,tarjeta_debito,10803.60 MXN,2026-02-28,aprobado
+2748,2748,transferencia,45173.11 MXN,04/27/2026,aprobado
+800,800,oxxo,"252799,58",7 de julio de 2026,aprobado
+273,273,mpago,0.33 MXN,12/14/2025,rechazado
+97,97,mpago,$49385.96,23 de julio de 2025,APROBADO
+2936,2936,tarjeta_credito,"$49,371",2025-02-19,APROBADO
+1949,1949,transferencia,175699.58 MXN,08/25/2026,pendiente
+411,411,transferencia,$67208.49,2024-05-14,APROBADO
+244,244,transferencia,  0.00  ,2025-09-28,aprobado
+350,350,tarjeta_debito,"$63,188",18-06-2025,rechazado
+2165,2165,tarjeta_debito,69465.79,05/17/2026,APROBADO
+2420,2420,tarjeta_credito,81021.31 MXN,20/02/2026,APROBADO
+1983,1983,tarjeta_credito,"$186,556",2024-05-19 00:00:00,pendiente
+2525,2525,oxxo,1.54,09/01/2025,APROBADO
+3374,3374,tarjeta_debito,"1,94",2026-06-10,aprobado
+710,710,oxxo,"144389,47",10/29/2025,pendiente
+2973,2973,tarjeta_debito,$57853.97,5 de octubre de 2025,aprobado
+2565,2565,oxxo,2589.29 MXN,2026-07-21,rechazado
+3203,3203,oxxo,1973.01 MXN,2025-08-09 00:00:00,pendiente
+2418,2418,tarjeta_credito,$136236.32,2025-10-26 00:00:00,aprobado
+1329,1329,oxxo,1.74 MXN,2025-05-01,aprobado
+463,463,oxxo,"15408,00",2025-03-05,pendiente
+2947,2947,oxxo,11942.28 MXN,2026-01-27,APROBADO
+3012,3012,efectivo,76755.66 MXN,18 de octubre de 2024,rechazado
+1681,1681,tarjeta_credito,61357.56 MXN,07-06-2026,pendiente
+3096,3096,transferencia,"101243,13",13-05-2026,APROBADO
+2714,2714,mpago,"$67,133",09-12-2025,aprobado
+1462,1462,tarjeta_credito,0.00,12-01-2024,pendiente
+2299,2299,mpago,"19731,65",2025-06-23,aprobado
+3079,3079,efectivo,543246.80 MXN,04/09/2025,pendiente
+1324,1324,tarjeta_credito,"0,00",18 de mayo de 2025,aprobado
+692,692,transferencia,32046.10 MXN,18 de noviembre de 2024,pendiente
+2628,2628,transferencia,"1,25",26 de agosto de 2026,aprobado
+3066,3066,tarjeta_credito,"0,00",25-06-2024,pendiente
+1438,1438,tarjeta_debito,187502.52 MXN,2025-12-04 00:00:00,pendiente
+3272,3272,tarjeta_debito,696.82,2025-07-12,pendiente
+2356,2356,oxxo,$0.00,2025-02-22 00:00:00,rechazado
+775,775,transferencia,$61632.23,2024-07-20,rechazado
+2081,2081,tarjeta_debito,  41162.18  ,2025-02-14 00:00:00,aprobado
+951,951,tarjeta_credito,2.47 MXN,01/31/2026,pendiente
+1810,1810,tarjeta_credito,$11100.91,06-08-2026,aprobado
+2734,2734,oxxo,26070.42 MXN,07-12-2025,aprobado
+3442,3442,tarjeta_credito,"$45,661",13 de diciembre de 2024,pendiente
+1416,1416,mpago,"$123,121",10/09/2026,aprobado
+3089,3089,tarjeta_debito,$47458.33,08-07-2024,aprobado
+2655,2655,tarjeta_credito,"26848,01",02-11-2025,aprobado
+3398,3398,tarjeta_credito,"2,21",2 de junio de 2026,pendiente
+3256,3256,tarjeta_credito,0.00 MXN,8 de febrero de 2026,pendiente
+2316,2316,efectivo,26458.86,2025-09-11,aprobado
+1425,1425,mpago,  49454.88  ,24 de julio de 2025,APROBADO
+2934,2934,oxxo,  246148.89  ,2026-01-27 00:00:00,rechazado
+1690,1690,transferencia,0.42,2024-11-05 00:00:00,APROBADO
+2644,2644,tarjeta_credito,"213641,44",2025-05-01,aprobado
+2370,2370,mpago,"$143,452",21 de agosto de 2025,rechazado
+221,221,oxxo,276396.63 MXN,19-06-2026,aprobado
+1412,1412,oxxo,$0.00,2026-02-08 00:00:00,pendiente
+1894,1894,tarjeta_debito,$109127.67,2026-02-10 00:00:00,aprobado
+2169,2169,mpago,  239752.07  ,03/11/2026,rechazado
+1055,1055,transferencia,0.00 MXN,2026-09-28,APROBADO
+968,968,tarjeta_debito,$215823.96,12/25/2024,aprobado
+3199,3199,mpago,$1.70,2024-10-24 00:00:00,aprobado
+1123,1123,tarjeta_debito,28942.90 MXN,3 de septiembre de 2026,aprobado
+2391,2391,tarjeta_credito,215408.36 MXN,2025-07-23,APROBADO
+2305,2305,transferencia,$3327.02,2025-12-17 00:00:00,APROBADO
+1584,1584,efectivo,109915.72,01/09/2025,aprobado
+1698,1698,tarjeta_debito,1975.32 MXN,07/03/2026,aprobado
+1784,1784,transferencia,"124063,98",26-01-2025,aprobado
+3289,3289,oxxo,3743.00,2026-06-03,APROBADO
+1907,1907,tarjeta_credito,29098.48,2024-10-30,rechazado
+3119,3119,mpago,18046.38 MXN,2024-01-29,aprobado
+581,581,tarjeta_credito,$0.00,2025-01-24 00:00:00,aprobado
+1341,1341,oxxo,32512.69,2025-03-21,rechazado
+1751,1751,tarjeta_debito,  28500.70  ,2025-07-20,pendiente
+2129,2129,mpago,0.00,2025-08-26,rechazado
+2147,2147,tarjeta_debito,  0.00  ,23 de junio de 2024,rechazado
+253,253,efectivo,$29850.48,01-07-2025,APROBADO
+1182,1182,efectivo,336311.95 MXN,31/10/2024,APROBADO
+3462,3462,oxxo,$0.52,02/08/2024,pendiente
+713,713,transferencia,  1.79  ,20/01/2025,rechazado
+730,730,transferencia,0.00,10-07-2026,APROBADO
+1084,1084,tarjeta_credito,"0,00",12-09-2025,pendiente
+555,555,mpago,"$135,205",2024-01-27,pendiente
+411,411,transferencia,$67208.49,2024-05-14,APROBADO
+1743,1743,mpago,  1.97  ,02/01/2026,aprobado
+2265,2265,oxxo,2.40 MXN,03/31/2025,aprobado
+653,653,tarjeta_debito,"11443,70",2024-01-15,aprobado
+2110,2110,oxxo,2.06 MXN,2025-05-03 00:00:00,aprobado
+2128,2128,transferencia,"13318,16",9 de julio de 2025,aprobado
+1335,1335,transferencia,  249994.43  ,31 de octubre de 2024,rechazado
+3412,3412,mpago,"17143,36",2025-05-14 00:00:00,aprobado
+3567,3567,mpago,0.34 MXN,15 de mayo de 2026,rechazado
+3111,3111,transferencia,$0,04-10-2024,aprobado
+2047,2047,transferencia,35452.83,14 de enero de 2025,pendiente
+1011,1011,efectivo,  149720.27  ,07-08-2026,rechazado
+3507,3507,transferencia,33692.80,06/02/2024,aprobado
+1770,1770,efectivo,114239.02,2024-01-13,rechazado
+2726,2726,tarjeta_debito,0.15 MXN,07-09-2024,APROBADO
+1771,1771,tarjeta_debito,376.79 MXN,2024-12-08,rechazado
+1451,1451,transferencia,7634.00 MXN,28-06-2026,aprobado
+239,239,oxxo,0.72,14/03/2025,aprobado
+3081,3081,tarjeta_credito,$104956.45,16 de diciembre de 2024,aprobado
+351,351,tarjeta_debito,"673082,35",27 de enero de 2025,rechazado
+353,353,mpago,  89623.69  ,08-05-2025,pendiente
+1122,1122,tarjeta_debito,"26740,02",23 de abril de 2025,pendiente
+2771,2771,mpago,$7837.26,2026-04-11,pendiente
+2283,2283,tarjeta_credito,53982.89 MXN,2025-10-30,aprobado
+129,129,tarjeta_debito,$68924.27,2025-05-11,APROBADO
+561,561,transferencia,1.69 MXN,9 de febrero de 2025,rechazado
+2760,2760,efectivo,"17455,00",04/24/2024,pendiente
+1961,1961,oxxo,"27379,50",25 de septiembre de 2024,pendiente
+3372,3372,oxxo,61095.17 MXN,19-05-2025,pendiente
+1032,1032,oxxo,6061.86,14-09-2026,aprobado
+1521,1521,tarjeta_debito,46917.32,2026-05-14,rechazado
+577,577,transferencia,220284.39,2026-02-17,aprobado
+205,205,efectivo,1.74,2024-09-08,APROBADO
+3488,3488,mpago,221281.99 MXN,24-10-2025,rechazado
+234,234,transferencia,  28927.60  ,2026-09-14,aprobado
+2637,2637,mpago,5252.58 MXN,2024-02-23,aprobado
+2633,2633,tarjeta_debito,"$73,756",01-08-2025,aprobado
+2838,2838,oxxo,0.00 MXN,10 de abril de 2026,aprobado
+2534,2534,efectivo,"$60,705",2025-08-30 00:00:00,rechazado
+2660,2660,mpago,"10347,54",02/11/2025,aprobado
+2496,2496,tarjeta_debito,17050.42 MXN,15/06/2025,pendiente
+976,976,tarjeta_credito,"$89,359",2025-11-29 00:00:00,pendiente
+1633,1633,tarjeta_credito,15408.75,2024-12-18 00:00:00,APROBADO
+3589,3589,efectivo,"54766,43",2026-02-04,aprobado
+117,117,mpago,0.00,5 de octubre de 2025,pendiente
+801,801,oxxo,4019.31 MXN,30/03/2025,aprobado
+733,733,tarjeta_debito,"9165,69",12/25/2025,aprobado
+695,695,oxxo,"0,00",03-03-2026,pendiente
+2225,2225,tarjeta_credito,  18055.66  ,2024-08-06,rechazado
+1013,1013,efectivo,$28541.83,03/04/2026,pendiente
+2970,2970,tarjeta_credito,$89662.86,2026-06-02,aprobado
+2295,2295,transferencia,"11460,15",16/10/2025,aprobado
+3027,3027,oxxo,"$154,025",2024-12-04 00:00:00,aprobado
+987,987,transferencia,73021.63,2026-01-17,pendiente
+385,385,oxxo,$0.00,21-06-2024,aprobado
+1092,1092,tarjeta_debito,0.00 MXN,20/12/2024,pendiente
+2580,2580,efectivo,310141.70 MXN,15/06/2026,APROBADO
+2015,2015,tarjeta_credito,"2,25",26-06-2026,aprobado
+1481,1481,efectivo,$22179.42,2024-12-27,aprobado
+260,260,mpago,$97202.55,2024-06-18,rechazado
+2656,2656,transferencia,"29610,77",2024-12-02,APROBADO
+59,59,tarjeta_debito,  167262.13  ,2026-02-05 00:00:00,rechazado
+1224,1224,tarjeta_credito,  1.10  ,13/11/2024,aprobado
+37,37,tarjeta_debito,0.00,29-12-2025,
+1806,1806,efectivo,57964.20,24/04/2026,rechazado
+703,703,tarjeta_credito,  96934.55  ,07/04/2024,aprobado
+793,793,efectivo,188953.87,17/10/2024,rechazado
+1273,1273,oxxo,$36352.43,2025-04-21,aprobado
+1268,1268,tarjeta_debito,"$58,383",20/07/2024,APROBADO
+2648,2648,tarjeta_debito,"$214,295",2026-09-18 00:00:00,pendiente
+789,789,oxxo,146836.85 MXN,2026-09-24,pendiente
+2297,2297,oxxo,"206930,19",24 de agosto de 2025,aprobado
+535,535,efectivo,57022.23,2026-04-12,aprobado
+277,277,mpago,5731.79 MXN,2024-09-08,aprobado
+3387,3387,efectivo,4413.93 MXN,15/02/2024,pendiente
+2062,2062,oxxo,0.00,22-08-2025,aprobado
+207,207,tarjeta_credito,26026.80,13-05-2026,pendiente
+1017,1017,oxxo,"0,00",22-03-2024,rechazado
+1283,1283,mpago,4309.32,16 de febrero de 2025,rechazado
+1393,1393,oxxo,11825.74,06/03/2025,pendiente
+657,657,tarjeta_credito,$0.00,2024-08-27,aprobado
+306,306,efectivo,  4979.03  ,28-11-2024,pendiente
+1825,1825,oxxo,2.05,2025-02-12,aprobado
+2235,2235,tarjeta_debito,$185991.84,2024-03-21,pendiente
+318,318,mpago,$2,2026-01-09,aprobado
+2070,2070,efectivo,0.00,03/26/2026,APROBADO
+2781,2781,tarjeta_debito,3398.24 MXN,05/06/2026,rechazado
+669,669,mpago,2.03,08/17/2025,rechazado
+1982,1982,efectivo,"$2,942",2024-03-28,rechazado
+3130,3130,efectivo,  96491.60  ,08-09-2026,rechazado
+2708,2708,tarjeta_debito,222.35,12 de noviembre de 2024,aprobado
+512,512,transferencia,472311.47,2025-08-27,aprobado
+1264,1264,oxxo,  96532.87  ,01/03/2025,rechazado
+2396,2396,oxxo,  81549.84  ,11/12/2024,pendiente
+663,663,oxxo,49992.14 MXN,2026-06-11,pendiente
+3381,3381,mpago,"$2,111",17 de enero de 2026,APROBADO
+1097,1097,tarjeta_debito,"$3,475",2025-03-16,APROBADO
+1437,1437,transferencia,$0,12/24/2025,aprobado
+2752,2752,transferencia,0.00 MXN,24 de mayo de 2024,pendiente
+1603,1603,efectivo,"$44,492",10/01/2025,rechazado
+2426,2426,efectivo,$0.00,11/06/2025,aprobado
+685,685,tarjeta_credito,"0,00",10-10-2025,aprobado
+523,523,efectivo,66424.44 MXN,29/12/2025,aprobado
+2186,2186,efectivo,"15541,71",03/10/2025,rechazado
+2494,2494,efectivo,4032.24,02/13/2025,rechazado
+2987,2987,efectivo,  135246.45  ,29-07-2025,pendiente
+1428,1428,efectivo,$1.48,10-07-2024,pendiente
+16,16,transferencia,  34575.22  ,08/07/2026,rechazado
+2486,2486,efectivo,19594.77,09-07-2025,pendiente
+2421,2421,efectivo,21410.51,2024-09-14 00:00:00,aprobado
+3481,3481,tarjeta_credito,  0.00  ,09/01/2026,pendiente
+2223,2223,efectivo,1.36,05/24/2024,aprobado
+3198,3198,efectivo,  2.78  ,2024-01-17,pendiente
+2054,2054,oxxo,$34090.24,2026-04-24 00:00:00,rechazado
+1181,1181,oxxo,"0,28",2024-10-19,rechazado
+596,596,transferencia,"1,35",2025-09-08,aprobado
+3086,3086,tarjeta_credito,269385.38,26-10-2024,APROBADO
+2728,2728,efectivo,229280.86 MXN,2026-01-13,aprobado
+12,12,tarjeta_credito,"71784,22",08/22/2024,NULL
+2027,2027,oxxo,$29209.16,13 de agosto de 2024,aprobado
+103,103,transferencia,$5598.67,19-05-2025,-
+1439,1439,oxxo,0.00 MXN,01/11/2025,aprobado
+154,154,oxxo,0.00,09-05-2025,rechazado
+1117,1117,efectivo,  55346.07  ,1 de agosto de 2025,rechazado
+1267,1267,tarjeta_credito,$128617.44,05-02-2026,aprobado
+2602,2602,oxxo,"1938,70",30/11/2024,pendiente
+1707,1707,oxxo,25677.57,2024-06-12,pendiente
+2878,2878,oxxo,$15435.01,01-03-2026,pendiente
+3223,3223,mpago,$37028.10,2026-01-18,rechazado
+526,526,tarjeta_credito,0.00 MXN,11/08/2026,rechazado
+698,698,mpago,$0,24 de enero de 2026,aprobado
+331,331,tarjeta_credito,$0.33,12-05-2025,aprobado
+2325,2325,transferencia,$856,2026-08-03,aprobado
+846,846,oxxo,  123714.04  ,18 de abril de 2024,rechazado
+2123,2123,tarjeta_debito,$0.00,2024-07-29 00:00:00,aprobado
+2243,2243,mpago,178231.00,1 de febrero de 2024,aprobado
+1467,1467,efectivo,15527.10,2026-08-30,aprobado
+20,20,mpago,"$5,670",2026-03-29,aprobado
+2571,2571,transferencia,42280.73,23-11-2025,pendiente
+3501,3501,tarjeta_credito,406850.92,01/15/2026,rechazado
+2612,2612,oxxo,27270.47 MXN,2024-07-31,APROBADO
+477,477,tarjeta_credito,18272.05 MXN,2026-02-23,aprobado
+3225,3225,tarjeta_credito,  52101.71  ,2024-12-06,aprobado
+2330,2330,oxxo,  126794.80  ,06/27/2024,APROBADO
+2392,2392,efectivo,34859.47,03/11/2025,aprobado
+187,187,efectivo,13412.72 MXN,2025-02-01,rechazado
+2196,2196,efectivo,"$89,160",2025-03-14 00:00:00,pendiente
+1001,1001,tarjeta_debito,"390227,88",08/08/2025,rechazado
+664,664,transferencia,$54411.53,17-07-2024,aprobado
+3470,3470,oxxo,23441.95,5 de diciembre de 2025,aprobado
+590,590,mpago,0.00 MXN,20 de abril de 2024,pendiente
+66,66,transferencia,  7239.43  ,2026-09-16 00:00:00,aprobado
+2507,2507,tarjeta_credito,17834.48 MXN,2026-03-26,aprobado
+1490,1490,tarjeta_credito,"0,00",2025-10-19,aprobado
+1190,1190,tarjeta_credito,  0.00  ,20/06/2025,rechazado
+2450,2450,transferencia,2.58 MXN,15/03/2025,APROBADO
+114,114,oxxo,34005.92 MXN,2025-09-17,rechazado
+1728,1728,mpago,  62470.63  ,08/11/2026,aprobado
+2848,2848,oxxo,$204322.78,14/07/2025,aprobado
+502,502,efectivo,"$393,782",26/09/2024,rechazado
+536,536,oxxo,$33759.03,2024-08-05 00:00:00,APROBADO
+2826,2826,mpago,"173370,12",06-09-2025,aprobado
+792,792,tarjeta_credito,"35528,35",2025-12-06,aprobado
+2709,2709,oxxo,"5972,00",11/12/2024,rechazado
+392,392,tarjeta_debito,  46587.82  ,2024-11-05 00:00:00,APROBADO
+3359,3359,tarjeta_credito,94210.97 MXN,2025-10-04,pendiente
+1435,1435,efectivo,  65174.95  ,2025-04-04 00:00:00,pendiente
+459,459,transferencia,$214109.65,04/03/2025,pendiente
+3101,3101,tarjeta_debito,  284387.94  ,17-08-2026,rechazado
+3209,3209,efectivo,"$9,335",04/16/2026,aprobado
+379,379,tarjeta_debito,$79482.74,03/31/2024,aprobado
+2159,2159,oxxo,  63050.45  ,2026-08-22,rechazado
+1369,1369,tarjeta_debito,$3957.28,2025-11-25,aprobado
+3262,3262,tarjeta_credito,"$7,802",1 de junio de 2026,rechazado
+1211,1211,tarjeta_credito,202001.56,03/22/2026,pendiente
+3440,3440,efectivo,  251706.49  ,01/09/2025,aprobado
+171,171,transferencia,"135656,65",02/10/2024,aprobado
+1978,1978,tarjeta_credito,28478.66 MXN,7 de abril de 2026,aprobado
+1797,1797,efectivo,$0,2026-07-02 00:00:00,aprobado
+1827,1827,mpago,"0,00",2025-09-05 00:00:00,aprobado
+1911,1911,efectivo,6631.52 MXN,2025-04-14,APROBADO
+558,558,tarjeta_credito,"161237,01",15 de febrero de 2026,APROBADO
+1895,1895,oxxo,$1.18,17-09-2026,aprobado
+289,289,efectivo,"$42,350",01/29/2025,pendiente
+1309,1309,tarjeta_debito,"66683,67",09-03-2026,rechazado
+445,445,mpago,"$226,858",03-12-2024,aprobado
+726,726,efectivo,"37862,34",2024-06-25 00:00:00,APROBADO
+506,506,tarjeta_debito,  5823.52  ,2024-01-25 00:00:00,aprobado
+1360,1360,transferencia,"2,92",19-05-2026,rechazado
+1140,1140,mpago,1.87 MXN,2026-05-31,APROBADO
+1683,1683,transferencia,$2664.41,04/11/2024,pendiente
+1469,1469,transferencia,17620.81 MXN,2024-10-19,aprobado
+2300,2300,tarjeta_debito,$709,2026-02-19,APROBADO
+57,57,mpago,  131528.61  ,2026-09-18 00:00:00,aprobado
+2641,2641,mpago,0.42 MXN,2026-01-02,APROBADO
+1641,1641,efectivo,3257.23 MXN,2026-04-02,aprobado
+1186,1186,oxxo,0.00 MXN,2026-02-28 00:00:00,aprobado
+2280,2280,oxxo,1.02,11 de marzo de 2026,aprobado
+3129,3129,oxxo,0.88,07-11-2024,pendiente
+2206,2206,tarjeta_credito,  0.26  ,04/30/2026,APROBADO
+2583,2583,tarjeta_credito,97880.89 MXN,2025-09-03,aprobado
+2969,2969,efectivo,$0,10-11-2025,pendiente
+1940,1940,efectivo,"$144,959",2024-08-02 00:00:00,pendiente
+3083,3083,tarjeta_credito,  1.08  ,2025-08-07 00:00:00,rechazado
+3243,3243,oxxo,  46824.37  ,08-03-2025,APROBADO
+237,237,tarjeta_debito,$0.00,2025-04-21 00:00:00,aprobado
+1575,1575,mpago,  15455.73  ,2024-08-22,APROBADO
+119,119,mpago,84039.00,17 de mayo de 2026,aprobado
+3413,3413,mpago,$470.27,2025-10-03 00:00:00,APROBADO
+2621,2621,mpago,"117613,99",03/04/2024,rechazado
+3151,3151,efectivo,"5925,77",29/11/2024,APROBADO
+3478,3478,tarjeta_debito,$233459.21,24 de septiembre de 2025,pendiente
+1207,1207,transferencia,24692.51 MXN,2024-11-25,pendiente
+3417,3417,oxxo,44159.47,11 de mayo de 2025,rechazado
+1218,1218,efectivo,"$294,590",2026-07-31,aprobado
+2094,2094,mpago,9600.22,2024-10-09,rechazado
+80,80,efectivo,"1,78",12/09/2025,APROBADO
+376,376,transferencia,"$65,682",2025-10-02 00:00:00,rechazado
+2536,2536,tarjeta_debito,$3,09/07/2026,pendiente
+1731,1731,tarjeta_debito,4421.46,2024-10-09,APROBADO
+431,431,oxxo,705.44 MXN,2026-06-30,aprobado
+1994,1994,oxxo,29105.34,05-05-2026,aprobado
+1765,1765,oxxo,$78208.32,2025-03-25 00:00:00,pendiente
+3460,3460,oxxo,97859.80 MXN,29-09-2026,pendiente
+1280,1280,transferencia,1.39,08/02/2025,pendiente
+687,687,efectivo,$106541.87,29 de diciembre de 2025,aprobado
+3234,3234,efectivo,87529.64 MXN,2025-03-08 00:00:00,pendiente
+3556,3556,oxxo,$1.14,07/01/2025,pendiente
+1390,1390,mpago,  38114.19  ,11/10/2025,rechazado
+940,940,tarjeta_debito,382697.76,09/28/2026,APROBADO
+3508,3508,efectivo,1.23 MXN,04/02/2024,aprobado
+2166,2166,oxxo,$0.75,03/01/2025,rechazado
+3465,3465,oxxo,2.09,2026-02-19,aprobado
+1694,1694,efectivo,$1101.03,2024-06-23,pendiente
+598,598,oxxo,32977.66,2024-05-26,APROBADO
+1637,1637,efectivo,2.11 MXN,07-02-2024,pendiente
+446,446,transferencia,"1,53",29/08/2024,pendiente
+1768,1768,oxxo,$0.00,2025-07-16 00:00:00,aprobado
+1820,1820,tarjeta_debito,  286929.91  ,2025-04-04,rechazado
+1536,1536,tarjeta_credito,7310.02,2025-05-24,pendiente
+2315,2315,tarjeta_debito,9223.24 MXN,2026-05-24,rechazado
+622,622,transferencia,400172.66 MXN,2025-02-22,aprobado
+1549,1549,tarjeta_debito,"$70,117",02/21/2025,rechazado
+1963,1963,tarjeta_credito,86213.10 MXN,2026-09-18,aprobado
+1974,1974,tarjeta_debito,"1372,79",14/07/2026,APROBADO
+3596,3596,tarjeta_debito,63405.74,06/29/2025,rechazado
+1119,1119,tarjeta_credito,0.00 MXN,30-11-2025,pendiente
+2239,2239,efectivo,161822.19,2025-04-30 00:00:00,pendiente
+1031,1031,tarjeta_debito,"0,71",15-05-2026,aprobado
+2779,2779,efectivo,2243.12,26-05-2026,rechazado
+834,834,efectivo,$214082.35,16-04-2026,APROBADO
+3342,3342,tarjeta_debito,"19957,13",07/27/2025,aprobado
+1398,1398,efectivo,148278.85 MXN,04/28/2024,aprobado
+1083,1083,tarjeta_debito,  13668.70  ,12/31/2024,aprobado
+3014,3014,mpago,"$13,982",10 de marzo de 2026,aprobado
+574,574,tarjeta_debito,  8681.66  ,2026-04-27,aprobado
+2685,2685,transferencia,  25710.11  ,2026-08-09 00:00:00,pendiente
+1397,1397,oxxo,296518.95 MXN,2025-04-18,pendiente
+1046,1046,tarjeta_debito,0.00 MXN,2025-11-04,rechazado
+1616,1616,tarjeta_credito,  16002.23  ,2026-09-10,APROBADO
+1131,1131,mpago,$125699.48,2025-09-06 00:00:00,aprobado
+2388,2388,tarjeta_credito,  11409.28  ,01/24/2026,aprobado
+738,738,tarjeta_debito,  0.00  ,2025-06-19,rechazado
+1430,1430,efectivo,23865.39,2024-06-26,APROBADO
+2351,2351,efectivo,  52400.74  ,08/04/2025,APROBADO
+1222,1222,tarjeta_debito,294657.79 MXN,25-02-2026,rechazado
+860,860,oxxo,260784.62 MXN,15-03-2026,rechazado
+1374,1374,transferencia,$6008.01,5 de julio de 2024,pendiente
+2443,2443,transferencia,3529.60,2025-03-09,aprobado
+409,409,efectivo,  69826.64  ,2025-03-31,aprobado
+1699,1699,oxxo,3666.54 MXN,2025-09-06 00:00:00,APROBADO
+3579,3579,efectivo,0.00,2025-11-15 00:00:00,APROBADO
+1780,1780,mpago,0.00,2025-06-11,aprobado
+2553,2553,tarjeta_debito,7522.34,22/07/2026,pendiente
+721,721,tarjeta_debito,1.70,2026-01-06 00:00:00,rechazado
+414,414,oxxo,  0.00  ,21 de diciembre de 2024,aprobado
+805,805,efectivo,0.00,05/06/2026,APROBADO
+618,618,mpago,2.42,2026-08-07 00:00:00,pendiente
+405,405,efectivo,"$2,085",04/27/2026,APROBADO
+1178,1178,mpago,0.00 MXN,22-11-2025,pendiente
+2786,2786,transferencia,"$17,215",1 de septiembre de 2025,aprobado
+847,847,transferencia,$0.15,09/12/2024,pendiente
+3282,3282,tarjeta_debito,  21094.45  ,23 de septiembre de 2024,aprobado
+2452,2452,tarjeta_credito,1.45,08/08/2026,pendiente
+3093,3093,tarjeta_debito,$9945.38,04/08/2025,aprobado
+3459,3459,mpago,136897.18 MXN,22/11/2025,rechazado
+118,118,efectivo,$38497.25,19-02-2025,
+2803,2803,mpago,$1328.86,06/20/2025,rechazado
+135,135,tarjeta_debito,  2330.38  ,2024-09-25,NULL
+554,554,tarjeta_credito,$0.82,2026-05-12,rechazado
+2185,2185,transferencia,29416.80 MXN,14 de agosto de 2025,rechazado
+956,956,transferencia,455961.03 MXN,2025-08-11 00:00:00,rechazado
+1889,1889,oxxo,"$27,844",23 de septiembre de 2024,rechazado
+356,356,tarjeta_debito,"$58,598",2026-04-24 00:00:00,aprobado
+988,988,efectivo,"$1,059",13 de mayo de 2024,aprobado
+2073,2073,tarjeta_credito,0.00,2026-03-24,aprobado
+2819,2819,transferencia,"0,52",21-02-2024,APROBADO
+2432,2432,tarjeta_credito,"188633,97",2025-01-09,APROBADO
+1141,1141,oxxo,$0,2025-01-27 00:00:00,rechazado
+1607,1607,transferencia,2.58,03/17/2025,APROBADO
+3577,3577,mpago,  5207.86  ,2025-11-15,rechazado
+217,217,oxxo,  0.19  ,2026-02-07 00:00:00,rechazado
+3237,3237,mpago,$2223.33,2025-07-15 00:00:00,aprobado
+2040,2040,oxxo,"$9,139",2024-02-25,rechazado
+2506,2506,efectivo,  231268.50  ,15 de junio de 2026,aprobado
+3281,3281,oxxo,"$26,580",21 de marzo de 2026,APROBADO
+1407,1407,transferencia,134964.77,2025-08-28,APROBADO
+2539,2539,efectivo,"3845,19",04/22/2025,aprobado
+1480,1480,tarjeta_debito,"$97,107",2025-03-03,APROBADO
+1959,1959,tarjeta_debito,78721.07 MXN,2025-09-24 00:00:00,pendiente
+2028,2028,efectivo,$1.09,2025-10-05 00:00:00,pendiente
+60,60,oxxo,  16764.11  ,09-05-2026,aprobado
+3194,3194,efectivo,0.00 MXN,07-02-2024,APROBADO
+363,363,transferencia,"$18,813",2026-08-09,pendiente
+1647,1647,mpago,$39345.39,02-01-2024,APROBADO
+216,216,mpago,0.00 MXN,15/10/2025,aprobado
+1408,1408,oxxo,"24321,16",2025-06-20 00:00:00,APROBADO
+845,845,transferencia,  2.50  ,12/10/2025,APROBADO
+1067,1067,oxxo,402361.04,22/04/2024,rechazado
+3099,3099,transferencia,"124184,46",03/29/2026,aprobado
+1625,1625,mpago,  201759.95  ,2024-07-12 00:00:00,pendiente
+226,226,tarjeta_credito,  289413.41  ,2025-03-26 00:00:00,rechazado
+2939,2939,tarjeta_credito,2752.23 MXN,2024-04-29,aprobado
+3438,3438,tarjeta_credito,0.00,12/08/2026,aprobado
+1252,1252,tarjeta_debito,"$52,918",23-06-2025,pendiente
+1936,1936,tarjeta_debito,$11215.54,24-01-2026,pendiente
+2796,2796,mpago,  0.00  ,04/14/2026,aprobado
+1711,1711,tarjeta_credito,"$143,382",26 de agosto de 2024,pendiente
+3392,3392,tarjeta_credito,  40816.63  ,12/07/2024,APROBADO
+2870,2870,efectivo,  0.00  ,31-12-2025,aprobado
+629,629,tarjeta_credito,7447.94,16 de junio de 2026,APROBADO
+931,931,oxxo,0.00 MXN,22/07/2025,rechazado
+2901,2901,tarjeta_credito,  10699.75  ,08/07/2026,aprobado
+71,71,transferencia,  0.00  ,2026-02-23,pendiente
+1075,1075,mpago,19019.23 MXN,10/12/2024,APROBADO
+1110,1110,efectivo,"0,24",2026-05-22 00:00:00,APROBADO
+224,224,efectivo,$47430.81,2026-06-04 00:00:00,APROBADO
+3232,3232,mpago,  44036.07  ,2025-07-18,aprobado
+2679,2679,tarjeta_credito,49004.22 MXN,2025-03-23 00:00:00,aprobado
+2118,2118,transferencia,"51312,03",2025-11-26 00:00:00,APROBADO
+912,912,tarjeta_debito,72380.64,2024-01-19,aprobado
+3196,3196,transferencia,  49422.19  ,2026-03-06,aprobado
+1241,1241,mpago,10807.97 MXN,2026-01-22,aprobado
+516,516,tarjeta_credito,$3,14 de octubre de 2024,APROBADO
+3015,3015,mpago,"203416,27",2026-02-07 00:00:00,aprobado
+1898,1898,transferencia,  133813.97  ,03/25/2026,aprobado
+1896,1896,mpago,"4346,87",28 de noviembre de 2025,rechazado
+2092,2092,transferencia,  1.10  ,12-05-2025,aprobado
+2800,2800,efectivo,"37585,27",2024-07-06 00:00:00,aprobado
+2623,2623,tarjeta_debito,17452.30 MXN,2024-11-28 00:00:00,aprobado
+1836,1836,mpago,177020.59,03/02/2025,aprobado
+1215,1215,transferencia,  2381.13  ,08/05/2024,aprobado
+3557,3557,mpago,$38082.16,2025-06-02,pendiente
+1474,1474,efectivo,0.26,22-08-2026,aprobado
+2512,2512,oxxo,  0.63  ,08-06-2024,aprobado
+2424,2424,tarjeta_credito,$324867.87,2026-07-19 00:00:00,aprobado
+3337,3337,oxxo,$0.96,2024-10-19 00:00:00,rechazado
+1719,1719,tarjeta_debito,$65578.58,06/20/2025,rechazado
+35,35,oxxo,  446238.74  ,2026-05-31,N/A
+3161,3161,efectivo,"$8,743",15-03-2025,aprobado
+2293,2293,efectivo,$164454.37,2025-05-10,aprobado
+1640,1640,oxxo,0.00,2026-05-18,aprobado
+3600,3600,tarjeta_debito,"4014,73",18/07/2024,APROBADO
+1864,1864,mpago,  0.17  ,07/02/2025,aprobado
+1956,1956,efectivo,$2,25-12-2024,rechazado
+1258,1258,oxxo,  1.66  ,2025-04-11,pendiente
+531,531,oxxo,"0,00",24 de mayo de 2026,aprobado
+853,853,oxxo,4267.03,29-06-2026,aprobado
+2560,2560,mpago,$2,2026-09-23,pendiente
+3178,3178,efectivo,109443.75,28/07/2026,pendiente
+666,666,efectivo,223643.02 MXN,28-02-2025,aprobado
+2168,2168,transferencia,$2.47,08/09/2024,aprobado
+1409,1409,transferencia,"0,00",2025-06-10 00:00:00,pendiente
+148,148,transferencia,$183881.62,26/06/2026,rechazado
+651,651,mpago,"$16,032",08/09/2026,APROBADO
+550,550,oxxo,167.35 MXN,2025-08-26 00:00:00,pendiente
+204,204,transferencia,$1636.69,03/09/2024,pendiente
+1991,1991,tarjeta_debito,"$126,329",17/01/2024,aprobado
+567,567,tarjeta_credito,"$129,273",12/01/2025,aprobado
+3407,3407,tarjeta_debito,  92794.57  ,03-08-2025,APROBADO
+349,349,oxxo,"$1,652",2024-05-15,aprobado
+3182,3182,mpago,"$304,012",05-06-2024,aprobado
+1744,1744,transferencia,0.00 MXN,15/07/2025,aprobado
+2528,2528,tarjeta_credito,  0.00  ,10-01-2026,rechazado
+3457,3457,transferencia,94344.79 MXN,2024-12-27,APROBADO
+1061,1061,tarjeta_credito,15553.76,04/13/2026,APROBADO
+496,496,transferencia,"6079,70",21/02/2025,aprobado
+2958,2958,mpago,$109639.97,2025-04-10,rechazado
+3293,3293,efectivo,"$1,139",30 de mayo de 2025,aprobado
+2788,2788,tarjeta_debito,"0,00",2026-07-10 00:00:00,aprobado
+510,510,tarjeta_credito,$4893.00,13/07/2026,aprobado
+1705,1705,tarjeta_credito,"1,85",12 de febrero de 2024,pendiente
+2333,2333,efectivo,  19160.78  ,2024-09-24,aprobado
+2666,2666,efectivo,0.00 MXN,2025-12-20 00:00:00,APROBADO
+2746,2746,tarjeta_credito,$0,2025-05-30,APROBADO
+641,641,tarjeta_credito,"98613,14",2025-08-15,rechazado
+3550,3550,mpago,$124475.02,22-07-2024,pendiente
+261,261,tarjeta_credito,"$20,856",18-04-2026,APROBADO
+2382,2382,oxxo,"1405,83",28/10/2025,pendiente
+604,604,tarjeta_credito,$938,2024-03-20,APROBADO
+515,515,tarjeta_debito,$0.00,1 de enero de 2026,rechazado
+1244,1244,mpago,"$320,013",03/21/2024,APROBADO
+1034,1034,efectivo,0.00 MXN,11/02/2024,APROBADO
+1661,1661,mpago,76344.92,04/03/2026,pendiente
+169,169,mpago,"$16,062",08/15/2025,rechazado
+186,186,tarjeta_credito,"0,00",01-07-2026,pendiente
+3156,3156,mpago,  9135.98  ,6 de diciembre de 2025,aprobado
+742,742,oxxo,106262.80,12/21/2025,aprobado
+1657,1657,transferencia,"$1,949",31-10-2024,APROBADO
+3593,3593,oxxo,32032.10 MXN,13/07/2025,aprobado
+427,427,tarjeta_debito,$32743.84,24-07-2026,APROBADO
+3157,3157,transferencia,"$102,961",2025-09-13,rechazado
+1862,1862,mpago,"$5,170",31-08-2024,rechazado
+2348,2348,tarjeta_credito,"1,41",23 de julio de 2025,aprobado
+1957,1957,tarjeta_debito,"24510,54",2025-08-01 00:00:00,rechazado
+665,665,transferencia,  179721.34  ,2024-04-06,rechazado
+2747,2747,transferencia,"0,00",2025-02-22,aprobado
+2194,2194,tarjeta_credito,"138716,85",12-10-2024,aprobado
+2601,2601,mpago,  2.01  ,29/01/2024,pendiente
+2241,2241,tarjeta_credito,264124.46 MXN,21/08/2026,aprobado
+3138,3138,tarjeta_debito,$36819.45,31-05-2026,aprobado
+26,26,mpago,36947.32,2024-08-21 00:00:00,N/A
+1090,1090,oxxo,$146728.83,23-10-2024,pendiente
+341,341,mpago,53506.43,23 de enero de 2026,APROBADO
+2827,2827,tarjeta_credito,$2,10/11/2024,rechazado
+2942,2942,transferencia,11157.82 MXN,10/03/2025,aprobado
+53,53,transferencia,"$49,232",11 de septiembre de 2025,N/A
+498,498,efectivo,$2.44,2024-09-27 00:00:00,APROBADO
+1472,1472,mpago,"59866,26",01-06-2024,APROBADO
+929,929,tarjeta_debito,"$366,743",08/31/2025,rechazado
+1878,1878,tarjeta_credito,  208558.15  ,2024-11-27 00:00:00,pendiente
+1348,1348,tarjeta_credito,  4535.81  ,2025-09-09,aprobado
+1316,1316,tarjeta_credito,$0,16/09/2026,rechazado
+2759,2759,mpago,  103392.49  ,28 de enero de 2026,aprobado
+1464,1464,oxxo,0.00,20-06-2025,APROBADO
+1730,1730,tarjeta_credito,"0,00",03/18/2026,APROBADO
+3369,3369,tarjeta_credito,2402.09,2026-08-02,aprobado
+763,763,transferencia,792.86 MXN,2024-03-20 00:00:00,pendiente
+1072,1072,oxxo,"0,11",2025-01-30 00:00:00,pendiente
+3154,3154,tarjeta_credito,$0.00,22-09-2024,rechazado
+2481,2481,transferencia,5969.54,18-06-2024,aprobado
+593,593,transferencia,2969.94 MXN,09/11/2026,pendiente
+2886,2886,transferencia,"$260,299",15/11/2025,rechazado
+106,106,efectivo,0.00 MXN,13-02-2026,N/A
+3521,3521,oxxo,"16296,48",20-08-2024,APROBADO
+406,406,oxxo,  269672.27  ,2026-09-20,APROBADO
+1317,1317,efectivo,"7360,77",2026-04-16 00:00:00,APROBADO
+61,61,tarjeta_credito,  2458.63  ,2025-01-16,APROBADO
+161,161,tarjeta_debito,$3900.70,15 de agosto de 2024,APROBADO
+521,521,transferencia,$2.78,22-12-2025,aprobado
+3213,3213,tarjeta_debito,2.42,2024-03-21,APROBADO
+1355,1355,transferencia,"$12,473",12/05/2024,aprobado
+3122,3122,oxxo,8879.46,14 de febrero de 2025,pendiente
+3451,3451,efectivo,220320.04 MXN,17/01/2026,aprobado
+1098,1098,oxxo,  145460.49  ,2024-08-21 00:00:00,aprobado
+283,283,transferencia,"$3,275",08/19/2026,aprobado
+300,300,efectivo,"3755,20",11/11/2024,aprobado
+1238,1238,tarjeta_credito,"$19,053",24/06/2026,rechazado
+2264,2264,efectivo,"422971,67",22-02-2025,APROBADO
+447,447,tarjeta_credito,$202107.36,04/02/2026,APROBADO
+1008,1008,oxxo,  14905.62  ,16/07/2025,rechazado
+1496,1496,tarjeta_debito,102050.28,2024-03-05 00:00:00,pendiente
+3339,3339,oxxo,  99264.87  ,2025-03-18,aprobado
+3287,3287,oxxo,"$31,470",03/04/2025,aprobado
+203,203,oxxo,  0.00  ,09/11/2025,aprobado
+6,6,mpago,11310.61,25 de mayo de 2025,APROBADO
+2792,2792,efectivo,94301.77,2026-08-24 00:00:00,rechazado
+3500,3500,transferencia,  10463.68  ,2026-05-11,rechazado
+19,19,tarjeta_credito,$64716.40,04/20/2025,rechazado
+2260,2260,transferencia,"$2,785",12 de junio de 2024,rechazado
+2133,2133,mpago,"78695,34",2024-05-14 00:00:00,aprobado
+1948,1948,tarjeta_credito,"$294,909",21/03/2026,aprobado
+3131,3131,transferencia,$15147.54,2025-04-16,APROBADO
+2972,2972,tarjeta_credito,"15620,79",2025-07-06 00:00:00,pendiente
+2122,2122,mpago,  20338.56  ,2024-09-07,aprobado
+168,168,transferencia,  0.82  ,15 de agosto de 2024,pendiente
+2508,2508,oxxo,425341.63,2025-05-21 00:00:00,APROBADO
+1281,1281,tarjeta_credito,223466.72 MXN,17/09/2024,rechazado
+2072,2072,oxxo,48161.19,4 de septiembre de 2024,rechazado
+1920,1920,mpago,17701.52,30 de junio de 2024,aprobado
+1381,1381,tarjeta_debito,$23838.41,05/29/2026,aprobado
+2171,2171,efectivo,19096.69,03/11/2025,aprobado
+3569,3569,tarjeta_credito,  0.00  ,12 de agosto de 2026,pendiente
+1173,1173,tarjeta_credito,"0,00",2026-03-30 00:00:00,rechazado
+3594,3594,tarjeta_debito,0.00 MXN,2025-07-06 00:00:00,rechazado
+2240,2240,oxxo,  55934.97  ,2026-06-12,pendiente
+2250,2250,oxxo,  20606.13  ,28/08/2024,APROBADO
+1183,1183,tarjeta_credito,16645.81 MXN,05/02/2025,pendiente
+2459,2459,oxxo,  9349.41  ,2024-10-22,aprobado
+753,753,tarjeta_credito,60360.03,04/10/2025,aprobado
+3433,3433,oxxo,15032.33,2025-03-24 00:00:00,pendiente
+3169,3169,oxxo,$467844.71,16 de junio de 2026,aprobado
+1366,1366,transferencia,  183159.55  ,09/02/2026,aprobado
+1298,1298,oxxo,179115.28,01/31/2026,aprobado
+818,818,mpago,309081.78 MXN,20 de diciembre de 2025,pendiente
+1529,1529,mpago,"$9,239",2025-06-24,aprobado
+2624,2624,mpago,42590.69,2025-07-17,aprobado
+2663,2663,oxxo,"38398,38",2025-12-07 00:00:00,aprobado
+2524,2524,tarjeta_debito,  2.34  ,29-09-2024,aprobado
+1893,1893,tarjeta_credito,11398.52,2025-10-11,rechazado
+3009,3009,tarjeta_debito,$133700.73,14-12-2024,aprobado
+268,268,tarjeta_credito,$1136.02,2025-08-13,aprobado
+1308,1308,efectivo,$30576.72,2025-11-27,aprobado
+3545,3545,oxxo,$93985.93,2025-08-06,rechazado
+28,28,tarjeta_debito,"$102,223",09-06-2026,-
+2033,2033,tarjeta_debito,129924.71,28 de julio de 2026,pendiente
+2320,2320,tarjeta_credito,"376797,57",2026-09-08,aprobado
+2815,2815,transferencia,$0,23-01-2024,aprobado
+1696,1696,efectivo,22554.24 MXN,11/23/2024,aprobado
+864,864,transferencia,1.35,2024-06-05 00:00:00,aprobado
+87,87,efectivo,"186708,41",2025-09-22,APROBADO
+2303,2303,tarjeta_debito,64293.08 MXN,16/11/2025,APROBADO
+228,228,oxxo,$1,05/02/2026,pendiente
+223,223,oxxo,"$3,925",09-04-2025,APROBADO
+3132,3132,tarjeta_credito,"$65,091",2026-01-16 00:00:00,aprobado
+1746,1746,tarjeta_debito,77257.57,13/05/2024,rechazado
+3448,3448,oxxo,391565.11 MXN,03/04/2025,APROBADO
+952,952,oxxo,$0.00,12 de septiembre de 2026,rechazado
+72,72,tarjeta_credito,"$47,115",25/09/2025,aprobado
+2519,2519,efectivo,$0.00,10/01/2026,aprobado
+2647,2647,tarjeta_debito,559.49,16-08-2024,rechazado
+773,773,efectivo,$0,21 de marzo de 2026,aprobado
+3285,3285,transferencia,"$111,486",06/23/2025,aprobado
+572,572,tarjeta_debito,$1,2024-06-04,rechazado
+3518,3518,transferencia,  0.65  ,02/01/2025,APROBADO
+1246,1246,tarjeta_credito,"$92,234",14-01-2025,aprobado
+2289,2289,tarjeta_debito,0.00 MXN,30 de enero de 2026,pendiente
+163,163,efectivo,  0.00  ,11/22/2024,APROBADO
+1339,1339,tarjeta_credito,  314281.11  ,21 de enero de 2024,aprobado
+1887,1887,tarjeta_credito,  203998.65  ,16 de julio de 2024,rechazado
+2945,2945,mpago,383552.96,31/10/2024,rechazado
+2201,2201,tarjeta_credito,2.54,05-06-2026,aprobado
+141,141,oxxo,"$17,425",04/12/2025,-
+1686,1686,mpago,"6128,87",13 de julio de 2024,aprobado
+2213,2213,tarjeta_debito,  8465.41  ,06/10/2025,APROBADO
+382,382,tarjeta_credito,"$7,717",10 de febrero de 2026,aprobado
+1565,1565,efectivo,62342.66 MXN,17 de septiembre de 2026,rechazado
+1925,1925,oxxo,98843.75,31 de octubre de 2025,APROBADO
+1363,1363,efectivo,"$14,355",2025-08-19 00:00:00,rechazado
+2956,2956,tarjeta_credito,"4501,69",28/01/2026,aprobado
+628,628,tarjeta_credito,20304.23 MXN,09/21/2024,APROBADO
+3087,3087,tarjeta_credito,  0.00  ,26/05/2025,rechazado
+30,30,tarjeta_debito,$0,10 de septiembre de 2025,-
+1357,1357,tarjeta_debito,"$16,648",04/06/2026,APROBADO
+2597,2597,efectivo,108249.41,2024-09-01,aprobado
+2981,2981,transferencia,$0,20/11/2024,aprobado
+3539,3539,transferencia,$2,16-05-2024,APROBADO
+497,497,transferencia,809.92,12 de enero de 2026,pendiente
+1934,1934,efectivo,  0.00  ,10/04/2024,APROBADO
+3104,3104,tarjeta_debito,2.87 MXN,2026-09-26,aprobado
+920,920,oxxo,  199158.20  ,2026-08-26,rechazado
+953,953,tarjeta_credito,"120499,69",07-10-2025,aprobado
+2631,2631,oxxo,  107779.69  ,23/12/2025,APROBADO
+1125,1125,mpago,  30164.23  ,2026-02-11,aprobado
+1964,1964,oxxo,  110858.93  ,12/27/2025,aprobado
+98,98,transferencia,  184335.36  ,2024-09-14,
+907,907,mpago,$10663.92,2026-04-03 00:00:00,pendiente
+3155,3155,efectivo,"44567,04",2024-09-14,pendiente
+1225,1225,tarjeta_debito,"$3,355",2024-05-19,pendiente
+1226,1226,tarjeta_debito,$93108.55,09/09/2025,pendiente
+825,825,oxxo,261348.69,27 de septiembre de 2024,APROBADO
+3474,3474,tarjeta_debito,"4244,94",06/21/2026,aprobado
+34,34,mpago,  26919.34  ,2026-09-09 00:00:00,aprobado
+3113,3113,tarjeta_credito,"22681,92",13-04-2025,APROBADO
+315,315,oxxo,2494.19,01/23/2024,rechazado
+1364,1364,efectivo,0.00 MXN,2025-12-10 00:00:00,rechazado
+1500,1500,efectivo,0.00 MXN,25/12/2024,aprobado
+2183,2183,oxxo,  0.00  ,15-12-2025,APROBADO
+2737,2737,mpago,$524150.74,10-11-2025,aprobado
+1576,1576,transferencia,$55272.39,03-07-2024,rechazado
+782,782,transferencia,178551.77 MXN,2026-05-20,APROBADO
+2044,2044,transferencia,51771.97 MXN,2026-04-09,APROBADO
+992,992,oxxo,$0,03-01-2026,pendiente
+3063,3063,oxxo,$164277.42,1 de marzo de 2026,rechazado
+1019,1019,tarjeta_debito,$2083.74,19-11-2025,rechazado
+3045,3045,transferencia,$134522.11,2024-12-22,aprobado
+1336,1336,oxxo,"$197,270",29 de enero de 2025,aprobado
+2384,2384,tarjeta_debito,114737.79 MXN,03/05/2024,aprobado
+63,63,oxxo,"$205,282",19-07-2026,APROBADO
+299,299,transferencia,90118.51 MXN,2026-05-20,APROBADO
+314,314,tarjeta_debito,8707.00 MXN,6 de julio de 2025,rechazado
+885,885,tarjeta_credito,"0,00",11 de septiembre de 2026,aprobado
+435,435,transferencia,"0,00",2026-01-06 00:00:00,pendiente
+3338,3338,tarjeta_debito,  73696.12  ,09/24/2026,aprobado
+2482,2482,efectivo,151480.91,31 de marzo de 2024,rechazado
+304,304,tarjeta_debito,  0.48  ,21-12-2024,aprobado
+886,886,efectivo,$1,2025-06-17,aprobado
+1107,1107,mpago,  165364.97  ,2025-11-26,aprobado
+113,113,efectivo,102794.06,2025-09-20,-
+48,48,oxxo,$0,06/03/2026,rechazado
+1132,1132,tarjeta_credito,121193.38,2025-10-22 00:00:00,pendiente
+632,632,mpago,"3781,09",16/02/2026,pendiente
+1161,1161,tarjeta_debito,28806.54 MXN,10 de abril de 2026,aprobado
+1793,1793,mpago,  106351.12  ,23/06/2026,aprobado
+2523,2523,oxxo,  10794.19  ,19/11/2025,aprobado
+1595,1595,tarjeta_credito,4478.99,2024-12-11,aprobado
+1210,1210,tarjeta_debito,  2.19  ,2025-10-04,APROBADO
+2635,2635,efectivo,0.18 MXN,06/23/2026,aprobado
+1070,1070,mpago,"$24,257",12/01/2025,APROBADO
+2991,2991,oxxo,34998.28 MXN,20/09/2024,rechazado
+2532,2532,tarjeta_debito,"225586,43",2025-06-21,aprobado
+1524,1524,tarjeta_debito,13227.19,2024-03-15 00:00:00,aprobado
+3306,3306,tarjeta_debito,201194.65,2024-07-10,aprobado
+3193,3193,mpago,"7847,35",2026-07-18 00:00:00,rechazado
+179,179,transferencia,"0,00",06/09/2026,rechazado
+1441,1441,oxxo,  2.62  ,12/05/2026,aprobado
+2056,2056,efectivo,$391070.11,08-09-2026,rechazado
+2345,2345,mpago,66118.85,03/17/2026,aprobado
+3399,3399,transferencia,  0.00  ,2026-02-15,rechazado
+2456,2456,tarjeta_credito,2796.63 MXN,2025-08-17,rechazado
+2952,2952,mpago,3653.14,2026-04-11,aprobado
+1427,1427,efectivo,  56749.11  ,02/03/2026,APROBADO
+474,474,tarjeta_credito,0.00,24/09/2026,aprobado
+366,366,efectivo,500810.13,2024-09-27,rechazado
+1621,1621,transferencia,41740.06 MXN,29 de diciembre de 2025,aprobado
+302,302,mpago,"0,45",2025-02-03 00:00:00,aprobado
+2218,2218,mpago,"$6,081",27 de agosto de 2024,aprobado
+1318,1318,efectivo,"$32,268",12-01-2024,rechazado
+3542,3542,transferencia,"1,53",04/30/2026,rechazado
+528,528,tarjeta_debito,$10739.42,26 de junio de 2025,pendiente
+2301,2301,oxxo,35209.19,2026-08-03 00:00:00,pendiente
+420,420,tarjeta_debito,"504681,00",07/07/2026,APROBADO
+2189,2189,efectivo,26307.28 MXN,2025-11-05,APROBADO
+613,613,tarjeta_credito,  16588.79  ,08-05-2026,rechazado
+3363,3363,tarjeta_credito,237442.24 MXN,06-07-2026,pendiente
+181,181,oxxo,103101.26 MXN,07/10/2026,rechazado
+3030,3030,efectivo,"15894,68",09/05/2025,APROBADO
+2593,2593,tarjeta_debito,"0,00",04/04/2026,aprobado
+147,147,transferencia,  0.00  ,01/02/2025,APROBADO
+2768,2768,tarjeta_debito,  1.43  ,01/06/2025,aprobado
+130,130,tarjeta_debito,"$56,529",2026-07-10 00:00:00,NULL
+2485,2485,mpago,$160,2026-06-15 00:00:00,rechazado
+2810,2810,oxxo,"0,00",02/27/2024,rechazado
+99,99,tarjeta_credito,0.00 MXN,18-10-2024,null
+1740,1740,tarjeta_credito,"$30,369",10/04/2025,APROBADO
+3313,3313,efectivo,"$18,030",2024-12-01,APROBADO
+727,727,tarjeta_credito,0.00,22-02-2024,pendiente
+2464,2464,tarjeta_debito,  24934.03  ,01-10-2025,rechazado
+1859,1859,tarjeta_debito,88072.65,2024-09-11,APROBADO
+1373,1373,efectivo,$1,2026-07-19 00:00:00,aprobado
+3362,3362,tarjeta_credito,0.00,2 de abril de 2026,pendiente
+2856,2856,mpago,105537.49 MXN,24 de febrero de 2026,aprobado
+3049,3049,tarjeta_credito,"23249,62",2026-05-09 00:00:00,pendiente
+2191,2191,efectivo,$56760.99,03/19/2026,pendiente
+3355,3355,oxxo,8399.11 MXN,2025-05-21,aprobado
+210,210,tarjeta_credito,"$36,942",07/09/2025,pendiente
+1971,1971,tarjeta_debito,"$3,310",2025-11-17 00:00:00,rechazado
+2339,2339,efectivo,$2,2025-07-22,APROBADO
+1697,1697,transferencia,$146246.42,31-12-2024,aprobado
+2892,2892,mpago,"167598,36",24/06/2026,aprobado
+2203,2203,efectivo,"22923,89",2026-08-13,aprobado
+751,751,transferencia,$0,2026-04-10,APROBADO
+1422,1422,mpago,$0.00,2025-12-14,aprobado
+323,323,transferencia,1257.98,2026-04-23,aprobado
+2403,2403,tarjeta_debito,$30587.21,1 de septiembre de 2025,aprobado
+1938,1938,tarjeta_credito,  0.00  ,23 de junio de 2025,aprobado
+1762,1762,mpago,"15475,30",2024-05-03,rechazado
+3486,3486,oxxo,$34120.55,2025-02-25,rechazado
+2510,2510,tarjeta_debito,27637.87,05/16/2026,rechazado
+2604,2604,tarjeta_debito,16273.71 MXN,2026-05-16 00:00:00,aprobado
+2313,2313,transferencia,"25833,44",15/06/2026,aprobado
+2498,2498,mpago,"2,52",2026-05-15,aprobado
+184,184,oxxo,"0,00",18/09/2025,rechazado
+2963,2963,tarjeta_debito,"$14,982",2025-07-28,APROBADO
+1710,1710,tarjeta_credito,6660.61 MXN,2026-09-14,rechazado
+879,879,tarjeta_credito,185.23 MXN,14 de mayo de 2026,pendiente
+670,670,tarjeta_credito,$23596.20,19/04/2024,aprobado
+2018,2018,tarjeta_credito,"0,00",11/27/2024,aprobado
+2680,2680,tarjeta_debito,"$4,053",2026-07-18,pendiente
+2745,2745,efectivo,"53136,06",2026-07-12 00:00:00,APROBADO
+3505,3505,transferencia,"0,00",2025-08-20,aprobado
+2861,2861,oxxo,  1.03  ,2024-10-28,APROBADO
+1328,1328,oxxo,2.09,17 de abril de 2024,pendiente
+2083,2083,tarjeta_credito,  30113.77  ,2025-03-13 00:00:00,aprobado
+2707,2707,oxxo,  57914.63  ,09/02/2024,pendiente
+211,211,oxxo,"30375,63",05/10/2026,rechazado
+3444,3444,transferencia,"1,16",16-12-2024,aprobado
+1902,1902,tarjeta_credito,"0,00",2025-04-26,aprobado
+3200,3200,transferencia,"250,23",02-09-2024,APROBADO
+1738,1738,oxxo,13359.34 MXN,2024-08-10 00:00:00,aprobado
+2292,2292,tarjeta_credito,5195.76,2024-12-20,pendiente
+3095,3095,oxxo,324341.49,09/26/2024,rechazado
+1442,1442,mpago,2.13 MXN,2026-06-21,rechazado
+943,943,efectivo,  128330.18  ,2026-08-11,APROBADO
+740,740,tarjeta_debito,$3,2025-01-27,rechazado
+2784,2784,oxxo,$23077.20,07-11-2024,aprobado
+990,990,efectivo,"$154,232",5 de septiembre de 2024,pendiente
+3559,3559,transferencia,$183.34,15 de agosto de 2026,aprobado
+1328,1328,oxxo,2.09,17 de abril de 2024,pendiente
+3008,3008,tarjeta_credito,0.42,2025-04-23,pendiente
+213,213,tarjeta_credito,83012.29,02/12/2024,APROBADO
+1729,1729,efectivo,  249487.18  ,2025-02-23,aprobado
+3269,3269,efectivo,102878.56,01-11-2025,rechazado
+1998,1998,mpago,"0,00",06/15/2026,rechazado
+1679,1679,tarjeta_debito,  0.00  ,2024-04-07,APROBADO
+1689,1689,tarjeta_credito,1398.85 MXN,08/12/2025,pendiente
+390,390,oxxo,"$136,057",06/27/2024,pendiente
+2859,2859,oxxo,64596.07,26-08-2025,pendiente
+2733,2733,efectivo,0.00 MXN,6 de abril de 2024,APROBADO
+175,175,tarjeta_credito,"$11,926",2024-05-14,aprobado
+3076,3076,tarjeta_credito,2455.38 MXN,2 de julio de 2025,aprobado
+1163,1163,tarjeta_debito,1.93,31/03/2025,pendiente
+1782,1782,oxxo,  210969.43  ,2025-11-14 00:00:00,rechazado
+1792,1792,transferencia,2.64,29-02-2024,aprobado
+2948,2948,tarjeta_debito,$28700.13,17-03-2024,aprobado
+3197,3197,oxxo,  56021.13  ,14/05/2024,aprobado
+1077,1077,tarjeta_debito,  0.00  ,2025-01-04,aprobado
+1313,1313,transferencia,4881.37 MXN,07-12-2024,aprobado
+2124,2124,oxxo,$13152.76,15 de junio de 2025,APROBADO
+346,346,tarjeta_debito,4882.47,2 de octubre de 2024,rechazado
+1358,1358,tarjeta_debito,45865.79,07/25/2025,APROBADO
+1656,1656,oxxo,2805.45 MXN,15 de octubre de 2025,aprobado
+2230,2230,transferencia,205677.08,2025-10-17 00:00:00,aprobado
+1206,1206,tarjeta_credito,0.27,2025-04-18 00:00:00,rechazado
+1727,1727,tarjeta_debito,  52621.26  ,2024-09-10,aprobado
+1230,1230,oxxo,73900.12,9 de diciembre de 2024,rechazado
+2914,2914,oxxo,"$4,926",9 de octubre de 2025,aprobado
+88,88,mpago,"$17,957",2024-11-12,-
+2937,2937,mpago,  4418.16  ,11 de diciembre de 2024,aprobado
+3073,3073,efectivo,"$153,283",03/01/2026,aprobado
+2915,2915,mpago,472332.20 MXN,26 de marzo de 2025,aprobado
+744,744,oxxo,$2.23,2024-12-18,APROBADO
+1375,1375,mpago,"41688,33",2025-05-15,APROBADO
+2267,2267,transferencia,$69701.33,04/09/2026,rechazado
+1015,1015,tarjeta_debito,  2.70  ,11 de mayo de 2026,aprobado
+938,938,mpago,"$127,405",2025-12-04,pendiente
+2735,2735,tarjeta_credito,  1.48  ,25/08/2026,aprobado
+2595,2595,tarjeta_debito,"$278,468",2026-02-20,APROBADO
+2035,2035,mpago,$0,09/04/2026,APROBADO
+3378,3378,efectivo,"$40,807",25 de febrero de 2026,aprobado
+2247,2247,efectivo,  0.52  ,05/12/2025,pendiente
+530,530,transferencia,  14944.04  ,2024-04-03,aprobado
+3324,3324,tarjeta_credito,"19973,64",29-05-2024,aprobado
+1197,1197,mpago,$38690.91,06-04-2026,aprobado
+38,38,transferencia,$0.49,2025-10-22,
+2718,2718,efectivo,1233.71,2025-03-18,pendiente
+3039,3039,efectivo,$532755.16,2026-02-23,aprobado
+2614,2614,tarjeta_credito,"$193,194",24 de agosto de 2026,aprobado
+2144,2144,efectivo,  0.00  ,08/12/2024,aprobado
+2736,2736,tarjeta_credito,"$20,224",2024-06-17,rechazado
+3431,3431,efectivo,"$7,388",2026-05-29,APROBADO
+836,836,transferencia,$1561.52,07/19/2025,rechazado
+3413,3413,mpago,$470.27,2025-10-03 00:00:00,APROBADO
+311,311,oxxo,"38406,61",2026-09-11,aprobado
+2983,2983,mpago,"17347,08",14/01/2026,aprobado
+2195,2195,transferencia,  68134.72  ,21-09-2026,pendiente
+2964,2964,tarjeta_credito,  144788.79  ,14 de julio de 2026,aprobado
+3430,3430,tarjeta_debito,2.96 MXN,2025-03-11 00:00:00,aprobado
+3463,3463,efectivo,"$29,321",2025-02-22,APROBADO
+1541,1541,efectivo,"$302,110",27 de junio de 2025,aprobado
+690,690,efectivo,0.73 MXN,12/25/2024,aprobado
+2473,2473,oxxo,"2,86",09/09/2026,pendiente
+974,974,mpago,2.86 MXN,2024-07-12,aprobado
+3477,3477,mpago,194408.00,2025-12-14,aprobado
+2715,2715,tarjeta_credito,"47386,22",2026-04-11,rechazado
+2683,2683,mpago,3735.46 MXN,30-04-2026,APROBADO
+24,24,tarjeta_debito,  10564.65  ,2026-03-22 00:00:00,aprobado
+3570,3570,mpago,  1.98  ,2025-01-08,aprobado
+1628,1628,tarjeta_debito,$0.00,2024-06-09,aprobado
+2112,2112,tarjeta_credito,  188989.52  ,11/14/2025,aprobado
+965,965,efectivo,53678.73 MXN,05-01-2026,rechazado
+2697,2697,tarjeta_credito,0.00 MXN,24 de febrero de 2024,aprobado
+1555,1555,efectivo,46031.47,28-10-2025,aprobado
+1052,1052,tarjeta_credito,  268806.59  ,2025-05-26 00:00:00,pendiente
+3425,3425,oxxo,14842.09,2025-07-07,rechazado
+3033,3033,efectivo,13098.22,26 de abril de 2026,APROBADO
+2161,2161,transferencia,177407.04 MXN,09-07-2024,APROBADO
+540,540,tarjeta_credito,$0,07/16/2026,rechazado
+1750,1750,efectivo,142080.64 MXN,07/24/2024,rechazado
+396,396,mpago,$181274.40,2026-05-23,aprobado
+942,942,tarjeta_debito,"$21,845",19 de julio de 2026,aprobado
+961,961,oxxo,"$15,636",19 de septiembre de 2026,APROBADO
+3455,3455,mpago,  0.00  ,06/23/2025,aprobado
+832,832,mpago,"2449,85",2024-09-07 00:00:00,pendiente
+1835,1835,transferencia,477876.98 MXN,2026-01-30,pendiente
+2401,2401,transferencia,131005.65,11-02-2026,aprobado
+1166,1166,mpago,399364.93 MXN,2025-03-21,pendiente
+2774,2774,tarjeta_credito,1.26,2026-08-11 00:00:00,rechazado
+2182,2182,mpago,"4886,44",2025-12-24,aprobado
+78,78,efectivo,0.00,21 de octubre de 2025,null
+465,465,tarjeta_debito,13091.12,6 de abril de 2025,pendiente
+2682,2682,efectivo,"2,96",2025-05-09,aprobado
+1315,1315,efectivo,  411.42  ,16-02-2026,pendiente
+1578,1578,transferencia,$51366.11,15/02/2025,aprobado
+3312,3312,tarjeta_debito,"128964,60",2025-07-02,aprobado
+1103,1103,efectivo,86510.52 MXN,03-07-2025,rechazado
+1254,1254,efectivo,0.35 MXN,2026-04-13,APROBADO
+750,750,efectivo,"5213,89",05/02/2025,aprobado
+2449,2449,mpago,$4487.78,2025-04-04 00:00:00,rechazado
+3247,3247,oxxo,10246.88 MXN,2024-07-30,rechazado
+2902,2902,transferencia,"$195,238",2026-06-12 00:00:00,APROBADO
+2599,2599,tarjeta_debito,$0,2024-04-16 00:00:00,aprobado
+2527,2527,oxxo,2.97 MXN,2024-11-05 00:00:00,aprobado
+3069,3069,mpago,$67343.70,26 de marzo de 2025,aprobado
+1025,1025,efectivo,"531574,38",26/12/2025,pendiente
+3588,3588,transferencia,"0,00",15-12-2024,aprobado
+191,191,tarjeta_credito,"184088,35",18 de agosto de 2025,pendiente
+649,649,mpago,"27408,80",2024-12-05 00:00:00,APROBADO
+1667,1667,mpago,  0.00  ,24 de julio de 2026,APROBADO
+1988,1988,efectivo,26215.81,2026-07-11 00:00:00,pendiente
+1165,1165,oxxo,1.08 MXN,2024-03-20,APROBADO
+112,112,tarjeta_debito,"2,08",2024-01-29,
+1537,1537,mpago,"17061,26",15-12-2025,rechazado
+2719,2719,transferencia,$0,26-02-2025,pendiente
+1504,1504,oxxo,"16899,67",27/05/2026,aprobado
+3489,3489,oxxo,"1,97",11/24/2025,rechazado
+809,809,mpago,"$45,892",2024-10-11 00:00:00,APROBADO
+2100,2100,transferencia,"0,00",2024-04-16 00:00:00,aprobado
+545,545,mpago,6045.22,2026-02-13,aprobado
+1191,1191,transferencia,  27282.39  ,17 de mayo de 2026,rechazado
+2674,2674,transferencia,161964.65 MXN,2025-06-10,aprobado
+440,440,transferencia,  95629.15  ,03/09/2024,aprobado
+1497,1497,tarjeta_credito,$0,2026-08-28 00:00:00,aprobado
+3126,3126,transferencia,2.46,2025-11-15 00:00:00,rechazado
+3082,3082,mpago,40230.13,18 de diciembre de 2025,aprobado
+1421,1421,tarjeta_debito,"$83,990",2024-12-02,pendiente
+3165,3165,mpago,4866.99,29-03-2026,rechazado
+2840,2840,tarjeta_credito,  323456.63  ,01-11-2025,aprobado
+1168,1168,tarjeta_debito,  10569.98  ,29 de agosto de 2024,aprobado
+8,8,transferencia,$2,2025-07-16 00:00:00,N/A
+621,621,oxxo,  0.00  ,22-12-2025,APROBADO
+2190,2190,efectivo,  26662.43  ,2025-04-14,APROBADO
+3483,3483,oxxo,  1109.72  ,2026-08-29,aprobado
+1176,1176,oxxo,2466.03 MXN,27-04-2025,rechazado
+1473,1473,mpago,"2820,83",07/10/2026,aprobado
+136,136,tarjeta_credito,"0,00",29-01-2024,NULL
+1608,1608,mpago,"24775,00",19-05-2026,APROBADO
+185,185,transferencia,"156420,78",2024-10-29,aprobado
+3590,3590,efectivo,$39686.47,2026-08-20,APROBADO
+1255,1255,transferencia,108721.25,22-10-2024,aprobado
+834,834,efectivo,$214082.35,16-04-2026,APROBADO
+1440,1440,tarjeta_debito,$2.07,2024-11-06 00:00:00,aprobado
+562,562,efectivo,$158112.77,14 de agosto de 2025,aprobado
+998,998,tarjeta_debito,$2,14/07/2025,rechazado
+2010,2010,transferencia,"144693,70",30 de julio de 2024,aprobado
+994,994,tarjeta_debito,1.02 MXN,27/09/2024,rechazado
+1202,1202,oxxo,70398.59,30 de marzo de 2026,rechazado
+2738,2738,transferencia,$0,12/02/2024,pendiente
+1691,1691,mpago,33278.85,16 de junio de 2025,rechazado
+1518,1518,tarjeta_credito,21729.62 MXN,02-05-2026,aprobado
+3023,3023,tarjeta_debito,"1,87",31/08/2025,APROBADO
+134,134,oxxo,27753.31,05/01/2024,-
+3437,3437,transferencia,  23937.50  ,2024-04-11,aprobado
+2287,2287,tarjeta_debito,"$86,500",14-09-2025,APROBADO
+3524,3524,transferencia,15288.93,18 de febrero de 2025,APROBADO
+381,381,transferencia,$1,2025-02-16,APROBADO
+2410,2410,mpago,"$2,919",08/28/2025,pendiente
+360,360,transferencia,$3,21 de octubre de 2024,pendiente
+2739,2739,oxxo,"386094,33",12-05-2024,aprobado
+1981,1981,oxxo,$2,2026-03-22 00:00:00,APROBADO
+2742,2742,efectivo,"25027,13",4 de septiembre de 2026,aprobado
+2626,2626,transferencia,146362.17,2025-01-25 00:00:00,APROBADO
+983,983,mpago,  12902.79  ,05/06/2026,APROBADO
+3186,3186,mpago,  50138.10  ,20 de marzo de 2026,aprobado
+3108,3108,oxxo,"$35,581",2025-08-12 00:00:00,APROBADO
+3254,3254,tarjeta_debito,"14479,84",06/24/2024,pendiente
+2467,2467,efectivo,2103.16 MXN,24 de abril de 2026,rechazado
+3228,3228,oxxo,0.00 MXN,2024-10-19,pendiente
+675,675,tarjeta_debito,$6915.35,07/16/2024,APROBADO
+3403,3403,tarjeta_debito,  101004.82  ,08/29/2025,rechazado
+647,647,tarjeta_debito,2.24 MXN,25 de septiembre de 2024,rechazado
+3202,3202,tarjeta_debito,  0.00  ,28/07/2024,aprobado
+716,716,oxxo,1.36 MXN,30/01/2025,pendiente
+939,939,transferencia,42166.83,02/23/2024,APROBADO
+2229,2229,efectivo,$0.00,09/12/2024,aprobado
+2445,2445,tarjeta_credito,11344.39,2026-09-05,rechazado
+2252,2252,oxxo,1.57 MXN,02/22/2026,rechazado
+3509,3509,tarjeta_debito,"0,00",2024-12-24 00:00:00,rechazado
+1112,1112,mpago,546591.31 MXN,2025-09-11 00:00:00,APROBADO
+603,603,oxxo,"$80,419",10-01-2026,aprobado
+2086,2086,transferencia,"4855,49",22 de junio de 2025,aprobado
+218,218,transferencia,"$3,364",16 de octubre de 2024,aprobado
+3541,3541,transferencia,  59821.79  ,2024-06-19 00:00:00,rechazado
+1169,1169,tarjeta_credito,"0,64",2026-08-22 00:00:00,pendiente
+2091,2091,transferencia,$2,24-08-2026,aprobado
+906,906,oxxo,"163657,73",22/08/2024,pendiente
+295,295,tarjeta_credito,"804,81",2026-04-27,aprobado
+2220,2220,oxxo,"283246,25",18 de abril de 2026,APROBADO
+1460,1460,tarjeta_debito,$92382.86,2026-08-29 00:00:00,aprobado
+448,448,oxxo,"$10,403",1 de agosto de 2026,aprobado
+2286,2286,oxxo,"3913,22",2025-03-11 00:00:00,APROBADO
+542,542,mpago,$0.00,14-08-2025,pendiente
+236,236,tarjeta_debito,2.47,18-09-2024,rechazado
+90,90,tarjeta_credito,$2,16 de septiembre de 2024,aprobado
+219,219,efectivo,"16245,55",20-03-2025,rechazado
+3510,3510,tarjeta_debito,0.00,2025-12-05,rechazado
+2711,2711,oxxo,  1.54  ,23-05-2025,pendiente
+1875,1875,tarjeta_debito,"$35,116",10-08-2025,aprobado
+3110,3110,tarjeta_credito,$0,17-03-2024,pendiente
+1677,1677,efectivo,125903.48,2026-06-27 00:00:00,APROBADO
+2170,2170,oxxo,324859.40 MXN,12 de marzo de 2026,aprobado
+1776,1776,efectivo,"$49,260",2025-01-05 00:00:00,pendiente
+694,694,oxxo,$46740.96,2025-12-22,aprobado
+816,816,tarjeta_debito,  0.00  ,2 de marzo de 2025,aprobado
+2835,2835,transferencia,$107333.43,2024-02-28,rechazado
+3053,3053,mpago,139984.59 MXN,02-03-2026,aprobado
+2109,2109,transferencia,  2.92  ,22-12-2024,APROBADO
+1229,1229,tarjeta_debito,14965.53 MXN,27 de febrero de 2026,pendiente
+3432,3432,oxxo,"$33,778",01/19/2025,APROBADO
+3206,3206,mpago,  22635.31  ,14/02/2025,APROBADO
+3184,3184,oxxo,"$133,284",04/01/2026,aprobado
+1702,1702,oxxo,488322.29 MXN,5 de septiembre de 2026,pendiente
+1209,1209,tarjeta_debito,$2.05,24-02-2026,aprobado
+3238,3238,transferencia,$118164.50,15/03/2024,aprobado
+2638,2638,tarjeta_debito,"$267,804",2026-01-04 00:00:00,APROBADO
+652,652,tarjeta_debito,"2,76",01-07-2024,APROBADO
+3055,3055,efectivo,$194842.40,2024-05-22,aprobado
+2025,2025,tarjeta_credito,0.00 MXN,12-07-2026,rechazado
+1003,1003,transferencia,789355.49,2026-04-15 00:00:00,APROBADO
+1930,1930,mpago,$0,2025-11-26 00:00:00,pendiente
+325,325,efectivo,26485.80,2026-09-17,APROBADO
+1781,1781,efectivo,$0,2026-09-25 00:00:00,pendiente
+3035,3035,tarjeta_credito,$376327.52,2025-05-30,aprobado
+330,330,oxxo,0.00 MXN,21-07-2025,APROBADO
+1014,1014,mpago,"25294,45",06/29/2025,rechazado
+2605,2605,efectivo,"0,00",2024-06-04,pendiente
+648,648,tarjeta_debito,"235145,05",02/02/2025,aprobado
+116,116,efectivo,  79191.30  ,06/07/2025,rechazado
+922,922,transferencia,"$55,061",07/29/2024,rechazado
+1794,1794,efectivo,"$192,228",27/07/2025,rechazado
+2275,2275,oxxo,$2,2025-11-21,APROBADO
+538,538,tarjeta_debito,"$251,616",2024-01-21,rechazado
+2148,2148,tarjeta_debito,282971.27 MXN,06/16/2026,APROBADO
+1577,1577,mpago,"$17,325",01-06-2025,aprobado
+258,258,transferencia,$755.27,01/03/2025,pendiente
+469,469,efectivo,  23101.32  ,17 de marzo de 2026,aprobado
+1102,1102,tarjeta_debito,370226.12,12 de diciembre de 2024,rechazado
+142,142,efectivo,"245098,37",2026-01-20,-
+660,660,mpago,0.00 MXN,26/03/2024,rechazado
+927,927,tarjeta_credito,"11861,52",19 de julio de 2026,aprobado
+209,209,transferencia,$92686.61,29 de agosto de 2025,APROBADO
+2460,2460,efectivo,9363.61 MXN,11 de abril de 2025,APROBADO
+2492,2492,mpago,"$25,376",2026-01-18,rechazado
+2138,2138,efectivo,0.00,2025-06-18,aprobado
+3149,3149,tarjeta_credito,112150.11 MXN,02/12/2026,rechazado
+1658,1658,tarjeta_credito,235114.79 MXN,17-09-2024,aprobado
+2475,2475,mpago,  25109.67  ,2024-10-02,pendiente
+2690,2690,mpago,15374.51,20/03/2026,aprobado
+2434,2434,tarjeta_debito,$5251.17,2024-05-21,rechazado
+1550,1550,efectivo,$1,25/02/2024,pendiente
+2098,2098,mpago,"1,54",2025-08-20,aprobado
+1072,1072,oxxo,"0,11",2025-01-30 00:00:00,pendiente
+1030,1030,mpago,  35581.17  ,2025-06-19,aprobado
+2841,2841,tarjeta_credito,2313.45 MXN,2025-11-11,aprobado
+1,1,tarjeta_debito,264663.98,2025-01-28 00:00:00,N/A
+823,823,mpago,"215621,20",2024-12-29,aprobado
+1985,1985,transferencia,  5359.88  ,1 de abril de 2024,aprobado
+2853,2853,oxxo,  74579.16  ,22/10/2025,APROBADO
+923,923,tarjeta_credito,7337.90,2025-03-20 00:00:00,aprobado
+3498,3498,efectivo,"245486,72",18 de julio de 2025,aprobado
+849,849,oxxo,91024.87,2026-01-29,APROBADO
+2965,2965,mpago,  335202.13  ,2024-06-09 00:00:00,pendiente
+1352,1352,transferencia,$4903.57,2026-01-15,aprobado
+612,612,tarjeta_debito,$0.00,4 de agosto de 2025,pendiente
+2933,2933,oxxo,0.00,2025-10-05,aprobado
+1306,1306,tarjeta_debito,$639.45,15 de septiembre de 2026,APROBADO
+1299,1299,mpago,  0.00  ,29 de junio de 2025,APROBADO
+2463,2463,efectivo,1.38 MXN,11 de junio de 2025,pendiente
+2423,2423,efectivo,166572.11 MXN,2025-06-05 00:00:00,pendiente
+2176,2176,tarjeta_debito,41243.21,31 de diciembre de 2025,APROBADO
+2439,2439,mpago,$1,2026-07-18,aprobado
+320,320,tarjeta_credito,22925.64,2025-04-04,aprobado
+2359,2359,transferencia,0.00,25 de mayo de 2024,aprobado
+999,999,oxxo,99268.39 MXN,05/13/2025,aprobado
+67,67,tarjeta_credito,0.00,03/06/2026,N/A
+2097,2097,tarjeta_debito,  6813.18  ,01-09-2025,pendiente
+2273,2273,tarjeta_credito,98621.20,07/05/2026,aprobado
+1624,1624,transferencia,20180.45 MXN,24/04/2026,rechazado
+1184,1184,oxxo,0.43,2026-09-22 00:00:00,APROBADO
+2592,2592,efectivo,$1,2024-05-07 00:00:00,pendiente
+1303,1303,mpago,  9893.70  ,2025-01-29,aprobado
+2684,2684,tarjeta_debito,$0.00,2025-11-16,aprobado
+456,456,efectivo,454592.86 MXN,2025-10-08,pendiente
+329,329,tarjeta_debito,  408122.19  ,2024-07-22,aprobado
+3046,3046,tarjeta_debito,229179.39 MXN,2025-05-26,aprobado
+1010,1010,oxxo,$5044.09,2025-01-24,APROBADO
+110,110,mpago,  765.44  ,2025-06-06 00:00:00,NULL
+2568,2568,mpago,"0,00",2024-08-07 00:00:00,rechazado
+1918,1918,efectivo,  2.79  ,2025-09-18,pendiente
+176,176,tarjeta_debito,$15397.87,18-08-2026,aprobado
+3390,3390,tarjeta_debito,184636.42 MXN,2025-10-23,aprobado
+1787,1787,transferencia,$4544.11,12 de marzo de 2026,rechazado
+3522,3522,efectivo,  156439.94  ,2024-10-28,rechazado
+2125,2125,efectivo,0.00 MXN,01-05-2026,aprobado
+177,177,transferencia,  0.00  ,2025-03-11,rechazado
+2116,2116,tarjeta_credito,"$2,106",2024-01-28,aprobado
+145,145,tarjeta_credito,0.00 MXN,04/02/2026,rechazado
+1559,1559,mpago,$0.18,2025-02-08,pendiente
+3452,3452,transferencia,"$337,838",2026-05-06,APROBADO
+1946,1946,tarjeta_credito,$1783.95,2025-12-25 00:00:00,pendiente
+893,893,oxxo,2.37 MXN,08/09/2026,APROBADO
+3325,3325,tarjeta_debito,$0.00,12/26/2025,rechazado
+1760,1760,efectivo,"$1,472",2025-09-07 00:00:00,aprobado
+2231,2231,efectivo,"$73,532",2026-02-11,APROBADO
+1997,1997,tarjeta_credito,$188325.45,2026-09-12,APROBADO
+481,481,transferencia,$0,2024-12-16 00:00:00,pendiente
+3205,3205,mpago,17831.96 MXN,2026-01-15 00:00:00,aprobado
+640,640,mpago,"$183,601",9 de agosto de 2024,pendiente
+2657,2657,tarjeta_debito,"0,00",2025-03-26 00:00:00,APROBADO
+3038,3038,oxxo,100890.39 MXN,2026-02-19,aprobado
+232,232,tarjeta_credito,105515.63 MXN,18-07-2025,aprobado
+2332,2332,oxxo,8221.84,08/28/2025,aprobado
+3319,3319,transferencia,$1,11/06/2025,aprobado
+1931,1931,transferencia,7966.25 MXN,07/27/2024,aprobado
+2087,2087,tarjeta_debito,$62677.73,2024-12-20 00:00:00,pendiente
+1301,1301,tarjeta_debito,0.00 MXN,04/15/2024,APROBADO
+2775,2775,transferencia,0.28 MXN,2024-09-24 00:00:00,pendiente
+2875,2875,mpago,"$7,722",2025-02-01,APROBADO
+2245,2245,tarjeta_credito,"$13,556",02/21/2025,aprobado
+3555,3555,tarjeta_debito,171258.51 MXN,2025-09-02 00:00:00,rechazado
+1021,1021,tarjeta_credito,130477.19 MXN,18-03-2025,aprobado
+394,394,mpago,  0.00  ,03/31/2025,APROBADO
+2724,2724,efectivo,24890.16,10-11-2024,rechazado
+549,549,tarjeta_credito,"0,00",2026-07-23,APROBADO
+2926,2926,tarjeta_credito,  2386.01  ,2024-10-30 00:00:00,aprobado
+2501,2501,mpago,4060.18,23/05/2025,rechazado
+3283,3283,mpago,105966.69 MXN,22-04-2025,aprobado
+265,265,mpago,"$10,695",2024-10-12 00:00:00,rechazado
+2797,2797,tarjeta_credito,0.00 MXN,2025-07-23,rechazado
+1221,1221,transferencia,$2,19/10/2025,APROBADO
+1389,1389,oxxo,$0.00,2024-12-15,APROBADO
+1585,1585,tarjeta_debito,"$4,830",2025-08-31,aprobado
+1928,1928,mpago,0.98 MXN,12-01-2026,APROBADO
+2975,2975,mpago,"$42,614",25/02/2025,aprobado
+1350,1350,transferencia,0.00 MXN,2026-05-11,rechazado
+310,310,mpago,67552.10 MXN,2024-03-21,aprobado
+858,858,tarjeta_credito,$0,2024-08-25 00:00:00,pendiente
+3322,3322,tarjeta_debito,175413.71 MXN,09/30/2024,aprobado
+2408,2408,mpago,"$60,856",2025-05-11,rechazado
+2944,2944,transferencia,0.07,04/07/2026,aprobado
+1567,1567,tarjeta_debito,$77097.64,05-04-2024,aprobado
+164,164,mpago,  5317.95  ,07-02-2025,aprobado
+1051,1051,oxxo,0.00,07/12/2025,aprobado
+2996,2996,oxxo,  2.87  ,14/11/2025,aprobado
+1016,1016,transferencia,  23302.85  ,19 de octubre de 2024,aprobado
+1242,1242,efectivo,$271620.03,03/07/2024,pendiente
+1646,1646,transferencia,6060.03,01-01-2024,APROBADO
+212,212,oxxo,23407.27 MXN,2025-05-27,APROBADO
+1276,1276,transferencia,  43355.36  ,2024-10-24 00:00:00,rechazado
+948,948,tarjeta_debito,1.12,2025-09-24,aprobado
+788,788,efectivo,  32985.52  ,2025-03-13,aprobado
+947,947,oxxo,40835.36 MXN,26 de marzo de 2026,aprobado
+2244,2244,efectivo,  269929.95  ,2024-07-15,pendiente
+3115,3115,mpago,"$32,366",2026-06-06,pendiente
+36,36,tarjeta_credito,2.91 MXN,03/05/2026,aprobado
+3059,3059,transferencia,$1,06/05/2024,pendiente
+3255,3255,efectivo,$145615.47,2025-06-17,rechazado
+1216,1216,transferencia,$2.34,05/29/2026,pendiente
+3310,3310,transferencia,  1.13  ,11/21/2024,APROBADO
+507,507,efectivo,  67674.88  ,02/04/2026,APROBADO
+3330,3330,tarjeta_debito,"25697,73",22-02-2025,APROBADO
+2074,2074,efectivo,  1.98  ,14 de marzo de 2024,rechazado
+2014,2014,transferencia,2.87,01/20/2026,APROBADO
+1060,1060,tarjeta_credito,$0.00,05/06/2025,rechazado
+270,270,tarjeta_debito,$49635.71,28 de marzo de 2026,aprobado
+1817,1817,oxxo,"57533,99",17/07/2024,aprobado
+3341,3341,efectivo,  15273.03  ,31-03-2026,aprobado
+1712,1712,transferencia,101000.40 MXN,26 de octubre de 2025,rechazado
+3298,3298,tarjeta_credito,$24871.62,2025-08-09 00:00:00,rechazado
+2003,2003,mpago,"$14,973",2024-07-06,aprobado
+1233,1233,transferencia,0.00,09/11/2025,rechazado
+1343,1343,transferencia,1492.67 MXN,06/11/2025,APROBADO
+2360,2360,transferencia,"$42,943",2024-01-08 00:00:00,aprobado
+2411,2411,transferencia,  37585.39  ,2025-08-20,rechazado
+564,564,tarjeta_credito,$158304.30,9 de mayo de 2026,rechazado
+971,971,oxxo,  17455.33  ,12/09/2024,aprobado
+2587,2587,tarjeta_debito,  27062.20  ,2025-06-25,APROBADO
+870,870,transferencia,4900.77,16/03/2025,pendiente
+2805,2805,transferencia,"10288,74",04-03-2026,pendiente
+1188,1188,tarjeta_debito,  423.72  ,2025-02-02,rechazado
+2777,2777,tarjeta_debito,73497.51,16 de noviembre de 2025,aprobado
+344,344,transferencia,214781.69,11/13/2025,APROBADO
+2609,2609,tarjeta_debito,1041.10,14 de abril de 2026,pendiente
+786,786,tarjeta_debito,"73790,62",2024-08-26,aprobado
+1774,1774,tarjeta_debito,"63993,51",2026-09-10,pendiente
+2278,2278,tarjeta_debito,  0.00  ,17 de febrero de 2025,aprobado
+433,433,efectivo,  330.78  ,2025-08-22,APROBADO
+3271,3271,transferencia,"2028,13",2024-03-01,aprobado
+1962,1962,tarjeta_debito,$196645.20,27 de enero de 2024,pendiente
+393,393,oxxo,1.61 MXN,07/10/2025,rechazado
+413,413,mpago,12317.75,1 de noviembre de 2024,aprobado
+2610,2610,tarjeta_debito,"$6,554",10-05-2026,rechazado
+2824,2824,tarjeta_debito,4298.20,2025-03-01,rechazado
+1511,1511,oxxo,81209.14 MXN,05/24/2024,aprobado
+3222,3222,efectivo,"989,53",2024-12-25 00:00:00,aprobado
+3537,3537,tarjeta_credito,57040.85 MXN,04/08/2025,rechazado
+2084,2084,efectivo,7969.72 MXN,09/11/2025,aprobado
+3158,3158,tarjeta_credito,"30268,73",27/04/2025,aprobado
+686,686,transferencia,  2.26  ,08/25/2026,rechazado
+334,334,oxxo,0.00,2024-07-14,aprobado
+854,854,mpago,"0,00",10/02/2024,APROBADO
+2573,2573,transferencia,  15077.46  ,2025-12-29,aprobado
+2982,2982,oxxo,28002.16,23 de julio de 2025,pendiente
+2102,2102,efectivo,0.63,2026-07-01 00:00:00,pendiente
+3054,3054,tarjeta_credito,0.00 MXN,2025-10-03,rechazado
+3144,3144,tarjeta_debito,$2,2025-07-23,APROBADO
+386,386,efectivo,388077.31,16-01-2024,rechazado
+280,280,oxxo,$42000.73,2025-09-30,aprobado
+2582,2582,transferencia,$0.00,24 de marzo de 2026,pendiente
+2105,2105,mpago,61662.29 MXN,13 de agosto de 2026,aprobado
+1304,1304,tarjeta_credito,"$34,408",2026-09-15,aprobado
+838,838,mpago,1.51 MXN,17-02-2026,APROBADO
+3528,3528,mpago,$2.92,2025-10-29 00:00:00,aprobado
+2422,2422,mpago,$12875.93,2024-09-24,rechazado
+2269,2269,tarjeta_credito,0.50 MXN,15 de agosto de 2026,aprobado
+2163,2163,tarjeta_debito,"0,00",1 de abril de 2024,APROBADO
+2547,2547,tarjeta_credito,18426.30,11/30/2024,aprobado
+2851,2851,transferencia,$44618.60,07/18/2026,aprobado
+719,719,efectivo,$0.00,2026-04-25,aprobado
+3496,3496,transferencia,0.73,2026-02-05 00:00:00,rechazado
+238,238,tarjeta_debito,"52851,17",02/17/2026,APROBADO
+2529,2529,transferencia,  11475.89  ,02/07/2026,pendiente
+263,263,tarjeta_credito,  13586.40  ,21 de julio de 2025,aprobado
+2723,2723,efectivo,36521.64,08/11/2024,aprobado
+2820,2820,efectivo,"$398,917",20-11-2024,aprobado
+1605,1605,mpago,23662.32,11/04/2024,aprobado
+1947,1947,transferencia,$13070.88,2024-12-01,pendiente
+1248,1248,oxxo,44097.72 MXN,2026-04-06,rechazado
+140,140,transferencia,16900.59 MXN,1 de abril de 2026,pendiente
+1884,1884,mpago,"1,57",2025-11-08,pendiente
+2607,2607,tarjeta_debito,20341.60,4 de junio de 2025,aprobado
+985,985,efectivo,2.90,14-09-2025,APROBADO
+639,639,efectivo,4366.22,2025-01-18,pendiente
+3097,3097,tarjeta_debito,$193693.29,15-09-2024,APROBADO
+1775,1775,tarjeta_debito,$175992.14,30 de noviembre de 2024,pendiente
+2346,2346,tarjeta_debito,  19289.43  ,1 de mayo de 2024,aprobado
+2596,2596,tarjeta_debito,29368.94,11/14/2025,APROBADO
+2311,2311,tarjeta_debito,32748.06,24 de diciembre de 2024,aprobado
+908,908,tarjeta_credito,  132145.24  ,2024-09-13 00:00:00,aprobado
+3301,3301,tarjeta_credito,71671.88 MXN,2025-06-19,aprobado
+1897,1897,efectivo,"101517,11",2024-02-18,aprobado
+1158,1158,tarjeta_credito,  50916.00  ,2026-07-17,pendiente
+1133,1133,tarjeta_credito,$0.00,02/02/2025,pendiente
+871,871,tarjeta_debito,3878.26,2025-11-04,aprobado
+3139,3139,efectivo,$14905.29,2024-06-24,APROBADO
+575,575,tarjeta_debito,$9524.84,8 de agosto de 2024,rechazado
+1043,1043,tarjeta_debito,  0.00  ,15 de noviembre de 2024,aprobado
+1525,1525,tarjeta_credito,$2,12/11/2024,rechazado
+2037,2037,tarjeta_credito,$156504.59,09/02/2026,APROBADO
+2258,2258,mpago,"$364,990",02/06/2024,pendiente
+1199,1199,tarjeta_credito,"$12,004",20-08-2026,pendiente
+225,225,efectivo,"2343,20",2024-08-20 00:00:00,APROBADO
+1596,1596,mpago,$42540.13,2025-02-27,aprobado
+1385,1385,oxxo,9791.52,01/18/2025,rechazado
+3245,3245,tarjeta_debito,$0,2024-07-16,pendiente
+2174,2174,tarjeta_credito,  14413.11  ,17-04-2024,pendiente
+1036,1036,transferencia,$0.00,16/10/2024,aprobado
+2791,2791,transferencia,122500.66 MXN,2024-08-12,aprobado
+2834,2834,tarjeta_debito,"0,03",6 de junio de 2026,APROBADO
+259,259,oxxo,211008.14,01/30/2026,pendiente
+104,104,tarjeta_debito,"$34,735",16/01/2025,aprobado
+2863,2863,transferencia,$1.52,2026-02-18,aprobado
+2825,2825,transferencia,$475,2025-03-06,pendiente
+56,56,mpago,$1,16 de abril de 2025,APROBADO
+1545,1545,tarjeta_credito,335199.16 MXN,01/13/2026,APROBADO
+826,826,mpago,"2021,96",30/07/2026,rechazado
+1622,1622,transferencia,  68568.49  ,19/11/2024,aprobado
+1548,1548,oxxo,"20173,57",2025-03-02,aprobado
+1345,1345,tarjeta_debito,"$133,900",01/30/2025,APROBADO
+1693,1693,mpago,$131611.01,2024-10-16,APROBADO
+42,42,efectivo,  0.00  ,25 de enero de 2025,
+2919,2919,tarjeta_credito,$433930.28,17 de enero de 2026,aprobado
+1700,1700,efectivo,  145028.15  ,19-01-2025,APROBADO
+432,432,efectivo,76618.93 MXN,2026-05-12,aprobado
+58,58,oxxo,  141359.86  ,2026-09-18,rechazado
+3019,3019,tarjeta_credito,"283063,06",2026-05-06,aprobado
+2271,2271,efectivo,2.40,2024-01-21,aprobado
+333,333,efectivo,37828.34,8 de marzo de 2026,aprobado
+14,14,efectivo,0.00 MXN,2024-07-05 00:00:00,rechazado
+2490,2490,efectivo,$2,2025-08-07 00:00:00,APROBADO
+2839,2839,mpago,114037.69 MXN,26-04-2024,pendiente
+2579,2579,oxxo,1756.92 MXN,2024-04-28 00:00:00,aprobado
+2153,2153,tarjeta_debito,44337.24,2026-03-16,pendiente
+445,445,mpago,"$226,858",03-12-2024,aprobado
+1193,1193,efectivo,$14553.06,2024-11-11,rechazado
+3192,3192,tarjeta_credito,$0,23/05/2024,APROBADO
+1755,1755,transferencia,"$60,229",2025-07-01,pendiente
+875,875,oxxo,"1,83",17/03/2025,APROBADO
+3373,3373,transferencia,12204.21 MXN,2024-07-15 00:00:00,rechazado
+2233,2233,transferencia,"$52,279",12/06/2025,pendiente
+4,4,tarjeta_credito,33395.69 MXN,17 de mayo de 2025,aprobado
+602,602,tarjeta_debito,0.00,2025-05-05 00:00:00,aprobado
+2224,2224,mpago,2666.01,06/08/2024,aprobado
+1812,1812,transferencia,"$56,934",24/02/2026,pendiente
+434,434,oxxo,"68542,20",01/31/2026,pendiente
+1096,1096,oxxo,"$7,194",06/03/2024,rechazado
+1134,1134,efectivo,92508.67 MXN,2024-03-31 00:00:00,pendiente
+380,380,tarjeta_credito,2939.98 MXN,2025-02-07 00:00:00,rechazado
+1048,1048,oxxo,$1,2026-07-22 00:00:00,rechazado
+883,883,tarjeta_debito,26383.01 MXN,31 de julio de 2024,aprobado
+3022,3022,tarjeta_debito,$32480.47,2025-07-24 00:00:00,pendiente
+1868,1868,transferencia,  2.75  ,2024-01-30,aprobado
+3450,3450,transferencia,  105306.68  ,12/09/2025,rechazado
+1613,1613,efectivo,771.80,27-01-2026,aprobado
+3568,3568,mpago,"$49,814",12/16/2025,aprobado
+2145,2145,oxxo,$110883.72,30-06-2026,pendiente
+3379,3379,oxxo,33177.46 MXN,2026-05-01 00:00:00,aprobado
+69,69,oxxo,"0,70",07/02/2024,aprobado
+387,387,efectivo,$1,17/07/2025,aprobado
+900,900,tarjeta_credito,$0.00,26 de febrero de 2024,aprobado
+373,373,efectivo,14803.57 MXN,23 de mayo de 2026,aprobado
+1262,1262,oxxo,$0.00,2024-04-17,aprobado
+159,159,tarjeta_debito,$0.00,09-05-2025,APROBADO
+2107,2107,tarjeta_debito,$349352.96,28/07/2026,rechazado
+2618,2618,oxxo,"106630,19",2025-08-12 00:00:00,pendiente
+3598,3598,tarjeta_credito,0.60 MXN,2025-09-28 00:00:00,APROBADO
+2024,2024,transferencia,"3509,17",4 de febrero de 2026,aprobado
+2586,2586,transferencia,"$1,243",03-12-2024,aprobado
+1392,1392,mpago,"14686,04",22/01/2025,APROBADO
+1419,1419,oxxo,1.22,2025-10-17,pendiente
+1162,1162,tarjeta_credito,"$15,668",09-08-2026,aprobado
+1379,1379,mpago,  72064.27  ,30-01-2026,aprobado
+1154,1154,tarjeta_credito,3517.18 MXN,03-04-2026,APROBADO
+633,633,oxxo,  1.79  ,2025-12-19,aprobado
+1312,1312,tarjeta_debito,10668.67 MXN,2025-05-07 00:00:00,aprobado
+1831,1831,efectivo,$47506.08,15-08-2024,pendiente
+1456,1456,efectivo,$187886.60,03/16/2026,aprobado
+1063,1063,tarjeta_credito,  3326.33  ,2024-07-29,aprobado
+3318,3318,transferencia,$157885.12,03/31/2026,APROBADO
+1789,1789,tarjeta_credito,"$9,639",17-06-2024,aprobado
+321,321,transferencia,"1232,51",01/04/2026,aprobado
+866,866,efectivo,176780.40 MXN,2024-06-29 00:00:00,aprobado
+3216,3216,efectivo,"38593,42",01/20/2026,APROBADO
+3017,3017,transferencia,13101.94,25 de julio de 2024,aprobado
+1288,1288,mpago,307653.02,2024-06-18 00:00:00,aprobado
+779,779,tarjeta_debito,"$15,783",01/24/2026,APROBADO
+233,233,tarjeta_credito,"0,00",27 de septiembre de 2026,APROBADO
+1113,1113,oxxo,$1.97,2026-05-17 00:00:00,pendiente
+1120,1120,tarjeta_credito,"13400,46",11/11/2024,aprobado
+195,195,tarjeta_credito,1.98,21 de noviembre de 2025,aprobado
+1282,1282,tarjeta_credito,88066.55,12/12/2025,APROBADO
+3599,3599,oxxo,224890.26 MXN,23-02-2026,rechazado
+1139,1139,tarjeta_credito,$6371.16,13-07-2026,pendiente
+3219,3219,mpago,"204681,43",2025-09-04,APROBADO
+787,787,tarjeta_credito,  5994.59  ,01/11/2025,rechazado
+3472,3472,tarjeta_credito,  0.00  ,02-04-2024,APROBADO
+1516,1516,tarjeta_credito,72088.43,2024-09-09,aprobado
+133,133,efectivo,$2.71,8 de mayo de 2026,pendiente
+1250,1250,mpago,$155058.69,09/09/2025,aprobado
+552,552,mpago,"$384,552",2024-08-23 00:00:00,aprobado
+458,458,efectivo,"219528,22",2025-05-13,pendiente
+3274,3274,tarjeta_credito,"7807,51",2024-10-10,aprobado
+3028,3028,mpago,$60698.31,2025-12-19,rechazado
+2480,2480,oxxo,72283.43,2026-06-23 00:00:00,pendiente
+1668,1668,transferencia,178949.17,20-03-2026,APROBADO
+2160,2160,tarjeta_debito,$2210.53,4 de septiembre de 2025,rechazado
+777,777,transferencia,"$391,843",05-03-2026,aprobado
+276,276,efectivo,47224.63 MXN,01/03/2026,rechazado
+442,442,oxxo,  154060.72  ,2025-03-28,APROBADO
+2906,2906,mpago,$1,24 de junio de 2026,aprobado
+1367,1367,tarjeta_credito,$0,26-08-2024,pendiente
+797,797,oxxo,36544.93 MXN,04/03/2025,aprobado
+1623,1623,tarjeta_credito,296.59,2 de julio de 2025,aprobado
+1400,1400,tarjeta_credito,  0.00  ,2024-04-14 00:00:00,APROBADO
+1185,1185,mpago,2721.60 MXN,2024-07-15 00:00:00,aprobado
+597,597,transferencia,"20777,22",11/22/2024,pendiente
+708,708,oxxo,$31408.21,25 de agosto de 2025,aprobado
+631,631,transferencia,  55793.08  ,2025-12-22,pendiente
+2071,2071,tarjeta_credito,4981.41 MXN,2026-06-28,aprobado
+2646,2646,tarjeta_debito,$65525.57,15-03-2024,pendiente
+878,878,mpago,358909.02 MXN,2024-06-30 00:00:00,pendiente
+1539,1539,efectivo,"$23,733",15/11/2024,aprobado
+2636,2636,oxxo,2520.63,2026-06-02 00:00:00,aprobado
+2402,2402,tarjeta_debito,25255.49 MXN,2025-11-13,aprobado
+2814,2814,oxxo,  3753.19  ,2024-07-07,aprobado
+3279,3279,mpago,$0,2026-09-23 00:00:00,aprobado
+3062,3062,transferencia,0.00 MXN,2025-07-05 00:00:00,rechazado
+1805,1805,mpago,0.82,2025-08-07,aprobado
+1795,1795,transferencia,0.00,2025-05-02,aprobado
+3065,3065,tarjeta_credito,118991.19,18/01/2026,aprobado
+3475,3475,transferencia,  95880.76  ,09/10/2024,pendiente
+2089,2089,efectivo,0.00 MXN,2024-06-05,APROBADO
+1617,1617,efectivo,  154691.87  ,02/09/2026,rechazado
+905,905,tarjeta_debito,96773.84,2025-07-12,rechazado
+475,475,mpago,$45511.56,2025-08-01,aprobado
+2787,2787,transferencia,100805.79 MXN,2025-07-21,pendiente
+2921,2921,mpago,$39188.78,25 de abril de 2025,APROBADO
+2318,2318,oxxo,$2.10,10-05-2025,pendiente
+312,312,tarjeta_debito,"7777,56",2026-03-10,APROBADO
+3183,3183,oxxo,"0,42",2025-11-30,pendiente
+1047,1047,mpago,"108095,19",16-07-2026,pendiente
+416,416,tarjeta_credito,10945.64,10-04-2024,APROBADO
+1431,1431,efectivo,"2,02",2024-05-13,rechazado
+1171,1171,tarjeta_credito,0.00,2024-07-13,rechazado
+1069,1069,efectivo,$1.64,20-08-2026,APROBADO
+1380,1380,oxxo,0.39 MXN,2025-07-14 00:00:00,aprobado
+3227,3227,tarjeta_credito,  0.00  ,01/19/2025,pendiente
+1475,1475,tarjeta_debito,8353.88 MXN,2025-11-09,APROBADO
+365,365,tarjeta_credito,0.80,15-02-2025,APROBADO
+508,508,mpago,15579.25,2025-06-24,aprobado
+2653,2653,mpago,86497.35,05-01-2026,aprobado
+1863,1863,tarjeta_credito,3912.10 MXN,3 de junio de 2026,rechazado
+2899,2899,oxxo,"$5,612",29 de enero de 2025,APROBADO
+2577,2577,tarjeta_credito,"$155,224",24-09-2024,rechazado
+3502,3502,transferencia,$61358.16,28-01-2026,aprobado
+2992,2992,efectivo,$0.00,21/02/2025,aprobado
+1828,1828,efectivo,$76514.17,2025-11-24 00:00:00,pendiente
+3176,3176,efectivo,  4268.64  ,14/06/2024,aprobado
+654,654,transferencia,"269666,84",2024-06-02,pendiente
+898,898,efectivo,  155246.53  ,09/18/2025,aprobado
+1905,1905,transferencia,  2.34  ,13/03/2024,rechazado
+3067,3067,tarjeta_debito,123577.37,2025-07-07,APROBADO
+863,863,oxxo,"$181,116",04/28/2026,APROBADO
+3090,3090,mpago,$82627.13,17/05/2026,aprobado
+391,391,efectivo,179886.64,09/04/2026,pendiente
+1395,1395,efectivo,53452.67,2025-10-18,aprobado
+1923,1923,efectivo,$14410.15,5 de julio de 2026,pendiente
+2069,2069,tarjeta_debito,"$3,328",2026-08-24 00:00:00,rechazado
+1054,1054,tarjeta_credito,502970.97 MXN,03/06/2026,aprobado
+196,196,mpago,"$18,981",2026-08-05,APROBADO
+359,359,mpago,  30774.76  ,2025-04-25,pendiente
+282,282,efectivo,$0.00,2026-04-25 00:00:00,aprobado
+3563,3563,oxxo,"$96,481",2026-08-08,aprobado
+37,37,tarjeta_debito,0.00,29-12-2025,
+143,143,oxxo,$16931.84,16/07/2025,-
+2146,2146,tarjeta_debito,$3,10 de agosto de 2024,pendiente
+3358,3358,tarjeta_credito,14193.68,20-06-2026,aprobado
+461,461,tarjeta_credito,"$33,329",19-04-2025,aprobado
+2990,2990,tarjeta_debito,  54815.66  ,11/09/2024,aprobado
+1095,1095,oxxo,"$19,590",31-05-2025,pendiente
+2328,2328,mpago,$51687.08,2024-04-27,rechazado
+231,231,oxxo,"49220,39",2025-07-05 00:00:00,aprobado
+537,537,oxxo,1.96 MXN,15-02-2024,APROBADO
+1508,1508,oxxo,27678.20,2025-06-11 00:00:00,aprobado
+717,717,efectivo,"0,00",07/20/2025,aprobado
+682,682,tarjeta_debito,"$24,512",11-08-2026,pendiente
+2862,2862,oxxo,"11871,97",19/05/2026,aprobado
+650,650,efectivo,"2,06",2024-01-26,aprobado
+2257,2257,tarjeta_credito,8444.32,05/09/2025,aprobado
+571,571,tarjeta_credito,  26894.72  ,01/05/2026,rechazado
+3315,3315,mpago,0.00 MXN,06/11/2025,aprobado
+2758,2758,tarjeta_debito,"$341,593",2025-03-30 00:00:00,APROBADO
+500,500,mpago,281097.35,2026-03-23 00:00:00,rechazado
+2474,2474,efectivo,3608.01 MXN,29 de marzo de 2025,pendiente
+2433,2433,transferencia,"120715,42",2025-02-20 00:00:00,rechazado
+2386,2386,mpago,$0.00,25-07-2024,aprobado
+2830,2830,mpago,"0,00",02/09/2024,pendiente
+3266,3266,oxxo,  11498.39  ,10-02-2026,rechazado
+2677,2677,tarjeta_credito,  0.00  ,2025-07-17 00:00:00,APROBADO
+2662,2662,tarjeta_debito,$155010.70,11/25/2025,APROBADO
+2154,2154,efectivo,$1.90,2025-06-26,APROBADO
+246,246,tarjeta_credito,  5748.90  ,16/09/2025,APROBADO
+1351,1351,efectivo,"9143,88",19/07/2024,APROBADO
+2668,2668,tarjeta_credito,  3909.67  ,21 de febrero de 2026,rechazado
+3078,3078,oxxo,$0,2024-09-22,rechazado
+2816,2816,tarjeta_credito,$2,10-10-2025,aprobado
+286,286,mpago,216594.03,2025-03-17,pendiente
+1929,1929,tarjeta_credito,0.00,2024-12-22,rechazado
+594,594,efectivo,"175435,82",2024-07-02 00:00:00,rechazado
+493,493,transferencia,$0,2024-12-16,aprobado
+339,339,transferencia,0.00 MXN,05/20/2025,aprobado
+1580,1580,efectivo,"$91,042",3 de febrero de 2026,aprobado
+1118,1118,efectivo,"68133,95",2025-09-23,APROBADO
+2951,2951,transferencia,"$149,330",05/01/2025,aprobado
+762,762,tarjeta_debito,"$56,550",2 de mayo de 2025,aprobado
+811,811,efectivo,$1126.33,31-05-2025,pendiente
+2889,2889,transferencia,  2658.63  ,2024-05-05 00:00:00,pendiente
+2590,2590,tarjeta_credito,43037.07 MXN,2024-07-29,pendiente
+2314,2314,transferencia,"844,63",2026-08-19,APROBADO
+1394,1394,tarjeta_credito,"$36,485",29/10/2025,pendiente
+3453,3453,transferencia,  65041.78  ,2026-03-25,aprobado
+3324,3324,tarjeta_credito,"19973,64",29-05-2024,aprobado
+1201,1201,tarjeta_debito,1.26,28-04-2026,APROBADO
+2688,2688,efectivo,$0,31-03-2026,rechazado
+872,872,tarjeta_credito,$182357.41,31/12/2025,aprobado
+2312,2312,transferencia,576.43 MXN,2025-10-18,aprobado
+3345,3345,transferencia,"$45,853",12-07-2024,APROBADO
+2327,2327,tarjeta_debito,"0,00",29 de julio de 2026,rechazado
+2042,2042,tarjeta_debito,92364.20 MXN,24 de marzo de 2026,aprobado
+513,513,mpago,405713.05,02/28/2026,APROBADO
+902,902,transferencia,"174082,51",2026-06-26,rechazado
+2885,2885,mpago,  53986.01  ,05/09/2025,rechazado
+925,925,tarjeta_credito,"0,00",21-04-2026,APROBADO
+1037,1037,tarjeta_credito,$61359.82,24/11/2024,aprobado
+294,294,tarjeta_credito,$8527.76,29 de enero de 2025,APROBADO
+1302,1302,oxxo,  132869.33  ,16-01-2025,pendiente
+1814,1814,tarjeta_debito,  2830.76  ,2024-06-21 00:00:00,aprobado
+170,170,efectivo,$0,01/28/2026,aprobado
+3215,3215,oxxo,  260770.75  ,2026-03-16 00:00:00,pendiente
+611,611,tarjeta_debito,  61503.49  ,25/08/2024,aprobado
+2874,2874,mpago,  69797.87  ,2026-03-08 00:00:00,aprobado
+197,197,tarjeta_credito,70342.48,05-11-2025,pendiente
+877,877,transferencia,17918.04 MXN,30-03-2024,aprobado
+3174,3174,transferencia,0.00 MXN,16-07-2025,aprobado
+3416,3416,tarjeta_debito,"$26,829",09/07/2025,pendiente
+3299,3299,oxxo,603.16 MXN,2026-02-09 00:00:00,rechazado
+1286,1286,efectivo,271239.54 MXN,05/08/2025,pendiente
+2769,2769,mpago,$109211.53,2024-05-25 00:00:00,pendiente
+2879,2879,oxxo,51420.33,04/01/2026,rechazado
+3529,3529,transferencia,$21781.21,15 de mayo de 2026,aprobado
+1196,1196,tarjeta_debito,  0.00  ,20 de agosto de 2026,aprobado
+2822,2822,tarjeta_credito,$18193.88,2024-07-23 00:00:00,APROBADO
+1741,1741,oxxo,$7453.41,2024-12-07,APROBADO
+532,532,tarjeta_credito,2.68 MXN,21-06-2026,rechazado
+1914,1914,oxxo,0.00,2024-08-23 00:00:00,APROBADO
+157,157,transferencia,"261180,14",2024-03-25,APROBADO
+1663,1663,tarjeta_credito,0.00 MXN,30-06-2024,pendiente
+2093,2093,tarjeta_debito,1404.85,2026-07-21,rechazado
+3506,3506,oxxo,$59566.58,2026-09-16 00:00:00,aprobado
+2011,2011,efectivo,"2,57",04-04-2025,rechazado
+2279,2279,tarjeta_credito,44073.66,2025-01-07,pendiente
+563,563,mpago,16511.37 MXN,7 de julio de 2024,APROBADO
+2847,2847,tarjeta_debito,80448.12 MXN,2025-09-16,aprobado
+1065,1065,efectivo,"$73,020",07/09/2026,aprobado
+2211,2211,oxxo,$30815.28,2025-03-01,rechazado
+1204,1204,efectivo,"308233,64",2025-12-18,rechazado
+3290,3290,tarjeta_credito,"$44,605",2024-04-07,rechazado
+680,680,mpago,7337.39 MXN,19/10/2025,aprobado
+2818,2818,transferencia,75424.92,28-02-2025,APROBADO
+2544,2544,oxxo,"26854,05",4 de noviembre de 2024,rechazado
+1062,1062,tarjeta_credito,14293.27 MXN,01/25/2025,aprobado
+361,361,oxxo,0.00,2026-05-09,aprobado
+2119,2119,efectivo,  226194.06  ,12-09-2024,APROBADO
+1466,1466,efectivo,"178232,98",2026-03-02,APROBADO
+1908,1908,mpago,"159798,52",16 de abril de 2024,aprobado
+2429,2429,mpago,"0,00",2026-08-22 00:00:00,rechazado
+1861,1861,transferencia,"1739,91",27 de enero de 2024,rechazado
+517,517,oxxo,$0.17,29/10/2025,aprobado
+326,326,transferencia,  50502.49  ,09/19/2025,rechazado
+2978,2978,tarjeta_credito,$176259.93,27-08-2026,pendiente
+820,820,efectivo,  170330.33  ,25-12-2025,aprobado
+1554,1554,tarjeta_credito,49906.73,25/11/2024,APROBADO
+2520,2520,mpago,41846.80,2026-03-16,aprobado
+1049,1049,tarjeta_debito,1.88,04-03-2026,rechazado
+758,758,mpago,$103171.31,2025-06-30,aprobado
+1187,1187,oxxo,"$10,198",05/24/2025,APROBADO
+2140,2140,efectivo,91460.90 MXN,11/01/2025,pendiente
+2188,2188,efectivo,$13569.75,2024-07-12,APROBADO
+2326,2326,oxxo,$1.92,03/07/2025,aprobado
+437,437,tarjeta_debito,  3397.20  ,2025-12-09 00:00:00,aprobado
+566,566,tarjeta_credito,"53175,03",2 de septiembre de 2024,aprobado
+3573,3573,efectivo,  19591.22  ,06/21/2025,pendiente
+201,201,tarjeta_debito,4293.54,17/04/2024,APROBADO
+1752,1752,oxxo,  3328.88  ,15-08-2026,APROBADO
+2717,2717,efectivo,0.00 MXN,2024-04-21 00:00:00,aprobado
+3327,3327,mpago,"292906,69",2025-05-04,aprobado
+1951,1951,oxxo,  172434.56  ,14-06-2024,aprobado
+290,290,oxxo,17970.70 MXN,2026-07-24 00:00:00,rechazado
+1943,1943,transferencia,$1.79,05/07/2025,pendiente
+81,81,mpago,4546.04,08/13/2026,
+1987,1987,transferencia,8537.74,2025-12-28 00:00:00,aprobado
+659,659,mpago,"$70,198",09/03/2025,pendiente
+2581,2581,tarjeta_credito,$17134.84,2025-01-15,APROBADO
+1170,1170,oxxo,$95250.86,22 de agosto de 2026,aprobado
+2261,2261,mpago,1.74,2026-04-15,aprobado
+2205,2205,tarjeta_credito,  0.00  ,14 de marzo de 2026,APROBADO
+3302,3302,tarjeta_credito,0.00 MXN,20/10/2024,aprobado
+2561,2561,oxxo,"2,28",24-12-2024,rechazado
+3531,3531,transferencia,  0.89  ,19/12/2025,pendiente
+2142,2142,tarjeta_credito,"$128,154",12/28/2024,pendiente
+2836,2836,transferencia,  155890.64  ,06/18/2026,aprobado
+3346,3346,efectivo,$71653.59,09/06/2025,APROBADO
+281,281,transferencia,$0.00,2024-01-13,APROBADO
+770,770,tarjeta_debito,  28316.39  ,4 de enero de 2025,aprobado
+3250,3250,tarjeta_credito,4397.48,11 de agosto de 2025,aprobado
+689,689,mpago,45566.90 MXN,2025-08-11,APROBADO
+2051,2051,mpago,$225734.46,01/25/2026,pendiente
+1320,1320,transferencia,"1,08",2025-11-23,APROBADO
+109,109,tarjeta_debito,$2,05/15/2026,null
+1823,1823,oxxo,"0,00",2025-10-20 00:00:00,pendiente
+582,582,tarjeta_debito,  0.00  ,25 de julio de 2025,aprobado
+957,957,mpago,111030.31 MXN,10 de agosto de 2025,aprobado
+1517,1517,mpago,"$24,797",2025-05-19 00:00:00,pendiente
+1716,1716,tarjeta_credito,"51923,55",2024-04-02,aprobado
+1068,1068,tarjeta_debito,38402.98 MXN,09/11/2025,aprobado
+1520,1520,oxxo,110124.66,13/09/2025,pendiente
+3335,3335,oxxo,136779.86,07/05/2024,aprobado
+857,857,tarjeta_credito,114139.80,10/15/2025,APROBADO
+691,691,oxxo,"$3,377",19/12/2025,rechazado
+2829,2829,mpago,385398.19 MXN,2025-08-12,rechazado
+2470,2470,efectivo,"446935,19",2026-06-05,pendiente
+2415,2415,efectivo,"$70,894",03/12/2026,aprobado
+1672,1672,tarjeta_debito,27400.73 MXN,28/09/2026,rechazado
+1736,1736,mpago,"0,00",2024-10-22,aprobado
+1177,1177,tarjeta_debito,61006.73 MXN,28 de mayo de 2026,pendiente
+482,482,mpago,  4511.27  ,20 de marzo de 2026,APROBADO
+230,230,oxxo,  26990.48  ,2025-05-14 00:00:00,pendiente
+2908,2908,transferencia,"$105,876",01/04/2025,aprobado
+1108,1108,tarjeta_credito,  17210.52  ,2025-07-20,aprobado
+609,609,transferencia,  457539.30  ,2024-06-29 00:00:00,rechazado
+2412,2412,tarjeta_debito,"$49,117",29-07-2026,pendiente
+2545,2545,efectivo,"$2,186",06/20/2025,pendiente
+120,120,oxxo,$27122.50,2024-12-17,null
+1479,1479,transferencia,$2.89,23/02/2026,pendiente
+772,772,oxxo,$1.16,2024-09-04,rechazado
+1446,1446,tarjeta_debito,"$17,123",2026-02-12,aprobado
+2959,2959,oxxo,"$33,437",2025-01-16 00:00:00,aprobado
+707,707,efectivo,$2,2025-11-06,aprobado
+378,378,efectivo,  32091.00  ,04-09-2024,pendiente
+2603,2603,mpago,$167603.45,2026-07-03,aprobado
+1370,1370,transferencia,$1.83,2025-08-14,aprobado
+1287,1287,oxxo,"173715,78",21-04-2024,aprobado
+3142,3142,mpago,$126930.54,2026-06-02,pendiente
+1597,1597,transferencia,$0,22 de mayo de 2024,pendiente
+2858,2858,tarjeta_debito,  100205.76  ,2025-03-06 00:00:00,APROBADO
+2713,2713,oxxo,0.39 MXN,2026-06-22,aprobado
+2060,2060,mpago,87911.96,2026-01-07 00:00:00,APROBADO
+3103,3103,tarjeta_debito,1142.22,2025-11-04 00:00:00,APROBADO
+851,851,tarjeta_credito,  1.90  ,17-02-2025,pendiente
+1674,1674,mpago,34484.04 MXN,21 de diciembre de 2024,aprobado
+1924,1924,tarjeta_debito,"9919,18",2026-03-04 00:00:00,aprobado
+2943,2943,mpago,29351.64 MXN,09/14/2025,pendiente
+1653,1653,efectivo,$29430.75,23/03/2026,aprobado
+3153,3153,efectivo,"0,00",2024-12-22,APROBADO
+1004,1004,oxxo,$82967.81,2025-09-22,aprobado
+712,712,tarjeta_debito,  387540.50  ,08-07-2026,aprobado
+900,900,tarjeta_credito,$0.00,26 de febrero de 2024,aprobado
+1089,1089,efectivo,"$43,577",01/12/2024,pendiente
+3317,3317,tarjeta_debito,"$14,489",13 de julio de 2024,pendiente
+1808,1808,transferencia,$2.37,13/07/2026,rechazado
+193,193,mpago,$88684.17,17-06-2025,aprobado
+658,658,tarjeta_credito,  108311.80  ,08/25/2026,rechazado
+1044,1044,mpago,244743.18 MXN,2026-02-03,APROBADO
+2376,2376,oxxo,"$56,923",16-03-2026,aprobado
+1323,1323,mpago,"$9,853",2024-03-10,aprobado
+3473,3473,transferencia,0.00 MXN,11/22/2025,aprobado
+1261,1261,mpago,$8144.94,3 de julio de 2026,aprobado
+128,128,tarjeta_credito,$373956.26,2025-08-08,pendiente
+579,579,mpago,$915.68,18-11-2024,aprobado
+1330,1330,transferencia,$0,2026-02-02 00:00:00,pendiente
+2394,2394,tarjeta_credito,  1.85  ,2024-12-04,rechazado
+293,293,transferencia,0.00 MXN,2025-02-09,aprobado
+2039,2039,tarjeta_credito,"208356,89",20-08-2024,APROBADO
+403,403,efectivo,"$203,180",24 de julio de 2025,pendiente
+519,519,oxxo,"$84,450",2025-06-09 00:00:00,aprobado
+132,132,tarjeta_credito,"85948,98",2025-01-04,N/A
+2451,2451,oxxo,  0.00  ,2026-06-28,APROBADO
+483,483,efectivo,121862.86,02/25/2025,aprobado
+865,865,mpago,73148.21,2025-12-09,aprobado
+84,84,tarjeta_credito,$5773.81,14-04-2025,pendiente
+1980,1980,oxxo,"0,00",2024-09-02,APROBADO
+1639,1639,tarjeta_debito,"275216,23",10/08/2025,rechazado
+1447,1447,transferencia,  2.56  ,13/10/2025,rechazado
+2821,2821,efectivo,$92480.36,09/02/2024,aprobado
+2712,2712,transferencia,$277029.95,06/05/2026,APROBADO
+534,534,tarjeta_debito,86566.22 MXN,01/05/2025,APROBADO
+2212,2212,tarjeta_debito,60540.85,09/03/2026,rechazado
+1006,1006,mpago,0.00 MXN,2026-07-09,aprobado
+935,935,mpago,$48692.91,12/27/2025,APROBADO
+2866,2866,tarjeta_credito,  2.22  ,27 de agosto de 2025,APROBADO
+1026,1026,tarjeta_debito,29422.21 MXN,2024-06-20,pendiente
+1592,1592,tarjeta_credito,"$11,284",2024-10-19 00:00:00,aprobado
+1327,1327,tarjeta_debito,1.34 MXN,2026-08-18,rechazado
+2399,2399,efectivo,"$20,037",2026-02-10,aprobado
+1200,1200,tarjeta_credito,$29839.05,2024-01-12 00:00:00,aprobado
+2704,2704,oxxo,  4932.78  ,2024-06-20,rechazado
+1495,1495,tarjeta_credito,"9788,28",09-04-2024,aprobado
+202,202,efectivo,301172.72 MXN,12 de junio de 2026,aprobado
+1371,1371,tarjeta_debito,2.13 MXN,8 de julio de 2025,APROBADO
+287,287,efectivo,0.00,2026-07-03,rechazado
+1084,1084,tarjeta_credito,"0,00",12-09-2025,pendiente
+815,815,mpago,$41083.56,2025-08-08,aprobado
+2334,2334,tarjeta_credito,1.75,2026-05-20 00:00:00,APROBADO
+338,338,tarjeta_debito,"45836,08",2024-06-28 00:00:00,APROBADO
+1027,1027,tarjeta_credito,$0,2025-12-26,aprobado
+3276,3276,mpago,0.00,2024-12-10,pendiente
+3578,3578,oxxo,1.12 MXN,26 de febrero de 2026,pendiente
+3420,3420,mpago,"$67,742",20/11/2025,rechazado
+2867,2867,efectivo,"432344,36",01-03-2026,APROBADO
+798,798,transferencia,  0.00  ,05-02-2026,APROBADO
+1717,1717,transferencia,  16760.77  ,06/04/2025,pendiente
+894,894,efectivo,"1044,16",31-07-2024,APROBADO
+2126,2126,mpago,2.67 MXN,24-05-2024,pendiente
+1742,1742,tarjeta_debito,17063.95,2026-06-12 00:00:00,aprobado
+1220,1220,oxxo,846104.11 MXN,2024-05-02,pendiente
+3057,3057,tarjeta_credito,125997.87,05/05/2024,aprobado
+2564,2564,tarjeta_debito,$28632.25,14 de junio de 2025,APROBADO
+167,167,efectivo,0.00,16 de julio de 2026,APROBADO
+467,467,tarjeta_debito,"60995,13",01/05/2026,APROBADO
+1294,1294,transferencia,"36662,84",01/23/2026,pendiente
+2755,2755,mpago,"0,10",2025-06-28,pendiente
+1488,1488,transferencia,  38178.82  ,2024-04-06 00:00:00,aprobado
+1155,1155,oxxo,$2.12,22 de febrero de 2026,APROBADO
+3514,3514,transferencia,32193.47,06-08-2025,aprobado
+2559,2559,efectivo,69372.18 MXN,09-10-2025,aprobado
+2574,2574,tarjeta_debito,"116724,09",3 de agosto de 2026,aprobado
+2767,2767,transferencia,$61577.59,2024-12-07 00:00:00,pendiente
+1022,1022,tarjeta_credito,"$1,835",12-06-2026,APROBADO
+2323,2323,tarjeta_debito,155935.55,20/02/2026,pendiente
+47,47,tarjeta_credito,"$22,877",11/05/2025,N/A
+3231,3231,tarjeta_debito,$12153.55,2024-04-10,aprobado
+1872,1872,tarjeta_debito,  3805.57  ,11 de octubre de 2024,pendiente
+2671,2671,mpago,  1726.24  ,2024-08-18 00:00:00,aprobado
+144,144,transferencia,  21927.90  ,2026-01-31 00:00:00,N/A
+3270,3270,mpago,$56922.56,12-02-2025,APROBADO
+1311,1311,mpago,"$165,478",2024-08-20,rechazado
+1815,1815,transferencia,$126790.33,2026-07-08,aprobado
+3077,3077,oxxo,17400.91 MXN,12/27/2024,pendiente
+2461,2461,tarjeta_debito,"$67,145",2025-05-24 00:00:00,pendiente
+1391,1391,mpago,"17517,02",09/26/2026,aprobado
+1291,1291,oxxo,85817.29,22-06-2024,APROBADO
+1847,1847,tarjeta_credito,15099.47 MXN,21-02-2026,APROBADO
+3291,3291,oxxo,8745.84 MXN,2024-06-30 00:00:00,aprobado
+1111,1111,efectivo,  5057.15  ,05/03/2025,rechazado
+2058,2058,tarjeta_debito,$149871.30,2026-07-23,APROBADO
+897,897,transferencia,"$3,424",2026-03-25,rechazado
+2802,2802,tarjeta_credito,0.65,12-04-2026,aprobado
+3102,3102,oxxo,0.34,2026-01-04,aprobado
+2535,2535,mpago,103286.72,1 de julio de 2024,pendiente
+1703,1703,tarjeta_debito,"6993,03",2025-10-02,APROBADO
+2007,2007,transferencia,$32368.32,2025-07-24 00:00:00,rechazado
+1085,1085,mpago,161068.47 MXN,2025-09-06,APROBADO
+837,837,tarjeta_credito,1.95 MXN,2026-09-20,APROBADO
+1266,1266,transferencia,"41215,87",2024-06-18 00:00:00,APROBADO
+3242,3242,transferencia,2337.56,29-11-2025,pendiente
+397,397,transferencia,19026.69 MXN,2025-09-05 00:00:00,aprobado
+2846,2846,tarjeta_credito,$0,05/10/2024,pendiente
+1714,1714,efectivo,"$51,573",2026-05-19 00:00:00,rechazado
+844,844,tarjeta_credito,  2.03  ,2025-02-04,APROBADO
+1779,1779,efectivo,1.17,19/10/2025,aprobado
+1137,1137,tarjeta_credito,  1.40  ,10/26/2024,aprobado
+913,913,efectivo,101499.79 MXN,16 de agosto de 2025,aprobado
+634,634,mpago,  36376.07  ,2025-01-10 00:00:00,aprobado
+525,525,oxxo,24893.28 MXN,11-01-2025,aprobado
+1890,1890,tarjeta_debito,"$16,644",2024-04-15,APROBADO
+3434,3434,mpago,$36819.03,8 de noviembre de 2025,aprobado
+1572,1572,tarjeta_debito,"$6,381",08/24/2025,APROBADO
+610,610,efectivo,"$22,884",11/22/2024,aprobado
+3479,3479,mpago,"$6,991",07/08/2024,rechazado
+3000,3000,efectivo,6277.07 MXN,27-08-2026,APROBADO
+3536,3536,oxxo,$1,24 de septiembre de 2024,APROBADO
+1136,1136,mpago,6076.84,2024-11-25,pendiente
+1088,1088,efectivo,0.00 MXN,4 de septiembre de 2024,aprobado
+75,75,oxxo,50501.66,2026-07-21 00:00:00,aprobado
+1581,1581,efectivo,"34971,11",08/01/2026,pendiente
+417,417,tarjeta_debito,0.73 MXN,28-08-2026,pendiente
+3026,3026,efectivo,"2,11",05/30/2026,pendiente
+790,790,tarjeta_debito,41615.68,23-09-2026,pendiente
+1733,1733,efectivo,49193.28,10-07-2025,aprobado
+2453,2453,tarjeta_debito,$173022.42,2025-03-08,rechazado
+46,46,tarjeta_debito,  39954.16  ,28 de agosto de 2025,rechazado
+1533,1533,transferencia,0.00 MXN,30 de agosto de 2024,pendiente
+1278,1278,transferencia,0.56 MXN,08/01/2024,pendiente
+25,25,tarjeta_debito,46060.13,06/30/2025,-
+2184,2184,efectivo,$474720.46,2025-02-17,pendiente
+2766,2766,efectivo,"624,48",2026-04-09,APROBADO
+1790,1790,tarjeta_debito,"$7,930",18-02-2026,rechazado
+3218,3218,tarjeta_credito,"27370,22",11-05-2025,APROBADO
+3530,3530,tarjeta_debito,$0,17/12/2025,APROBADO
+3187,3187,oxxo,  282117.90  ,05/11/2025,APROBADO
+1099,1099,mpago,127246.31,2024-03-18 00:00:00,aprobado
+2731,2731,oxxo,$15977.11,1 de enero de 2024,pendiente
+3484,3484,tarjeta_debito,"$12,917",17 de junio de 2026,aprobado
+1376,1376,oxxo,"$69,816",2025-06-10,pendiente
+986,986,transferencia,0.00,11 de febrero de 2024,APROBADO
+3356,3356,tarjeta_debito,0.00,2025-10-03,aprobado
+190,190,mpago,  15050.56  ,2024-11-26,aprobado
+1892,1892,mpago,"15122,37",2025-04-20,APROBADO
+1455,1455,oxxo,3539.38 MXN,22-03-2026,aprobado
+1514,1514,transferencia,  87903.58  ,2025-08-19,pendiente
+499,499,efectivo,"1,11",22 de marzo de 2024,aprobado
+573,573,transferencia,$8668.53,18-08-2025,rechazado
+529,529,mpago,$4300.74,01-09-2026,aprobado
+2808,2808,transferencia,73431.80,24 de julio de 2026,aprobado
+2710,2710,tarjeta_debito,94655.96,2024-07-10,aprobado
+1512,1512,efectivo,  613.41  ,2025-09-27,aprobado
+1128,1128,tarjeta_credito,35209.38,2025-04-10,aprobado
+2967,2967,mpago,  2946.28  ,2026-05-01,aprobado
+1732,1732,tarjeta_credito,$2.97,2026-08-02 00:00:00,aprobado
+2924,2924,transferencia,"$50,228",02/26/2026,APROBADO
+3447,3447,oxxo,13369.96,24-08-2025,rechazado
+2567,2567,mpago,  209583.70  ,04-08-2025,pendiente
+2860,2860,efectivo,2.39,05/12/2025,aprobado
+1489,1489,mpago,"0,00",10/12/2024,rechazado
+111,111,oxxo,"2,80",2025-05-22,
+2678,2678,oxxo,"$2,354",2024-10-06,pendiente
+2894,2894,tarjeta_credito,6659.30,03/04/2024,rechazado
+1979,1979,mpago,$122294.59,08/30/2025,APROBADO
+3520,3520,transferencia,38295.36,2025-01-22,APROBADO
+3332,3332,tarjeta_credito,"4676,70",2024-02-01 00:00:00,APROBADO
+1461,1461,tarjeta_debito,$0.27,30/04/2024,aprobado
+1494,1494,tarjeta_debito,  11837.93  ,07/06/2024,APROBADO
+2023,2023,efectivo,280582.60 MXN,5 de abril de 2026,APROBADO
+3189,3189,oxxo,"542187,05",2024-09-21,rechazado
+1822,1822,tarjeta_debito,  472560.56  ,06/26/2025,pendiente
+2425,2425,transferencia,  20018.30  ,9 de septiembre de 2024,aprobado
+1880,1880,tarjeta_credito,"20002,75",15-05-2024,aprobado
+3497,3497,tarjeta_debito,91066.82,2025-03-28 00:00:00,aprobado
+3366,3366,oxxo,14392.63 MXN,2025-08-01,pendiente
+2373,2373,tarjeta_debito,  3918.54  ,2026-07-07 00:00:00,APROBADO
+1023,1023,mpago,0.00,2024-04-23,APROBADO
+3241,3241,tarjeta_credito,"1214,97",02-12-2025,aprobado
+1659,1659,oxxo,$127925.72,8 de septiembre de 2025,aprobado
+2541,2541,tarjeta_credito,0.80 MXN,14 de diciembre de 2025,pendiente
+2254,2254,oxxo,"153130,58",01-03-2025,aprobado
+466,466,tarjeta_credito,  35389.01  ,01/29/2025,aprobado
+796,796,tarjeta_credito,33594.10 MXN,05/06/2026,pendiente
+2242,2242,oxxo,334004.82,21 de noviembre de 2024,aprobado
+1457,1457,tarjeta_credito,$2,03/07/2024,APROBADO
+969,969,efectivo,"$7,186",12/15/2024,rechazado
+2686,2686,mpago,0.00 MXN,13-12-2024,APROBADO
+2967,2967,mpago,  2946.28  ,2026-05-01,aprobado
+2000,2000,tarjeta_debito,88476.68,21 de agosto de 2025,pendiente
+2179,2179,oxxo,"$118,366",2024-08-11,pendiente
+399,399,transferencia,6192.69 MXN,2025-07-30,aprobado
+2698,2698,efectivo,"178965,64",12/15/2025,aprobado
+2063,2063,transferencia,$2673.54,2024-10-27,rechazado
+2782,2782,tarjeta_credito,"20438,58",12/09/2026,aprobado
+3386,3386,tarjeta_debito,"0,00",17 de mayo de 2026,pendiente
+623,623,tarjeta_credito,"707,12",2025-02-23,aprobado
+1821,1821,efectivo,"164456,52",19-03-2026,APROBADO
+2603,2603,mpago,$167603.45,2026-07-03,aprobado
+3117,3117,mpago,"1,94",04/16/2025,APROBADO
+3185,3185,efectivo,"0,00",02/03/2026,aprobado
+150,150,mpago,"6063,49",2024-06-10,rechazado
+2516,2516,mpago,  0.00  ,2026-08-15,aprobado
+1723,1723,efectivo,"1,90",10-12-2024,APROBADO
+2020,2020,tarjeta_credito,"$393,559",17/05/2026,aprobado
+2226,2226,mpago,  217132.30  ,2024-12-24,aprobado
+3566,3566,tarjeta_credito,"42138,08",11-09-2025,pendiente
+2900,2900,tarjeta_debito,"0,00",2026-06-23 00:00:00,rechazado
+422,422,oxxo,$17342.02,2024-05-10 00:00:00,rechazado
+3060,3060,mpago,11048.75,2026-05-01,aprobado
+2828,2828,mpago,$18646.47,2025-01-12,aprobado
+51,51,mpago,"12951,92",2026-02-11,APROBADO
+3368,3368,efectivo,82037.54,09-01-2025,rechazado
+2400,2400,mpago,$10146.85,2026-03-08,aprobado
+1265,1265,tarjeta_debito,45910.86,05-06-2025,aprobado
+92,92,oxxo,"36408,96",15 de julio de 2026,null
+3024,3024,efectivo,  1.68  ,2026-09-18,rechazado
+1483,1483,tarjeta_credito,$23761.86,2024-05-09,pendiente
+426,426,tarjeta_debito,$0,2026-06-12,APROBADO
+2702,2702,tarjeta_debito,"$266,099",07/04/2026,pendiente
+667,667,tarjeta_credito,0.00 MXN,2025-03-04,pendiente
+766,766,mpago,15034.24 MXN,17/01/2025,aprobado
+347,347,mpago,83948.23 MXN,2025-08-28,aprobado
+3044,3044,efectivo,$23469.20,2026-03-26 00:00:00,APROBADO
+2927,2927,efectivo,260123.51 MXN,07/07/2024,aprobado
+1594,1594,efectivo,$0,1 de noviembre de 2024,APROBADO
+274,274,tarjeta_debito,$1.66,2025-09-21 00:00:00,rechazado
+827,827,efectivo,$0,30 de octubre de 2024,APROBADO
+745,745,efectivo,  0.00  ,2024-04-10 00:00:00,aprobado
+291,291,tarjeta_credito,0.00 MXN,2026-07-29 00:00:00,rechazado
+1754,1754,oxxo,932.03,11/27/2024,pendiente
+1493,1493,oxxo,  457104.99  ,2025-12-06,aprobado
+1687,1687,transferencia,$200449.43,2026-02-11,aprobado
+1939,1939,transferencia,$95684.37,16/10/2025,aprobado
+1035,1035,mpago,225733.56 MXN,2025-08-22,rechazado
+2046,2046,transferencia,25917.64 MXN,2026-06-21,aprobado
+1631,1631,oxxo,604769.74 MXN,2024-09-04,aprobado
+2347,2347,tarjeta_debito,$36472.14,28-11-2025,aprobado
+1747,1747,tarjeta_debito,$0,06/09/2024,APROBADO
+769,769,efectivo,  704.33  ,01/12/2026,rechazado
+3397,3397,transferencia,220085.53,2024-09-18,aprobado
+829,829,transferencia,  19313.56  ,2025-06-25 00:00:00,APROBADO
+2249,2249,transferencia,8349.03 MXN,02-04-2025,aprobado
+1356,1356,oxxo,338368.34 MXN,2024-09-10,APROBADO
+3195,3195,mpago,15862.91,17 de agosto de 2024,APROBADO
+2438,2438,mpago,$1.84,2025-02-19,pendiente
+2397,2397,tarjeta_debito,"68293,35",20 de septiembre de 2026,aprobado
+200,200,transferencia,$107976.63,2025-10-03,APROBADO
+1502,1502,mpago,  0.00  ,03/04/2026,aprobado
+2917,2917,transferencia,$41687.05,2025-11-28 00:00:00,APROBADO
+1876,1876,tarjeta_debito,"123585,80",02/19/2026,rechazado
+2649,2649,transferencia,"68584,69",03/04/2026,APROBADO
+862,862,efectivo,479615.40,08/04/2024,rechazado
+1701,1701,transferencia,"141636,32",06-05-2026,rechazado
+2667,2667,mpago,"$57,621",2025-06-26,aprobado
+2115,2115,efectivo,"8479,17",2025-04-24,rechazado
+584,584,tarjeta_credito,79559.90 MXN,2025-04-05 00:00:00,aprobado
+993,993,transferencia,0.00 MXN,06-08-2025,aprobado
+1028,1028,mpago,"$15,626",2024-09-27,aprobado
+1904,1904,tarjeta_credito,"$17,021",2025-06-09,APROBADO
+1212,1212,tarjeta_debito,  105230.32  ,2026-01-17 00:00:00,pendiente
+3231,3231,tarjeta_debito,$12153.55,2024-04-10,aprobado
+372,372,oxxo,317095.78,11/12/2024,aprobado
+677,677,tarjeta_credito,$91119.54,2026-03-05 00:00:00,pendiente
+3217,3217,mpago,$13060.82,2026-01-21,rechazado
+1791,1791,transferencia,"32350,30",2024-02-11,APROBADO
+1573,1573,transferencia,  0.86  ,29/11/2025,APROBADO
+1543,1543,oxxo,"0,00",10 de abril de 2025,aprobado
+1237,1237,efectivo,$2.07,24-09-2024,pendiente
+3150,3150,transferencia,  18453.20  ,26-06-2025,aprobado
+2251,2251,transferencia,20663.87,20-04-2024,rechazado
+1901,1901,mpago,  2.98  ,15-05-2024,APROBADO
+3584,3584,tarjeta_credito,179615.08 MXN,2024-06-28,pendiente
+606,606,oxxo,  8297.31  ,2024-08-22 00:00:00,APROBADO
+2999,2999,transferencia,"$3,935",06-08-2025,APROBADO
+2067,2067,tarjeta_credito,0.00,2024-03-29,pendiente
+3191,3191,tarjeta_debito,  1.48  ,2024-10-12 00:00:00,pendiente
+874,874,efectivo,$0.00,2025-11-09,aprobado
+914,914,tarjeta_credito,  0.59  ,2025-01-29,pendiente
+2703,2703,efectivo,"$1,886",25/09/2026,APROBADO
+2916,2916,mpago,  7084.00  ,2025-10-28 00:00:00,aprobado
+2790,2790,tarjeta_credito,$4587.16,16-01-2026,rechazado
+2080,2080,efectivo,$0.00,07-05-2026,aprobado
+3252,3252,mpago,  66479.77  ,21 de agosto de 2025,pendiente
+688,688,tarjeta_debito,"$73,904",2026-01-01,APROBADO
+2617,2617,tarjeta_credito,"21072,87",04/01/2025,rechazado
+2368,2368,transferencia,69082.98,2026-08-17 00:00:00,APROBADO
+509,509,tarjeta_debito,  6617.63  ,26/12/2024,APROBADO
+2764,2764,tarjeta_debito,$0,2025-04-30,pendiente
+2556,2556,efectivo,"$7,349",29-11-2024,aprobado
+2931,2931,transferencia,40958.77 MXN,10-09-2025,rechazado
+2462,2462,mpago,"126250,40",3 de junio de 2025,APROBADO
+2988,2988,oxxo,0.00 MXN,27/02/2024,pendiente
+867,867,mpago,0.00 MXN,2026-02-08 00:00:00,rechazado
+3347,3347,tarjeta_credito,"7987,76",2025-08-22,aprobado
+3574,3574,tarjeta_credito,  96003.57  ,01-01-2024,pendiente
+252,252,oxxo,  67633.94  ,2025-11-22,APROBADO
+495,495,transferencia,45505.26,2026-09-23,APROBADO
+1678,1678,transferencia,"10459,24",21/03/2025,rechazado
+2813,2813,efectivo,$53893.95,14/07/2024,pendiente
+2387,2387,oxxo,$91403.32,20/02/2026,aprobado
+736,736,efectivo,  1726.06  ,27/08/2024,aprobado
+2570,2570,transferencia,  0.00  ,2024-05-29,aprobado
+2306,2306,tarjeta_credito,  0.00  ,18/06/2024,pendiente
+2629,2629,tarjeta_debito,"19985,03",21 de febrero de 2026,aprobado
+3535,3535,efectivo,"66005,59",2024-02-24 00:00:00,APROBADO
+2008,2008,transferencia,"$388,785",18-10-2025,aprobado
+2505,2505,transferencia,344108.88 MXN,15/07/2025,pendiente
+2417,2417,transferencia,518.80 MXN,07/05/2025,pendiente
+2108,2108,efectivo,  111152.51  ,08/25/2025,pendiente
+2514,2514,tarjeta_debito,  9511.65  ,03/04/2026,aprobado
+2363,2363,efectivo,0.00,9 de julio de 2024,APROBADO
+991,991,tarjeta_debito,179363.77,17 de junio de 2026,aprobado
+2749,2749,oxxo,24479.01,21-02-2026,aprobado
+591,591,efectivo,  6224.03  ,2026-09-11 00:00:00,aprobado
+275,275,tarjeta_debito,$2.39,11/09/2025,aprobado
+1843,1843,tarjeta_credito,$0,12/18/2025,pendiente
+1970,1970,transferencia,  40366.31  ,03-10-2025,rechazado
+3357,3357,efectivo,$217268.30,05/08/2024,APROBADO
+2799,2799,tarjeta_credito,  5665.85  ,28 de agosto de 2025,aprobado
+2845,2845,transferencia,21382.35,2025-11-20 00:00:00,rechazado
+1538,1538,mpago,2.28 MXN,2025-07-11 00:00:00,rechazado
+494,494,mpago,$0,06/22/2025,aprobado
+1444,1444,tarjeta_credito,  226204.11  ,2026-03-11,pendiente
+1566,1566,tarjeta_debito,1.08 MXN,14-06-2026,APROBADO
+316,316,tarjeta_credito,$155315.52,2025-10-10 00:00:00,rechazado
+2789,2789,efectivo,75058.11 MXN,2024-02-20,rechazado
+2753,2753,tarjeta_debito,0.00 MXN,21 de diciembre de 2025,rechazado
+2139,2139,oxxo,65608.56,07/04/2024,pendiente
+3485,3485,tarjeta_debito,$2.53,15 de octubre de 2025,rechazado
+369,369,transferencia,  102631.92  ,01/29/2025,APROBADO
+1150,1150,mpago,2.53,2026-02-27,APROBADO
+1652,1652,mpago,$0.00,6 de abril de 2025,aprobado
+917,917,tarjeta_credito,$106677.61,2026-02-13,APROBADO
+2521,2521,tarjeta_credito,"225118,69",16 de diciembre de 2025,pendiente
+674,674,oxxo,11221.69,2024-04-27 00:00:00,APROBADO
+833,833,efectivo,4685.49 MXN,2025-07-18,pendiente
+2006,2006,efectivo,15052.13,04/17/2024,aprobado
+2806,2806,oxxo,124476.21,2025-12-13,rechazado
+962,962,tarjeta_debito,38629.57,20 de agosto de 2024,rechazado
+963,963,mpago,80228.18 MXN,25 de octubre de 2025,aprobado
+126,126,tarjeta_debito,9062.52,28-01-2025,
+1850,1850,transferencia,"$1,192",19-11-2025,aprobado
+661,661,transferencia,$74425.94,2026-06-26,rechazado
+3170,3170,tarjeta_credito,  32520.73  ,03/05/2024,pendiente
+1535,1535,tarjeta_credito,  2.96  ,2026-05-06,rechazado
+462,462,oxxo,  18560.05  ,2024-11-08 00:00:00,APROBADO
+934,934,mpago,2142.92,21/11/2025,aprobado
+732,732,tarjeta_debito,"1,79",29/10/2024,aprobado
+2676,2676,oxxo,$216239.65,2025-01-24,rechazado
+3143,3143,tarjeta_credito,  0.00  ,17 de agosto de 2024,pendiente
+468,468,tarjeta_debito,  16507.09  ,08/07/2026,pendiente
+1506,1506,tarjeta_credito,26111.46 MXN,2025-12-15,APROBADO
+3454,3454,efectivo,2.38,30 de marzo de 2025,aprobado
+343,343,oxxo,  294213.97  ,2024-05-07,aprobado
+1214,1214,mpago,$0.00,1 de agosto de 2025,pendiente
+1739,1739,mpago,"121574,71",20 de noviembre de 2025,rechazado
+1365,1365,mpago,"$41,026",2025-12-24 00:00:00,rechazado
+82,82,transferencia,2.91,02/09/2026,aprobado
+250,250,oxxo,  2.29  ,23 de mayo de 2025,rechazado
+1589,1589,transferencia,58020.20,13 de abril de 2024,pendiente
+2730,2730,oxxo,"$55,289",2025-07-26 00:00:00,aprobado
+1570,1570,efectivo,$124808.73,2026-05-24,aprobado
+11,11,oxxo,$0.00,03/31/2026,APROBADO
+2616,2616,transferencia,  1.33  ,2025-08-27,pendiente
+3468,3468,tarjeta_debito,"$15,050",2025-02-15,APROBADO
+2549,2549,transferencia,"33699,31",2025-11-30,aprobado
+2466,2466,transferencia,"$97,908",2024-06-10,rechazado
+2341,2341,oxxo,0.00,2025-08-08 00:00:00,aprobado
+2932,2932,transferencia,$197082.90,01/09/2025,APROBADO
+151,151,efectivo,5635.92 MXN,2024-10-28,aprobado
+1338,1338,efectivo,0.00 MXN,27 de febrero de 2025,aprobado
+189,189,mpago,"45331,95",2024-01-16,rechazado
+1245,1245,efectivo,"172339,51",12/08/2024,pendiente
+3221,3221,tarjeta_debito,45517.93 MXN,2024-12-07 00:00:00,rechazado
+1033,1033,tarjeta_debito,"$293,997",12/05/2026,aprobado
+2013,2013,tarjeta_credito,"$437,789",08-10-2025,rechazado
+2478,2478,oxxo,$15644.89,13/02/2026,APROBADO
+1591,1591,efectivo,"38538,91",16-05-2026,rechazado
+3296,3296,tarjeta_credito,"139629,02",10/06/2024,rechazado
+439,439,efectivo,0.00 MXN,07/29/2024,APROBADO
+1965,1965,mpago,28103.09 MXN,2025-10-29 00:00:00,APROBADO
+1972,1972,efectivo,0.00,19-12-2025,aprobado
+1604,1604,efectivo,$1442.14,23 de febrero de 2025,pendiente
+101,101,mpago,88140.92 MXN,22/02/2026,
+2664,2664,tarjeta_debito,"0,00",2026-01-22 00:00:00,APROBADO
+2155,2155,mpago,"$82,929",12/22/2024,aprobado
+3041,3041,oxxo,"1,02",19-09-2024,pendiente
+2857,2857,mpago,"171178,87",16/03/2024,APROBADO
+3137,3137,efectivo,"$7,456",13/04/2025,aprobado
+1695,1695,oxxo,  3771.13  ,21-06-2024,rechazado
+266,266,transferencia,$0.00,2024-11-02,aprobado
+1009,1009,oxxo,"$186,761",2026-05-26,aprobado
+1853,1853,tarjeta_debito,"4666,76",09/08/2025,aprobado
+2019,2019,tarjeta_debito,"$447,490",8 de junio de 2026,rechazado
+1772,1772,mpago,  170078.15  ,29 de junio de 2026,pendiente
+1531,1531,transferencia,0.04,2026-06-01,aprobado
+3305,3305,efectivo,  6738.74  ,08/06/2024,aprobado
+3336,3336,oxxo,"1186,84",09/20/2025,APROBADO
+3409,3409,tarjeta_credito,  0.00  ,2024-06-08 00:00:00,pendiente
+715,715,oxxo,110879.29 MXN,2025-04-09 00:00:00,rechazado
+3152,3152,efectivo,1.25 MXN,2024-03-28,APROBADO
+1829,1829,tarjeta_credito,  19054.09  ,2024-03-02 00:00:00,aprobado
+2043,2043,oxxo,$0.07,07/21/2024,rechazado
+2291,2291,transferencia,$0,2024-06-24 00:00:00,aprobado
+368,368,efectivo,$9567.65,25/03/2025,aprobado
+1337,1337,oxxo,0.00,2024-07-16,APROBADO
+166,166,efectivo,40717.06,2025-03-30,rechazado
+1629,1629,efectivo,14357.96,6 de julio de 2026,rechazado
+3564,3564,transferencia,"0,00",10/18/2025,rechazado
+2214,2214,tarjeta_debito,  27522.88  ,21 de septiembre de 2025,aprobado
+702,702,transferencia,"0,00",2026-05-10,APROBADO
+1560,1560,efectivo,  27201.66  ,05/31/2025,aprobado
+1648,1648,oxxo,"2987,29",27-04-2024,aprobado
+3133,3133,efectivo,"4828,60",2025-02-19,aprobado
+1611,1611,tarjeta_debito,$291750.64,04/03/2024,APROBADO
+473,473,efectivo,"$39,259",12 de abril de 2026,aprobado
+178,178,mpago,$65574.13,27-07-2026,aprobado
+2499,2499,efectivo,$101651.40,07/02/2026,aprobado
+3393,3393,tarjeta_debito,"127714,61",2026-05-14,aprobado
+662,662,efectivo,3996.50,2025-07-09 00:00:00,aprobado
+3560,3560,tarjeta_credito,64774.28,28 de febrero de 2025,rechazado
+1532,1532,transferencia,0.63 MXN,2024-07-28,rechazado
+3052,3052,transferencia,36938.10 MXN,28 de marzo de 2025,APROBADO
+3261,3261,efectivo,"$105,208",25-07-2026,rechazado
+2669,2669,mpago,132301.83 MXN,2026-06-26 00:00:00,aprobado
+3240,3240,mpago,  0.00  ,1 de mayo de 2025,rechazado
+1314,1314,tarjeta_debito,"$4,904",2024-02-29,rechazado
+3134,3134,tarjeta_debito,$1.05,18 de junio de 2026,APROBADO
+2362,2362,tarjeta_debito,8169.50,06/24/2026,rechazado
+2515,2515,oxxo,  1.63  ,19 de abril de 2025,rechazado
+1858,1858,tarjeta_credito,  501318.75  ,09/17/2025,aprobado
+705,705,efectivo,0.00,5 de octubre de 2025,rechazado
+747,747,tarjeta_credito,  167006.83  ,13 de junio de 2026,aprobado
+1293,1293,tarjeta_debito,$4731.03,31-10-2025,aprobado
+1544,1544,transferencia,3488.52 MXN,2024-07-12,pendiente
+1174,1174,efectivo,$131603.54,2025-06-24,rechazado
+492,492,efectivo,21785.32 MXN,15/06/2025,rechazado
+2693,2693,transferencia,88268.97 MXN,2024-09-23,pendiente
+364,364,tarjeta_credito,435426.83 MXN,04/07/2026,aprobado
+1160,1160,tarjeta_credito,"$29,238",2026-08-02,APROBADO
+1984,1984,tarjeta_credito,$1,09/10/2024,APROBADO
+2266,2266,efectivo,9971.50 MXN,2026-02-26 00:00:00,aprobado
+1478,1478,tarjeta_debito,1432.23 MXN,17 de mayo de 2026,rechazado
+2217,2217,mpago,  0.43  ,23-12-2025,aprobado
+2968,2968,oxxo,  38618.10  ,31-03-2025,aprobado
+3534,3534,efectivo,115830.25,2024-11-03,aprobado
+945,945,tarjeta_debito,8744.36 MXN,2026-06-14,pendiente
+2372,2372,efectivo,18215.31 MXN,2024-08-27,APROBADO
+62,62,efectivo,$0.00,09/24/2026,APROBADO
+1471,1471,tarjeta_debito,91848.43,14-02-2024,aprobado
+1383,1383,tarjeta_credito,$0.72,2024-12-05 00:00:00,APROBADO
+2954,2954,oxxo,64822.50,07/10/2025,aprobado
+1275,1275,tarjeta_credito,0.00 MXN,10 de septiembre de 2024,aprobado
+2752,2752,transferencia,0.00 MXN,24 de mayo de 2024,pendiente
+3159,3159,tarjeta_credito,$1.09,07-11-2025,pendiente
+1080,1080,tarjeta_debito,"133378,70",13/07/2025,pendiente
+2804,2804,oxxo,"$19,323",2025-02-17 00:00:00,APROBADO
+586,586,mpago,$76478.44,2025-02-24 00:00:00,aprobado
+2905,2905,efectivo,"15227,86",2026-08-20,aprobado
+2428,2428,efectivo,$2,04/04/2025,aprobado
+3501,3501,tarjeta_credito,406850.92,01/15/2026,rechazado
+2135,2135,tarjeta_credito,  49841.74  ,11 de febrero de 2026,rechazado
+505,505,tarjeta_debito,$0.00,2024-08-09,APROBADO
+2935,2935,transferencia,$200424.07,2024-04-26 00:00:00,pendiente
+813,813,tarjeta_credito,974.95,12/20/2025,pendiente
+479,479,tarjeta_debito,  12101.85  ,14 de julio de 2026,pendiente
+424,424,tarjeta_debito,"0,85",2025-04-13 00:00:00,aprobado
+605,605,efectivo,132611.00,2024-08-31 00:00:00,rechazado
+1842,1842,oxxo,"4481,12",09/05/2025,pendiente
+2852,2852,transferencia,0.72 MXN,2026-08-02 00:00:00,rechazado
+910,910,mpago,$100930.57,2026-01-04,APROBADO
+1114,1114,efectivo,"0,00",31/12/2024,pendiente
+2193,2193,oxxo,9553.10 MXN,29 de julio de 2025,rechazado
+1540,1540,tarjeta_debito,$0.00,4 de febrero de 2026,pendiente
+3190,3190,efectivo,193.38,08/04/2024,APROBADO
+1665,1665,mpago,46896.68 MXN,2026-03-06,APROBADO
+2722,2722,efectivo,6659.01,2024-11-04,APROBADO
+1227,1227,tarjeta_credito,$55868.08,2025-10-06,aprobado
+2645,2645,efectivo,$0.56,2024-04-21,aprobado
+2199,2199,transferencia,"0,00",2025-03-01,aprobado
+2022,2022,transferencia,4423.66 MXN,03-10-2024,rechazado
+980,980,transferencia,"189080,91",2025-06-12,rechazado
+1330,1330,transferencia,$0,2026-02-02 00:00:00,pendiente
+2030,2030,transferencia,"167599,74",4 de diciembre de 2025,aprobado
+1883,1883,oxxo,$2,2026-04-04,APROBADO
+241,241,efectivo,$171487.70,2024-11-13,aprobado
+2150,2150,tarjeta_debito,4172.54 MXN,17-07-2026,APROBADO
+2750,2750,tarjeta_debito,"2181,29",02-04-2024,APROBADO
+2337,2337,oxxo,$0,04/14/2024,rechazado
+2041,2041,tarjeta_debito,"22829,44",18-08-2025,APROBADO
+1783,1783,transferencia,$0,2 de febrero de 2026,rechazado
+2454,2454,tarjeta_debito,$3666.74,2 de septiembre de 2026,rechazado
+3515,3515,tarjeta_debito,116091.60,06/26/2024,rechazado
+1921,1921,transferencia,$3,2024-09-14,pendiente
+5,5,tarjeta_credito,1.65,02-06-2024,rechazado
+3121,3121,tarjeta_credito,28403.57 MXN,07/02/2026,aprobado
+2864,2864,efectivo,$504.84,2025-11-26 00:00:00,rechazado
+614,614,efectivo,  0.00  ,15 de junio de 2024,aprobado
+86,86,transferencia,504.59 MXN,2024-10-19,aprobado
+2173,2173,efectivo,"$387,217",21 de diciembre de 2024,APROBADO
+2031,2031,tarjeta_debito,$2,07/28/2026,aprobado
+2770,2770,efectivo,$122033.32,2024-09-17,rechazado
+374,374,tarjeta_debito,0.00 MXN,2025-09-04 00:00:00,rechazado
+2955,2955,tarjeta_debito,"$238,460",07/10/2026,aprobado
+55,55,mpago,  170136.86  ,06-06-2024,aprobado
+2477,2477,tarjeta_debito,"$16,828",24-08-2026,aprobado
+2338,2338,mpago,268661.09,2024-08-11 00:00:00,aprobado
+2085,2085,mpago,$156062.22,28 de diciembre de 2024,aprobado
+1029,1029,transferencia,83477.92,2026-09-05,aprobado
+2925,2925,tarjeta_debito,41128.79,22/10/2025,rechazado
+278,278,transferencia,2.83,4 de noviembre de 2025,pendiente
+1217,1217,transferencia,0.00,12/29/2024,APROBADO
+3406,3406,mpago,"79816,46",25-04-2026,APROBADO
+3371,3371,mpago,  58824.49  ,15-10-2024,aprobado
+1563,1563,transferencia,$145223.21,2025-12-01,APROBADO
+3148,3148,mpago,  47610.51  ,2026-09-06,aprobado
+370,370,tarjeta_debito,0.38 MXN,2025-07-07 00:00:00,aprobado
+2555,2555,efectivo,249417.25 MXN,12 de agosto de 2026,aprobado
+255,255,transferencia,212149.10,30/08/2026,rechazado
+2404,2404,tarjeta_debito,2.77 MXN,2025-03-31,aprobado
+1100,1100,tarjeta_credito,0.00 MXN,23/11/2025,APROBADO
+1396,1396,oxxo,$43153.37,20-07-2026,pendiente
+3383,3383,efectivo,1.50 MXN,02-10-2024,rechazado
+1044,1044,mpago,244743.18 MXN,2026-02-03,APROBADO
+1926,1926,transferencia,$2,07/20/2026,rechazado
+2143,2143,efectivo,$7109.53,20-03-2024,aprobado
+1766,1766,oxxo,$0.00,20/12/2025,APROBADO
+2976,2976,oxxo,17597.39,03/07/2025,APROBADO
+1968,1968,tarjeta_credito,343662.37,2026-04-26 00:00:00,rechazado
+600,600,mpago,"20290,29",01-11-2024,rechazado
+3277,3277,oxxo,$94612.25,2 de febrero de 2026,rechazado
+617,617,transferencia,7133.03,2025-03-20 00:00:00,aprobado
+895,895,efectivo,"1,55",2025-03-26 00:00:00,rechazado
+1669,1669,tarjeta_debito,$309865.63,2026-04-13,aprobado
+616,616,efectivo,  0.00  ,2025-05-03,aprobado
+2132,2132,oxxo,$449780.03,04/18/2025,aprobado
+533,533,mpago,"36060,95",09/04/2024,APROBADO
+137,137,tarjeta_debito,$0.00,2024-05-02 00:00:00,null
+1331,1331,mpago,  0.56  ,2025-08-07,aprobado
+861,861,oxxo,54006.43,07/14/2024,pendiente
+2361,2361,tarjeta_credito,0.00,12-11-2024,rechazado
+644,644,transferencia,$38061.51,02/17/2025,aprobado
+152,152,efectivo,  10001.80  ,2024-07-14,APROBADO
+2544,2544,oxxo,"26854,05",4 de noviembre de 2024,rechazado
+15,15,efectivo,"$144,672",2025-04-27,APROBADO
+1556,1556,efectivo,23665.40,2025-06-14,APROBADO
+2237,2237,tarjeta_debito,"$260,815",14 de enero de 2024,aprobado
+2096,2096,mpago,37854.00,2025-06-01,APROBADO
+2470,2470,efectivo,"446935,19",2026-06-05,pendiente
+3025,3025,efectivo,$49286.32,2025-04-08,APROBADO
+337,337,transferencia,118460.62,23/12/2024,aprobado
+3304,3304,tarjeta_credito,  14531.40  ,2026-05-03 00:00:00,pendiente
+3120,3120,efectivo,4266.96,2026-03-12,pendiente
+1378,1378,tarjeta_credito,$0.00,2024-07-21,aprobado
+68,68,mpago,"52522,16",03/12/2024,aprobado
+1785,1785,transferencia,"$5,347",2024-11-24,APROBADO
+2675,2675,efectivo,  9186.26  ,2024-03-13 00:00:00,pendiente
+752,752,mpago,89293.53,12/28/2024,rechazado
+1718,1718,tarjeta_credito,1609.66,2025-09-24 00:00:00,aprobado
+504,504,efectivo,"$30,368",2024-08-15 00:00:00,aprobado
+981,981,tarjeta_credito,21384.76 MXN,12/03/2024,aprobado
+2034,2034,tarjeta_credito,"$28,408",11 de marzo de 2024,rechazado
+592,592,oxxo,$531004.55,05/05/2024,aprobado
+1614,1614,tarjeta_credito,  116940.22  ,01/03/2025,aprobado
+2414,2414,tarjeta_credito,"$18,771",24/07/2025,APROBADO
+1855,1855,efectivo,269534.01,19-09-2026,aprobado
+2613,2613,oxxo,3655.32 MXN,11/09/2025,aprobado
+1709,1709,mpago,"149982,33",2026-06-18,aprobado
+1249,1249,tarjeta_credito,  0.00  ,2025-02-21,aprobado
+1406,1406,efectivo,111735.92 MXN,03/11/2025,pendiente
+1057,1057,tarjeta_debito,2.93 MXN,17 de septiembre de 2024,aprobado
+2589,2589,mpago,"0,30",2026-06-14 00:00:00,aprobado
+3264,3264,oxxo,26206.87 MXN,17-04-2025,pendiente
+1598,1598,efectivo,  72492.89  ,04/07/2025,aprobado
+3075,3075,tarjeta_debito,"4357,76",05/01/2026,aprobado
+3512,3512,mpago,"$28,431",2026-03-29,APROBADO
+503,503,efectivo,"148148,75",30 de enero de 2024,APROBADO
+452,452,transferencia,  0.50  ,2026-08-02,aprobado
+1927,1927,tarjeta_credito,22905.23,08/04/2026,APROBADO
+559,559,tarjeta_credito,"$22,762",12/21/2025,APROBADO
+285,285,transferencia,243216.56 MXN,09/17/2026,pendiente
+2409,2409,mpago,226184.61,07/10/2025,rechazado
+2546,2546,oxxo,52643.97 MXN,2024-07-29,aprobado
+3136,3136,transferencia,0.00,2026-06-29,aprobado
+2380,2380,mpago,10505.61 MXN,25 de abril de 2026,APROBADO
+1000,1000,oxxo,$287086.28,16/07/2025,APROBADO
+2343,2343,tarjeta_credito,3782.07 MXN,2025-09-12,pendiente
+2985,2985,mpago,18596.93,3 de febrero de 2025,pendiente
+1290,1290,efectivo,"$118,075",04-03-2026,aprobado
+681,681,tarjeta_debito,  14149.68  ,2024-03-03,aprobado
+1484,1484,tarjeta_credito,"$95,891",18-07-2025,aprobado
+2053,2053,mpago,  14673.77  ,06/09/2024,rechazado
+348,348,tarjeta_credito,"2,45",06-02-2026,APROBADO
+3435,3435,oxxo,12647.64 MXN,2024-12-27,aprobado
+49,49,transferencia,"3497,15",2025-06-19,aprobado
+2530,2530,efectivo,  4903.27  ,7 de agosto de 2024,pendiente
+964,964,tarjeta_debito,"52112,16",07/04/2024,rechazado
+2294,2294,tarjeta_credito,  239505.61  ,20 de julio de 2025,rechazado
+2513,2513,tarjeta_debito,0.45,2024-02-04,APROBADO
+2588,2588,transferencia,"$18,338",2025-12-11,APROBADO
+2651,2651,tarjeta_debito,"32127,55",2025-12-18,rechazado
+1590,1590,tarjeta_credito,$13896.19,2025-09-07 00:00:00,pendiente
+1917,1917,oxxo,419624.24 MXN,24 de febrero de 2025,APROBADO
+1129,1129,mpago,74676.91,16 de agosto de 2025,aprobado
+1675,1675,tarjeta_debito,7659.01 MXN,12/04/2024,aprobado
+1415,1415,mpago,  40021.73  ,30-12-2024,pendiente
+1804,1804,tarjeta_credito,"1,79",04/05/2025,pendiente
+1680,1680,tarjeta_credito,3279.85,2024-09-27,pendiente
+1124,1124,tarjeta_debito,$0.00,26/02/2026,aprobado
+127,127,oxxo,30477.15 MXN,29 de abril de 2025,-
+678,678,tarjeta_debito,219600.54 MXN,2024-11-14 00:00:00,pendiente
+1523,1523,tarjeta_debito,"$59,705",02-01-2026,aprobado
+1635,1635,tarjeta_credito,  304.05  ,20-01-2025,aprobado
+2696,2696,tarjeta_credito,258398.61 MXN,09-03-2024,APROBADO
+859,859,tarjeta_credito,$70693.68,02/29/2024,rechazado
+1277,1277,tarjeta_debito,16035.33 MXN,10 de noviembre de 2025,aprobado
+2476,2476,tarjeta_credito,0.25 MXN,2024-08-06,aprobado
+2353,2353,transferencia,0.00 MXN,08/07/2024,pendiente
+2068,2068,oxxo,19594.60,28-11-2025,rechazado
+3581,3581,mpago,39743.46 MXN,02/08/2025,pendiente
+3582,3582,mpago,2413.98 MXN,2026-04-30,APROBADO
+3265,3265,efectivo,$16605.46,03/23/2025,aprobado
+557,557,tarjeta_debito,111731.41,27 de octubre de 2025,rechazado
+388,388,tarjeta_debito,18553.83 MXN,2025-07-14,aprobado
+1192,1192,oxxo,"$15,282",23 de enero de 2026,APROBADO
+2457,2457,tarjeta_debito,  1.49  ,19 de febrero de 2026,APROBADO
+3316,3316,tarjeta_credito,  0.71  ,04-05-2026,aprobado
+2517,2517,mpago,1586.24,2026-02-06 00:00:00,pendiente
+946,946,mpago,"$4,266",2024-02-02 00:00:00,rechazado
+1410,1410,mpago,$1,2025-04-02,pendiente
+830,830,efectivo,1.17 MXN,2024-11-21,rechazado
+1491,1491,tarjeta_debito,11058.39 MXN,12-02-2024,aprobado
+785,785,transferencia,  0.00  ,28/06/2024,pendiente
+2765,2765,tarjeta_debito,  0.00  ,03/23/2024,rechazado
+3388,3388,tarjeta_credito,"132123,31",2025-05-22,pendiente
+989,989,efectivo,$307496.24,29 de marzo de 2025,rechazado
+3107,3107,efectivo,$2.63,01-07-2025,aprobado
+2877,2877,mpago,"$189,779",6 de agosto de 2024,APROBADO
+2888,2888,transferencia,  6256.93  ,10/13/2025,APROBADO
+3004,3004,transferencia,$4534.31,23-02-2026,rechazado
+1954,1954,mpago,20495.97 MXN,05/31/2025,APROBADO
+1854,1854,mpago,$0.00,22 de febrero de 2026,rechazado
+1361,1361,tarjeta_credito,  0.00  ,29 de septiembre de 2026,APROBADO
+1841,1841,mpago,69561.50,2026-06-03,aprobado
+3273,3273,tarjeta_debito,121445.64 MXN,04-11-2024,aprobado
+2,2,tarjeta_debito,"$52,750",2025-11-16,rechazado
+2009,2009,efectivo,314516.29,2025-09-25,pendiente
+478,478,transferencia,$35330.28,5 de septiembre de 2026,APROBADO
+2904,2904,mpago,$14722.08,10/10/2025,aprobado
+2468,2468,mpago,$0,26-08-2025,APROBADO
+3260,3260,oxxo,$0.00,2025-10-20 00:00:00,APROBADO
+1873,1873,tarjeta_debito,131084.48 MXN,08/13/2026,aprobado
+1688,1688,mpago,$19486.81,2025-02-20,aprobado
+2435,2435,tarjeta_debito,  0.00  ,2024-06-20 00:00:00,aprobado
+1064,1064,transferencia,3762.44,2026-02-02,aprobado
+3461,3461,tarjeta_debito,44687.69,08-03-2026,rechazado
+3405,3405,efectivo,$1,14-11-2024,rechazado
+3493,3493,efectivo,  12526.58  ,27/07/2026,rechazado
+1198,1198,efectivo,  119288.36  ,2025-09-01 00:00:00,aprobado
+1973,1973,efectivo,$2,23/05/2025,pendiente
+1726,1726,mpago,"$194,803",2026-09-13,rechazado
+3523,3523,efectivo,26933.75 MXN,2025-04-08 00:00:00,pendiente
+2632,2632,mpago,  193353.43  ,04/04/2024,aprobado
+3532,3532,oxxo,4795.40 MXN,2026-06-06,aprobado
+3494,3494,oxxo,15107.67,2026-01-25,pendiente
+757,757,mpago,149979.01 MXN,31/03/2026,rechazado
+2405,2405,transferencia,0.00 MXN,02/18/2026,aprobado
+89,89,oxxo,61159.55 MXN,23 de agosto de 2026,aprobado
+308,308,transferencia,  2.01  ,29 de noviembre de 2024,rechazado
+725,725,mpago,156349.59 MXN,05-03-2024,APROBADO
+1958,1958,mpago,$2,2024-10-27,aprobado
+2743,2743,mpago,  1.96  ,06/24/2024,aprobado
+1059,1059,tarjeta_credito,  0.00  ,10/08/2024,pendiente
+206,206,tarjeta_debito,90031.59,2026-06-01,pendiente
+3125,3125,transferencia,296408.12,20-11-2024,rechazado
+780,780,tarjeta_credito,"$92,539",2026-06-25,rechazado
+10,10,transferencia,114901.03 MXN,19-05-2024,aprobado
+1966,1966,transferencia,"$130,080",4 de junio de 2026,APROBADO
+709,709,tarjeta_debito,"$31,632",06/09/2026,pendiente
+1534,1534,tarjeta_credito,1453.99,20 de febrero de 2026,APROBADO
+2910,2910,efectivo,"158607,43",2024-04-23,aprobado
+583,583,transferencia,  13877.00  ,22-11-2024,rechazado
+1463,1463,efectivo,$13905.64,07/12/2024,pendiente
+1800,1800,tarjeta_debito,$232799.39,08/02/2026,aprobado
+2640,2640,tarjeta_credito,"$182,798",2024-05-10,pendiente
+2619,2619,efectivo,2576.10 MXN,2026-04-18,APROBADO
+1056,1056,tarjeta_debito,"$31,645",13-02-2024,pendiente
+3402,3402,tarjeta_debito,  45305.76  ,2026-04-29,rechazado
+1826,1826,efectivo,  2.25  ,2024-06-29 00:00:00,aprobado
+1470,1470,transferencia,0.00 MXN,22/11/2025,rechazado
+1002,1002,tarjeta_debito,252450.98 MXN,2026-05-16 00:00:00,pendiente
+1975,1975,tarjeta_debito,$0,2026-04-25,pendiente
+1413,1413,efectivo,9804.91 MXN,18/07/2025,aprobado
+642,642,efectivo,20032.09,2026-03-01 00:00:00,aprobado
+1799,1799,oxxo,"1,94",2025-11-11 00:00:00,pendiente
+407,407,mpago,  13384.81  ,2024-02-21,aprobado
+2741,2741,efectivo,$7530.15,2024-04-09,APROBADO
+3175,3175,tarjeta_debito,$0,27-10-2025,APROBADO
+944,944,tarjeta_debito,$0.00,22 de septiembre de 2026,pendiente
+2995,2995,transferencia,29914.46 MXN,07/21/2026,pendiente
+3128,3128,oxxo,208101.87,2026-07-28,APROBADO
+754,754,mpago,$39943.25,2025-02-19,APROBADO
+1349,1349,tarjeta_debito,0.00 MXN,2024-07-08,pendiente
+3031,3031,oxxo,27374.71 MXN,13-06-2026,aprobado
+460,460,efectivo,35871.34 MXN,2025-09-02,pendiente
+768,768,tarjeta_debito,  100424.63  ,8 de mayo de 2026,rechazado
+3456,3456,oxxo,$211166.88,24-01-2024,aprobado
+3047,3047,tarjeta_credito,10805.58 MXN,2024-08-25 00:00:00,APROBADO
+2262,2262,efectivo,0.00,26/07/2025,aprobado
+1240,1240,tarjeta_credito,"564647,14",2025-08-28,aprobado
+1879,1879,transferencia,"110591,42",2025-04-30,aprobado
+2907,2907,efectivo,37163.11,17-04-2025,aprobado
+1987,1987,transferencia,8537.74,2025-12-28 00:00:00,aprobado
+699,699,tarjeta_debito,0.21 MXN,06/23/2026,rechazado
+2832,2832,transferencia,1.29,2024-02-01,rechazado
+2152,2152,tarjeta_debito,4354.96,2025-06-20 00:00:00,aprobado
+2891,2891,tarjeta_credito,"55432,73",11 de enero de 2025,aprobado
+1342,1342,transferencia,147009.20,02/16/2025,aprobado
+1735,1735,tarjeta_debito,164463.27,2024-10-18,pendiente
+776,776,transferencia,0.00 MXN,2025-07-28,rechazado
+995,995,tarjeta_debito,  0.00  ,2025-09-05,aprobado
+933,933,oxxo,"$47,208",07-04-2026,rechazado
+227,227,mpago,734.27 MXN,2024-03-02 00:00:00,APROBADO
+1830,1830,oxxo,$55954.42,2024-10-11 00:00:00,pendiente
+3281,3281,oxxo,"$26,580",21 de marzo de 2026,APROBADO
+916,916,transferencia,313057.93 MXN,10/23/2024,rechazado
+1231,1231,efectivo,"0,00",2025-05-24 00:00:00,aprobado
+1485,1485,tarjeta_debito,$181137.35,13 de octubre de 2025,APROBADO
+2012,2012,transferencia,0.32 MXN,07/07/2026,aprobado
+1468,1468,transferencia,  0.86  ,2024-12-02,APROBADO
+806,806,tarjeta_credito,26051.57,15 de noviembre de 2025,APROBADO
+180,180,mpago,  210449.08  ,2024-02-27,APROBADO
+3471,3471,mpago,"17008,30",2026-06-30 00:00:00,rechazado
+1953,1953,tarjeta_debito,  13101.50  ,22-03-2025,pendiente
+2050,2050,tarjeta_debito,$0.00,2024-07-31 00:00:00,rechazado
+3147,3147,mpago,$1426.47,15-07-2026,aprobado
+1492,1492,transferencia,  1.57  ,2025-01-22,aprobado
+2076,2076,tarjeta_credito,  173029.56  ,2024-03-20 00:00:00,aprobado
+2762,2762,oxxo,$1.51,2024-09-14,rechazado
+1149,1149,efectivo,42277.41 MXN,07/03/2026,APROBADO
+1913,1913,mpago,2.16,05/06/2024,pendiente
+3002,3002,mpago,"$27,409",08-06-2026,rechazado
+3058,3058,tarjeta_debito,$0,2024-10-27,pendiente
+1153,1153,mpago,"0,00",08/25/2026,aprobado
+1179,1179,mpago,179154.62 MXN,2026-04-04,aprobado
+2465,2465,oxxo,"1623,55",2025-05-27 00:00:00,rechazado
+486,486,tarjeta_credito,$2.45,2025-09-28,aprobado
+1236,1236,tarjeta_debito,$22923.55,2025-01-23,aprobado
+1454,1454,tarjeta_debito,0.00 MXN,26 de diciembre de 2025,pendiente
+1848,1848,oxxo,  29066.13  ,2024-08-11,aprobado
+3444,3444,transferencia,"1,16",16-12-2024,aprobado
+2175,2175,tarjeta_credito,$0,5 de agosto de 2026,pendiente
+1528,1528,tarjeta_debito,$66772.94,2026-07-17,rechazado
+784,784,transferencia,"285219,79",2025-10-16,aprobado
+3042,3042,tarjeta_credito,$979.01,11/07/2024,aprobado
+22,22,efectivo,0.00,02-04-2026,N/A
+1510,1510,transferencia,42955.04,2026-01-18,aprobado
+1321,1321,tarjeta_credito,"0,91",08-05-2026,rechazado
+3007,3007,oxxo,"0,95",2025-12-08,aprobado
+714,714,tarjeta_debito,$129197.02,2025-04-04 00:00:00,aprobado
+729,729,tarjeta_credito,$0,2025-12-06 00:00:00,rechazado
+1109,1109,transferencia,$1.79,2024-02-23 00:00:00,APROBADO
+1992,1992,efectivo,$0.36,2024-09-01 00:00:00,aprobado
+3253,3253,tarjeta_credito,6968.58,22-07-2026,aprobado
+2016,2016,tarjeta_debito,960261.85,2025-02-28,APROBADO
+1271,1271,mpago,$0,23/05/2025,aprobado
+1725,1725,efectivo,"300446,16",06-07-2024,APROBADO
+3400,3400,mpago,  95801.57  ,2025-09-27,aprobado
+3377,3377,tarjeta_debito,0.82,2026-05-03 00:00:00,rechazado
+2395,2395,oxxo,  125842.65  ,02-10-2025,aprobado
+2831,2831,tarjeta_credito,2.02,18/10/2024,rechazado
+327,327,tarjeta_debito,"58862,44",30-06-2025,aprobado
+1175,1175,tarjeta_credito,6353.09 MXN,2024-02-08 00:00:00,APROBADO
+873,873,oxxo,"53943,34",2025-01-06,pendiente
+2518,2518,oxxo,$579532.80,4 de octubre de 2025,APROBADO
+2639,2639,mpago,"0,00",04/27/2025,rechazado
+1724,1724,mpago,297078.24,15-01-2024,aprobado
+1602,1602,tarjeta_debito,  34963.71  ,19 de octubre de 2025,APROBADO
+1764,1764,efectivo,"$201,999",03/08/2026,rechazado
+2540,2540,tarjeta_debito,$2223.36,29-06-2026,rechazado
+2608,2608,tarjeta_credito,  440918.52  ,2026-07-03 00:00:00,rechazado
+737,737,tarjeta_debito,$14850.17,10/10/2024,aprobado
+3464,3464,transferencia,"57244,50",05/14/2025,aprobado
+1507,1507,mpago,"$250,922",14/09/2024,APROBADO
+3303,3303,efectivo,"1,00",13-09-2025,aprobado
+645,645,tarjeta_debito,"0,00",2024-05-26,pendiente
+3429,3429,tarjeta_credito,$242018.76,2025-10-07 00:00:00,rechazado
+1232,1232,mpago,  0.61  ,13/05/2025,rechazado
+2440,2440,mpago,"0,76",2024-03-17,rechazado
+3034,3034,transferencia,"34249,58",2024-07-12,pendiente
+123,123,transferencia,"$15,329",02/10/2024,aprobado
+1403,1403,efectivo,  71866.98  ,2025-04-25,aprobado
+1818,1818,mpago,  2113.76  ,26-04-2025,aprobado
+3334,3334,efectivo,$2.76,2026-07-22,APROBADO
+3551,3551,transferencia,$124084.04,2026-09-07,aprobado
+2298,2298,mpago,"$27,472",30-05-2026,aprobado
+656,656,oxxo,$73012.04,15/06/2025,aprobado
+977,977,oxxo,$0.00,13/03/2025,aprobado
+3177,3177,efectivo,$163792.28,04/22/2026,aprobado
+1767,1767,transferencia,73393.75 MXN,27 de diciembre de 2025,aprobado
+1251,1251,efectivo,"35578,27",4 de julio de 2025,pendiente
+3349,3349,oxxo,  7263.79  ,2024-08-20,aprobado
+149,149,oxxo,37874.08,2025-02-04,APROBADO
+313,313,oxxo,  194704.04  ,2025-02-14,rechazado
+1498,1498,efectivo,"0,00",21 de enero de 2024,pendiente
+2855,2855,transferencia,$190703.35,22-01-2024,rechazado
+2055,2055,transferencia,  88454.17  ,04/08/2026,APROBADO
+2687,2687,transferencia,0.00 MXN,09/05/2026,APROBADO
+1274,1274,efectivo,  0.94  ,2024-06-25,APROBADO
+3583,3583,oxxo,$436183.24,09/09/2026,aprobado
+1966,1966,transferencia,"$130,080",4 de junio de 2026,APROBADO
+896,896,tarjeta_credito,"209628,71",22/06/2025,aprobado
+3595,3595,efectivo,3997.41 MXN,2025-11-08,aprobado
+3544,3544,efectivo,"8168,26",2024-05-24,rechazado
+759,759,tarjeta_debito,"$29,825",2024-03-07,aprobado
+869,869,transferencia,"205834,89",03/24/2026,aprobado
+251,251,oxxo,  0.79  ,16 de noviembre de 2024,APROBADO
+476,476,tarjeta_credito,$0,2026-03-13,pendiente
+355,355,tarjeta_credito,  184635.90  ,16/07/2025,aprobado
+1642,1642,transferencia,1728.40,2024-07-31,rechazado
+1840,1840,oxxo,"31945,86",05/05/2026,aprobado
+2413,2413,efectivo,$1807.38,2026-05-02 00:00:00,APROBADO
+1362,1362,oxxo,"4949,66",2026-08-10 00:00:00,pendiente
+3344,3344,tarjeta_credito,62897.41,28-08-2025,aprobado
+264,264,mpago,"37176,00",2024-01-15,aprobado
+539,539,transferencia,$139967.47,2026-04-17 00:00:00,APROBADO
+93,93,mpago,"22039,32",13/10/2025,aprobado
+1073,1073,tarjeta_credito,  104947.32  ,31-05-2025,rechazado
+3181,3181,tarjeta_debito,$13105.24,01/15/2026,aprobado
+2357,2357,transferencia,172137.93 MXN,29 de diciembre de 2025,pendiente
+3546,3546,oxxo,$0.00,2025-02-15 00:00:00,rechazado
+580,580,oxxo,0.00 MXN,2026-03-09 00:00:00,rechazado
+1999,1999,oxxo,0.00 MXN,2026-01-31,aprobado
+765,765,tarjeta_debito,1890.07 MXN,2024-01-10 00:00:00,aprobado
+2221,2221,tarjeta_debito,"214613,89",10-04-2024,pendiente
+2929,2929,mpago,  0.00  ,2025-07-23,aprobado
+262,262,oxxo,0.00 MXN,2024-07-29 00:00:00,aprobado
+1319,1319,tarjeta_credito,"7189,96",16 de octubre de 2025,APROBADO
+760,760,transferencia,"102401,26",01/02/2026,aprobado
+881,881,transferencia,"$758,029",2025-07-24,pendiente
+1937,1937,mpago,"1,24",2024-12-27,rechazado
+182,182,oxxo,$0.00,2026-02-03,rechazado
+1753,1753,oxxo,  0.00  ,25-09-2024,APROBADO
+1405,1405,oxxo,$14024.22,16-02-2024,aprobado
+73,73,tarjeta_debito,"0,00",2026-09-07,aprobado
+926,926,efectivo,  0.00  ,25/12/2024,aprobado
+2986,2986,tarjeta_debito,$66355.33,2026-04-07,APROBADO
+2246,2246,mpago,"876,08",2026-03-14,rechazado
+1450,1450,transferencia,"32080,42",23-03-2024,aprobado
+267,267,mpago,36042.23,21-02-2024,aprobado
+1664,1664,efectivo,32014.24 MXN,2024-01-21,rechazado
+901,901,tarjeta_credito,$27331.60,2025-10-29,aprobado
+3286,3286,tarjeta_credito,"0,00",24-11-2024,aprobado
+2809,2809,oxxo,$6556.15,16/04/2026,aprobado
+1809,1809,tarjeta_debito,"642769,55",2024-03-24,aprobado
+2288,2288,oxxo,"$104,110",2024-09-13,aprobado
+3353,3353,mpago,34770.59,15 de noviembre de 2024,pendiente
+1586,1586,transferencia,$0.01,6 de junio de 2026,aprobado
+3503,3503,mpago,  2828.84  ,28/04/2025,aprobado
+2849,2849,efectivo,15851.58,01-01-2026,rechazado
+728,728,transferencia,  10082.54  ,2024-08-23,pendiente
+2887,2887,tarjeta_debito,"$4,349",28 de marzo de 2026,aprobado
+3080,3080,tarjeta_credito,189177.86,14 de marzo de 2026,rechazado
+1579,1579,mpago,2.90 MXN,2025-06-09,aprobado
+3360,3360,oxxo,"86939,33",2024-05-22,rechazado
+1306,1306,tarjeta_debito,$639.45,15 de septiembre de 2026,APROBADO
+884,884,mpago,$40302.02,2026-05-28 00:00:00,aprobado
+1759,1759,tarjeta_debito,  189275.65  ,09/09/2026,aprobado
+1387,1387,efectivo,158199.45 MXN,10/03/2026,APROBADO
+2504,2504,efectivo,309608.34 MXN,26/11/2024,pendiente
+3284,3284,tarjeta_debito,  22520.26  ,07-05-2026,pendiente
+3092,3092,mpago,0.00 MXN,2025-03-24,rechazado
+1649,1649,efectivo,"$34,463",2025-02-02,APROBADO
+3029,3029,transferencia,"$585,506",2024-12-06,rechazado
+3376,3376,efectivo,0.00,12 de enero de 2025,APROBADO
+1933,1933,transferencia,"$151,219",09/23/2025,APROBADO
+3548,3548,mpago,"25505,99",15-09-2025,aprobado
+1157,1157,mpago,15958.51,15 de mayo de 2024,pendiente
+1542,1542,oxxo,0.00 MXN,06-08-2025,aprobado
+578,578,tarjeta_debito,"11326,59",2024-11-26 00:00:00,pendiente
+1509,1509,tarjeta_debito,$31101.48,2025-05-05,aprobado
+2497,2497,efectivo,$722.16,19/09/2026,pendiente
+383,383,efectivo,$2,2025-02-18 00:00:00,APROBADO
+2865,2865,tarjeta_debito,4023.57 MXN,2026-07-24,rechazado
+296,296,oxxo,"$13,470",24 de febrero de 2025,aprobado
+3010,3010,tarjeta_debito,"$113,434",8 de abril de 2024,aprobado
+2531,2531,tarjeta_debito,"$5,434",2025-10-02,pendiente
+1976,1976,efectivo,"960,46",07/29/2026,rechazado
+2379,2379,efectivo,0.00 MXN,07/09/2026,APROBADO
+43,43,transferencia,$1,01-12-2024,aprobado
+722,722,oxxo,"609195,86",21/09/2026,APROBADO
+1906,1906,oxxo,"46119,70",06-04-2024,APROBADO
+1270,1270,tarjeta_credito,98172.04 MXN,08/08/2024,aprobado
+937,937,tarjeta_credito,165197.28 MXN,2024-09-12,aprobado
+3,3,tarjeta_debito,2.70 MXN,29/05/2025,pendiente
+2082,2082,efectivo,"672440,89",2025-06-02,rechazado
+1761,1761,mpago,"0,74",20/03/2025,rechazado
+1650,1650,tarjeta_credito,$6726.97,26 de septiembre de 2025,APROBADO
+248,248,oxxo,$10038.18,15-06-2025,rechazado
+256,256,efectivo,  29414.78  ,05/09/2025,aprobado
+700,700,tarjeta_debito,$1,21 de mayo de 2025,rechazado
+2285,2285,tarjeta_credito,82909.20,11/09/2024,APROBADO
+2913,2913,oxxo,$32026.83,17 de agosto de 2024,aprobado
+1486,1486,tarjeta_credito,415663.19 MXN,13/06/2026,pendiente
+1101,1101,oxxo,12917.55,2024-07-20,aprobado
+3300,3300,tarjeta_credito,$0,2026-01-08 00:00:00,APROBADO
+1866,1866,tarjeta_debito,  0.81  ,29/08/2025,aprobado
+2491,2491,oxxo,  166473.61  ,01/03/2025,rechazado
+2600,2600,tarjeta_debito,"153863,61",2025-04-18,aprobado
+2488,2488,tarjeta_debito,  13967.67  ,03/27/2024,pendiente
+1993,1993,transferencia,"985,13",12/05/2025,pendiente
+1272,1272,mpago,$5845.29,18 de septiembre de 2025,aprobado
+247,247,tarjeta_debito,"$93,934",2025-10-03,pendiente
+1932,1932,tarjeta_credito,$0.00,17-04-2026,rechazado
+2059,2059,tarjeta_debito,4811.46,21-04-2025,pendiente
+2681,2681,efectivo,  2.54  ,05/07/2025,rechazado
+1399,1399,oxxo,$0,29-08-2025,aprobado
+2833,2833,efectivo,149158.64 MXN,21/10/2025,APROBADO
+1115,1115,oxxo,  0.47  ,2026-07-11,APROBADO
+835,835,mpago,"1,57",25 de diciembre de 2025,aprobado
+168,168,transferencia,  0.82  ,15 de agosto de 2024,pendiente
+2238,2238,tarjeta_debito,$0.00,2026-01-31,rechazado
+646,646,tarjeta_debito,"60226,35",2025-07-20,aprobado
+3239,3239,efectivo,"1766,53",27 de septiembre de 2024,rechazado
+2045,2045,mpago,69376.54 MXN,03/05/2025,pendiente
+3441,3441,tarjeta_debito,  81920.09  ,2026-03-04 00:00:00,rechazado
+464,464,transferencia,137384.50,2026-05-24,rechazado
+455,455,transferencia,"0,00",11-11-2024,pendiente
+2903,2903,tarjeta_credito,"$353,445",21 de abril de 2025,aprobado
+1846,1846,transferencia,  7804.23  ,05/07/2024,rechazado
+2377,2377,efectivo,"13175,52",2024-06-19,pendiente
+487,487,transferencia,66072.40,2 de abril de 2025,aprobado
+2216,2216,oxxo,167652.47,28-05-2024,aprobado
+2606,2606,mpago,0.00 MXN,21 de agosto de 2024,aprobado
+3249,3249,mpago,"2523,22",05-09-2026,aprobado
+2998,2998,efectivo,"2413,30",2026-09-06,aprobado
+2187,2187,tarjeta_credito,$60464.42,01/07/2025,aprobado
+249,249,tarjeta_debito,$179699.49,05/10/2026,pendiente
+272,272,tarjeta_debito,$0,2026-06-08,aprobado
+1860,1860,tarjeta_credito,1.53 MXN,23 de septiembre de 2026,aprobado
+1666,1666,oxxo,5184.32 MXN,2026-02-20,APROBADO
+1493,1493,oxxo,  457104.99  ,2025-12-06,aprobado
+626,626,transferencia,213860.46 MXN,03/03/2024,aprobado
+3073,3073,efectivo,"$153,283",03/01/2026,aprobado
+2365,2365,transferencia,"$45,698",10 de marzo de 2026,pendiente
+1458,1458,efectivo,  11538.90  ,4 de septiembre de 2024,APROBADO
+17,17,transferencia,$132190.74,2024-06-21 00:00:00,aprobado
+2120,2120,tarjeta_debito,"$30,103",20/06/2025,pendiente
+1041,1041,efectivo,"0,68",27 de enero de 2026,APROBADO
+2721,2721,transferencia,"$72,749",2024-11-19,aprobado
+1519,1519,mpago,2.92 MXN,07/27/2026,APROBADO
+3201,3201,oxxo,52137.44,22/06/2025,APROBADO
+1558,1558,mpago,"19195,15",11-05-2025,APROBADO
+2823,2823,tarjeta_credito,$233910.50,04/10/2026,pendiente
+2893,2893,oxxo,2.12 MXN,25 de agosto de 2026,aprobado
+2385,2385,oxxo,15150.70,27 de mayo de 2025,pendiente
+1007,1007,transferencia,"33180,74",18 de marzo de 2026,pendiente
+3172,3172,tarjeta_debito,84860.15 MXN,29/04/2024,aprobado
+1078,1078,transferencia,"$24,668",24/08/2026,rechazado
+1372,1372,tarjeta_credito,11115.05 MXN,27/01/2025,pendiente
+2335,2335,tarjeta_credito,22648.43 MXN,14-07-2025,aprobado
+1042,1042,oxxo,"$55,934",30-12-2024,aprobado
+1040,1040,efectivo,"$93,435",12/17/2025,APROBADO
+1105,1105,efectivo,"$155,413",31 de mayo de 2025,APROBADO
+1452,1452,transferencia,"0,00",2025-12-26,pendiente
+3116,3116,mpago,$159909.52,2025-12-23,pendiente
+1839,1839,mpago,"0,00",2025-10-21,aprobado
+3179,3179,tarjeta_debito,$109188.05,23/03/2024,APROBADO
+491,491,efectivo,$52494.62,2026-03-13,aprobado
+831,831,oxxo,$2,06/02/2026,aprobado
+1156,1156,oxxo,151384.87 MXN,2025-06-13,aprobado
+519,519,oxxo,"$84,450",2025-06-09 00:00:00,aprobado
+743,743,tarjeta_credito,  0.00  ,2026-09-20,APROBADO
+307,307,efectivo,"266604,60",2025-11-16,pendiente
+354,354,tarjeta_credito,0.00 MXN,2025-06-09,aprobado
+1571,1571,mpago,36295.45 MXN,16 de enero de 2026,pendiente
+3043,3043,transferencia,"22784,26",2026-09-10,aprobado
+970,970,tarjeta_credito,"19682,54",10/07/2025,pendiente
+547,547,oxxo,182236.35 MXN,11-12-2025,rechazado
+1235,1235,efectivo,0.00,2026-06-22,aprobado
+2446,2446,efectivo,79365.33,6 de febrero de 2025,aprobado
+1715,1715,tarjeta_credito,  22978.53  ,2024-03-23,pendiente
+3354,3354,tarjeta_debito,1.65,2024-05-02,rechazado
+3439,3439,tarjeta_credito,0.00 MXN,31/03/2025,aprobado
+2259,2259,mpago,"$15,431",08/18/2026,aprobado
+984,984,mpago,"2,69",2024-06-19,pendiente
+1676,1676,tarjeta_credito,$2651.43,2025-08-23 00:00:00,rechazado
+1655,1655,mpago,"$7,477",2024-08-08 00:00:00,aprobado
+425,425,tarjeta_credito,"21236,73",08/06/2026,aprobado
+1126,1126,efectivo,$0.00,27-05-2026,rechazado
+2993,2993,oxxo,  0.00  ,2026-08-08,pendiente
+2302,2302,tarjeta_credito,  0.00  ,2026-03-02 00:00:00,APROBADO
+2255,2255,mpago,"52255,09",29-09-2026,aprobado
+967,967,mpago,  4902.50  ,2026-03-21,aprobado
+3516,3516,transferencia,  47766.97  ,2024-05-03 00:00:00,pendiente
+2850,2850,transferencia,  12112.18  ,02/06/2025,aprobado
+41,41,tarjeta_credito,$1966.43,9 de octubre de 2025,APROBADO
+1849,1849,oxxo,"257207,28",2024-10-28,aprobado
+711,711,tarjeta_credito,59548.73,2024-10-03 00:00:00,pendiente
+724,724,mpago,9158.14 MXN,30-04-2024,aprobado
+791,791,efectivo,"$2,069",31/01/2024,APROBADO
+1769,1769,tarjeta_debito,  1787.44  ,2024-09-17,pendiente
+544,544,tarjeta_debito,$0,08-02-2024,aprobado
+812,812,transferencia,$1,13/04/2024,rechazado
+615,615,mpago,  43119.30  ,11-01-2025,aprobado
+3370,3370,tarjeta_debito,  12870.05  ,26-03-2026,pendiente
+3592,3592,oxxo,22719.78 MXN,2024-12-01,pendiente
+1144,1144,mpago,"$65,292",03/05/2025,pendiente
+3511,3511,transferencia,"$46,547",2024-05-25,pendiente
+3492,3492,mpago,"0,00",2026-01-11,rechazado
+3415,3415,efectivo,"4285,03",12/18/2024,pendiente
+3036,3036,tarjeta_credito,59609.58 MXN,11/09/2024,aprobado
+1289,1289,efectivo,  20247.87  ,2025-05-27,APROBADO
+3001,3001,efectivo,0.48 MXN,2025-12-21 00:00:00,pendiente
+3048,3048,transferencia,  21951.25  ,2026-08-04,pendiente
+565,565,tarjeta_credito,"0,00",19-07-2025,aprobado
+2904,2904,mpago,$14722.08,10/10/2025,aprobado
+1891,1891,mpago,  1104.77  ,3 de junio de 2024,rechazado
+398,398,oxxo,$4804.56,2025-08-22,rechazado
+1038,1038,efectivo,"$30,560",23/06/2026,aprobado
+1819,1819,oxxo,$4682.31,09/29/2026,APROBADO
+1551,1551,mpago,"$50,464",2025-08-11,pendiente
+2281,2281,transferencia,  70890.11  ,2026-04-02 00:00:00,rechazado
+2329,2329,mpago,$2.35,18 de noviembre de 2024,pendiente
+107,107,efectivo,"$64,447",02/02/2026,aprobado
+2890,2890,mpago,"$3,738",29-01-2026,aprobado
+2550,2550,mpago,  0.00  ,2024-10-11,aprobado
+2658,2658,tarjeta_credito,0.19 MXN,12 de febrero de 2026,rechazado
+924,924,tarjeta_debito,  310.15  ,2025-12-19 00:00:00,aprobado
+3224,3224,tarjeta_debito,0.00,2025-12-07,APROBADO
+245,245,tarjeta_debito,$24666.87,25/05/2024,aprobado
+3210,3210,oxxo,"$38,506",2025-11-26,APROBADO
+1305,1305,tarjeta_credito,"$15,114",08/23/2025,pendiente
+3068,3068,efectivo,$3,2024-12-09,aprobado
+619,619,tarjeta_debito,$38437.71,2024-04-01,rechazado
+33,33,transferencia,$2,2026-02-22 00:00:00,aprobado
+1359,1359,efectivo,$35316.72,12/06/2024,aprobado
+3164,3164,efectivo,128047.36 MXN,11/20/2025,pendiente
+949,949,transferencia,339405.79 MXN,09-09-2025,aprobado
+959,959,tarjeta_debito,"$52,978",01-05-2026,aprobado
+2324,2324,efectivo,$27071.82,12-12-2024,aprobado
+3084,3084,mpago,147480.08,11/26/2025,APROBADO
+429,429,transferencia,"$7,148",2024-06-30 00:00:00,aprobado
+3146,3146,tarjeta_debito,7708.96,2025-08-05,APROBADO
+2078,2078,transferencia,338007.59 MXN,1 de septiembre de 2024,aprobado
+2136,2136,tarjeta_credito,"$3,669",2024-01-20,aprobado
+1552,1552,tarjeta_debito,$1,24/12/2024,APROBADO
+808,808,transferencia,2.70,26-02-2026,aprobado
+2366,2366,efectivo,"7968,83",2026-03-09,pendiente
+704,704,efectivo,"0,70",2026-02-25,pendiente
+1503,1503,tarjeta_credito,"$85,147",2024-11-12 00:00:00,pendiente
+1910,1910,tarjeta_debito,0.00 MXN,27/12/2024,APROBADO
+367,367,transferencia,$0.32,29-03-2026,aprobado
+2121,2121,oxxo,68761.48 MXN,13/06/2024,aprobado
+3292,3292,efectivo,50149.74,14/03/2026,APROBADO
+1050,1050,oxxo,19656.06,2026-06-04 00:00:00,pendiente
+842,842,tarjeta_debito,0.01,11 de enero de 2025,rechazado
+2057,2057,mpago,"92320,48",04/16/2024,rechazado
+2310,2310,efectivo,"$32,075",04-07-2026,pendiente
+1465,1465,efectivo,31389.95 MXN,2025-09-11,aprobado
+2117,2117,efectivo,  299444.77  ,5 de abril de 2025,aprobado
+13,13,efectivo,$0.00,2025-10-17,null
+746,746,oxxo,  0.00  ,2026-03-06,APROBADO
+1645,1645,efectivo,"$387,809",01/07/2026,aprobado
+2350,2350,transferencia,66843.03,27/02/2025,aprobado
+3248,3248,tarjeta_credito,"11667,40",03/12/2024,APROBADO
+3021,3021,efectivo,"$58,637",19 de marzo de 2025,pendiente
+1445,1445,transferencia,  5464.66  ,2024-02-26,pendiente
+2997,2997,oxxo,$0.00,06/01/2025,aprobado
+599,599,transferencia,  2.12  ,12 de junio de 2026,APROBADO
+522,522,oxxo,1.90 MXN,2025-11-13,aprobado
+2558,2558,tarjeta_credito,$0.00,16/10/2025,aprobado
+3394,3394,mpago,$49641.73,04/04/2025,aprobado
+1522,1522,efectivo,  49345.36  ,11/25/2024,pendiente
+1916,1916,oxxo,$2.39,03-08-2026,APROBADO
+1521,1521,tarjeta_debito,46917.32,2026-05-14,rechazado
+240,240,mpago,"$4,931",2025-11-25 00:00:00,pendiente
+3382,3382,mpago,"$16,759",2 de julio de 2026,aprobado
+2509,2509,tarjeta_credito,$101688.06,05/24/2025,aprobado
+2732,2732,tarjeta_credito,"180342,07",2025-04-22 00:00:00,APROBADO
+2441,2441,oxxo,0.00,2026-06-24,aprobado
+2209,2209,oxxo,$12440.93,2024-12-07,rechazado
+32,32,tarjeta_credito,  26086.79  ,2025-02-25,aprobado
+3220,3220,tarjeta_credito,  140855.04  ,2025-11-19,pendiente
+453,453,efectivo,$111224.27,24/08/2024,rechazado
+2611,2611,efectivo,"$43,517",05/23/2026,pendiente
+2761,2761,tarjeta_debito,"$9,167",2026-01-15 00:00:00,aprobado
+3171,3171,tarjeta_debito,1.90 MXN,2025-08-25,pendiente
+2236,2236,tarjeta_debito,"$77,937",2026-09-22 00:00:00,rechazado
+1167,1167,tarjeta_credito,132728.92,05-07-2024,rechazado
+1245,1245,efectivo,"172339,51",12/08/2024,pendiente
+3072,3072,tarjeta_debito,"$31,075",26/01/2025,aprobado
+3469,3469,efectivo,72714.78 MXN,03-03-2025,APROBADO
+436,436,oxxo,  272130.36  ,2025-07-22,rechazado
+891,891,tarjeta_debito,0.00 MXN,20/07/2024,rechazado
+778,778,tarjeta_credito,32247.59,2024-11-05 00:00:00,rechazado
+637,637,transferencia,"1,45",05-06-2026,aprobado
+2638,2638,tarjeta_debito,"$267,804",2026-01-04 00:00:00,APROBADO
+2812,2812,tarjeta_credito,101835.68,2025-06-16,APROBADO
+1368,1368,tarjeta_debito,  0.47  ,2024-08-25,pendiente
+804,804,transferencia,$71870.84,2025-01-14,aprobado
+3329,3329,efectivo,"2710,52",2026-09-01 00:00:00,aprobado
+2569,2569,efectivo,$0.09,2026-07-15 00:00:00,APROBADO
+1269,1269,oxxo,403.22,22/06/2026,aprobado
+2880,2880,tarjeta_debito,1.75,2026-07-29,rechazado
+671,671,efectivo,153279.70,2025-07-25 00:00:00,APROBADO
+3246,3246,tarjeta_debito,42505.07,2025-08-18,rechazado
+3297,3297,oxxo,50956.12,2026-02-03,aprobado
+1851,1851,oxxo,"26994,48",2024-04-18 00:00:00,rechazado
+3364,3364,transferencia,$2,2024-04-23,aprobado
+2156,2156,efectivo,160070.88 MXN,2026-03-12 00:00:00,aprobado
+454,454,mpago,17991.27,12/07/2024,rechazado
+1189,1189,transferencia,119512.39,28 de marzo de 2026,rechazado
+2079,2079,oxxo,"$13,105",2024-04-19,aprobado
+3476,3476,transferencia,"$124,544",2024-01-06,rechazado
+1758,1758,efectivo,$57629.68,15/05/2025,rechazado
+2537,2537,efectivo,"4431,20",2024-04-23,pendiente
+124,124,tarjeta_credito,"44062,77",2026-04-22,APROBADO
+756,756,tarjeta_debito,$0,08/27/2024,rechazado
+2585,2585,oxxo,11398.26,09/05/2025,aprobado
+357,357,oxxo,$224036.52,2024-02-03,pendiente
+2202,2202,oxxo,$7662.27,2024-12-14,rechazado
+1798,1798,tarjeta_credito,24546.22,11 de febrero de 2025,rechazado
+3554,3554,mpago,$40761.96,04-04-2026,aprobado
+242,242,transferencia,2585.15 MXN,14 de mayo de 2026,APROBADO
+3162,3162,efectivo,  206991.78  ,06/02/2026,aprobado
+2381,2381,oxxo,"281112,18",2024-10-08,pendiente
+2780,2780,tarjeta_debito,$-0,23 de agosto de 2026,APROBADO
+2801,2801,transferencia,69692.19,17-06-2026,aprobado
+2938,2938,oxxo,23449.62,05/14/2026,rechazado
+3051,3051,tarjeta_debito,$20746.38,09/11/2025,rechazado
+1081,1081,tarjeta_credito,0.67 MXN,25-02-2026,aprobado
+3016,3016,tarjeta_credito,$650267.60,2024-08-23,aprobado
+1882,1882,tarjeta_debito,$2,25 de noviembre de 2024,aprobado
+3123,3123,efectivo,  116623.22  ,2026-05-26,APROBADO
+2974,2974,mpago,$0.00,05/02/2026,aprobado
+3491,3491,mpago,"$756,723",2024-10-23 00:00:00,aprobado
+131,131,oxxo,105362.17,20/10/2025,pendiente
+1426,1426,oxxo,0.00,11/04/2025,aprobado
+54,54,transferencia,"$19,434",2025-11-16 00:00:00,
+1300,1300,tarjeta_debito,0.62,25 de septiembre de 2025,pendiente
+3163,3163,transferencia,"48114,50",05-05-2025,rechazado
+1448,1448,efectivo,$3994.00,2025-06-18,pendiente
+668,668,transferencia,530816.71,14-04-2024,aprobado
+546,546,tarjeta_debito,"20089,31",2025-08-07 00:00:00,APROBADO
+94,94,oxxo,$173785.92,8 de septiembre de 2026,
+438,438,oxxo,"$125,891",19 de abril de 2026,pendiente
+3020,3020,efectivo,"0,00",24/04/2025,rechazado
+3280,3280,tarjeta_credito,0.00 MXN,31/03/2025,pendiente
+3411,3411,oxxo,  0.00  ,2025-01-12 00:00:00,aprobado
+2744,2744,mpago,0.00,01/08/2026,aprobado
+2256,2256,oxxo,  1.06  ,04/07/2026,pendiente
+1574,1574,tarjeta_debito,$104653.40,16/10/2024,aprobado
+279,279,transferencia,"316213,51",2024-08-09,pendiente
+3533,3533,oxxo,$0.25,12-03-2024,APROBADO
+1432,1432,oxxo,$2.59,13 de enero de 2026,APROBADO
+2977,2977,transferencia,  281595.60  ,2024-10-14,pendiente
+480,480,efectivo,  14656.28  ,02/20/2026,APROBADO
+18,18,transferencia,$365785.64,2024-01-25,APROBADO
+192,192,tarjeta_debito,"$28,541",06/05/2024,pendiente
+548,548,transferencia,  102351.65  ,2024-09-18 00:00:00,rechazado
+2757,2757,oxxo,$0,2025-03-06 00:00:00,aprobado
+40,40,transferencia,$0.01,2026-07-21 00:00:00,aprobado
+1935,1935,transferencia,"22447,30",2025-01-18 00:00:00,pendiente
+3278,3278,tarjeta_debito,$21858.75,08/13/2026,aprobado
+3527,3527,efectivo,$2.12,08/09/2024,rechazado
+1919,1919,tarjeta_credito,$34942.45,31 de agosto de 2025,rechazado
+1138,1138,efectivo,"169264,39",11/06/2026,APROBADO
+115,115,tarjeta_credito,$0,2024-03-23 00:00:00,APROBADO
+410,410,mpago,"$170,232",21 de noviembre de 2024,rechazado
+336,336,oxxo,$0.00,21 de septiembre de 2026,pendiente
+2227,2227,mpago,$0.00,05/04/2026,APROBADO
+1353,1353,tarjeta_credito,"$327,807",2024-04-05,APROBADO
+1501,1501,transferencia,  0.89  ,22 de septiembre de 2026,APROBADO
+1333,1333,efectivo,"186678,76",16/07/2026,aprobado
+2180,2180,efectivo,0.00 MXN,2024-07-16,aprobado
+2793,2793,efectivo,$1.68,2025-09-13,APROBADO
+1151,1151,oxxo,274177.99,16 de noviembre de 2025,aprobado
+352,352,mpago,107080.14,21-06-2024,aprobado
+2705,2705,mpago,"0,00",02/10/2025,rechazado
+3003,3003,transferencia,$340012.93,2025-08-18 00:00:00,rechazado
+153,153,transferencia,  1.03  ,12 de mayo de 2025,APROBADO
+843,843,tarjeta_credito,24088.35,12/12/2024,APROBADO
+2911,2911,transferencia,$3,7 de diciembre de 2024,rechazado
+1071,1071,oxxo,"$2,842",2025-12-25 00:00:00,aprobado
+2643,2643,mpago,"74721,77",14-07-2025,aprobado
+3006,3006,transferencia,  0.32  ,2024-04-24,aprobado
+1453,1453,transferencia,"$10,654",2025-02-08,APROBADO
+2962,2962,mpago,$0,2024-03-05,APROBADO
+172,172,tarjeta_debito,"$84,316",2025-06-20,pendiente
+2772,2772,efectivo,"89624,59",08/29/2025,rechazado
+620,620,transferencia,$77844.73,20-04-2026,aprobado
+1682,1682,efectivo,$69902.08,2026-03-07,rechazado
+1856,1856,tarjeta_credito,0.00 MXN,16 de noviembre de 2025,APROBADO
+3032,3032,tarjeta_debito,$2.22,2026-02-10 00:00:00,aprobado
+627,627,mpago,$27652.19,13/10/2025,aprobado
+2980,2980,tarjeta_debito,$109445.25,09/08/2024,rechazado
+2197,2197,transferencia,"24061,78",29 de enero de 2026,aprobado
+2151,2151,oxxo,"188951,69",30 de agosto de 2024,pendiente
+1583,1583,transferencia,"$126,063",23-01-2026,pendiente
+2720,2720,mpago,0.00,2025-05-12,pendiente
+1852,1852,tarjeta_debito,$1717.55,22/07/2026,APROBADO
+2001,2001,tarjeta_debito,$12861.86,2024-03-26 00:00:00,aprobado
+2090,2090,mpago,2267.64 MXN,08/27/2025,aprobado
+855,855,oxxo,"34111,22",17-12-2025,rechazado
+2881,2881,tarjeta_debito,100327.25,07/08/2024,APROBADO
+1297,1297,oxxo,0.00 MXN,2025-06-15,rechazado
+1867,1867,efectivo,0.21 MXN,14-01-2025,aprobado
+3543,3543,transferencia,"$17,090",2025-12-12,rechazado
+2367,2367,transferencia,17731.36,2025-09-22 00:00:00,aprobado
+1618,1618,mpago,"142026,99",29/09/2025,APROBADO
+2566,2566,tarjeta_credito,"10552,45",2024-11-08 00:00:00,APROBADO
+13,13,efectivo,$0.00,2025-10-17,null
+1722,1722,transferencia,$2,2024-10-20,rechazado
+803,803,transferencia,0.73 MXN,17 de enero de 2026,aprobado
+1087,1087,oxxo,"14515,66",16-07-2026,aprobado
+561,561,transferencia,1.69 MXN,9 de febrero de 2025,rechazado
+2511,2511,tarjeta_credito,  3152.77  ,20/07/2026,APROBADO
+2127,2127,mpago,27119.33 MXN,2026-06-22 00:00:00,rechazado
+77,77,transferencia,$0.88,29/12/2025,aprobado
+3597,3597,mpago,  316686.14  ,03/09/2026,APROBADO
+960,960,transferencia,6121.94 MXN,2025-08-16,rechazado
+3109,3109,oxxo,$15471.51,01/05/2024,pendiente
+1900,1900,mpago,"$255,834",27/03/2026,aprobado
+576,576,tarjeta_credito,"0,00",2026-09-21,rechazado
+2290,2290,oxxo,$1.33,09/24/2025,aprobado
+1684,1684,oxxo,"0,00",2024-12-16,pendiente
+2389,2389,efectivo,  329424.87  ,11/04/2025,aprobado
+2694,2694,tarjeta_debito,"$18,424",2025-12-25,APROBADO
+3350,3350,mpago,"2,10",2025-10-11,APROBADO
+2075,2075,oxxo,  19591.32  ,13-05-2024,aprobado
+2843,2843,transferencia,  3398.87  ,15 de septiembre de 2024,rechazado
+570,570,mpago,51644.20,2025-07-09,pendiente
+1942,1942,efectivo,$14440.47,31/05/2024,rechazado
+799,799,oxxo,"$8,718",2025-03-27,rechazado
+2763,2763,efectivo,"$94,726",06/15/2025,aprobado
+1756,1756,efectivo,$17342.07,10 de mayo de 2026,aprobado
+518,518,oxxo,$173714.84,2025-08-12,aprobado
+1148,1148,efectivo,14642.60 MXN,2026-01-29,aprobado
+1915,1915,efectivo,$201083.65,2026-08-27,pendiente
+269,269,efectivo,3122.05,2024-08-10,aprobado
+2716,2716,tarjeta_credito,"$45,148",18-05-2025,pendiente
+301,301,oxxo,233944.95,03/27/2024,aprobado
+966,966,mpago,"138516,68",25-09-2025,aprobado
+229,229,tarjeta_credito,  142448.92  ,09-02-2024,APROBADO
+85,85,oxxo,  111452.45  ,2025-12-11,rechazado
+328,328,oxxo,  3277.54  ,2026-01-07 00:00:00,aprobado
+1082,1082,transferencia,"0,00",2024-12-29,aprobado
+2436,2436,oxxo,  35560.30  ,2025-01-03,APROBADO
+470,470,efectivo,$654011.83,20-08-2026,aprobado
+2344,2344,oxxo,"$50,858",2025-05-05 00:00:00,aprobado
+198,198,tarjeta_debito,  1.96  ,2024-11-23 00:00:00,pendiente
+1963,1963,tarjeta_credito,86213.10 MXN,2026-09-18,aprobado
+298,298,tarjeta_credito,93719.54,08/27/2024,aprobado
+3565,3565,mpago,0.00,24 de noviembre de 2024,APROBADO
+2307,2307,tarjeta_credito,0.00,2024-03-28,pendiente
+1945,1945,oxxo,23977.63,23/11/2024,aprobado
+2882,2882,tarjeta_credito,  1.12  ,25/10/2025,rechazado
+2342,2342,transferencia,113189.48,2026-02-25 00:00:00,APROBADO
+2554,2554,tarjeta_credito,2.37,19-08-2024,aprobado
+2276,2276,oxxo,$174926.11,2025-01-20,aprobado
+2479,2479,mpago,  13515.65  ,05/06/2024,aprobado
+1612,1612,tarjeta_debito,"6873,13",2025-08-28,aprobado
+921,921,tarjeta_credito,"6547,02",16/07/2025,pendiente
+1429,1429,transferencia,$0,2025-09-13,aprobado
+1530,1530,mpago,"0,00",2025-04-22,rechazado
+2317,2317,transferencia,"139168,98",09/29/2024,aprobado
+1885,1885,transferencia,13591.84 MXN,2025-06-17 00:00:00,rechazado
+607,607,tarjeta_debito,55253.79 MXN,01/07/2024,APROBADO
+1630,1630,mpago,4492.19 MXN,2024-06-17,pendiente
+2458,2458,efectivo,"29531,43",2024-09-15 00:00:00,pendiente
+2336,2336,tarjeta_debito,"52166,34",8 de febrero de 2026,APROBADO
+2234,2234,oxxo,"$611,766",2026-06-27,aprobado
+1634,1634,efectivo,26834.99 MXN,12-12-2024,rechazado
+138,138,tarjeta_debito,"$72,094",2024-07-24,aprobado
+3244,3244,transferencia,"101685,36",29-08-2026,APROBADO
+1662,1662,efectivo,  0.40  ,24-12-2025,pendiente
+2162,2162,oxxo,"$53,482",25-09-2025,rechazado
+3326,3326,tarjeta_debito,$36679.92,23-09-2024,rechazado
+3331,3331,tarjeta_credito,"2,28",2026-08-11 00:00:00,APROBADO
+2905,2905,efectivo,"15227,86",2026-08-20,aprobado
+1638,1638,transferencia,"147755,43",1 de mayo de 2026,APROBADO
+1024,1024,tarjeta_debito,"1,03",2026-01-18 00:00:00,pendiente
+1045,1045,tarjeta_debito,1.87,2026-03-30,aprobado
+1050,1050,oxxo,19656.06,2026-06-04 00:00:00,pendiente
+3553,3553,transferencia,"$10,208",2026-01-28,APROBADO
+1039,1039,efectivo,"71847,83",11 de septiembre de 2024,APROBADO
+1644,1644,oxxo,"96573,44",2025-10-05,aprobado
+3427,3427,mpago,$1104.55,2025-05-17,aprobado
+3180,3180,mpago,"183667,22",14/08/2025,pendiente
+879,879,tarjeta_credito,185.23 MXN,14 de mayo de 2026,pendiente
+2842,2842,mpago,"$111,819",1 de marzo de 2026,aprobado
+2371,2371,transferencia,2.29 MXN,03-01-2024,rechazado
+76,76,oxxo,2589.35,2025-05-16 00:00:00,-
+697,697,tarjeta_debito,$75023.61,2025-11-08 00:00:00,rechazado
+1307,1307,transferencia,  2241.66  ,01/18/2024,pendiente
+2271,2271,efectivo,2.40,2024-01-21,aprobado
+3395,3395,tarjeta_credito,  455854.40  ,24/07/2024,APROBADO
+2036,2036,mpago,"1,09",2026-07-25,aprobado
+2340,2340,efectivo,128126.40 MXN,2026-03-26,pendiente
+3294,3294,tarjeta_credito,  330809.72  ,02-05-2025,rechazado
+3100,3100,tarjeta_credito,$27807.39,2025-03-25 00:00:00,APROBADO
+2783,2783,oxxo,$20030.09,5 de junio de 2024,aprobado
+950,950,transferencia,219957.91 MXN,2024-09-20,pendiente
+840,840,tarjeta_credito,$145081.46,2025-05-31,APROBADO
+3106,3106,efectivo,"10431,24",28/09/2024,rechazado
+1094,1094,mpago,  6871.94  ,01/06/2026,APROBADO
+2551,2551,oxxo,8340.80,08-08-2025,pendiente
+2157,2157,efectivo,$0,02/10/2025,rechazado
+3328,3328,mpago,$0,2024-11-17 00:00:00,rechazado
+96,96,efectivo,5452.19,2026-06-03,aprobado
+1706,1706,transferencia,$38788.00,03/11/2024,aprobado
+2654,2654,tarjeta_credito,21993.33,05-06-2025,aprobado
+2659,2659,mpago,"14102,15",2026-06-19 00:00:00,aprobado
+451,451,efectivo,"306244,54",26/09/2025,rechazado
+2961,2961,mpago,$2.58,28/01/2024,APROBADO
+693,693,tarjeta_credito,  228318.12  ,2025-05-04 00:00:00,aprobado
+2198,2198,tarjeta_debito,45867.79,2025-05-20 00:00:00,pendiente
+2923,2923,tarjeta_debito,  93487.66  ,2026-08-09 00:00:00,aprobado
+954,954,oxxo,315915.75 MXN,2026-08-26,rechazado
+619,619,tarjeta_debito,$38437.71,2024-04-01,rechazado
+389,389,tarjeta_debito,  5854.02  ,2025-08-20,aprobado
+1557,1557,tarjeta_debito,$0.00,2024-04-12,aprobado
+887,887,mpago,367674.49,07/13/2026,pendiente
+3204,3204,mpago,$17457.97,2026-09-28,pendiente
+3207,3207,efectivo,"$13,315",2024-05-26,pendiente
+2912,2912,tarjeta_credito,0.00 MXN,2026-01-20,APROBADO
+541,541,transferencia,0.88,20/09/2025,aprobado
+3367,3367,tarjeta_credito,"194880,55",23-07-2025,aprobado
+1515,1515,transferencia,"23579,76",27-03-2025,pendiente
+1159,1159,oxxo,23637.64,05/05/2025,pendiente
+1593,1593,tarjeta_debito,  19957.69  ,27 de abril de 2025,aprobado
+3404,3404,tarjeta_debito,$22058.42,17/04/2024,aprobado
+3308,3308,efectivo,"$273,071",05-07-2024,pendiente
+1116,1116,tarjeta_debito,53941.01,2025-01-29,aprobado
+3504,3504,efectivo,"0,00",15-12-2025,pendiente
+1832,1832,tarjeta_credito,3969.48,2026-06-19,rechazado
+2871,2871,tarjeta_credito,17123.23,27-04-2025,rechazado
+3188,3188,tarjeta_debito,7722.65 MXN,2026-02-27,aprobado
+1610,1610,oxxo,120413.59 MXN,2024-06-20,aprobado
+2487,2487,transferencia,$3,2025-11-01,pendiente
+2065,2065,tarjeta_credito,  7744.62  ,2026-08-22,APROBADO
+2407,2407,mpago,$119734.48,2025-03-06,aprobado
+819,819,tarjeta_credito,82409.86,2025-11-07,APROBADO
+199,199,tarjeta_credito,  117118.79  ,30 de mayo de 2026,aprobado
+1660,1660,efectivo,$1.36,2025-07-09 00:00:00,aprobado
+2575,2575,tarjeta_credito,"73636,92",2025-06-19,aprobado
+91,91,mpago,  132673.35  ,16 de febrero de 2025,-
+2756,2756,mpago,  0.00  ,2025-06-15,pendiente
+568,568,oxxo,  0.00  ,2024-02-02,aprobado
+569,569,tarjeta_credito,"0,60",19 de febrero de 2025,aprobado
+1143,1143,tarjeta_debito,"2,81",2024-08-15 00:00:00,APROBADO
+2081,2081,tarjeta_debito,  41162.18  ,2025-02-14 00:00:00,aprobado
+1813,1813,transferencia,5234.11 MXN,2024-09-18,aprobado
+3445,3445,tarjeta_credito,2.58,2025-01-16,aprobado
+856,856,efectivo,5617.64,24/12/2025,aprobado
+1104,1104,transferencia,  75259.66  ,03-12-2024,rechazado
+1487,1487,efectivo,  20006.36  ,2026-03-18,pendiente
+2563,2563,oxxo,54347.56,2025-08-28 00:00:00,APROBADO
+2922,2922,tarjeta_debito,"$16,872",11/11/2024,APROBADO
+2725,2725,mpago,2.67 MXN,11/04/2024,aprobado
+1259,1259,transferencia,$0.00,07/09/2025,pendiente
+1234,1234,tarjeta_credito,"96401,99",2026-04-27 00:00:00,rechazado
+2699,2699,mpago,"$12,917",2026-08-03 00:00:00,APROBADO
+1253,1253,tarjeta_credito,67227.41,23/01/2025,aprobado
+1600,1600,transferencia,338458.05 MXN,2024-12-04,pendiente
+208,208,mpago,1.00 MXN,28 de mayo de 2026,APROBADO
+679,679,efectivo,  1.61  ,14/10/2024,pendiente
+2002,2002,efectivo,"$3,366",28/11/2024,APROBADO
+2533,2533,tarjeta_debito,$4796.51,2025-03-07 00:00:00,APROBADO
+1388,1388,efectivo,"$4,347",2024-12-05,pendiente
+1247,1247,mpago,$5123.31,2026-08-29 00:00:00,aprobado
+589,589,tarjeta_credito,  1.84  ,2024-09-02,aprobado
+2141,2141,transferencia,25752.92,29-09-2024,APROBADO
+2095,2095,mpago,97269.78 MXN,2025-08-14,rechazado
+220,220,oxxo,"$149,130",2025-01-10,aprobado
+2455,2455,tarjeta_debito,1.63,2025-10-10 00:00:00,aprobado
+630,630,oxxo,$1,2025-05-25,aprobado
+2661,2661,tarjeta_credito,69436.67,23-05-2026,pendiente
+1402,1402,efectivo,$215086.04,18-07-2024,rechazado
+624,624,efectivo,  60053.14  ,06/22/2026,APROBADO
+1482,1482,tarjeta_credito,68543.68,11/22/2024,pendiente
+3391,3391,tarjeta_debito,$188166.45,7 de octubre de 2025,aprobado
+1632,1632,tarjeta_credito,"64829,62",07/02/2026,aprobado
+2427,2427,mpago,"66298,63",08/01/2025,aprobado
+3385,3385,mpago,2105.06,05/27/2024,rechazado
+1952,1952,tarjeta_credito,23599.76 MXN,15 de julio de 2026,pendiente
+484,484,mpago,"31057,34",2026-03-11,rechazado
+1874,1874,mpago,$1966.21,09/08/2026,aprobado
+802,802,transferencia,0.00,11/01/2024,pendiente
+2928,2928,tarjeta_credito,"4712,82",2024-01-09,rechazado
+2178,2178,transferencia,1.94 MXN,04/12/2024,APROBADO
+3040,3040,oxxo,  2808.10  ,03-06-2024,rechazado
+3587,3587,mpago,  0.00  ,2026-01-08,pendiente
+2313,2313,transferencia,"25833,44",15/06/2026,aprobado
+305,305,mpago,$6536.93,24/01/2025,aprobado
+490,490,transferencia,$27464.95,2025-06-25 00:00:00,APROBADO
+2222,2222,tarjeta_debito,"1,47",2024-09-07,pendiente
+3414,3414,tarjeta_debito,"$1,138",2026-07-25 00:00:00,pendiente
+3446,3446,transferencia,"$1,684",2024-02-01,rechazado
+3257,3257,transferencia,100669.86 MXN,10/08/2026,rechazado
+1012,1012,tarjeta_debito,0.00 MXN,14 de abril de 2025,APROBADO
+2897,2897,tarjeta_credito,"39210,64",2024-04-25,aprobado
+165,165,oxxo,$130424.66,2024-01-29,aprobado
+2052,2052,transferencia,0.96 MXN,12/25/2024,pendiente
+2538,2538,tarjeta_credito,"$17,850",2026-05-13,aprobado
+1195,1195,oxxo,"$2,052",2024-03-14 00:00:00,aprobado
+781,781,transferencia,$0,09/24/2025,APROBADO
+904,904,oxxo,1.92 MXN,08/23/2024,aprobado
+2584,2584,oxxo,4499.92 MXN,18-01-2025,aprobado
+2701,2701,mpago,"$107,986",28/08/2025,APROBADO
+2448,2448,mpago,0.20 MXN,2026-06-09,pendiente
+1811,1811,tarjeta_debito,$2.43,2025-11-16,aprobado
+1654,1654,mpago,  11333.37  ,2025-02-25,APROBADO
+1977,1977,oxxo,  42841.32  ,2025-10-23 00:00:00,APROBADO
+214,214,tarjeta_credito,1371.61,17 de julio de 2026,pendiente
+2672,2672,tarjeta_debito,  1.93  ,03-10-2024,aprobado
+755,755,transferencia,36265.40 MXN,06-07-2024,APROBADO
+1865,1865,efectivo,"140644,99",18 de julio de 2025,aprobado
+1325,1325,efectivo,  83330.88  ,24-01-2026,aprobado
+2552,2552,transferencia,"130345,64",2026-02-02,aprobado
+1745,1745,efectivo,$322343.75,30 de junio de 2025,pendiente
+2873,2873,tarjeta_debito,$2720.44,09/13/2024,pendiente
+1499,1499,efectivo,  0.25  ,25 de marzo de 2024,aprobado
+3575,3575,mpago,$846.02,2024-08-07 00:00:00,pendiente
+909,909,efectivo,"$128,321",12/23/2024,rechazado
+3288,3288,mpago,"2,13",04-01-2026,aprobado
+1404,1404,tarjeta_credito,  39081.31  ,23 de enero de 2024,aprobado
+2284,2284,transferencia,"$95,400",11 de julio de 2024,aprobado
+3127,3127,tarjeta_debito,16987.88,2025-12-13,pendiente
+21,21,mpago,"$78,473",07-06-2026,NULL
+1340,1340,mpago,  138360.37  ,13/06/2025,rechazado
+3275,3275,mpago,  0.00  ,11/04/2026,APROBADO
+65,65,tarjeta_credito,$1,2024-10-20 00:00:00,N/A
+3070,3070,tarjeta_debito,"$43,431",06-07-2026,APROBADO
+1869,1869,mpago,40168.25,24-06-2026,rechazado
+400,400,efectivo,$0.00,06-08-2025,aprobado
+444,444,mpago,12568.45,22-01-2026,aprobado
+3451,3451,efectivo,220320.04 MXN,17/01/2026,aprobado
+2898,2898,tarjeta_debito,2552.79 MXN,21/07/2026,aprobado
+2029,2029,efectivo,$1,2025-10-24,rechazado
+2192,2192,tarjeta_credito,$3381.82,2025-03-17,pendiente
+1243,1243,transferencia,"$43,420",09/06/2026,aprobado
+3018,3018,mpago,  2502.69  ,2026-05-13,aprobado
+3005,3005,oxxo,$22570.91,06/16/2024,aprobado
+2794,2794,efectivo,72494.17 MXN,2026-04-20,aprobado
+1256,1256,efectivo,  0.23  ,2025-12-20,aprobado
+2004,2004,efectivo,"$65,731",14-08-2026,APROBADO
+108,108,transferencia,"$29,285",10/01/2024,APROBADO
+2503,2503,mpago,$0,27 de agosto de 2026,APROBADO
+45,45,tarjeta_debito,0.00 MXN,08/07/2025,aprobado
+1627,1627,mpago,37786.99 MXN,24-08-2026,APROBADO
+1734,1734,mpago,14522.28,06-11-2025,pendiente
+1219,1219,tarjeta_debito,$2.99,22/02/2026,rechazado
+251,251,oxxo,  0.79  ,16 de noviembre de 2024,APROBADO
+2627,2627,tarjeta_debito,  148919.72  ,2025-08-10 00:00:00,aprobado
+556,556,efectivo,  292044.00  ,27/05/2024,APROBADO
+1909,1909,tarjeta_credito,9345.57,18 de mayo de 2024,pendiente
+3118,3118,mpago,$6335.12,24/11/2025,pendiente
+2061,2061,transferencia,"233605,57",2026-08-01,aprobado
+418,418,transferencia,$0,23 de junio de 2025,pendiente
+284,284,oxxo,21929.89 MXN,13-01-2025,aprobado
+684,684,tarjeta_debito,  0.00  ,30/04/2024,pendiente
+2896,2896,tarjeta_debito,  7443.43  ,26 de diciembre de 2025,rechazado
+1135,1135,transferencia,$15177.21,30-06-2026,aprobado
+3466,3466,efectivo,$1.52,1 de junio de 2024,APROBADO
+1213,1213,mpago,  0.00  ,15-07-2025,aprobado
+2650,2650,tarjeta_credito,0.00,26 de noviembre de 2024,APROBADO
+1713,1713,efectivo,$2.05,04-02-2026,aprobado
+2754,2754,tarjeta_debito,"$213,244",9 de agosto de 2025,pendiente
+3056,3056,mpago,"$40,211",2025-11-18,rechazado
+488,488,tarjeta_debito,2.15 MXN,2025-10-30 00:00:00,rechazado
+1326,1326,tarjeta_credito,"220754,44",2025-07-26,pendiente
+3085,3085,mpago,$0.00,2025-02-28 00:00:00,rechazado
+2114,2114,mpago,0.00,12 de noviembre de 2024,rechazado
+2113,2113,mpago,17520.05,2025-02-27,pendiente
+1527,1527,tarjeta_credito,193936.85,2026-03-01 00:00:00,rechazado
+852,852,oxxo,$2,04-01-2025,aprobado
+317,317,tarjeta_credito,  396576.77  ,2024-06-13 00:00:00,pendiente
+1877,1877,transferencia,0.00 MXN,2026-06-13 00:00:00,pendiente
+257,257,oxxo,"226485,51",02/09/2026,aprobado
+1643,1643,oxxo,108445.33,2024-08-20 00:00:00,aprobado
+701,701,transferencia,2873.59 MXN,06/19/2026,APROBADO
+2071,2071,tarjeta_credito,4981.41 MXN,2026-06-28,aprobado
+1074,1074,oxxo,32250.90 MXN,2025-12-09 00:00:00,aprobado
+2960,2960,efectivo,$19377.64,02-11-2024,aprobado
+1955,1955,tarjeta_debito,"$34,384",2024-12-07,aprobado
+2232,2232,tarjeta_debito,$0,2024-06-30,aprobado
+2979,2979,mpago,349352.28 MXN,02-12-2024,pendiente
+2837,2837,efectivo,"$7,808",28-12-2025,aprobado
+1257,1257,transferencia,61310.65 MXN,2024-07-11 00:00:00,rechazado
+3160,3160,efectivo,  0.00  ,2024-09-21 00:00:00,rechazado
+3211,3211,tarjeta_debito,"193683,81",2026-02-26,pendiente
+958,958,oxxo,"4585,87",12/25/2025,APROBADO
+1418,1418,efectivo,22931.48 MXN,2025-08-31,aprobado

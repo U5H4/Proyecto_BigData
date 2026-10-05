@@ -1,0 +1,7 @@
+﻿informacion,destino,minimo_requerido,registros_finales,cumple,holgura,veces_el_minimo
+Clientes,clientes,1000,1862,SI,862,1.86
+Productos,productos,500,606,SI,106,1.21
+Pedidos,pedidos,2000,3277,SI,1277,1.64
+Detalles de pedidos,detalle_pedido,1000,3891,SI,2891,3.89
+Resenas,resenas (mongodb),2000,2475,SI,475,1.24
+Registros de navegacion,actividad_usuario (mongodb),1000,4236,SI,3236,4.24

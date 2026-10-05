@@ -1,0 +1,17 @@
+﻿indicador,valor,nota
+Facturacion,"$127,336,206.51",solo pedidos completados
+Pedidos totales,"2,259","unicos, no lineas"
+Pedidos completados,"1,483",
+Tasa de cancelacion,34.35%,pedidos cancelados / pedidos totales
+Unidades vendidas,"10,782",
+Ticket promedio,"$85,863.93",facturacion / pedidos completados
+Unidades por pedido,7.27,
+Clientes,"1,314",con al menos un pedido
+Productos vendidos,514,
+Categorias,6,
+Utilidad bruta,"$37,982,053.12",ingreso - costo - descuentos
+Margen real ponderado,29.46%,utilidad / ingreso bruto
+Descuentos otorgados,"$1,574,292.30",
+Ticket con descuento,"$48,090.66",solo lineas con descuento
+Ticket sin descuento,"$50,042.85",
+Ingreso por cliente,"$96,907.31",

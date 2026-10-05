@@ -1,0 +1,91 @@
+﻿orden_ejecucion,paso,transformacion,tabla,filas_antes,filas_despues,registros_afectados,detalle,regla
+1,2,Normalizacion de texto,clientes,0,17,17,"17 marcadores de faltante ('N/A','NULL','-','') -> nulo real",marcador de ausentia == valor ausente
+2,2,Normalizacion de texto,productos,0,15,15,"15 marcadores de faltante ('N/A','NULL','-','') -> nulo real",marcador de ausentia == valor ausente
+3,2,Normalizacion de texto,pedidos,0,16,16,"16 marcadores de faltante ('N/A','NULL','-','') -> nulo real",marcador de ausentia == valor ausente
+4,2,Normalizacion de texto,detalle_pedido,0,356,356,"356 marcadores de faltante ('N/A','NULL','-','') -> nulo real",marcador de ausentia == valor ausente
+5,2,Normalizacion de texto,pagos,0,20,20,"20 marcadores de faltante ('N/A','NULL','-','') -> nulo real",marcador de ausentia == valor ausente
+6,2,Normalizacion de texto,clientes,58,58,102,"102 valores recortados/unificados de 2,143 filas",strip + colapso de espacios + trim
+7,2,Normalizacion de texto,productos,9,9,65,65 valores recortados/unificados de 641 filas,strip + colapso de espacios + trim
+8,2,Normalizacion de texto,actividad,0,0,256,"256 valores recortados/unificados de 4,854 filas",strip + colapso de espacios + trim
+9,2,Normalizacion de texto,sucursales,0,0,2,2 valores recortados/unificados de 12 filas,strip + colapso de espacios + trim
+10,2,Normalizacion de texto,productos_semi,0,0,16,16 valores recortados/unificados de 638 filas,strip + colapso de espacios + trim
+11,2,Normalizacion de texto,TODAS,0,0,441,TOTAL: 441 celdas de texto normalizadas,strip + colapso de espacios
+12,1,Eliminacion de duplicados,clientes,2143,1863,280,"80 exactos + 200 por clave ['nombre', 'correo']","UNIQUE sobre ['nombre', 'correo'] / PK ['id_cliente']"
+13,1,Eliminacion de duplicados,productos,641,617,24,"21 exactos + 3 por clave ['nombre', 'categoria']","UNIQUE sobre ['nombre', 'categoria'] / PK ['id_producto']"
+14,1,Eliminacion de duplicados,pedidos,3708,3600,108,"108 exactos + 0 por clave ['id_pedido', 'fecha_pedido', 'id_cliente']","UNIQUE sobre ['id_pedido', 'fecha_pedido', 'id_cliente'] / PK ['id_pedido']"
+15,1,Eliminacion de duplicados,detalle_pedido,4761,4600,161,"161 exactos + 0 por clave ['id_pedido', 'id_producto', 'cantidad', 'precio_unitario']","UNIQUE sobre ['id_pedido', 'id_producto', 'cantidad', 'precio_unitario'] / PK ['id_detalle']"
+16,1,Eliminacion de duplicados,pagos,3672,3600,72,"72 exactos + 0 por clave ['id_pago', 'id_pedido']","UNIQUE sobre ['id_pago', 'id_pedido'] / PK ['id_pago']"
+17,1,Eliminacion de duplicados,resenas,3075,3000,75,"75 exactos + 0 por clave ['id_producto', 'cliente.id', 'fecha', 'comentario']","UNIQUE sobre ['id_producto', 'cliente.id', 'fecha', 'comentario'] / PK ['id_resena']"
+18,1,Eliminacion de duplicados,actividad,4854,4728,126,"126 exactos + 0 por clave ['usuario', 'fecha', 'evento', 'producto']","UNIQUE sobre ['usuario', 'fecha', 'evento', 'producto'] / PK []"
+19,1,Eliminacion de duplicados,proveedores,10,10,0,sin duplicados,UNIQUE sobre ['nombre'] / PK ['id_proveedor']
+20,1,Eliminacion de duplicados,sucursales,12,12,0,sin duplicados,UNIQUE sobre ['nombre'] / PK ['id_sucursal']
+21,1,Eliminacion de duplicados,promociones,14,14,0,sin duplicados,"UNIQUE sobre ['nombre', 'fecha_inicio'] / PK ['id_promocion']"
+22,1,Eliminacion de duplicados,objetivos,9,9,0,sin duplicados,"UNIQUE sobre ['anio', 'mes', 'categoria'] / PK ['anio', 'mes', 'categoria']"
+23,1,Eliminacion de duplicados,productos_semi,638,620,18,18 exactos + 0 por clave ['id_producto'],UNIQUE sobre ['id_producto'] / PK ['id_producto']
+24,3,Tratamiento de nulos,clientes,1863,1863,36,telefono: 36 nulos -> 'SIN_DATO',dato de contacto opcional
+25,3,Tratamiento de nulos,clientes,1863,1863,14,correo: 14 nulos -> 'SIN_DATO@novatech.mx',correo sintetico para no perder el cliente
+26,3,Tratamiento de nulos,productos,617,617,15,margen_bruto: 15 nulos -> 0.25,margen mediano historico
+27,3,Tratamiento de nulos,pedidos,3600,3600,31,canal_venta: 31 nulos -> 'web',canal mas frecuente
+28,3,Tratamiento de nulos,pagos,3600,3600,54,estado_pago: 54 nulos -> 'aprobado',un pago sin estado se asume cobrado
+29,3,Tratamiento de nulos,detalle_pedido,4600,4600,775,descuento: 775 nulos -> 0.0,sin descuento = 0
+30,3,Tratamiento de nulos,resenas,3000,3000,59,calificacion: 59 nulos -> <NA>,no se inventa una calificacion: se descarta la fila
+31,3,Tratamiento de nulos (imputables),clientes,1863,1862,1,id_cliente: 1 filas con id_cliente nulo descartadas,DROP: id_cliente NOT NULL es obligatorio
+32,3,Tratamiento de nulos (imputables),productos,617,612,5,nombre: 5 filas con nombre nulo descartadas,DROP: nombre NOT NULL es obligatorio
+33,3,Tratamiento de nulos (imputables),productos,612,607,5,precio: 5 filas con precio nulo descartadas,DROP: precio NOT NULL es obligatorio
+34,3,Tratamiento de nulos (imputables),detalle_pedido,4600,4422,178,cantidad: 178 filas con cantidad nulo descartadas,DROP: cantidad NOT NULL es obligatorio
+35,8,Unificacion de categorias,productos,607,607,260,34 variantes -> 6 canonicas,lookup de variantes
+36,8,Unificacion de categorias,objetivos,9,9,0,5 variantes -> 5 canonicas,lookup de variantes
+37,8,Unificacion de categorias,productos_semi,620,620,86,34 variantes -> 6 canonicas,lookup de variantes
+38,8,Unificacion de ciudades,clientes,1862,1862,553,44 variantes -> 10 canonicas,lookup de variantes (Ver. -> Veracruz)
+39,8,Unificacion de ciudades,sucursales,12,12,3,12 variantes -> 10 canonicas,lookup de variantes (Ver. -> Veracruz)
+40,8,Unificacion de ciudades,actividad,4728,4728,1466,44 variantes -> 10 canonicas,lookup de variantes (Ver. -> Veracruz)
+41,4,Correccion de tipos,clientes,1862,1862,3,"id_cliente:entero, es_premium:bool, telefono:texto",CAST explicito a int/float/bool
+42,4,Correccion de tipos,productos,607,607,4,"id_producto:entero, id_proveedor:entero, activo:bool, margen_bruto:float",CAST explicito a int/float/bool
+43,4,Correccion de tipos,pedidos,3600,3600,3,"id_pedido:entero, id_cliente:entero, id_sucursal:entero",CAST explicito a int/float/bool
+44,4,Correccion de tipos,detalle_pedido,4422,4422,3,"id_detalle:entero, id_pedido:entero, id_producto:entero",CAST explicito a int/float/bool
+45,4,Correccion de tipos,pagos,3600,3600,2,"id_pago:entero, id_pedido:entero",CAST explicito a int/float/bool
+46,4,Correccion de tipos,resenas,3000,3000,5,"id_resena:entero, id_producto:entero, cliente.id:entero, calificacion:entero, verificada:bool",CAST explicito a int/float/bool
+47,4,Correccion de tipos,actividad,4728,4728,3,"usuario:entero, producto:entero, duracion_seg:entero",CAST explicito a int/float/bool
+48,4,Correccion de tipos,sucursales,12,12,2,"id_sucursal:entero, metros_cuadrados:entero",CAST explicito a int/float/bool
+49,4,Correccion de tipos,proveedores,10,10,3,"id_proveedor:entero, dias_entrega_promedio:entero, activo:bool",CAST explicito a int/float/bool
+50,4,Correccion de tipos,promociones,14,14,2,"id_promocion:entero, descuento_pct:entero",CAST explicito a int/float/bool
+51,4,Correccion de tipos,objetivos,9,9,4,"anio:entero, mes:entero, meta_unidades:entero, meta_ingresos:float",CAST explicito a int/float/bool
+52,5,Estandarizacion de fechas,clientes,1862,1862,0,"fecha_alta: 1,862 ok / 0 ilegibles / 0 nulos  -> datetime64[ns]",ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+53,5,Estandarizacion de fechas,productos,607,607,0,fecha_lanzamiento: 607 ok / 0 ilegibles / 0 nulos  -> datetime64[ns],ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+54,5,Estandarizacion de fechas,pedidos,3600,3600,0,"fecha_pedido: 3,600 ok / 0 ilegibles / 0 nulos  -> datetime64[ns]",ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+55,5,Estandarizacion de fechas,pagos,3600,3600,0,"fecha_pago: 3,600 ok / 0 ilegibles / 0 nulos  -> datetime64[ns]",ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+56,5,Estandarizacion de fechas,resenas,3000,3000,0,"fecha: 3,000 ok / 0 ilegibles / 0 nulos  -> datetime64[ns]",ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+57,5,Estandarizacion de fechas,actividad,4728,4728,0,"fecha: 4,728 ok / 0 ilegibles / 0 nulos  -> datetime64[ns]",ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+58,5,Estandarizacion de fechas,sucursales,12,12,0,fecha_apertura: 12 ok / 0 ilegibles / 0 nulos  -> datetime64[ns],ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+59,5,Estandarizacion de fechas,promociones,14,14,0,fecha_inicio: 14 ok / 0 ilegibles / 0 nulos; fecha_fin: 14 ok / 0 ilegibles / 0 nulos  -> datetime64[ns],ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+60,5,Estandarizacion de fechas,productos_semi,620,620,0,fecha_registro: 620 ok / 0 ilegibles / 0 nulos  -> datetime64[ns],ISO-8601 (YYYY-MM-DD); filas con fecha ilegible se descartan
+61,6,Validacion de precios,productos,607,606,1,"1 no parseables + 0 fuera de rango [1.0, 500000.0] descartados",CHECK (precio > 0)
+62,6,Validacion de precios,detalle_pedido,4422,4422,0,0 no parseables + 0 fuera de rango descartados,CHECK (precio_unitario > 0)
+63,6,Validacion de precios,pagos,3600,3600,0,0 montos negativos -> 0,CHECK (monto >= 0)
+64,6,Validacion de precios,productos (margen),606,606,0,"0 margenes fuera de [0,1] recortados",CHECK (margen BETWEEN 0 AND 1)
+65,6,Validacion de precios,resenas (calificacion),3000,2766,129,"129 calificaciones fuera de [1,5] (0, 6, 'cinco') descartadas",CHECK (calificacion BETWEEN 1 AND 5)
+66,7,Validacion de cantidades,detalle_pedido,4422,4422,378,"55 no numericas ('N/A','dos') + 323 fuera de [1,100] -> 1",CHECK (cantidad BETWEEN 1 AND 100)
+67,7,Validacion de cantidades,detalle_pedido (descuento),4422,4422,1499,"748 no numericos ('9%','N/A') + 751 negativos -> 0",CHECK (descuento >= 0)
+68,9,Eliminacion de columnas,clientes,1862,1862,4,"eliminadas: telefono_secundario, fax, codigo_interno_legacy, usuario_sistema",sin uso en analisis ni en el modelo relacional
+69,9,Eliminacion de columnas,productos,606,606,3,"eliminadas: costo_fabricacion_interno, sku_fabricante_obsoleto, peso_envio_kg_bruto",sin uso en analisis ni en el modelo relacional
+70,9,Eliminacion de columnas,pedidos,3600,3600,3,"eliminadas: referencia_bancaria, cupon_descuento_raw, hora_impresion_ticket",sin uso en analisis ni en el modelo relacional
+71,9,Eliminacion de columnas,detalle_pedido,4422,4422,3,"eliminadas: estanteria_almacen, serial_interno_caja, estatus_devolucion_bruto",sin uso en analisis ni en el modelo relacional
+72,10,Campos derivados,productos_semi (atributos),620,620,38,38 columnas aplanadas -> 1 subdocumento; 620/620 productos con al menos 1 atributo,subdocumento con esquema variable (BSON)
+73,0,Integridad referencial (FK),pedidos,3600,3277,323,id_cliente -> clientes.id_cliente: 323 huerfanos descartados,FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+74,0,Integridad referencial (FK),pedidos,3277,3277,0,id_sucursal -> sucursales.id_sucursal: 0 huerfanos descartados,FOREIGN KEY (id_sucursal) REFERENCES sucursales(id_sucursal)
+75,0,Integridad referencial (FK),detalle_pedido,4422,4014,408,id_pedido -> pedidos.id_pedido: 408 huerfanos descartados,FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)
+76,0,Integridad referencial (FK),detalle_pedido,4014,3891,123,id_producto -> productos.id_producto: 123 huerfanos descartados,FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+77,0,Integridad referencial (FK),pagos,3600,3277,323,id_pedido -> pedidos.id_pedido: 323 huerfanos descartados,FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)
+78,0,Integridad referencial (FK),resenas,2766,2702,64,id_producto -> productos.id_producto: 64 huerfanos descartados,FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+79,0,Integridad referencial (FK),resenas,2702,2475,227,cliente.id -> clientes.id_cliente: 227 huerfanos descartados,FOREIGN KEY (cliente.id) REFERENCES clientes(id_cliente)
+80,0,Integridad referencial (FK),actividad,4728,4625,103,producto -> productos.id_producto: 103 huerfanos descartados,FOREIGN KEY (producto) REFERENCES productos(id_producto)
+81,0,Integridad referencial (FK),actividad,4625,4236,389,usuario -> clientes.id_cliente: 389 huerfanos descartados,FOREIGN KEY (usuario) REFERENCES clientes(id_cliente)
+82,0,Integridad referencial (FK),productos,606,606,0,id_proveedor -> proveedores.id_proveedor: 0 huerfanos descartados,FOREIGN KEY (id_proveedor) REFERENCES proveedores(id_proveedor)
+83,10,Campos derivados,clientes,1862,1862,7,"anio, mes, dia, mes_nombre, trimestre, anio_mes, antiguedad_dias",EXTRACT(year FROM fecha_alta)
+84,10,Campos derivados,productos,606,606,3,"costo_estimado, utilidad_bruta, rango_precio",costo = precio * (1 - margen)
+85,10,Campos derivados,pedidos,3277,3277,7,"anio, mes, dia, mes_nombre, trimestre, anio_mes, es_completado",EXTRACT(year FROM fecha_pedido)
+86,10,Campos derivados,detalle_pedido,3891,3891,3,subtotal = cantidad * precio_unitario; total = subtotal - descuento; porcentaje_descuento,subtotal = precio * cantidad
+87,10,Campos derivados,pedidos (rollup),3277,3277,5,"total_pedido, unidades, lineas, categorias_distintas, ticket_promedio_linea",SUM(total) GROUP BY id_pedido
+88,10,Campos derivados,pagos,3277,3277,8,"anio/mes del pago, diferencia_pago, conciliado (2,951/3,277 = 90.1% conciliados con tolerancia $5.00)",monto - total_pedido
+89,10,Campos derivados,resenas,2475,2475,10,"anio, mes, dia, mes_nombre, trimestre, anio_mes, es_positiva, es_negativa, longitud_comentario",calificacion >= 4
+90,10,Campos derivados,actividad,4236,4236,9,"anio, mes, dia, mes_nombre, trimestre, anio_mes, hora, es_visualizacion",EXTRACT(hour FROM fecha_hora)
