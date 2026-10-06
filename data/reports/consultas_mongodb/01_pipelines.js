@@ -1,5 +1,5 @@
 // Pipelines de agregacion NovaCommerce
-// Generados: 2026-10-05 07:59:41
+// Generados: 2026-10-05 18:24:07
 // Ejecutar con mongosh / mongodump sobre la db 'novacommerce'
 
 // A01: Top 10 productos mas vistos

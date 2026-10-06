@@ -1,4 +1,4 @@
--- DDL generado por integration.py (2026-10-05 07:59)
+-- DDL generado por integration.py (2026-10-05 18:25)
 -- Dialecto: sqlite
 -- Motor: sqlite
 
@@ -124,7 +124,6 @@ CREATE TABLE fact_ventas (
     region VARCHAR(50),
     canal_registro VARCHAR(30),
     es_premium BOOLEAN,
-    fecha_alta_cliente DATE,
     producto_nombre VARCHAR(200),
     categoria VARCHAR(80),
     descripcion_categoria VARCHAR(200),
@@ -151,8 +150,7 @@ CREATE TABLE fact_ventas (
     monto NUMERIC(14,2),
     estado_pago VARCHAR(20),
     diferencia_pago NUMERIC(14,2),
-    conciliado BOOLEAN,
-    id_ciudad INTEGER
+    conciliado BOOLEAN
 )
 
 CREATE INDEX ix_pedidos_id_cliente ON pedidos (id_cliente)

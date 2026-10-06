@@ -576,8 +576,8 @@
 1700,IGNACIO SANCHEZ,Queretaro,True,1,51421.86,14,2024-11-11,758,51421.86,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
 638,Emiliano Vega,Tijuana,True,1,50917.62,3,2026-06-01,191,50917.62,4,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
 1571,Raul Torres,Leon,False,1,50857.880000000005,10,2026-07-10,152,50857.880000000005,5,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
-17,Julio Diaz,Monterrey,True,1,50500.02,2,2024-05-10,943,50500.02,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
 802,Hector Lozano,Veracruz,False,1,50500.02,2,2025-06-25,532,50500.02,3,2,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
+17,Julio Diaz,Monterrey,True,1,50500.02,2,2024-05-10,943,50500.02,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
 709,Leandro Garcia,Puebla,False,3,50283.16,25,2026-07-19,143,16761.053333333333,5,5,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
 500,Citlali Morales,Tijuana,True,1,50135.84,6,2024-03-12,1002,50135.84,1,1,3,En riesgo,F<=2 y M>=3: gastaron mucho y ya no vuelven
 1770,Javier Rendon,Leon,True,1,49970.45,16,2024-11-19,750,49970.45,2,3,3,Leales,F>=3 y M>=3: compran bien pero hace tiempo
@@ -695,8 +695,8 @@
 360,ERNESTO RUIZ,Tijuana,True,2,30080.050000000003,8,2025-12-26,348,15040.025000000001,3,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
 913,Citlali Sanchez,Puebla,True,1,29913.61,5,2024-04-18,965,29913.61,1,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
 1979,Ana Pineda,Guadalajara,True,1,29825.760000000002,10,2024-09-07,823,29825.760000000002,1,4,2,Potenciales,"F>=3: compran algo, gasto bajo"
-1136,Hector Morales,Puebla,True,1,29414.82,6,2025-04-29,589,29414.82,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
 14,regina iglesias,Queretaro,True,1,29414.82,6,2026-09-05,95,29414.82,5,1,2,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
+1136,Hector Morales,Puebla,True,1,29414.82,6,2025-04-29,589,29414.82,2,2,2,Dormidos,el resto: baja frecuencia y bajo gasto
 1688,Julio Mendez,Queretaro,False,2,29160.96,12,2026-04-25,228,14580.48,4,5,2,Potenciales,"F>=3: compran algo, gasto bajo"
 6,Camila Solis,Guadalajara,True,1,28744.88,8,2024-01-23,1051,28744.88,1,1,2,Dormidos,el resto: baja frecuencia y bajo gasto
 1851,Guillermo Sanchez,Tijuana,False,1,28692.96,2,2024-11-09,760,28692.96,2,3,2,Potenciales,"F>=3: compran algo, gasto bajo"
@@ -832,8 +832,8 @@
 120,Rodrigo Ruiz,Leon,False,2,13359.75,14,2025-11-28,376,6679.875,3,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
 1801,Mariana Cardona,Puebla,True,1,13331.55,5,2026-06-21,171,13331.55,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
 1467,Alberto Flores,Leon,True,1,13107.27,9,2025-07-10,517,13107.27,3,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
-57,Luis Diaz,Tijuana,True,1,13103.97,3,2026-06-19,173,13103.97,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
 936,Sofia Rendon,Leon,False,1,13103.97,3,2024-10-12,788,13103.97,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
+57,Luis Diaz,Tijuana,True,1,13103.97,3,2026-06-19,173,13103.97,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
 1371,Alejandra Lopez,Merida,False,1,13098.92,4,2026-03-05,279,13098.92,4,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
 367,Daniela Lozano,Cancun,True,1,13062.68,2,2026-08-16,115,13062.68,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten
 288,Miguel Cruz,Tijuana,True,1,12922.14,3,2025-03-06,643,12922.14,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
@@ -848,8 +848,8 @@
 43,Paola Sanchez,Veracruz,False,1,11170.8,5,2025-01-26,682,11170.8,2,1,1,Dormidos,el resto: baja frecuencia y bajo gasto
 1964,Renata Cruz,Ciudad de Mexico,True,1,11160.0,8,2024-08-29,832,11160.0,1,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
 1959,Renata Morales,Monterrey,True,2,10913.470000000001,4,2026-07-14,148,5456.735000000001,5,5,1,Potenciales,"F>=3: compran algo, gasto bajo"
-864,Ximena Ramirez,Leon,True,1,10808.22,3,2024-07-11,881,10808.22,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
 1702,Alejandra Cardona,Queretaro,False,1,10808.22,3,2024-12-20,719,10808.22,2,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
+864,Ximena Ramirez,Leon,True,1,10808.22,3,2024-07-11,881,10808.22,1,2,1,Dormidos,el resto: baja frecuencia y bajo gasto
 1957,Natalia Contreras,Veracruz,True,1,10780.3,9,2026-04-01,252,10780.3,4,4,1,Potenciales,"F>=3: compran algo, gasto bajo"
 1267,Oscar Ortiz,Leon,False,1,10691.84,4,2026-07-28,134,10691.84,5,3,1,Potenciales,"F>=3: compran algo, gasto bajo"
 5,Javier Cruz,Merida,True,1,10652.72,4,2026-09-15,85,10652.72,5,1,1,Nuevos,R=5 y F<=2: sealiens hace poco y aun repiten

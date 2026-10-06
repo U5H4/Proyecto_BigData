@@ -1,28 +1,27 @@
-﻿producto,visitas,nombre,categoria
-609,23,Switch Kortex Core,Redes
-616,22,Adaptador WiFi Kortex Fury,Redes
-614,21,Switch Kortex SE,Redes
-613,19,Router Kortex GT,Redes
-615,15,Access Point Kortex Mini,Redes
-611,15,Adaptador WiFi Kortex Zen,Redes
-612,15,Cable de Red Kortex Pro,Redes
-617,14,Cable de Red Kortex Pulse,Redes
-619,14,Switch Kortex Vertex,Redes
-618,14,Router Kortex Nova,Redes
-610,13,Access Point Kortex Edge,Redes
-581,11,Adaptador WiFi Auric Neo,Redes
-561,8,Adaptador WiFi Nova Neo,Redes
-193,8,Foldable Helix GT,Smartphones
-443,7,Webcam Quartz Elite,Accesorios
-75,7,All-in-One Vertex Mini,Computadoras
-543,7,Router Onyx Elite,Redes
-620,7,Access Point Kortex One,Redes
-397,6,Monitor Zylo Pulse,Monitores
-524,6,Switch Praxis Air,Redes
-326,4,Monitor Portatil Kortex Plus,Monitores
-530,4,Access Point Praxis Edge,Redes
-364,4,Monitor Ultrawide Lumen Air,Monitores
-540,3,Access Point Praxis One,Redes
-504,3,Hub USB-C Delta Air,Accesorios
-99,3,Mini PC Lumen Vertex,Computadoras
-115,3,Smartphone Zylo Mini,Smartphones
+﻿_id,visitas,nombre,categoria,producto
+609,23,Switch Kortex Core,Redes,609
+616,22,Adaptador WiFi Kortex Fury,Redes,616
+614,21,Switch Kortex SE,Redes,614
+613,19,Router Kortex GT,Redes,613
+611,15,Adaptador WiFi Kortex Zen,Redes,611
+612,15,Cable de Red Kortex Pro,Redes,612
+615,15,Access Point Kortex Mini,Redes,615
+617,14,Cable de Red Kortex Pulse,Redes,617
+618,14,Router Kortex Nova,Redes,618
+619,14,Switch Kortex Vertex,Redes,619
+610,13,Access Point Kortex Edge,Redes,610
+581,11,Adaptador WiFi Auric Neo,Redes,581
+193,8,Foldable Helix GT,Smartphones,193
+561,8,Adaptador WiFi Nova Neo,Redes,561
+620,7,Access Point Kortex One,Redes,620
+443,7,Webcam Quartz Elite,Accesorios,443
+543,7,Router Onyx Elite,Redes,543
+75,7,All-in-One Vertex Mini,Computadoras,75
+397,6,Monitor Zylo Pulse,Monitores,397
+524,6,Switch Praxis Air,Redes,524
+326,4,Monitor Portatil Kortex Plus,Monitores,326
+530,4,Access Point Praxis Edge,Redes,530
+364,4,Monitor Ultrawide Lumen Air,Monitores,364
+115,3,Smartphone Zylo Mini,Smartphones,115
+99,3,Mini PC Lumen Vertex,Computadoras,99
+540,3,Access Point Praxis One,Redes,540

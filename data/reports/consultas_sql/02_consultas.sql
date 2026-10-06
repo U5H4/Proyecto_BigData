@@ -1,5 +1,5 @@
 -- Consultas analiticas NovaCommerce (18)
--- Ejecutadas: 2026-10-05 07:59:39
+-- Ejecutadas: 2026-10-05 18:24:06
 -- Dialecto: sqlite
 -- @VERDADERO@/@FALSO@ se sustituyen por 1/0 (SQLite) o TRUE/FALSE (PostgreSQL)
 

@@ -1,6 +1,6 @@
 # Entorno de integracion
 
-Generado: 2026-10-05 07:59:41
+Generado: 2026-10-05 18:24:07
 
 ## SQL
 
@@ -15,7 +15,7 @@ Generado: 2026-10-05 07:59:41
 
 | | |
 |---|---|
-| Motor usado | `local` |
+| Motor usado | `mongodb` |
 | Colecciones | productos (606), resenas (2475), actividad_usuario (4236) |
 | Indices | 12 definidos |
 | Pipelines | `data/reports/consultas_mongodb/01_pipelines.js` |

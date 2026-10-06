@@ -1398,18 +1398,27 @@ def ejecutar_pipelines(integrador: IntegradorMongo, fact: pd.DataFrame) -> pd.Da
         # $lookup contra la fact; aqui se resuelven con el DataFrame de
         # fact_ventas que ya esta en memoria.
         if p.get("post") == "excluir_vendidos(150)" and not df.empty:
-            df = df[~df["producto"].isin(vendidos)].copy()
+            if "producto" not in df.columns and "_id" in df.columns:
+                df["producto"] = df["_id"]
+            if "producto" in df.columns:
+                df = df[~df["producto"].isin(vendidos)].copy()
         elif p.get("post") == "cruzar_ventas" and not df.empty:
-            df["unidades"] = df["producto"].map(unidades).fillna(0).astype(int)
-            df = df[df["unidades"] > 0]
-            df = df.sort_values("unidades", ascending=False)
+            if "producto" not in df.columns and "_id" in df.columns:
+                df["producto"] = df["_id"]
+            if "producto" in df.columns:
+                df["unidades"] = df["producto"].map(unidades).fillna(0).astype(int)
+                df = df[df["unidades"] > 0]
+                df = df.sort_values("unidades", ascending=False)
         elif p.get("post") == "cruzar_con_fact_ventas" and not df.empty:
-            df["unidades"] = df["producto"].map(unidades).fillna(0).astype(int)
-            df["vendido"] = df["unidades"] > 0
-            df["ratio_ventas_por_visita"] = np.where(
-                df.visitas > 0, (df.unidades / df.visitas).round(3), 0.0
-            )
-            df = df.sort_values(["vendido", "unidades"], ascending=[False, False])
+            if "producto" not in df.columns and "_id" in df.columns:
+                df["producto"] = df["_id"]
+            if "producto" in df.columns:
+                df["unidades"] = df["producto"].map(unidades).fillna(0).astype(int)
+                df["vendido"] = df["unidades"] > 0
+                df["ratio_ventas_por_visita"] = np.where(
+                    df.visitas > 0, (df.unidades / df.visitas).round(3), 0.0
+                )
+                df = df.sort_values(["vendido", "unidades"], ascending=[False, False])
 
         if not df.empty and "visitas" in df.columns and "unidades" in df.columns:
             sub = df[(df.visitas > 0) & (df.unidades > 0)]
