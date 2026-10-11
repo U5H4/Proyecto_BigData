@@ -153,6 +153,21 @@ def test_tasa_de_cancelacion(fact):
     assert kpis["Tasa de cancelacion"] == "33.33%"
 
 
+def test_kpis_extra_usan_actividad_y_resenas(fact, documentos):
+    act = A.cargar_actividad(documentos)
+    res = A.cargar_resenas(documentos)
+    kpis = A.kpis_generales(fact, act, res).set_index("indicador")["valor"]
+    # Router D vende 4 unidades, Laptop A 2 y Mouse B 3
+    assert kpis["Producto mas vendido"] == "Router D"
+    # Computadoras acumula 15000 de utilidad bruta, por encima de Redes y Accesorios
+    assert kpis["Categoria mas rentable"] == "Computadoras"
+    # (5 + 1) / 2
+    assert kpis["Calificacion promedio"] == "3.00"
+    # sin fuentes no se agregan esos indicadores
+    base = A.kpis_generales(fact).set_index("indicador")["valor"]
+    assert "Calificacion promedio" not in base.index
+
+
 # --------------------------------------------------------------------------
 # Serie temporal y mixes
 # --------------------------------------------------------------------------
@@ -251,7 +266,7 @@ def test_correlacion_reporta_las_tres_poblaciones(fact, documentos):
     # el producto 4 (Teclado E) tiene visitas y cero ventas
     assert "Productos visitados" in nombres
     assert detalle.loc[detalle.id_producto == 4, "nombre"].iloc[0] == "Teclado E"
-    assert detalle.loc[detalle.id_producto == 4, "unidades"].iloc[0] == 0
+    assert detalle.loc[detalle.id_producto == 4, "cantidad_vendida"].iloc[0] == 0
 
 
 def test_correlacion_usa_una_poblacion_fija():
@@ -265,7 +280,7 @@ def test_inventario_muerto_solo_ventas_cero(fact, documentos):
     prods = A.cargar_productos(documentos)
     muertos = A.inventario_muerto(act, fact, prods)
     assert list(muertos.id_producto) == [4]
-    assert (muertos.unidades == 0).all()
+    assert (muertos.cantidad_vendida == 0).all()
     assert muertos.nombre.notna().all(), "el nombre viene del catalogo, no de la fact"
 
 
@@ -273,9 +288,33 @@ def test_under_exposure_exige_ventas(fact, documentos):
     act = A.cargar_actividad(documentos)
     prods = A.cargar_productos(documentos)
     under = A.under_exposure(act, fact, prods)
-    assert (under.unidades > 0).all()
+    assert (under.cantidad_vendida > 0).all()
     assert 4 not in set(under.id_producto)
     assert under.visitas_por_unidad.notna().all()
+
+
+def test_detalle_expone_los_campos_minimos_del_enunciado(fact, documentos):
+    act = A.cargar_actividad(documentos)
+    prods = A.cargar_productos(documentos)
+    _, detalle = A.correlacion_navegacion_venta(act, fact, prods)
+    assert list(detalle.columns) == [
+        "id_producto", "nombre", "categoria", "numero_visualizaciones",
+        "cantidad_vendida", "ingresos", "conversion_pct",
+    ]
+    # Router D (id 3): 4 unidades vendidas, ninguna visualizacion -> sin conversion
+    fila = detalle[detalle.id_producto == 3].iloc[0]
+    assert fila.cantidad_vendida == 4
+    assert fila.ingresos == pytest.approx(4800.0)
+    assert np.isnan(fila.conversion_pct)
+
+
+def test_cuadrantes_visitas_ventas_con_umbral_mediano(fact, documentos):
+    act = A.cargar_actividad(documentos)
+    prods = A.cargar_productos(documentos)
+    q = A.cuadrantes_visitas_ventas(act, fact, prods).set_index("cuadrante")
+    # visitas = {1:1, 2:1, 4:1}; mediana visitas = 1; mediana ventas = 2
+    assert q.loc["Muchas visualizaciones, pocas ventas", "productos"] == 2
+    assert q.loc["Pocas visualizaciones, muchas ventas", "productos"] == 2
 
 
 # --------------------------------------------------------------------------
@@ -359,7 +398,7 @@ def test_construir_todos_devuelve_todos_los_analisis(fact, documentos):
                                "ciudad": ["Veracruz", "Puebla", "Puebla"],
                                "region": ["Sureste", "Centro", "Centro"]})
     r = A.construir_todos(fact, documentos, sucursales)
-    assert len(r) == 19
+    assert len(r) == 20
     for nombre, df in r.items():
         assert isinstance(df, pd.DataFrame), nombre
     assert not r["01_kpis_generales"].empty

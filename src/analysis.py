@@ -107,7 +107,7 @@ def utilidad_y_margen(fact: pd.DataFrame) -> pd.DataFrame:
 def _puntuar(serie: pd.Series, mayor_es_mejor: bool) -> pd.Series:
     """Puntaje 1..5 por quintil. `rank(method='first')` desempata de forma
     determinista: sin esto, quintiles con muchos empates (muchos clientes con
-    1 sola compra)arian vacios y la segmentacion se descuadra."""
+    1 sola compra) quedarian vacios y la segmentacion se descuadra."""
     if len(serie) == 0:
         return pd.Series(dtype=int)
     # rank devuelve 1..n; se normaliza a 0..1 para que los cortes en quintiles
@@ -120,8 +120,14 @@ def _puntuar(serie: pd.Series, mayor_es_mejor: bool) -> pd.Series:
 # --------------------------------------------------------------------------
 # 1. KPIs generales
 # --------------------------------------------------------------------------
-def kpis_generales(fact: pd.DataFrame) -> pd.DataFrame:
-    """Tablero de una linea por indicador. Es la respuesta a 'como va la empresa'."""
+def kpis_generales(fact: pd.DataFrame, actividad: pd.DataFrame | None = None,
+                   resenas: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Tablero de una linea por indicador. Es la respuesta a 'como va la empresa'.
+
+    `actividad` y `resenas` son opcionales: solo se anaden los indicadores de
+    navegacion (producto mas visto) y de opinion (calificacion promedio) cuando
+    se pasan esas fuentes.
+    """
     lineas = utilidad_y_margen(fact)
     completadas = lineas[lineas["es_completado"]]
     pedidos = pedidos_unicos(fact)
@@ -129,6 +135,10 @@ def kpis_generales(fact: pd.DataFrame) -> pd.DataFrame:
     facturacion = completadas["total"].sum()
     unidades = completadas["cantidad"].sum()
     utilidad = completadas["utilidad_bruta"].sum()
+
+    # Producto que mas unidades vendio y categoria con mayor utilidad bruta.
+    ventas_producto = completadas.groupby("producto_nombre")["cantidad"].sum()
+    utilidad_categoria = completadas.groupby("categoria")["utilidad_bruta"].sum()
 
     kpis = [
         ("Facturacion", money(facturacion), "solo pedidos completados"),
@@ -143,6 +153,10 @@ def kpis_generales(fact: pd.DataFrame) -> pd.DataFrame:
         ("Clientes", numero(pedidos["id_cliente"].nunique()), "con al menos un pedido"),
         ("Productos vendidos", numero(completadas["id_producto"].nunique()), ""),
         ("Categorias", numero(fact["categoria"].nunique()), ""),
+        ("Producto mas vendido", ventas_producto.idxmax(),
+         f"{numero(int(ventas_producto.max()))} unidades vendidas"),
+        ("Categoria mas rentable", utilidad_categoria.idxmax(),
+         f"{money(utilidad_categoria.max())} de utilidad bruta"),
         ("Utilidad bruta", money(utilidad), "ingreso - costo - descuentos"),
         ("Margen real ponderado", f"{utilidad / completadas['ingreso_bruto'].sum() * 100:.2f}%",
          "utilidad / ingreso bruto"),
@@ -156,6 +170,13 @@ def kpis_generales(fact: pd.DataFrame) -> pd.DataFrame:
          if (completadas["descuento"] == 0).any() else "N/A", ""),
         ("Ingreso por cliente", money(facturacion / pedidos["id_cliente"].nunique()), ""),
     ]
+    if actividad is not None and not actividad.empty:
+        vistas = actividad[actividad["es_visualizacion"]].groupby("nombre_producto").size()
+        kpis.append(("Producto mas visto", vistas.idxmax(),
+                     f"{numero(int(vistas.max()))} visualizaciones"))
+    if resenas is not None and not resenas.empty:
+        kpis.append(("Calificacion promedio", f"{resenas['calificacion'].mean():.2f}",
+                     f"sobre {numero(len(resenas))} resenas"))
     return pd.DataFrame(kpis, columns=["indicador", "valor", "nota"])
 
 
@@ -358,7 +379,7 @@ def _catalogo_productos(fact: pd.DataFrame, productos: pd.DataFrame | None) -> p
 
     Se toma del catalogo de MongoDB y no de la fact a proposito: los productos
     que NUNCA se vendieron no existen en la fact, y son justo los que
-    interesting para el analisis de inversion no convertida.
+    interesan para el analisis de inversion no convertida.
     """
     if productos is not None and not productos.empty:
         return productos[["id_producto", "nombre", "categoria", "precio"]].copy()
@@ -366,6 +387,26 @@ def _catalogo_productos(fact: pd.DataFrame, productos: pd.DataFrame | None) -> p
             .set_index("id_producto")[["producto_nombre", "categoria", "precio_lista"]]
             .rename(columns={"producto_nombre": "nombre", "precio_lista": "precio"})
             .reset_index())
+
+
+def _visitas_y_ventas(actividad: pd.DataFrame, fact: pd.DataFrame,
+                      productos: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Tabla integrada producto a producto: navegacion (MongoDB) + ventas (SQL).
+
+    Une las visualizaciones de `actividad_usuario` con las unidades e ingresos
+    de la fact, y enriquece con nombre/categoria del catalogo. Es la base de la
+    correlacion, del inventario muerto, del under-exposure y de los cuadrantes,
+    de modo que las cuatro vistas salgan del mismo cruce.
+    """
+    visualizaciones = (actividad[actividad["es_visualizacion"]]
+                       .groupby("producto").size().rename("numero_visualizaciones"))
+    ingresos = (fact[fact["es_completado"]]
+                .groupby("id_producto")["total"].sum().rename("ingresos"))
+    j = pd.concat([visualizaciones, _unidades_vendidas(fact), ingresos], axis=1)
+    j.index.name = "id_producto"
+    j = j.fillna(0).reset_index()
+    j = j.rename(columns={"unidades": "cantidad_vendida"})
+    return j.merge(_catalogo_productos(fact, productos), on="id_producto", how="left")
 
 
 def correlacion_navegacion_venta(actividad: pd.DataFrame, fact: pd.DataFrame,
@@ -386,12 +427,15 @@ def correlacion_navegacion_venta(actividad: pd.DataFrame, fact: pd.DataFrame,
 
     Se agrega Spearman porque Pearson aqui lo distorsiona un solo producto
     con muchas unidades.
+
+    El detalle (la tabla integrada) expone los campos minimos del enunciado:
+    id_producto, nombre, categoria, numero_visualizaciones, cantidad_vendida
+    e ingresos, mas una conversion derivada.
     """
-    visitas = (actividad[actividad["es_visualizacion"]]
-               .groupby("producto").size().rename("visitas"))
-    j = pd.concat([visitas, _unidades_vendidas(fact)], axis=1)
-    j.index.name = "id_producto"
-    j = j.fillna(0)
+    detalle = _visitas_y_ventas(actividad, fact, productos)
+    j = (detalle.set_index("id_producto")[["numero_visualizaciones", "cantidad_vendida"]]
+         .rename(columns={"numero_visualizaciones": "visitas",
+                          "cantidad_vendida": "unidades"}))
 
     visitados = j[j["visitas"] > 0]
     visitados_y_vendidos = j[(j["visitas"] > 0) & (j["unidades"] > 0)]
@@ -419,37 +463,71 @@ def correlacion_navegacion_venta(actividad: pd.DataFrame, fact: pd.DataFrame,
         ("Productos sin ninguna visita", float((j["visitas"] == 0).sum()),
          "venta que la navegacion no puede explicar"),
     ]
-    detalle = j.reset_index().merge(_catalogo_productos(fact, productos),
-                                    on="id_producto", how="left")
-    detalle = detalle.sort_values("unidades", ascending=False).reset_index(drop=True)
+    detalle["conversion_pct"] = np.where(
+        detalle["numero_visualizaciones"] > 0,
+        100 * detalle["cantidad_vendida"] / detalle["numero_visualizaciones"], np.nan)
+    detalle = detalle.reindex(columns=["id_producto", "nombre", "categoria",
+                                       "numero_visualizaciones", "cantidad_vendida",
+                                       "ingresos", "conversion_pct"])
+    detalle = detalle.sort_values("cantidad_vendida", ascending=False).reset_index(drop=True)
     return pd.DataFrame(filas, columns=["metrica", "valor", "nota"]), detalle
 
 
 def inventario_muerto(actividad: pd.DataFrame, fact: pd.DataFrame,
                       productos: pd.DataFrame | None = None) -> pd.DataFrame:
     """Inversion que no convierte: mucho trafico, cero venta."""
-    visitas = (actividad[actividad["es_visualizacion"]]
-               .groupby("producto").size().rename("visitas"))
-    j = pd.concat([visitas, _unidades_vendidas(fact)], axis=1).fillna(0)
-    j.index.name = "id_producto"
-    j = j.reset_index().merge(_catalogo_productos(fact, productos),
-                              on="id_producto", how="left")
-    return (j[j["unidades"] == 0].sort_values("visitas", ascending=False)
+    j = _visitas_y_ventas(actividad, fact, productos)
+    return (j[j["cantidad_vendida"] == 0].sort_values("numero_visualizaciones", ascending=False)
             .reset_index(drop=True))
 
 
 def under_exposure(actividad: pd.DataFrame, fact: pd.DataFrame,
                    productos: pd.DataFrame | None = None) -> pd.DataFrame:
     """El caso inverso: se vende mucho con muy poca exposure."""
-    visitas = (actividad[actividad["es_visualizacion"]]
-               .groupby("producto").size().rename("visitas"))
-    j = pd.concat([visitas, _unidades_vendidas(fact)], axis=1).fillna(0)
-    j.index.name = "id_producto"
-    j = j.reset_index().merge(_catalogo_productos(fact, productos),
-                              on="id_producto", how="left")
-    j["visitas_por_unidad"] = np.where(j["unidades"] > 0, j["visitas"] / j["unidades"], np.nan)
-    return (j[j["unidades"] > 0].sort_values("unidades", ascending=False)
+    j = _visitas_y_ventas(actividad, fact, productos)
+    j["visitas_por_unidad"] = np.where(j["cantidad_vendida"] > 0,
+                                       j["numero_visualizaciones"] / j["cantidad_vendida"], np.nan)
+    return (j[j["cantidad_vendida"] > 0].sort_values("cantidad_vendida", ascending=False)
             .reset_index(drop=True))
+
+
+def cuadrantes_visitas_ventas(actividad: pd.DataFrame, fact: pd.DataFrame,
+                              productos: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Responde las dos preguntas cruzadas del enunciado con un umbral, no a ojo:
+
+    - "muchas visualizaciones pero pocas ventas": trafico alto (>= mediana) y
+      ventas bajas (<= mediana). Complementa a `inventario_muerto`, que solo
+      mira los que no vendieron NADA.
+    - "pocas visualizaciones pero muchas ventas": trafico bajo y ventas altas.
+      Es el caso de under-exposure.
+
+    Se usa la mediana de cada eje como corte para no depender de un supuesto
+    externo de "pocas" o "muchas".
+    """
+    j = _visitas_y_ventas(actividad, fact, productos)
+    vista = j[j["numero_visualizaciones"] > 0]
+    corte_v = vista["numero_visualizaciones"].median()
+    corte_u = vista["cantidad_vendida"].median()
+    cuadrantes = [
+        ("Muchas visualizaciones, pocas ventas",
+         vista[(vista["numero_visualizaciones"] >= corte_v) & (vista["cantidad_vendida"] <= corte_u)],
+         "se mira y no se compra: revisar precio, ficha y stock"),
+        ("Pocas visualizaciones, muchas ventas",
+         vista[(vista["numero_visualizaciones"] <= corte_v) & (vista["cantidad_vendida"] >= corte_u)],
+         "vende solo: merece mas exposure y presupuesto"),
+    ]
+    filas = []
+    for nombre, d, nota in cuadrantes:
+        filas.append({
+            "cuadrante": nombre,
+            "productos": len(d),
+            "corte_visualizaciones": round(corte_v, 1),
+            "corte_ventas": round(corte_u, 1),
+            "visualizaciones_promedio": round(d["numero_visualizaciones"].mean(), 1) if len(d) else 0.0,
+            "ventas_promedio": round(d["cantidad_vendida"].mean(), 1) if len(d) else 0.0,
+            "nota": nota,
+        })
+    return pd.DataFrame(filas)
 
 
 # --------------------------------------------------------------------------
@@ -483,7 +561,6 @@ def ley_pareto(fact: pd.DataFrame) -> pd.DataFrame:
 # --------------------------------------------------------------------------
 def calidad_pago(fact: pd.DataFrame) -> pd.DataFrame:
     pagos = fact.drop_duplicates("id_pedido")
-    conciliados = int(pagos["conciliado"].sum())
     g = (pagos.groupby("estado_pago")
          .agg(pedidos=("id_pedido", "size"),
               monto=("monto", "sum"),
@@ -561,7 +638,7 @@ def construir_todos(fact: pd.DataFrame, documentos: dict,
     segmentos = segmentacion_clientes(fact)
 
     return {
-        "01_kpis_generales": kpis_generales(fact),
+        "01_kpis_generales": kpis_generales(fact, actividad, resenas),
         "02_ventas_mensuales": ventas_mensuales(fact),
         "03_mix_categoria": mix_categoria(fact),
         "04_mix_canal": mix_canal(fact),
@@ -580,6 +657,7 @@ def construir_todos(fact: pd.DataFrame, documentos: dict,
         "17_impacto_descuentos": impacto_descuentos(fact),
         "18_satisfaccion": satisfaccion(resenas),
         "19_productos_valorados": productos_valorados(resenas),
+        "20_cuadrantes_visitas_ventas": cuadrantes_visitas_ventas(actividad, fact, productos),
     }
 
 

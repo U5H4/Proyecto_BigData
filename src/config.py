@@ -14,6 +14,13 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv(ROOT / ".env")
+except Exception:
+    pass
+
+
 DATA = ROOT / "data"
 RAW = DATA / "raw"
 RAW_CSV = RAW / "csv"
@@ -57,7 +64,7 @@ N_SUCURSALES = 12
 N_PROVEEDORES = 10
 N_PROMOCIONES = 14
 
-# Rango de fechas del negocio (tendale Historico)
+# Rango de fechas del negocio (tendencia historica)
 FECHA_INICIO = "2024-01-01"
 FECHA_FIN = "2026-09-30"
 
@@ -112,7 +119,7 @@ CANALES_VENTA = ["web", "app_movil", "tienda_fisica"]
 
 # --------------------------------------------------------------------------
 # Plantillas de producto por categoria.
-# {marca} y {modelo} se sustituyen para obtener 500 productos unicos.
+# {marca} y {modelo} se sustituyen para dar variedad de nombre al producto.
 # ----------------------------------------------------------------------------
 # ATRIBUTOS_VARIABLES es el insight clave: cada categoria expone un conjunto
 # de atributos distinto -> justifica MongoDB (documentos heterogeneos) frente a
@@ -274,9 +281,34 @@ MONGO_DB = _env("MONGO_DB", "novacommerce")
 
 # Alternativa gratuita/academica sugerida en la Parte VI.
 MONGO_ATLAS_URI = _env("MONGO_ATLAS_URI", "")
-CLOUD_STORAGE_URI = _env("CLOUD_STORAGE_URI", "")  # gs:// o s3://
 
-MODO_SIMULADO = True  # el runner lo cambia a False si detecta credenciales
+# --------------------------------------------------------------------------
+# Supabase (PostgreSQL administrado en la nube). Si SUPABASE_HOST está
+# definido, gana sobre PG_*. Sin credenciales, el pipeline degrada a SQLite.
+# Docs: https://supabase.com/docs/guides/database/connecting-to-postgres
+# --------------------------------------------------------------------------
+SUPABASE_HOST = _env("SUPABASE_HOST", "")
+SUPABASE_PORT = int(_env("SUPABASE_PORT", "5432"))
+SUPABASE_DATABASE = _env("SUPABASE_DATABASE", "postgres")
+SUPABASE_USER = _env("SUPABASE_USER", "postgres")
+SUPABASE_PASSWORD = _env("SUPABASE_PASSWORD", PG_CONFIG["password"])
+
+# Nivel TLS al conectar a PostgreSQL. Supabase exige "require".
+PG_SSLMODE = _env("PG_SSLMODE", "prefer")
+
+
+def config_pg() -> dict:
+    """Devuelve la configuracion PostgreSQL activa (Supabase si se definio)."""
+    if SUPABASE_HOST:
+        return {
+            "host": SUPABASE_HOST,
+            "port": SUPABASE_PORT,
+            "database": SUPABASE_DATABASE,
+            "user": SUPABASE_USER,
+            "password": SUPABASE_PASSWORD,
+        }
+    return dict(PG_CONFIG)
+
 
 # --------------------------------------------------------------------------
 # Paleta de colores: las 6 categorias comparten paleta en todas las graficas

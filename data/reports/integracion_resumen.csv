@@ -1,29 +1,46 @@
-﻿id,titulo,pregunta,estado,filas,columnas,ms,error,archivo,tipo,motor,colectivo,origen,correlacion_visitas_unidades
-Q01,Top 10 productos por facturacion,Cuales productos mueven mas dinero?,OK,10,7,5.0,,Q01_top_10_productos_por_facturacion.csv,SQL,sqlite,,,
-Q02,Top 10 clientes por gasto,Quiennes son los clientes mas valiosos?,OK,10,8,6.0,,Q02_top_10_clientes_por_gasto.csv,SQL,sqlite,,,
-Q03,Ventas mes a mes (serie temporal),Como evoluciona la facturacion?,OK,36,7,3.0,,Q03_ventas_mes_a_mes_serie_temporal.csv,SQL,sqlite,,,
-Q04,Facturacion por categoria,Que mix de producto funciona?,OK,6,6,3.0,,Q04_facturacion_por_categoria.csv,SQL,sqlite,,,
-Q05,Ticket promedio por canal de venta,El canal fisico o el digital convierte mejor?,OK,3,6,3.0,,Q05_ticket_promedio_por_canal_de_venta.csv,SQL,sqlite,,,
-Q06,Productos en catalogo que NUNCA se vendieron,Cuanto inventario muerto hay?,OK,55,5,2.0,,Q06_productos_en_catalogo_que_nunca_se_vendieron.csv,SQL,sqlite,,,
-Q07,Clientes con pedidos cancelados,Que clientesCancelan y cuanto nos cuestan?,OK,25,5,4.0,,Q07_clientes_con_pedidos_cancelados.csv,SQL,sqlite,,,
-Q08,Metodos de pago mas usados y su conciliacion,Que metodo de pago y como se concilia?,OK,6,5,4.0,,Q08_metodos_de_pago_mas_usados_y_su_conciliacion.csv,SQL,sqlite,,,
-Q09,Productos con mayor descuento promedio,Donde nos estamos regalando margen?,OK,20,6,4.4,,Q09_productos_con_mayor_descuento_promedio.csv,SQL,sqlite,,,
-Q10,Ciudades con mas facturacion,Donde esta el dinero geografico?,OK,10,5,3.1,,Q10_ciudades_con_mas_facturacion.csv,SQL,sqlite,,,
-Q11,Clientes premium vs estandar,El segmento premium vale la pena?,OK,2,6,3.0,,Q11_clientes_premium_vs_estandar.csv,SQL,sqlite,,,
-Q12,Concentracion de ventas (ley de Pareto),Cuantos productos explican la mayor parte de la venta?,OK,1,3,6.0,,Q12_concentracion_de_ventas_ley_de_pareto.csv,SQL,sqlite,,,
-Q13,Productos con mejor margen real,"La rentabilidad por producto, no la del catalogo?",OK,20,7,3.1,,Q13_productos_con_mejor_margen_real.csv,SQL,sqlite,,,
-Q14,Pedidos con pago NO conciliado,Que pedidos tienen descuadre de dinero?,OK,25,9,2.0,,Q14_pedidos_con_pago_no_conciliado.csv,SQL,sqlite,,,
-Q15,Clientes nuevos vs recurrentes,El negocio esta captando o solo repite?,OK,2,5,4.0,,Q15_clientes_nuevos_vs_recurrentes.csv,SQL,sqlite,,,
-Q16,Trimestre x categoria (pivot de mix),El mix estacional cambia por trimestre?,OK,72,5,4.0,,Q16_trimestre_x_categoria_pivot_de_mix.csv,SQL,sqlite,,,
-Q17,Productos de alto valor y baja rotacion,Que productos caros no rotan?,OK,25,7,4.0,,Q17_productos_de_alto_valor_y_baja_rotacion.csv,SQL,sqlite,,,
-Q18,Cobertura por sucursal y estado del pedido,Como rinde cada sucursal?,OK,48,5,6.0,,Q18_cobertura_por_sucursal_y_estado_del_pedido.csv,SQL,sqlite,,,
-A01,Top 10 productos mas vistos,Que productos concentran la atencion?,OK,10,4,49.8,,,NoSQL,mongodb,actividad_usuario,mongodb,
-A02,Productos vistos muchas veces y NUNCA vendidos,Cual es la inversion publicitaria que no convierte?,OK,26,5,44.7,,,NoSQL,mongodb,actividad_usuario,mongodb,
-A03,Productos vendidos pese a ser poco vistos,Cual es la under-exposure que nos cuesta venta?,OK,126,6,48.1,,,NoSQL,mongodb,actividad_usuario,mongodb,
-A04,Distribucion de visitas por mes,Como se mueve el trafico web?,OK,35,3,48.9,,,NoSQL,mongodb,actividad_usuario,mongodb,
-A05,Navegacion por categoria y dispositivo,Que dispositivo prefiere cada categoria?,OK,24,4,49.1,,,NoSQL,mongodb,actividad_usuario,mongodb,
-A06,Rating promedio y dispersion por producto,Que tan bien recibidos estan los productos?,OK,25,7,31.0,,,NoSQL,mongodb,resenas,mongodb,
-A07,Productos bien valorados y con muchas resenas,El juicio positivo se sostiene entre productos?,OK,20,3,36.3,,,NoSQL,mongodb,resenas,mongodb,
-A08,Catalogo por subdocumento de atributos (consulta dinamica),Se puede consultar un atributo que solo existe en una familia?,OK,7,4,18.0,,,NoSQL,mongodb,productos,mongodb,
-A09,Recorrido del usuario mas activo,Como se ve la sesion de un cliente que si navego?,OK,9,5,61.6,,,NoSQL,mongodb,actividad_usuario,mongodb,
-A10,Correlacion visitas vs ventas por producto,La navegacion predice la venta (punto 23 del enunciado)?,OK,455,6,52.4,,,NoSQL,mongodb,actividad_usuario,mongodb,0.3234
+﻿id,titulo,pregunta,estado,filas,columnas,ms,error,archivo,tipo,motor,colectivo,origen,correlacion_visitas_unidades,coleccion,operacion
+Q01,Top 10 productos por facturacion,Cuales productos mueven mas dinero?,OK,10,7,172.6,,Q01_top_10_productos_por_facturacion.csv,SQL,Supabase,,,,,
+Q02,Top 10 clientes por gasto,Quiennes son los clientes mas valiosos?,OK,10,8,95.1,,Q02_top_10_clientes_por_gasto.csv,SQL,Supabase,,,,,
+Q03,Ventas mes a mes (serie temporal),Como evoluciona la facturacion?,OK,36,7,94.3,,Q03_ventas_mes_a_mes_serie_temporal.csv,SQL,Supabase,,,,,
+Q04,Facturacion por categoria,Que mix de producto funciona?,OK,6,6,95.4,,Q04_facturacion_por_categoria.csv,SQL,Supabase,,,,,
+Q05,Ticket promedio por canal de venta,El canal fisico o el digital convierte mejor?,OK,3,6,88.5,,Q05_ticket_promedio_por_canal_de_venta.csv,SQL,Supabase,,,,,
+Q06,Productos en catalogo que NUNCA se vendieron,Cuanto inventario muerto hay?,OK,55,5,88.1,,Q06_productos_en_catalogo_que_nunca_se_vendieron.csv,SQL,Supabase,,,,,
+Q07,Clientes con pedidos cancelados,Que clientes cancelan y cuanto nos cuestan?,OK,25,5,90.4,,Q07_clientes_con_pedidos_cancelados.csv,SQL,Supabase,,,,,
+Q08,Metodos de pago mas usados y su conciliacion,Que metodo de pago y como se concilia?,OK,6,5,94.0,,Q08_metodos_de_pago_mas_usados_y_su_conciliacion.csv,SQL,Supabase,,,,,
+Q09,Productos con mayor descuento promedio,Donde nos estamos regalando margen?,OK,20,6,84.4,,Q09_productos_con_mayor_descuento_promedio.csv,SQL,Supabase,,,,,
+Q10,Ciudades con mas facturacion,Donde esta el dinero geografico?,OK,10,5,85.7,,Q10_ciudades_con_mas_facturacion.csv,SQL,Supabase,,,,,
+Q11,Clientes premium vs estandar,El segmento premium vale la pena?,OK,2,6,87.0,,Q11_clientes_premium_vs_estandar.csv,SQL,Supabase,,,,,
+Q12,Concentracion de ventas (ley de Pareto),Cuantos productos explican la mayor parte de la venta?,OK,1,3,90.2,,Q12_concentracion_de_ventas_ley_de_pareto.csv,SQL,Supabase,,,,,
+Q13,Productos con mejor margen real,"La rentabilidad por producto, no la del catalogo?",OK,20,7,94.6,,Q13_productos_con_mejor_margen_real.csv,SQL,Supabase,,,,,
+Q14,Pedidos con pago NO conciliado,Que pedidos tienen descuadre de dinero?,OK,25,9,90.9,,Q14_pedidos_con_pago_no_conciliado.csv,SQL,Supabase,,,,,
+Q15,Clientes nuevos vs recurrentes,El negocio esta captando o solo repite?,OK,2,5,81.6,,Q15_clientes_nuevos_vs_recurrentes.csv,SQL,Supabase,,,,,
+Q16,Trimestre x categoria (pivot de mix),El mix estacional cambia por trimestre?,OK,72,5,90.1,,Q16_trimestre_x_categoria_pivot_de_mix.csv,SQL,Supabase,,,,,
+Q17,Productos de alto valor y baja rotacion,Que productos caros no rotan?,OK,25,7,87.1,,Q17_productos_de_alto_valor_y_baja_rotacion.csv,SQL,Supabase,,,,,
+Q18,Cobertura por sucursal y estado del pedido,Como rinde cada sucursal?,OK,48,5,92.3,,Q18_cobertura_por_sucursal_y_estado_del_pedido.csv,SQL,Supabase,,,,,
+Q19,Detalle 360 del pedido (JOIN de 6 tablas),Cual es el detalle completo de cada linea de venta?,OK,20,12,92.9,,Q19_detalle_360_del_pedido_join_de_6_tablas.csv,SQL,Supabase,,,,,
+Q20,Resumen mensual via vista v_resumen_ventas,Cual es el pulso mensual sin reescribir el JOIN?,OK,36,8,103.0,,Q20_resumen_mensual_via_vista_v_resumen_ventas.csv,SQL,Supabase,,,,,
+A01,Top 10 productos mas vistos,Que productos concentran la atencion?,OK,10,4,148.8,,,NoSQL (aggregate),mongodb,actividad_usuario,mongodb,,,
+A02,Productos vistos muchas veces y NUNCA vendidos,Cual es la inversion publicitaria que no convierte?,OK,25,5,217.6,,,NoSQL (aggregate),mongodb,actividad_usuario,mongodb,,,
+A03,Productos vendidos pese a ser poco vistos,Cual es la under-exposure que nos cuesta venta?,OK,127,6,272.1,,,NoSQL (aggregate),mongodb,actividad_usuario,mongodb,,,
+A04,Distribucion de visitas por mes,Como se mueve el trafico web?,OK,35,3,136.9,,,NoSQL (aggregate),mongodb,actividad_usuario,mongodb,,,
+A05,Navegacion por categoria y dispositivo,Que dispositivo prefiere cada categoria?,OK,24,4,109.6,,,NoSQL (aggregate),mongodb,actividad_usuario,mongodb,,,
+A06,Rating promedio y dispersion por producto,Que tan bien recibidos estan los productos?,OK,25,7,109.9,,,NoSQL (aggregate),mongodb,resenas,mongodb,,,
+A07,Productos bien valorados y con muchas resenas,El juicio positivo se sostiene entre productos?,OK,20,3,131.9,,,NoSQL (aggregate),mongodb,resenas,mongodb,,,
+A08,Catalogo por subdocumento de atributos (consulta dinamica),Se puede consultar un atributo que solo existe en una familia?,OK,7,4,102.2,,,NoSQL (aggregate),mongodb,productos,mongodb,,,
+A09,Recorrido del usuario mas activo,Como se ve la sesion de un cliente que si navego?,OK,9,5,147.0,,,NoSQL (aggregate),mongodb,actividad_usuario,mongodb,,,
+A10,Correlacion visitas vs ventas por producto,La navegacion predice la venta (punto 23 del enunciado)?,OK,455,6,235.1,,,NoSQL (aggregate),mongodb,actividad_usuario,mongodb,0.3234,,
+B01,Productos premium (precio > 5000),Que articulos de gama alta tenemos?,OK,10,5,109.0,,B01_productos_premium_precio_5000.csv,NoSQL (find),mongodb,,,,productos,find
+B02,Productos economicos (precio < 1000),Que opciones de bajo costo hay?,OK,10,4,101.6,,B02_productos_economicos_precio_1000.csv,NoSQL (find),mongodb,,,,productos,find
+B03,Catalogo de Computadoras y Monitores,Que hay en las categorias de mayor ticket?,OK,15,4,109.3,,B03_catalogo_de_computadoras_y_monitores.csv,NoSQL (find),mongodb,,,,productos,find
+B04,Rango Alto y menos de 30000 ($and),Que productos caros siguen siendo alcanzables?,OK,10,4,123.8,,B04_rango_alto_y_menos_de_30000_and.csv,NoSQL (find),mongodb,,,,productos,find
+B05,Redes o Accesorios ($or),Cual es el surtido de conectividad y perifericos?,OK,20,4,109.8,,B05_redes_o_accesorios_or.csv,NoSQL (find),mongodb,,,,productos,find
+B06,Banda de precio 1000-5000 ($gte/$lte),Cual es el corazon del catalogo?,OK,15,4,124.0,,B06_banda_de_precio_1000_5000_gte_lte.csv,NoSQL (find),mongodb,,,,productos,find
+B07,Resenas de 5 estrellas ($gt),Que opiniones sobresalientes hay?,OK,20,5,103.3,,B07_resenas_de_5_estrellas_gt.csv,NoSQL (find),mongodb,,,,resenas,find
+B08,Resenas negativas ($lt),Que productos estan generando insatisfaccion?,OK,20,5,96.4,,B08_resenas_negativas_lt.csv,NoSQL (find),mongodb,,,,resenas,find
+B09,Resenas 1 y 2 estrellas ($in),Cuales son las quejas duras?,OK,25,4,97.3,,B09_resenas_1_y_2_estrellas_in.csv,NoSQL (find),mongodb,,,,resenas,find
+B10,Resenas buenas y verificadas ($and),Que alabanzas vienen de compras confirmadas?,OK,20,5,97.0,,B10_resenas_buenas_y_verificadas_and.csv,NoSQL (find),mongodb,,,,resenas,find
+B11,Resenas extremas 1 o 5 ($or),Que productos polarizan la opinion?,OK,20,4,103.1,,B11_resenas_extremas_1_o_5_or.csv,NoSQL (find),mongodb,,,,resenas,find
+B12,Visualizaciones largas (>300s) ($and/$gt),Que productos retienen la atencion?,OK,20,5,107.9,,B12_visualizaciones_largas_300s_and_gt.csv,NoSQL (find),mongodb,,,,actividad_usuario,find
+B13,Conteo de compras registradas (countDocuments),Cuantos eventos de compra hay en total?,OK,1,2,105.4,,B13_conteo_de_compras_registradas_countdocuments.csv,NoSQL (find),mongodb,,,,actividad_usuario,countDocuments
+B14,Navegacion desde equipos Apple ($in),Como navega el usuario de ecosistema Apple?,OK,20,5,312.5,,B14_navegacion_desde_equipos_apple_in.csv,NoSQL (find),mongodb,,,,actividad_usuario,find
+B15,Sesiones muy cortas o muy largas ($or),Donde el engagement es anomalo?,OK,25,4,110.4,,B15_sesiones_muy_cortas_o_muy_largas_or.csv,NoSQL (find),mongodb,,,,actividad_usuario,find

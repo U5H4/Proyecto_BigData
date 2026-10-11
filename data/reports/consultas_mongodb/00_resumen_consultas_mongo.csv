@@ -1,0 +1,16 @@
+﻿id,titulo,pregunta,coleccion,operacion,estado,filas,columnas,ms,error,archivo
+B01,Productos premium (precio > 5000),Que articulos de gama alta tenemos?,productos,find,OK,10,5,109.0,,B01_productos_premium_precio_5000.csv
+B02,Productos economicos (precio < 1000),Que opciones de bajo costo hay?,productos,find,OK,10,4,101.6,,B02_productos_economicos_precio_1000.csv
+B03,Catalogo de Computadoras y Monitores,Que hay en las categorias de mayor ticket?,productos,find,OK,15,4,109.3,,B03_catalogo_de_computadoras_y_monitores.csv
+B04,Rango Alto y menos de 30000 ($and),Que productos caros siguen siendo alcanzables?,productos,find,OK,10,4,123.8,,B04_rango_alto_y_menos_de_30000_and.csv
+B05,Redes o Accesorios ($or),Cual es el surtido de conectividad y perifericos?,productos,find,OK,20,4,109.8,,B05_redes_o_accesorios_or.csv
+B06,Banda de precio 1000-5000 ($gte/$lte),Cual es el corazon del catalogo?,productos,find,OK,15,4,124.0,,B06_banda_de_precio_1000_5000_gte_lte.csv
+B07,Resenas de 5 estrellas ($gt),Que opiniones sobresalientes hay?,resenas,find,OK,20,5,103.3,,B07_resenas_de_5_estrellas_gt.csv
+B08,Resenas negativas ($lt),Que productos estan generando insatisfaccion?,resenas,find,OK,20,5,96.4,,B08_resenas_negativas_lt.csv
+B09,Resenas 1 y 2 estrellas ($in),Cuales son las quejas duras?,resenas,find,OK,25,4,97.3,,B09_resenas_1_y_2_estrellas_in.csv
+B10,Resenas buenas y verificadas ($and),Que alabanzas vienen de compras confirmadas?,resenas,find,OK,20,5,97.0,,B10_resenas_buenas_y_verificadas_and.csv
+B11,Resenas extremas 1 o 5 ($or),Que productos polarizan la opinion?,resenas,find,OK,20,4,103.1,,B11_resenas_extremas_1_o_5_or.csv
+B12,Visualizaciones largas (>300s) ($and/$gt),Que productos retienen la atencion?,actividad_usuario,find,OK,20,5,107.9,,B12_visualizaciones_largas_300s_and_gt.csv
+B13,Conteo de compras registradas (countDocuments),Cuantos eventos de compra hay en total?,actividad_usuario,countDocuments,OK,1,2,105.4,,B13_conteo_de_compras_registradas_countdocuments.csv
+B14,Navegacion desde equipos Apple ($in),Como navega el usuario de ecosistema Apple?,actividad_usuario,find,OK,20,5,312.5,,B14_navegacion_desde_equipos_apple_in.csv
+B15,Sesiones muy cortas o muy largas ($or),Donde el engagement es anomalo?,actividad_usuario,find,OK,25,4,110.4,,B15_sesiones_muy_cortas_o_muy_largas_or.csv

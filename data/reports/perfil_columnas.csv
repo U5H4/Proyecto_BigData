@@ -8,7 +8,7 @@ dataset_postgresql.csv,id_sucursal,Int64,3891,0,12,1,12
 dataset_postgresql.csv,fecha_pedido,datetime64[ns],3891,0,909,2024-01-01 00:00:00,2026-12-09 00:00:00
 dataset_postgresql.csv,anio,Int64,3891,0,3,2024,2026
 dataset_postgresql.csv,mes,Int64,3891,0,12,1,12
-dataset_postgresql.csv,mes_nombre,object,3891,0,12,Abril,Setiembre
+dataset_postgresql.csv,mes_nombre,object,3891,0,12,Abril,Septiembre
 dataset_postgresql.csv,trimestre,Int64,3891,0,4,1,4
 dataset_postgresql.csv,anio_mes,object,3891,0,36,2024-01,2026-12
 dataset_postgresql.csv,cliente_nombre,object,3891,0,1055,ABRIL RODRIGUEZ,ximena jimenez
@@ -64,6 +64,7 @@ tablas/clientes.csv,nombre,object,1862,0,1389,ABRIL RODRIGUEZ,ximena jimenez
 tablas/clientes.csv,correo,object,1862,0,1826,SIN_DATO@novatech.mx,ximena.vega@outlook.com
 tablas/clientes.csv,telefono,object,1862,0,1828,5510059909,SIN_DATO
 tablas/clientes.csv,ciudad,object,1862,0,10,Cancun,Veracruz
+tablas/clientes.csv,id_ciudad,int64,1862,0,10,1,10
 tablas/clientes.csv,fecha_alta,datetime64[ns],1862,0,584,2024-01-01 00:00:00,2025-12-06 00:00:00
 tablas/clientes.csv,canal_registro,object,1862,0,3,app_movil,web
 tablas/clientes.csv,es_premium,boolean,1862,0,2,False,True
@@ -87,7 +88,7 @@ tablas/pedidos.csv,id_cliente,Int64,3277,0,1536,1,2058
 tablas/pedidos.csv,fecha_pedido,datetime64[ns],3277,0,974,2024-01-01 00:00:00,2026-12-09 00:00:00
 tablas/pedidos.csv,anio,Int64,3277,0,3,2024,2026
 tablas/pedidos.csv,mes,Int64,3277,0,12,1,12
-tablas/pedidos.csv,mes_nombre,object,3277,0,12,Abril,Setiembre
+tablas/pedidos.csv,mes_nombre,object,3277,0,12,Abril,Septiembre
 tablas/pedidos.csv,trimestre,Int64,3277,0,4,1,4
 tablas/pedidos.csv,anio_mes,object,3277,0,36,2024-01,2026-12
 tablas/pedidos.csv,canal_venta,object,3277,0,3,app_movil,web

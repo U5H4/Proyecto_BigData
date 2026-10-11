@@ -172,7 +172,7 @@ def construir_catalogo(rng: random.Random) -> pd.DataFrame:
     id_producto = 0
 
     categorias = list(PLANTILLAS_PRODUCTO)
-    # Reparto proporcional: 500 productos entre 6 categorias.
+    # Reparto proporcional de N_PRODUCTOS entre las 6 categorias.
     base = N_PRODUCTOS // len(categorias)
     reparto = {c: base for c in categorias}
     for i in range(N_PRODUCTOS - base * len(categorias)):
@@ -266,7 +266,6 @@ def fuente_clientes(rng: random.Random) -> Path:
     filas = []
     for i in range(1, N_CLIENTES + 1):
         nombre = f"{rng.choice(NOMBRES)} {rng.choice(APELLIDOS)}"
-        apellido = nombre.split(" ")[-1]
         correo = f"{clave(nombre).replace(' ', '.')}@{rng.choice(DOMINIOS)}"
         alta = pd.Timestamp(FECHA_INICIO) + pd.Timedelta(days=rng.randint(0, 600))
         fila = {
@@ -448,7 +447,7 @@ def fuente_detalle_pedido(
     for i in range(1, N_DETALLE_PEDIDO + 1):
         fecha = inicio + pd.Timedelta(days=int(rng.random() ** 0.85 * (fin - inicio).days))
         id_producto = int(rng.choices(ids_producto, weights=pesos)[0])
-        precio = float(catalogo.loc[catalogo["id_producto"] == id_producto, "precio"].iloc[0])
+        precio = float(precio_por_id[id_producto])
 
         # Cantidades invalidas (punto 7)
         cantidad = rng.choices(
@@ -915,7 +914,7 @@ def main() -> dict[str, Path]:
 
     # El perfil de navegacion se define ANTES que el detalle_pedido, porque es
     # el que decide que productos quedan "vistos pero nunca vendidos".
-    ids_vis, pesos_vis, rol_vis, solo_vistos = construir_peso_visualizacion(
+    _ids_vis, pesos_vis, rol_vis, solo_vistos = construir_peso_visualizacion(
         catalogo, random.Random(SEED + 7)
     )
     LOG.info("Perfil de navegacion: %d productos 'vistos nunca vendidos', "

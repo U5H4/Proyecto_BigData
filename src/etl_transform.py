@@ -46,7 +46,9 @@ MESES_ES = {
     "julio": 7, "agosto": 8, "septiembre": 9, "setiembre": 9, "octubre": 10,
     "noviembre": 11, "diciembre": 12,
 }
-NOMBRE_MES = {v: k.capitalize() for k, v in MESES_ES.items()}
+# "septiembre" y "setiembre" son el mismo mes: se excluye la variante para que
+# el nombre canonico del mes 9 sea "Septiembre" y no "Setiembre".
+NOMBRE_MES = {v: k.capitalize() for k, v in MESES_ES.items() if k != "setiembre"}
 
 
 # ==========================================================================
@@ -779,8 +781,10 @@ def t07_validar_cantidades(d: dict[str, pd.DataFrame], t: CalidadTracker) -> Non
     df["cantidad"] = df["cantidad"].astype("float64")
 
     fuera = int(((df["cantidad"] < CANTIDAD_MIN) | (df["cantidad"] > CANTIDAD_MAX)).sum())
-    # Politica explicita: 0, negativos y >100 son errores de captura -> se
-    # acetan (no se inventa) en lugar de convertirlos a 1.
+    # Politica explicita: 0, negativos y >100 son errores de captura. Se marcan
+    # como NaN (no se conserva el valor invalido) y se imputa 1 unidad, que es
+    # el minimo valido: asi no se pierde la linea ni se inventa una cantidad
+    # grande a partir de una lectura erronea.
     df.loc[(df["cantidad"] < CANTIDAD_MIN) | (df["cantidad"] > CANTIDAD_MAX), "cantidad"] = np.nan
     df["cantidad"] = df["cantidad"].fillna(1.0).astype("int64")
     d["detalle_pedido"] = df

@@ -27,7 +27,9 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -38,11 +40,12 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.exc import SQLAlchemyError
 
 from config import (
+    MONGO_ATLAS_URI,
     MONGO_DB,
     MONGO_URI,
-    PG_CONFIG,
     PROCESSED,
     REPORTS,
+    config_pg,
 )
 from etl_load import (
     ESQUEMA_DIM_SUCURSALES,
@@ -67,22 +70,39 @@ SQLITE_PATH = INTEGRACION / "novacommerce.db"
 CLAVES_PRIMARIAS = {
     "categorias": "id_categoria",
     "dim_ciudades": "id_ciudad",
+    "dim_sucursales": "id_sucursal",
     "clientes": "id_cliente",
     "productos": "id_producto",
     "pedidos": "id_pedido",
     "detalle_pedido": "id_detalle",
     "pagos": "id_pago",
+    "fact_ventas": "id_detalle",
 }
 
 # (columna_hija, tabla_padre, columna_padre). El orden de ORDEN_CARGA garantiza
 # que el padre ya existe cuando se inserta la hija.
 CLAVES_FORANEAS = [
+    ("clientes", "id_ciudad", "dim_ciudades", "id_ciudad"),
     ("productos", "id_categoria", "categorias", "id_categoria"),
     ("pedidos", "id_cliente", "clientes", "id_cliente"),
     ("pedidos", "id_sucursal", "dim_sucursales", "id_sucursal"),
     ("detalle_pedido", "id_pedido", "pedidos", "id_pedido"),
     ("detalle_pedido", "id_producto", "productos", "id_producto"),
     ("pagos", "id_pedido", "pedidos", "id_pedido"),
+]
+
+# FK de la fact analitica. fact_ventas NO es una tabla de hechos normalizada
+# (es un desnormalizado intencional con los nombres ya pegados), pero conserva
+# las llaves de cada dimension para poder declarar las mismas relaciones en el
+# motor: asi el visualizador de esquema muestra el modelo estrella completo.
+# (columna_fact, tabla_padre, columna_padre).
+CLAVES_FORANEAS_FACT = [
+    ("id_pedido", "pedidos", "id_pedido"),
+    ("id_producto", "productos", "id_producto"),
+    ("id_cliente", "clientes", "id_cliente"),
+    ("id_categoria", "categorias", "id_categoria"),
+    ("id_sucursal", "dim_sucursales", "id_sucursal"),
+    ("id_ciudad", "dim_ciudades", "id_ciudad"),
 ]
 
 # Indices para los patrones de consulta mas frecuentes del punto 13.
@@ -142,6 +162,30 @@ COLUMNAS_AUTOMATICAS = {
 
 TIPO_DIM_SUCURSALES = ESQUEMA_DIM_SUCURSALES
 
+# Columnas de negocio que el dataset garantiza no nulas (verificado en
+# data/reports/perfil_columnas.csv: 0 nulos). Se declaran NOT NULL para que
+# la base, no solo Pandas, haga cumplir la regla.
+COLUMNAS_NOT_NULL = {
+    "categorias": ["nombre"],
+    "dim_ciudades": ["nombre"],
+    "dim_sucursales": ["nombre"],
+    "clientes": ["nombre", "correo"],
+    "productos": ["nombre", "precio"],
+    "pedidos": ["fecha_pedido", "total_pedido"],
+    "detalle_pedido": ["cantidad", "precio_unitario", "subtotal", "total"],
+    "pagos": ["metodo", "monto"],
+}
+
+# Restricciones UNIQUE de llave natural. `clientes.correo` NO entra: el dataset
+# tiene 36 correos repetidos (compras compartidas) y el enunciado pide UNIQUE,
+# no deduplicar. Se usa la llave natural de las dimensiones, que si es unica.
+UNICAS = [
+    ("categorias", ["nombre"], "uq_categorias_nombre"),
+    ("dim_ciudades", ["nombre"], "uq_ciudades_nombre"),
+    ("dim_sucursales", ["nombre"], "uq_sucursales_nombre"),
+    ("productos", ["nombre"], "uq_productos_nombre"),
+]
+
 # Tokens de booleano que se sustituyen en las consultas segun el dialecto.
 # SQLite guarda BOOLEAN como 0/1 y NO acepta `= TRUE`; PostgreSQL al reves.
 TOKEN_VERDADERO = "@VERDADERO@"
@@ -171,16 +215,13 @@ def _tipo(dialecto: str, tipo_pg: str) -> str:
     return tipo_pg
 
 
-def _es_autoincremental(tabla: str, columna: str, dialecto: str) -> bool:
-    return (tabla, columna) in COLUMNAS_AUTOMATICAS
-
-
 def _ddl_tabla(tabla: str, dialecto: str) -> str:
     """Genera el CREATE TABLE de una tabla normalizada."""
     esquema = TIPO_DIM_SUCURSALES if tabla == "dim_sucursales" else ESQUEMA_SQL[tabla]
     pk = CLAVES_PRIMARIAS.get(tabla)
 
     lineas = []
+    not_null = set(COLUMNAS_NOT_NULL.get(tabla, []))
     for col, tipo in esquema.items():
         partes = [f"    {col} {_tipo(dialecto, tipo)}"]
         if (tabla, col) in COLUMNAS_AUTOMATICAS:
@@ -190,7 +231,15 @@ def _ddl_tabla(tabla: str, dialecto: str) -> str:
             partes.append("PRIMARY KEY")
         if col.endswith("_id") and col != "id_sucursal":
             partes.append("NOT NULL")
+        elif col in not_null and col != pk:
+            partes.append("NOT NULL")
         lineas.append(" ".join(partes))
+
+    # Restricciones UNIQUE (llave natural). Se emiten como CONSTRAINT de tabla,
+    # que es portable entre SQLite y PostgreSQL.
+    for tabla_uq, columnas_uq, nombre_uq in UNICAS:
+        if tabla_uq == tabla:
+            lineas.append(f"    CONSTRAINT {nombre_uq} UNIQUE ({', '.join(columnas_uq)})")
 
     # CHECK como restriccion de tabla: SQLite moderno y PostgreSQL lo aceptan.
     for nombre_chk, expr in CHECKS.get(tabla, []):
@@ -198,10 +247,6 @@ def _ddl_tabla(tabla: str, dialecto: str) -> str:
 
     cuerpo = ",\n".join(lineas)
     return f"CREATE TABLE {tabla} (\n{cuerpo}\n)"
-
-
-def _es_autoincremental(tabla: str, columna: str) -> bool:
-    return (tabla, columna) in COLUMNAS_AUTOMATICAS
 
 
 def _ddl_indices() -> list[str]:
@@ -263,6 +308,35 @@ def _esquema_fact(fact: pd.DataFrame) -> dict[str, str]:
     return esquema
 
 
+def _ddl_vista_resumen(dialecto: str) -> str:
+    """Vista de negocio `v_resumen_ventas` (punto 13 + requisito de VIEW).
+
+    Encapsula un JOIN de 5 tablas (pedidos, detalle_pedido, clientes, productos
+    y categorias) en un objeto reutilizable: los reportes leen la vista en vez
+    de repetir el JOIN. Es el complemento de `fact_ventas`: la fact es el
+    contrato ancho para BI; la vista es la capa semantica gobernada por la base.
+    """
+    sql = """
+        CREATE VIEW v_resumen_ventas AS
+        SELECT pe.anio_mes AS anio_mes,
+               MIN(pe.mes_nombre) AS mes_nombre,
+               COUNT(DISTINCT pe.id_pedido) AS pedidos,
+               COUNT(DISTINCT pe.id_cliente) AS clientes,
+               COUNT(DISTINCT d.id_producto) AS productos,
+               SUM(d.cantidad) AS unidades,
+               ROUND(SUM(d.total), 2) AS facturacion,
+               ROUND(AVG(pe.total_pedido), 2) AS ticket_promedio
+        FROM pedidos pe
+        INNER JOIN detalle_pedido d ON d.id_pedido = pe.id_pedido
+        INNER JOIN clientes c       ON c.id_cliente = pe.id_cliente
+        INNER JOIN productos pr     ON pr.id_producto = d.id_producto
+        INNER JOIN categorias cat   ON cat.id_categoria = pr.id_categoria
+        WHERE pe.es_completado = @VERDADERO@
+        GROUP BY pe.anio_mes
+    """.strip()
+    return _adaptar_booleanos(sql, dialecto)
+
+
 def _ddl_vista_analitica(fact: pd.DataFrame) -> str:
     """El dataset desnormalizado se materializa como tabla `fact_ventas`.
 
@@ -311,6 +385,8 @@ class IntegradorSQL:
         with self.motor.begin() as conn:
             inspector = inspect(self.motor)
             existentes = set(inspector.get_table_names())
+            # La vista depende de las tablas: se elimina antes que ellas.
+            conn.execute(text("DROP VIEW IF EXISTS v_resumen_ventas"))
             # Drop en orden inverso a las dependencias FK
             for tabla in ["fact_ventas", "pagos", "detalle_pedido", "pedidos",
                           "productos", "clientes", "dim_sucursales",
@@ -343,6 +419,25 @@ class IntegradorSQL:
             self.ddl_ejecutado.append(ddl_fact)
             LOG.info("  CREATE TABLE %-16s %2d columnas  (dataset analitico)",
                      "fact_ventas", len(_esquema_fact(fact)))
+
+            # FK de la fact hacia sus dimensiones (solo donde SQL lo admite). Se
+            # declaran despues de crear fact_ventas porque sus padres ya existen.
+            cols_fact = set(_esquema_fact(fact))
+            for col, padre, col_padre in CLAVES_FORANEAS_FACT:
+                if self.dialecto == "sqlite" or col not in cols_fact:
+                    continue
+                nombre = f"fk_fact_ventas_{col}"
+                ddl = (f"ALTER TABLE fact_ventas ADD CONSTRAINT {nombre} "
+                       f"FOREIGN KEY ({col}) REFERENCES {padre}({col_padre})")
+                conn.execute(text(ddl))
+                self.ddl_ejecutado.append(ddl)
+
+            # Vista de negocio: encapsula el JOIN de 5 tablas mas usado.
+            ddl_vista = _ddl_vista_resumen(self.dialecto)
+            conn.execute(text(ddl_vista))
+            self.ddl_ejecutado.append(ddl_vista)
+            LOG.info("  CREATE VIEW  %-16s (JOIN de 5 tablas)",
+                     "v_resumen_ventas")
 
             for ddl in _ddl_indices() + _ddl_indices_fact():
                 try:
@@ -441,15 +536,17 @@ class IntegradorSQL:
                 if n:
                     huerfanos.append(f"{hija}.{col}->{padre}: {n}")
 
-        # Integridad de la fact analitica: cada linea debe encontrar su padre.
-        con_padre = [("id_pedido", "pedidos", "id_pedido"),
-                     ("id_producto", "productos", "id_producto"),
-                     ("id_cliente", "clientes", "id_cliente")]
+        # Integridad de la fact analitica: cada linea debe encontrar su padre
+        # (mismas FK que CLAVES_FORANEAS_FACT; se verifica con LEFT JOIN para que
+        # la comprobacion funcione tambien en SQLite, que no declara las FK).
+        cols_fact = {c["name"] for c in inspect(self.motor).get_columns("fact_ventas")}
         with self.motor.connect() as conn:
-            for col, padre, col_padre in con_padre:
+            for col, padre, col_padre in CLAVES_FORANEAS_FACT:
+                if col not in cols_fact:
+                    continue
                 sql = (f"SELECT COUNT(*) FROM fact_ventas f "
                        f"LEFT JOIN {padre} p ON f.{col} = p.{col_padre} "
-                       f"WHERE p.{col_padre} IS NULL")
+                       f"WHERE f.{col} IS NOT NULL AND p.{col_padre} IS NULL")
                 n = conn.execute(text(sql)).scalar_one()
                 LOG.info("  FK fact_ventas.%-13s -> %-15s  %s", col, padre,
                          "OK" if n == 0 else f"{n} HUERFANOS")
@@ -460,18 +557,97 @@ class IntegradorSQL:
             raise AssertionError("Huerfanos de FK:\n  " + "\n  ".join(huerfanos))
         return df
 
+    # -- rendimiento ------------------------------------------------------
+    def benchmark_indice(self, tabla: str, columnas: list[str], sql: str,
+                         nombre: str | None = None,
+                         repeticiones: int = 5) -> list[dict]:
+        """Mide la consulta con y sin indice y captura el plan de ejecucion.
+
+        En PostgreSQL se usa EXPLAIN (ANALYZE, VERBOSE), que reporta el plan
+        real con tiempos; el tiempo que se compara es el `Execution Time` del
+        servidor (no el reloj del cliente, que incluiria la latencia de red al
+        pooler y taparia el efecto del indice). SQLite no tiene esa variante:
+        se registra EXPLAIN QUERY PLAN (que muestra si uso el indice) y se
+        cronometra la consulta con time.perf_counter, que es la evidencia
+        disponible en ese motor.
+        """
+        nombre_idx = nombre or f"ix_{tabla}_{'_'.join(columnas)}"[:60]
+        ddl_idx = (f"CREATE INDEX IF NOT EXISTS {nombre_idx} ON {tabla} "
+                   f"({', '.join(columnas)})")
+
+        def _tiempo_servidor(texto: str) -> float | None:
+            tiempos = re.findall(r"Execution Time:\s*([0-9.]+)\s*ms", texto)
+            return sum(float(t) for t in tiempos) if tiempos else None
+
+        def medir() -> float:
+            if self.dialecto != "sqlite":
+                total = 0.0
+                for _ in range(repeticiones):
+                    with self.motor.connect() as conn:
+                        filas = conn.execute(
+                            text(f"EXPLAIN (ANALYZE, VERBOSE) {sql}")).fetchall()
+                    texto = " ".join(" ".join(str(x) for x in f) for f in filas)
+                    t = _tiempo_servidor(texto)
+                    if t is not None:
+                        total += t
+                if total > 0:
+                    return total / repeticiones
+            with self.motor.connect() as conn:
+                t0 = time.perf_counter()
+                for _ in range(repeticiones):
+                    conn.execute(text(sql)).fetchall()
+                return (time.perf_counter() - t0) * 1000 / repeticiones
+
+        def plan() -> str:
+            stmt = (f"EXPLAIN (ANALYZE, VERBOSE) {sql}" if self.dialecto != "sqlite"
+                    else f"EXPLAIN QUERY PLAN {sql}")
+            try:
+                with self.motor.connect() as conn:
+                    filas = conn.execute(text(stmt)).fetchall()
+                return " | ".join(
+                    " ".join(str(x) for x in fila) for fila in filas
+                )[:1200]
+            except SQLAlchemyError as exc:
+                return _corto(exc)
+
+        with self.motor.begin() as conn:
+            conn.execute(text(ddl_idx))
+        t_con, plan_con = medir(), plan()
+
+        with self.motor.begin() as conn:
+            conn.execute(text(f"DROP INDEX IF EXISTS {nombre_idx}"))
+        t_sin, plan_sin = medir(), plan()
+
+        with self.motor.begin() as conn:
+            conn.execute(text(ddl_idx))  # se restaura el indice
+
+        mejora = (f"{t_sin / t_con:.2f}x mas lento sin indice" if t_sin > t_con
+                  else "sin diferencia de tiempo (ver columna plan: SEARCH vs SCAN)")
+        return [
+            {"fase": "CON INDICE", "indice": nombre_idx,
+             "ejecucion_ms": round(t_con, 3), "mejora": "", "plan": plan_con},
+            {"fase": "SIN INDICE", "indice": nombre_idx,
+             "ejecucion_ms": round(t_sin, 3), "mejora": mejora, "plan": plan_sin},
+        ]
+
 
 def _motor_postgres() -> "IntegradorSQL | None":
-    """Construye el motor de PostgreSQL si el servidor responde."""
-    url = (f"postgresql+psycopg2://{PG_CONFIG['user']}:{PG_CONFIG['password']}"
-           f"@{PG_CONFIG['host']}:{PG_CONFIG['port']}/{PG_CONFIG['database']}")
+    """Construye el motor de PostgreSQL (local o Supabase) si responde."""
+    cfg = config_pg()
+    sslmode = os.getenv("PG_SSLMODE", "prefer")
+    url = (f"postgresql+psycopg2://{cfg['user']}:{cfg['password']}"
+           f"@{cfg['host']}:{cfg['port']}/{cfg['database']}")
+    connect_args = {"connect_timeout": 5}
+    if sslmode and sslmode != "off":
+        connect_args["sslmode"] = sslmode
     try:
-        motor = create_engine(url, pool_pre_ping=True, connect_args={"connect_timeout": 4})
+        motor = create_engine(url, pool_pre_ping=True, connect_args=connect_args)
         with motor.connect() as conn:
             conn.execute(text("SELECT 1"))
-        LOG.info("  PostgreSQL conectado en %s:%s/%s",
-                 PG_CONFIG["host"], PG_CONFIG["port"], PG_CONFIG["database"])
-        return IntegradorSQL(motor, "postgresql", "postgresql")
+        etiqueta = "Supabase" if os.getenv("SUPABASE_HOST") else "PostgreSQL"
+        LOG.info("  %s conectado en %s:%s/%s (sslmode=%s)",
+                 etiqueta, cfg["host"], cfg["port"], cfg["database"], sslmode)
+        return IntegradorSQL(motor, etiqueta, "postgresql")
     except SQLAlchemyError as exc:
         LOG.warning("  PostgreSQL no disponible (%s)", _corto(exc))
         return None
@@ -494,11 +670,14 @@ def _comentario_fk_sqlite() -> str:
               "-- se verifican en tiempo de carga con LEFT JOIN, ver verificar()):"]
     for hija, col, padre, col_padre in CLAVES_FORANEAS:
         lineas.append(f"--   FOREIGN KEY ({col}) REFERENCES {padre}({col_padre})  -- {hija}")
+    for col, padre, col_padre in CLAVES_FORANEAS_FACT:
+        lineas.append(f"--   FOREIGN KEY ({col}) REFERENCES {padre}({col_padre})  "
+                      f"-- fact_ventas")
     return "\n".join(lineas)
 
 
 def _intentar_postgres() -> bool:
-    return os.getenv("SIN_POSTGRES") != "1" and bool(PG_CONFIG.get("host"))
+    return os.getenv("SIN_POSTGRES") != "1" and bool(config_pg().get("host"))
 
 
 def _corto(exc: Exception) -> str:
@@ -522,7 +701,7 @@ CONSULTAS_SQL: list[dict] = [
                    COUNT(DISTINCT f.id_pedido) AS pedidos,
                    ROUND(SUM(f.total) / SUM(f.cantidad), 2) AS precio_promedio
             FROM fact_ventas f
-            JOIN productos p ON p.id_producto = f.id_producto
+            INNER JOIN productos p ON p.id_producto = f.id_producto
             WHERE f.es_completado = @VERDADERO@
             GROUP BY p.id_producto, p.nombre, p.categoria
             ORDER BY facturacion DESC
@@ -545,7 +724,7 @@ CONSULTAS_SQL: list[dict] = [
                    ROUND(AVG(p.total_pedido), 2) AS ticket_promedio,
                    MAX(p.fecha_pedido) AS ultima_compra
             FROM por_pedido p
-            JOIN clientes c ON c.id_cliente = p.id_cliente
+            INNER JOIN clientes c ON c.id_cliente = p.id_cliente
             GROUP BY c.id_cliente, c.nombre, c.ciudad, c.es_premium
             ORDER BY gasto DESC
             LIMIT 10
@@ -623,14 +802,14 @@ CONSULTAS_SQL: list[dict] = [
     {
         "id": "Q07",
         "titulo": "Clientes con pedidos cancelados",
-        "pregunta": "Que clientesCancelan y cuanto nos cuestan?",
+        "pregunta": "Que clientes cancelan y cuanto nos cuestan?",
         "sql": """
             SELECT c.id_cliente, c.nombre AS cliente, c.ciudad,
                    COUNT(DISTINCT pe.id_pedido) AS pedidos_cancelados,
                    SUM(f.total) AS monto_perdido
             FROM fact_ventas f
-            JOIN clientes c   ON c.id_cliente = f.id_cliente
-            JOIN pedidos pe   ON pe.id_pedido = f.id_pedido
+            INNER JOIN clientes c   ON c.id_cliente = f.id_cliente
+            INNER JOIN pedidos pe   ON pe.id_pedido = f.id_pedido
             WHERE pe.estado = 'cancelado'
             GROUP BY c.id_cliente, c.nombre, c.ciudad
             ORDER BY monto_perdido DESC
@@ -860,6 +1039,37 @@ CONSULTAS_SQL: list[dict] = [
             ORDER BY id_sucursal, facturacion DESC
         """,
     },
+    {
+        "id": "Q19",
+        "titulo": "Detalle 360 del pedido (JOIN de 6 tablas)",
+        "pregunta": "Cual es el detalle completo de cada linea de venta?",
+        "sql": """
+            SELECT c.nombre AS cliente, c.ciudad, cat.nombre AS categoria,
+                   pr.nombre AS producto, pe.id_pedido, pe.fecha_pedido,
+                   d.cantidad, d.precio_unitario, d.descuento, d.total,
+                   pg.metodo AS metodo_pago, pg.estado_pago
+            FROM detalle_pedido d
+            INNER JOIN pedidos pe     ON pe.id_pedido = d.id_pedido
+            INNER JOIN clientes c     ON c.id_cliente = pe.id_cliente
+            INNER JOIN productos pr   ON pr.id_producto = d.id_producto
+            INNER JOIN categorias cat ON cat.id_categoria = pr.id_categoria
+            LEFT JOIN pagos pg  ON pg.id_pedido = pe.id_pedido
+            WHERE pe.es_completado = @VERDADERO@
+            ORDER BY pe.fecha_pedido DESC, pe.id_pedido
+            LIMIT 20
+        """,
+    },
+    {
+        "id": "Q20",
+        "titulo": "Resumen mensual via vista v_resumen_ventas",
+        "pregunta": "Cual es el pulso mensual sin reescribir el JOIN?",
+        "sql": """
+            SELECT anio_mes, mes_nombre, pedidos, clientes, productos,
+                   unidades, facturacion, ticket_promedio
+            FROM v_resumen_ventas
+            ORDER BY anio_mes
+        """,
+    },
 ]
 
 
@@ -882,7 +1092,7 @@ def _limpiar_reportes_previos(directorio: Path, patron: str) -> int:
 
 
 def ejecutar_consultas_sql(integrador: IntegradorSQL) -> pd.DataFrame:
-    """Ejecuta las 18 consultas y exporta cada resultado."""
+    """Ejecuta las consultas analiticas y exporta cada resultado."""
     LOG.info(subtitulo(f"{len(CONSULTAS_SQL)} consultas analiticas ({integrador.nombre})"))
     _limpiar_reportes_previos(REPORTE_SQL, "Q*.csv")
     resumen = []
@@ -935,6 +1145,67 @@ def ejecutar_consultas_sql(integrador: IntegradorSQL) -> pd.DataFrame:
     return resumen_df
 
 
+# Consulta que se usa para demostrar el efecto del indice: filtra por mes, que
+# es justo lo que cubre ix_fact_anio_mes. Con el indice el plan hace SEARCH; sin
+# el, un SCAN completo de la tabla.
+SQL_BENCHMARK = ("SELECT COUNT(*) AS pedidos, ROUND(SUM(total), 2) AS facturacion "
+                 "FROM fact_ventas WHERE anio_mes = '2025-06'")
+INDICE_BENCHMARK = "ix_fact_anio_mes"
+
+
+def ejecutar_explain_analyze(integrador: IntegradorSQL) -> pd.DataFrame:
+    """Evidencia de rendimiento: plan y tiempos con/sin indice (punto 15)."""
+    LOG.info(subtitulo(f"EXPLAIN ANALYZE del indice {INDICE_BENCHMARK} ({integrador.nombre})"))
+    filas = integrador.benchmark_indice(
+        "fact_ventas", ["anio_mes"], SQL_BENCHMARK, nombre=INDICE_BENCHMARK
+    )
+    df = pd.DataFrame(filas)
+    df.to_csv(REPORTE_SQL / "04_explain_analyze.csv", index=False, encoding="utf-8-sig")
+
+    con = df[df.fase == "CON INDICE"].iloc[0]
+    sin = df[df.fase == "SIN INDICE"].iloc[0]
+    lineas = [
+        f"# EXPLAIN ANALYZE: efecto del indice `{INDICE_BENCHMARK}`",
+        "",
+        f"Generado: {datetime.now():%Y-%m-%d %H:%M:%S}",
+        f"Motor: `{integrador.nombre}` (dialecto `{integrador.dialecto}`)",
+        "",
+        f"Consulta medida:\n\n```sql\n{SQL_BENCHMARK}\n```",
+        "",
+        "| Fase | Indice | Tiempo promedio (ms) |",
+        "|---|---|---|",
+        f"| CON INDICE | {con.indice} | {con.ejecucion_ms} |",
+        f"| SIN INDICE | (eliminado) | {sin.ejecucion_ms} |",
+        "",
+        f"**Tiempo:** {sin.mejora}.",
+        "",
+        "**Plan:** con el indice el motor accede por indice (`Index Scan` en "
+        "PostgreSQL, `SEARCH ... USING INDEX` en SQLite); sin el hace un "
+        "recorrido completo de `fact_ventas` (`Seq Scan`/`SCAN`). Ese cambio de "
+        "acceso es la evidencia de que el indice se usa.",
+        "",
+        "## Plan de ejecucion CON indice",
+        "",
+        f"```\n{con.plan}\n```",
+        "",
+        "## Plan de ejecucion SIN indice",
+        "",
+        f"```\n{sin.plan}\n```",
+        "",
+        "> Nota: en PostgreSQL el tiempo comparado es el bloque `Execution Time`",
+        "> que reporta `EXPLAIN (ANALYZE, VERBOSE)` en el servidor; asi se excluye",
+        "> la latencia de red hacia el pooler, que de otro modo dominaria la",
+        "> medicion. En SQLite se exporta `EXPLAIN QUERY PLAN` (que revela si se",
+        "> uso el indice) y el tiempo se mide con `time.perf_counter` porque SQLite",
+        "> no reporta tiempos en el plan.",
+    ]
+    (REPORTE_SQL / "03_explain_analyze.md").write_text("\n".join(lineas) + "\n",
+                                                       encoding="utf-8")
+    LOG.info("  CON indice %8.3f ms  |  SIN indice %8.3f ms  -> %s",
+             con.ejecucion_ms, sin.ejecucion_ms, sin.mejora or "sin cambio")
+    return df
+
+
 # ==========================================================================
 # Parte NoSQL (MongoDB)
 # ==========================================================================
@@ -948,7 +1219,7 @@ INDICES_MONGO = {
     ],
     "resenas": [
         ([("id_producto", 1)], "", "Resenas de un producto"),
-        ([("id_usuario", 1)], "", "Historial de un usuario"),
+        ([("cliente.id", 1)], "", "Resenas de un cliente (historial)"),
         ([("calificacion", -1)], "", "ORDER BY calificacion"),
         ([("fecha", -1)], "", "Resenas recientes"),
     ],
@@ -980,17 +1251,19 @@ class IntegradorMongo:
 
     # -- conexion ---------------------------------------------------------
     def conectar(self) -> str:
-        if os.getenv("SIN_MONGO") == "1" or not MONGO_URI:
+        uri = MONGO_ATLAS_URI or MONGO_URI
+        if os.getenv("SIN_MONGO") == "1" or not uri:
             return self._modo_local()
         try:
             from pymongo import MongoClient
 
-            cliente = MongoClient(MONGO_URI, serverSelectionTimeoutMS=1500)
+            cliente = MongoClient(uri, serverSelectionTimeoutMS=3000)
             cliente.admin.command("ping")
             self.cliente = cliente
             self.db = cliente[MONGO_DB]
             self.modo = "mongodb"
-            LOG.info("  MongoDB conectado en %s (db=%s)", MONGO_URI, MONGO_DB)
+            destino = uri.split("@")[-1] if "@" in uri else uri
+            LOG.info("  MongoDB conectado en %s (db=%s)", destino, MONGO_DB)
             return self.modo
         except Exception as exc:  # noqa: BLE001 - pymongo lanza varios tipos
             LOG.warning("  MongoDB no disponible (%s)", _corto(exc))
@@ -1072,11 +1345,39 @@ class IntegradorMongo:
             docs = [json.loads(l) for l in fh if l.strip()]
         return pd.json_normalize(docs)
 
-    def conteo(self, coleccion: str, filtro: dict | None = None) -> int:
+    # -- consultas find/countDocuments ------------------------------------
+    def ejecutar_consulta(self, cons: dict) -> pd.DataFrame:
+        """Ejecuta una consulta B* contra MongoDB real o su equivalente Pandas."""
+        col = cons["coleccion"]
+        filtro = cons.get("filtro") or {}
+        if cons["tipo"] == "countDocuments":
+            if self.modo == "mongodb":
+                n = self.db[col].count_documents(filtro)
+            else:
+                n = len(_aplicar_filtro(self.leer(col), filtro))
+            return pd.DataFrame([{"coleccion": col, "total": int(n)}])
+
         if self.modo == "mongodb":
-            return self.db[coleccion].count_documents(filtro or {})
-        df = self.leer(coleccion)
-        return _aplicar_filtro(df, filtro).shape[0] if filtro else len(df)
+            proyeccion = {"_id": 0}
+            proyeccion.update({c: 1 for c in cons.get("proyeccion", [])})
+            cursor = self.db[col].find(filtro, proyeccion)
+            for campo, direccion in cons.get("sort", []):
+                cursor = cursor.sort(campo, direccion)
+            if cons.get("limit"):
+                cursor = cursor.limit(cons["limit"])
+            return pd.DataFrame(list(cursor))
+
+        df = _aplicar_filtro(self.leer(col), filtro)
+        orden = cons.get("sort") or []
+        if orden and all(c in df.columns for c, _ in orden):
+            df = df.sort_values([c for c, _ in orden],
+                                ascending=[d == 1 for _, d in orden])
+        if cons.get("limit"):
+            df = df.head(cons["limit"])
+        if cons.get("proyeccion"):
+            cols = [c for c in cons["proyeccion"] if c in df.columns]
+            df = df[cols]
+        return df.reset_index(drop=True)
 
 
 # --------------------------------------------------------------------------
@@ -1341,12 +1642,187 @@ PIPELINES_MONGO: list[dict] = [
 ]
 
 
-def _aplicar_filtro(df: pd.DataFrame, filtro: dict) -> pd.DataFrame:
-    """Aplica un filtro Mongo equality minimo (solo operadores planos)."""
+# --------------------------------------------------------------------------
+# Consultas MongoDB de tipo find/countDocuments (punto 14 del enunciado).
+# A diferencia de los pipelines (que agregan), estas consultas ejercitan los
+# operadores de filtro y los metodos basicos del driver: find().sort().limit()
+# y countDocuments(). Todas tienen equivalente Pandas para el modo simulado.
+# --------------------------------------------------------------------------
+CONSULTAS_MONGO: list[dict] = [
+    {
+        "id": "B01", "titulo": "Productos premium (precio > 5000)",
+        "pregunta": "Que articulos de gama alta tenemos?",
+        "coleccion": "productos", "tipo": "find",
+        "filtro": {"precio": {"$gt": 5000}},
+        "sort": [("precio", -1)], "limit": 10,
+        "proyeccion": ["id_producto", "nombre", "categoria", "precio", "rango_precio"],
+    },
+    {
+        "id": "B02", "titulo": "Productos economicos (precio < 1000)",
+        "pregunta": "Que opciones de bajo costo hay?",
+        "coleccion": "productos", "tipo": "find",
+        "filtro": {"precio": {"$lt": 1000}},
+        "sort": [("precio", 1)], "limit": 10,
+        "proyeccion": ["id_producto", "nombre", "categoria", "precio"],
+    },
+    {
+        "id": "B03", "titulo": "Catalogo de Computadoras y Monitores",
+        "pregunta": "Que hay en las categorias de mayor ticket?",
+        "coleccion": "productos", "tipo": "find",
+        "filtro": {"categoria": {"$in": ["Computadoras", "Monitores"]}},
+        "sort": [("precio", -1)], "limit": 15,
+        "proyeccion": ["id_producto", "nombre", "categoria", "precio"],
+    },
+    {
+        "id": "B04", "titulo": "Rango Alto y menos de 30000 ($and)",
+        "pregunta": "Que productos caros siguen siendo alcanzables?",
+        "coleccion": "productos", "tipo": "find",
+        "filtro": {"$and": [{"rango_precio": "Alto"}, {"precio": {"$lt": 30000}}]},
+        "sort": [("precio", -1)], "limit": 10,
+        "proyeccion": ["id_producto", "nombre", "precio", "rango_precio"],
+    },
+    {
+        "id": "B05", "titulo": "Redes o Accesorios ($or)",
+        "pregunta": "Cual es el surtido de conectividad y perifericos?",
+        "coleccion": "productos", "tipo": "find",
+        "filtro": {"$or": [{"categoria": "Redes"}, {"categoria": "Accesorios"}]},
+        "sort": [("nombre", 1)], "limit": 20,
+        "proyeccion": ["id_producto", "nombre", "categoria", "precio"],
+    },
+    {
+        "id": "B06", "titulo": "Banda de precio 1000-5000 ($gte/$lte)",
+        "pregunta": "Cual es el corazon del catalogo?",
+        "coleccion": "productos", "tipo": "find",
+        "filtro": {"precio": {"$gte": 1000, "$lte": 5000}},
+        "sort": [("precio", 1)], "limit": 15,
+        "proyeccion": ["id_producto", "nombre", "categoria", "precio"],
+    },
+    {
+        "id": "B07", "titulo": "Resenas de 5 estrellas ($gt)",
+        "pregunta": "Que opiniones sobresalientes hay?",
+        "coleccion": "resenas", "tipo": "find",
+        "filtro": {"calificacion": {"$gt": 4}},
+        "sort": [("fecha", -1)], "limit": 20,
+        "proyeccion": ["id_resena", "id_producto", "producto", "calificacion", "fecha"],
+    },
+    {
+        "id": "B08", "titulo": "Resenas negativas ($lt)",
+        "pregunta": "Que productos estan generando insatisfaccion?",
+        "coleccion": "resenas", "tipo": "find",
+        "filtro": {"calificacion": {"$lt": 3}},
+        "sort": [("calificacion", 1)], "limit": 20,
+        "proyeccion": ["id_resena", "id_producto", "producto", "calificacion", "comentario"],
+    },
+    {
+        "id": "B09", "titulo": "Resenas 1 y 2 estrellas ($in)",
+        "pregunta": "Cuales son las quejas duras?",
+        "coleccion": "resenas", "tipo": "find",
+        "filtro": {"calificacion": {"$in": [1, 2]}},
+        "sort": [("fecha", -1)], "limit": 25,
+        "proyeccion": ["id_resena", "producto", "calificacion", "comentario"],
+    },
+    {
+        "id": "B10", "titulo": "Resenas buenas y verificadas ($and)",
+        "pregunta": "Que alabanzas vienen de compras confirmadas?",
+        "coleccion": "resenas", "tipo": "find",
+        "filtro": {"$and": [{"calificacion": {"$gte": 4}}, {"verificada": True}]},
+        "sort": [("fecha", -1)], "limit": 20,
+        "proyeccion": ["id_resena", "producto", "calificacion", "verificada", "fecha"],
+    },
+    {
+        "id": "B11", "titulo": "Resenas extremas 1 o 5 ($or)",
+        "pregunta": "Que productos polarizan la opinion?",
+        "coleccion": "resenas", "tipo": "find",
+        "filtro": {"$or": [{"calificacion": 1}, {"calificacion": 5}]},
+        "sort": [("fecha", -1)], "limit": 20,
+        "proyeccion": ["id_resena", "producto", "calificacion", "es_positiva"],
+    },
+    {
+        "id": "B12", "titulo": "Visualizaciones largas (>300s) ($and/$gt)",
+        "pregunta": "Que productos retienen la atencion?",
+        "coleccion": "actividad_usuario", "tipo": "find",
+        "filtro": {"$and": [{"es_visualizacion": True},
+                            {"duracion_seg": {"$gt": 300}}]},
+        "sort": [("duracion_seg", -1)], "limit": 20,
+        "proyeccion": ["usuario", "producto", "nombre_producto",
+                       "duracion_seg", "fecha"],
+    },
+    {
+        "id": "B13", "titulo": "Conteo de compras registradas (countDocuments)",
+        "pregunta": "Cuantos eventos de compra hay en total?",
+        "coleccion": "actividad_usuario", "tipo": "countDocuments",
+        "filtro": {"evento": "producto_comprado"},
+    },
+    {
+        "id": "B14", "titulo": "Navegacion desde equipos Apple ($in)",
+        "pregunta": "Como navega el usuario de ecosistema Apple?",
+        "coleccion": "actividad_usuario", "tipo": "find",
+        "filtro": {"dispositivo": {"$in": ["iOS", "macOS"]}},
+        "sort": [("fecha", -1)], "limit": 20,
+        "proyeccion": ["usuario", "producto", "dispositivo", "duracion_seg", "fecha"],
+    },
+    {
+        "id": "B15", "titulo": "Sesiones muy cortas o muy largas ($or)",
+        "pregunta": "Donde el engagement es anomalo?",
+        "coleccion": "actividad_usuario", "tipo": "find",
+        "filtro": {"$or": [{"duracion_seg": {"$lt": 30}},
+                           {"duracion_seg": {"$gt": 1200}}]},
+        "sort": [("duracion_seg", -1)], "limit": 25,
+        "proyeccion": ["usuario", "producto", "evento", "duracion_seg"],
+    },
+]
+
+
+def _comparar(df: pd.DataFrame, campo: str, op: str, valor) -> pd.Series:
+    """Evalua un operador de comparacion Mongo sobre una columna (Pandas)."""
+    if campo not in df.columns:
+        return pd.Series(False, index=df.index)
+    s = df[campo]
+    if op == "$gt":
+        return s > valor
+    if op == "$gte":
+        return s >= valor
+    if op == "$lt":
+        return s < valor
+    if op == "$lte":
+        return s <= valor
+    if op == "$eq":
+        return s == valor
+    if op == "$in":
+        return s.isin(valor)
+    return pd.Series(False, index=df.index)
+
+
+def _mascara(df: pd.DataFrame, filtro: dict | None) -> pd.Series:
+    """Convierte un filtro Mongo en una mascara booleana de Pandas."""
     m = pd.Series(True, index=df.index)
+    if not filtro:
+        return m
     for campo, valor in filtro.items():
-        m &= df[campo] == valor
-    return df[m]
+        if campo == "$and":
+            for sub in valor:
+                m &= _mascara(df, sub)
+        elif campo == "$or":
+            acumulado = pd.Series(False, index=df.index)
+            for sub in valor:
+                acumulado |= _mascara(df, sub)
+            m &= acumulado
+        elif isinstance(valor, dict):
+            for op, v in valor.items():
+                m &= _comparar(df, campo, op, v)
+        else:
+            m &= _comparar(df, campo, "$eq", valor)
+    return m
+
+
+def _aplicar_filtro(df: pd.DataFrame, filtro: dict | None) -> pd.DataFrame:
+    """Aplica un filtro Mongo sobre un DataFrame.
+
+    Soporta igualdad, los operadores $gt/$gte/$lt/$lte/$eq/$in y los
+    conectores logicos $and/$or. Basta para reproducir las consultas B01-B15
+    sin un servidor MongoDB (modo simulado).
+    """
+    return df[_mascara(df, filtro)]
 
 
 def _trayecto_usuario_mas_activo(d: pd.DataFrame) -> pd.DataFrame:
@@ -1384,13 +1860,12 @@ def ejecutar_pipelines(integrador: IntegradorMongo, fact: pd.DataFrame) -> pd.Da
     resumen = []
     for p in PIPELINES_MONGO:
         t0 = datetime.now()
-        df_cache = integrador.leer(p["colectivo"])
         if integrador.modo == "mongodb":
             docs = list(integrador.db[p["colectivo"]].aggregate(p["pipeline"]))
             df = pd.json_normalize(docs) if docs else pd.DataFrame()
             origen = "mongodb"
         else:
-            df = p["pandas"](df_cache)
+            df = p["pandas"](integrador.leer(p["colectivo"]))
             origen = "pandas"
         estado, error = "OK", ""
 
@@ -1462,6 +1937,61 @@ def ejecutar_pipelines(integrador: IntegradorMongo, fact: pd.DataFrame) -> pd.Da
     return resumen_df
 
 
+def ejecutar_consultas_mongo(integrador: IntegradorMongo) -> pd.DataFrame:
+    """Ejecuta las 15 consultas find/countDocuments (B01-B15) y exporta."""
+    LOG.info(subtitulo(f"{len(CONSULTAS_MONGO)} consultas find/countDocuments "
+                       f"({integrador.modo})"))
+    _limpiar_reportes_previos(REPORTE_MONGO, "B*.csv")
+    resumen = []
+    for cons in CONSULTAS_MONGO:
+        t0 = datetime.now()
+        try:
+            df = integrador.ejecutar_consulta(cons)
+            estado, error = "OK", ""
+        except Exception as exc:  # noqa: BLE001 - pymongo/pandas varios tipos
+            df = pd.DataFrame()
+            estado, error = "ERROR", _corto(exc)
+        ms = (datetime.now() - t0).total_seconds() * 1000
+
+        destino = REPORTE_MONGO / f"{cons['id']}_{_slug(cons['titulo'])}.csv"
+        df.to_csv(destino, index=False, encoding="utf-8-sig")
+        resumen.append({
+            "id": cons["id"], "titulo": cons["titulo"], "pregunta": cons["pregunta"],
+            "coleccion": cons["coleccion"], "operacion": cons["tipo"],
+            "estado": estado, "filas": len(df), "columnas": len(df.columns),
+            "ms": round(ms, 1), "error": error, "archivo": destino.name,
+        })
+        LOG.info("  %-4s %-48s %-5s %5d filas  %6.1f ms",
+                 cons["id"], cons["titulo"], estado, len(df), ms)
+
+    resumen_df = pd.DataFrame(resumen)
+    resumen_df.to_csv(REPORTE_MONGO / "00_resumen_consultas_mongo.csv",
+                      index=False, encoding="utf-8-sig")
+
+    with (REPORTE_MONGO / "02_consultas.js").open("w", encoding="utf-8") as fh:
+        fh.write("// Consultas find/countDocuments NovaCommerce (B01-B15)\n")
+        fh.write(f"// Generadas: {datetime.now():%Y-%m-%d %H:%M:%S}\n")
+        fh.write("// Ejecutar con mongosh sobre la db 'novacommerce'\n\n")
+        for cons in CONSULTAS_MONGO:
+            fh.write(f"// {cons['id']}: {cons['titulo']}\n")
+            fh.write(f"// Pregunta: {cons['pregunta']}\n")
+            filtro = json.dumps(cons.get("filtro") or {}, ensure_ascii=False)
+            if cons["tipo"] == "countDocuments":
+                fh.write(f"db.{cons['coleccion']}.countDocuments({filtro})\n\n")
+                continue
+            proy = {c: 1 for c in cons.get("proyeccion", [])}
+            proy["_id"] = 0
+            fh.write(f"db.{cons['coleccion']}.find({filtro}, "
+                     f"{json.dumps(proy, ensure_ascii=False)})\n")
+            if cons.get("sort"):
+                orden = {c: d for c, d in cons["sort"]}
+                fh.write(f"  .sort({json.dumps(orden, ensure_ascii=False)})\n")
+            if cons.get("limit"):
+                fh.write(f"  .limit({cons['limit']})\n")
+            fh.write("\n")
+    return resumen_df
+
+
 # ==========================================================================
 # Orquestacion
 # ==========================================================================
@@ -1488,33 +2018,37 @@ def main() -> None:
         )
 
     # ---- SQL ------------------------------------------------------------
-    LOG.info(titulo("PostgreSQL / SQLite"))
     tablas = {nombre: pd.read_csv(tablas_csv / f"{nombre}.csv") for nombre in ORDEN_CARGA}
     fact = pd.read_csv(fact_csv)
 
     sql = IntegradorSQL.crear()
+    LOG.info(titulo(f"Base de datos relacional: {sql.nombre}"))
     sql.crear_esquema(fact)
     sql.cargar(tablas, fact)
     verif = sql.verificar()
     print(tabla(verif))
     resumen_sql = ejecutar_consultas_sql(sql)
+    resumen_explain = ejecutar_explain_analyze(sql)
+    print(tabla(resumen_explain[["fase", "indice", "ejecucion_ms", "mejora"]]))
 
     # ---- NoSQL ----------------------------------------------------------
-    LOG.info(titulo("MongoDB / almacen de documentos local"))
     documentos = json.loads(
         (processed / "dataset_mongodb.json").read_text(encoding="utf-8")
     )
     mongo = IntegradorMongo(documentos)
-    modo = mongo.conectar()
+    mongo.conectar()
+    LOG.info(titulo(f"Almacen NoSQL: {mongo.modo}"))
     mongo.crear_colecciones()
     resumen_mongo = ejecutar_pipelines(mongo, fact)
+    resumen_busqueda = ejecutar_consultas_mongo(mongo)
 
     # ---- Reporte --------------------------------------------------------
     LOG.info(titulo("Resumen de la integracion"))
     resumen = pd.concat(
         [
             resumen_sql.assign(tipo="SQL", motor=sql.nombre),
-            resumen_mongo.assign(tipo="NoSQL", motor=mongo.modo),
+            resumen_mongo.assign(tipo="NoSQL (aggregate)", motor=mongo.modo),
+            resumen_busqueda.assign(tipo="NoSQL (find)", motor=mongo.modo),
         ],
         ignore_index=True,
     )
@@ -1524,14 +2058,19 @@ def main() -> None:
     resumen.to_csv(destino, index=False, encoding="utf-8-sig")
     LOG.info("  Resumen -> %s", destino)
 
+    # ---- Diagrama ER y justificacion 3FN --------------------------------
+    from er_diagram import generar_modelo
+
+    generar_modelo(REPORTS)
+
     (REPORTS / "integracion_entorno.md").write_text(_texto_entorno(sql, mongo), encoding="utf-8")
     LOG.info("  Entorno -> %s", REPORTS / "integracion_entorno.md")
 
     fallidas = resumen[resumen.estado != "OK"]
     if len(fallidas):
         raise AssertionError(f"{len(fallidas)} consultas fallaron:\n{fallidas}")
-    LOG.info("  %d consultas SQL + %d pipelines NoSQL ejecutados sin error",
-             len(resumen_sql), len(resumen_mongo))
+    LOG.info("  %d consultas SQL + %d pipelines + %d consultas NoSQL sin error",
+             len(resumen_sql), len(resumen_mongo), len(resumen_busqueda))
 
 
 def _texto_entorno(sql: IntegradorSQL, mongo: IntegradorMongo) -> str:
@@ -1544,9 +2083,10 @@ Generado: {datetime.now():%Y-%m-%d %H:%M:%S}
 | | |
 |---|---|
 | Motor usado | `{sql.nombre}` |
-| DDL | `data/reports/consultas_sql/01_ddl.sql` |
-| Consultas | `data/reports/consultas_sql/02_consultas.sql` |
-| Resultados | `data/reports/consultas_sql/*.csv` |
+| DDL (tablas, vista, indices) | `data/reports/consultas_sql/01_ddl.sql` |
+| Consultas analiticas | `data/reports/consultas_sql/02_consultas.sql` |
+| EXPLAIN ANALYZE + indice | `data/reports/consultas_sql/03_explain_analyze.md` |
+| Resultados | `data/reports/consultas_sql/Q*.csv` |
 
 ## NoSQL
 
@@ -1555,24 +2095,32 @@ Generado: {datetime.now():%Y-%m-%d %H:%M:%S}
 | Motor usado | `{mongo.modo}` |
 | Colecciones | {', '.join(f'{k} ({v})' for k, v in mongo.colecciones.items())} |
 | Indices | {len(mongo.indices_creados)} definidos |
-| Pipelines | `data/reports/consultas_mongodb/01_pipelines.js` |
-| Resultados | `data/reports/consultas_mongodb/*.csv` |
+| Pipelines (agregacion) | `data/reports/consultas_mongodb/01_pipelines.js` |
+| Consultas find/count | `data/reports/consultas_mongodb/02_consultas.js` |
+| Resultados | `data/reports/consultas_mongodb/A*.csv` (pipelines) y `B*.csv` (find) |
 
-## Como usar servidores reales
+## Como usar servidores reales (Supabase + Atlas)
 
 Copia `.env.example` a `.env` y define las variables. El script detecta
-automaticamente las credenciales y sube de modo:
+automaticamente las credenciales y sube de modo; si no responden, degrada a
+SQLite / NDJSON sin fallar.
 
 ```bash
-# SQL
-PG_HOST=localhost
+# PostgreSQL en Supabase (ver Panel > Connect)
+PG_HOST=db.<proyecto>.supabase.co
 PG_PORT=5432
-PG_DATABASE=novacommerce
+PG_DATABASE=postgres
 PG_USER=postgres
 PG_PASSWORD=tu_clave
+PG_SSLMODE=require
 
-# NoSQL
-MONGO_URI=mongodb+srv://usuario:clave@cluster.mongodb.net
+# Alternativa: usar el pooler (IPv4) si tu red no tiene IPv6
+# SUPABASE_HOST=aws-0-<region>.pooler.supabase.com
+# SUPABASE_PORT=5432
+# SUPABASE_USER=postgres.<proyecto>
+
+# MongoDB Atlas (NoSQL)
+MONGO_URI=mongodb+srv://usuario:clave@cluster0.xxxxx.mongodb.net/?appName=Cluster0
 MONGO_DB=novacommerce
 ```
 
@@ -1581,6 +2129,30 @@ Variables de control:
 - `SIN_POSTGRES=1` fuerza el modo SQLite aunque haya credenciales.
 - `SIN_MONGO=1` fuerza el modo NDJSON local.
 - `FORZAR_SQLITE=1` no intenta PostgreSQL.
+
+## Componentes cloud (Parte VI)
+
+| Componente | Como se usa | Donde |
+|---|---|---|
+| Cloud Database (SQL) | **Real** | PostgreSQL administrado en Supabase (via pooler IPv4) |
+| Cloud Database (NoSQL) | **Real** | MongoDB Atlas (clusters M0) |
+| Cloud Storage | **Simulado** | El arbol local `data/` replica la organizacion por carpetas de un bucket (ver abajo) |
+| Cloud Computing | **Local** | El ETL corre en la maquina del analista; el mismo comando corre sin cambios en una VM o en CI |
+
+### Organizacion de almacenamiento (Cloud Storage simulado)
+
+El layout local imita la jerarquia de carpetas de un bucket, de modo que
+publicar a GCS/S3 solo exigiria cambiar el destino, no el codigo:
+
+```
+data/raw/csv      -> crudo (Fuente A, formato CSV)
+data/raw/json     -> crudo (Fuente B, formato JSON)
+data/raw/sheets   -> crudo (Fuente C, formato XLSX/Sheets)
+data/processed/tablas           -> tablas normalizadas 3FN (carga SQL)
+data/processed/dataset_mongodb.json -> documentos para la coleccion NoSQL
+data/reports/     -> resultados de consultas, EXPLAIN y resumenes
+data/figures/     -> graficas del reporte
+```
 """
 
 

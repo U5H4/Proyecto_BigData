@@ -56,9 +56,9 @@ ESQUEMA_SQL = {
     "dim_ciudades": {"id_ciudad": "INTEGER", "nombre": "VARCHAR(80)", "region": "VARCHAR(50)"},
     "clientes": {
         "id_cliente": "INTEGER", "nombre": "VARCHAR(160)", "correo": "VARCHAR(160)",
-        "telefono": "VARCHAR(20)", "ciudad": "VARCHAR(80)", "fecha_alta": "DATE",
-        "canal_registro": "VARCHAR(30)", "es_premium": "BOOLEAN", "anio_alta": "INTEGER",
-        "mes_alta": "INTEGER", "antiguedad_dias": "INTEGER",
+        "telefono": "VARCHAR(20)", "ciudad": "VARCHAR(80)", "id_ciudad": "INTEGER",
+        "fecha_alta": "DATE", "canal_registro": "VARCHAR(30)", "es_premium": "BOOLEAN",
+        "anio_alta": "INTEGER", "mes_alta": "INTEGER", "antiguedad_dias": "INTEGER",
     },
     "productos": {
         "id_producto": "INTEGER", "nombre": "VARCHAR(200)", "categoria": "VARCHAR(80)",
@@ -149,7 +149,6 @@ def construir_dim_sucursales(sucursales: pd.DataFrame) -> pd.DataFrame:
     df = sucursales.copy()
     df["region_origen"] = df.get("region")
     df["region"] = df["ciudad"].map(REGION_CIUDAD).fillna("Nacional")
-    df = df.rename(columns={"fecha_apertura": "fecha_apertura"})
     df = df.sort_values("id_sucursal").reset_index(drop=True)
     return df[["id_sucursal", "nombre", "ciudad", "region", "region_origen",
                "metros_cuadrados", "fecha_apertura"]]
@@ -166,6 +165,14 @@ def construir_tablas(d: dict[str, pd.DataFrame]) -> dict[str, pd.DataFrame]:
     clientes = d["clientes"].rename(
         columns={"anio": "anio_alta", "mes": "mes_alta"}
     ).copy()
+    # FK clientes.id_ciudad -> dim_ciudades.id_ciudad: la ciudad (y su region)
+    # vive en un solo lugar (la dimension); el cliente guarda la llave. Si la
+    # ciudad no esta en la dimension ("Sin Ciudad") queda id_ciudad NULL, que la
+    # FK admite.
+    clientes = clientes.merge(
+        ciudades.rename(columns={"nombre": "ciudad"})[["id_ciudad", "ciudad"]],
+        on="ciudad", how="left",
+    )
 
     productos = d["productos"].copy()
     productos = productos.merge(

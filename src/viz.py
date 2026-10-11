@@ -30,7 +30,7 @@ from matplotlib.ticker import FuncFormatter  # noqa: E402
 
 import analysis  # noqa: E402
 from config import COLOR_ALERTA, COLOR_CATEGORIA, COLOR_NEUTRO, COLOR_OK, FIGURES, REPORTS  # noqa: E402
-from utils import LOG, asegurar_dir, numero, subtitulo, tabla, titulo  # noqa: E402
+from utils import LOG, asegurar_dir, numero, tabla, titulo  # noqa: E402
 
 ANCHO, ALTO = 11, 6
 DPI = 140
@@ -279,7 +279,7 @@ def grafico_segmentos(d: pd.DataFrame) -> plt.Figure:
     ax.set_xticklabels(d["segmento"], fontsize=9.5)
     ax.grid(axis="y", color="#ECEFF1", linewidth=0.8)
     ax.set_axisbelow(True)
-    for xi, (n, _) in zip(x, zip(d["clientes"], d["clientes"])):
+    for xi, n in zip(x, d["clientes"]):
         ax.text(xi, n + d["clientes"].max() * 0.02, f"{n:,}", ha="center",
                 fontsize=9, color="#455A64")
 
@@ -339,15 +339,16 @@ def grafico_correlacion(detalle: pd.DataFrame, metricas: pd.DataFrame) -> plt.Fi
     if detalle.empty:
         _vacio(ax, "sin datos de navegacion")
         return fig
-    v = detalle["visitas"].astype(float)
-    u = detalle["unidades"].astype(float)
+    v = detalle["numero_visualizaciones"].astype(float)
+    u = detalle["cantidad_vendida"].astype(float)
     sizes = 18 + 150 * (u / u.max() if u.max() else 1)
     colores = np.where(u > 0, PALETA[0], COLOR_ALERTA)
     ax.scatter(v, u, s=sizes, c=colores, alpha=0.45, edgecolors="none")
 
     sub = detalle[(v > 0) & (u > 0)]
     if len(sub) > 2:
-        pendiente, intercepto = np.polyfit(sub["visitas"], sub["unidades"], 1)
+        pendiente, intercepto = np.polyfit(sub["numero_visualizaciones"],
+                                           sub["cantidad_vendida"], 1)
         xs = np.linspace(0, v.max(), 50)
         ax.plot(xs, intercepto + pendiente * xs, color=COLOR_ALERTA, linewidth=2,
                 linestyle="--", zorder=6)
@@ -365,7 +366,7 @@ def grafico_correlacion(detalle: pd.DataFrame, metricas: pd.DataFrame) -> plt.Fi
     ax.grid(color="#ECEFF1", linewidth=0.8)
     ax.set_axisbelow(True)
 
-    cero = int((detalle["unidades"] == 0).sum())
+    cero = int((detalle["cantidad_vendida"] == 0).sum())
     lineas = [
         f"{_cortar(r.metrica, 38)}: {r.valor:.3f}" for r in metricas.itertuples()
         if r.metrica.startswith(("Pearson", "Spearman"))
@@ -388,10 +389,10 @@ def grafico_inventario_muerto(d: pd.DataFrame) -> plt.Figure:
     if d.empty:
         _vacio(ax, "todo el trafico navega productos que despues venden")
         return fig
-    total_muertos = int((d["unidades"] == 0).sum())
+    total_muertos = int((d["cantidad_vendida"] == 0).sum())
     d = d.head(15).reset_index(drop=True)
     _barras_h(ax, [_cortar(f"{r.nombre} ({_cortar(r.categoria, 12)})", 40) for r in d.itertuples()],
-              d["visitas"].to_numpy(), COLOR_ALERTA)
+              d["numero_visualizaciones"].to_numpy(), COLOR_ALERTA)
     ax.set_xlabel("Visualizaciones", fontsize=9.5, color="#455A64")
     _pie(ax, f"Mostrados los {len(d)} con mas trafico, de {total_muertos} productos "
              f"que reciben visitas y no registran ninguna unidad vendida")
@@ -410,7 +411,7 @@ def grafico_under_exposure(d: pd.DataFrame) -> plt.Figure:
         return fig
     d = d.head(15).reset_index(drop=True)
     _barras_h(ax, [_cortar(f"{r.nombre} ({_cortar(r.categoria, 12)})", 40) for r in d.itertuples()],
-              d["unidades"].to_numpy(), COLOR_OK)
+              d["cantidad_vendida"].to_numpy(), COLOR_OK)
     ax.set_xlabel("Unidades vendidas", fontsize=9.5, color="#455A64")
     _pie(ax, "visitas por unidad en el top 5: " + " | ".join(
         f"{_cortar(r.nombre, 20)} = {r.visitas_por_unidad:.2f}"

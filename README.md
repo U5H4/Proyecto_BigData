@@ -5,8 +5,9 @@ Proyecto completo de ingeniería de datos sobre una empresa ficticia,
 
 El pipeline genera tres fuentes crudas **con errores intencionales**, las limpia
 con 10 transformaciones auditables, las carga en un modelo relacional y un
-almacén de documentos, responde 28 preguntas de negocio con SQL y agregaciones
-NoSQL, y produce un reporte con 12 gráficos.
+almacén de documentos, responde 45 preguntas de negocio (20 en SQL, 10 pipelines
+de agregación y 15 consultas `find`/`countDocuments` en NoSQL), y produce un
+reporte con 12 gráficos.
 
 Todo es **reproducible**: la semilla `SEED = 20260904` fija los datos
 sintéticos, así que dos ejecuciones dan exactamente el mismo resultado.
@@ -21,7 +22,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe src\run_all.py
 ```
 
-`run_all.py` ejecuta las seis etapas en orden y **se detiene en la primera que
+`run_all.py` ejecuta las cinco etapas en orden y **se detiene en la primera que
 falle**, para no dejar datasets a medio escribir.
 
 ```bash
@@ -39,7 +40,7 @@ python src\etl_load.py           # Partes I-V -> data/processed/
 python src\integration.py        # Parte Cloud -> SQL + NoSQL
 python src\analysis.py           # Parte V   -> data/reports/analisis/
 python src\viz.py               #            -> data/figures/
-python -m pytest tests -q        # 146 pruebas
+python -m pytest tests -q        # 154 pruebas
 ```
 
 ---
@@ -55,7 +56,9 @@ bigdata_project/
 │   ├── etl_extract.py        Extracción + evidencia por tabla y columna
 │   ├── etl_transform.py      Las 10 transformaciones (T01..T10)
 │   ├── etl_load.py           3FN → dataset analítico + documentos para MongoDB
-│   ├── integration.py        DDL, carga, verificación, 18 consultas + 10 pipelines
+│   ├── integration.py        DDL, carga, verificación, 20 consultas SQL,
+│   │                          10 pipelines + 15 consultas find/count NoSQL
+│   ├── er_diagram.py         Diagrama ER (PNG) + justificación 3FN
 │   ├── analysis.py           19 análisis de negocio
 │   ├── viz.py                12 gráficos PNG
 │   └── run_all.py            Orquestador
@@ -64,7 +67,9 @@ bigdata_project/
 ├── data/
 │   ├── raw/                  csv/, json/, sheets/   (con errores)
 │   ├── processed/            tablas/, dataset_postgresql.csv, dataset_mongodb.json
-│   ├── reports/              calidad, consultas, análisis, figuras_indice.csv
+│   ├── reports/              calidad, consultas_sql/, consultas_mongodb/,
+│   │                         analisis/, modelo_relacional.md + .png,
+│   │                         integracion_entorno.md, figuras_indice.csv
 │   └── figures/              12 PNG
 └── logs/                     pipeline.log
 ```
@@ -102,7 +107,8 @@ afectados y la regla de negocio aplicada).
 
 ## 4. Modelo de datos
 
-**SQL (PostgreSQL, 3FN)** — 8 tablas con PK, FK, índices y `CHECK`:
+**SQL (PostgreSQL, 3FN)** — 8 tablas con PK, FK, `UNIQUE` (llave natural),
+`NOT NULL` de negocio, `CHECK` e índices:
 
 ```
 categorias ──┐                    pedidos ──┬── detalle_pedido
@@ -112,8 +118,15 @@ clientes ────┼── pedidos ─────────────�
              └── productos
 ```
 
+El diagrama se regenera en cada corrida: `data/reports/modelo_relacional.png`
+(con la justificación de por qué el modelo está en 3FN en
+`data/reports/modelo_relacional.md`).
+
 Más `fact_ventas`, un desnormalizado **deliberado** de 47 columnas (una fila
-por línea de venta) que existe para no escribir JOINs en cada gráfico.
+por línea de venta) que existe para no escribir JOINs en cada gráfico, y la
+**vista** `v_resumen_ventas`, que encapsula el JOIN de 5 tablas
+(`pedidos`, `detalle_pedido`, `clientes`, `productos`, `categorias`) para el
+resumen mensual.
 
 **NoSQL (MongoDB)** — 3 colecciones con 12 índices:
 
@@ -131,31 +144,45 @@ equivalentes en Pandas. Todos los agregaciones tienen su versión declaradas en
 las dos herramientas.
 
 ```bash
-copy .env.example .env     # y define PG_* y MONGO_URI
+copy .env.example .env     # y define PG_* (Supabase) y MONGO_URI (Atlas)
 ```
 
 | Variable | Efecto |
 |---|---|
-| `PG_HOST` … `PG_PASSWORD` | Usa PostgreSQL real |
-| `MONGO_URI`, `MONGO_DB` | Usa MongoDB real |
-| `SIN_POSTGRES=1` / `SIN_MONGO=1` |Fuerza el modo local |
+| `PG_HOST` … `PG_PASSWORD`, `PG_SSLMODE` | Usa PostgreSQL real (Supabase exige `PG_SSLMODE=require`) |
+| `SUPABASE_HOST` … (pooler IPv4) | Alternativa a `PG_*` si tu red no tiene IPv6 |
+| `MONGO_URI` / `MONGO_ATLAS_URI`, `MONGO_DB` | Usa MongoDB real (Atlas) |
+| `SIN_POSTGRES=1` / `SIN_MONGO=1` | Fuerza el modo local |
 | `FORZAR_SQLITE=1` | No intenta PostgreSQL |
+
+Si el servidor cloud no responde, el pipeline **no falla**: registra un
+`WARNING` y sigue en modo local, de modo que siempre quedan resultados.
 
 ---
 
-## 5. Las 28 consultas
+## 5. Las 45 consultas
 
-**18 SQL** (`data/reports/consultas_sql/`): top productos y clientes, serie
+**20 SQL** (`data/reports/consultas_sql/`): top productos y clientes, serie
 mensual, mix por categoría, ticket por canal, **inventario muerto** (55
 productos que nunca se vendieron), clientes con cancelaciones, conciliación de
 pagos, descuentos, geography, premium vs estándar, **ley de Pareto**,
-nuevos vs recurrentes, mix trimestral, alta rotación y cobertura por sucursal.
+nuevos vs recurrentes, mix trimestral, alta rotación, cobertura por sucursal,
+**detalle 360 con JOIN de 6 tablas** (Q19) y **resumen mensual sobre la vista
+`v_resumen_ventas`** (Q20).
 
-**10 pipelines NoSQL** (`data/reports/consultas_mongodb/`): top vistos,
-**inversión que no convierte**, under-exposure, tráfico mensual, navegación
-por dispositivo, rating y dispersión, **consulta dinámica sobre un atributo
-que solo existe en una familia** (A08), recorrido de un usuario y
+**10 pipelines de agregación NoSQL** (`data/reports/consultas_mongodb/`): top
+vistos, **inversión que no convierte**, under-exposure, tráfico mensual,
+navegación por dispositivo, rating y dispersión, **consulta dinámica sobre un
+atributo que solo existe en una familia** (A08), recorrido de un usuario y
 **correlación visitas→venta** (A10).
+
+**15 consultas `find`/`countDocuments` NoSQL** (B01–B15): filtros con `$gt`,
+`$lt`, `$gte/$lte`, `$in`, `$and` y `$or`, ordenadas con `find().sort().limit()`
+y un conteo con `countDocuments()`.
+
+El rendimiento del índice `ix_fact_anio_mes` queda documentado con
+`EXPLAIN ANALYZE` en `data/reports/consultas_sql/03_explain_analyze.md`: con el
+índice el plan hace `SEARCH ... USING INDEX`, sin él un `SCAN` completo.
 
 Cada consulta guarda su DDL/pipeline y su resultado en CSV, así que el
 resultado es auditable sin volver a ejecutar nada.
@@ -196,7 +223,7 @@ mucho y ya no vuelven (19.7% de la venta).
 ## 7. Pruebas
 
 ```bash
-python -m pytest tests -q      # 146 pruebas, ~2 s
+python -m pytest tests -q      # 154 pruebas, ~2 s
 ```
 
 Las pruebas del análisis no comparan contra valores fijos del dataset real
@@ -223,15 +250,24 @@ Se cubren en particular los dos errores clásicos de este modelo:
 
 | | |
 |---|---|
-| Pruebas | 146 OK |
-| Consultas SQL | 18/18 OK |
+| Pruebas | 154 OK |
+| Consultas SQL | 20/20 OK |
 | Pipelines NoSQL | 10/10 OK |
+| Consultas `find`/`count` NoSQL | 15/15 OK |
 | Gráficos | 12/12 OK |
+| Diagrama ER | generado (`data/reports/modelo_relacional.png`) |
+| Motor relacional | **Supabase** (PostgreSQL 17, Session pooler IPv4) |
+| Motor NoSQL | **MongoDB Atlas** 8.0 |
+| Efecto del índice | **4.5x** (0.21 ms con índice vs 0.95 ms sin él, `Execution Time` del servidor) |
 | Nulos en el dataset final | **0** en las 8 tablas y en la fact |
 | Mínimos del punto 4 | todos cumplen con holgura |
 | Trampas de navegación | 15 attractive (14 visitas / **0** unidades) · 15 poco-visto-mucho-vendido (1 / **12**) · 63 visto-nunca-vendido (**2** visitas / 0 unidades) |
 
-PostgreSQL y MongoDB reales **no se han podido validar** en este entorno (sin
-contraseña y por timeout). Los resultados de arriba son sobre los modos
-simulados, que son los que permiten reproducir el proyecto sin
-infraestructura.
+Los resultados de arriba se generan corriendo contra **Supabase** y **MongoDB
+Atlas** reales (Parte VI), configurados en `.env`. Si un servidor no respondiera,
+el pipeline registra un `WARNING` y degrada a SQLite / NDJSON sin romperse, así
+que el proyecto también se reproduce sin infraestructura.
+
+> Detalle Supabase: el host directo `db.<proyecto>.supabase.co` solo resuelve a
+> IPv6; por eso se usa el **Session pooler** (`aws-0-us-west-2.pooler.supabase.com`,
+> usuario `postgres.<ref>`), que es IPv4.

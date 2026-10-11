@@ -1,4 +1,4 @@
-"""PARTE II - ETAPA EXTRACT.
+﻿"""PARTE II - ETAPA EXTRACT.
 
 Extrae las tres fuentes crudas y produce la EVIDENCIA de extraccion que pide
 el punto 6 del enunciado: fuente, formato, cantidad de registros, columnas y
@@ -235,7 +235,6 @@ def _guardar_evidencia(des: list[Descriptor]) -> None:
     filas = []
     for d in des:
         for col, tipo in d.tipos.items():
-            serie = None
             filas.append(
                 {
                     "fuente": d.fuente,

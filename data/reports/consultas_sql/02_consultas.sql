@@ -1,6 +1,6 @@
--- Consultas analiticas NovaCommerce (18)
--- Ejecutadas: 2026-10-05 18:24:06
--- Dialecto: sqlite
+-- Consultas analiticas NovaCommerce (20)
+-- Ejecutadas: 2026-10-11 15:23:26
+-- Dialecto: postgresql
 -- @VERDADERO@/@FALSO@ se sustituyen por 1/0 (SQLite) o TRUE/FALSE (PostgreSQL)
 
 -- Q01: Top 10 productos por facturacion
@@ -13,8 +13,8 @@ SELECT p.id_producto, p.nombre AS producto, p.categoria,
                    COUNT(DISTINCT f.id_pedido) AS pedidos,
                    ROUND(SUM(f.total) / SUM(f.cantidad), 2) AS precio_promedio
             FROM fact_ventas f
-            JOIN productos p ON p.id_producto = f.id_producto
-            WHERE f.es_completado = 1
+            INNER JOIN productos p ON p.id_producto = f.id_producto
+            WHERE f.es_completado = TRUE
             GROUP BY p.id_producto, p.nombre, p.categoria
             ORDER BY facturacion DESC
             LIMIT 10;
@@ -27,7 +27,7 @@ SELECT p.id_producto, p.nombre AS producto, p.categoria,
 WITH por_pedido AS (
                 SELECT DISTINCT id_pedido, id_cliente, total_pedido, fecha_pedido
                 FROM fact_ventas
-                WHERE es_completado = 1
+                WHERE es_completado = TRUE
             )
             SELECT c.id_cliente, c.nombre AS cliente, c.ciudad, c.es_premium,
                    COUNT(p.id_pedido) AS pedidos,
@@ -35,7 +35,7 @@ WITH por_pedido AS (
                    ROUND(AVG(p.total_pedido), 2) AS ticket_promedio,
                    MAX(p.fecha_pedido) AS ultima_compra
             FROM por_pedido p
-            JOIN clientes c ON c.id_cliente = p.id_cliente
+            INNER JOIN clientes c ON c.id_cliente = p.id_cliente
             GROUP BY c.id_cliente, c.nombre, c.ciudad, c.es_premium
             ORDER BY gasto DESC
             LIMIT 10;
@@ -52,7 +52,7 @@ SELECT anio_mes,
                    SUM(total) AS facturacion,
                    ROUND(AVG(total_pedido), 2) AS ticket_promedio
             FROM fact_ventas
-            WHERE es_completado = 1
+            WHERE es_completado = TRUE
             GROUP BY anio_mes
             ORDER BY anio_mes;
 
@@ -66,10 +66,10 @@ SELECT categoria,
                    SUM(cantidad) AS unidades,
                    COUNT(DISTINCT producto_nombre) AS productos,
                    ROUND(100.0 * SUM(total) / (SELECT SUM(total) FROM fact_ventas
-                                                WHERE es_completado = 1), 2) AS pct_del_total,
+                                                WHERE es_completado = TRUE), 2) AS pct_del_total,
                    ROUND(AVG(porcentaje_descuento), 2) AS descuento_promedio_pct
             FROM fact_ventas
-            WHERE es_completado = 1
+            WHERE es_completado = TRUE
             GROUP BY categoria
             ORDER BY facturacion DESC;
 
@@ -81,7 +81,7 @@ SELECT categoria,
 WITH por_pedido AS (
                 SELECT DISTINCT id_pedido, canal_venta, total_pedido, unidades
                 FROM fact_ventas
-                WHERE es_completado = 1
+                WHERE es_completado = TRUE
             )
             SELECT canal_venta,
                    COUNT(*) AS pedidos,
@@ -107,15 +107,15 @@ SELECT p.id_producto, p.nombre AS producto, p.categoria,
 
 
 -- Q07: Clientes con pedidos cancelados
--- Pregunta: Que clientesCancelan y cuanto nos cuestan?
+-- Pregunta: Que clientes cancelan y cuanto nos cuestan?
 -- Resultado: Q07_clientes_con_pedidos_cancelados.csv
 
 SELECT c.id_cliente, c.nombre AS cliente, c.ciudad,
                    COUNT(DISTINCT pe.id_pedido) AS pedidos_cancelados,
                    SUM(f.total) AS monto_perdido
             FROM fact_ventas f
-            JOIN clientes c   ON c.id_cliente = f.id_cliente
-            JOIN pedidos pe   ON pe.id_pedido = f.id_pedido
+            INNER JOIN clientes c   ON c.id_cliente = f.id_cliente
+            INNER JOIN pedidos pe   ON pe.id_pedido = f.id_pedido
             WHERE pe.estado = 'cancelado'
             GROUP BY c.id_cliente, c.nombre, c.ciudad
             ORDER BY monto_perdido DESC
@@ -129,7 +129,7 @@ SELECT c.id_cliente, c.nombre AS cliente, c.ciudad,
 SELECT metodo,
                    COUNT(DISTINCT id_pedido) AS pedidos,
                    SUM(monto) AS monto,
-                   ROUND(100.0 * SUM(CASE WHEN conciliado = 1 THEN 1 ELSE 0 END)
+                   ROUND(100.0 * SUM(CASE WHEN conciliado = TRUE THEN 1 ELSE 0 END)
                          / COUNT(*), 2) AS pct_conciliado,
                    ROUND(AVG(diferencia_pago), 2) AS diferencia_promedio
             FROM fact_ventas
@@ -163,7 +163,7 @@ SELECT ciudad, region,
                    SUM(total) AS facturacion,
                    ROUND(AVG(total_pedido), 2) AS ticket_promedio
             FROM fact_ventas
-            WHERE es_completado = 1
+            WHERE es_completado = TRUE
             GROUP BY ciudad, region
             ORDER BY facturacion DESC;
 
@@ -175,7 +175,7 @@ SELECT ciudad, region,
 WITH por_pedido AS (
                 SELECT DISTINCT id_pedido, id_cliente, total_pedido, es_premium
                 FROM fact_ventas
-                WHERE es_completado = 1
+                WHERE es_completado = TRUE
             ),
             totales AS (
                 SELECT es_premium,
@@ -184,7 +184,7 @@ WITH por_pedido AS (
                 FROM por_pedido
                 GROUP BY es_premium
             )
-            SELECT CASE WHEN es_premium = 1 THEN 'Premium' ELSE 'Estandar' END
+            SELECT CASE WHEN es_premium = TRUE THEN 'Premium' ELSE 'Estandar' END
                        AS segmento,
                    clientes,
                    facturacion,
@@ -204,7 +204,7 @@ WITH por_pedido AS (
 WITH ventas AS (
                 SELECT producto_nombre, SUM(total) AS facturacion
                 FROM fact_ventas
-                WHERE es_completado = 1
+                WHERE es_completado = TRUE
                 GROUP BY producto_nombre
             ),
             acumulado AS (
@@ -244,7 +244,7 @@ SELECT producto_nombre AS producto, categoria,
                    ROUND(SUM(total) * AVG(margen_bruto_producto), 2) AS utilidad_estimada,
                    ROUND(AVG(margen_bruto_producto), 4) AS margen_promedio
             FROM fact_ventas
-            WHERE es_completado = 1
+            WHERE es_completado = TRUE
             GROUP BY producto_nombre, categoria
             HAVING SUM(cantidad) >= 5
             ORDER BY utilidad_estimada DESC
@@ -259,7 +259,7 @@ SELECT id_pedido, id_cliente, estado, estado_pago, metodo,
                    total_pedido, monto, diferencia_pago,
                    ROUND(100.0 * ABS(diferencia_pago) / total_pedido, 2) AS pct_diferencia
             FROM fact_ventas
-            WHERE conciliado = 0 AND total_pedido > 0
+            WHERE conciliado = FALSE AND total_pedido > 0
             ORDER BY ABS(diferencia_pago) DESC
             LIMIT 25;
 
@@ -271,7 +271,7 @@ SELECT id_pedido, id_cliente, estado, estado_pago, metodo,
 WITH primera AS (
                 SELECT id_cliente, MIN(fecha_pedido) AS primera_compra
                 FROM fact_ventas
-                WHERE es_completado = 1
+                WHERE es_completado = TRUE
                 GROUP BY id_cliente
             ),
             perfil AS (
@@ -279,7 +279,7 @@ WITH primera AS (
                        COUNT(DISTINCT f.id_pedido) AS pedidos,
                        SUM(f.total) AS gasto
                 FROM fact_ventas f
-                WHERE f.es_completado = 1
+                WHERE f.es_completado = TRUE
                 GROUP BY f.id_cliente
             )
             SELECT CASE WHEN pe.pedidos = 1 THEN 'Una sola compra' ELSE 'Recurrente' END AS tipo,
@@ -300,7 +300,7 @@ SELECT anio, trimestre, categoria,
                    SUM(total) AS facturacion,
                    SUM(cantidad) AS unidades
             FROM fact_ventas
-            WHERE es_completado = 1
+            WHERE es_completado = TRUE
             GROUP BY anio, trimestre, categoria
             ORDER BY anio, trimestre, facturacion DESC;
 
@@ -314,7 +314,7 @@ SELECT producto_nombre AS producto, categoria, rango_precio,
                    ROUND(SUM(total), 2) AS facturacion,
                    COUNT(DISTINCT id_cliente) AS clientes_distintos
             FROM fact_ventas
-            WHERE es_completado = 1
+            WHERE es_completado = TRUE
             GROUP BY producto_nombre, categoria, rango_precio, precio_lista
             HAVING SUM(cantidad) <= 2
             ORDER BY precio_lista DESC
@@ -332,5 +332,34 @@ SELECT id_sucursal, estado,
             FROM fact_ventas
             GROUP BY id_sucursal, estado
             ORDER BY id_sucursal, facturacion DESC;
+
+
+-- Q19: Detalle 360 del pedido (JOIN de 6 tablas)
+-- Pregunta: Cual es el detalle completo de cada linea de venta?
+-- Resultado: Q19_detalle_360_del_pedido_join_de_6_tablas.csv
+
+SELECT c.nombre AS cliente, c.ciudad, cat.nombre AS categoria,
+                   pr.nombre AS producto, pe.id_pedido, pe.fecha_pedido,
+                   d.cantidad, d.precio_unitario, d.descuento, d.total,
+                   pg.metodo AS metodo_pago, pg.estado_pago
+            FROM detalle_pedido d
+            INNER JOIN pedidos pe     ON pe.id_pedido = d.id_pedido
+            INNER JOIN clientes c     ON c.id_cliente = pe.id_cliente
+            INNER JOIN productos pr   ON pr.id_producto = d.id_producto
+            INNER JOIN categorias cat ON cat.id_categoria = pr.id_categoria
+            LEFT JOIN pagos pg  ON pg.id_pedido = pe.id_pedido
+            WHERE pe.es_completado = TRUE
+            ORDER BY pe.fecha_pedido DESC, pe.id_pedido
+            LIMIT 20;
+
+
+-- Q20: Resumen mensual via vista v_resumen_ventas
+-- Pregunta: Cual es el pulso mensual sin reescribir el JOIN?
+-- Resultado: Q20_resumen_mensual_via_vista_v_resumen_ventas.csv
+
+SELECT anio_mes, mes_nombre, pedidos, clientes, productos,
+                   unidades, facturacion, ticket_promedio
+            FROM v_resumen_ventas
+            ORDER BY anio_mes;
 
 

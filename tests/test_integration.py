@@ -37,6 +37,7 @@ def fact() -> pd.DataFrame:
         "id_producto": [1, 2, 1, 3, 4],
         "id_categoria": [1, 2, 1, 1, 3],
         "id_sucursal": [1, 1, 2, 1, 3],
+        "id_ciudad": [1, 1, 2, 3, 3],
         "fecha_pedido": ["2025-01-05", "2025-01-05", "2025-02-10",
                          "2025-03-15", "2025-03-15"],
         "anio": [2025] * 5,
@@ -291,9 +292,9 @@ def test_detecta_conteo_descuadrado(integ, fact):
 
 
 # ==========================================================================
-# Las 18 consultas deben correr y devolver filas
+# Las consultas SQL deben correr y devolver filas
 # ==========================================================================
-def test_las_18_consultas_sql_ejecutan_sin_error(integ, fact):
+def test_las_consultas_sql_ejecutan_sin_error(integ, fact):
     integ.crear_esquema(fact)
     integ.cargar(_tablas_pequenas(), fact)
     with integ.motor.connect() as conn:
@@ -307,11 +308,102 @@ def test_las_18_consultas_sql_ejecutan_sin_error(integ, fact):
 def test_identificadores_y_titulos_de_consulta_son_unicos():
     ids = [c["id"] for c in I.CONSULTAS_SQL]
     titulos = [c["titulo"] for c in I.CONSULTAS_SQL]
-    assert len(ids) == len(set(ids)) == 18
+    assert len(ids) == len(set(ids))
+    assert len(ids) >= 18, "el enunciado pide al menos las consultas analiticas"
     assert len(titulos) == len(set(titulos))
     for c in I.CONSULTAS_SQL:
         assert c["pregunta"].endswith("?"), f"{c['id']} sin pregunta de negocio"
         assert "SELECT" in c["sql"].upper()
+
+
+def test_existe_consulta_con_join_de_cuatro_o_mas_tablas():
+    """El enunciado exige una consulta con JOIN de cuatro tablas o mas."""
+    max_joins = 0
+    for c in I.CONSULTAS_SQL:
+        n = c["sql"].upper().count(" JOIN ")
+        max_joins = max(max_joins, n)
+    assert max_joins >= 4, f"solo hay JOINs de {max_joins} tablas"
+
+
+def test_ddl_define_llave_unica_y_not_null(integ, fact):
+    """El DDL debe declarar UNIQUE (llave natural) y NOT NULL de negocio."""
+    for tabla in ("categorias", "dim_ciudades", "productos"):
+        assert "UNIQUE (nombre)" in I._ddl_tabla(tabla, "sqlite"), tabla
+
+    integ.crear_esquema(fact)
+    insp = inspect(integ.motor)
+    nullable = {c["name"]: c["nullable"] for c in insp.get_columns("clientes")}
+    assert nullable["nombre"] is False
+    assert nullable["correo"] is False
+
+
+def test_esquema_estrella_clientes_apunta_a_dim_ciudades():
+    """clientes debe llevar la FK a dim_ciudades, no solo el texto de la ciudad."""
+    assert "id_ciudad" in ESQUEMA_SQL["clientes"]
+    assert ("clientes", "id_ciudad", "dim_ciudades", "id_ciudad") in I.CLAVES_FORANEAS
+
+
+def test_fact_declara_fk_a_todas_las_dimensiones(fact):
+    """fact_ventas conserva la llave de cada dimension y la declara como FK."""
+    cols = {c for c, _, _ in I.CLAVES_FORANEAS_FACT}
+    assert {"id_pedido", "id_producto", "id_cliente", "id_categoria",
+            "id_sucursal", "id_ciudad"} <= cols
+    for col, padre, col_padre in I.CLAVES_FORANEAS_FACT:
+        assert padre in I.CLAVES_PRIMARIAS, padre
+        assert I.CLAVES_PRIMARIAS[padre] == col_padre
+        assert col in I._esquema_fact(fact), f"fact_ventas sin columna {col}"
+
+
+def test_construir_tablas_mapea_id_ciudad_en_clientes():
+    """La ciudad vive en dim_ciudades; clientes guarda id_ciudad."""
+    from etl_load import construir_tablas
+
+    d = _tablas_pequenas().copy()
+    d["productos"] = d["productos"].drop(columns=["id_categoria"])
+    tablas = construir_tablas(d)
+    cli = tablas["clientes"].set_index("id_cliente")
+    ids = tablas["dim_ciudades"].set_index("nombre")["id_ciudad"]
+    assert cli.loc[1, "id_ciudad"] == ids["Veracruz"]        # cliente 1
+    assert cli.loc[2, "id_ciudad"] == ids["Ciudad de Mexico"]  # cliente 2
+    assert cli.loc[3, "id_ciudad"] == ids["Puebla"]          # cliente 3
+    assert cli["id_ciudad"].notna().all()
+
+
+def test_unique_se_hace_cumplir_en_la_base(integ, fact):
+    """La llave natural UNIQUE rechaza un valor duplicado de verdad."""
+    integ.crear_esquema(fact)
+    integ.cargar(_tablas_pequenas(), fact)
+    with pytest.raises(IntegrityError):
+        with integ.motor.begin() as conn:
+            conn.execute(text(
+                "INSERT INTO categorias (id_categoria, nombre, descripcion) "
+                "VALUES (99, 'Computadoras', 'duplicada')"
+            ))
+
+
+def test_existe_vista_de_resumen_de_ventas(integ, fact):
+    integ.crear_esquema(fact)
+    integ.cargar(_tablas_pequenas(), fact)
+    vistas = set(inspect(integ.motor).get_view_names())
+    assert "v_resumen_ventas" in vistas
+    q20 = next(c["sql"] for c in I.CONSULTAS_SQL if c["id"] == "Q20")
+    with integ.motor.connect() as conn:
+        df = pd.read_sql_query(
+            text(I._adaptar_booleanos(q20, integ.dialecto)), conn)
+    assert not df.empty
+    assert {"anio_mes", "facturacion", "pedidos"} <= set(df.columns)
+
+
+def test_benchmark_de_indice_reporta_dos_fases(integ, fact):
+    integ.crear_esquema(fact)
+    integ.cargar(_tablas_pequenas(), fact)
+    filas = integ.benchmark_indice(
+        "fact_ventas", ["anio_mes"], I.SQL_BENCHMARK, nombre="ix_fact_anio_mes",
+        repeticiones=2)
+    assert {f["fase"] for f in filas} == {"CON INDICE", "SIN INDICE"}
+    for f in filas:
+        assert f["ejecucion_ms"] >= 0
+        assert f["plan"].strip(), "cada fase debe traer su plan de ejecucion"
 
 
 def test_consulta_pareto_es_matematicamente_coherente(integ, fact):
@@ -367,6 +459,87 @@ def test_los_10_pipelines_declaran_equivalente_pandas():
     for p in I.PIPELINES_MONGO:
         assert callable(p["pandas"]), f"{p['id']} sin equivalente en pandas"
         assert p["pregunta"].endswith("?")
+
+
+def _operadores_de(filtro: dict) -> set[str]:
+    ops: set[str] = set()
+    for clave, valor in filtro.items():
+        if clave in ("$and", "$or"):
+            ops.add(clave)
+            for sub in valor:
+                ops |= _operadores_de(sub)
+        elif isinstance(valor, dict):
+            ops.update(valor.keys())
+    return ops
+
+
+def test_las_15_consultas_mongo_usan_los_metodos_y_operadores_requeridos():
+    ids = [c["id"] for c in I.CONSULTAS_MONGO]
+    assert len(ids) == len(set(ids)) == 15
+    tipos, ops = set(), set()
+    for c in I.CONSULTAS_MONGO:
+        assert c["pregunta"].endswith("?"), f"{c['id']} sin pregunta de negocio"
+        assert c["tipo"] in ("find", "countDocuments"), f"{c['id']} tipo invalido"
+        assert c["coleccion"] in I.INDICES_MONGO
+        tipos.add(c["tipo"])
+        ops |= _operadores_de(c.get("filtro") or {})
+    assert {"$gt", "$lt", "$in", "$and", "$or"} <= ops, f"faltan operadores: {ops}"
+    assert {"find", "countDocuments"} <= tipos
+    # las consultas find deben declarar sort y limit (find().sort().limit())
+    for c in I.CONSULTAS_MONGO:
+        if c["tipo"] == "find":
+            assert c.get("sort"), f"{c['id']} sin sort"
+            assert c.get("limit"), f"{c['id']} sin limit"
+
+
+def test_aplicar_filtro_soporta_operadores_mongo():
+    df = pd.DataFrame({"precio": [100, 500, 6000, 25000],
+                       "categoria": ["A", "B", "A", "C"]})
+    assert list(I._aplicar_filtro(df, {"precio": {"$gt": 500}}).precio) == [6000, 25000]
+    assert list(I._aplicar_filtro(df, {"precio": {"$lt": 600}}).precio) == [100, 500]
+    assert list(I._aplicar_filtro(df, {"categoria": {"$in": ["A", "C"]}}).precio) \
+        == [100, 6000, 25000]
+    conj = I._aplicar_filtro(df, {"$and": [{"categoria": "A"}, {"precio": {"$lt": 1000}}]})
+    assert list(conj.precio) == [100]
+    disy = I._aplicar_filtro(df, {"$or": [{"precio": {"$lt": 200}},
+                                          {"precio": {"$gt": 10000}}]})
+    assert list(disy.precio) == [100, 25000]
+
+
+def test_consultas_mongo_locales_devuelven_resultados(monkeypatch):
+    monkeypatch.setenv("SIN_MONGO", "1")
+    docs = {
+        "productos": [
+            {"id_producto": 1, "nombre": "A", "categoria": "Redes",
+             "precio": 8000, "rango_precio": "Alto"},
+            {"id_producto": 2, "nombre": "B", "categoria": "Audio",
+             "precio": 500, "rango_precio": "Economico"},
+        ],
+        "resenas": [
+            {"id_resena": 1, "producto": "A", "calificacion": 5,
+             "fecha": "2025-01-01", "verificada": True},
+            {"id_resena": 2, "producto": "B", "calificacion": 2,
+             "fecha": "2025-01-02", "verificada": False},
+        ],
+        "actividad_usuario": [
+            {"usuario": "u1", "producto": "A", "dispositivo": "iOS",
+             "duracion_seg": 400, "es_visualizacion": True,
+             "evento": "producto_visto", "fecha": "2025-01-01"},
+            {"usuario": "u2", "producto": "B", "dispositivo": "Windows",
+             "duracion_seg": 10, "es_visualizacion": True,
+             "evento": "producto_comprado", "fecha": "2025-01-02"},
+        ],
+    }
+    integ = I.IntegradorMongo(docs)
+    assert integ.conectar() == "local"
+    integ.crear_colecciones()
+
+    b01 = next(c for c in I.CONSULTAS_MONGO if c["id"] == "B01")  # precio > 5000
+    assert list(integ.ejecutar_consulta(b01)["id_producto"]) == [1]
+    b13 = next(c for c in I.CONSULTAS_MONGO if c["id"] == "B13")  # countDocuments
+    assert int(integ.ejecutar_consulta(b13)["total"].iloc[0]) == 1
+    b14 = next(c for c in I.CONSULTAS_MONGO if c["id"] == "B14")  # iOS/macOS
+    assert list(integ.ejecutar_consulta(b14)["usuario"]) == ["u1"]
 
 
 def test_esquema_de_indices_cubre_las_tres_colecciones():
