@@ -1,5 +1,5 @@
-// Consultas find/countDocuments NovaCommerce (B01-B15)
-// Generadas: 2026-10-18 12:35:50
+// Consultas find/countDocuments Corporativo JUC (B01-B15)
+// Generadas: 2026-10-18 13:20:06
 // Ejecutar con mongosh sobre la base de datos NoSQL (ver MONGO_DB en src/config.py)
 
 // B01: Productos premium (precio > 5000)

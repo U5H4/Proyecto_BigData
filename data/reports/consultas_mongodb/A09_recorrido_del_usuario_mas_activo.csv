@@ -1,10 +1,10 @@
 ﻿fecha,evento,producto,nombre_producto,duracion_seg
-2024-03-13T00:00:00,producto_visto,263,Microfono Onyx Elite,315
-2024-07-07T00:00:00,producto_en_carrito,510,Teclado Mecanico Delta Edge,104
-2024-08-07T00:00:00,producto_comprado,510,Teclado Mecanico Delta Edge,269
-2025-01-02T00:00:00,busqueda_realizada,519,Switch Delta Vertex,228
-2025-06-23T00:00:00,favorito_agregado,151,Tablet Nimbus Zen,503
-2025-08-02T00:00:00,producto_visto,251,Auriculares Gaming Praxis Zen,433
-2026-02-13T00:00:00,producto_visto,92,Desktop Lumen Pro,528
-2026-02-18T00:00:00,busqueda_realizada,313,Monitor Gamer Auric GT,128
-2026-08-18T00:00:00,busqueda_realizada,610,Access Point Kortex Edge,243
+2024-02-10T00:00:00,producto_visto,235,Bocina Bluetooth Delta Mini,324
+2024-10-31T00:00:00,inicio_sesion,94,Mini PC Lumen SE,773
+2024-12-27T00:00:00,producto_en_carrito,321,Monitor Portatil Kortex Neo,44
+2024-12-28T00:00:00,producto_comprado,321,Monitor Portatil Kortex Neo,271
+2025-02-19T00:00:00,inicio_sesion,78,Workstation Vertex Nova,206
+2026-01-03T00:00:00,favorito_agregado,614,Switch Kortex SE,835
+2026-04-07T00:00:00,busqueda_realizada,494,Hub USB-C Cobalto SE,46
+2026-08-15T00:00:00,producto_comprado,581,Adaptador WiFi Auric Neo,196
+2026-08-15T00:00:00,producto_en_carrito,581,Adaptador WiFi Auric Neo,11

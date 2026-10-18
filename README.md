@@ -1,7 +1,7 @@
-# NovaCommerce — Pipeline de datos (ETL + Cloud + Análisis)
+# Corporativo JUC — Pipeline de datos (ETL + Cloud + Análisis)
 
 Proyecto completo de ingeniería de datos sobre una empresa ficticia,
-**NovaCommerce S.A. de C.V.**, una tienda de electrónica en México.
+**Corporativo JUC S.A. de C.V.**, una tienda de electrónica en México.
 
 El pipeline genera tres fuentes crudas **con errores intencionales**, las limpia
 con 10 transformaciones auditables, las carga en un modelo relacional y un

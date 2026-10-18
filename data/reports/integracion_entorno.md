@@ -1,12 +1,12 @@
 # Entorno de integracion
 
-Generado: 2026-10-18 12:35:53
+Generado: 2026-10-18 13:20:07
 
 ## SQL
 
 | | |
 |---|---|
-| Motor usado | `sqlite` |
+| Motor usado | `Supabase` |
 | DDL (tablas, vista, indices) | `data/reports/consultas_sql/01_ddl.sql` |
 | Consultas analiticas | `data/reports/consultas_sql/02_consultas.sql` |
 | EXPLAIN ANALYZE + indice | `data/reports/consultas_sql/03_explain_analyze.md` |
@@ -16,7 +16,7 @@ Generado: 2026-10-18 12:35:53
 
 | | |
 |---|---|
-| Motor usado | `local` |
+| Motor usado | `mongodb` |
 | Colecciones | productos (606), resenas (2475), actividad_usuario (4236) |
 | Indices | 12 definidos |
 | Pipelines (agregacion) | `data/reports/consultas_mongodb/01_pipelines.js` |

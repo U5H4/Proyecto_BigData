@@ -26,6 +26,7 @@ SRC = Path(__file__).resolve().parent
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
+from config import EMPRESA  # noqa: E402
 from utils import LOG, tabla, titulo  # noqa: E402
 
 
@@ -96,7 +97,7 @@ def ejecutar(claves: list[str]) -> int:
                   ", ".join(e.clave for e in ETAPAS))
         return 2
 
-    print(titulo("PIPELINE COMPLETO - NovaCommerce"))
+    print(titulo(f"PIPELINE COMPLETO - {EMPRESA}"))
     LOG.info("  Etapas: %s", " -> ".join(e.clave for e in elegidas))
 
     resultados = []

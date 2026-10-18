@@ -53,7 +53,7 @@ tablas/dim_ciudades.csv,id_ciudad,int64,10,0,10,1,10
 tablas/dim_ciudades.csv,nombre,object,10,0,10,Cancun,Veracruz
 tablas/dim_ciudades.csv,region,object,10,0,4,Centro,Sureste
 tablas/dim_sucursales.csv,id_sucursal,Int64,12,0,12,1,12
-tablas/dim_sucursales.csv,nombre,object,12,0,12,Sucursal NovaCommerce Cancun 7,Sucursal NovaCommerce Veracruz 11
+tablas/dim_sucursales.csv,nombre,object,12,0,12,Sucursal Corporativo JUC Cancun 7,Sucursal Corporativo JUC Veracruz 11
 tablas/dim_sucursales.csv,ciudad,object,12,0,10,Cancun,Veracruz
 tablas/dim_sucursales.csv,region,object,12,0,4,Centro,Sureste
 tablas/dim_sucursales.csv,region_origen,object,12,0,4,Centro,Sureste

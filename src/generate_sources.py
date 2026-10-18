@@ -24,6 +24,7 @@ from config import (
     CATEGORIAS,
     CIUDADES,
     DISPOSITIVOS,
+    EMPRESA,
     EVENTOS,
     FECHA_FIN,
     FECHA_INICIO,
@@ -834,7 +835,7 @@ def fuente_hojas(catalogo: pd.DataFrame, rng: random.Random) -> Path:
         }
     )
     sucursales["nombre"] = [
-        f"Sucursal NovaCommerce {c} {i + 1}"
+        f"Sucursal {EMPRESA} {c} {i + 1}"
         for i, c in enumerate(sucursales["ciudad_canonica"])
     ]
     sucursales["ciudad"] = [ciudad_sucia(c, rng) for c in sucursales["ciudad_canonica"]]
@@ -866,7 +867,7 @@ def fuente_hojas(catalogo: pd.DataFrame, rng: random.Random) -> Path:
             "nombre": [
                 rng.choice(
                     ["Verano", "Navidad", "Back to School", "Black Friday", "Dia del Padre",
-                     "Hot Sale", "Cyber Monday", "Aniversario NovaCommerce"]
+                     "Hot Sale", "Cyber Monday", f"Aniversario {EMPRESA}"]
                 )
                 for _ in range(N_PROMOCIONES)
             ],

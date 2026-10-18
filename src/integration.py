@@ -40,6 +40,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.exc import SQLAlchemyError
 
 from config import (
+    EMPRESA,
     MONGO_ATLAS_URI,
     MONGO_DB,
     MONGO_URI,
@@ -1134,7 +1135,7 @@ def ejecutar_consultas_sql(integrador: IntegradorSQL) -> pd.DataFrame:
 
     # Documento con el SQL de cada consulta (evidencia para el reporte)
     with (REPORTE_SQL / "02_consultas.sql").open("w", encoding="utf-8") as fh:
-        fh.write(f"-- Consultas analiticas NovaCommerce ({len(CONSULTAS_SQL)})\n")
+        fh.write(f"-- Consultas analiticas {EMPRESA} ({len(CONSULTAS_SQL)})\n")
         fh.write(f"-- Ejecutadas: {datetime.now():%Y-%m-%d %H:%M:%S}\n")
         fh.write(f"-- Dialecto: {integrador.dialecto}\n")
         fh.write("-- @VERDADERO@/@FALSO@ se sustituyen por 1/0 (SQLite) o TRUE/FALSE (PostgreSQL)\n\n")
@@ -1924,7 +1925,7 @@ def ejecutar_pipelines(integrador: IntegradorMongo, fact: pd.DataFrame) -> pd.Da
                       encoding="utf-8-sig")
 
     with (REPORTE_MONGO / "01_pipelines.js").open("w", encoding="utf-8") as fh:
-        fh.write("// Pipelines de agregacion NovaCommerce\n")
+        fh.write(f"// Pipelines de agregacion {EMPRESA}\n")
         fh.write(f"// Generados: {datetime.now():%Y-%m-%d %H:%M:%S}\n")
         fh.write("// Ejecutar con mongosh / mongodump sobre la base de datos NoSQL "
                  "(ver MONGO_DB en src/config.py)\n\n")
@@ -1971,7 +1972,7 @@ def ejecutar_consultas_mongo(integrador: IntegradorMongo) -> pd.DataFrame:
                       index=False, encoding="utf-8-sig")
 
     with (REPORTE_MONGO / "02_consultas.js").open("w", encoding="utf-8") as fh:
-        fh.write("// Consultas find/countDocuments NovaCommerce (B01-B15)\n")
+        fh.write(f"// Consultas find/countDocuments {EMPRESA} (B01-B15)\n")
         fh.write(f"// Generadas: {datetime.now():%Y-%m-%d %H:%M:%S}\n")
         fh.write("// Ejecutar con mongosh sobre la base de datos NoSQL "
                  "(ver MONGO_DB en src/config.py)\n\n")

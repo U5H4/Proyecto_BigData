@@ -1,4 +1,4 @@
--- DDL generado por integration.py (2026-10-18 12:35)
+-- DDL generado por integration.py (2026-10-18 13:20)
 -- Dialecto: sqlite
 -- Motor: sqlite
 
@@ -117,6 +117,7 @@ CREATE TABLE fact_ventas (
     id_producto INTEGER,
     id_categoria INTEGER,
     id_sucursal INTEGER,
+    id_ciudad INTEGER,
     fecha_pedido DATE,
     anio INTEGER,
     mes INTEGER,
@@ -129,7 +130,6 @@ CREATE TABLE fact_ventas (
     region VARCHAR(50),
     canal_registro VARCHAR(30),
     es_premium BOOLEAN,
-    fecha_alta_cliente DATE,
     producto_nombre VARCHAR(200),
     categoria VARCHAR(80),
     descripcion_categoria VARCHAR(200),
@@ -156,8 +156,7 @@ CREATE TABLE fact_ventas (
     monto NUMERIC(14,2),
     estado_pago VARCHAR(20),
     diferencia_pago NUMERIC(14,2),
-    conciliado BOOLEAN,
-    id_ciudad INTEGER
+    conciliado BOOLEAN
 )
 
 CREATE VIEW v_resumen_ventas AS

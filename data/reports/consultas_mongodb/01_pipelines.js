@@ -1,5 +1,5 @@
-// Pipelines de agregacion NovaCommerce
-// Generados: 2026-10-18 12:35:48
+// Pipelines de agregacion Corporativo JUC
+// Generados: 2026-10-18 13:20:04
 // Ejecutar con mongosh / mongodump sobre la base de datos NoSQL (ver MONGO_DB en src/config.py)
 
 // A01: Top 10 productos mas vistos

@@ -1,6 +1,6 @@
 """Configuracion central del pipeline ETL + Integracion + Analisis.
 
-Empresa ficticia: NovaCommerce S.A. de C.V.
+Empresa ficticia (ver EMPRESA abajo).
 Todo es reproducible: la semilla (SEED) fija los datos sinteticos.
 """
 
@@ -269,13 +269,14 @@ def _env(nombre: str, default: str = "") -> str:
 
 
 # --------------------------------------------------------------------------
-# Nombres de las bases de datos. Cambiar SOLO AQUI para renombrar: el resto
-# del codigo (y los comentarios) usan estas constantes, asi no hay que
-# buscar el nombre por varios archivos.
+# Nombres. Cambiar SOLO AQUI para renombrar la empresa o la base de datos:
+# el resto del codigo (y los comentarios) usan estas constantes, asi no hay
+# que buscar el nombre por varios archivos.
 # --------------------------------------------------------------------------
-NOMBRE_BD = "juc"                                  # la base de datos (nombre base)
-NOMBRE_BD_SQLITE = f"{NOMBRE_BD}.db"               # la base de datos SQL local (archivo SQLite)
-NOMBRE_BD_NOSQL = NOMBRE_BD                        # la base de datos NoSQL (MongoDB)
+EMPRESA = "Corporativo JUC"                          # nombre de la empresa ficticia
+NOMBRE_BD = "juc"                                    # la base de datos (nombre base)
+NOMBRE_BD_SQLITE = f"{NOMBRE_BD}.db"                 # la base de datos SQL local (archivo SQLite)
+NOMBRE_BD_NOSQL = NOMBRE_BD                          # la base de datos NoSQL (MongoDB)
 
 PG_CONFIG = {
     "host": _env("PG_HOST", "localhost"),

@@ -14,7 +14,7 @@ from __future__ import annotations
 from datetime import datetime
 from pathlib import Path
 
-from config import REPORTS
+from config import EMPRESA, REPORTS
 from etl_load import ESQUEMA_DIM_SUCURSALES, ESQUEMA_SQL, ORDEN_CARGA
 from utils import LOG, asegurar_dir, subtitulo
 
@@ -60,7 +60,7 @@ def _dibujar(reports_dir: Path) -> Path:
     ax.set_xlim(0, 13.2)
     ax.set_ylim(1.2, 9.6)
     ax.axis("off")
-    ax.set_title("NovaCommerce - Modelo relacional normalizado (3FN)",
+    ax.set_title(f"{EMPRESA} - Modelo relacional normalizado (3FN)",
                  fontsize=14, fontweight="bold")
 
     centros: dict[str, tuple[float, float]] = {}
