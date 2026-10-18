@@ -1,12 +1,12 @@
 # Entorno de integracion
 
-Generado: 2026-10-11 15:24:01
+Generado: 2026-10-18 12:35:53
 
 ## SQL
 
 | | |
 |---|---|
-| Motor usado | `Supabase` |
+| Motor usado | `sqlite` |
 | DDL (tablas, vista, indices) | `data/reports/consultas_sql/01_ddl.sql` |
 | Consultas analiticas | `data/reports/consultas_sql/02_consultas.sql` |
 | EXPLAIN ANALYZE + indice | `data/reports/consultas_sql/03_explain_analyze.md` |
@@ -16,7 +16,7 @@ Generado: 2026-10-11 15:24:01
 
 | | |
 |---|---|
-| Motor usado | `mongodb` |
+| Motor usado | `local` |
 | Colecciones | productos (606), resenas (2475), actividad_usuario (4236) |
 | Indices | 12 definidos |
 | Pipelines (agregacion) | `data/reports/consultas_mongodb/01_pipelines.js` |
@@ -45,7 +45,7 @@ PG_SSLMODE=require
 
 # MongoDB Atlas (NoSQL)
 MONGO_URI=mongodb+srv://usuario:clave@cluster0.xxxxx.mongodb.net/?appName=Cluster0
-MONGO_DB=novacommerce
+MONGO_DB=juc
 ```
 
 Variables de control:

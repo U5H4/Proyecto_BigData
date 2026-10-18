@@ -268,16 +268,25 @@ def _env(nombre: str, default: str = "") -> str:
     return os.getenv(nombre, default)
 
 
+# --------------------------------------------------------------------------
+# Nombres de las bases de datos. Cambiar SOLO AQUI para renombrar: el resto
+# del codigo (y los comentarios) usan estas constantes, asi no hay que
+# buscar el nombre por varios archivos.
+# --------------------------------------------------------------------------
+NOMBRE_BD = "juc"                                  # la base de datos (nombre base)
+NOMBRE_BD_SQLITE = f"{NOMBRE_BD}.db"               # la base de datos SQL local (archivo SQLite)
+NOMBRE_BD_NOSQL = NOMBRE_BD                        # la base de datos NoSQL (MongoDB)
+
 PG_CONFIG = {
     "host": _env("PG_HOST", "localhost"),
     "port": int(_env("PG_PORT", "5432")),
-    "database": _env("PG_DATABASE", "novacommerce"),
+    "database": _env("PG_DATABASE", NOMBRE_BD),
     "user": _env("PG_USER", "postgres"),
     "password": _env("PG_PASSWORD", ""),
 }
 
 MONGO_URI = _env("MONGO_URI", "mongodb://localhost:27017")
-MONGO_DB = _env("MONGO_DB", "novacommerce")
+MONGO_DB = _env("MONGO_DB", NOMBRE_BD_NOSQL)
 
 # Alternativa gratuita/academica sugerida en la Parte VI.
 MONGO_ATLAS_URI = _env("MONGO_ATLAS_URI", "")

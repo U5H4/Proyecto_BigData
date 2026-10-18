@@ -43,6 +43,7 @@ from config import (
     MONGO_ATLAS_URI,
     MONGO_DB,
     MONGO_URI,
+    NOMBRE_BD_SQLITE,
     PROCESSED,
     REPORTS,
     config_pg,
@@ -62,7 +63,7 @@ SQL_DIR = INTEGRACION / "sql"
 MONGO_DIR = INTEGRACION / "mongo"
 REPORTE_SQL = REPORTS / "consultas_sql"
 REPORTE_MONGO = REPORTS / "consultas_mongodb"
-SQLITE_PATH = INTEGRACION / "novacommerce.db"
+SQLITE_PATH = INTEGRACION / NOMBRE_BD_SQLITE
 
 # --------------------------------------------------------------------------
 # Claves primarias y foraneas. El DDL se deriva de aqui + ESQUEMA_SQL.
@@ -1925,7 +1926,8 @@ def ejecutar_pipelines(integrador: IntegradorMongo, fact: pd.DataFrame) -> pd.Da
     with (REPORTE_MONGO / "01_pipelines.js").open("w", encoding="utf-8") as fh:
         fh.write("// Pipelines de agregacion NovaCommerce\n")
         fh.write(f"// Generados: {datetime.now():%Y-%m-%d %H:%M:%S}\n")
-        fh.write("// Ejecutar con mongosh / mongodump sobre la db 'novacommerce'\n\n")
+        fh.write("// Ejecutar con mongosh / mongodump sobre la base de datos NoSQL "
+                 "(ver MONGO_DB en src/config.py)\n\n")
         for p in PIPELINES_MONGO:
             fh.write(f"// {p['id']}: {p['titulo']}\n")
             fh.write(f"// Pregunta: {p['pregunta']}\n")
@@ -1971,7 +1973,8 @@ def ejecutar_consultas_mongo(integrador: IntegradorMongo) -> pd.DataFrame:
     with (REPORTE_MONGO / "02_consultas.js").open("w", encoding="utf-8") as fh:
         fh.write("// Consultas find/countDocuments NovaCommerce (B01-B15)\n")
         fh.write(f"// Generadas: {datetime.now():%Y-%m-%d %H:%M:%S}\n")
-        fh.write("// Ejecutar con mongosh sobre la db 'novacommerce'\n\n")
+        fh.write("// Ejecutar con mongosh sobre la base de datos NoSQL "
+                 "(ver MONGO_DB en src/config.py)\n\n")
         for cons in CONSULTAS_MONGO:
             fh.write(f"// {cons['id']}: {cons['titulo']}\n")
             fh.write(f"// Pregunta: {cons['pregunta']}\n")
@@ -2121,7 +2124,7 @@ PG_SSLMODE=require
 
 # MongoDB Atlas (NoSQL)
 MONGO_URI=mongodb+srv://usuario:clave@cluster0.xxxxx.mongodb.net/?appName=Cluster0
-MONGO_DB=novacommerce
+MONGO_DB={MONGO_DB}
 ```
 
 Variables de control:

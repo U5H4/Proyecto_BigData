@@ -41,7 +41,7 @@ Datos limpios/listos para integración y análisis.
 - `processed/tablas/` - Tablas normalizadas 3FN (SQL): `clientes.csv`, `productos.csv`, `categorias.csv`, `pedidos.csv`, `detalle_pedido.csv`, `pagos.csv`, `dim_ciudades.csv`, `dim_sucursales.csv`
 - `processed/dataset_postgresql.csv` - Dataset fact_ventas desnormalizado para consultas SQL.
 - `processed/dataset_mongodb.json` - Documentos agregados para carga en MongoDB.
-- `processed/integracion/` - Artefactos de integración: `novacommerce.db` (SQLite simulado), `mongo/*.ndjson` (colecciones), `mongo/indices.json`
+- `processed/integracion/` - Artefactos de integración: el archivo SQLite local (`.db`, nombre definido en `src/config.py`), `mongo/*.ndjson` (colecciones), `mongo/indices.json`
 - `processed/integracion/mongo/` - `productos.ndjson`, `resenas.ndjson`, `actividad_usuario.ndjson`, `indices.json`
 
 ### data/reports

@@ -138,8 +138,8 @@ resumen mensual.
 
 ### Modo simulado vs servidores reales
 
-Sin credenciales el proyecto **no se rompe**: cae a SQLite
-(`data/processed/integracion/novacommerce.db`) y a NDJSON con pipelines
+Sin credenciales el proyecto **no se rompe**: cae a un archivo SQLite local
+(el nombre se define en `src/config.py`) y a NDJSON con pipelines
 equivalentes en Pandas. Todos los agregaciones tienen su versión declaradas en
 las dos herramientas.
 

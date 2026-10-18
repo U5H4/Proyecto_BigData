@@ -59,12 +59,12 @@
     {
       "claves": [
         [
-          "id_usuario",
+          "cliente.id",
           1
         ]
       ],
       "opciones": "",
-      "razon": "Historial de un usuario"
+      "razon": "Resenas de un cliente (historial)"
     },
     {
       "claves": [

@@ -47,7 +47,7 @@ Si definen `SUPABASE_HOST`, este tiene prioridad sobre `PG_HOST`.
 ```env
 # MongoDB Atlas
 MONGO_URI=mongodb+srv://<USUARIO>:<PASSWORD>@<CLUSTER>.mongodb.net/?appName=<CLUSTER_NAME>
-MONGO_DB=novacommerce
+MONGO_DB=juc
 # Opcional si prefieren usar MONGO_ATLAS_URI explícito
 MONGO_ATLAS_URI=mongodb+srv://<USUARIO>:<PASSWORD>@<CLUSTER>.mongodb.net/?appName=<CLUSTER_NAME>
 ```
@@ -75,7 +75,7 @@ FORZAR_SQLITE=1 # Fuerza a no intentar PostgreSQL
 ## 5. Comprobar que NO sube a cuentas ajenas
 
 - Si `.env` está vacío o con credenciales incorrectas → usa modo **local** (SQLite + NDJSON). No hay conexión.
-- Los archivos `data/processed/integracion/novacommerce.db` y `data/processed/integracion/mongo/*.ndjson` se generan **localmente**.
+- Los archivos `data/processed/integracion/<NOMBRE_BD>.db` y `data/processed/integracion/mongo/*.ndjson` se generan **localmente**.
 - Los reportes `data/reports/` se generan **localmente**.
 
 ## 6. Notas importantes
