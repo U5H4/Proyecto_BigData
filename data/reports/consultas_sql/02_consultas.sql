@@ -1,5 +1,5 @@
 -- Consultas analiticas Corporativo JUC (20)
--- Ejecutadas: 2026-10-18 13:19:39
+-- Ejecutadas: 2026-10-18 14:11:17
 -- Dialecto: postgresql
 -- @VERDADERO@/@FALSO@ se sustituyen por 1/0 (SQLite) o TRUE/FALSE (PostgreSQL)
 

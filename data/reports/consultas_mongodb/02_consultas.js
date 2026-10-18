@@ -1,5 +1,5 @@
 // Consultas find/countDocuments Corporativo JUC (B01-B15)
-// Generadas: 2026-10-18 13:20:06
+// Generadas: 2026-10-18 14:11:46
 // Ejecutar con mongosh sobre la base de datos NoSQL (ver MONGO_DB en src/config.py)
 
 // B01: Productos premium (precio > 5000)

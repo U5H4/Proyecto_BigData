@@ -1,23 +1,23 @@
--- DDL generado por integration.py (2026-10-18 13:20)
--- Dialecto: sqlite
--- Motor: sqlite
+-- DDL generado por integration.py (2026-10-18 14:10)
+-- Dialecto: postgresql
+-- Motor: Supabase
 
 CREATE TABLE categorias (
-    id_categoria INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_categoria INTEGER PRIMARY KEY,
     nombre VARCHAR(80) NOT NULL,
     descripcion VARCHAR(200),
     CONSTRAINT uq_categorias_nombre UNIQUE (nombre)
 )
 
 CREATE TABLE dim_ciudades (
-    id_ciudad INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_ciudad INTEGER PRIMARY KEY,
     nombre VARCHAR(80) NOT NULL,
     region VARCHAR(50),
     CONSTRAINT uq_ciudades_nombre UNIQUE (nombre)
 )
 
 CREATE TABLE dim_sucursales (
-    id_sucursal INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_sucursal INTEGER PRIMARY KEY,
     nombre VARCHAR(120) NOT NULL,
     ciudad VARCHAR(80),
     region VARCHAR(50),
@@ -36,7 +36,7 @@ CREATE TABLE clientes (
     id_ciudad INTEGER,
     fecha_alta DATE,
     canal_registro VARCHAR(30),
-    es_premium INTEGER,
+    es_premium BOOLEAN,
     anio_alta INTEGER,
     mes_alta INTEGER,
     antiguedad_dias INTEGER,
@@ -54,7 +54,7 @@ CREATE TABLE productos (
     utilidad_bruta NUMERIC(12,2),
     rango_precio VARCHAR(20),
     id_proveedor INTEGER,
-    activo INTEGER,
+    activo BOOLEAN,
     fecha_lanzamiento DATE,
     CONSTRAINT uq_productos_nombre UNIQUE (nombre),
     CONSTRAINT chk_prod_precio CHECK (precio > 0),
@@ -73,7 +73,7 @@ CREATE TABLE pedidos (
     canal_venta VARCHAR(30),
     id_sucursal INTEGER,
     estado VARCHAR(20),
-    es_completado INTEGER,
+    es_completado BOOLEAN,
     total_pedido NUMERIC(14,2) NOT NULL,
     unidades INTEGER,
     lineas INTEGER,
@@ -106,9 +106,23 @@ CREATE TABLE pagos (
     fecha_pago DATE,
     estado_pago VARCHAR(20),
     diferencia_pago NUMERIC(14,2),
-    conciliado INTEGER,
+    conciliado BOOLEAN,
     CONSTRAINT chk_pago_monto CHECK (monto >= 0)
 )
+
+ALTER TABLE clientes ADD CONSTRAINT fk_clientes_id_ciudad FOREIGN KEY (id_ciudad) REFERENCES dim_ciudades(id_ciudad)
+
+ALTER TABLE productos ADD CONSTRAINT fk_productos_id_categoria FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+
+ALTER TABLE pedidos ADD CONSTRAINT fk_pedidos_id_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+
+ALTER TABLE pedidos ADD CONSTRAINT fk_pedidos_id_sucursal FOREIGN KEY (id_sucursal) REFERENCES dim_sucursales(id_sucursal)
+
+ALTER TABLE detalle_pedido ADD CONSTRAINT fk_detalle_pedido_id_pedido FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)
+
+ALTER TABLE detalle_pedido ADD CONSTRAINT fk_detalle_pedido_id_producto FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+
+ALTER TABLE pagos ADD CONSTRAINT fk_pagos_id_pedido FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)
 
 CREATE TABLE fact_ventas (
     id_detalle INTEGER PRIMARY KEY,
@@ -117,7 +131,6 @@ CREATE TABLE fact_ventas (
     id_producto INTEGER,
     id_categoria INTEGER,
     id_sucursal INTEGER,
-    id_ciudad INTEGER,
     fecha_pedido DATE,
     anio INTEGER,
     mes INTEGER,
@@ -130,6 +143,7 @@ CREATE TABLE fact_ventas (
     region VARCHAR(50),
     canal_registro VARCHAR(30),
     es_premium BOOLEAN,
+    fecha_alta_cliente DATE,
     producto_nombre VARCHAR(200),
     categoria VARCHAR(80),
     descripcion_categoria VARCHAR(200),
@@ -156,8 +170,21 @@ CREATE TABLE fact_ventas (
     monto NUMERIC(14,2),
     estado_pago VARCHAR(20),
     diferencia_pago NUMERIC(14,2),
-    conciliado BOOLEAN
+    conciliado BOOLEAN,
+    id_ciudad INTEGER
 )
+
+ALTER TABLE fact_ventas ADD CONSTRAINT fk_fact_ventas_id_pedido FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)
+
+ALTER TABLE fact_ventas ADD CONSTRAINT fk_fact_ventas_id_producto FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+
+ALTER TABLE fact_ventas ADD CONSTRAINT fk_fact_ventas_id_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+
+ALTER TABLE fact_ventas ADD CONSTRAINT fk_fact_ventas_id_categoria FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+
+ALTER TABLE fact_ventas ADD CONSTRAINT fk_fact_ventas_id_sucursal FOREIGN KEY (id_sucursal) REFERENCES dim_sucursales(id_sucursal)
+
+ALTER TABLE fact_ventas ADD CONSTRAINT fk_fact_ventas_id_ciudad FOREIGN KEY (id_ciudad) REFERENCES dim_ciudades(id_ciudad)
 
 CREATE VIEW v_resumen_ventas AS
         SELECT pe.anio_mes AS anio_mes,
@@ -173,7 +200,7 @@ CREATE VIEW v_resumen_ventas AS
         INNER JOIN clientes c       ON c.id_cliente = pe.id_cliente
         INNER JOIN productos pr     ON pr.id_producto = d.id_producto
         INNER JOIN categorias cat   ON cat.id_categoria = pr.id_categoria
-        WHERE pe.es_completado = 1
+        WHERE pe.es_completado = TRUE
         GROUP BY pe.anio_mes
 
 CREATE INDEX ix_pedidos_id_cliente ON pedidos (id_cliente)
@@ -215,19 +242,3 @@ CREATE INDEX ix_fact_cliente ON fact_ventas (id_cliente)
 CREATE INDEX ix_fact_estado ON fact_ventas (estado)
 
 CREATE INDEX ix_fact_canal ON fact_ventas (canal_venta)
-
--- Llaves foraneas (SQLite no soporta ALTER TABLE ADD CONSTRAINT;
--- se verifican en tiempo de carga con LEFT JOIN, ver verificar()):
---   FOREIGN KEY (id_ciudad) REFERENCES dim_ciudades(id_ciudad)  -- clientes
---   FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)  -- productos
---   FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)  -- pedidos
---   FOREIGN KEY (id_sucursal) REFERENCES dim_sucursales(id_sucursal)  -- pedidos
---   FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)  -- detalle_pedido
---   FOREIGN KEY (id_producto) REFERENCES productos(id_producto)  -- detalle_pedido
---   FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)  -- pagos
---   FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido)  -- fact_ventas
---   FOREIGN KEY (id_producto) REFERENCES productos(id_producto)  -- fact_ventas
---   FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)  -- fact_ventas
---   FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)  -- fact_ventas
---   FOREIGN KEY (id_sucursal) REFERENCES dim_sucursales(id_sucursal)  -- fact_ventas
---   FOREIGN KEY (id_ciudad) REFERENCES dim_ciudades(id_ciudad)  -- fact_ventas
