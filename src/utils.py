@@ -116,10 +116,6 @@ class CalidadTracker:
 # --------------------------------------------------------------------------
 # Formateo
 # --------------------------------------------------------------------------
-def peso_ajeno(valor) -> str:
-    return str(valor) if pd.notna(valor) else "N/A"
-
-
 def money(valor: float) -> str:
     """$1,234,567.89 -> formato con separador de miles."""
     if pd.isna(valor):

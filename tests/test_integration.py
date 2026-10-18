@@ -90,8 +90,8 @@ def motor(tmp_path):
 
 
 @pytest.fixture()
-def integ(motor):
-    return I.IntegradorSQL(motor, "sqlite", "sqlite")
+def integ(motor, tmp_path):
+    return I.IntegradorSQL(motor, "sqlite", "sqlite", tmp_path / "reportes")
 
 
 # ==========================================================================
@@ -506,7 +506,7 @@ def test_aplicar_filtro_soporta_operadores_mongo():
     assert list(disy.precio) == [100, 25000]
 
 
-def test_consultas_mongo_locales_devuelven_resultados(monkeypatch):
+def test_consultas_mongo_locales_devuelven_resultados(monkeypatch, tmp_path):
     monkeypatch.setenv("SIN_MONGO", "1")
     docs = {
         "productos": [
@@ -530,7 +530,7 @@ def test_consultas_mongo_locales_devuelven_resultados(monkeypatch):
              "evento": "producto_comprado", "fecha": "2025-01-02"},
         ],
     }
-    integ = I.IntegradorMongo(docs)
+    integ = I.IntegradorMongo(docs, tmp_path / "mongo")
     assert integ.conectar() == "local"
     integ.crear_colecciones()
 

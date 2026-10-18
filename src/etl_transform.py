@@ -36,7 +36,6 @@ from config import (
     CIUDADES,
     COLUMNAS_INNECESARIAS,
     FECHA_FIN,
-    FECHA_INICIO,
 )
 from etl_extract import NULOS
 from utils import CalidadTracker, subtitulo, tabla, titulo
@@ -214,10 +213,6 @@ def limpiar_numero(valor) -> float:
     except ValueError:
         return np.nan
     return -n if negativo else n
-
-
-def limpiar_precio(serie: pd.Series) -> pd.Series:
-    return serie.map(limpiar_numero)
 
 
 def _parsear_una_fecha(valor) -> pd.Timestamp | None:
@@ -695,17 +690,23 @@ def t05_estandarizar_fechas(d: dict[str, pd.DataFrame], t: CalidadTracker) -> No
 PRECIO_MIN, PRECIO_MAX = 1.0, 500_000.0
 
 
+def _validar_rango_precio(df: pd.DataFrame, col: str) -> tuple[pd.DataFrame, int, int]:
+    """T06: cast a float y descarte de no parseables + fuera de [PRECIO_MIN, PRECIO_MAX]."""
+    df[col] = a_float(df[col])
+    no_parseados = int(df[col].isna().sum())
+    df = df[df[col].notna()].reset_index(drop=True)
+    fuera_rango = int(((df[col] < PRECIO_MIN) | (df[col] > PRECIO_MAX)).sum())
+    df.loc[(df[col] < PRECIO_MIN) | (df[col] > PRECIO_MAX), col] = np.nan
+    df = df[df[col].notna()].reset_index(drop=True)
+    return df, no_parseados, fuera_rango
+
+
 def t06_validar_precios(d: dict[str, pd.DataFrame], t: CalidadTracker) -> None:
     print("\n[T06] Validacion de precios")
     # productos.precio
     df = d["productos"]
     n_antes = len(df)
-    df["precio"] = a_float(df["precio"])
-    no_parseados = int(df["precio"].isna().sum())
-    df = df[df["precio"].notna()].reset_index(drop=True)
-    fuera_rango = int(((df["precio"] < PRECIO_MIN) | (df["precio"] > PRECIO_MAX)).sum())
-    df.loc[(df["precio"] < PRECIO_MIN) | (df["precio"] > PRECIO_MAX), "precio"] = np.nan
-    df = df[df["precio"].notna()].reset_index(drop=True)
+    df, no_parseados, fuera_rango = _validar_rango_precio(df, "precio")
     d["productos"] = df
     t.registrar(6, "Validacion de precios", "productos", n_antes, len(df),
                 n_antes - len(df),
@@ -716,13 +717,7 @@ def t06_validar_precios(d: dict[str, pd.DataFrame], t: CalidadTracker) -> None:
     # detalle_pedido.precio_unitario
     df = d["detalle_pedido"]
     n_antes = len(df)
-    df["precio_unitario"] = a_float(df["precio_unitario"])
-    no_parseados = int(df["precio_unitario"].isna().sum())
-    df = df[df["precio_unitario"].notna()].reset_index(drop=True)
-    fuera_rango = int(((df["precio_unitario"] < PRECIO_MIN) | (df["precio_unitario"] > PRECIO_MAX)).sum())
-    df.loc[(df["precio_unitario"] < PRECIO_MIN) | (df["precio_unitario"] > PRECIO_MAX),
-           "precio_unitario"] = np.nan
-    df = df[df["precio_unitario"].notna()].reset_index(drop=True)
+    df, no_parseados, fuera_rango = _validar_rango_precio(df, "precio_unitario")
     d["detalle_pedido"] = df
     t.registrar(6, "Validacion de precios", "detalle_pedido", n_antes, len(df),
                 n_antes - len(df),

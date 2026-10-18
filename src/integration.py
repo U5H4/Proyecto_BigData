@@ -357,10 +357,12 @@ def _ddl_vista_analitica(fact: pd.DataFrame) -> str:
 class IntegradorSQL:
     """Carga el dataset limpio en una base relacional y consulta."""
 
-    def __init__(self, motor: Engine, nombre: str, dialecto: str):
+    def __init__(self, motor: Engine, nombre: str, dialecto: str,
+                 reporte_dir: Path | None = None):
         self.motor = motor
         self.nombre = nombre
         self.dialecto = dialecto
+        self.reporte_dir = reporte_dir or REPORTE_SQL
         self.tablas_cargadas: dict[str, int] = {}
         self.ddl_ejecutado: list[str] = []
 
@@ -452,15 +454,15 @@ class IntegradorSQL:
             if self.dialecto == "sqlite":
                 self.ddl_ejecutado.append(_comentario_fk_sqlite())
 
-        (REPORTE_SQL / "01_ddl.sql").parent.mkdir(parents=True, exist_ok=True)
-        (REPORTE_SQL / "01_ddl.sql").write_text(
+        (self.reporte_dir / "01_ddl.sql").parent.mkdir(parents=True, exist_ok=True)
+        (self.reporte_dir / "01_ddl.sql").write_text(
             f"-- DDL generado por integration.py ({datetime.now():%Y-%m-%d %H:%M})\n"
             f"-- Dialecto: {self.dialecto}\n"
             f"-- Motor: {self.nombre}\n\n"
             + "\n\n".join(self.ddl_ejecutado) + "\n",
             encoding="utf-8",
         )
-        LOG.info("  DDL exportado -> %s", REPORTE_SQL / "01_ddl.sql")
+        LOG.info("  DDL exportado -> %s", self.reporte_dir / "01_ddl.sql")
 
     # -- carga ------------------------------------------------------------
     def cargar(self, tablas: dict[str, pd.DataFrame], fact: pd.DataFrame) -> None:
@@ -1242,8 +1244,9 @@ class IntegradorMongo:
     existan siempre.
     """
 
-    def __init__(self, documentos: dict[str, list[dict]]):
+    def __init__(self, documentos: dict[str, list[dict]], directorio: Path | None = None):
         self.documentos = documentos
+        self.directorio = directorio or MONGO_DIR
         self.cliente = None
         self.db = None
         self.modo = "local"
@@ -1272,12 +1275,12 @@ class IntegradorMongo:
             return self._modo_local()
 
     def _modo_local(self) -> str:
-        asegurar_dir(MONGO_DIR)
-        if MONGO_DIR.exists():
-            shutil.rmtree(MONGO_DIR)
-        asegurar_dir(MONGO_DIR)
-        self.ruta = MONGO_DIR
-        LOG.info("  Modo simulado: colecciones NDJSON en %s", MONGO_DIR)
+        asegurar_dir(self.directorio)
+        if self.directorio.exists():
+            shutil.rmtree(self.directorio)
+        asegurar_dir(self.directorio)
+        self.ruta = self.directorio
+        LOG.info("  Modo simulado: colecciones NDJSON en %s", self.directorio)
         return self.modo
 
     # -- carga ------------------------------------------------------------
@@ -1325,7 +1328,7 @@ class IntegradorMongo:
                 self.indices_creados.append(
                     f"{coleccion}: {[(c, d) for c, d in claves]} {opciones or ''}  # {razon}"
                 )
-        destino = MONGO_DIR / "indices.json"
+        destino = self.directorio / "indices.json"
         destino.write_text(
             json.dumps(
                 {c: [{"claves": k, "opciones": o, "razon": r} for k, o, r in v]

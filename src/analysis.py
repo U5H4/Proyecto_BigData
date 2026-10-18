@@ -232,10 +232,6 @@ def mix_region(fact: pd.DataFrame) -> pd.DataFrame:
     return _mix(utilidad_y_margen(fact[fact["es_completado"]]), "region")
 
 
-def mix_ciudad(fact: pd.DataFrame) -> pd.DataFrame:
-    return _mix(utilidad_y_margen(fact[fact["es_completado"]]), "ciudad")
-
-
 def por_sucursal(fact: pd.DataFrame, sucursales: pd.DataFrame | None = None) -> pd.DataFrame:
     df = utilidad_y_margen(fact[fact["es_completado"]])
     g = df.groupby("id_sucursal").agg(
