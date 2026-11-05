@@ -453,12 +453,29 @@ def test_pipelines_no_tienen_placeholders_pendientes():
             assert op in validos, f"{p['id']}: operador desconocido {op}"
 
 
-def test_los_10_pipelines_declaran_equivalente_pandas():
+def test_los_pipelines_declaran_equivalente_pandas():
     ids = [p["id"] for p in I.PIPELINES_MONGO]
-    assert len(ids) == len(set(ids)) == 10
+    assert len(ids) == len(set(ids)) == 12
     for p in I.PIPELINES_MONGO:
         assert callable(p["pandas"]), f"{p['id']} sin equivalente en pandas"
         assert p["pregunta"].endswith("?")
+
+
+def test_pipelines_cubren_actividad_por_ciudad_y_rating_por_categoria():
+    """Punto 20: deben existir pipelines de actividad por ciudad y de
+    calificacion promedio por categoria de producto."""
+    import json
+
+    def contiene(p, token: str) -> bool:
+        return token in json.dumps(p["pipeline"])
+
+    por_ciudad = [p for p in I.PIPELINES_MONGO
+                  if p["colectivo"] == "actividad_usuario" and contiene(p, "$ubicacion")]
+    por_categoria = [p for p in I.PIPELINES_MONGO
+                     if p["colectivo"] == "resenas" and contiene(p, "$categoria")
+                     and contiene(p, "$avg")]
+    assert por_ciudad, "falta un pipeline de actividad por ciudad (campo ubicacion)"
+    assert por_categoria, "falta un pipeline de rating promedio por categoria"
 
 
 def _operadores_de(filtro: dict) -> set[str]:

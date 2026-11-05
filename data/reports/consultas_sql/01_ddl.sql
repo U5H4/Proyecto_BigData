@@ -1,4 +1,4 @@
--- DDL generado por integration.py (2026-10-18 14:10)
+-- DDL generado por integration.py (2026-10-18 15:56)
 -- Dialecto: postgresql
 -- Motor: Supabase
 

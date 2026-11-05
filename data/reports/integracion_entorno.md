@@ -1,6 +1,6 @@
 # Entorno de integracion
 
-Generado: 2026-10-18 14:11:47
+Generado: 2026-10-18 15:57:06
 
 ## SQL
 
@@ -60,20 +60,28 @@ Variables de control:
 |---|---|---|
 | Cloud Database (SQL) | **Real** | PostgreSQL administrado en Supabase (via pooler IPv4) |
 | Cloud Database (NoSQL) | **Real** | MongoDB Atlas (clusters M0) |
-| Cloud Storage | **Simulado** | El arbol local `data/` replica la organizacion por carpetas de un bucket (ver abajo) |
-| Cloud Computing | **Local** | El ETL corre en la maquina del analista; el mismo comando corre sin cambios en una VM o en CI |
+| Cloud Storage | **Simulado** | El arbol local `data/` (raiz de Corporativo JUC) replica la organizacion por carpetas de un bucket (ver layout del punto 26 abajo) |
+| Cloud Computing | **Simulado / portatil** | El ETL y la integracion corren con `python src/run_all.py`; al ser Python puro y sin estado local obligatorio, el mismo comando corre identico en una VM, un contenedor o CI en la nube. El punto 24 permite simular servicios no obligatorios de pago |
 
-### Organizacion de almacenamiento (Cloud Storage simulado)
+La eleccion de PostgreSQL (datos estructurados y transaccionales), MongoDB
+(documentos con atributos variables) y de servicios administrados gratuitos
+(Supabase free, Atlas M0) se justifica en el README, seccion "Eleccion de
+tecnologias".
 
-El layout local imita la jerarquia de carpetas de un bucket, de modo que
-publicar a GCS/S3 solo exigiria cambiar el destino, no el codigo:
+### Organizacion de almacenamiento (punto 26 del enunciado)
+
+La raiz `data/` replica la jerarquia del enunciado
+(`raw/ processed/ sql/ nosql/ reports/`), de modo que publicar a un bucket
+GCS/S3 solo exigiria cambiar la raiz, no el codigo:
 
 ```
-data/raw/csv      -> crudo (Fuente A, formato CSV)
-data/raw/json     -> crudo (Fuente B, formato JSON)
-data/raw/sheets   -> crudo (Fuente C, formato XLSX/Sheets)
+data/raw/csv      -> crudo, Fuente A (CSV)
+data/raw/json     -> crudo, Fuente B (JSON)
+data/raw/sheets   -> crudo, Fuente C (Google Sheets exportadas a XLSX)
 data/processed/tablas           -> tablas normalizadas 3FN (carga SQL)
 data/processed/dataset_mongodb.json -> documentos para la coleccion NoSQL
+data/sql/         -> DDL, consultas y EXPLAIN (scripts SQL)          [punto 26]
+data/nosql/       -> colecciones NDJSON, pipelines y consultas, indices  [punto 26]
 data/reports/     -> resultados de consultas, EXPLAIN y resumenes
 data/figures/     -> graficas del reporte
 ```

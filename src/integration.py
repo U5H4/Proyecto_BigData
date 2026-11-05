@@ -40,6 +40,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.exc import SQLAlchemyError
 
 from config import (
+    DATA,
     EMPRESA,
     MONGO_ATLAS_URI,
     MONGO_DB,
@@ -60,8 +61,12 @@ from utils import LOG, asegurar_dir, subtitulo, tabla, titulo
 # Rutas de la integracion
 # --------------------------------------------------------------------------
 INTEGRACION = PROCESSED / "integracion"
-SQL_DIR = INTEGRACION / "sql"
-MONGO_DIR = INTEGRACION / "mongo"
+# Layout de almacenamiento cloud (punto 26 del enunciado). La raiz es data/ y
+# sql/ y nosql/ quedan como hermanos de raw/, processed/ y reports/, igual que
+# en el arbol del enunciado (que usa el nombre "NovaCommerce"; aqui la empresa
+# es Corporativo JUC).
+SQL_DIR = DATA / "sql"
+NOSQL_DIR = DATA / "nosql"
 REPORTE_SQL = REPORTS / "consultas_sql"
 REPORTE_MONGO = REPORTS / "consultas_mongodb"
 SQLITE_PATH = INTEGRACION / NOMBRE_BD_SQLITE
@@ -1246,7 +1251,7 @@ class IntegradorMongo:
 
     def __init__(self, documentos: dict[str, list[dict]], directorio: Path | None = None):
         self.documentos = documentos
-        self.directorio = directorio or MONGO_DIR
+        self.directorio = directorio or NOSQL_DIR
         self.cliente = None
         self.db = None
         self.modo = "local"
@@ -1644,6 +1649,61 @@ PIPELINES_MONGO: list[dict] = [
             .sort_values("visitas", ascending=False)
         ),
     },
+    {
+        "id": "A11",
+        "titulo": "Calificacion promedio por categoria de producto",
+        "pregunta": "Que categoria de producto deja mejor (o peor) impresion?",
+        "colectivo": "resenas",
+        "nota": "El documento de resena ya trae la categoria desnormalizada, asi "
+                "que basta un $group por categoria; en un esquema normalizado "
+                "habria que unir resenas -> productos -> categorias.",
+        "pipeline": [
+            {"$group": {"_id": "$categoria", "rating_promedio": {"$avg": "$calificacion"},
+                        "total_resenas": {"$sum": 1},
+                        "positivas": {"$sum": {"$cond": [{"$gte": ["$calificacion", 4]}, 1, 0]}}}},
+            {"$addFields": {"pct_positivas": {"$round": [
+                {"$multiply": [100, {"$divide": ["$positivas", "$total_resenas"]}]}, 1]}}},
+            {"$sort": {"rating_promedio": -1}},
+            {"$project": {"_id": 0, "categoria": "$_id", "rating_promedio": 1,
+                          "total_resenas": 1, "positivas": 1, "pct_positivas": 1}},
+        ],
+        "pandas": lambda d: (
+            d.groupby("categoria")
+            .agg(rating_promedio=("calificacion", "mean"),
+                 total_resenas=("calificacion", "size"),
+                 positivas=("calificacion", lambda s: int((s >= 4).sum())))
+            .reset_index()
+            .assign(pct_positivas=lambda x: (100 * x.positivas / x.total_resenas).round(1))
+            .sort_values("rating_promedio", ascending=False)
+        ),
+    },
+    {
+        "id": "A12",
+        "titulo": "Actividad de navegacion por ciudad",
+        "pregunta": "Desde que ciudad se navega mas el catalogo?",
+        "colectivo": "actividad_usuario",
+        "nota": "Agrupa los eventos de navegacion por el campo `ubicacion` del "
+                "documento (la ciudad del usuario), un atributo que solo tiene "
+                "sentido en el evento y no en una tabla relacional fija.",
+        "pipeline": [
+            {"$match": {"es_visualizacion": True}},
+            {"$group": {"_id": "$ubicacion", "eventos": {"$sum": 1},
+                        "usuarios": {"$addToSet": "$usuario"},
+                        "duracion_promedio": {"$avg": "$duracion_seg"}}},
+            {"$addFields": {"usuarios_unicos": {"$size": "$usuarios"}}},
+            {"$sort": {"eventos": -1}},
+            {"$project": {"_id": 0, "ubicacion": "$_id", "eventos": 1,
+                          "usuarios_unicos": 1, "duracion_promedio": 1}},
+        ],
+        "pandas": lambda d: (
+            d[d.es_visualizacion == True]
+            .groupby("ubicacion")
+            .agg(eventos=("producto", "size"), usuarios_unicos=("usuario", "nunique"),
+                 duracion_promedio=("duracion_seg", "mean"))
+            .reset_index()
+            .sort_values("eventos", ascending=False)
+        ),
+    },
 ]
 
 
@@ -2011,6 +2071,41 @@ def _slug(texto: str) -> str:
     return t[:60]
 
 
+def _organizar_almacenamiento(documentos: dict[str, list[dict]]) -> None:
+    """Materializa el layout de almacenamiento cloud del enunciado (punto 26).
+
+    Deja en data/sql/ los scripts SQL (DDL, consultas y EXPLAIN) y en data/nosql/
+    las colecciones (NDJSON) y los scripts de MongoDB, de modo que la raiz data/
+    replique el arbol raw/ processed/ sql/ nosql/ reports/ del enunciado. Se
+    ejecuta siempre (haya servidor o no), asi la entrega incluye la organizacion
+    completa aunque el motor sea PostgreSQL/MongoDB administrado en la nube.
+    """
+    asegurar_dir(SQL_DIR)
+    for archivo in ("01_ddl.sql", "02_consultas.sql", "03_explain_analyze.md",
+                    "04_explain_analyze.csv"):
+        origen = REPORTE_SQL / archivo
+        if origen.exists():
+            shutil.copy2(origen, SQL_DIR / archivo)
+
+    asegurar_dir(NOSQL_DIR)
+    for nombre, docs in documentos.items():
+        with (NOSQL_DIR / f"{nombre}.ndjson").open("w", encoding="utf-8") as fh:
+            for doc in docs:
+                fh.write(json.dumps(doc, ensure_ascii=False, default=str) + "\n")
+    for archivo in ("01_pipelines.js", "02_consultas.js"):
+        origen = REPORTE_MONGO / archivo
+        if origen.exists():
+            shutil.copy2(origen, NOSQL_DIR / archivo)
+    (NOSQL_DIR / "indices.json").write_text(
+        json.dumps(
+            {c: [{"claves": k, "opciones": o, "razon": r} for k, o, r in v]
+             for c, v in INDICES_MONGO.items()},
+            ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    LOG.info("  Almacenamiento (layout punto 26) -> %s y %s", SQL_DIR, NOSQL_DIR)
+
+
 def main() -> None:
     LOG.info(titulo("PARTE CLOUD - INTEGRACION SQL + NOSQL"))
 
@@ -2048,6 +2143,9 @@ def main() -> None:
     mongo.crear_colecciones()
     resumen_mongo = ejecutar_pipelines(mongo, fact)
     resumen_busqueda = ejecutar_consultas_mongo(mongo)
+
+    # ---- Layout de almacenamiento cloud (punto 26): sql/ y nosql/ ---------
+    _organizar_almacenamiento(documentos)
 
     # ---- Reporte --------------------------------------------------------
     LOG.info(titulo("Resumen de la integracion"))
@@ -2143,20 +2241,28 @@ Variables de control:
 |---|---|---|
 | Cloud Database (SQL) | **Real** | PostgreSQL administrado en Supabase (via pooler IPv4) |
 | Cloud Database (NoSQL) | **Real** | MongoDB Atlas (clusters M0) |
-| Cloud Storage | **Simulado** | El arbol local `data/` replica la organizacion por carpetas de un bucket (ver abajo) |
-| Cloud Computing | **Local** | El ETL corre en la maquina del analista; el mismo comando corre sin cambios en una VM o en CI |
+| Cloud Storage | **Simulado** | El arbol local `data/` (raiz de Corporativo JUC) replica la organizacion por carpetas de un bucket (ver layout del punto 26 abajo) |
+| Cloud Computing | **Simulado / portatil** | El ETL y la integracion corren con `python src/run_all.py`; al ser Python puro y sin estado local obligatorio, el mismo comando corre identico en una VM, un contenedor o CI en la nube. El punto 24 permite simular servicios no obligatorios de pago |
 
-### Organizacion de almacenamiento (Cloud Storage simulado)
+La eleccion de PostgreSQL (datos estructurados y transaccionales), MongoDB
+(documentos con atributos variables) y de servicios administrados gratuitos
+(Supabase free, Atlas M0) se justifica en el README, seccion "Eleccion de
+tecnologias".
 
-El layout local imita la jerarquia de carpetas de un bucket, de modo que
-publicar a GCS/S3 solo exigiria cambiar el destino, no el codigo:
+### Organizacion de almacenamiento (punto 26 del enunciado)
+
+La raiz `data/` replica la jerarquia del enunciado
+(`raw/ processed/ sql/ nosql/ reports/`), de modo que publicar a un bucket
+GCS/S3 solo exigiria cambiar la raiz, no el codigo:
 
 ```
-data/raw/csv      -> crudo (Fuente A, formato CSV)
-data/raw/json     -> crudo (Fuente B, formato JSON)
-data/raw/sheets   -> crudo (Fuente C, formato XLSX/Sheets)
+data/raw/csv      -> crudo, Fuente A (CSV)
+data/raw/json     -> crudo, Fuente B (JSON)
+data/raw/sheets   -> crudo, Fuente C (Google Sheets exportadas a XLSX)
 data/processed/tablas           -> tablas normalizadas 3FN (carga SQL)
 data/processed/dataset_mongodb.json -> documentos para la coleccion NoSQL
+data/sql/         -> DDL, consultas y EXPLAIN (scripts SQL)          [punto 26]
+data/nosql/       -> colecciones NDJSON, pipelines y consultas, indices  [punto 26]
 data/reports/     -> resultados de consultas, EXPLAIN y resumenes
 data/figures/     -> graficas del reporte
 ```

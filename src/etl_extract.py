@@ -130,11 +130,14 @@ def leer_json_documentos(ruta: Path) -> pd.DataFrame:
 
 
 def leer_sheet(ruta: Path) -> pd.DataFrame:
-    """Simula la lectura de una hoja de Google Sheets exportada a .xlsx.
+    """Fuente C: hojas de Google Sheets exportadas a `.xlsx`.
 
-    En produccion seria ``gspread``/Sheets API o ``pd.read_csv`` sobre la
-    exportacion; aqui se usa el .xlsx que el generador produce para que el
-    pipeline corra sin credenciales.
+    El enunciado pide una fuente en Google Sheets (sucursales, proveedores,
+    promociones u objetivos de venta). Para que el pipeline sea reproducible sin
+    depender de credenciales se usa la exportacion `.xlsx` de esas hojas. En
+    produccion se leeria con la Sheets API (``gspread``) o con el enlace de
+    exportacion; el numero y los nombres de columnas son los mismos, asi que el
+    resto del ETL no cambia.
     """
     return pd.read_excel(ruta, dtype=str, keep_default_na=False, na_values=list(NULOS))
 

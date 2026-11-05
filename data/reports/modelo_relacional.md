@@ -1,6 +1,6 @@
 # Modelo relacional y normalizacion (3FN)
 
-Generado: 2026-10-18 14:11:47
+Generado: 2026-10-18 15:57:06
 
 ![Diagrama ER](modelo_relacional.png)
 

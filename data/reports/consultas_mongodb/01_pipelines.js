@@ -1,5 +1,5 @@
 // Pipelines de agregacion Corporativo JUC
-// Generados: 2026-10-18 14:11:42
+// Generados: 2026-10-18 15:57:03
 // Ejecutar con mongosh / mongodump sobre la base de datos NoSQL (ver MONGO_DB en src/config.py)
 
 // A01: Top 10 productos mas vistos
@@ -465,6 +465,122 @@ db.actividad_usuario.aggregate(
   {
     "$sort": {
       "visitas": -1
+    }
+  }
+]
+)
+
+// A11: Calificacion promedio por categoria de producto
+// Pregunta: Que categoria de producto deja mejor (o peor) impresion?
+// Nota: El documento de resena ya trae la categoria desnormalizada, asi que basta un $group por categoria; en un esquema normalizado habria que unir resenas -> productos -> categorias.
+db.resenas.aggregate(
+[
+  {
+    "$group": {
+      "_id": "$categoria",
+      "rating_promedio": {
+        "$avg": "$calificacion"
+      },
+      "total_resenas": {
+        "$sum": 1
+      },
+      "positivas": {
+        "$sum": {
+          "$cond": [
+            {
+              "$gte": [
+                "$calificacion",
+                4
+              ]
+            },
+            1,
+            0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "$addFields": {
+      "pct_positivas": {
+        "$round": [
+          {
+            "$multiply": [
+              100,
+              {
+                "$divide": [
+                  "$positivas",
+                  "$total_resenas"
+                ]
+              }
+            ]
+          },
+          1
+        ]
+      }
+    }
+  },
+  {
+    "$sort": {
+      "rating_promedio": -1
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "categoria": "$_id",
+      "rating_promedio": 1,
+      "total_resenas": 1,
+      "positivas": 1,
+      "pct_positivas": 1
+    }
+  }
+]
+)
+
+// A12: Actividad de navegacion por ciudad
+// Pregunta: Desde que ciudad se navega mas el catalogo?
+// Nota: Agrupa los eventos de navegacion por el campo `ubicacion` del documento (la ciudad del usuario), un atributo que solo tiene sentido en el evento y no en una tabla relacional fija.
+db.actividad_usuario.aggregate(
+[
+  {
+    "$match": {
+      "es_visualizacion": true
+    }
+  },
+  {
+    "$group": {
+      "_id": "$ubicacion",
+      "eventos": {
+        "$sum": 1
+      },
+      "usuarios": {
+        "$addToSet": "$usuario"
+      },
+      "duracion_promedio": {
+        "$avg": "$duracion_seg"
+      }
+    }
+  },
+  {
+    "$addFields": {
+      "usuarios_unicos": {
+        "$size": "$usuarios"
+      }
+    }
+  },
+  {
+    "$sort": {
+      "eventos": -1
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "ubicacion": "$_id",
+      "eventos": 1,
+      "usuarios_unicos": 1,
+      "duracion_promedio": 1
     }
   }
 ]
