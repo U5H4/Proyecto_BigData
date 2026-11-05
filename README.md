@@ -1,13 +1,13 @@
-# Corporativo JUC — Pipeline de datos (ETL + Cloud + Análisis)
+﻿# Corporativo JUC — Pipeline de datos (ETL + Cloud + Análisis)
 
 Proyecto completo de ingeniería de datos sobre una empresa ficticia,
 **Corporativo JUC S.A. de C.V.**, una tienda de electrónica en México.
 
 El pipeline genera tres fuentes crudas **con errores intencionales**, las limpia
 con 10 transformaciones auditables, las carga en un modelo relacional y un
-almacén de documentos, responde 45 preguntas de negocio (20 en SQL, 10 pipelines
+almacén de documentos, responde 47 preguntas de negocio (20 en SQL, 12 pipelines
 de agregación y 15 consultas `find`/`countDocuments` en NoSQL), y produce un
-reporte con 12 gráficos.
+reporte con 12 gráficos **interactivos** (Plotly, HTML).
 
 Todo es **reproducible**: la semilla `SEED = 20260904` fija los datos
 sintéticos, así que dos ejecuciones dan exactamente el mismo resultado.
@@ -39,8 +39,8 @@ python src\generate_sources.py   # Parte I  -> data/raw/
 python src\etl_load.py           # Partes I-V -> data/processed/
 python src\integration.py        # Parte Cloud -> SQL + NoSQL
 python src\analysis.py           # Parte V   -> data/reports/analisis/
-python src\viz.py               #            -> data/figures/
-python -m pytest tests -q        # 154 pruebas
+python src\viz.py               #            -> data/figures/ + data/reports/reporte.html
+python -m pytest tests -q        # 161 pruebas
 ```
 
 ---
@@ -57,20 +57,26 @@ bigdata_project/
 │   ├── etl_transform.py      Las 10 transformaciones (T01..T10)
 │   ├── etl_load.py           3FN → dataset analítico + documentos para MongoDB
 │   ├── integration.py        DDL, carga, verificación, 20 consultas SQL,
-│   │                          10 pipelines + 15 consultas find/count NoSQL
+│   │                          12 pipelines + 15 consultas find/count NoSQL
 │   ├── er_diagram.py         Diagrama ER (PNG) + justificación 3FN
 │   ├── analysis.py           19 análisis de negocio
-│   ├── viz.py                12 gráficos PNG
+│   ├── viz.py                12 gráficos HTML interactivos (Plotly)
 │   └── run_all.py            Orquestador
 ├── tests/                    test_transform.py, test_integration.py,
 │                             test_analysis.py, test_run_all.py
+├── docs/                     memoria técnica (.md/.docx/.pdf) y guion de
+│                             presentación (.md)
+├── .opencode/skills/         skills: project-docs, data-pipeline, informe-juc
 ├── data/
 │   ├── raw/                  csv/, json/, sheets/   (con errores)
 │   ├── processed/            tablas/, dataset_postgresql.csv, dataset_mongodb.json
+│   ├── sql/                  DDL, consultas y EXPLAIN (scripts SQL)
+│   ├── nosql/                colecciones NDJSON, pipelines/consultas e índices
 │   ├── reports/              calidad, consultas_sql/, consultas_mongodb/,
 │   │                         analisis/, modelo_relacional.md + .png,
-│   │                         integracion_entorno.md, figuras_indice.csv
-│   └── figures/              12 PNG
+│   │                         integracion_entorno.md, figuras_indice.csv,
+│   │                         reporte.html (12 gráficos en una página)
+│   └── figures/              12 HTML (Plotly) + plotly.min.js
 └── logs/                     pipeline.log
 ```
 
@@ -80,9 +86,16 @@ bigdata_project/
 
 | Fuente | Origen | Errores que se inyectan |
 |---|---|---|
-| **A** | CSV + hojas `.xlsx` | Duplicados, ciudades con 7 escrituras distintas, precios `"$1,234.56"`, fechas en texto ambiguo, PK no numéricas, nulos y tipos mezclados |
+| **A** | CSV | Duplicados, ciudades con 7 escrituras distintas, precios `"$1,234.56"`, fechas en texto ambiguo, PK no numéricas, nulos y tipos mezclados |
 | **B** | JSON semiestructurado | Cada familia de producto expone **atributos distintos**, ratings fuera de escala, sentiment guardado como texto |
-| **C** | Hojas `.xlsx` | Ciudades y categorías sucias, regiones inconsistentes con la ciudad real |
+| **C** | Google Sheets (exportadas a `.xlsx`) | Ciudades y categorías sucias, regiones inconsistentes con la ciudad real |
+
+> **Fuente C (Google Sheets).** El enunciado pide una fuente en Google Sheets
+> (sucursales, proveedores, promociones u objetivos de venta). Para que el
+> pipeline sea reproducible sin credenciales se parte de la **exportación
+> `.xlsx`** de esas hojas; en producción se leerían con la Sheets API
+> (`gspread`) o con el enlace de exportación, con exactamente las mismas
+> columnas.
 
 Las tres se limpian con las 10 transformaciones, y **cada una deja evidencia**
 en `data/reports/calidad_transformaciones.csv` (filas antes/después, registros
@@ -160,7 +173,7 @@ Si el servidor cloud no responde, el pipeline **no falla**: registra un
 
 ---
 
-## 5. Las 45 consultas
+## 5. Las 47 consultas
 
 **20 SQL** (`data/reports/consultas_sql/`): top productos y clientes, serie
 mensual, mix por categoría, ticket por canal, **inventario muerto** (55
@@ -170,11 +183,12 @@ nuevos vs recurrentes, mix trimestral, alta rotación, cobertura por sucursal,
 **detalle 360 con JOIN de 6 tablas** (Q19) y **resumen mensual sobre la vista
 `v_resumen_ventas`** (Q20).
 
-**10 pipelines de agregación NoSQL** (`data/reports/consultas_mongodb/`): top
+**12 pipelines de agregación NoSQL** (`data/reports/consultas_mongodb/`): top
 vistos, **inversión que no convierte**, under-exposure, tráfico mensual,
 navegación por dispositivo, rating y dispersión, **consulta dinámica sobre un
-atributo que solo existe en una familia** (A08), recorrido de un usuario y
-**correlación visitas→venta** (A10).
+atributo que solo existe en una familia** (A08), recorrido de un usuario,
+**correlación visitas→venta** (A10), **calificación promedio por categoría**
+(A11) y **actividad de navegación por ciudad** (A12).
 
 **15 consultas `find`/`countDocuments` NoSQL** (B01–B15): filtros con `$gt`,
 `$lt`, `$gte/$lte`, `$in`, `$and` y `$or`, ordenadas con `find().sort().limit()`
@@ -191,7 +205,8 @@ resultado es auditable sin volver a ejecutar nada.
 
 ## 6. Análisis y hallazgos
 
-`data/reports/analisis/` (19 CSV) y `data/figures/` (12 PNG).
+`data/reports/analisis/` (19 CSV) y `data/figures/` (12 HTML interactivos de
+Plotly; el reporte unificado está en `data/reports/reporte.html`).
 Cifras de la ejecución con `SEED = 20260904`.
 
 | Hallazgo | Dato |
@@ -223,7 +238,7 @@ mucho y ya no vuelven (19.7% de la venta).
 ## 7. Pruebas
 
 ```bash
-python -m pytest tests -q      # 154 pruebas, ~2 s
+python -m pytest tests -q      # 161 pruebas, ~2 s
 ```
 
 Las pruebas del análisis no comparan contra valores fijos del dataset real
@@ -250,9 +265,9 @@ Se cubren en particular los dos errores clásicos de este modelo:
 
 | | |
 |---|---|
-| Pruebas | 154 OK |
+| Pruebas | 161 OK |
 | Consultas SQL | 20/20 OK |
-| Pipelines NoSQL | 10/10 OK |
+| Pipelines NoSQL | 12/12 OK |
 | Consultas `find`/`count` NoSQL | 15/15 OK |
 | Gráficos | 12/12 OK |
 | Diagrama ER | generado (`data/reports/modelo_relacional.png`) |
@@ -271,3 +286,100 @@ que el proyecto también se reproduce sin infraestructura.
 > Detalle Supabase: el host directo `db.<proyecto>.supabase.co` solo resuelve a
 > IPv6; por eso se usa el **Session pooler** (`aws-0-us-west-2.pooler.supabase.com`,
 > usuario `postgres.<ref>`), que es IPv4.
+
+---
+
+## 9. Elección de tecnologías: cuándo y por qué
+
+Los cuatro componentes de la arquitectura no son intercambiables: cada uno
+resuelve una parte del problema y tiene ventajas y limitaciones que justifican
+su lugar en el pipeline.
+
+**PostgreSQL (datos estructurados, 3FN).**
+*Cuándo:* entidades fuertemente tipadas y relacionadas (clientes, pedidos,
+detalle, pagos) donde la integridad referencial y las transacciones importan.
+*Ventajas:* esquema y tipos verificados por la base (PK/FK/UNIQUE/CHECK), JOINs
+eficientes, agregaciones SQL, índices y planes con `EXPLAIN ANALYZE`.
+*Limitaciones:* rígido para atributos que cambian por fila (obligaría a una
+tabla puente `producto_atributo` o a columnas casi siempre nulas); escala
+principalmente vertical.
+
+**MongoDB (documentos, atributos variables).**
+*Cuándo:* datos de forma flexible — cada familia de producto expone atributos
+distintos, reseñas anidadas y eventos de navegación.
+*Ventajas:* esquema libre por documento, subdocumentos y arreglos naturales,
+aggregation pipeline potente, escala horizontal (sharding).
+*Limitaciones:* sin integridad referencial entre colecciones (el `$lookup` no
+reemplaza un JOIN transaccional); agregaciones analíticas complejas menos
+expresivas que SQL; el esquema se gobierna a nivel aplicación.
+
+**Proceso ETL (Python + Pandas).**
+*Cuándo:* limpiar, homologar y derivar campos antes de cargar a cada motor.
+*Ventajas:* control total y auditable de las 10 transformaciones; un mismo
+DataFrame alimenta el CSV relacional y el JSON documental; reproducible por
+semilla.
+*Limitaciones:* Pandas trabaja en memoria (no escala a datos masivos sin
+Spark/Dask); no es un motor transaccional.
+
+**Cloud Computing (datos y cómputo administrados).**
+*Cuándo:* disponibilidad, respaldo y acceso remoto sin mantener servidores.
+*Ventajas:* PostgreSQL administrado (Supabase) y MongoDB Atlas gratuitos, alta
+disponibilidad y escalabilidad sin operar infraestructura.
+*Limitaciones:* dependencia de red y de credenciales, cuotas de los planes
+gratuitos, latencia hacia el pooler y menor control del motor; obliga a manejar
+secretos (`.env`, fuera del repositorio).
+
+**Cómo se integran (Parte V).** La navegación vive en MongoDB (eventos
+flexibles) y las ventas en PostgreSQL (datos transaccionales). La pregunta
+"¿los más vistos son los más vendidos?" se resuelve **en Python/Pandas**:
+`id_producto, cantidad_vendida, ingresos` se extraen de la fact SQL y
+`id_producto, numero_visualizaciones` de MongoDB, y se cruzan con `merge`. Ninguno
+de los dos motores haría esa integración por separado, que es justo lo que
+demuestra el uso combinado.
+
+**Visualización (Plotly / HTML).**
+*Cuándo:* cuando el lector necesita **leer los valores exactos** e interactuar
+con los datos (hover, zoom, aislar series), o cuando hay que presentar el
+reporte sin depender de capturas estáticas.
+*Ventajas:* cada punto expone su valor en el *tooltip*, acercarse a una zona no
+pierde resolución (vectorial), las 12 figuras se reúnen en un único
+`reporte.html` autocontenido y la librería `plotly.min.js` se comparte entre las
+12 páginas para no duplicarla.
+*Limitaciones:* el HTML es más pesado que un PNG (~4.7 MB la librería, una sola
+vez) y no se revisa en un *diff* de git como una imagen; por eso el **diagrama
+ER** sí se mantiene en PNG (`modelo_relacional.png`), donde la imagen estática
+es lo natural.
+
+---
+
+## 10. Documentación y presentación
+
+La entrega documental vive en `docs/`:
+
+| Archivo | Uso |
+|---|---|
+| `docs/memoria-corporativo-juc.md` | fuente de verdad, versionable en git |
+| `docs/memoria-corporativo-juc.docx` | entrega formal editable (13 páginas, índice actualizado) |
+| `docs/memoria-corporativo-juc.pdf` | entrega para imprimir o subir |
+| `docs/presentacion-corporativo-juc.md` | guion de 12 diapositivas + preguntas de defensa |
+
+La memoria cubre las Partes I–VII de la rúbrica y cita el artefacto que respalda
+cada cifra. Se regenera así (requiere `python-docx`; el PDF usa Word vía COM o
+LibreOffice):
+
+```powershell
+.\.venv\Scripts\python.exe .opencode\skills\project-docs\scripts\md_a_docx.py `
+  docs\memoria-corporativo-juc.md docs\memoria-corporativo-juc.docx `
+  --titulo "Memoria tecnica - Corporativo JUC" `
+  --subtitulo "Pipeline de datos (ETL + Cloud + Analisis)" `
+  --autor "Corporativo JUC" --pdf
+```
+
+Skills reutilizables del proyecto (se cargan con `/reload` o en una sesión
+nueva):
+
+- `.opencode/skills/project-docs/` — documentar cualquier repo y exportar a
+  Word/PDF.
+- `.opencode/skills/data-pipeline/` — comandos, etapas y artefactos de este
+  pipeline.
+- `.opencode/skills/informe-juc/` — mapeo de la rúbrica y guion de exposición.

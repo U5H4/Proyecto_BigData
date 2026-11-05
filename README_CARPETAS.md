@@ -1,4 +1,4 @@
-# Descripción de carpetas y archivos
+﻿# Descripción de carpetas y archivos
 
 ## /src
 Contiene el código fuente del pipeline (ETL, integración SQL+NoSQL, análisis, visualización y orquestador).
@@ -17,7 +17,7 @@ Contiene el código fuente del pipeline (ETL, integración SQL+NoSQL, análisis,
 - `__init__.py` - Módulo Python.
 
 ## /tests
-Pruebas automatizadas (pytest, 160 passed).
+Pruebas automatizadas (pytest, 161 passed).
 
 - `test_analysis.py` - Valida KPIs, correlación, inventario muerto, under-exposure, cuadrantes, Pareto.
 - `test_integration.py` - Valida DDL/FK/UNIQUE/VIEW, índices Mongo, EXPLAIN, consultas SQL/Mongo, simulación Pandas.
@@ -33,7 +33,7 @@ Datos crudos generados (con errores intencionales).
 
 - `raw/csv/` - Fuente A: `clientes.csv`, `productos.csv`, `pedidos.csv`, `detalle_pedido.csv`, `pagos.csv`
 - `raw/json/` - Fuente B: `productos_semiestructurados.json`, `resenas.json`, `actividad_usuario.json`
-- `raw/sheets/` - Fuente C: `sucursales.xlsx`, `proveedores.xlsx`, `promociones.xlsx`, `objetivos_venta.xlsx`
+- `raw/sheets/` - Fuente C (Google Sheets exportadas a `.xlsx`): `sucursales.xlsx`, `proveedores.xlsx`, `promociones.xlsx`, `objetivos_venta.xlsx`
 
 ### data/processed
 Datos limpios/listos para integración y análisis.
@@ -41,19 +41,44 @@ Datos limpios/listos para integración y análisis.
 - `processed/tablas/` - Tablas normalizadas 3FN (SQL): `clientes.csv`, `productos.csv`, `categorias.csv`, `pedidos.csv`, `detalle_pedido.csv`, `pagos.csv`, `dim_ciudades.csv`, `dim_sucursales.csv`
 - `processed/dataset_postgresql.csv` - Dataset fact_ventas desnormalizado para consultas SQL.
 - `processed/dataset_mongodb.json` - Documentos agregados para carga en MongoDB.
-- `processed/integracion/` - Artefactos de integración: el archivo SQLite local (`.db`, nombre definido en `src/config.py`), `mongo/*.ndjson` (colecciones), `mongo/indices.json`
-- `processed/integracion/mongo/` - `productos.ndjson`, `resenas.ndjson`, `actividad_usuario.ndjson`, `indices.json`
+- `processed/integracion/` - Artefactos de integración: el archivo SQLite local (`.db`, nombre definido en `src/config.py`)
+
+### data/sql
+Scripts SQL del layout de almacenamiento (punto 26 del enunciado). Réplica de la carga relacional.
+
+- `sql/01_ddl.sql`, `sql/02_consultas.sql`, `sql/03_explain_analyze.md`, `sql/04_explain_analyze.csv`
+
+### data/nosql
+Almacén de documentos (layout del punto 26 del enunciado). Colecciones y scripts de MongoDB.
+
+- `nosql/productos.ndjson`, `nosql/resenas.ndjson`, `nosql/actividad_usuario.ndjson`, `nosql/indices.json`
+- `nosql/01_pipelines.js`, `nosql/02_consultas.js`
 
 ### data/reports
 Reportes, evidencia, consultas y artefactos entregables.
 
-- Raíz: `calidad_transformaciones.csv`, `evidencia_extraccion.csv`, `evidencia_extraccion_columnas.csv`, `validacion_minimos.csv`, `perfil_columnas.csv`, `integracion_resumen.csv`, `figuras_indice.csv`, `integracion_entorno.md`, `modelo_relacional.png`, `modelo_relacional.md`, `ejemplo_documento_producto.json`
+- Raíz: `calidad_transformaciones.csv`, `evidencia_extraccion.csv`, `evidencia_extraccion_columnas.csv`, `validacion_minimos.csv`, `perfil_columnas.csv`, `integracion_resumen.csv`, `figuras_indice.csv`, `integracion_entorno.md`, `modelo_relacional.png`, `modelo_relacional.md`, `reporte.html` (12 gráficos en una página), `ejemplo_documento_producto.json`
 - `reports/consultas_sql/` - `01_ddl.sql`, `02_consultas.sql`, `03_explain_analyze.md`, `04_explain_analyze.csv`, `Q01_*.csv`..`Q20_*.csv`
-- `reports/consultas_mongodb/` - `01_pipelines.js`, `02_consultas.js`, `A01_*.csv`..`A10_*.csv`, `B01_*.csv`..`B15_*.csv`
+- `reports/consultas_mongodb/` - `01_pipelines.js`, `02_consultas.js`, `A01_*.csv`..`A12_*.csv`, `B01_*.csv`..`B15_*.csv`
 - `reports/analisis/` - `01_kpis_generales.csv`, `02_ventas_mensuales.csv`, `03_mix_categoria.csv`, `04_mix_canal.csv`, `05_mix_region.csv`, `06_por_sucursal.csv`, `07_segmentos_clientes.csv`, `08_detalle_segmentos.csv`, `09_embudo_navegacion.csv`, `10_embudo_notas.csv`, `11_correlacion_visitas_ventas.csv`, `12_dispersion_visitas_ventas.csv`, `13_inventario_muerto.csv`, `14_under_exposure.csv`, `15_ley_pareto.csv`, `16_calidad_pago.csv`, `17_impacto_descuentos.csv`, `18_satisfaccion.csv`, `19_productos_valorados.csv`, `20_cuadrantes_visitas_ventas.csv`, `analisis_resumen.md`
 
 ### data/figures
-Gráficas PNG (12): `01_ventas_mensuales.png`, `02_mix_categoria.png`, `03_ticket_por_canal.png`, `04_ley_de_pareto.png`, `05_segmentos_clientes.png`, `06_embudo_navegacion.png`, `07_correlacion_visitas_ventas.png`, `08_inventario_muerto.png`, `09_under_exposure.png`, `10_impacto_descuentos.png`, `11_satisfaccion.png`, `12_por_sucursal.png`
+Gráficos HTML interactivos (Plotly, 12): `01_ventas_mensuales.html`, `02_mix_categoria.html`, `03_ticket_por_canal.html`, `04_ley_de_pareto.html`, `05_segmentos_clientes.html`, `06_embudo_navegacion.html`, `07_correlacion_visitas_ventas.html`, `08_inventario_muerto.html`, `09_under_exposure.html`, `10_impacto_descuentos.html`, `11_satisfaccion.html`, `12_por_sucursal.html` + `plotly.min.js` (librería compartida)
+
+## /docs
+Documentación de entrega y presentación.
+
+- `memoria-corporativo-juc.md` - Fuente de verdad de la memoria técnica (Partes I–VII, operación, anexos).
+- `memoria-corporativo-juc.docx` - Entrega formal editable, con portada, índice y diagrama ER.
+- `memoria-corporativo-juc.pdf` - Versión para imprimir/subir (13 páginas).
+- `presentacion-corporativo-juc.md` - Guion de 12 diapositivas, checklist de demo y preguntas de defensa.
+
+## /.opencode/skills
+Skills reutilizables para este proyecto y para documentar otros.
+
+- `project-docs/` - Documentar un repositorio y exportar Markdown a Word/PDF (`scripts/md_a_docx.py`, `scripts/docx_a_pdf.ps1`).
+- `data-pipeline/` - Comandos, etapas, artefactos y modos nube/local de este pipeline.
+- `informe-juc/` - Mapeo de la rúbrica a los artefactos y guion de exposición.
 
 ## /logs
 Logs y artefactos de referencia.

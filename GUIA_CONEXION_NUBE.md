@@ -75,7 +75,7 @@ FORZAR_SQLITE=1 # Fuerza a no intentar PostgreSQL
 ## 5. Comprobar que NO sube a cuentas ajenas
 
 - Si `.env` está vacío o con credenciales incorrectas → usa modo **local** (SQLite + NDJSON). No hay conexión.
-- Los archivos `data/processed/integracion/<NOMBRE_BD>.db` y `data/processed/integracion/mongo/*.ndjson` se generan **localmente**.
+- Los archivos `data/processed/integracion/<NOMBRE_BD>.db` y `data/nosql/*.ndjson` se generan **localmente** (layout del punto 26: `data/sql/` y `data/nosql/`).
 - Los reportes `data/reports/` se generan **localmente**.
 
 ## 6. Notas importantes
