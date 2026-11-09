@@ -48,7 +48,7 @@ python -m pytest tests -q        # 167 pruebas
 ## 2. Estructura
 
 ```
-bigdata_project/
+Proyecto_BigData/
 ├── src/
 │   ├── config.py            Rutas, semilla, mínimos del punto 4, catálogos, paleta
 │   ├── utils.py              Logging, tracker de calidad, formateo de tablas
@@ -59,7 +59,7 @@ bigdata_project/
 │   ├── integration.py        DDL, carga, verificación, 20 consultas SQL,
 │   │                          12 pipelines + 15 consultas find/count NoSQL
 │   ├── er_diagram.py         Diagrama ER (PNG) + justificación 3FN
-│   ├── analysis.py           19 análisis de negocio
+│   ├── analysis.py           21 análisis de negocio
 │   ├── viz.py                13 gráficos HTML interactivos (Plotly)
 │   └── run_all.py            Orquestador
 ├── tests/                    test_transform.py, test_integration.py,
@@ -178,7 +178,7 @@ Si el servidor cloud no responde, el pipeline **no falla**: registra un
 **20 SQL** (`data/reports/consultas_sql/`): top productos y clientes, serie
 mensual, mix por categoría, ticket por canal, **inventario muerto** (55
 productos que nunca se vendieron), clientes con cancelaciones, conciliación de
-pagos, descuentos, geography, premium vs estándar, **ley de Pareto**,
+pagos, descuentos, geografía, premium vs estándar, **ley de Pareto**,
 nuevos vs recurrentes, mix trimestral, alta rotación, cobertura por sucursal,
 **detalle 360 con JOIN de 7 tablas** (Q19) y **resumen mensual sobre la vista
 `v_resumen_ventas`** (Q20).
@@ -284,7 +284,7 @@ el pipeline registra un `WARNING` y degrada a SQLite / NDJSON sin romperse, así
 que el proyecto también se reproduce sin infraestructura.
 
 > Detalle Supabase: el host directo `db.<proyecto>.supabase.co` solo resuelve a
-> IPv6; por eso se usa el **Session pooler** (`aws-0-us-west-2.pooler.supabase.com`,
+> IPv6; por eso se usa el **Session pooler** (`aws-0-us-east-1.pooler.supabase.com`,
 > usuario `postgres.<ref>`), que es IPv4.
 
 ---

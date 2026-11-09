@@ -17,6 +17,9 @@ __pycache__/
 # Logs
 logs/*.log
 
+# Fallback local (SQLite) del modo simulado — nunca se commitea
+data/processed/integracion/
+
 # IDE
 .vscode/
 .idea/
