@@ -1,5 +1,5 @@
 // Consultas find/countDocuments Corporativo JUC (B01-B15)
-// Generadas: 2026-11-09 07:05:13
+// Generadas: 2026-11-09 07:15:57
 // Ejecutar con mongosh sobre la base de datos NoSQL (ver MONGO_DB en src/config.py)
 
 // B01: Productos premium (precio > 5000)
@@ -80,7 +80,7 @@ db.actividad_usuario.countDocuments({"evento": "producto_comprado"})
 
 // B14: Navegacion desde equipos Apple ($in)
 // Pregunta: Como navega el usuario de ecosistema Apple?
-db.actividad_usuario.find({"dispositivo": {"$in": ["iOS", "macOS"]}}, {"usuario": 1, "producto": 1, "dispositivo": 1, "duracion_seg": 1, "fecha": 1, "_id": 0})
+db.actividad_usuario.find({"dispositivo": {"$in": ["ios", "macos"]}}, {"usuario": 1, "producto": 1, "dispositivo": 1, "duracion_seg": 1, "fecha": 1, "_id": 0})
   .sort({"fecha": -1})
   .limit(20)
 

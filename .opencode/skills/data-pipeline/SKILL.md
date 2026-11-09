@@ -75,7 +75,7 @@ data/figures/                   13 *.html + plotly.min.js
 - 10 transformaciones auditables + campos derivados.
 - 9 tablas + 1 vista: las 6 exigidas (`clientes, productos, categorias, pedidos, detalle_pedido, pagos`) + `dim_ciudades`, `dim_sucursales` y `fact_ventas`.
 - 47 preguntas: 20 SQL + 12 pipelines de agregación + 15 `find`/`countDocuments`.
-- 13 visualizaciones interactivas (Plotly) y diagrama ER en PNG.
+- 13 visualizaciones interactivas (Plotly), en dos bloques: Principales (1-7) y Anexo (8-13), y diagrama ER en PNG.
 - 167 pruebas (`pytest`), todas deben quedar en verde.
 
 ## Reglas

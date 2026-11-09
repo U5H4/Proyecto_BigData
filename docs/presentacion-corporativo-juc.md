@@ -17,7 +17,7 @@ decir, que mostrar en pantalla y que evidencia del repositorio la respalda.
 - [ ] Verificar que `.venv` existe y que el pipeline corre:
       `.\.venv\Scripts\python.exe src\run_all.py --listar`.
 - [ ] Tener abiertos `data/sql/01_ddl.sql` y `data/nosql/01_pipelines.js`.
-- [ ] Opcional: correr `pytest -q` antes de la exposicion para confirmar 161 passed.
+- [ ] Opcional: correr `pytest -q` antes de la exposicion para confirmar 167 passed.
 - [ ] No mostrar `.env` en pantalla (credenciales). Si hace falta, mostrar
       `.env.example`.
 
@@ -228,15 +228,16 @@ portabilidad. Sin credenciales el pipeline degrada a SQLite y NDJSON sin fallar.
 
 **Que decir:**
 
-> Doce visualizaciones interactivas con Plotly: hover con el valor exacto, zoom
+> Trece visualizaciones interactivas en dos bloques — Principales (1-7) y
+> Anexo (8-13) — con Plotly: hover con el valor exacto, zoom
 > y series aislables. Todas se reunen en un solo reporte HTML que funciona
 > offline porque el JavaScript de Plotly viaja con el proyecto.
 
 **Demo:** abrir `data/reports/reporte.html` y mostrar:
-1. Serie temporal (zoom).
-2. Pareto (concentracion).
-3. Dispersion visitas vs ventas (correlacion).
-4. Embudo navegacion-compra.
+1. Serie temporal (01) (zoom).
+2. Pareto (03) (concentracion).
+3. Dispersion visitas vs ventas (10, anexo) (correlacion).
+4. Embudo navegacion-compra (04).
 
 **Si no hay internet:** el reporte funciona igual; `plotly.min.js` es local.
 
@@ -321,5 +322,5 @@ predictivos. Esta declarado en limitaciones.
 | Pipelines MongoDB | 12 |
 | Consultas find/count | 15 |
 | Indices SQL / MongoDB | 20 / 12 |
-| Visualizaciones | 12 |
-| Pruebas | 161 |
+| Visualizaciones | 13 (Principales 1-7 + Anexo 8-13) |
+| Pruebas | 167 |

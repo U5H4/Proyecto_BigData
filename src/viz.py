@@ -125,14 +125,10 @@ def grafico_ventas_mensuales(d: pd.DataFrame) -> go.Figure:
                       title_text="Facturacion")
     fig.update_yaxes(tickformat=_eje_s(), gridcolor="#ECEFF1", row=2, col=1,
                       title_text="Ticket promedio")
-    if parcial.any():
-        fig.add_annotation(x=d["anio_mes"].iloc[-1], y=d["facturacion"].iloc[-1],
-                           text="ultimo mes<br>puede estar incompleto", showarrow=True,
-                           arrowhead=2, ax=-75, ay=-40, xanchor="right",
-                           font=dict(size=10, color="#78909C"))
+    nota = " | la barra gris es el ultimo mes (puede estar incompleto)" if parcial.any() else ""
     _pie(fig, f"Total {numero(d['facturacion'].sum())} | "
               f"{numero(d['pedidos'].sum())} pedidos | "
-              f"{numero(d['unidades'].sum())} unidades")
+              f"{numero(d['unidades'].sum())} unidades" + nota)
     return fig
 
 
@@ -170,7 +166,7 @@ def grafico_mix_categoria(d: pd.DataFrame) -> go.Figure:
 def grafico_ticket_canal(d: pd.DataFrame) -> go.Figure:
     fig = _fig(
         "Facturacion y margen por canal de venta",
-        "Barras: facturacion. Puntos: margen real del canal.",
+        "Barras: facturacion. Texto dentro de la barra: margen real del canal.",
     )
     if d.empty:
         return _vacio(fig, "sin datos por canal")
@@ -178,22 +174,12 @@ def grafico_ticket_canal(d: pd.DataFrame) -> go.Figure:
     fig.add_bar(
         x=[_cortar(s, 18) for s in d["segmento"]], y=d["facturacion"],
         marker_color=[PALETA[i % len(PALETA)] for i in range(len(d))],
+        text=[f"margen {v:.1f}%" if pd.notna(v) else "" for v in d["margen_pct"]],
+        textposition="inside", textfont=dict(color="#FFFFFF", size=12),
         hovertemplate="%{x}<br>Facturacion: %{y:,.0f}<extra></extra>",
-    )
-    fig.add_scatter(
-        x=[_cortar(s, 18) for s in d["segmento"]], y=d["margen_pct"],
-        mode="markers+text", yaxis="y2", name="Margen real",
-        text=[f"{v:.1f}%" if pd.notna(v) else "" for v in d["margen_pct"]],
-        textposition="top center", textfont=dict(color=COLOR_ALERTA, size=11),
-        marker=dict(color=COLOR_ALERTA, size=11, symbol="diamond"),
-        hovertemplate="%{x}<br>Margen: %{y:.1f}%<extra></extra>",
     )
     fig.update_layout(
         yaxis=dict(title_text="Facturacion", tickformat=_eje_s(), gridcolor="#ECEFF1"),
-        yaxis2=dict(title_text="Margen real %", overlaying="y", side="right",
-                    showgrid=False, ticksuffix="%",
-                    tickfont=dict(color=COLOR_ALERTA),
-                    title_font=dict(color=COLOR_ALERTA)),
     )
     _pie(fig, " | ".join(
         f"{_cortar(r.segmento, 16)}: ticket {numero(r.ticket_promedio)}"
@@ -241,7 +227,12 @@ def grafico_pareto(d: pd.DataFrame) -> go.Figure:
     )
     n80 = int(d["productos_hasta_80"].iloc[0])
     p80 = float(d["pct_productos_hasta_80"].iloc[0])
-    _pie(fig, f"{n80} de {len(d)} ({p80:.1f}%) = 80% de la venta.")
+    # La nota va dentro del area de trazado (esquina superior izquierda): el pie
+    # se montan sobre las etiquetas rotadas del eje x en este grafico.
+    fig.add_annotation(text=f"<b>{n80} de {len(d)} productos ({p80:.1f}%) = 80% de la venta</b>",
+                       xref="paper", yref="paper", x=0.97, y=0.97, xanchor="right",
+                       yanchor="top", showarrow=False, font=dict(size=11, color="#455A64"),
+                       bgcolor="white", bordercolor="#CFD8DC", borderpad=5)
     return fig
 
 
@@ -251,7 +242,7 @@ def grafico_pareto(d: pd.DataFrame) -> go.Figure:
 def grafico_segmentos(d: pd.DataFrame) -> go.Figure:
     fig = _fig(
         "Segmentacion de clientes (RFM)",
-        "Barras: numero de clientes. Linea: participacion en la facturacion.",
+        "Barras: numero de clientes por segmento. Hover: participacion en la venta.",
     )
     if d.empty:
         return _vacio(fig, "sin segmentos")
@@ -264,23 +255,15 @@ def grafico_segmentos(d: pd.DataFrame) -> go.Figure:
         x=d["segmento"], y=d["clientes"],
         marker_color=[tono.get(s, COLOR_NEUTRO) for s in d["segmento"]],
         text=[f"{n:,}" for n in d["clientes"]], textposition="outside",
-        hovertemplate="%{x}<br>Clientes: %{y:,}<extra></extra>",
-    )
-    fig.add_scatter(
-        x=d["segmento"], y=d["participacion_pct"], mode="lines+markers+text",
-        yaxis="y2", name="% facturacion",
-        text=[f"{v:.1f}%" for v in d["participacion_pct"]], textposition="bottom center",
-        textfont=dict(color=COLOR_ALERTA, size=10),
-        line=dict(color=COLOR_ALERTA, width=2), marker=dict(size=8, color=COLOR_ALERTA),
-        hovertemplate="%{x}<br>% facturacion: %{y:.1f}%<extra></extra>",
+        customdata=d["participacion_pct"],
+        hovertemplate="%{x}<br>Clientes: %{y:,}<br>Participacion en la facturacion: %{customdata:.1f}%<extra></extra>",
     )
     fig.update_layout(
         yaxis=dict(title_text="Clientes", gridcolor="#ECEFF1"),
-        yaxis2=dict(title_text="% de la facturacion", overlaying="y", side="right",
-                    showgrid=False, ticksuffix="%",
-                    tickfont=dict(color=COLOR_ALERTA),
-                    title_font=dict(color=COLOR_ALERTA)),
     )
+    campeones_leales = float(d.loc[d["segmento"].isin(["Campeones", "Leales"]), "participacion_pct"].sum())
+    _pie(fig, f"Campeones + Leales concentran {campeones_leales:.1f}% de la facturacion. "
+              f"Hover sobre cada barra para ver la participacion.")
     return fig
 
 
@@ -304,7 +287,8 @@ def grafico_embudo(d: pd.DataFrame) -> go.Figure:
         hovertemplate="%{y}<br>Eventos: %{x:,}<extra></extra>",
     )
     fig.update_layout(
-        xaxis=dict(title_text="Eventos", tickformat=_eje_s(), gridcolor="#ECEFF1"),
+        xaxis=dict(title_text="Eventos", tickformat=_eje_s(), gridcolor="#ECEFF1",
+                   range=[0, d["eventos"].max() * 1.45]),
         yaxis=dict(autorange="reversed", tickfont=dict(size=11)),
     )
     caidas = d["caida_vs_paso_anterior_pct"].dropna()
@@ -410,9 +394,9 @@ def grafico_under_exposure(d: pd.DataFrame) -> go.Figure:
         xaxis=dict(title_text="Unidades vendidas", tickformat=_eje_s(), gridcolor="#ECEFF1"),
         yaxis=dict(autorange="reversed", tickfont=dict(size=10)),
     )
-    _pie(fig, "visitas por unidad en el top 5: " + " | ".join(
-        f"{_cortar(r.nombre, 20)} = {r.visitas_por_unidad:.2f}"
-        for r in d.head(5).itertuples()
+    _pie(fig, "visitas por unidad (top 3): " + " | ".join(
+        f"{_cortar(r.nombre, 26)} = {r.visitas_por_unidad:.2f}"
+        for r in d.head(3).itertuples()
     ))
     return fig
 
@@ -423,7 +407,7 @@ def grafico_under_exposure(d: pd.DataFrame) -> go.Figure:
 def grafico_descuentos(d: pd.DataFrame) -> go.Figure:
     fig = _fig(
         "Los descuentos se pagan con margen",
-        "Barras: margen real por rango de descuento. Puntos: lineas vendidas.",
+        "Barras: margen real por rango de descuento del pedido.",
     )
     if d.empty:
         return _vacio(fig, "sin ventas con descuento")
@@ -433,21 +417,13 @@ def grafico_descuentos(d: pd.DataFrame) -> go.Figure:
         marker_color=[COLOR_ALERTA if (pd.notna(v) and v < 25) else PALETA[0]
                       for v in d["margen_pct"]],
         text=[f"{v:.1f}%" if pd.notna(v) else "" for v in d["margen_pct"]],
-        textposition="outside",
-        hovertemplate="%{x}<br>Margen: %{y:.1f}%<extra></extra>",
+        textposition="outside", customdata=d["unidades"],
+        hovertemplate="%{x}<br>Margen: %{y:.1f}%<br>Lineas: %{customdata:,}<extra></extra>",
     )
-    fig.add_scatter(
-        x=d["rango_descuento"].astype(str), y=d["unidades"], mode="markers",
-        yaxis="y2", name="Unidades",
-        marker=dict(color=COLOR_NEUTRO, size=11, symbol="square"),
-        hovertemplate="%{x}<br>Unidades: %{y:,}<extra></extra>",
-    )
+    tope = float(pd.to_numeric(d["margen_pct"], errors="coerce").max() or 0)
     fig.update_layout(
-        yaxis=dict(title_text="Margen real %", ticksuffix="%", gridcolor="#ECEFF1"),
-        yaxis2=dict(title_text="Unidades", overlaying="y", side="right", showgrid=False,
-                    tickformat=_eje_s(),
-                    tickfont=dict(color=COLOR_NEUTRO),
-                    title_font=dict(color=COLOR_NEUTRO)),
+        yaxis=dict(title_text="Margen real %", ticksuffix="%", gridcolor="#ECEFF1",
+                   range=[0, max(tope * 1.25, 10)]),
     )
     _pie(fig, " | ".join(
         f"{r.rango_descuento}: -{r.descuento_pct_del_ingreso:.1f}% del ingreso"
@@ -471,8 +447,8 @@ def grafico_satisfaccion(d: pd.DataFrame) -> go.Figure:
         x=[f"{c:.0f} estrellas" for c in d["calificacion"]], y=d["resenas"],
         marker_color=[COLOR_OK if c >= 4 else (COLOR_ALERTA if c <= 2 else PALETA[1])
                       for c in d["calificacion"]],
-        text=[f"{n:,}<br>{t:.0f}% pos."
-              for n, t in zip(d["resenas"], d["tasa_positiva_pct"])],
+        text=[f"{n:,}<br>{p:.0f}% del total"
+              for n, p in zip(d["resenas"], d["participacion_pct"])],
         textposition="outside",
         hovertemplate="%{x}<br>Resenas: %{y:,}<extra></extra>",
     )
@@ -480,7 +456,10 @@ def grafico_satisfaccion(d: pd.DataFrame) -> go.Figure:
         yaxis=dict(title_text="Resenas", gridcolor="#ECEFF1"),
         xaxis=dict(tickfont=dict(size=11)),
     )
-    _pie(fig, f"total {numero(d['resenas'].sum())} resenas | "
+    total = int(d["resenas"].sum())
+    positivas = int(d["positivas"].sum())
+    _pie(fig, f"total {numero(total)} resenas | "
+              f"{positivas / max(total, 1) * 100:.1f}% positivas (4-5 estrellas) | "
               f"{numero(d['verificadas'].sum())} verificadas")
     return fig
 
@@ -499,16 +478,20 @@ def grafico_sucursales(d: pd.DataFrame) -> go.Figure:
     tono_region = {"Sureste": "#55A868", "Centro": "#4C72B0",
                    "Occidente": "#DD8452", "Norte": "#8172B3", "Nacional": COLOR_NEUTRO}
     colores = [tono_region.get(r, COLOR_NEUTRO) for r in d["region"]]
-    etiquetas = [f"{_cortar(n, 22)} - {_cortar(c, 14)}" for n, c in zip(d["nombre"], d["ciudad"])] \
-        if "nombre" in d.columns else [str(i) for i in d["id_sucursal"]]
+    etiquetas = [f"{_cortar(c, 18)} ({i})" for c, i in zip(d["ciudad"], d["id_sucursal"])] \
+        if "ciudad" in d.columns else [str(i) for i in d["id_sucursal"]]
+    maximo = float(d["facturacion"].max())
     fig.add_bar(
         orientation="h", x=d["facturacion"], y=etiquetas, marker_color=colores,
         text=[f"ticket {numero(v)}" for v in d["ticket_promedio"]], textposition="outside",
-        hovertemplate="%{y}<br>Facturacion: %{x:,.0f}<extra></extra>",
+        customdata=list(d["nombre"].astype(str) + " · " + d["region"].astype(str)) if "nombre" in d.columns else None,
+        hovertemplate="%{customdata}<br>Facturacion: %{x:,.0f}<extra></extra>" if "nombre" in d.columns
+        else "%{y}<br>Facturacion: %{x:,.0f}<extra></extra>",
     )
     fig.update_layout(
-        xaxis=dict(title_text="Facturacion", tickformat=_eje_s(), gridcolor="#ECEFF1"),
-        yaxis=dict(tickfont=dict(size=10)),
+        xaxis=dict(title_text="Facturacion", tickformat=_eje_s(), gridcolor="#ECEFF1",
+                   range=[0, maximo * 1.32]),
+        yaxis=dict(tickfont=dict(size=11)),
     )
     return fig
 
@@ -545,20 +528,34 @@ def grafico_ciudades(d: pd.DataFrame) -> go.Figure:
 # Orquestacion
 # --------------------------------------------------------------------------
 GRAFICOS = [
-    ("01_ventas_mensuales", "Serie temporal de ventas", lambda r: grafico_ventas_mensuales(r["02_ventas_mensuales"])),
-    ("02_mix_categoria", "Mix por categoria", lambda r: grafico_mix_categoria(r["03_mix_categoria"])),
-    ("03_ticket_por_canal", "Ticket y margen por canal", lambda r: grafico_ticket_canal(r["04_mix_canal"])),
-    ("04_ley_de_pareto", "Ley de Pareto", lambda r: grafico_pareto(r["15_ley_pareto"])),
-    ("05_segmentos_clientes", "Segmentacion RFM", lambda r: grafico_segmentos(r["07_segmentos_clientes"])),
-    ("06_embudo_navegacion", "Embudo navegacion-compra", lambda r: grafico_embudo(r["09_embudo_navegacion"])),
-    ("07_correlacion_visitas_ventas", "Correlacion navegacion-venta",
+    # Bloque principal (1-7): los que se presentan y se defienden en 10 segundos.
+    ("01_ventas_mensuales", "Serie temporal de ventas", "principales",
+     lambda r: grafico_ventas_mensuales(r["02_ventas_mensuales"])),
+    ("02_mix_categoria", "Mix por categoria", "principales",
+     lambda r: grafico_mix_categoria(r["03_mix_categoria"])),
+    ("03_ley_de_pareto", "Ley de Pareto", "principales",
+     lambda r: grafico_pareto(r["15_ley_pareto"])),
+    ("04_embudo_navegacion", "Embudo navegacion-compra", "principales",
+     lambda r: grafico_embudo(r["09_embudo_navegacion"])),
+    ("05_inventario_muerto", "Visitas sin venta", "principales",
+     lambda r: grafico_inventario_muerto(r["13_inventario_muerto"])),
+    ("06_impacto_descuentos", "Descuentos vs margen", "principales",
+     lambda r: grafico_descuentos(r["17_impacto_descuentos"])),
+    ("07_ventas_por_ciudad", "Ventas por ciudad", "principales",
+     lambda r: grafico_ciudades(r["21_ventas_por_ciudad"])),
+    # Anexo (8-13): respaldo completo, para el reporte y las preguntas del jurado.
+    ("08_ticket_por_canal", "Ticket y margen por canal", "anexo",
+     lambda r: grafico_ticket_canal(r["04_mix_canal"])),
+    ("09_segmentos_clientes", "Segmentacion RFM", "anexo",
+     lambda r: grafico_segmentos(r["07_segmentos_clientes"])),
+    ("10_correlacion_visitas_ventas", "Correlacion navegacion-venta", "anexo",
      lambda r: grafico_correlacion(r["12_dispersion_visitas_ventas"], r["11_correlacion_visitas_ventas"])),
-    ("08_inventario_muerto", "Visitas sin venta", lambda r: grafico_inventario_muerto(r["13_inventario_muerto"])),
-    ("09_under_exposure", "Under-exposure", lambda r: grafico_under_exposure(r["14_under_exposure"])),
-    ("10_impacto_descuentos", "Descuentos vs margen", lambda r: grafico_descuentos(r["17_impacto_descuentos"])),
-    ("11_satisfaccion", "Calificaciones", lambda r: grafico_satisfaccion(r["18_satisfaccion"])),
-    ("12_por_sucursal", "Facturacion por sucursal", lambda r: grafico_sucursales(r["06_por_sucursal"])),
-    ("13_ventas_por_ciudad", "Ventas por ciudad", lambda r: grafico_ciudades(r["21_ventas_por_ciudad"])),
+    ("11_under_exposure", "Under-exposure", "anexo",
+     lambda r: grafico_under_exposure(r["14_under_exposure"])),
+    ("12_satisfaccion", "Calificaciones", "anexo",
+     lambda r: grafico_satisfaccion(r["18_satisfaccion"])),
+    ("13_por_sucursal", "Facturacion por sucursal", "anexo",
+     lambda r: grafico_sucursales(r["06_por_sucursal"])),
 ]
 
 
@@ -571,19 +568,33 @@ def _guardar(fig: go.Figure, nombre: str, destino: Path) -> Path:
     return ruta
 
 
-def _reporte_html(figuras: list[tuple[str, str, go.Figure]], destino: Path) -> Path:
+def _reporte_html(figuras: list[tuple[str, str, str, go.Figure]], destino: Path) -> Path:
     """Una sola pagina con las 13 figuras. Reutiliza `plotly.min.js` que cada
     figura individual ya escribio en `data/figures/` (ruta relativa
     `../figures/plotly.min.js`), asi que este HTML pesa unos pocos KB."""
+    principales = [f for f in figuras if f[2] == "principales"]
+    anexo = [f for f in figuras if f[2] == "anexo"]
+
     trozos = []
-    for i, (nombre, titulo_gr, fig) in enumerate(figuras):
+    for i, (nombre, titulo_gr, _, fig) in enumerate(figuras, start=1):
+        if i == 1:
+            trozos.append('<h3 class="bloque">Principales (1-7)</h3>')
+        elif i == len(principales) + 1:
+            trozos.append('<h3 class="bloque">Anexo (8-13)</h3>')
         cuerpo = fig.to_html(full_html=False, include_plotlyjs=False,
                              div_id=f"g{i}", config={"displaylogo": False})
         trozos.append(
-            f'<section id="{nombre}"><h2>{titulo_gr}</h2>{cuerpo}</section>'
+            f'<section id="{nombre}"><h2>{i}. {titulo_gr}</h2>{cuerpo}</section>'
         )
-    indice = "".join(
-        f'<li><a href="#{nombre}">{titulo_gr}</a></li>' for nombre, titulo_gr, _ in figuras
+
+    def _indice(grupo):
+        return "".join(f'<li><a href="#{n}">{t}</a></li>' for n, t, _, _ in grupo)
+
+    indice = (
+        '<div class="bloque-nav">Principales</div>'
+        f'<ol start="1">{_indice(principales)}</ol>'
+        '<div class="bloque-nav">Anexo</div>'
+        f'<ol start="{len(principales) + 1}">{_indice(anexo)}</ol>'
     )
     doc = f"""<!DOCTYPE html>
 <html lang="es">
@@ -598,8 +609,13 @@ def _reporte_html(figuras: list[tuple[str, str, go.Figure]], destino: Path) -> P
   header h1 {{ margin: 0 0 6px; font-size: 24px; }}
   header p {{ margin: 0; color: #B0BEC5; }}
   nav {{ padding: 16px 40px; background: #fff; border-bottom: 1px solid #ECEFF1; }}
-  nav ol {{ margin: 0; padding-left: 20px; columns: 2; }}
+  nav ol {{ margin: 4px 0 10px; padding-left: 20px; columns: 2; }}
+  nav .bloque-nav {{ font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+                     color: #607D8B; margin-top: 8px; }}
   main {{ max-width: 1100px; margin: 0 auto; padding: 8px 24px 60px; }}
+  h3.bloque {{ max-width: 1100px; margin: 28px auto 0; padding: 0 24px;
+               font-size: 15px; text-transform: uppercase; letter-spacing: 1px;
+               color: #607D8B; border-bottom: 2px solid #CFD8DC; padding-bottom: 6px; }}
   section {{ background: #fff; border: 1px solid #ECEFF1; border-radius: 8px;
              padding: 8px 20px 20px; margin: 24px 0; }}
   section h2 {{ font-size: 16px; color: #455A64; }}
@@ -610,7 +626,7 @@ def _reporte_html(figuras: list[tuple[str, str, go.Figure]], destino: Path) -> P
   <h1>Reporte de analisis - {EMPRESA}</h1>
   <p>{len(figuras)} visualizaciones interactivas (plotly). Pasa el mouse para ver el valor exacto.</p>
 </header>
-<nav><ol>{indice}</ol></nav>
+<nav>{indice}</nav>
 <main>{''.join(trozos)}</main>
 </body>
 </html>
@@ -622,14 +638,14 @@ def _reporte_html(figuras: list[tuple[str, str, go.Figure]], destino: Path) -> P
 def construir_todos(resultados: dict[str, pd.DataFrame], destino: Path | None = None,
                     reporte: Path | None = None) -> pd.DataFrame:
     destino = asegurar_dir(destino or FIGURES)
-    figuras: list[tuple[str, str, go.Figure]] = []
+    figuras: list[tuple[str, str, str, go.Figure]] = []
     indice = []
-    for nombre, titulo_gr, fn in GRAFICOS:
+    for nombre, titulo_gr, bloque, fn in GRAFICOS:
         try:
             fig = fn(resultados)
             ruta = _guardar(fig, nombre, destino)
             kb = ruta.stat().st_size / 1024
-            figuras.append((nombre, titulo_gr, fig))
+            figuras.append((nombre, titulo_gr, bloque, fig))
             indice.append({"grafico": nombre, "titulo": titulo_gr, "archivo": ruta.name,
                            "estado": "OK", "kb": round(kb, 1), "error": ""})
         except Exception as exc:  # noqa: BLE001 - un grafico roto no debe tumbar el pipeline

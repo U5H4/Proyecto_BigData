@@ -594,10 +594,10 @@ def test_consultas_mongo_locales_devuelven_resultados(monkeypatch, tmp_path):
              "fecha": "2025-01-02", "verificada": False},
         ],
         "actividad_usuario": [
-            {"usuario": "u1", "producto": "A", "dispositivo": "iOS",
+            {"usuario": "u1", "producto": "A", "dispositivo": "ios",
              "duracion_seg": 400, "es_visualizacion": True,
              "evento": "producto_visto", "fecha": "2025-01-01"},
-            {"usuario": "u2", "producto": "B", "dispositivo": "Windows",
+            {"usuario": "u2", "producto": "B", "dispositivo": "windows",
              "duracion_seg": 10, "es_visualizacion": True,
              "evento": "producto_comprado", "fecha": "2025-01-02"},
         ],
@@ -610,7 +610,7 @@ def test_consultas_mongo_locales_devuelven_resultados(monkeypatch, tmp_path):
     assert list(integ.ejecutar_consulta(b01)["id_producto"]) == [1]
     b13 = next(c for c in I.CONSULTAS_MONGO if c["id"] == "B13")  # countDocuments
     assert int(integ.ejecutar_consulta(b13)["total"].iloc[0]) == 1
-    b14 = next(c for c in I.CONSULTAS_MONGO if c["id"] == "B14")  # iOS/macOS
+    b14 = next(c for c in I.CONSULTAS_MONGO if c["id"] == "B14")  # ios/macos
     assert list(integ.ejecutar_consulta(b14)["usuario"]) == ["u1"]
 
 

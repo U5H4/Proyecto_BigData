@@ -1881,7 +1881,7 @@ CONSULTAS_MONGO: list[dict] = [
         "id": "B14", "titulo": "Navegacion desde equipos Apple ($in)",
         "pregunta": "Como navega el usuario de ecosistema Apple?",
         "coleccion": "actividad_usuario", "tipo": "find",
-        "filtro": {"dispositivo": {"$in": ["iOS", "macOS"]}},
+        "filtro": {"dispositivo": {"$in": ["ios", "macos"]}},
         "sort": [("fecha", -1)], "limit": 20,
         "proyeccion": ["usuario", "producto", "dispositivo", "duracion_seg", "fecha"],
     },

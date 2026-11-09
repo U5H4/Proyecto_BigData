@@ -1,5 +1,5 @@
 // Pipelines de agregacion Corporativo JUC
-// Generados: 2026-11-09 07:05:09
+// Generados: 2026-11-09 07:15:55
 // Ejecutar con mongosh / mongodump sobre la base de datos NoSQL (ver MONGO_DB en src/config.py)
 
 // A01: Top 10 productos mas vistos

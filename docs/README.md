@@ -86,11 +86,11 @@ Con `.env` configurado usa PostgreSQL en Supabase y MongoDB Atlas.
 | Comprobación | Resultado |
 |---|---|
 | Pipeline completo | 5/5 etapas OK |
-| Pruebas | 161 passed |
+| Pruebas | 167 passed |
 | Consultas SQL | 20/20 OK |
 | Pipelines MongoDB | 12/12 OK |
 | Consultas `find`/`count` | 15/15 OK |
-| Visualizaciones | 12/12 OK |
+| Visualizaciones | 13/13 OK |
 | Diagrama ER | generado |
 
 Cifras clave de la última corrida: facturación **$127,336,206.51**, 1,483

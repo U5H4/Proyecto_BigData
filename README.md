@@ -342,9 +342,10 @@ demuestra el uso combinado.
 con los datos (hover, zoom, aislar series), o cuando hay que presentar el
 reporte sin depender de capturas estáticas.
 *Ventajas:* cada punto expone su valor en el *tooltip*, acercarse a una zona no
-pierde resolución (vectorial), las 12 figuras se reúnen en un único
-`reporte.html` autocontenido y la librería `plotly.min.js` se comparte entre las
-12 páginas para no duplicarla.
+pierde resolución (vectorial), las 13 figuras se reúnen en un único
+`reporte.html` autocontenido (bloque Principales 1-7 y Anexo 8-13) y la librería
+`plotly.min.js` se comparte entre las
+13 páginas para no duplicarla.
 *Limitaciones:* el HTML es más pesado que un PNG (~4.7 MB la librería, una sola
 vez) y no se revisa en un *diff* de git como una imagen; por eso el **diagrama
 ER** sí se mantiene en PNG (`modelo_relacional.png`), donde la imagen estática

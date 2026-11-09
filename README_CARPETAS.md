@@ -17,7 +17,7 @@ Contiene el código fuente del pipeline (ETL, integración SQL+NoSQL, análisis,
 - `__init__.py` - Módulo Python.
 
 ## /tests
-Pruebas automatizadas (pytest, 161 passed).
+Pruebas automatizadas (pytest, 167 passed).
 
 - `test_analysis.py` - Valida KPIs, correlación, inventario muerto, under-exposure, cuadrantes, Pareto.
 - `test_integration.py` - Valida DDL/FK/UNIQUE/VIEW, índices Mongo, EXPLAIN, consultas SQL/Mongo, simulación Pandas.
@@ -63,7 +63,7 @@ Reportes, evidencia, consultas y artefactos entregables.
 - `reports/analisis/` - `01_kpis_generales.csv`, `02_ventas_mensuales.csv`, `03_mix_categoria.csv`, `04_mix_canal.csv`, `05_mix_region.csv`, `06_por_sucursal.csv`, `07_segmentos_clientes.csv`, `08_detalle_segmentos.csv`, `09_embudo_navegacion.csv`, `10_embudo_notas.csv`, `11_correlacion_visitas_ventas.csv`, `12_dispersion_visitas_ventas.csv`, `13_inventario_muerto.csv`, `14_under_exposure.csv`, `15_ley_pareto.csv`, `16_calidad_pago.csv`, `17_impacto_descuentos.csv`, `18_satisfaccion.csv`, `19_productos_valorados.csv`, `20_cuadrantes_visitas_ventas.csv`, `analisis_resumen.md`
 
 ### data/figures
-Gráficos HTML interactivos (Plotly, 12): `01_ventas_mensuales.html`, `02_mix_categoria.html`, `03_ticket_por_canal.html`, `04_ley_de_pareto.html`, `05_segmentos_clientes.html`, `06_embudo_navegacion.html`, `07_correlacion_visitas_ventas.html`, `08_inventario_muerto.html`, `09_under_exposure.html`, `10_impacto_descuentos.html`, `11_satisfaccion.html`, `12_por_sucursal.html` + `plotly.min.js` (librería compartida)
+Gráficos HTML interactivos (Plotly, 13; bloque Principales 1-7 y bloque Anexo 8-13): `01_ventas_mensuales.html`, `02_mix_categoria.html`, `03_ley_de_pareto.html`, `04_embudo_navegacion.html`, `05_inventario_muerto.html`, `06_impacto_descuentos.html`, `07_ventas_por_ciudad.html`, `08_ticket_por_canal.html`, `09_segmentos_clientes.html`, `10_correlacion_visitas_ventas.html`, `11_under_exposure.html`, `12_satisfaccion.html`, `13_por_sucursal.html` + `plotly.min.js` (librería compartida)
 
 ## /docs
 Documentación de entrega y presentación.

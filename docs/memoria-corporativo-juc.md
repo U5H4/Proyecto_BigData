@@ -310,25 +310,30 @@ data/figures/                        visualizaciones
 # Parte VII - Visualizacion
 
 Se generan **13 visualizaciones interactivas** con Plotly (HTML): hover con el
-valor exacto, zoom y series aislables. Todas se reunen en
-`data/reports/reporte.html`; cada una tambien existe por separado en
-`data/figures/`.
+valor exacto, zoom y series aislables. Las 7 primeras (01-07) forman el bloque
+principal ("Principales") y las 6 restantes (08-13) el bloque de anexo
+("Anexo"). Todas se reunen en `data/reports/reporte.html`; cada una tambien
+existe por separado en `data/figures/`.
 
 | # | Visualizacion | Que muestra |
 |---|---|---|
-| 01 | Serie temporal de ventas | facturacion mensual y ticket promedio |
-| 02 | Mix por categoria | participacion y margen por familia |
-| 03 | Ticket y margen por canal | facturacion y margen real por canal |
-| 04 | Ley de Pareto | concentracion de la venta |
-| 05 | Segmentacion RFM | clientes por segmento y su peso |
-| 06 | Embudo navegacion-compra | eventos por paso y caidas |
-| 07 | Correlacion navegacion-venta | dispersion y ajuste lineal |
-| 08 | Visitas sin venta | inventario muerto por trafico |
-| 09 | Under-exposure | mucho volumen con pocas visitas |
-| 10 | Descuentos vs margen | margen por rango de descuento |
-| 11 | Calificaciones | distribucion de resenas y tasa positiva |
-| 12 | Facturacion por sucursal | venta y ticket por sucursal |
-| 13 | Ventas por ciudad | facturacion por ciudad |
+| 01 | `01_ventas_mensuales` — Serie temporal de ventas | facturacion mensual y ticket promedio por pedido |
+| 02 | `02_mix_categoria` — Mix por categoria | participacion por familia y margen |
+| 03 | `03_ley_de_pareto` — Ley de Pareto | concentracion de la venta (24.1% de productos = 80% de la facturacion) |
+| 04 | `04_embudo_navegacion` — Embudo navegacion-compra | eventos por paso y caidas (1405 -> 942 -> 468) |
+| 05 | `05_inventario_muerto` — Visitas sin venta | productos muy vistos y jamas vendidos |
+| 06 | `06_impacto_descuentos` — Descuentos vs margen | como cae el margen con el descuento |
+| 07 | `07_ventas_por_ciudad` — Ventas por ciudad | facturacion por ciudad (Tijuana arriba) |
+| 08 | `08_ticket_por_canal` — Ticket y margen por canal | facturacion y margen real por canal de venta |
+| 09 | `09_segmentos_clientes` — Segmentacion RFM | clientes por segmento y peso en la venta |
+| 10 | `10_correlacion_visitas_ventas` — Correlacion navegacion-venta | dispersion y ajuste lineal |
+| 11 | `11_under_exposure` — Under-exposure | vendidos con pocas visitas |
+| 12 | `12_satisfaccion` — Calificaciones | distribucion de resenas y tasa positiva |
+| 13 | `13_por_sucursal` — Facturacion por sucursal | venta y ticket por sucursal |
+
+El reporte las organiza en dos bloques: **Principales (1-7)** — las siete
+primeras, el bloque destacado del reporte — y **Anexo (8-13)** — las seis
+restantes, con el detalle complementario.
 
 Indicadores principales (22): los 10 de la Parte VII (ingresos totales, pedidos
 totales, ticket promedio, clientes activos, producto mas vendido, producto mas
@@ -354,11 +359,11 @@ Estado verificado de la ultima corrida:
 
 | Comprobacion | Resultado |
 |---|---|
-| Pruebas (`pytest`) | 161 passed |
+| Pruebas (`pytest`) | 167 passed |
 | Consultas SQL | 20/20 OK |
 | Pipelines NoSQL | 12/12 OK |
 | Consultas `find`/`count` | 15/15 OK |
-| Visualizaciones | 12/12 OK |
+| Visualizaciones | 13/13 OK |
 | Diagrama ER | generado |
 | Nulos en el dataset final | 0 |
 
