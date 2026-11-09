@@ -109,11 +109,11 @@ afectados y la regla de negocio aplicada).
 | T02 | Normalización de texto | Recortes y **marcadores de faltante** (`N/A`, `NULL`, `-`) → nulo real |
 | T03 | Tratamiento de nulos | Imputa lo imputable, **descarta lo crítico** |
 | T04 | Corrección de tipos | `"123"` / `123.0` → entero; `"44,347"` → `44347` |
-| T05 | Validación de llaves primarias | Descarta `'NULL'`, `'N/A'` en PK |
-| T06 | Validación de precios y márgenes | Fuera de `[0,1]` se recorta |
-| T07 | Fechas y zona horaria | `DD/MM/YYYY`, `"14 de junio de 2026"`, epoch |
+| T05 | Estandarización de fechas | `DD/MM/YYYY`, `"14 de junio de 2026"`, epoch → datetime |
+| T06 | Validación de precios | Descarta no parseables y fuera de rango; márgenes fuera de `[0,1]` se recortan |
+| T07 | Validación de cantidades | Enteros en `[1,100]` (imputa 1) y descuento ≥ 0 |
 | T08 | Unificación de ciudades y categorías | `GDL`/`GUAD.` → Guadalajara |
-| T09 | Eliminación de columnas innecesarias | 12 campos que no aportan |
+| T09 | Eliminación de columnas innecesarias | 13 campos que no aportan |
 | T10 | Campos derivados | `costo_estimado`, `utilidad_bruta`, `trimestre`, rollups |
 
 ---
@@ -176,8 +176,8 @@ Si el servidor cloud no responde, el pipeline **no falla**: registra un
 ## 5. Las 47 consultas
 
 **20 SQL** (`data/reports/consultas_sql/`): top productos y clientes, serie
-mensual, mix por categoría, ticket por canal, **inventario muerto** (55
-productos que nunca se vendieron), clientes con cancelaciones, conciliación de
+mensual, mix por categoría, ticket por canal, **catálogo sin ventas** (55
+productos sin una sola línea en ningún pedido, Q06), clientes con cancelaciones, conciliación de
 pagos, descuentos, geografía, premium vs estándar, **ley de Pareto**,
 nuevos vs recurrentes, mix trimestral, alta rotación, cobertura por sucursal,
 **detalle 360 con JOIN de 7 tablas** (Q19) y **resumen mensual sobre la vista
@@ -220,7 +220,7 @@ Cifras de la ejecución con `SEED = 20260904`.
 | Embudo | 1,405 visualizaciones → 942 al carrito (67%) → 468 compras (50%) |
 | **Correlación navegación→venta** | Pearson **+0.323**; Spearman **+0.270** |
 | Inventario muerto | 63 productos con visitas y **cero** unidades vendidas |
-| Catálogo nunca vendido | 55 productos sin una sola venta |
+| Catálogo nunca vendido | 55 productos sin una sola línea en ningún pedido (Q06); 92 sin venta **completada** (606−514) |
 
 La correlación se reporta en **tres poblaciones** a propósito, no un solo
 número: sobre todos los productos es **+0.146**, sobre visitados **+0.104**, y
@@ -273,10 +273,10 @@ Se cubren en particular los dos errores clásicos de este modelo:
 | Diagrama ER | generado (`data/reports/modelo_relacional.png`) |
 | Motor relacional | **Supabase** (PostgreSQL 17, Session pooler IPv4) |
 | Motor NoSQL | **MongoDB Atlas** 8.0 |
-| Efecto del índice | **4.5x** (0.21 ms con índice vs 0.95 ms sin él, `Execution Time` del servidor) |
+| Efecto del índice | **4.17x** (0.23 ms con índice vs 0.97 ms sin él, promedio del servidor; ver `03_explain_analyze.md`) |
 | Nulos en el dataset final | **0** en las 8 tablas y en la fact |
 | Mínimos del punto 4 | todos cumplen con holgura |
-| Trampas de navegación | 15 attractive (14 visitas / **0** unidades) · 15 poco-visto-mucho-vendido (1 / **12**) · 63 visto-nunca-vendido (**2** visitas / 0 unidades) |
+| Inventario muerto | 63 con visitas y cero ventas · 122 vendieron sin una visita · 55 sin líneas en ningún pedido (Q06) |
 
 Los resultados de arriba se generan corriendo contra **Supabase** y **MongoDB
 Atlas** reales (Parte VI), configurados en `.env`. Si un servidor no respondiera,

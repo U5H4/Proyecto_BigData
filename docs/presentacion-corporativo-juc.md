@@ -132,9 +132,9 @@ tabla) y `data/reports/validacion_minimos.csv`.
 **Mostrar:** el diagrama ER (`data/reports/modelo_relacional.png`) y un fragmento
 de `data/sql/01_ddl.sql`.
 
-**Resultado de indices:** `data/sql/03_explain_analyze.md` compara el plan antes
-y despues: de recorrido completo a `SEARCH ... USING INDEX`, con mejora de
-**4.03x** (0.874 ms sin indice frente a 0.217 ms con el indice).
+**Resultado de indices:** `data/reports/consultas_sql/03_explain_analyze.md` compara el plan antes
+y despues: de recorrido completo a `Index Scan`, con mejora de
+**4.17x** (0.97 ms sin indice frente a 0.23 ms con el indice, promedio del servidor).
 
 **Frase clave:** "el indice no es decorativo: se demuestra con EXPLAIN ANALYZE".
 
@@ -179,8 +179,8 @@ db.productos.find(
   vendidos); al ampliar la poblacion baja a **+0.146** (todos) y **+0.104**
   (solo visitados).
 - Spearman **+0.270** sobre todos los productos.
-- **63** productos con trafico y cero ventas, de los **92** que nunca se
-  vendieron (catalogo de 606).
+- **63** productos con trafico y cero ventas; **92** sin una venta completada
+  (catalogo de 606) y **55** sin una sola linea en ningun pedido (Q06).
 
 > Conclusion: la navegacion ayuda, pero no garantiza la venta. Hay dinero
 > invertido en trafico que no convierte.
@@ -321,6 +321,6 @@ predictivos. Esta declarado en limitaciones.
 | Consultas SQL | 20 |
 | Pipelines MongoDB | 12 |
 | Consultas find/count | 15 |
-| Indices SQL / MongoDB | 20 / 12 |
+| Indices SQL / MongoDB | 19 / 12 |
 | Visualizaciones | 13 (Principales 1-7 + Anexo 8-13) |
 | Pruebas | 167 |

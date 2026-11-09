@@ -23,7 +23,6 @@ Pruebas automatizadas (pytest, 167 passed).
 - `test_integration.py` - Valida DDL/FK/UNIQUE/VIEW, índices Mongo, EXPLAIN, consultas SQL/Mongo, simulación Pandas.
 - `test_run_all.py` - Valida que el orquestador ejecuta las 5 etapas correctamente.
 - `test_transform.py` - Valida transformaciones, normalización, limpieza y reglas de negocio.
-- `test_utils.py` - Valida utilidades.
 
 ## /data
 Datos organizados como replica de almacenamiento cloud (jerarquía por carpetas).
@@ -41,7 +40,7 @@ Datos limpios/listos para integración y análisis.
 - `processed/tablas/` - Tablas normalizadas 3FN (SQL): `clientes.csv`, `productos.csv`, `categorias.csv`, `pedidos.csv`, `detalle_pedido.csv`, `pagos.csv`, `dim_ciudades.csv`, `dim_sucursales.csv`
 - `processed/dataset_postgresql.csv` - Dataset fact_ventas desnormalizado para consultas SQL.
 - `processed/dataset_mongodb.json` - Documentos agregados para carga en MongoDB.
-- `processed/integracion/` - Artefactos de integración: el archivo SQLite local (`.db`, nombre definido en `src/config.py`)
+- `processed/integracion/` - (Solo modo local, no se commitea) Artefactos de integración: el archivo SQLite local (`.db`, nombre definido en `src/config.py`)
 
 ### data/sql
 Scripts SQL del layout de almacenamiento (punto 26 del enunciado). Réplica de la carga relacional.
@@ -59,8 +58,8 @@ Reportes, evidencia, consultas y artefactos entregables.
 
 - Raíz: `calidad_transformaciones.csv`, `evidencia_extraccion.csv`, `evidencia_extraccion_columnas.csv`, `validacion_minimos.csv`, `perfil_columnas.csv`, `integracion_resumen.csv`, `figuras_indice.csv`, `integracion_entorno.md`, `modelo_relacional.png`, `modelo_relacional.md`, `reporte.html` (13 gráficos en una página), `ejemplo_documento_producto.json`
 - `reports/consultas_sql/` - `01_ddl.sql`, `02_consultas.sql`, `03_explain_analyze.md`, `04_explain_analyze.csv`, `Q01_*.csv`..`Q20_*.csv`
-- `reports/consultas_mongodb/` - `01_pipelines.js`, `02_consultas.js`, `A01_*.csv`..`A12_*.csv`, `B01_*.csv`..`B15_*.csv`
-- `reports/analisis/` - `01_kpis_generales.csv`, `02_ventas_mensuales.csv`, `03_mix_categoria.csv`, `04_mix_canal.csv`, `05_mix_region.csv`, `06_por_sucursal.csv`, `07_segmentos_clientes.csv`, `08_detalle_segmentos.csv`, `09_embudo_navegacion.csv`, `10_embudo_notas.csv`, `11_correlacion_visitas_ventas.csv`, `12_dispersion_visitas_ventas.csv`, `13_inventario_muerto.csv`, `14_under_exposure.csv`, `15_ley_pareto.csv`, `16_calidad_pago.csv`, `17_impacto_descuentos.csv`, `18_satisfaccion.csv`, `19_productos_valorados.csv`, `20_cuadrantes_visitas_ventas.csv`, `analisis_resumen.md`
+- `reports/consultas_mongodb/` - `01_pipelines.js`, `02_consultas.js`, `00_resumen_pipelines.csv`, `00_resumen_consultas_mongo.csv`, `A01_*.csv`..`A12_*.csv`, `B01_*.csv`..`B15_*.csv`
+- `reports/analisis/` - `01_kpis_generales.csv`, `02_ventas_mensuales.csv`, `03_mix_categoria.csv`, `04_mix_canal.csv`, `05_mix_region.csv`, `06_por_sucursal.csv`, `07_segmentos_clientes.csv`, `08_detalle_segmentos.csv`, `09_embudo_navegacion.csv`, `10_embudo_notas.csv`, `11_correlacion_visitas_ventas.csv`, `12_dispersion_visitas_ventas.csv`, `13_inventario_muerto.csv`, `14_under_exposure.csv`, `15_ley_pareto.csv`, `16_calidad_pago.csv`, `17_impacto_descuentos.csv`, `18_satisfaccion.csv`, `19_productos_valorados.csv`, `20_cuadrantes_visitas_ventas.csv`, `21_ventas_por_ciudad.csv`, `analisis_resumen.md`
 
 ### data/figures
 Gráficos HTML interactivos (Plotly, 13; bloque Principales 1-7 y bloque Anexo 8-13): `01_ventas_mensuales.html`, `02_mix_categoria.html`, `03_ley_de_pareto.html`, `04_embudo_navegacion.html`, `05_inventario_muerto.html`, `06_impacto_descuentos.html`, `07_ventas_por_ciudad.html`, `08_ticket_por_canal.html`, `09_segmentos_clientes.html`, `10_correlacion_visitas_ventas.html`, `11_under_exposure.html`, `12_satisfaccion.html`, `13_por_sucursal.html` + `plotly.min.js` (librería compartida)

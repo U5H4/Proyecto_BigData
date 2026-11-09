@@ -151,13 +151,13 @@ mismas columnas.
 | T04 | Correccion de tipos | enteros, decimales y booleanos con `Int64` nullable |
 | T05 | Estandarizacion de fechas | formatos multiples -> `datetime64[ns]` |
 | T06 | Validacion de precios | descarta negativos y texto no convertible |
-| T07 | Validacion de cantidades | enteros positivos y coherencia de subtotales |
+| T07 | Validacion de cantidades | enteros en `[1,100]` (imputa 1) y descuento >= 0 |
 | T08 | Unificacion de categorias y ciudades | `PC`/`COMPUTADORAS` -> `Computadoras`; `Ver.`/`VERACRUZ` -> `Veracruz` |
 | T09 | Eliminacion de columnas | quita columnas redundantes o vacias |
 | T10 | Campos derivados | `anio_mes`, margen, rango de precio, conciliacion, etc. |
 
 Cada transformacion registra filas antes/despues, registros afectados y la regla
-aplicada en `data/reports/calidad_transformaciones.csv` (90 filas de evidencia
+aplicada en `data/reports/calidad_transformaciones.csv` (93 filas de evidencia
 en la ultima corrida).
 
 ## Validacion de minimos
@@ -202,10 +202,10 @@ DDL completo: `data/sql/01_ddl.sql` (copia en
 
 Se definen **19 indices** sobre claves foraneas y columnas de filtro/orden
 (fechas, estado, canal, categoria, rango de precio, conciliacion). El archivo
-`data/sql/03_explain_analyze.md` compara el plan **antes y despues** de crear el
-indice: el plan pasa de un recorrido completo a `SEARCH ... USING INDEX`, con
-una mejora de **4.03x** (0.874 ms sin indice frente a 0.217 ms con el indice
-`ix_fact_anio_mes`).
+`data/reports/consultas_sql/03_explain_analyze.md` compara el plan **antes y despues** de crear el
+indice: el plan pasa de un recorrido completo a `Index Scan`, con
+una mejora de **4.17x** (0.97 ms sin indice frente a 0.23 ms con el indice
+`ix_fact_anio_mes`, tiempos promedio del servidor).
 
 ## Consultas
 
@@ -270,7 +270,8 @@ productos visitados y vendidos. Al ampliar la poblacion, la correlacion baja:
 visitados; el **Spearman +0.270** sobre todos los productos confirma que la
 relacion es debil y no monotona perfecta. La conclusion es que la navegacion
 ayuda pero no garantiza la venta: hay 63 productos con trafico y cero unidades
-vendidas, de los 92 del catalogo (606) que nunca se vendieron.
+vendidas; 92 productos (de 606) no tienen una venta completada, y 55 no tienen
+una sola linea en ningun pedido (Q06).
 
 Artefactos: `11_correlacion_visitas_ventas.csv`,
 `12_dispersion_visitas_ventas.csv`, `13_inventario_muerto.csv`,

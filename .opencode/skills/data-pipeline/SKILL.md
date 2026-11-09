@@ -50,7 +50,7 @@ Se controla con `.env` (ignorado por git; ver `.env.example`):
 
 - Con `SUPABASE_*` y `MONGO_URI` → **PostgreSQL (Supabase)** y **MongoDB Atlas**.
 - Sin credenciales (o `FORZAR_SQLITE=1`, `SIN_POSTGRES=1`, `SIN_MONGO=1`) →
-  degrada a **SQLite** (`data/processed/integracion/juc.db`) y **NDJSON** sin fallar.
+  degrada a **SQLite** (`data/processed/integracion/juc.db`, solo modo local, no se commitea) y **NDJSON** sin fallar.
 - `juc.db` y los NDJSON locales solo se escriben en modo local; `data/sql/` y
   `data/nosql/` se generan siempre (layout del punto 26).
 
