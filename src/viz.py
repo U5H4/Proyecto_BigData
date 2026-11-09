@@ -220,8 +220,8 @@ def grafico_pareto(d: pd.DataFrame) -> go.Figure:
                    ticktext=[cortos[i] for i in pos],
                    tickangle=-60, title_text="Producto (60 mas facturados)"),
         yaxis=dict(title_text="Facturacion", tickformat=_eje_s(), gridcolor="#ECEFF1"),
-        yaxis2=dict(title_text="% acumulado", overlaying="y", side="right", range=[0, 105],
-                    showgrid=False, ticksuffix="%",
+        yaxis2=dict(title_text="% acumulado", overlaying="y", side="right", range=[0, 100],
+                    showgrid=False, ticksuffix="%", tickvals=[0, 20, 40, 60, 80, 100],
                     tickfont=dict(color=COLOR_ALERTA),
                     title_font=dict(color=COLOR_ALERTA)),
     )
@@ -262,8 +262,8 @@ def grafico_segmentos(d: pd.DataFrame) -> go.Figure:
         yaxis=dict(title_text="Clientes", gridcolor="#ECEFF1"),
     )
     campeones_leales = float(d.loc[d["segmento"].isin(["Campeones", "Leales"]), "participacion_pct"].sum())
-    _pie(fig, f"Campeones + Leales concentran {campeones_leales:.1f}% de la facturacion. "
-              f"Hover sobre cada barra para ver la participacion.")
+    _pie(fig, f"{int(d['clientes'].sum()):,} clientes con al menos una compra completada | "
+              f"Campeones + Leales concentran {campeones_leales:.1f}% de la facturacion")
     return fig
 
 
