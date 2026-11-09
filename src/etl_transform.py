@@ -357,6 +357,20 @@ COLUMNAS_TEXTO = {
     "productos_semi": ["nombre", "categoria", "etiquetas"],
 }
 
+# Categoricos que se comparan/agrupan por igual en SQL y NoSQL. Sin esto,
+# 'APROBADO' y 'aprobado' son dos estados distintos y cualquier GROUP BY parte
+# el mismo hecho en dos filas.
+COLUMNAS_MINUSCULAS = {
+    "pagos": ["estado_pago", "metodo"],
+    "pedidos": ["estado", "canal_venta"],
+    "clientes": ["canal_registro"],
+    "actividad": ["evento", "dispositivo"],
+}
+
+
+def _a_minusculas(serie: pd.Series) -> pd.Series:
+    return serie.map(lambda v: v.lower() if isinstance(v, str) else v)
+
 
 def t02_normalizar_texto(d: dict[str, pd.DataFrame], t: CalidadTracker) -> None:
     print("\n[T02] Normalizacion de texto")
@@ -387,6 +401,29 @@ def t02_normalizar_texto(d: dict[str, pd.DataFrame], t: CalidadTracker) -> None:
                         "strip + colapso de espacios + trim")
     t.registrar(2, "Normalizacion de texto", "TODAS", 0, 0, total,
                 f"TOTAL: {total:,} celdas de texto normalizadas", "strip + colapso de espacios")
+
+    # Minusculas para categoricos: 'APROBADO' y 'aprobado' son el mismo estado.
+    total_min = 0
+    for tabla, cols in COLUMNAS_MINUSCULAS.items():
+        if tabla not in d:
+            continue
+        for c in cols:
+            if c not in d[tabla].columns:
+                continue
+            antes_s = d[tabla][c]
+            nuevo = _a_minusculas(antes_s)
+            cambiados = int((antes_s.fillna("___NULO___").astype(str)
+                             != nuevo.fillna("___NULO___").astype(str)).sum())
+            d[tabla][c] = nuevo
+            total_min += cambiados
+            if cambiados:
+                t.registrar(2, "Normalizacion de texto", f"{tabla}.{c}", 0, 0, cambiados,
+                            f"{cambiados:,} valores pasados a minusculas",
+                            "categorico canonico en minusculas")
+    if total_min:
+        t.registrar(2, "Normalizacion de texto", "TOTAL minusculas", 0, 0, total_min,
+                    f"TOTAL: {total_min:,} valores categoricos unificados",
+                    "lower() sobre estado/metodo/canal/evento/dispositivo")
 
 
 # --------------------------------------------------------------------------

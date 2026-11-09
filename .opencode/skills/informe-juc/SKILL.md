@@ -41,7 +41,7 @@ artefactos del repo; nada de cifras inventadas.
    las 5 preguntas.
 10. **Parte VI** — cloud: real (Supabase/Atlas) vs simulado (Storage/Computing),
     layout de almacenamiento.
-11. **Parte VII** — 10 indicadores y las 12 visualizaciones (que muestra cada una).
+11. **Parte VII** — 10 indicadores (y 22 en total) y las 13 visualizaciones (que muestra cada una).
 12. Conclusiones, limitaciones y trabajo futuro.
 13. Anexos: diccionario de datos, consultas, evidencia, indice de figuras.
 

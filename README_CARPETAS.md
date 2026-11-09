@@ -9,7 +9,7 @@ Contiene el código fuente del pipeline (ETL, integración SQL+NoSQL, análisis,
 - `etl_load.py` - Carga dimensiones y fact_ventas; genera datasets procesados.
 - `integration.py` - Integra con Supabase (PostgreSQL) o SQLite; integra con MongoDB Atlas o NDJSON; ejecuta consultas/pipelines, EXPLAIN, DDL y genera `integracion_entorno.md`.
 - `analysis.py` - Cálculos de negocio: KPIs, series temporales, mixes, RFM, correlación navegación-venta, Pareto, cuadrantes visitas/ventas, satisfacción.
-- `viz.py` - Genera 12 gráficas a partir de los resultados del análisis.
+- `viz.py` - Genera 13 gráficas a partir de los resultados del análisis.
 - `run_all.py` - Orquestador de las 5 etapas (generar, etl, integracion, analisis, graficos).
 - `config.py` - Configuración central (rutas, semilla, catálogos, conexiones Supabase/Atlas).
 - `utils.py` - Utilidades comunes (logging, formateadores, tablas).
@@ -57,7 +57,7 @@ Almacén de documentos (layout del punto 26 del enunciado). Colecciones y script
 ### data/reports
 Reportes, evidencia, consultas y artefactos entregables.
 
-- Raíz: `calidad_transformaciones.csv`, `evidencia_extraccion.csv`, `evidencia_extraccion_columnas.csv`, `validacion_minimos.csv`, `perfil_columnas.csv`, `integracion_resumen.csv`, `figuras_indice.csv`, `integracion_entorno.md`, `modelo_relacional.png`, `modelo_relacional.md`, `reporte.html` (12 gráficos en una página), `ejemplo_documento_producto.json`
+- Raíz: `calidad_transformaciones.csv`, `evidencia_extraccion.csv`, `evidencia_extraccion_columnas.csv`, `validacion_minimos.csv`, `perfil_columnas.csv`, `integracion_resumen.csv`, `figuras_indice.csv`, `integracion_entorno.md`, `modelo_relacional.png`, `modelo_relacional.md`, `reporte.html` (13 gráficos en una página), `ejemplo_documento_producto.json`
 - `reports/consultas_sql/` - `01_ddl.sql`, `02_consultas.sql`, `03_explain_analyze.md`, `04_explain_analyze.csv`, `Q01_*.csv`..`Q20_*.csv`
 - `reports/consultas_mongodb/` - `01_pipelines.js`, `02_consultas.js`, `A01_*.csv`..`A12_*.csv`, `B01_*.csv`..`B15_*.csv`
 - `reports/analisis/` - `01_kpis_generales.csv`, `02_ventas_mensuales.csv`, `03_mix_categoria.csv`, `04_mix_canal.csv`, `05_mix_region.csv`, `06_por_sucursal.csv`, `07_segmentos_clientes.csv`, `08_detalle_segmentos.csv`, `09_embudo_navegacion.csv`, `10_embudo_notas.csv`, `11_correlacion_visitas_ventas.csv`, `12_dispersion_visitas_ventas.csv`, `13_inventario_muerto.csv`, `14_under_exposure.csv`, `15_ley_pareto.csv`, `16_calidad_pago.csv`, `17_impacto_descuentos.csv`, `18_satisfaccion.csv`, `19_productos_valorados.csv`, `20_cuadrantes_visitas_ventas.csv`, `analisis_resumen.md`

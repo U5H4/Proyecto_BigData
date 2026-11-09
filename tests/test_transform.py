@@ -23,7 +23,9 @@ from etl_transform import (  # noqa: E402
     limpiar_numero,
     normalizar_categoria,
     normalizar_ciudad,
+    t02_normalizar_texto,
 )
+from utils import CalidadTracker  # noqa: E402
 
 
 # ==========================================================================
@@ -202,3 +204,26 @@ def test_norm(crudo, esperado):
 def test_norm_tolera_none_y_nan():
     assert _norm(None) == ""
     assert _norm(np.nan) == ""
+# ==========================================================================
+# T02 - categoricos en minusculas
+# ==========================================================================
+def test_t02_unifica_mayusculas_en_categoricos():
+    d = {
+        "pagos": pd.DataFrame({
+            "estado_pago": ["APROBADO", "aprobado", " Pendiente "],
+            "metodo": ["Tarjeta_Credito", "oxxo", "OXXO"],
+        }),
+        "pedidos": pd.DataFrame({"estado": ["Completado", "CANCELADO"],
+                                 "canal_venta": ["Web", "TIENDA_FISICA"]}),
+        "clientes": pd.DataFrame({"canal_registro": ["Web", "MOVIL"]}),
+        "actividad": pd.DataFrame({"evento": ["Producto_Visto", "producto_visto"],
+                                   "dispositivo": ["Windows", "android"]}),
+    }
+    t02_normalizar_texto(d, CalidadTracker())
+    assert list(d["pagos"]["estado_pago"]) == ["aprobado", "aprobado", "pendiente"]
+    assert list(d["pagos"]["metodo"]) == ["tarjeta_credito", "oxxo", "oxxo"]
+    assert list(d["pedidos"]["estado"]) == ["completado", "cancelado"]
+    assert list(d["pedidos"]["canal_venta"]) == ["web", "tienda_fisica"]
+    assert list(d["clientes"]["canal_registro"]) == ["web", "movil"]
+    assert list(d["actividad"]["evento"]) == ["producto_visto", "producto_visto"]
+    assert list(d["actividad"]["dispositivo"]) == ["windows", "android"]

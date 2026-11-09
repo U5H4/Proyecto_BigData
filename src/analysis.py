@@ -139,9 +139,11 @@ def kpis_generales(fact: pd.DataFrame, actividad: pd.DataFrame | None = None,
     # Producto que mas unidades vendio y categoria con mayor utilidad bruta.
     ventas_producto = completadas.groupby("producto_nombre")["cantidad"].sum()
     utilidad_categoria = completadas.groupby("categoria")["utilidad_bruta"].sum()
+    ventas_ciudad = completadas.groupby("ciudad")["total"].sum()
+    ventas_mes = completadas.groupby("anio_mes")["total"].sum()
 
     kpis = [
-        ("Facturacion", money(facturacion), "solo pedidos completados"),
+        ("Ingresos totales", money(facturacion), "solo pedidos completados"),
         ("Pedidos totales", numero(len(pedidos)), "unicos, no lineas"),
         ("Pedidos completados", numero(len(completados)), ""),
         ("Tasa de cancelacion", f"{(1 - len(completados) / len(pedidos)) * 100:.2f}%",
@@ -150,13 +152,18 @@ def kpis_generales(fact: pd.DataFrame, actividad: pd.DataFrame | None = None,
         ("Ticket promedio", money(facturacion / len(completados)),
          "facturacion / pedidos completados"),
         ("Unidades por pedido", f"{unidades / len(completados):.2f}", ""),
-        ("Clientes", numero(pedidos["id_cliente"].nunique()), "con al menos un pedido"),
+        ("Clientes activos", numero(pedidos["id_cliente"].nunique()),
+         "con al menos un pedido"),
         ("Productos vendidos", numero(completadas["id_producto"].nunique()), ""),
         ("Categorias", numero(fact["categoria"].nunique()), ""),
         ("Producto mas vendido", ventas_producto.idxmax(),
          f"{numero(int(ventas_producto.max()))} unidades vendidas"),
         ("Categoria mas rentable", utilidad_categoria.idxmax(),
          f"{money(utilidad_categoria.max())} de utilidad bruta"),
+        ("Ciudad con mayores ventas", ventas_ciudad.idxmax(),
+         f"{money(ventas_ciudad.max())} facturados"),
+        ("Mes con mayores ventas", ventas_mes.idxmax(),
+         f"{money(ventas_mes.max())}; serie completa en 02_ventas_mensuales.csv"),
         ("Utilidad bruta", money(utilidad), "ingreso - costo - descuentos"),
         ("Margen real ponderado", f"{utilidad / completadas['ingreso_bruto'].sum() * 100:.2f}%",
          "utilidad / ingreso bruto"),
@@ -230,6 +237,11 @@ def mix_canal(fact: pd.DataFrame) -> pd.DataFrame:
 
 def mix_region(fact: pd.DataFrame) -> pd.DataFrame:
     return _mix(utilidad_y_margen(fact[fact["es_completado"]]), "region")
+
+
+def ventas_por_ciudad(fact: pd.DataFrame) -> pd.DataFrame:
+    """Facturacion, margen y participacion por ciudad (indicador de la Parte VII)."""
+    return _mix(utilidad_y_margen(fact[fact["es_completado"]]), "ciudad")
 
 
 def por_sucursal(fact: pd.DataFrame, sucursales: pd.DataFrame | None = None) -> pd.DataFrame:
@@ -654,6 +666,7 @@ def construir_todos(fact: pd.DataFrame, documentos: dict,
         "18_satisfaccion": satisfaccion(resenas),
         "19_productos_valorados": productos_valorados(resenas),
         "20_cuadrantes_visitas_ventas": cuadrantes_visitas_ventas(actividad, fact, productos),
+        "21_ventas_por_ciudad": ventas_por_ciudad(fact),
     }
 
 

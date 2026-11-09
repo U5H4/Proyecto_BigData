@@ -31,7 +31,7 @@ python src\etl_load.py           # -> data/processed/
 python src\integration.py        # -> PostgreSQL + MongoDB (+ data/sql, data/nosql)
 python src\analysis.py           # -> data/reports/analisis/
 python src\viz.py                # -> data/figures/ + data/reports/reporte.html
-python -m pytest tests -q        # 161 pruebas
+python -m pytest tests -q        # 167 pruebas
 ```
 
 ## Etapas y responsabilidad
@@ -41,8 +41,8 @@ python -m pytest tests -q        # 161 pruebas
 | generar | `generate_sources.py` | `data/raw/{csv,json,sheets}` con errores intencionales |
 | etl | `etl_extract.py` → `etl_transform.py` → `etl_load.py` | `data/processed/` (tablas 3FN, datasets, evidencia) |
 | integracion | `integration.py` | Supabase/SQLite, Atlas/NDJSON, `data/sql/`, `data/nosql/`, `data/reports/consultas_*` |
-| analisis | `analysis.py` | 19–20 CSV + `analisis_resumen.md` |
-| graficos | `viz.py` | 12 HTML Plotly + `plotly.min.js` + `reporte.html` |
+| analisis | `analysis.py` | 21 CSV + `analisis_resumen.md` |
+| graficos | `viz.py` | 13 HTML Plotly + `plotly.min.js` + `reporte.html` |
 
 ## Modos nube / local
 
@@ -66,17 +66,17 @@ data/nosql/                     *.ndjson, indices.json, 01_pipelines.js, 02_cons
 data/reports/                   calidad, consultas_sql/, consultas_mongodb/,
                                 analisis/, integracion_entorno.md, figuras_indice.csv,
                                 reporte.html
-data/figures/                   12 *.html + plotly.min.js
+data/figures/                   13 *.html + plotly.min.js
 ```
 
 ## Hechos que no cambian
 
 - 3 fuentes (CSV, JSON, Google Sheets exportado a `.xlsx`).
 - 10 transformaciones auditables + campos derivados.
-- 6 tablas: `clientes, productos, categorias, pedidos, detalle_pedido, pagos`.
+- 9 tablas + 1 vista: las 6 exigidas (`clientes, productos, categorias, pedidos, detalle_pedido, pagos`) + `dim_ciudades`, `dim_sucursales` y `fact_ventas`.
 - 47 preguntas: 20 SQL + 12 pipelines de agregación + 15 `find`/`countDocuments`.
-- 12 visualizaciones interactivas (Plotly) y diagrama ER en PNG.
-- 161 pruebas (`pytest`), todas deben quedar en verde.
+- 13 visualizaciones interactivas (Plotly) y diagrama ER en PNG.
+- 167 pruebas (`pytest`), todas deben quedar en verde.
 
 ## Reglas
 

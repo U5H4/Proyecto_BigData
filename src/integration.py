@@ -35,7 +35,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sqlalchemy import create_engine, inspect, text
+from sqlalchemy import create_engine, event, inspect, text
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -123,10 +123,9 @@ INDICES = [
     ("detalle_pedido", ["id_pedido"]),
     ("pagos", ["id_pedido"]),
     ("pagos", ["conciliado"]),
-    ("clientes", ["ciudad"]),
+    ("clientes", ["id_ciudad"]),
     ("clientes", ["es_premium"]),
     ("productos", ["id_categoria"]),
-    ("productos", ["categoria"]),
     ("productos", ["rango_precio"]),
 ]
 
@@ -252,6 +251,16 @@ def _ddl_tabla(tabla: str, dialecto: str) -> str:
     for nombre_chk, expr in CHECKS.get(tabla, []):
         lineas.append(f"    CONSTRAINT {nombre_chk} CHECK ({expr})")
 
+    # En SQLite las FK solo se pueden declarar dentro del CREATE TABLE (no
+    # admite ALTER TABLE ADD CONSTRAINT). Se emiten aqui y se activan con
+    # PRAGMA foreign_keys=ON en cada conexion.
+    if dialecto == "sqlite":
+        for hija, col, padre, col_padre in CLAVES_FORANEAS:
+            if hija == tabla:
+                lineas.append(
+                    f"    CONSTRAINT fk_{hija}_{col} FOREIGN KEY ({col}) "
+                    f"REFERENCES {padre}({col_padre})")
+
     cuerpo = ",\n".join(lineas)
     return f"CREATE TABLE {tabla} (\n{cuerpo}\n)"
 
@@ -344,7 +353,7 @@ def _ddl_vista_resumen(dialecto: str) -> str:
     return _adaptar_booleanos(sql, dialecto)
 
 
-def _ddl_vista_analitica(fact: pd.DataFrame) -> str:
+def _ddl_vista_analitica(fact: pd.DataFrame, dialecto: str = "postgresql") -> str:
     """El dataset desnormalizado se materializa como tabla `fact_ventas`.
 
     No es una vista SQL porque sus columnas son el contrato que consume
@@ -352,7 +361,14 @@ def _ddl_vista_analitica(fact: pd.DataFrame) -> str:
     grafico. El DDL se genera desde el dataset, no a mano.
     """
     esquema = _esquema_fact(fact)
-    cuerpo = ",\n".join(f"    {col} {tipo}" for col, tipo in esquema.items())
+    lineas = [f"    {col} {tipo}" for col, tipo in esquema.items()]
+    if dialecto == "sqlite":
+        for col, padre, col_padre in CLAVES_FORANEAS_FACT:
+            if col in esquema:
+                lineas.append(
+                    f"    CONSTRAINT fk_fact_ventas_{col} FOREIGN KEY ({col}) "
+                    f"REFERENCES {padre}({col_padre})")
+    cuerpo = ",\n".join(lineas)
     return f"CREATE TABLE fact_ventas (\n{cuerpo}\n)".strip()
 
 
@@ -370,6 +386,15 @@ class IntegradorSQL:
         self.reporte_dir = reporte_dir or REPORTE_SQL
         self.tablas_cargadas: dict[str, int] = {}
         self.ddl_ejecutado: list[str] = []
+        if dialecto == "sqlite":
+            # SQLite ignora las FK salvo que se active el pragma en CADA
+            # conexion. El evento se dispara tanto en la creacion del esquema
+            # como en la carga y en verificar().
+            @event.listens_for(motor, "connect")
+            def _activar_fk(dbapi_connection, _record):  # noqa: ANN001
+                cursor = dbapi_connection.cursor()
+                cursor.execute("PRAGMA foreign_keys=ON")
+                cursor.close()
 
     # -- conexion ---------------------------------------------------------
     @classmethod
@@ -411,9 +436,9 @@ class IntegradorSQL:
                 LOG.info("  CREATE TABLE %-16s %2d columnas", tabla,
                          len(esquema_tablas[tabla]))
 
-            # FKs. SQLite no soporta ALTER TABLE ... ADD CONSTRAINT, asi que ahi
-            # las FK se documentan en el DDL exportado pero la integridad la
-            # verifica el paso `verificar()` con LEFT JOIN.
+            # FKs. En PostgreSQL se agregan con ALTER TABLE; en SQLite ya
+            # quedaron declaradas dentro del CREATE TABLE y se hacen cumplir
+            # con PRAGMA foreign_keys=ON.
             for hija, col, padre, col_padre in CLAVES_FORANEAS:
                 if self.dialecto == "sqlite":
                     continue
@@ -423,7 +448,7 @@ class IntegradorSQL:
                 conn.execute(text(ddl))
                 self.ddl_ejecutado.append(ddl)
 
-            ddl_fact = _ddl_vista_analitica(fact)
+            ddl_fact = _ddl_vista_analitica(fact, self.dialecto)
             conn.execute(text(ddl_fact))
             self.ddl_ejecutado.append(ddl_fact)
             LOG.info("  CREATE TABLE %-16s %2d columnas  (dataset analitico)",
@@ -456,15 +481,12 @@ class IntegradorSQL:
                     LOG.warning("  indice omitido (%s): %s", ddl.split("(")[0].strip(),
                                 _corto(exc))
 
-            if self.dialecto == "sqlite":
-                self.ddl_ejecutado.append(_comentario_fk_sqlite())
-
         (self.reporte_dir / "01_ddl.sql").parent.mkdir(parents=True, exist_ok=True)
         (self.reporte_dir / "01_ddl.sql").write_text(
             f"-- DDL generado por integration.py ({datetime.now():%Y-%m-%d %H:%M})\n"
             f"-- Dialecto: {self.dialecto}\n"
             f"-- Motor: {self.nombre}\n\n"
-            + "\n\n".join(self.ddl_ejecutado) + "\n",
+            + "\n\n".join(d.rstrip(";") + ";" for d in self.ddl_ejecutado) + "\n",
             encoding="utf-8",
         )
         LOG.info("  DDL exportado -> %s", self.reporte_dir / "01_ddl.sql")
@@ -673,18 +695,6 @@ def _ddl_indices_fact() -> list[str]:
     ]
 
 
-def _comentario_fk_sqlite() -> str:
-    """Documenta en el DDL exportado las FKs que SQLite no puede aplicar."""
-    lineas = ["-- Llaves foraneas (SQLite no soporta ALTER TABLE ADD CONSTRAINT;",
-              "-- se verifican en tiempo de carga con LEFT JOIN, ver verificar()):"]
-    for hija, col, padre, col_padre in CLAVES_FORANEAS:
-        lineas.append(f"--   FOREIGN KEY ({col}) REFERENCES {padre}({col_padre})  -- {hija}")
-    for col, padre, col_padre in CLAVES_FORANEAS_FACT:
-        lineas.append(f"--   FOREIGN KEY ({col}) REFERENCES {padre}({col_padre})  "
-                      f"-- fact_ventas")
-    return "\n".join(lineas)
-
-
 def _intentar_postgres() -> bool:
     return os.getenv("SIN_POSTGRES") != "1" and bool(config_pg().get("host"))
 
@@ -704,15 +714,16 @@ CONSULTAS_SQL: list[dict] = [
         "titulo": "Top 10 productos por facturacion",
         "pregunta": "Cuales productos mueven mas dinero?",
         "sql": """
-            SELECT p.id_producto, p.nombre AS producto, p.categoria,
+            SELECT p.id_producto, p.nombre AS producto, cat.nombre AS categoria,
                    SUM(f.total) AS facturacion,
                    SUM(f.cantidad) AS unidades,
                    COUNT(DISTINCT f.id_pedido) AS pedidos,
                    ROUND(SUM(f.total) / SUM(f.cantidad), 2) AS precio_promedio
             FROM fact_ventas f
-            INNER JOIN productos p ON p.id_producto = f.id_producto
+            INNER JOIN productos p   ON p.id_producto = f.id_producto
+            INNER JOIN categorias cat ON cat.id_categoria = p.id_categoria
             WHERE f.es_completado = @VERDADERO@
-            GROUP BY p.id_producto, p.nombre, p.categoria
+            GROUP BY p.id_producto, p.nombre, cat.nombre
             ORDER BY facturacion DESC
             LIMIT 10
         """,
@@ -727,14 +738,15 @@ CONSULTAS_SQL: list[dict] = [
                 FROM fact_ventas
                 WHERE es_completado = @VERDADERO@
             )
-            SELECT c.id_cliente, c.nombre AS cliente, c.ciudad, c.es_premium,
+            SELECT c.id_cliente, c.nombre AS cliente, ci.nombre AS ciudad, c.es_premium,
                    COUNT(p.id_pedido) AS pedidos,
                    SUM(p.total_pedido) AS gasto,
                    ROUND(AVG(p.total_pedido), 2) AS ticket_promedio,
                    MAX(p.fecha_pedido) AS ultima_compra
             FROM por_pedido p
-            INNER JOIN clientes c ON c.id_cliente = p.id_cliente
-            GROUP BY c.id_cliente, c.nombre, c.ciudad, c.es_premium
+            INNER JOIN clientes c       ON c.id_cliente = p.id_cliente
+            LEFT JOIN dim_ciudades ci   ON ci.id_ciudad = c.id_ciudad
+            GROUP BY c.id_cliente, c.nombre, ci.nombre, c.es_premium
             ORDER BY gasto DESC
             LIMIT 10
         """,
@@ -800,9 +812,10 @@ CONSULTAS_SQL: list[dict] = [
         "titulo": "Productos en catalogo que NUNCA se vendieron",
         "pregunta": "Cuanto inventario muerto hay?",
         "sql": """
-            SELECT p.id_producto, p.nombre AS producto, p.categoria,
+            SELECT p.id_producto, p.nombre AS producto, cat.nombre AS categoria,
                    p.precio, p.fecha_lanzamiento
             FROM productos p
+            LEFT JOIN categorias cat ON cat.id_categoria = p.id_categoria
             LEFT JOIN detalle_pedido d ON d.id_producto = p.id_producto
             WHERE d.id_producto IS NULL
             ORDER BY p.precio DESC
@@ -813,14 +826,15 @@ CONSULTAS_SQL: list[dict] = [
         "titulo": "Clientes con pedidos cancelados",
         "pregunta": "Que clientes cancelan y cuanto nos cuestan?",
         "sql": """
-            SELECT c.id_cliente, c.nombre AS cliente, c.ciudad,
+            SELECT c.id_cliente, c.nombre AS cliente, ci.nombre AS ciudad,
                    COUNT(DISTINCT pe.id_pedido) AS pedidos_cancelados,
                    SUM(f.total) AS monto_perdido
             FROM fact_ventas f
-            INNER JOIN clientes c   ON c.id_cliente = f.id_cliente
-            INNER JOIN pedidos pe   ON pe.id_pedido = f.id_pedido
+            INNER JOIN clientes c     ON c.id_cliente = f.id_cliente
+            LEFT JOIN dim_ciudades ci ON ci.id_ciudad = c.id_ciudad
+            INNER JOIN pedidos pe     ON pe.id_pedido = f.id_pedido
             WHERE pe.estado = 'cancelado'
-            GROUP BY c.id_cliente, c.nombre, c.ciudad
+            GROUP BY c.id_cliente, c.nombre, ci.nombre
             ORDER BY monto_perdido DESC
             LIMIT 25
         """,
@@ -1050,16 +1064,17 @@ CONSULTAS_SQL: list[dict] = [
     },
     {
         "id": "Q19",
-        "titulo": "Detalle 360 del pedido (JOIN de 6 tablas)",
+        "titulo": "Detalle 360 del pedido (JOIN de 7 tablas)",
         "pregunta": "Cual es el detalle completo de cada linea de venta?",
         "sql": """
-            SELECT c.nombre AS cliente, c.ciudad, cat.nombre AS categoria,
+            SELECT c.nombre AS cliente, ci.nombre AS ciudad, cat.nombre AS categoria,
                    pr.nombre AS producto, pe.id_pedido, pe.fecha_pedido,
                    d.cantidad, d.precio_unitario, d.descuento, d.total,
                    pg.metodo AS metodo_pago, pg.estado_pago
             FROM detalle_pedido d
             INNER JOIN pedidos pe     ON pe.id_pedido = d.id_pedido
             INNER JOIN clientes c     ON c.id_cliente = pe.id_cliente
+            LEFT JOIN dim_ciudades ci ON ci.id_ciudad = c.id_ciudad
             INNER JOIN productos pr   ON pr.id_producto = d.id_producto
             INNER JOIN categorias cat ON cat.id_categoria = pr.id_categoria
             LEFT JOIN pagos pg  ON pg.id_pedido = pe.id_pedido
@@ -1406,7 +1421,7 @@ PIPELINES_MONGO: list[dict] = [
                         "usuarios": {"$addToSet": "$usuario"},
                         "categorias": {"$first": "$categoria"}}},
             {"$addFields": {"usuarios_unicos": {"$size": "$usuarios"}}},
-            {"$sort": {"visitas": -1}},
+            {"$sort": {"visitas": -1, "_id": 1}},
             {"$limit": 10},
             {"$project": {"_id": 0, "producto": "$_id", "visitas": 1,
                           "usuarios_unicos": 1, "categoria": "$categorias"}},
@@ -1431,8 +1446,22 @@ PIPELINES_MONGO: list[dict] = [
             {"$group": {"_id": "$producto", "visitas": {"$sum": 1},
                         "nombre": {"$first": "$nombre_producto"},
                         "categoria": {"$first": "$categoria"}}},
-            {"$sort": {"visitas": -1}},
+            {"$sort": {"visitas": -1, "_id": 1}},
             {"$limit": 150},
+            # El documento de producto ya trae unidades vendidas e ingresos:
+            # el filtro "visto pero nunca vendido" se resuelve en MongoDB.
+            {"$lookup": {"from": "productos", "localField": "_id",
+                         "foreignField": "id_producto", "as": "ficha"}},
+            {"$addFields": {
+                "unidades_vendidas": {"$ifNull": [
+                    {"$arrayElemAt": ["$ficha.unidades_vendidas", 0]}, 0]},
+                "ingresos": {"$ifNull": [
+                    {"$arrayElemAt": ["$ficha.ingresos", 0]}, 0]}}},
+            {"$match": {"unidades_vendidas": 0}},
+            {"$sort": {"visitas": -1, "_id": 1}},
+            {"$project": {"_id": 0, "producto": "$_id", "nombre": 1,
+                          "categoria": 1, "visitas": 1, "unidades_vendidas": 1,
+                          "ingresos": 1}},
         ],
         "post": "excluir_vendidos(150)",
         "pandas": lambda d: (
@@ -1450,15 +1479,27 @@ PIPELINES_MONGO: list[dict] = [
         "titulo": "Productos vendidos pese a ser poco vistos",
         "pregunta": "Cual es la under-exposure que nos cuesta venta?",
         "colectivo": "actividad_usuario",
-        "nota": "Cruce navegacion (MongoDB) contra fact_ventas (SQL): el $lookup "
-                "se resuelve aqui porque las dos bases son sistemas distintos.",
+        "nota": "El $lookup contra `productos` incrusta las unidades vendidas; "
+                "asi el cruce navegacion-venta queda resuelto dentro de MongoDB.",
         "pipeline": [
             {"$match": {"es_visualizacion": True}},
             {"$group": {"_id": "$producto", "visitas": {"$sum": 1},
                         "nombre": {"$first": "$nombre_producto"},
                         "categoria": {"$first": "$categoria"}}},
-            {"$sort": {"visitas": 1}},
+            {"$sort": {"visitas": 1, "_id": 1}},
             {"$limit": 150},
+            {"$lookup": {"from": "productos", "localField": "_id",
+                         "foreignField": "id_producto", "as": "ficha"}},
+            {"$addFields": {
+                "unidades_vendidas": {"$ifNull": [
+                    {"$arrayElemAt": ["$ficha.unidades_vendidas", 0]}, 0]},
+                "ingresos": {"$ifNull": [
+                    {"$arrayElemAt": ["$ficha.ingresos", 0]}, 0]}}},
+            {"$match": {"unidades_vendidas": {"$gt": 0}}},
+            {"$sort": {"unidades_vendidas": -1, "visitas": 1, "_id": 1}},
+            {"$project": {"_id": 0, "producto": "$_id", "nombre": 1,
+                          "categoria": 1, "visitas": 1, "unidades_vendidas": 1,
+                          "ingresos": 1}},
         ],
         "post": "cruzar_ventas",
         "pandas": lambda d: (
@@ -1504,7 +1545,7 @@ PIPELINES_MONGO: list[dict] = [
             {"$group": {"_id": {"categoria": "$categoria", "dispositivo": "$dispositivo"},
                         "visitas": {"$sum": 1},
                         "duracion_promedio": {"$avg": "$duracion_seg"}}},
-            {"$sort": {"visitas": -1}},
+            {"$sort": {"visitas": -1, "_id": 1}},
             {"$project": {"_id": 0, "categoria": "$_id.categoria",
                           "dispositivo": "$_id.dispositivo", "visitas": 1,
                           "duracion_promedio": 1}},
@@ -1530,7 +1571,7 @@ PIPELINES_MONGO: list[dict] = [
                         "ultima_resena": {"$max": "$fecha"}}},
             {"$addFields": {"tasa_negativas": {"$round": [
                 {"$multiply": [100, {"$divide": ["$negativas", "$total_resenas"]}]}, 2]}}},
-            {"$sort": {"total_resenas": -1}},
+            {"$sort": {"total_resenas": -1, "_id": 1}},
             {"$limit": 25},
             {"$project": {"_id": 0, "id_producto": "$_id", "rating_promedio": 1,
                           "total_resenas": 1, "positivas": 1, "negativas": 1,
@@ -1558,7 +1599,7 @@ PIPELINES_MONGO: list[dict] = [
             {"$match": {"calificacion": {"$gte": 4}}},
             {"$group": {"_id": "$id_producto", "likes": {"$sum": 1},
                         "rating_promedio": {"$avg": "$calificacion"}}},
-            {"$sort": {"likes": -1}},
+            {"$sort": {"likes": -1, "_id": 1}},
             {"$limit": 20},
             {"$project": {"_id": 0, "id_producto": "$_id", "likes": 1,
                           "rating_promedio": 1}},
@@ -1588,7 +1629,7 @@ PIPELINES_MONGO: list[dict] = [
                         "productos": {"$sum": 1},
                         "precio_promedio": {"$avg": "$precio"},
                         "categorias": {"$addToSet": "$categoria"}}},
-            {"$sort": {"productos": -1}},
+            {"$sort": {"productos": -1, "_id": 1}},
         ],
         "pandas": lambda d: (
             d[d["atributos.procesador"].notna()]
@@ -1610,7 +1651,7 @@ PIPELINES_MONGO: list[dict] = [
                 "sobre la misma coleccion reconstruye el trayecto.",
         "pipeline": [
             {"$group": {"_id": "$usuario", "eventos": {"$sum": 1}}},
-            {"$sort": {"eventos": -1}},
+            {"$sort": {"eventos": -1, "_id": 1}},
             {"$limit": 1},
             {"$lookup": {
                 "from": "actividad_usuario",
@@ -1636,8 +1677,26 @@ PIPELINES_MONGO: list[dict] = [
         "colectivo": "actividad_usuario",
         "pipeline": [
             {"$match": {"es_visualizacion": True}},
-            {"$group": {"_id": "$producto", "visitas": {"$sum": 1}}},
-            {"$sort": {"visitas": -1}},
+            {"$group": {"_id": "$producto", "visitas": {"$sum": 1},
+                        "nombre": {"$first": "$nombre_producto"},
+                        "categoria": {"$first": "$categoria"}}},
+            {"$lookup": {"from": "productos", "localField": "_id",
+                         "foreignField": "id_producto", "as": "ficha"}},
+            {"$addFields": {
+                "unidades_vendidas": {"$ifNull": [
+                    {"$arrayElemAt": ["$ficha.unidades_vendidas", 0]}, 0]},
+                "ingresos": {"$ifNull": [
+                    {"$arrayElemAt": ["$ficha.ingresos", 0]}, 0]}}},
+            {"$addFields": {
+                "vendido": {"$gt": ["$unidades_vendidas", 0]},
+                "ratio_ventas_por_visita": {"$round": [{"$cond": [
+                    {"$gt": ["$visitas", 0]},
+                    {"$divide": ["$unidades_vendidas", "$visitas"]}, 0]}, 3]}}},
+            {"$sort": {"vendido": -1, "unidades_vendidas": -1, "_id": 1}},
+            {"$project": {"_id": 0, "producto": "$_id", "nombre": 1,
+                          "categoria": 1, "visitas": 1, "unidades_vendidas": 1,
+                          "ingresos": 1, "vendido": 1,
+                          "ratio_ventas_por_visita": 1}},
         ],
         "post": "cruzar_con_fact_ventas",
         "pandas": lambda d: (
@@ -1663,7 +1722,7 @@ PIPELINES_MONGO: list[dict] = [
                         "positivas": {"$sum": {"$cond": [{"$gte": ["$calificacion", 4]}, 1, 0]}}}},
             {"$addFields": {"pct_positivas": {"$round": [
                 {"$multiply": [100, {"$divide": ["$positivas", "$total_resenas"]}]}, 1]}}},
-            {"$sort": {"rating_promedio": -1}},
+            {"$sort": {"rating_promedio": -1, "_id": 1}},
             {"$project": {"_id": 0, "categoria": "$_id", "rating_promedio": 1,
                           "total_resenas": 1, "positivas": 1, "pct_positivas": 1}},
         ],
@@ -1691,7 +1750,7 @@ PIPELINES_MONGO: list[dict] = [
                         "usuarios": {"$addToSet": "$usuario"},
                         "duracion_promedio": {"$avg": "$duracion_seg"}}},
             {"$addFields": {"usuarios_unicos": {"$size": "$usuarios"}}},
-            {"$sort": {"eventos": -1}},
+            {"$sort": {"eventos": -1, "_id": 1}},
             {"$project": {"_id": 0, "ubicacion": "$_id", "eventos": 1,
                           "usuarios_unicos": 1, "duracion_promedio": 1}},
         ],
@@ -1921,6 +1980,8 @@ def ejecutar_pipelines(integrador: IntegradorMongo, fact: pd.DataFrame) -> pd.Da
     fact_completado = fact[fact.es_completado == True] if "es_completado" in fact else fact
     unidades = fact_completado.groupby("id_producto")["cantidad"].sum().to_dict() \
         if "cantidad" in fact else {}
+    ingresos = fact_completado.groupby("id_producto")["total"].sum().round(2).to_dict() \
+        if "total" in fact else {}
 
     resumen = []
     for p in PIPELINES_MONGO:
@@ -1934,36 +1995,43 @@ def ejecutar_pipelines(integrador: IntegradorMongo, fact: pd.DataFrame) -> pd.Da
             origen = "pandas"
         estado, error = "OK", ""
 
-        # Post-procesos: en MongoDB real estos cortes se harian con un
-        # $lookup contra la fact; aqui se resuelven con el DataFrame de
-        # fact_ventas que ya esta en memoria.
-        if p.get("post") == "excluir_vendidos(150)" and not df.empty:
+        # En MongoDB real A02/A03/A10 ya resuelven el cruce con `$lookup`.
+        # Sin servidor, el equivalente se calcula con el DataFrame de
+        # fact_ventas que esta en memoria.
+        if origen == "pandas" and p.get("post") == "excluir_vendidos(150)" and not df.empty:
             if "producto" not in df.columns and "_id" in df.columns:
                 df["producto"] = df["_id"]
             if "producto" in df.columns:
                 df = df[~df["producto"].isin(vendidos)].copy()
-        elif p.get("post") == "cruzar_ventas" and not df.empty:
+            df["unidades_vendidas"] = 0
+            df["ingresos"] = 0.0
+        elif origen == "pandas" and p.get("post") == "cruzar_ventas" and not df.empty:
             if "producto" not in df.columns and "_id" in df.columns:
                 df["producto"] = df["_id"]
             if "producto" in df.columns:
-                df["unidades"] = df["producto"].map(unidades).fillna(0).astype(int)
-                df = df[df["unidades"] > 0]
-                df = df.sort_values("unidades", ascending=False)
-        elif p.get("post") == "cruzar_con_fact_ventas" and not df.empty:
+                df["unidades_vendidas"] = df["producto"].map(unidades).fillna(0).astype(int)
+                df["ingresos"] = df["producto"].map(ingresos).fillna(0.0)
+                df = df[df["unidades_vendidas"] > 0]
+                df = df.sort_values("unidades_vendidas", ascending=False)
+        elif origen == "pandas" and p.get("post") == "cruzar_con_fact_ventas" and not df.empty:
             if "producto" not in df.columns and "_id" in df.columns:
                 df["producto"] = df["_id"]
             if "producto" in df.columns:
-                df["unidades"] = df["producto"].map(unidades).fillna(0).astype(int)
-                df["vendido"] = df["unidades"] > 0
+                df["unidades_vendidas"] = df["producto"].map(unidades).fillna(0).astype(int)
+                df["ingresos"] = df["producto"].map(ingresos).fillna(0.0)
+                df["vendido"] = df["unidades_vendidas"] > 0
                 df["ratio_ventas_por_visita"] = np.where(
-                    df.visitas > 0, (df.unidades / df.visitas).round(3), 0.0
+                    df.visitas > 0, (df.unidades_vendidas / df.visitas).round(3), 0.0
                 )
-                df = df.sort_values(["vendido", "unidades"], ascending=[False, False])
+                df = df.sort_values(["vendido", "unidades_vendidas"],
+                                    ascending=[False, False])
 
-        if not df.empty and "visitas" in df.columns and "unidades" in df.columns:
-            sub = df[(df.visitas > 0) & (df.unidades > 0)]
+        col_unidades = ("unidades_vendidas" if "unidades_vendidas" in df.columns
+                        else "unidades")
+        if not df.empty and "visitas" in df.columns and col_unidades in df.columns:
+            sub = df[(df.visitas > 0) & (df[col_unidades] > 0)]
             if len(sub) > 2:
-                corr = round(float(sub.visitas.corr(sub.unidades)), 4)
+                corr = round(float(sub.visitas.corr(sub[col_unidades])), 4)
             else:
                 corr = float("nan")
         else:

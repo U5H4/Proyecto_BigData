@@ -20,7 +20,7 @@ dataset_postgresql.csv,es_premium,boolean,3891,0,2,False,True
 dataset_postgresql.csv,fecha_alta_cliente,datetime64[ns],3891,0,541,2024-01-01 00:00:00,2025-12-01 00:00:00
 dataset_postgresql.csv,producto_nombre,object,3891,0,551,Access Point Auric Edge,Workstation Zylo Elite
 dataset_postgresql.csv,categoria,object,3891,0,6,Accesorios,Smartphones
-dataset_postgresql.csv,descripcion_categoria,object,3891,0,6,Accesorios,Smartphones
+dataset_postgresql.csv,descripcion_categoria,object,3891,0,6,"Audifonos, bocinas y equipo de sonido",Telefonos inteligentes y tablets
 dataset_postgresql.csv,rango_precio,object,3891,0,6,Alto,Ultra Premium
 dataset_postgresql.csv,precio_lista,float64,3891,0,551,152.0,68000.0
 dataset_postgresql.csv,margen_bruto_producto,float64,3891,0,476,0.1803,0.42
@@ -42,7 +42,7 @@ dataset_postgresql.csv,categorias_distintas,Int64,3891,0,6,1,6
 dataset_postgresql.csv,ticket_promedio_linea,float64,3891,0,2161,161.37,531577.09
 dataset_postgresql.csv,metodo,object,3891,0,6,efectivo,transferencia
 dataset_postgresql.csv,monto,float64,3891,0,2258,160.0,960261.85
-dataset_postgresql.csv,estado_pago,object,3891,0,4,APROBADO,rechazado
+dataset_postgresql.csv,estado_pago,object,3891,0,3,aprobado,rechazado
 dataset_postgresql.csv,diferencia_pago,float64,3891,0,885,-5.65,452405.69
 dataset_postgresql.csv,conciliado,bool,3891,0,2,False,True
 dataset_postgresql.csv,id_ciudad,int64,3891,0,10,1,10
@@ -63,7 +63,6 @@ tablas/clientes.csv,id_cliente,Int64,1862,0,1862,1,2059
 tablas/clientes.csv,nombre,object,1862,0,1389,ABRIL RODRIGUEZ,ximena jimenez
 tablas/clientes.csv,correo,object,1862,0,1826,SIN_DATO@novatech.mx,ximena.vega@outlook.com
 tablas/clientes.csv,telefono,object,1862,0,1828,5510059909,SIN_DATO
-tablas/clientes.csv,ciudad,object,1862,0,10,Cancun,Veracruz
 tablas/clientes.csv,id_ciudad,int64,1862,0,10,1,10
 tablas/clientes.csv,fecha_alta,datetime64[ns],1862,0,584,2024-01-01 00:00:00,2025-12-06 00:00:00
 tablas/clientes.csv,canal_registro,object,1862,0,3,app_movil,web
@@ -73,7 +72,6 @@ tablas/clientes.csv,mes_alta,Int64,1862,0,12,1,12
 tablas/clientes.csv,antiguedad_dias,Int64,1862,0,584,298,1003
 tablas/productos.csv,id_producto,Int64,606,0,606,1,620
 tablas/productos.csv,nombre,object,606,0,606,Access Point Auric Edge,Workstation Zylo Elite
-tablas/productos.csv,categoria,object,606,0,6,Accesorios,Smartphones
 tablas/productos.csv,id_categoria,int64,606,0,6,1,6
 tablas/productos.csv,precio,float64,606,0,605,152.0,68000.0
 tablas/productos.csv,margen_bruto,float64,606,0,519,0.1803,0.42
@@ -114,6 +112,6 @@ tablas/pagos.csv,id_pedido,Int64,3277,0,3277,1,3600
 tablas/pagos.csv,metodo,object,3277,0,6,efectivo,transferencia
 tablas/pagos.csv,monto,float64,3277,0,2571,0.0,960261.85
 tablas/pagos.csv,fecha_pago,datetime64[ns],3277,0,969,2024-01-01 00:00:00,2026-12-03 00:00:00
-tablas/pagos.csv,estado_pago,object,3277,0,4,APROBADO,rechazado
+tablas/pagos.csv,estado_pago,object,3277,0,3,aprobado,rechazado
 tablas/pagos.csv,diferencia_pago,float64,3277,0,989,-5.65,452405.69
 tablas/pagos.csv,conciliado,bool,3277,0,2,False,True

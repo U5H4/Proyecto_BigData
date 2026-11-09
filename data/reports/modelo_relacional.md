@@ -1,6 +1,6 @@
 # Modelo relacional y normalizacion (3FN)
 
-Generado: 2026-10-18 15:57:06
+Generado: 2026-11-09 07:05:15
 
 ![Diagrama ER](modelo_relacional.png)
 
@@ -58,7 +58,7 @@ dimensiones y hechos para cumplir 1FN, 2FN y 3FN:
 
 2. **2FN (sin dependencias parciales).** En `detalle_pedido` la llave es
    `id_detalle` (linea). Los datos que dependen solo de `id_producto`
-   (`nombre`, `categoria`, `precio`, `margen_bruto`) se movieron a `productos`;
+   (`nombre`, `precio`, `margen_bruto`) se movieron a `productos`;
    los que dependen solo de `id_pedido` (`fecha_pedido`, `canal_venta`,
    `id_sucursal`) se movieron a `pedidos`. Una linea ya no repite el nombre del
    producto ni la fecha del pedido.

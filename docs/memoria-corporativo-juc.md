@@ -1,7 +1,7 @@
 ---
 title: Memoria tecnica - Corporativo JUC
 subtitle: Pipeline de datos (ETL + Cloud + Analisis)
-date: 2026-11-05
+date: 2026-11-09
 ---
 
 # Resumen ejecutivo
@@ -10,8 +10,8 @@ date: 2026-11-05
 Mexico. Este proyecto construye un pipeline de ingenieria de datos completo:
 genera tres fuentes crudas con errores intencionales, las limpia con 10
 transformaciones auditables, las carga en PostgreSQL (modelo relacional 3FN) y
-en MongoDB (documentos), responde 47 preguntas de negocio y produce 12
-visualizaciones interactivas.
+en MongoDB (documentos), responde 47 preguntas de negocio y produce 13
+visualizaciones interactivas y 22 indicadores.
 
 Cifras de la ultima ejecucion (semilla `SEED = 20260904`):
 
@@ -90,10 +90,10 @@ Proyecto_BigData/
     etl_load.py            3FN + datasets analiticos + documentos
     integration.py         DDL, carga, 20 SQL, 12 pipelines, 15 find
     analysis.py            19 analisis de negocio
-    viz.py                 12 graficos Plotly -> HTML
+    viz.py                 13 graficos Plotly -> HTML
     er_diagram.py          diagrama ER (PNG) + justificacion 3FN
     run_all.py             orquestador de etapas
-  tests/                   161 pruebas (transform, integration, analysis, run_all)
+  tests/                   167 pruebas (transform, integration, analysis, run_all)
   docs/                    memoria (.md/.docx/.pdf) y guion de presentacion
   .opencode/skills/        project-docs, data-pipeline, informe-juc
   data/
@@ -108,7 +108,7 @@ Proyecto_BigData/
                                       analisis/, modelo_relacional.md/.png,
                                       integracion_entorno.md, figuras_indice.csv,
                                       reporte.html
-    figures/                          12 HTML + plotly.min.js
+    figures/                          13 HTML + plotly.min.js
   logs/                    pipeline.log y artefactos de referencia
   README.md                guia principal
   README_CARPETAS.md       mapa detallado de carpetas
@@ -200,7 +200,7 @@ DDL completo: `data/sql/01_ddl.sql` (copia en
 
 ## Indices y EXPLAIN ANALYZE
 
-Se definen **20 indices** sobre claves foraneas y columnas de filtro/orden
+Se definen **19 indices** sobre claves foraneas y columnas de filtro/orden
 (fechas, estado, canal, categoria, rango de precio, conciliacion). El archivo
 `data/sql/03_explain_analyze.md` compara el plan **antes y despues** de crear el
 indice: el plan pasa de un recorrido completo a `SEARCH ... USING INDEX`, con
@@ -210,7 +210,7 @@ una mejora de **4.03x** (0.874 ms sin indice frente a 0.217 ms con el indice
 ## Consultas
 
 Se ejecutan **20 consultas** (Q01..Q20) contra PostgreSQL. Cubren `INNER JOIN`,
-`LEFT JOIN`, una consulta de 4+ tablas (Q19 usa 6), agregaciones
+`LEFT JOIN`, una consulta de 4+ tablas (Q19 usa 7), agregaciones
 `COUNT/SUM/AVG/MIN/MAX`, `GROUP BY`, `HAVING`, `ORDER BY`, subconsultas y el uso
 de la vista. Cada resultado se guarda en
 `data/reports/consultas_sql/Qxx_*.csv` y el resumen en
@@ -309,7 +309,7 @@ data/figures/                        visualizaciones
 
 # Parte VII - Visualizacion
 
-Se generan **12 visualizaciones interactivas** con Plotly (HTML): hover con el
+Se generan **13 visualizaciones interactivas** con Plotly (HTML): hover con el
 valor exacto, zoom y series aislables. Todas se reunen en
 `data/reports/reporte.html`; cada una tambien existe por separado en
 `data/figures/`.
@@ -328,9 +328,15 @@ valor exacto, zoom y series aislables. Todas se reunen en
 | 10 | Descuentos vs margen | margen por rango de descuento |
 | 11 | Calificaciones | distribucion de resenas y tasa positiva |
 | 12 | Facturacion por sucursal | venta y ticket por sucursal |
+| 13 | Ventas por ciudad | facturacion por ciudad |
 
-Indicadores principales: facturacion, pedidos, ticket, cancelacion, unidades,
-utilidad, margen, clientes, productos vendidos y concentracion (Pareto).
+Indicadores principales (22): los 10 de la Parte VII (ingresos totales, pedidos
+totales, ticket promedio, clientes activos, producto mas vendido, producto mas
+visto, categoria mas rentable, ciudad con mayores ventas, calificacion
+promedio y mes con mayores ventas) mas pedidos completados, tasa de
+cancelacion, unidades vendidas, unidades por pedido, productos vendidos,
+categorias, utilidad bruta, margen real ponderado, descuentos otorgados,
+ticket con y sin descuento e ingreso por cliente.
 
 # Operacion y pruebas
 
@@ -394,5 +400,5 @@ Estado verificado de la ultima corrida:
 
 ## C. Indice de figuras
 
-`data/reports/figuras_indice.csv` lista las 12 visualizaciones con su archivo,
+`data/reports/figuras_indice.csv` lista las 13 visualizaciones con su archivo,
 estado y tamano. El reporte unificado es `data/reports/reporte.html`.

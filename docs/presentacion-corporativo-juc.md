@@ -56,14 +56,14 @@ CSV / JSON / XLSX
         v
    ETL (10 reglas)  --> evidencia de calidad
         |
-        +--> PostgreSQL (3FN, vista, 20 indices)
+        +--> PostgreSQL (3FN, vista, 19 indices)
         +--> MongoDB (3 colecciones, 12 indices)
                     |
                     v
         Analisis (Pandas) + Integracion SQL/NoSQL
                     |
                     v
-        12 visualizaciones Plotly -> reporte.html
+        13 visualizaciones Plotly -> reporte.html
 ```
 
 **Evidencia:** `src/run_all.py` (5 etapas), `README.md` seccion de arquitectura.
@@ -127,7 +127,7 @@ tabla) y `data/reports/validacion_minimos.csv`.
 > El modelo esta en tercera forma normal: seis tablas operativas, dos
 > dimensiones y una tabla de hechos. Hay claves primarias, foraneas, unicidad y
 > restricciones CHECK, por ejemplo que el total sea subtotal menos descuento.
-> Sobre las columnas de filtro y orden se crean 20 indices.
+> Sobre las columnas de filtro y orden se crean 19 indices.
 
 **Mostrar:** el diagrama ER (`data/reports/modelo_relacional.png`) y un fragmento
 de `data/sql/01_ddl.sql`.
@@ -247,14 +247,14 @@ portabilidad. Sin credenciales el pipeline degrada a SQLite y NDJSON sin fallar.
 **Que decir:**
 
 > Todo el proyecto se regenera con una orden. La semilla 20260904 fija los
-> datos, asi que los resultados son reproducibles. Hay 161 pruebas automaticas
+> datos, asi que los resultados son reproducibles. Hay 167 pruebas automaticas
 > que cubren transformacion, integracion, analisis y orquestacion.
 
 ```powershell
 .\.venv\Scripts\python.exe src\run_all.py --con-tests
 ```
 
-**Resultado esperado:** 5 etapas OK + 161 pruebas en verde.
+**Resultado esperado:** 5 etapas OK + 167 pruebas en verde.
 
 **Frase clave:** "no es una entrega de archivos sueltos: es un pipeline que se
 puede volver a ejecutar y da lo mismo".
@@ -286,7 +286,7 @@ torcer el modelo.
 **¿Como garantizan que el ETL no inventa datos?**
 Cada regla deja filas antes/despues y afectados en
 `calidad_transformaciones.csv`; los minimos se validan en
-`validacion_minimos.csv`; hay 161 pruebas.
+`validacion_minimos.csv`; hay 167 pruebas.
 
 **¿Los indices realmente sirven?**
 Si: `03_explain_analyze.md` muestra el plan antes y despues, con el cambio a

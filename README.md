@@ -7,7 +7,7 @@ El pipeline genera tres fuentes crudas **con errores intencionales**, las limpia
 con 10 transformaciones auditables, las carga en un modelo relacional y un
 almacén de documentos, responde 47 preguntas de negocio (20 en SQL, 12 pipelines
 de agregación y 15 consultas `find`/`countDocuments` en NoSQL), y produce un
-reporte con 12 gráficos **interactivos** (Plotly, HTML).
+reporte con 13 gráficos **interactivos** (Plotly, HTML).
 
 Todo es **reproducible**: la semilla `SEED = 20260904` fija los datos
 sintéticos, así que dos ejecuciones dan exactamente el mismo resultado.
@@ -40,7 +40,7 @@ python src\etl_load.py           # Partes I-V -> data/processed/
 python src\integration.py        # Parte Cloud -> SQL + NoSQL
 python src\analysis.py           # Parte V   -> data/reports/analisis/
 python src\viz.py               #            -> data/figures/ + data/reports/reporte.html
-python -m pytest tests -q        # 161 pruebas
+python -m pytest tests -q        # 167 pruebas
 ```
 
 ---
@@ -60,7 +60,7 @@ bigdata_project/
 │   │                          12 pipelines + 15 consultas find/count NoSQL
 │   ├── er_diagram.py         Diagrama ER (PNG) + justificación 3FN
 │   ├── analysis.py           19 análisis de negocio
-│   ├── viz.py                12 gráficos HTML interactivos (Plotly)
+│   ├── viz.py                13 gráficos HTML interactivos (Plotly)
 │   └── run_all.py            Orquestador
 ├── tests/                    test_transform.py, test_integration.py,
 │                             test_analysis.py, test_run_all.py
@@ -75,8 +75,8 @@ bigdata_project/
 │   ├── reports/              calidad, consultas_sql/, consultas_mongodb/,
 │   │                         analisis/, modelo_relacional.md + .png,
 │   │                         integracion_entorno.md, figuras_indice.csv,
-│   │                         reporte.html (12 gráficos en una página)
-│   └── figures/              12 HTML (Plotly) + plotly.min.js
+│   │                         reporte.html (13 gráficos en una página)
+│   └── figures/              13 HTML (Plotly) + plotly.min.js
 └── logs/                     pipeline.log
 ```
 
@@ -180,7 +180,7 @@ mensual, mix por categoría, ticket por canal, **inventario muerto** (55
 productos que nunca se vendieron), clientes con cancelaciones, conciliación de
 pagos, descuentos, geography, premium vs estándar, **ley de Pareto**,
 nuevos vs recurrentes, mix trimestral, alta rotación, cobertura por sucursal,
-**detalle 360 con JOIN de 6 tablas** (Q19) y **resumen mensual sobre la vista
+**detalle 360 con JOIN de 7 tablas** (Q19) y **resumen mensual sobre la vista
 `v_resumen_ventas`** (Q20).
 
 **12 pipelines de agregación NoSQL** (`data/reports/consultas_mongodb/`): top
@@ -205,7 +205,7 @@ resultado es auditable sin volver a ejecutar nada.
 
 ## 6. Análisis y hallazgos
 
-`data/reports/analisis/` (19 CSV) y `data/figures/` (12 HTML interactivos de
+`data/reports/analisis/` (21 CSV) y `data/figures/` (13 HTML interactivos de
 Plotly; el reporte unificado está en `data/reports/reporte.html`).
 Cifras de la ejecución con `SEED = 20260904`.
 
@@ -238,7 +238,7 @@ mucho y ya no vuelven (19.7% de la venta).
 ## 7. Pruebas
 
 ```bash
-python -m pytest tests -q      # 161 pruebas, ~2 s
+python -m pytest tests -q      # 167 pruebas, ~2 s
 ```
 
 Las pruebas del análisis no comparan contra valores fijos del dataset real
@@ -265,11 +265,11 @@ Se cubren en particular los dos errores clásicos de este modelo:
 
 | | |
 |---|---|
-| Pruebas | 161 OK |
+| Pruebas | 167 OK |
 | Consultas SQL | 20/20 OK |
 | Pipelines NoSQL | 12/12 OK |
 | Consultas `find`/`count` NoSQL | 15/15 OK |
-| Gráficos | 12/12 OK |
+| Gráficos | 13/13 OK |
 | Diagrama ER | generado (`data/reports/modelo_relacional.png`) |
 | Motor relacional | **Supabase** (PostgreSQL 17, Session pooler IPv4) |
 | Motor NoSQL | **MongoDB Atlas** 8.0 |

@@ -1,126 +1,127 @@
-﻿_id,visitas,nombre,categoria,producto,unidades
-444,1,Hub USB-C Quartz Air,Accesorios,444,44
-462,1,Mousepad Helix Prime,Accesorios,462,43
-179,1,Smartphone Quartz Vertex Lite,Smartphones,179,41
-497,1,Mousepad Cobalto Pulse,Accesorios,497,41
-318,1,Monitor Gamer Auric Nova,Monitores,318,35
-355,1,Monitor 4K Vertex Mini,Monitores,355,34
-224,1,Audifonos Delta Air,Audio,224,31
-118,1,Foldable Zylo Nova,Smartphones,118,31
-143,1,Foldable Nimbus Elite,Smartphones,143,29
-228,1,Microfono Delta Ultra,Audio,228,27
-546,1,Adaptador WiFi Onyx Plus,Redes,546,27
-329,1,Monitor Ultrawide Kortex Core,Monitores,329,26
-98,1,Workstation Lumen Nova,Computadoras,98,26
-388,1,Monitor Gamer Zylo Ultra,Monitores,388,25
-21,1,Laptop Auric Neo,Computadoras,21,25
-190,1,Smartphone Helix Edge,Smartphones,190,25
-235,1,Bocina Bluetooth Delta Mini,Audio,235,24
-66,1,Laptop Vertex Plus,Computadoras,66,22
-353,1,Monitor Gamer Vertex GT,Monitores,353,22
-335,1,Monitor 4K Kortex Mini,Monitores,335,22
-25,1,All-in-One Auric Max,Computadoras,25,22
-433,1,Webcam Nimbus GT,Accesorios,433,21
-226,1,Auriculares Gaming Delta Plus,Audio,226,21
-392,1,Monitor Zylo Pro,Monitores,392,21
-223,1,Microfono Delta Elite,Audio,223,20
-595,1,Access Point Auric Mini,Redes,595,20
-96,1,Laptop Lumen Fury,Computadoras,96,20
-204,1,Smartphone Cobalto Air Lite,Smartphones,204,20
-448,1,Webcam Quartz Ultra,Accesorios,448,18
-105,1,Smartphone Zylo Max,Smartphones,105,18
-169,1,Smartphone Quartz Core Lite,Smartphones,169,17
-431,1,Mouse Nimbus Zen,Accesorios,431,17
-315,1,Monitor 4K Auric Mini,Monitores,315,17
-233,1,Microfono Delta GT,Audio,233,17
-2,1,Desktop Nova Prime,Computadoras,2,17
-205,1,Smartphone Cobalto Max,Smartphones,205,16
-210,1,Bocina Bluetooth Cobalto Edge,Audio,210,16
-342,1,Monitor Vertex Prime,Monitores,342,16
-35,1,All-in-One Auric Mini,Computadoras,35,16
-325,1,Monitor 4K Kortex Max,Monitores,325,16
-500,1,Teclado Mecanico Cobalto One,Accesorios,500,16
-271,1,Auriculares Gaming Onyx Zen,Audio,271,15
-569,1,Switch Nova Core,Redes,569,15
-608,1,Router Kortex Ultra,Redes,608,15
-583,1,Router Auric Elite,Redes,583,14
-415,1,Teclado Mecanico Orbit Mini,Accesorios,415,14
-590,1,Access Point Auric Edge,Redes,590,14
-372,1,Monitor Lumen Pro,Monitores,372,14
-276,1,Auriculares Gaming Onyx Fury,Audio,276,14
-217,1,Barra de Sonido Cobalto Pulse,Audio,217,14
-513,1,Webcam Delta GT,Accesorios,513,13
-88,1,Workstation Lumen Ultra,Computadoras,88,13
-221,1,Auriculares Gaming Delta Neo,Audio,221,13
-38,1,Workstation Auric Nova,Computadoras,38,13
-241,1,Auriculares Gaming Praxis Neo,Audio,241,13
-331,1,Monitor Portatil Kortex Zen,Monitores,331,13
-304,1,Audifonos Auric Air,Audio,304,12
-535,1,Access Point Praxis Mini,Redes,535,12
-26,1,Laptop Auric Plus,Computadoras,26,12
-188,1,Foldable Helix Ultra,Smartphones,188,12
-42,1,Desktop Kortex Prime,Computadoras,42,12
-110,1,Smartphone Zylo Edge,Smartphones,110,12
-192,1,Smartphone Helix Pro Pro,Smartphones,192,11
-468,1,Webcam Helix Ultra,Accesorios,468,11
-126,1,Tablet Orbit Plus,Smartphones,126,11
-351,1,Monitor Portatil Vertex Zen,Monitores,351,10
-577,1,Cable de Red Nova Pulse,Redes,577,10
-67,1,Desktop Vertex Lite,Computadoras,67,10
-341,1,Monitor Portatil Vertex Neo,Monitores,341,9
-602,1,Cable de Red Kortex Prime,Redes,602,9
-571,1,Adaptador WiFi Nova Zen,Redes,571,9
-122,1,Smartphone Orbit Prime Pro,Smartphones,122,9
-52,1,Desktop Kortex Pro,Computadoras,52,9
-498,1,Webcam Cobalto Nova,Accesorios,498,9
-257,1,Barra de Sonido Praxis Pulse,Audio,257,9
-287,1,Barra de Sonido Nova Lite,Audio,287,9
-76,1,Laptop Vertex Fury,Computadoras,76,9
-131,1,Tablet Orbit Zen,Smartphones,131,8
-311,1,Auriculares Gaming Auric Zen,Audio,311,8
-95,1,All-in-One Lumen Mini,Computadoras,95,8
-56,1,Laptop Kortex Fury,Computadoras,56,8
-37,1,Desktop Auric Pulse,Computadoras,37,8
-267,1,Barra de Sonido Onyx Lite,Audio,267,8
-57,1,Desktop Kortex Pulse,Computadoras,57,8
-327,1,Monitor Kortex Lite,Monitores,327,8
-275,1,Bocina Bluetooth Onyx Mini,Audio,275,7
-168,1,Foldable Quartz Ultra,Smartphones,168,7
-438,1,Webcam Nimbus Nova,Accesorios,438,7
-449,1,Hub USB-C Quartz Core,Accesorios,449,6
-312,1,Monitor Auric Pro,Monitores,312,6
-285,1,Bocina Bluetooth Nova Max,Audio,285,6
-50,1,All-in-One Kortex Edge,Computadoras,50,6
-417,1,Mousepad Orbit Pulse,Accesorios,417,6
-521,1,Adaptador WiFi Praxis Neo,Redes,521,6
-17,1,Desktop Nova Pulse,Computadoras,17,5
-348,1,Monitor Gamer Vertex Ultra,Monitores,348,5
-554,1,Switch Onyx SE,Redes,554,5
-584,1,Switch Auric Air,Redes,584,5
-410,1,Monitor 4K Orbit Edge,Monitores,410,5
-376,1,Monitor Portatil Lumen Fury,Monitores,376,5
-154,1,Smartphone Nimbus SE Lite,Smartphones,154,5
-451,1,Mouse Quartz Zen,Accesorios,451,5
-106,1,Tablet Zylo Plus,Smartphones,106,5
-180,1,Smartphone Quartz One,Smartphones,180,4
-483,1,Webcam Cobalto Elite,Accesorios,483,4
-199,1,Smartphone Helix Vertex Lite,Smartphones,199,4
-567,1,Cable de Red Nova Lite,Redes,567,4
-332,1,Monitor Kortex Pro,Monitores,332,3
-157,1,Smartphone Nimbus Pulse Pro,Smartphones,157,3
-130,1,Smartphone Orbit Edge,Smartphones,130,3
-213,1,Microfono Cobalto GT,Audio,213,2
-97,1,Desktop Lumen Pulse,Computadoras,97,2
-597,1,Cable de Red Auric Pulse,Redes,597,2
-336,1,Monitor Portatil Kortex Fury,Monitores,336,2
-528,1,Router Praxis Ultra,Redes,528,2
-136,1,Tablet Orbit Fury,Smartphones,136,2
-198,1,Foldable Helix Nova,Smartphones,198,2
-507,1,Mousepad Delta Lite,Accesorios,507,2
-201,1,Tablet Cobalto Neo,Smartphones,201,1
-298,1,Microfono Nova Nova,Audio,298,1
-550,1,Access Point Onyx Edge,Redes,550,1
-229,1,Audifonos Delta Core,Audio,229,1
-328,1,Monitor Gamer Kortex Ultra,Monitores,328,1
-305,1,Bocina Bluetooth Auric Max,Audio,305,1
-182,1,Smartphone Helix Prime Pro,Smartphones,182,1
+﻿visitas,nombre,categoria,unidades_vendidas,ingresos,producto
+1,Hub USB-C Quartz Air,Accesorios,44,17081.89,444
+1,Mousepad Helix Prime,Accesorios,43,23861.63,462
+1,Smartphone Quartz Vertex Lite,Smartphones,41,1011801.54,179
+1,Mousepad Cobalto Pulse,Accesorios,41,84236.95,497
+1,Monitor Gamer Auric Nova,Monitores,35,92849.42,318
+1,Monitor 4K Vertex Mini,Monitores,34,497294.54,355
+1,Foldable Zylo Nova,Smartphones,31,751584.9,118
+1,Audifonos Delta Air,Audio,31,94904.91,224
+1,Foldable Nimbus Elite,Smartphones,29,554466.7,143
+1,Microfono Delta Ultra,Audio,27,37113.12,228
+1,Adaptador WiFi Onyx Plus,Redes,27,66906.02,546
+1,Workstation Lumen Nova,Computadoras,26,1017410.37,98
+1,Monitor Ultrawide Kortex Core,Monitores,26,71822.36,329
+1,Laptop Auric Neo,Computadoras,25,1029261.6,21
+1,Smartphone Helix Edge,Smartphones,25,425620.24,190
+1,Monitor Gamer Zylo Ultra,Monitores,25,140669.59,388
+1,Bocina Bluetooth Delta Mini,Audio,24,26590.77,235
+1,All-in-One Auric Max,Computadoras,22,958533.84,25
+1,Laptop Vertex Plus,Computadoras,22,333329.77,66
+1,Monitor 4K Kortex Mini,Monitores,22,403373.32,335
+1,Monitor Gamer Vertex GT,Monitores,22,410238.21,353
+1,Cable de Red Praxis Pulse,Redes,22,44124.58,537
+1,Auriculares Gaming Delta Plus,Audio,21,82694.72,226
+1,Monitor Zylo Pro,Monitores,21,352411.08,392
+1,Webcam Nimbus GT,Accesorios,21,48201.1,433
+1,Laptop Lumen Fury,Computadoras,20,287914.27,96
+1,Smartphone Cobalto Air Lite,Smartphones,20,337895.8,204
+1,Microfono Delta Elite,Audio,20,11186.24,223
+1,Smartphone Quartz Mini,Smartphones,19,131190.74,175
+1,Smartphone Zylo Max,Smartphones,18,87065.61,105
+1,Webcam Quartz Ultra,Accesorios,18,24762.31,448
+1,Desktop Nova Prime,Computadoras,17,420017.47,2
+1,Smartphone Quartz Core Lite,Smartphones,17,79315.69,169
+1,Microfono Delta GT,Audio,17,19277.47,233
+1,Monitor 4K Auric Mini,Monitores,17,190832.72,315
+1,Mouse Nimbus Zen,Accesorios,17,4310.19,431
+1,All-in-One Auric Mini,Computadoras,16,350546.33,35
+1,Smartphone Cobalto Max,Smartphones,16,458050.38,205
+1,Bocina Bluetooth Cobalto Edge,Audio,16,25545.62,210
+1,Monitor 4K Kortex Max,Monitores,16,393642.72,325
+1,Monitor Vertex Prime,Monitores,16,122306.72,342
+1,Teclado Mecanico Cobalto One,Accesorios,16,36112.39,500
+1,Smartphone Helix Mini,Smartphones,15,80285.29,195
+1,Auriculares Gaming Onyx Zen,Audio,15,111894.83,271
+1,Switch Nova Core,Redes,15,13548.3,569
+1,Barra de Sonido Cobalto Pulse,Audio,14,36436.53,217
+1,Auriculares Gaming Onyx Fury,Audio,14,6476.01,276
+1,Monitor Lumen Pro,Monitores,14,100876.6,372
+1,Teclado Mecanico Orbit Mini,Accesorios,14,19434.83,415
+1,Router Auric Elite,Redes,14,58829.83,583
+1,Workstation Auric Nova,Computadoras,13,399125.8,38
+1,Workstation Lumen Ultra,Computadoras,13,370867.84,88
+1,Auriculares Gaming Delta Neo,Audio,13,22451.93,221
+1,Auriculares Gaming Praxis Neo,Audio,13,5453.31,241
+1,Monitor Portatil Kortex Zen,Monitores,13,159197.21,331
+1,Webcam Delta GT,Accesorios,13,3762.69,513
+1,Laptop Auric Plus,Computadoras,12,638016.12,26
+1,Desktop Kortex Prime,Computadoras,12,534592.92,42
+1,Smartphone Zylo Edge,Smartphones,12,302181.71,110
+1,Foldable Helix Ultra,Smartphones,12,77079.8,188
+1,Audifonos Auric Air,Audio,12,5705.64,304
+1,Access Point Praxis Mini,Redes,12,26520.84,535
+1,Tablet Orbit Plus,Smartphones,11,66284.23,126
+1,Smartphone Helix Pro Pro,Smartphones,11,46136.28,192
+1,Mousepad Nimbus Lite,Accesorios,11,1662.12,427
+1,Webcam Helix Ultra,Accesorios,11,3979.85,468
+1,Desktop Vertex Lite,Computadoras,10,158356.99,67
+1,Monitor Portatil Vertex Zen,Monitores,10,21450.29,351
+1,Cable de Red Nova Pulse,Redes,10,69363.48,577
+1,Desktop Kortex Pro,Computadoras,9,346202.91,52
+1,Laptop Vertex Fury,Computadoras,9,166187.9,76
+1,Smartphone Orbit Prime Pro,Smartphones,9,39643.38,122
+1,Barra de Sonido Praxis Pulse,Audio,9,22628.07,257
+1,Barra de Sonido Nova Lite,Audio,9,14654.57,287
+1,Monitor Portatil Vertex Neo,Monitores,9,37676.98,341
+1,Webcam Cobalto Nova,Accesorios,9,8487.63,498
+1,Adaptador WiFi Nova Zen,Redes,9,46976.26,571
+1,Mini PC Auric SE,Computadoras,8,502972.36,34
+1,Desktop Auric Pulse,Computadoras,8,128047.05,37
+1,Laptop Kortex Fury,Computadoras,8,147006.88,56
+1,Desktop Kortex Pulse,Computadoras,8,142855.04,57
+1,Desktop Vertex Pro,Computadoras,8,155001.12,72
+1,All-in-One Lumen Mini,Computadoras,8,408846.16,95
+1,Tablet Orbit Zen,Smartphones,8,211679.12,131
+1,Barra de Sonido Onyx Lite,Audio,8,60165.06,267
+1,Auriculares Gaming Auric Zen,Audio,8,5943.36,311
+1,Monitor Kortex Lite,Monitores,8,113683.23,327
+1,Foldable Quartz Ultra,Smartphones,7,81051.32,168
+1,Bocina Bluetooth Onyx Mini,Audio,7,14254.38,275
+1,Webcam Nimbus Nova,Accesorios,7,9949.27,438
+1,All-in-One Kortex Edge,Computadoras,6,132417.12,50
+1,Bocina Bluetooth Nova Max,Audio,6,8756.46,285
+1,Monitor Auric Pro,Monitores,6,16033.15,312
+1,Mousepad Orbit Pulse,Accesorios,6,2111.46,417
+1,Hub USB-C Quartz Core,Accesorios,6,12618.0,449
+1,Adaptador WiFi Praxis Neo,Redes,6,44712.55,521
+1,Desktop Nova Pulse,Computadoras,5,75940.0,17
+1,Tablet Zylo Plus,Smartphones,5,160856.76,106
+1,Smartphone Nimbus SE Lite,Smartphones,5,99142.7,154
+1,Monitor Gamer Vertex Ultra,Monitores,5,109210.0,348
+1,Monitor Portatil Lumen Fury,Monitores,5,11234.35,376
+1,Monitor 4K Orbit Edge,Monitores,5,13626.58,410
+1,Mouse Quartz Zen,Accesorios,5,10205.0,451
+1,Switch Onyx SE,Redes,5,53691.8,554
+1,Smartphone Quartz One,Smartphones,4,113656.22,180
+1,Smartphone Helix Vertex Lite,Smartphones,4,95868.7,199
+1,Webcam Cobalto Elite,Accesorios,4,10625.24,483
+1,Cable de Red Nova Lite,Redes,4,3913.88,567
+1,Smartphone Orbit Edge,Smartphones,3,37481.73,130
+1,Smartphone Nimbus Pulse Pro,Smartphones,3,41304.48,157
+1,Monitor Kortex Pro,Monitores,3,48127.17,332
+1,Switch Nova Vertex,Redes,3,10039.17,579
+1,Desktop Lumen Pulse,Computadoras,2,88694.76,97
+1,Tablet Orbit Fury,Smartphones,2,40448.44,136
+1,Foldable Helix Nova,Smartphones,2,29065.22,198
+1,Microfono Cobalto GT,Audio,2,2234.08,213
+1,Monitor Portatil Kortex Fury,Monitores,2,7627.36,336
+1,Mousepad Delta Lite,Accesorios,2,1087.89,507
+1,Router Praxis Ultra,Redes,2,2905.43,528
+1,Smartphone Helix Prime Pro,Smartphones,1,5269.41,182
+1,Tablet Cobalto Neo,Smartphones,1,12657.76,201
+1,Audifonos Delta Core,Audio,1,843.37,229
+1,Microfono Nova Nova,Audio,1,705.11,298
+1,Bocina Bluetooth Auric Max,Audio,1,1008.2,305
+1,Monitor Gamer Kortex Ultra,Monitores,1,11251.99,328
+1,Access Point Onyx Edge,Redes,1,12661.44,550

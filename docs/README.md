@@ -10,8 +10,8 @@ Pipeline de ingeniería de datos sobre la empresa ficticia **Corporativo JUC
 S.A. de C.V.** (electrónica, México). Toma tres fuentes crudas y sucias (CSV,
 JSON y hojas de cálculo), las limpia con 10 transformaciones auditables, las
 carga en **PostgreSQL** (modelo relacional 3FN) y **MongoDB** (documentos),
-responde **47 preguntas de negocio** y produce **12 visualizaciones
-interactivas**. Todo se regenera con una orden y una semilla fija
+responde **47 preguntas de negocio** y produce **13 visualizaciones
+interactivas** y **22 indicadores**. Todo se regenera con una orden y una semilla fija
 (`SEED = 20260904`).
 
 ## Empieza por aquí
@@ -23,7 +23,7 @@ interactivas**. Todo se regenera con una orden y una semilla fija
 | [`../README.md`](../README.md) | Guía de operación: instalación, comandos, etapas, hallazgos y elección de tecnologías. |
 | [`../README_CARPETAS.md`](../README_CARPETAS.md) | Mapa carpeta por carpeta: qué genera cada una y qué la consume. |
 | [`../GUIA_CONEXION_NUBE.md`](../GUIA_CONEXION_NUBE.md) | Configuración de Supabase (PostgreSQL) y MongoDB Atlas. |
-| [`../data/reports/reporte.html`](../data/reports/reporte.html) | Reporte visual con las 12 gráficas interactivas (funciona offline). |
+| [`../data/reports/reporte.html`](../data/reports/reporte.html) | Reporte visual con las 13 gráficas interactivas (funciona offline). |
 
 Versiones para entrega:
 
@@ -35,7 +35,7 @@ Versiones para entrega:
 ```text
 Proyecto_BigData/
 ├── src/                    pipeline (generar → ETL → integración → análisis → gráficos)
-├── tests/                  161 pruebas automáticas
+├── tests/                  167 pruebas automáticas
 ├── docs/                   esta documentación (memoria, guion, índice)
 ├── data/
 │   ├── raw/                fuentes crudas A (CSV), B (JSON), C (XLSX)
@@ -43,7 +43,7 @@ Proyecto_BigData/
 │   ├── sql/                DDL, consultas y EXPLAIN
 │   ├── nosql/              colecciones, índices, pipelines y consultas
 │   ├── reports/            evidencia, resultados, reporte.html
-│   └── figures/            12 HTML de Plotly + plotly.min.js
+│   └── figures/            13 HTML de Plotly + plotly.min.js
 ├── .opencode/skills/       skills de documentación, pipeline e informe
 ├── README.md               operación
 ├── README_CARPETAS.md      estructura detallada

@@ -1,5 +1,5 @@
 -- Consultas analiticas Corporativo JUC (20)
--- Ejecutadas: 2026-10-18 15:56:40
+-- Ejecutadas: 2026-11-09 07:04:32
 -- Dialecto: postgresql
 -- @VERDADERO@/@FALSO@ se sustituyen por 1/0 (SQLite) o TRUE/FALSE (PostgreSQL)
 
@@ -7,15 +7,16 @@
 -- Pregunta: Cuales productos mueven mas dinero?
 -- Resultado: Q01_top_10_productos_por_facturacion.csv
 
-SELECT p.id_producto, p.nombre AS producto, p.categoria,
+SELECT p.id_producto, p.nombre AS producto, cat.nombre AS categoria,
                    SUM(f.total) AS facturacion,
                    SUM(f.cantidad) AS unidades,
                    COUNT(DISTINCT f.id_pedido) AS pedidos,
                    ROUND(SUM(f.total) / SUM(f.cantidad), 2) AS precio_promedio
             FROM fact_ventas f
-            INNER JOIN productos p ON p.id_producto = f.id_producto
+            INNER JOIN productos p   ON p.id_producto = f.id_producto
+            INNER JOIN categorias cat ON cat.id_categoria = p.id_categoria
             WHERE f.es_completado = TRUE
-            GROUP BY p.id_producto, p.nombre, p.categoria
+            GROUP BY p.id_producto, p.nombre, cat.nombre
             ORDER BY facturacion DESC
             LIMIT 10;
 
@@ -29,14 +30,15 @@ WITH por_pedido AS (
                 FROM fact_ventas
                 WHERE es_completado = TRUE
             )
-            SELECT c.id_cliente, c.nombre AS cliente, c.ciudad, c.es_premium,
+            SELECT c.id_cliente, c.nombre AS cliente, ci.nombre AS ciudad, c.es_premium,
                    COUNT(p.id_pedido) AS pedidos,
                    SUM(p.total_pedido) AS gasto,
                    ROUND(AVG(p.total_pedido), 2) AS ticket_promedio,
                    MAX(p.fecha_pedido) AS ultima_compra
             FROM por_pedido p
-            INNER JOIN clientes c ON c.id_cliente = p.id_cliente
-            GROUP BY c.id_cliente, c.nombre, c.ciudad, c.es_premium
+            INNER JOIN clientes c       ON c.id_cliente = p.id_cliente
+            LEFT JOIN dim_ciudades ci   ON ci.id_ciudad = c.id_ciudad
+            GROUP BY c.id_cliente, c.nombre, ci.nombre, c.es_premium
             ORDER BY gasto DESC
             LIMIT 10;
 
@@ -98,9 +100,10 @@ WITH por_pedido AS (
 -- Pregunta: Cuanto inventario muerto hay?
 -- Resultado: Q06_productos_en_catalogo_que_nunca_se_vendieron.csv
 
-SELECT p.id_producto, p.nombre AS producto, p.categoria,
+SELECT p.id_producto, p.nombre AS producto, cat.nombre AS categoria,
                    p.precio, p.fecha_lanzamiento
             FROM productos p
+            LEFT JOIN categorias cat ON cat.id_categoria = p.id_categoria
             LEFT JOIN detalle_pedido d ON d.id_producto = p.id_producto
             WHERE d.id_producto IS NULL
             ORDER BY p.precio DESC;
@@ -110,14 +113,15 @@ SELECT p.id_producto, p.nombre AS producto, p.categoria,
 -- Pregunta: Que clientes cancelan y cuanto nos cuestan?
 -- Resultado: Q07_clientes_con_pedidos_cancelados.csv
 
-SELECT c.id_cliente, c.nombre AS cliente, c.ciudad,
+SELECT c.id_cliente, c.nombre AS cliente, ci.nombre AS ciudad,
                    COUNT(DISTINCT pe.id_pedido) AS pedidos_cancelados,
                    SUM(f.total) AS monto_perdido
             FROM fact_ventas f
-            INNER JOIN clientes c   ON c.id_cliente = f.id_cliente
-            INNER JOIN pedidos pe   ON pe.id_pedido = f.id_pedido
+            INNER JOIN clientes c     ON c.id_cliente = f.id_cliente
+            LEFT JOIN dim_ciudades ci ON ci.id_ciudad = c.id_ciudad
+            INNER JOIN pedidos pe     ON pe.id_pedido = f.id_pedido
             WHERE pe.estado = 'cancelado'
-            GROUP BY c.id_cliente, c.nombre, c.ciudad
+            GROUP BY c.id_cliente, c.nombre, ci.nombre
             ORDER BY monto_perdido DESC
             LIMIT 25;
 
@@ -334,17 +338,18 @@ SELECT id_sucursal, estado,
             ORDER BY id_sucursal, facturacion DESC;
 
 
--- Q19: Detalle 360 del pedido (JOIN de 6 tablas)
+-- Q19: Detalle 360 del pedido (JOIN de 7 tablas)
 -- Pregunta: Cual es el detalle completo de cada linea de venta?
--- Resultado: Q19_detalle_360_del_pedido_join_de_6_tablas.csv
+-- Resultado: Q19_detalle_360_del_pedido_join_de_7_tablas.csv
 
-SELECT c.nombre AS cliente, c.ciudad, cat.nombre AS categoria,
+SELECT c.nombre AS cliente, ci.nombre AS ciudad, cat.nombre AS categoria,
                    pr.nombre AS producto, pe.id_pedido, pe.fecha_pedido,
                    d.cantidad, d.precio_unitario, d.descuento, d.total,
                    pg.metodo AS metodo_pago, pg.estado_pago
             FROM detalle_pedido d
             INNER JOIN pedidos pe     ON pe.id_pedido = d.id_pedido
             INNER JOIN clientes c     ON c.id_cliente = pe.id_cliente
+            LEFT JOIN dim_ciudades ci ON ci.id_ciudad = c.id_ciudad
             INNER JOIN productos pr   ON pr.id_producto = d.id_producto
             INNER JOIN categorias cat ON cat.id_categoria = pr.id_categoria
             LEFT JOIN pagos pg  ON pg.id_pedido = pe.id_pedido

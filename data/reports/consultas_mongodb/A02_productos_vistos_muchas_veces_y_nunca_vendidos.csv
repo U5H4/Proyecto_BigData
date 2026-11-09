@@ -1,27 +1,26 @@
-﻿_id,visitas,nombre,categoria,producto
-609,23,Switch Kortex Core,Redes,609
-616,22,Adaptador WiFi Kortex Fury,Redes,616
-614,21,Switch Kortex SE,Redes,614
-613,19,Router Kortex GT,Redes,613
-615,15,Access Point Kortex Mini,Redes,615
-612,15,Cable de Red Kortex Pro,Redes,612
-611,15,Adaptador WiFi Kortex Zen,Redes,611
-619,14,Switch Kortex Vertex,Redes,619
-617,14,Cable de Red Kortex Pulse,Redes,617
-618,14,Router Kortex Nova,Redes,618
-610,13,Access Point Kortex Edge,Redes,610
-581,11,Adaptador WiFi Auric Neo,Redes,581
-561,8,Adaptador WiFi Nova Neo,Redes,561
-193,8,Foldable Helix GT,Smartphones,193
-443,7,Webcam Quartz Elite,Accesorios,443
-543,7,Router Onyx Elite,Redes,543
-75,7,All-in-One Vertex Mini,Computadoras,75
-620,7,Access Point Kortex One,Redes,620
-524,6,Switch Praxis Air,Redes,524
-397,6,Monitor Zylo Pulse,Monitores,397
-326,4,Monitor Portatil Kortex Plus,Monitores,326
-364,4,Monitor Ultrawide Lumen Air,Monitores,364
-530,4,Access Point Praxis Edge,Redes,530
-540,3,Access Point Praxis One,Redes,540
-115,3,Smartphone Zylo Mini,Smartphones,115
-99,3,Mini PC Lumen Vertex,Computadoras,99
+﻿visitas,nombre,categoria,unidades_vendidas,ingresos,producto
+23,Switch Kortex Core,Redes,0,0.0,609
+22,Adaptador WiFi Kortex Fury,Redes,0,0.0,616
+21,Switch Kortex SE,Redes,0,0.0,614
+19,Router Kortex GT,Redes,0,0.0,613
+15,Adaptador WiFi Kortex Zen,Redes,0,0.0,611
+15,Cable de Red Kortex Pro,Redes,0,0.0,612
+15,Access Point Kortex Mini,Redes,0,0.0,615
+14,Cable de Red Kortex Pulse,Redes,0,0.0,617
+14,Router Kortex Nova,Redes,0,0.0,618
+14,Switch Kortex Vertex,Redes,0,0.0,619
+13,Access Point Kortex Edge,Redes,0,0.0,610
+11,Adaptador WiFi Auric Neo,Redes,0,0.0,581
+8,Foldable Helix GT,Smartphones,0,0.0,193
+8,Adaptador WiFi Nova Neo,Redes,0,0.0,561
+7,All-in-One Vertex Mini,Computadoras,0,0.0,75
+7,Webcam Quartz Elite,Accesorios,0,0.0,443
+7,Router Onyx Elite,Redes,0,0.0,543
+7,Access Point Kortex One,Redes,0,0.0,620
+6,Monitor Zylo Pulse,Monitores,0,0.0,397
+6,Switch Praxis Air,Redes,0,0.0,524
+4,Monitor Portatil Kortex Plus,Monitores,0,0.0,326
+4,Monitor Ultrawide Lumen Air,Monitores,0,0.0,364
+4,Access Point Praxis Edge,Redes,0,0.0,530
+3,Mini PC Lumen Vertex,Computadoras,0,0.0,99
+3,Smartphone Zylo Mini,Smartphones,0,0.0,115

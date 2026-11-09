@@ -130,7 +130,7 @@ def test_facturacion_ignora_pedidos_cancelados(fact):
     kpis = A.kpis_generales(fact).set_index("indicador")["valor"]
     completadas = fact[fact.es_completado]
     esperado = completadas.total.sum()
-    assert kpis["Facturacion"] == f"${esperado:,.2f}"
+    assert kpis["Ingresos totales"] == f"${esperado:,.2f}"
     # el cancelado (25000) NO esta dentro
     assert esperado == pytest.approx(50000 + 1000 + 4800)
     assert kpis["Pedidos totales"] == "3"
@@ -151,6 +151,23 @@ def test_tasa_de_cancelacion(fact):
     kpis = A.kpis_generales(fact).set_index("indicador")["valor"]
     # 1 cancelado de 3 pedidos
     assert kpis["Tasa de cancelacion"] == "33.33%"
+
+
+def test_kpis_de_la_parte_vii(fact, documentos):
+    """Los 10 indicadores minimos deben existir con el nombre de la rubrica."""
+    kpis = A.kpis_generales(
+        fact, A.cargar_actividad(documentos), A.cargar_resenas(documentos)
+    ).set_index("indicador")["valor"]
+    requeridos = [
+        "Ingresos totales", "Pedidos totales", "Ticket promedio",
+        "Clientes activos", "Producto mas vendido", "Producto mas visto",
+        "Categoria mas rentable", "Ciudad con mayores ventas",
+        "Calificacion promedio", "Mes con mayores ventas",
+    ]
+    faltan = [k for k in requeridos if k not in kpis.index]
+    assert not faltan, f"faltan indicadores: {faltan}"
+    assert kpis["Ciudad con mayores ventas"] == "Veracruz"
+    assert kpis["Mes con mayores ventas"] == "2025-01"
 
 
 def test_kpis_extra_usan_actividad_y_resenas(fact, documentos):
@@ -398,11 +415,12 @@ def test_construir_todos_devuelve_todos_los_analisis(fact, documentos):
                                "ciudad": ["Veracruz", "Puebla", "Puebla"],
                                "region": ["Sureste", "Centro", "Centro"]})
     r = A.construir_todos(fact, documentos, sucursales)
-    assert len(r) == 20
+    assert len(r) == 21
     for nombre, df in r.items():
         assert isinstance(df, pd.DataFrame), nombre
     assert not r["01_kpis_generales"].empty
     assert not r["15_ley_pareto"].empty
+    assert not r["21_ventas_por_ciudad"].empty
 
 
 def test_ningun_analiz_trae_nulos_en_claves(fact, documentos):

@@ -181,7 +181,7 @@ dimensiones y hechos para cumplir 1FN, 2FN y 3FN:
 
 2. **2FN (sin dependencias parciales).** En `detalle_pedido` la llave es
    `id_detalle` (linea). Los datos que dependen solo de `id_producto`
-   (`nombre`, `categoria`, `precio`, `margen_bruto`) se movieron a `productos`;
+   (`nombre`, `precio`, `margen_bruto`) se movieron a `productos`;
    los que dependen solo de `id_pedido` (`fecha_pedido`, `canal_venta`,
    `id_sucursal`) se movieron a `pedidos`. Una linea ya no repite el nombre del
    producto ni la fecha del pedido.

@@ -56,12 +56,12 @@ ESQUEMA_SQL = {
     "dim_ciudades": {"id_ciudad": "INTEGER", "nombre": "VARCHAR(80)", "region": "VARCHAR(50)"},
     "clientes": {
         "id_cliente": "INTEGER", "nombre": "VARCHAR(160)", "correo": "VARCHAR(160)",
-        "telefono": "VARCHAR(20)", "ciudad": "VARCHAR(80)", "id_ciudad": "INTEGER",
+        "telefono": "VARCHAR(20)", "id_ciudad": "INTEGER",
         "fecha_alta": "DATE", "canal_registro": "VARCHAR(30)", "es_premium": "BOOLEAN",
         "anio_alta": "INTEGER", "mes_alta": "INTEGER", "antiguedad_dias": "INTEGER",
     },
     "productos": {
-        "id_producto": "INTEGER", "nombre": "VARCHAR(200)", "categoria": "VARCHAR(80)",
+        "id_producto": "INTEGER", "nombre": "VARCHAR(200)",
         "id_categoria": "INTEGER", "precio": "NUMERIC(12,2)", "margen_bruto": "NUMERIC(5,4)",
         "costo_estimado": "NUMERIC(12,2)", "utilidad_bruta": "NUMERIC(12,2)",
         "rango_precio": "VARCHAR(20)", "id_proveedor": "INTEGER", "activo": "BOOLEAN",
@@ -244,28 +244,28 @@ def construir_dataset_postgresql(tablas: dict[str, pd.DataFrame]) -> pd.DataFram
         on="id_pedido", how="inner",
     )
     df = df.merge(
-        clientes[["id_cliente", "nombre", "correo", "ciudad", "fecha_alta",
+        clientes[["id_cliente", "nombre", "correo", "id_ciudad", "fecha_alta",
                   "canal_registro", "es_premium"]].rename(
-            columns={"nombre": "cliente_nombre", "ciudad": "ciudad_cliente",
-                     "fecha_alta": "fecha_alta_cliente"}),
+            columns={"nombre": "cliente_nombre", "fecha_alta": "fecha_alta_cliente"}),
         on="id_cliente", how="inner",
     )
     df = df.merge(
-        productos[["id_producto", "nombre", "categoria", "id_categoria", "precio",
+        productos[["id_producto", "nombre", "id_categoria", "precio",
                    "margen_bruto", "costo_estimado", "utilidad_bruta", "rango_precio"]]
         .rename(columns={"nombre": "producto_nombre", "precio": "precio_lista",
                          "margen_bruto": "margen_bruto_producto"}),
         on="id_producto", how="inner",
     )
     df = df.merge(
-        categorias.rename(columns={"nombre": "descripcion_categoria"}),
+        categorias.rename(columns={"nombre": "categoria",
+                                   "descripcion": "descripcion_categoria"}),
         on="id_categoria", how="left",
     )
     # LEFT JOIN a proposito: si la ciudad no esta en la dimension (p.ej.
     # "Sin Ciudad"), la venta se conserva igual.
     df = df.merge(
         ciudades.rename(columns={"nombre": "ciudad"}),
-        left_on="ciudad_cliente", right_on="ciudad", how="left",
+        on="id_ciudad", how="left",
     )
     df = df.merge(
         pagos[["id_pedido", "metodo", "monto", "estado_pago", "diferencia_pago", "conciliado"]],
@@ -284,10 +284,10 @@ def construir_dataset_postgresql(tablas: dict[str, pd.DataFrame]) -> pd.DataFram
         "metodo", "monto", "estado_pago", "diferencia_pago", "conciliado",
     ]
     finales = [c for c in orden if c in df.columns]
-    # Los JOIN dejan columnas que ya estan representadas arriba
-    # (ciudad_cliente == ciudad, descripcion == descripcion_categoria). Se
-    # eliminan para no duplicar el mismo dato en el CSV entregable.
-    redundantes = {"ciudad_cliente", "descripcion"}
+    # Los JOIN dejan columnas que ya estan representadas arriba (la
+    # descripcion de la categoria). Se eliminan para no duplicar el mismo dato
+    # en el CSV entregable.
+    redundantes: set[str] = set()
     extras = [
         c for c in df.columns
         if c not in finales and c not in redundantes
@@ -372,7 +372,20 @@ def construir_documentos_mongo(
     """3 colecciones con la forma exacta del punto 16-18 del enunciado."""
     clientes = tablas["clientes"].set_index("id_cliente")
     productos = tablas["productos"].set_index("id_producto")
+    categorias = tablas["categorias"].set_index("id_categoria")["nombre"].to_dict()
+    ciudades = tablas["dim_ciudades"].set_index("id_ciudad")["nombre"].to_dict()
+    categoria_producto = productos["id_categoria"].map(categorias)
+    ciudad_cliente = clientes["id_ciudad"].map(ciudades)
     ids_validos = set(productos.index)
+
+    # Ventas por producto (solo pedidos completados). Se incrustan en el
+    # documento de producto para que A02/A03/A10 resuelvan "visto vs vendido"
+    # dentro de MongoDB, sin cruzar contra PostgreSQL.
+    lineas = tablas["detalle_pedido"].merge(
+        tablas["pedidos"][["id_pedido", "es_completado"]], on="id_pedido", how="left")
+    lineas = lineas[lineas["es_completado"] == True]
+    ventas_producto = lineas.groupby("id_producto").agg(
+        unidades_vendidas=("cantidad", "sum"), ingresos=("total", "sum"))
 
     # ---- productos: con atributos variables como subdocumento ----
     docs_productos = []
@@ -397,6 +410,10 @@ def construir_documentos_mongo(
                 "etiquetas": etiquetas,
                 "disponible": bool(r.get("disponible", True)),
                 "fecha_registro": _fecha_iso(r.get("fecha_registro")),
+                "unidades_vendidas": int(
+                    ventas_producto["unidades_vendidas"].get(r["id_producto"], 0)),
+                "ingresos": round(float(
+                    ventas_producto["ingresos"].get(r["id_producto"], 0.0)), 2),
             }
         )
 
@@ -412,8 +429,7 @@ def construir_documentos_mongo(
                 "cliente": {"id": cid, "nombre": nombre_cliente},
                 "producto": productos.loc[r["id_producto"], "nombre"]
                 if r["id_producto"] in productos.index else None,
-                "categoria": productos.loc[r["id_producto"], "categoria"]
-                if r["id_producto"] in productos.index else None,
+                "categoria": categoria_producto.get(r["id_producto"]),
                 "calificacion": int(r["calificacion"]),
                 "comentario": r["comentario"],
                 "verificada": bool(r["verificada"]),
@@ -428,15 +444,13 @@ def construir_documentos_mongo(
         docs_actividad.append(
             {
                 "usuario": int(r["usuario"]),
-                "ciudad_usuario": clientes.loc[int(r["usuario"]), "ciudad"]
-                if int(r["usuario"]) in clientes.index else "Sin Ciudad",
+                "ciudad_usuario": ciudad_cliente.get(int(r["usuario"]), "Sin Ciudad"),
                 "fecha": _fecha_hora_iso(r["fecha_hora"]),
                 "evento": r["evento"],
                 "producto": int(r["producto"]),
                 "nombre_producto": productos.loc[int(r["producto"]), "nombre"]
                 if int(r["producto"]) in productos.index else None,
-                "categoria": productos.loc[int(r["producto"]), "categoria"]
-                if int(r["producto"]) in productos.index else None,
+                "categoria": categoria_producto.get(int(r["producto"])),
                 "dispositivo": r["dispositivo"],
                 "ubicacion": r["ubicacion"],
                 "duracion_seg": _num(r["duracion_seg"]),

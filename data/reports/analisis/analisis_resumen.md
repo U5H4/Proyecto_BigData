@@ -6,18 +6,20 @@ Generado automaticamente por `src/analysis.py`.
 
 | Indicador | Valor | Nota |
 |---|---|---|
-| Facturacion | $127,336,206.51 | solo pedidos completados |
+| Ingresos totales | $127,336,206.51 | solo pedidos completados |
 | Pedidos totales | 2,259 | unicos, no lineas |
 | Pedidos completados | 1,483 |  |
 | Tasa de cancelacion | 34.35% | pedidos cancelados / pedidos totales |
 | Unidades vendidas | 10,782 |  |
 | Ticket promedio | $85,863.93 | facturacion / pedidos completados |
 | Unidades por pedido | 7.27 |  |
-| Clientes | 1,314 | con al menos un pedido |
+| Clientes activos | 1,314 | con al menos un pedido |
 | Productos vendidos | 514 |  |
 | Categorias | 6 |  |
 | Producto mas vendido | Monitor Ultrawide Kortex Air | 252 unidades vendidas |
 | Categoria mas rentable | Computadoras | $19,450,980.64 de utilidad bruta |
+| Ciudad con mayores ventas | Tijuana | $17,084,442.12 facturados |
+| Mes con mayores ventas | 2024-08 | $6,099,562.33; serie completa en 02_ventas_mensuales.csv |
 | Utilidad bruta | $37,982,053.12 | ingreso - costo - descuentos |
 | Margen real ponderado | 29.46% | utilidad / ingreso bruto |
 | Descuentos otorgados | $1,574,292.30 |  |

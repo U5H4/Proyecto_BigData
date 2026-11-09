@@ -6,7 +6,7 @@ Decisiones deliberadas:
   modo que el lector puede hacer *hover* para ver el valor exacto, hacer zoom y
   ocultar series. La libreria `plotly.min.js` se escribe una sola vez en
   `data/figures/` (modo `directory`) y las 12 paginas la reutilizan, asi que no
-  se repite 12 veces. Ademas se arma un `data/reports/reporte.html` con las 12
+  se repite 12 veces. Ademas se arma un `data/reports/reporte.html` con las 13
   figuras en una sola pagina (JS incrustado).
 - **Una sola fuente de verdad.** Cada grafico se arma con los DataFrames que
   devuelve `analysis.construir_todos()`, nunca recalculando. Un grafico no
@@ -22,6 +22,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 import analysis
 from config import COLOR_ALERTA, COLOR_CATEGORIA, COLOR_NEUTRO, COLOR_OK, EMPRESA, FIGURES, REPORTS
@@ -95,28 +96,39 @@ def grafico_ventas_mensuales(d: pd.DataFrame) -> go.Figure:
         return _vacio(fig, "sin ventas mensuales")
     parcial = d["mes_incompleto"].fillna(False).to_numpy()
     colores = ["#B0BEC5" if p else PALETA[0] for p in parcial]
+    fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.09,
+                        row_heights=[0.62, 0.38],
+                        subplot_titles=("Facturacion", "Ticket promedio por pedido"))
+    fig.update_layout(
+        template="plotly_white", height=660, margin=dict(l=70, r=40, t=115, b=60),
+        font=dict(family=_FUENTE, size=12, color="#37474F"), showlegend=False,
+        hovermode="closest",
+        title=dict(text="<b>Facturacion mensual</b>", x=0, xanchor="left",
+                   font=dict(size=18, color="#263238")),
+    )
+    fig.add_annotation(text="Barras: pesos facturados. Linea: ticket promedio por pedido.",
+                       xref="paper", yref="paper", x=0, y=1.03, xanchor="left",
+                       yanchor="bottom", showarrow=False,
+                       font=dict(size=11.5, color="#607D8B"))
     fig.add_bar(
         x=d["anio_mes"], y=d["facturacion"], marker_color=colores, name="Facturacion",
-        hovertemplate="%{x}<br>Facturacion: %{y:,.0f}<extra></extra>",
+        hovertemplate="%{x}<br>Facturacion: %{y:,.0f}<extra></extra>", row=1, col=1,
     )
     fig.add_scatter(
         x=d["anio_mes"], y=d["ticket_promedio"], mode="lines+markers", name="Ticket promedio",
-        yaxis="y2", line=dict(color=COLOR_ALERTA, width=2),
+        line=dict(color=COLOR_ALERTA, width=2),
         marker=dict(size=5, color=COLOR_ALERTA),
-        hovertemplate="%{x}<br>Ticket promedio: %{y:,.0f}<extra></extra>",
+        hovertemplate="%{x}<br>Ticket promedio: %{y:,.0f}<extra></extra>", row=2, col=1,
     )
-    fig.update_layout(
-        xaxis=dict(tickangle=-60, tickfont=dict(size=10)),
-        yaxis=dict(title_text="Facturacion", tickformat=_eje_s(), gridcolor="#ECEFF1"),
-        yaxis2=dict(title_text="Ticket promedio", overlaying="y", side="right",
-                    tickformat=_eje_s(), showgrid=False,
-                    tickfont=dict(color=COLOR_ALERTA),
-                    title_font=dict(color=COLOR_ALERTA)),
-    )
+    fig.update_xaxes(tickangle=-60, tickfont=dict(size=10))
+    fig.update_yaxes(tickformat=_eje_s(), gridcolor="#ECEFF1", row=1, col=1,
+                      title_text="Facturacion")
+    fig.update_yaxes(tickformat=_eje_s(), gridcolor="#ECEFF1", row=2, col=1,
+                      title_text="Ticket promedio")
     if parcial.any():
         fig.add_annotation(x=d["anio_mes"].iloc[-1], y=d["facturacion"].iloc[-1],
                            text="ultimo mes<br>puede estar incompleto", showarrow=True,
-                           arrowhead=2, ax=-60, ay=-40,
+                           arrowhead=2, ax=-75, ay=-40, xanchor="right",
                            font=dict(size=10, color="#78909C"))
     _pie(fig, f"Total {numero(d['facturacion'].sum())} | "
               f"{numero(d['pedidos'].sum())} pedidos | "
@@ -201,20 +213,26 @@ def grafico_pareto(d: pd.DataFrame) -> go.Figure:
     if d.empty:
         return _vacio(fig, "sin productos vendidos")
     top = d.head(60).reset_index(drop=True)
+    nombres = top["producto_nombre"].astype(str)
+    cortos = [f"{i + 1}) {_cortar(p, 12)}" for i, p in enumerate(nombres)]
+    salto = max(1, len(top) // 12)  # 12 etiquetas como maximo: legibles sin hover
+    pos = list(range(0, len(top), salto))
     fig.add_bar(
-        x=[_cortar(p, 16) for p in top["producto_nombre"]], y=top["facturacion"],
-        marker_color=PALETA[0],
-        hovertemplate="%{x}<br>Facturacion: %{y:,.0f}<extra></extra>",
+        x=cortos, y=top["facturacion"],
+        marker_color=PALETA[0], customdata=nombres,
+        hovertemplate="%{customdata}<br>Facturacion: %{y:,.0f}<extra></extra>",
     )
     fig.add_scatter(
-        x=[_cortar(p, 16) for p in top["producto_nombre"]], y=top["acumulado_pct"],
+        x=cortos, y=top["acumulado_pct"],
         mode="lines", yaxis="y2", name="% acumulado",
-        line=dict(color=COLOR_ALERTA, width=2.2),
-        hovertemplate="%{x}<br>Acumulado: %{y:.1f}%<extra></extra>",
+        line=dict(color=COLOR_ALERTA, width=2.2), customdata=nombres,
+        hovertemplate="%{customdata}<br>Acumulado: %{y:.1f}%<extra></extra>",
     )
     fig.add_hline(y=80, line=dict(color=COLOR_OK, width=1.5, dash="dash"), yref="y2")
     fig.update_layout(
-        xaxis=dict(tickangle=-90, tickfont=dict(size=8), title_text="Producto (60 mas facturados)"),
+        xaxis=dict(tickmode="array", tickvals=pos,
+                   ticktext=[cortos[i] for i in pos],
+                   tickangle=-60, title_text="Producto (60 mas facturados)"),
         yaxis=dict(title_text="Facturacion", tickformat=_eje_s(), gridcolor="#ECEFF1"),
         yaxis2=dict(title_text="% acumulado", overlaying="y", side="right", range=[0, 105],
                     showgrid=False, ticksuffix="%",
@@ -223,8 +241,7 @@ def grafico_pareto(d: pd.DataFrame) -> go.Figure:
     )
     n80 = int(d["productos_hasta_80"].iloc[0])
     p80 = float(d["pct_productos_hasta_80"].iloc[0])
-    _pie(fig, f"{n80} de {len(d)} productos ({p80:.1f}% del catalogo vendido) "
-              f"explican el 80% de la facturacion. La linea 80% del total esta en verde.")
+    _pie(fig, f"{n80} de {len(d)} ({p80:.1f}%) = 80% de la venta.")
     return fig
 
 
@@ -308,14 +325,14 @@ def grafico_correlacion(detalle: pd.DataFrame, metricas: pd.DataFrame) -> go.Fig
         return _vacio(fig, "sin datos de navegacion")
     v = detalle["numero_visualizaciones"].astype(float)
     u = detalle["cantidad_vendida"].astype(float)
-    sizes = 6 + 22 * (u / u.max() if u.max() else 1)
+    sizes = 5 + 16 * (u / u.max() if u.max() else 1)
     fig.add_scatter(
         x=v, y=u, mode="markers", name="Productos",
         marker=dict(size=sizes, color=np.where(u > 0, PALETA[0], COLOR_ALERTA),
-                    opacity=0.55, line=dict(width=0)),
+                    opacity=0.4, line=dict(width=0)),
         customdata=np.stack([detalle.get("nombre", pd.Series([""] * len(detalle))).astype(str)], axis=-1)
         if "nombre" in detalle.columns else None,
-        hovertemplate="Visualizaciones: %{x}<br>Unidades: %{y}<extra></extra>",
+        hovertemplate="%{customdata[0]}<br>Visualizaciones: %{x}<br>Unidades: %{y}<extra></extra>",
     )
     sub = detalle[(v > 0) & (u > 0)]
     if len(sub) > 2:
@@ -329,7 +346,7 @@ def grafico_correlacion(detalle: pd.DataFrame, metricas: pd.DataFrame) -> go.Fig
         )
         fig.add_annotation(
             text=f"ajuste lineal (solo visitados y vendidos)<br>pendiente = {pendiente:.2f} unidades/visita",
-            xref="paper", yref="paper", x=0.98, y=0.96, xanchor="right", yanchor="top",
+            xref="paper", yref="paper", x=0.5, y=0.97, xanchor="center", yanchor="top",
             showarrow=False, font=dict(size=11, color=COLOR_ALERTA),
             bgcolor="white", bordercolor="#FFCDD2", borderpad=6,
         )
@@ -497,6 +514,34 @@ def grafico_sucursales(d: pd.DataFrame) -> go.Figure:
 
 
 # --------------------------------------------------------------------------
+# 13. Ciudades
+# --------------------------------------------------------------------------
+def grafico_ciudades(d: pd.DataFrame) -> go.Figure:
+    fig = _fig(
+        "Ventas por ciudad",
+        "Barras: facturacion de pedidos completados. Etiqueta: participacion del total.",
+    )
+    if d.empty:
+        return _vacio(fig, "sin ventas por ciudad")
+    d = d.sort_values("facturacion", ascending=True)
+    fig.add_bar(
+        orientation="h", x=d["facturacion"], y=[_cortar(s, 22) for s in d["segmento"]],
+        marker_color=[PALETA[i % len(PALETA)] for i in range(len(d))],
+        text=[f"{v:.1f}%" for v in d["participacion_pct"]], textposition="outside",
+        hovertemplate="%{y}<br>Facturacion: %{x:,.0f}<extra></extra>",
+    )
+    fig.update_layout(
+        xaxis=dict(title_text="Facturacion", tickformat=_eje_s(), gridcolor="#ECEFF1"),
+        yaxis=dict(tickfont=dict(size=11)),
+    )
+    _pie(fig, " | ".join(
+        f"{_cortar(r.segmento, 18)}: {numero(r.facturacion)}"
+        for r in d.sort_values("facturacion", ascending=False).itertuples()
+    ))
+    return fig
+
+
+# --------------------------------------------------------------------------
 # Orquestacion
 # --------------------------------------------------------------------------
 GRAFICOS = [
@@ -513,12 +558,13 @@ GRAFICOS = [
     ("10_impacto_descuentos", "Descuentos vs margen", lambda r: grafico_descuentos(r["17_impacto_descuentos"])),
     ("11_satisfaccion", "Calificaciones", lambda r: grafico_satisfaccion(r["18_satisfaccion"])),
     ("12_por_sucursal", "Facturacion por sucursal", lambda r: grafico_sucursales(r["06_por_sucursal"])),
+    ("13_ventas_por_ciudad", "Ventas por ciudad", lambda r: grafico_ciudades(r["21_ventas_por_ciudad"])),
 ]
 
 
 def _guardar(fig: go.Figure, nombre: str, destino: Path) -> Path:
     """Exporta una figura a HTML. La primera escribe `plotly.min.js` en la
-    carpeta (modo `directory`) y las siguientes lo reutilizan: 12 paginas
+    carpeta (modo `directory`) y las siguientes lo reutilizan: 13 paginas
     pequenas + una sola copia de la libreria, todo offline."""
     ruta = destino / f"{nombre}.html"
     fig.write_html(ruta, include_plotlyjs="directory", full_html=True)
@@ -526,7 +572,7 @@ def _guardar(fig: go.Figure, nombre: str, destino: Path) -> Path:
 
 
 def _reporte_html(figuras: list[tuple[str, str, go.Figure]], destino: Path) -> Path:
-    """Una sola pagina con las 12 figuras. Reutiliza `plotly.min.js` que cada
+    """Una sola pagina con las 13 figuras. Reutiliza `plotly.min.js` que cada
     figura individual ya escribio en `data/figures/` (ruta relativa
     `../figures/plotly.min.js`), asi que este HTML pesa unos pocos KB."""
     trozos = []

@@ -139,6 +139,7 @@ def test_check_de_total_tolera_error_de_coma_flotante(integ, fact):
     Un CHECK con igualdad exacta rechazaria filas validas.
     """
     integ.crear_esquema(fact)
+    integ.cargar(_tablas_pequenas(), fact)
     with integ.motor.begin() as conn:
         det = pd.DataFrame([{
             "id_detalle": 99, "id_pedido": 1, "id_producto": 1, "cantidad": 1,
@@ -146,7 +147,8 @@ def test_check_de_total_tolera_error_de_coma_flotante(integ, fact):
             "subtotal": 41097.36, "total": 40242.39, "porcentaje_descuento": 2.08,
         }])
         det.to_sql("detalle_pedido", conn, if_exists="append", index=False)
-        n = conn.execute(text("SELECT COUNT(*) FROM detalle_pedido")).scalar_one()
+        n = conn.execute(text(
+            "SELECT COUNT(*) FROM detalle_pedido WHERE id_detalle = 99")).scalar_one()
     assert n == 1
 
 
@@ -270,23 +272,45 @@ def test_carga_y_verificacion_pasan(integ, fact):
     assert set(verif.tabla) == set(ORDEN_CARGA) | {"fact_ventas"}
 
 
-def test_detecta_huerfano_de_fk(integ, fact):
-    """Si una FK queda rota, verificar() debe EXPLOTAR, no pasar."""
-    tablas = _tablas_pequenas()
+def test_sqlite_declara_y_aplica_las_fk(integ, fact):
+    """SQLite debe declarar las FK dentro del CREATE TABLE y hacerlas cumplir."""
     integ.crear_esquema(fact)
-    integ.cargar(tablas, fact)
-    with integ.motor.begin() as conn:
-        conn.execute(text("UPDATE detalle_pedido SET id_producto = 999"))
+    fks = inspect(integ.motor).get_foreign_keys("detalle_pedido")
+    refs = {(f["referred_table"], tuple(f["constrained_columns"])) for f in fks}
+    assert ("pedidos", ("id_pedido",)) in refs
+    assert ("productos", ("id_producto",)) in refs
+
+    integ.cargar(_tablas_pequenas(), fact)
+    with pytest.raises(IntegrityError):
+        with integ.motor.begin() as conn:
+            conn.execute(text("UPDATE detalle_pedido SET id_producto = 999"))
+
+
+def test_verificar_detecta_huerfano_con_fk_desactivada(integ, fact):
+    """verificar() sigue siendo la red de seguridad si el motor no aplica FK."""
+    import sqlite3
+
+    integ.crear_esquema(fact)
+    integ.cargar(_tablas_pequenas(), fact)
+    con = sqlite3.connect(integ.motor.url.database)
+    con.execute("PRAGMA foreign_keys=OFF")
+    con.execute("UPDATE detalle_pedido SET id_producto = 999")
+    con.commit()
+    con.close()
     with pytest.raises(AssertionError, match="Huerfanos"):
         integ.verificar()
 
 
 def test_detecta_conteo_descuadrado(integ, fact):
-    tablas = _tablas_pequenas()
+    import sqlite3
+
     integ.crear_esquema(fact)
-    integ.cargar(tablas, fact)
-    with integ.motor.begin() as conn:
-        conn.execute(text("DELETE FROM clientes"))
+    integ.cargar(_tablas_pequenas(), fact)
+    con = sqlite3.connect(integ.motor.url.database)
+    con.execute("PRAGMA foreign_keys=OFF")
+    con.execute("DELETE FROM clientes")
+    con.commit()
+    con.close()
     with pytest.raises(AssertionError, match="Conteos"):
         integ.verificar()
 
@@ -335,6 +359,37 @@ def test_ddl_define_llave_unica_y_not_null(integ, fact):
     nullable = {c["name"]: c["nullable"] for c in insp.get_columns("clientes")}
     assert nullable["nombre"] is False
     assert nullable["correo"] is False
+
+
+def test_esquema_3fn_no_redunda_nombres_de_dimensiones():
+    """El nombre de la categoria/ciudad vive solo en su dimension."""
+    assert "categoria" not in ESQUEMA_SQL["productos"]
+    assert "ciudad" not in ESQUEMA_SQL["clientes"]
+    assert "id_categoria" in ESQUEMA_SQL["productos"]
+    assert "id_ciudad" in ESQUEMA_SQL["clientes"]
+
+
+def test_ddl_exportado_termina_cada_sentencia_con_punto_y_coma(integ, fact):
+    integ.crear_esquema(fact)
+    texto = (integ.reporte_dir / "01_ddl.sql").read_text(encoding="utf-8")
+    assert texto.count("CREATE TABLE") == 9  # 8 tablas + fact_ventas
+    assert texto.count(";") == 29  # 9 tablas + vista + 19 indices
+    assert texto.rstrip().endswith(";")
+    assert ")\n\nCREATE" not in texto, "hay una sentencia sin punto y coma"
+    assert "CREATE TABLE fact_ventas" in texto
+
+
+def test_dataset_postgresql_recupera_nombres_desde_las_dimensiones():
+    """Al quitar el texto redundante, la fact lo recupera via JOIN."""
+    from etl_load import construir_dataset_postgresql, construir_tablas
+
+    d = _tablas_pequenas().copy()
+    d["productos"] = d["productos"].drop(columns=["id_categoria"])
+    tablas = construir_tablas(d)
+    fact = construir_dataset_postgresql(tablas)
+    assert {"categoria", "ciudad"} <= set(fact.columns)
+    assert fact["categoria"].notna().all()
+    assert fact["ciudad"].notna().all()
 
 
 def test_esquema_estrella_clientes_apunta_a_dim_ciudades():

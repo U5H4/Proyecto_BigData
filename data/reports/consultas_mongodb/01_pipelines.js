@@ -1,5 +1,5 @@
 // Pipelines de agregacion Corporativo JUC
-// Generados: 2026-10-18 15:57:03
+// Generados: 2026-11-09 07:05:09
 // Ejecutar con mongosh / mongodump sobre la base de datos NoSQL (ver MONGO_DB en src/config.py)
 
 // A01: Top 10 productos mas vistos
@@ -34,7 +34,8 @@ db.actividad_usuario.aggregate(
   },
   {
     "$sort": {
-      "visitas": -1
+      "visitas": -1,
+      "_id": 1
     }
   },
   {
@@ -77,18 +78,75 @@ db.actividad_usuario.aggregate(
   },
   {
     "$sort": {
-      "visitas": -1
+      "visitas": -1,
+      "_id": 1
     }
   },
   {
     "$limit": 150
+  },
+  {
+    "$lookup": {
+      "from": "productos",
+      "localField": "_id",
+      "foreignField": "id_producto",
+      "as": "ficha"
+    }
+  },
+  {
+    "$addFields": {
+      "unidades_vendidas": {
+        "$ifNull": [
+          {
+            "$arrayElemAt": [
+              "$ficha.unidades_vendidas",
+              0
+            ]
+          },
+          0
+        ]
+      },
+      "ingresos": {
+        "$ifNull": [
+          {
+            "$arrayElemAt": [
+              "$ficha.ingresos",
+              0
+            ]
+          },
+          0
+        ]
+      }
+    }
+  },
+  {
+    "$match": {
+      "unidades_vendidas": 0
+    }
+  },
+  {
+    "$sort": {
+      "visitas": -1,
+      "_id": 1
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "producto": "$_id",
+      "nombre": 1,
+      "categoria": 1,
+      "visitas": 1,
+      "unidades_vendidas": 1,
+      "ingresos": 1
+    }
   }
 ]
 )
 
 // A03: Productos vendidos pese a ser poco vistos
 // Pregunta: Cual es la under-exposure que nos cuesta venta?
-// Nota: Cruce navegacion (MongoDB) contra fact_ventas (SQL): el $lookup se resuelve aqui porque las dos bases son sistemas distintos.
+// Nota: El $lookup contra `productos` incrusta las unidades vendidas; asi el cruce navegacion-venta queda resuelto dentro de MongoDB.
 db.actividad_usuario.aggregate(
 [
   {
@@ -112,11 +170,71 @@ db.actividad_usuario.aggregate(
   },
   {
     "$sort": {
-      "visitas": 1
+      "visitas": 1,
+      "_id": 1
     }
   },
   {
     "$limit": 150
+  },
+  {
+    "$lookup": {
+      "from": "productos",
+      "localField": "_id",
+      "foreignField": "id_producto",
+      "as": "ficha"
+    }
+  },
+  {
+    "$addFields": {
+      "unidades_vendidas": {
+        "$ifNull": [
+          {
+            "$arrayElemAt": [
+              "$ficha.unidades_vendidas",
+              0
+            ]
+          },
+          0
+        ]
+      },
+      "ingresos": {
+        "$ifNull": [
+          {
+            "$arrayElemAt": [
+              "$ficha.ingresos",
+              0
+            ]
+          },
+          0
+        ]
+      }
+    }
+  },
+  {
+    "$match": {
+      "unidades_vendidas": {
+        "$gt": 0
+      }
+    }
+  },
+  {
+    "$sort": {
+      "unidades_vendidas": -1,
+      "visitas": 1,
+      "_id": 1
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "producto": "$_id",
+      "nombre": 1,
+      "categoria": 1,
+      "visitas": 1,
+      "unidades_vendidas": 1,
+      "ingresos": 1
+    }
   }
 ]
 )
@@ -195,7 +313,8 @@ db.actividad_usuario.aggregate(
   },
   {
     "$sort": {
-      "visitas": -1
+      "visitas": -1,
+      "_id": 1
     }
   },
   {
@@ -278,7 +397,8 @@ db.resenas.aggregate(
   },
   {
     "$sort": {
-      "total_resenas": -1
+      "total_resenas": -1,
+      "_id": 1
     }
   },
   {
@@ -323,7 +443,8 @@ db.resenas.aggregate(
   },
   {
     "$sort": {
-      "likes": -1
+      "likes": -1,
+      "_id": 1
     }
   },
   {
@@ -368,7 +489,8 @@ db.productos.aggregate(
   },
   {
     "$sort": {
-      "productos": -1
+      "productos": -1,
+      "_id": 1
     }
   }
 ]
@@ -389,7 +511,8 @@ db.actividad_usuario.aggregate(
   },
   {
     "$sort": {
-      "eventos": -1
+      "eventos": -1,
+      "_id": 1
     }
   },
   {
@@ -459,12 +582,99 @@ db.actividad_usuario.aggregate(
       "_id": "$producto",
       "visitas": {
         "$sum": 1
+      },
+      "nombre": {
+        "$first": "$nombre_producto"
+      },
+      "categoria": {
+        "$first": "$categoria"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "productos",
+      "localField": "_id",
+      "foreignField": "id_producto",
+      "as": "ficha"
+    }
+  },
+  {
+    "$addFields": {
+      "unidades_vendidas": {
+        "$ifNull": [
+          {
+            "$arrayElemAt": [
+              "$ficha.unidades_vendidas",
+              0
+            ]
+          },
+          0
+        ]
+      },
+      "ingresos": {
+        "$ifNull": [
+          {
+            "$arrayElemAt": [
+              "$ficha.ingresos",
+              0
+            ]
+          },
+          0
+        ]
+      }
+    }
+  },
+  {
+    "$addFields": {
+      "vendido": {
+        "$gt": [
+          "$unidades_vendidas",
+          0
+        ]
+      },
+      "ratio_ventas_por_visita": {
+        "$round": [
+          {
+            "$cond": [
+              {
+                "$gt": [
+                  "$visitas",
+                  0
+                ]
+              },
+              {
+                "$divide": [
+                  "$unidades_vendidas",
+                  "$visitas"
+                ]
+              },
+              0
+            ]
+          },
+          3
+        ]
       }
     }
   },
   {
     "$sort": {
-      "visitas": -1
+      "vendido": -1,
+      "unidades_vendidas": -1,
+      "_id": 1
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "producto": "$_id",
+      "nombre": 1,
+      "categoria": 1,
+      "visitas": 1,
+      "unidades_vendidas": 1,
+      "ingresos": 1,
+      "vendido": 1,
+      "ratio_ventas_por_visita": 1
     }
   }
 ]
@@ -522,7 +732,8 @@ db.resenas.aggregate(
   },
   {
     "$sort": {
-      "rating_promedio": -1
+      "rating_promedio": -1,
+      "_id": 1
     }
   },
   {
@@ -571,7 +782,8 @@ db.actividad_usuario.aggregate(
   },
   {
     "$sort": {
-      "eventos": -1
+      "eventos": -1,
+      "_id": 1
     }
   },
   {
