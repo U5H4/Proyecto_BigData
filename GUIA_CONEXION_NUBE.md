@@ -21,7 +21,7 @@ El pooler evita problemas de IPv6 en muchas redes.
 
 ```env
 # PostgreSQL en Supabase
-SUPABASE_HOST=aws-0-us-west-2.pooler.supabase.com
+SUPABASE_HOST=aws-0-<region>.pooler.supabase.com
 SUPABASE_PORT=5432
 SUPABASE_DATABASE=postgres
 SUPABASE_USER=postgres.<SU_PROYECTO_ID>

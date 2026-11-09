@@ -89,7 +89,7 @@ Proyecto_BigData/
     etl_transform.py       10 transformaciones (T01..T10)
     etl_load.py            3FN + datasets analiticos + documentos
     integration.py         DDL, carga, 20 SQL, 12 pipelines, 15 find
-    analysis.py            19 analisis de negocio
+    analysis.py            21 analisis de negocio
     viz.py                 13 graficos Plotly -> HTML
     er_diagram.py          diagrama ER (PNG) + justificacion 3FN
     run_all.py             orquestador de etapas
