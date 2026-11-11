@@ -16,9 +16,9 @@ dividido y funcione concepto a concepto.
 > Cómo leer el documento: las secciones 1–5 explican el proyecto de forma
 > general; 6–12 siguen la estructura del enunciado (Partes I–VII); 13–16 son
 > decisiones, verificación y detalles prácticos; 17–19 cubren limitaciones y los
-> anexos; 20–25 son la guía operativa completa: flujo de ejecución, comandos,
+> anexos; 20–26 son la guía operativa completa: flujo de ejecución, comandos,
 > qué hace cada archivo, justificación de cada decisión, preguntas probables
-> del jurado y guion de exposición.
+> del jurado, guion de exposición y qué hace cada dependencia.
 
 ---
 
@@ -46,6 +46,10 @@ dividido y funcione concepto a concepto.
 | Visualizaciones | 13 (Plotly, HTML interactivo) |
 | Indicadores | 22 |
 
+> Cada número de esta tabla tiene una base de cálculo que conviene tener lista
+> para el jurado — ver **sección 15.1** (por qué "pedidos" aparece tres veces,
+> ticket por pedido vs por línea, rango de fechas del dataset 2024‑2026).
+
 **Lo que hace el sistema, en una frase:** genera tres fuentes sucias, las
 limpia con 10 transformaciones auditables, las carga en PostgreSQL (3FN) y
 MongoDB, y responde 47 preguntas de negocio que atraviesan ambos motores, con
@@ -70,7 +74,7 @@ indicadores, ejecutarse parcialmente en la nube y soportar crecimiento.
 | Componente | Implementación real |
 |---|---|
 | ETL | Python + Pandas (extract → transform → load) con 10 transformaciones auditables |
-| PostgreSQL | Modelo relacional 3FN (9 tablas + vista), cargado en **Supabase** (cloud real) |
+| PostgreSQL | Modelo relacional 3FN (9 tablas: 8 operativas + fact_ventas, más la vista v_resumen_ventas), cargado en **Supabase** (cloud real) |
 | MongoDB | Colecciones documentales, cargadas en **MongoDB Atlas M0** (cloud real) |
 | Cloud Computing | Supabase (Database) + Atlas (Database) como servicios administrados; almacenamiento/cómputo vía árbol portable (simulado, permitido por el enunciado) + degradación local |
 
@@ -97,7 +101,7 @@ ETL  extract -> transform -> load     (10 transformaciones, evidencia de calidad
         |
         v
 INTEGRACIÓN
-   PostgreSQL 3FN (9 tablas + fact_ventas desnormalizada + vista v_resumen_ventas)
+   PostgreSQL 3FN (9 tablas: 8 operativas + fact_ventas, más la vista v_resumen_ventas)
    MongoDB       (productos / resenas / actividad_usuario, 12 índices)
         |
         v
@@ -330,7 +334,7 @@ afectados y regla aplicada).
 
 ### 8.1 Modelo relacional (3FN)
 
-Las 6 tablas exigidas más dos dimensiones y una tabla analítica:
+Las 6 tablas exigidas + 2 dimensiones (`dim_ciudades`, `dim_sucursales`) + la fact analítica (`fact_ventas`) — 9 tablas en total, más la vista:
 
 `categorias`, `dim_ciudades`, `dim_sucursales`, `clientes`, `productos`,
 `pedidos`, `detalle_pedido`, `pagos` + `fact_ventas` (desnormalizado
@@ -405,9 +409,22 @@ con **7 tablas** (Q19: "detalle 360 del pedido"), agregaciones
 | Q19 | Detalle 360 del pedido (JOIN de 7 tablas) |
 | Q20 | Resumen mensual vía vista `v_resumen_ventas` |
 
-El nivel (básico/intermedio/avanzado) no está etiquetado en el SQL: hay
-consultas de agregación simple (Q01–Q06), intermedias (Q10–Q18) y avanzadas
-(Q19, Q20, Q12); ver sección 16, "Rúbrica vs repo: detalle de etiquetas".
+### 8.3.1 Distribución por nivel (criterio del equipo)
+
+El enunciado pide que las consultas se distribuyan entre nivel **básico,
+intermedio y avanzado**. El equipo asigna el nivel así:
+
+| Nivel | Criterio | Consultas |
+|---|---|---|
+| **Básico** (12) | Lectura/filtro con agregación simple sobre 1–2 tablas | Q01, Q02, Q04, Q05, Q06, Q07, Q08, Q09, Q10, Q11, Q14, Q18 |
+| **Intermedio** (6) | Cruces con lógica compuesta (series, ranking, pivot, clasificación) | Q03 (serie temporal), Q12 (Pareto/ventana), Q13 (margen real), Q15 (nuevos vs recurrentes), Q16 (pivot trimestral), Q17 (HAVING) |
+| **Avanzado** (2) | Multi-tabla extremo o encapsulamiento | Q19 (JOIN de 7 tablas), Q20 (resumen sobre la vista) |
+
+20 = 12 + 6 + 2. El archivo `02_consultas.sql` no etiqueta el nivel en cada
+consulta (ver sección 16, "Rúbrica vs repo: detalle de etiquetas"); si el
+jurado lo exige señalado dentro del propio SQL, es un cambio de comentarios en
+`integration.py` + regenerar `02_consultas.sql` — el equipo lo puede hacer y
+el resultado es el mismo.
 
 ## 9. Parte IV — MongoDB
 
@@ -680,6 +697,45 @@ en silencio (las pruebas del orquestador comprueban qué etapas se eligen).
 
 ## 15. Hallazgos y cifras clave (para el Word)
 
+### 15.1 Bases de cálculo de las cifras (que el jurado no pregunte dos veces)
+
+**"Pedidos" aparece en tres cifras distintas — ninguna contradice a otra:**
+
+| Cifra | Significado | Dónde se ve |
+|---|---|---|
+| **3,600** | `pedidos` tras la T01 (eliminación de duplicados) | `calidad_transformaciones.csv` |
+| **3,277** | `pedidos` en la tabla normalizada 3FN (tras reglas de descarte/validación); todos únicos (`pedidos.csv`) | `validacion_minimos.csv`, `tablas/pedidos.csv` |
+| **2,259** | Pedidos de la **fact** (`dataset_postgresql.csv`): solo los que tienen **al menos una línea de detalle válida** después de la limpieza (las líneas se descartan por reglas y no todos los pedidos sobreviven el cruce) | KPIs, embudo, fact |
+| **1,483 / 776** | Completados / no completados de los 2,259 (cancelación = 776/2,259 = **34.35%**) | KPIs |
+
+En corto: 3,277 es el **universo de pedidos**; 2,259 es el **universo de
+ventas medibles** (los que aportan una o más líneas); 1,483 es el **universo
+de ingresos**. Nunca difiere por error: indica qué población está usando
+cada métrica.
+
+**Clientes — la diferencia de 1:** tras la T01 (`2143 → 1863`), la T03
+(tratamiento de nulos, imputables críticos) descarta exactamente **1** registro
+(`1863 → 1862`). Por eso la tabla limpia tiene **1,862** clientes aunque la
+evidencia intermedia muestre 1,863.
+
+**Ticket promedio vs tickets con/sin descuento:**
+
+| Métrica | Base | Valor |
+|---|---|---|
+| Ticket promedio ($85,863.93) | facturación de pedidos completados ÷ pedidos completados — **por pedido** | 1,483 pedidos |
+| Ticket con/sin descuento ($48,090.66 / $50,042.85) | promedio **por línea** con/sin descuento | líneas `detalle_pedido` |
+| Ingreso por cliente ($96,907.31) | facturación completada ÷ clientes activos | por cliente |
+
+Son **bases distintas**: la del pedido (completa una venta) y la de la línea
+(detalle de la venta). Por eso "Ticket promedio" no coincide con ellas ni
+debe hacerlo.
+
+**Rango de fechas del dataset:** `2024-01-01` hasta `2026-12-09`; 2024: 1,033
+pedidos · 2025: 1,221 · 2026: 1,023. Que **el mes con mayores ventas sea
+2024-08** es coherente: el dataset cubre tres años y agosto 2024 fue el pico
+($6.10M); "el mejor mes" hace referencia al periodo cubierto, no a una
+comparación intermensual universal.
+
 **Facturación y completitud.** $127,336,206.51 en 1,483 pedidos completados de
 2,259 (cancelación 34.35%); ticket promedio $85,864; 10,782 unidades; ingreso
 por cliente $96,907.31.
@@ -727,7 +783,7 @@ fallar; `pytest` (167 pruebas) corre 100% local en segundos; y las evidencias
 
 **Atlas intermitente.** En la corrida del 2026-11-09 el clúster respondió con
 "No replica set members… Timeout" y el pipeline cayó a modo local; minutos
-después conectó normal. En el expo: pro Barrett, muestre `pytest` y la
+después conectó normal. En el expo, si eso ocurre, muestre `pytest` y la
 evidencia si el vivo falla.
 
 **Ruido entre corridas.** UUIDs de plotly y ObjectIds cambian siempre; los CSV
@@ -847,8 +903,9 @@ EXPLAIN, consultas) · 9. MongoDB (colecciones, índices, pipelines y consultas)
 layout) · 12. Indicadores y hallazgos · 13. Visualizaciones y reporte ·
 14. Pruebas y verificación · 15. Comandos y flujo de ejecución (secciones
 20–22) · 16. Preguntas de defensa y justificación de decisiones (secciones
-23–24) · 17. Limitaciones y trabajo futuro · 18. Anexos (diccionario, rutas de
-evidencia, cifras, guion de exposición).
+23–24) · 17. Entorno y dependencias (sección 26) · 18. Limitaciones y trabajo
+futuro · 19. Anexos (diccionario, rutas de evidencia, cifras, guion de
+exposición).
 
 Nota para el maquetado: las figuras del Word deben ser imágenes estáticas
 (embebidas o enlazadas) o capturas del reporte; el HTML interactivo no se
@@ -906,8 +963,8 @@ a la línea real del error:
 
 `integration.main()` hace, en orden:
 
-1. **DDL**: crea el esquema (9 objetos: 8 tablas + `fact_ventas` analítica +
-   vista `v_resumen_ventas`, 19 índices, restricciones PK/FK/UNIQUE/NOT NULL/CHECK — ver sección 8).
+1. **DDL**: crea el esquema (9 tablas: 8 operativas + fact_ventas, más
+   la vista `v_resumen_ventas`, 19 índices, restricciones PK/FK/UNIQUE/NOT NULL/CHECK — ver sección 8).
 2. **Carga masiva** en **Supabase** (real) o SQLite local (si falla la conexión
    → degradación con `WARNING`; nunca aborta).
 3. **20 consultas SQL** (Q01..Q20) → CSVs en `data/reports/consultas_sql/`, y
@@ -1081,7 +1138,7 @@ copy .env.example .env
 | **Fuente C exportada de Google Sheets** | El enunciado exige Google Sheets; para que el pipeline sea reproducible sin credenciales se parte de la exportación `.xlsx` (mismas columnas); en producción se leería con la Sheets API. |
 | **10 transformaciones T01..T10** | Son las obligatorias de la rúbrica; cada una deja evidencia (93 filas) y una regla de negocio auditable. |
 | **Campos derivados** (`subtotal`, `total`, `anio`, `mes`…) | El enunciado los **exige** (`subtotal = precio × cantidad`; `total = subtotal − descuento`); el resto (margen, rango_precio, anio_mes, conciliado, trimestre) soporta las preguntas de negocio sin re-calcular. El `dia`, aunque recomendado, se omitió por no aportar a las 21 preguntas resueltas — nota honesta. |
-| **Modelo 3FN** (6 tablas + 2 dimensiones + fav) | Las tablas mínimas del enunciado más `dim_ciudades` y `dim_sucursales` (lookup geográfico/operacional); se elimina redundancia y se respetan PK/FK/UNIQUE/CHECK. |
+| **Modelo 3FN** (9 tablas: 6 exigidas + `dim_ciudades` + `dim_sucursales` + `fact_ventas`) | Las tablas mínimas del enunciado más `dim_ciudades` y `dim_sucursales` (lookup geográfico/operacional); se elimina redundancia y se respetan PK/FK/UNIQUE/CHECK. |
 | **`fact_ventas` desnormalizada** | Evita reescribir JOINs en cada indicador y en cada figura; es la excepción documentada al 3FN (vive la analítica, las dimensiones viven su entidad). |
 | **Vista `v_resumen_ventas`** | Encapsula el JOIN de 5 tablas para el resumen mensual; Q20 la usa tal como el enunciado sugiere ("VIEW de resumen de ventas"). |
 | **19 índices + `EXPLAIN ANALYZE`** | Exigencia del enunciado (comparar plan antes/después); resultado medido: 4.17x promedio servidor (`04_explain_analyze.csv`). |
@@ -1201,5 +1258,46 @@ $127.3M facturados, 34.35% cancelación, Pareto 24.1%→80%, margen 29.46%.
 **Minuto 13–15 — Visualizaciones y cierre.** Abrir `reporte.html` (doble
 clic): recorrer Principales 1–7 y Anexo 8–13. "13 figuras interactivas; el
 jurado puede aislar series; todo funciona offline. Lo que pedimos: apoyo al
-equipos para defender decisiones; lo que nos llevamos: un pipeline completo,
+equipo para defender decisiones; lo que nos llevamos: un pipeline completo,
 reproducible y verificado."
+
+## 26. Dependencias (qué hace cada paquete, para qué lo usamos)
+
+`requirements.txt` lista **22 paquetes** (antes 31: se eliminaron 8 que no
+importaba nadie — `matplotlib` y su pila porque las figuras se dibujan con
+Plotly; `seaborn` nunca se llegó a usar). Versiones congeladas verificadas:
+`pytest` pasa **167/167** con este conjunto. Ningún paquete se usa "por si
+acaso": cada uno tiene un import real o un papel de driver/transitorio
+ineludible en tiempo de ejecución.
+
+| Paquete | Para qué sirve **en este proyecto** | Rol |
+|---|---|---|
+| `pandas` | Motor del ETL (T01–T10), datasets, mínimos, RFM, correlación, Pareto, embudo, KPIs | Directo (`import pandas`) |
+| `numpy` | Operaciones vectorizadas del ETL y del análisis (detención, conteos, sumatorias) | Directo (`import numpy`) |
+| `SQLAlchemy` | Abstracción sobre el motor relacional: el código habla SQLAlchemy, no SQL crudo (salvo DDL/consultas exportadas); conecta a Supabase o a SQLite temporal | Directo (`import sqlalchemy`) |
+| `psycopg2-binary` | Controlador que SQLAlchemy usa por debajo para conectarse a PostgreSQL real (Supabase) | Transitorio requerido (conductor de SQLAlchemy) |
+| `pymongo` | Conexión a MongoDB Atlas (colecciones, índices, pipelines, `find`) | Directo (`import pymongo`) |
+| `dnspython` | Resolver DNS para URIs `mongodb+srv://` (la de Atlas); sin él, la conexión a Atlas no resuelve el SRV | Transitorio requerido (Atlas SRV) |
+| `python-dotenv` | Carga `.env` (credenciales) al arrancar; `.env` jamás se versiona | Directo (`from dotenv import load_dotenv`) |
+| `openpyxl` | Motor que Pandas usa para leer las hojas `.xlsx` de Google Sheets (fuente C) | Transitorio requerido (lectura XLSX) |
+| `et_xmlfile` | Motor XML de `openpyxl` | Transitorio |
+| `python-dateutil` | Parseo de fechas que usa Pandas (incluyendo formatos en español del crudo) | Transitorio (Pandas) |
+| `pytz` | Zonas horarias del manejo de fechas de Pandas | Transitorio (Pandas) |
+| `tzdata` | Base de datos de zonas horarias que Pandas referencia | Transitorio (Pandas) |
+| `six` | Compatibilidad py2/3 que `python-dateutil` aún importa | Transitorio (dateutil) |
+| `greenlet` | Soporte asíncrono opcional de SQLAlchemy; el proyecto trabaja síncrono pero se congela por consistencia | Transitorio (SQLAlchemy) |
+| `plotly` | Las **13 figuras** HTML interactivas y `reporte.html` (hover, zoom, aislar series) | Directo (`plotly.graph_objects`, `plotly.subplots`) |
+| `narwhals` | Capa que Plotly 7 usa para objetos Series/DataFrame | Transitorio (Plotly) |
+| `pytest` | La suite de 167 pruebas y la etapa `--con-tests` del orquestador | Directo/orquestador |
+| `iniconfig` | Registro y verificación de plugins de `pytest` | Transitorio (pytest) |
+| `pluggy` | Sistema de plugins interno de `pytest` (carga y ciclo de vida) | Transitorio (pytest) |
+| `packaging` | Verificación de versiones que usan pytest y otros | Transitorio (pytest) |
+| `colorama` | Salida con color de `pytest` en Windows (verde = pasado) | Transitorio (pytest, Windows) |
+| `typing_extensions` | Anotaciones modernas para `pymongo` y otros en versiones de Python anteriores a 3.10/3.11 — el `venv` usa 3.12, pero se congela por portabilidad | Transitorio |
+
+**Regla del proyecto:** todo lo que aparece en `requirements.txt` o es
+"directo" (alguien hace `import`) o "transitorio requerido" (se necesita en
+tiempo de ejecución aunque no aparezca en el código: driver de conexión,
+lector de XLSX, resolver SRV, dependencias de pytest). Si un paquete no tiene
+cómo justificar su lugar, **no está**: se eliminaron 8 por eso, y la
+verificación (167 verdes) confirmó que nada los necesita.

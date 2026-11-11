@@ -8,7 +8,7 @@ reproducible con una sola orden y una semilla fija (`SEED = 20260904`).
 |---|---|
 | Datos | 3 fuentes (CSV / JSON / Google Sheets→`.xlsx`) con errores intencionales |
 | Limpieza | 10 transformaciones auditables + evidencia (93 filas) |
-| Modelo | PostgreSQL 3FN (9 objetos + vista `v_resumen_ventas`) · MongoDB (3 colecciones, 12 índices) |
+| Modelo | PostgreSQL 3FN (9 tablas: 8 operativas + fact_ventas, más la vista v_resumen_ventas) · MongoDB (3 colecciones, 12 índices) |
 | Preguntas de negocio | 20 SQL + 12 pipelines + 15 `find`/`count` (**47/47 OK**) |
 | Indicadores | 22 KPIs |
 | Visualizaciones | 13 gráficos Plotly interactivos en `reporte.html` |
