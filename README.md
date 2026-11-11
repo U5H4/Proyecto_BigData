@@ -1,161 +1,94 @@
-﻿# Corporativo JUC — Pipeline de datos (ETL + Cloud + Análisis)
+﻿# Corporativo JUC — Pipeline de datos
 
-Guía de uso para quien clona el proyecto y quiere **ejecutarlo**. Todo está
-pensado para reproducirse con una sola orden y una semilla fija
-(`SEED = 20260904`): dos ejecuciones producen exactamente el mismo dato.
+**ETL + PostgreSQL + MongoDB + Cloud Computing, de fuentes crudas a un reporte interactivo.**
+Proyecto de ingeniería de datos sobre una empresa ficticia de electrónica (México),
+reproducible con una sola orden y una semilla fija (`SEED = 20260904`).
 
-> El detalle completo del proyecto — decisiones, cifras, evidencia y mapa de
-> la rúbrica — está en **`informe.md`** (fuente para el documento de apoyo en
-> Word). Este README es solo la guía de uso.
+| En un vistazo | |
+|---|---|
+| Datos | 3 fuentes (CSV / JSON / Google Sheets→`.xlsx`) con errores intencionales |
+| Limpieza | 10 transformaciones auditables + evidencia (93 filas) |
+| Modelo | PostgreSQL 3FN (9 objetos + vista `v_resumen_ventas`) · MongoDB (3 colecciones, 12 índices) |
+| Preguntas de negocio | 20 SQL + 12 pipelines + 15 `find`/`count` (**47/47 OK**) |
+| Indicadores | 22 KPIs |
+| Visualizaciones | 13 gráficos Plotly interactivos en `reporte.html` |
+| Pruebas | 167 (pytest) |
+| Cloud | **Supabase** (PostgreSQL 17) + **MongoDB Atlas** M0 — o modo local sin credenciales |
 
-## 1. Qué es
+> Toda la explicación profunda — arquitectura, decisiones, la rúbrica Parte I–VII,
+> comandos, preguntas de defensa y guion de exposición — vive en **[`informe.md`](informe.md)**.
+> Este README es la guía mínima para ejecutarlo.
 
-Pipeline de ingeniería de datos sobre una empresa ficticia de electrónica en
-México. Genera tres fuentes crudas **con errores intencionales**, las limpia
-con 10 transformaciones auditables, las carga en **PostgreSQL** (3FN) y
-**MongoDB** (documentos), responde **47 preguntas de negocio**, y produce un
-reporte con **13 gráficos interactivos** (Plotly) y **22 indicadores**.
-
-## 2. Requisitos
-
-- Windows + PowerShell (probado) — también sirve cualquier Python 3
-- Python 3.12, `pip`
-- (Opcional, para los motores reales) credenciales de **Supabase** y
-  **MongoDB Atlas**; sin ellas el pipeline corre en modo local (SQLite/NDJSON)
-
-## 3. Puesta en marcha (modo local, sin credenciales)
+## Inicio rápido (sin credenciales)
 
 ```powershell
-cd Proyecto_BigData
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe src\run_all.py
 ```
 
-`run_all.py` ejecuta las cinco etapas en orden
-(`generar -> etl -> integracion -> analisis -> graficos`) y **se detiene en la
-primera que falle**. Al terminar verás las tablas cargadas, las 47 consultas
-OK, los 13 gráficos y el reporte en `data/reports/reporte.html`.
+El orquestador ejecuta `generar -> etl -> integracion -> analisis -> graficos` y
+**se detiene en la primera etapa que falle**. Al terminar abre
+**`data/reports/reporte.html`** (doble clic): el reporte con los 13 gráficos, o combina
+lo que ya se generó si prefieres revisar paso a paso.
 
-### Etapas y flags
+### Comandos esenciales
 
 ```powershell
-.\.venv\Scripts\python.exe src\run_all.py --listar         # ver etapas
-.\.venv\Scripts\python.exe src\run_all.py --sin-generar    # reutilizar data/raw existente
+.\.venv\Scripts\python.exe src\run_all.py --listar        # ver etapas
+.\.venv\Scripts\python.exe src\run_all.py --sin-generar   # reutilizar data/raw
 .\.venv\Scripts\python.exe src\run_all.py --solo analisis graficos
-.\.venv\Scripts\python.exe src\run_all.py --con-tests      # pipeline + pytest al final
+.\.venv\Scripts\python.exe src\run_all.py --con-tests     # pipeline + pytest
+.\.venv\Scripts\python.exe -m pytest -q                   # solo la suite (167)
 ```
 
-### Ejecutar una etapa suelta
+## Modo nube (opcional)
+
+Con un `.env` rellenado, el pipeline **usa los motores reales**; sin él (o si fallan),
+**degrada a SQLite/NDJSON local** sin dejar de producir resultados. Nunca sube datos a
+cuentas ajenas: usa solo las credenciales del operador.
 
 ```powershell
-.\.venv\Scripts\python.exe src\generate_sources.py   # Parte I  -> data/raw/
-.\.venv\Scripts\python.exe src\etl_load.py           # Partes I-V -> data/processed/
-.\.venv\Scripts\python.exe src\integration.py        # Parte Cloud -> SQL + NoSQL
-.\.venv\Scripts\python.exe src\analysis.py           # Parte V   -> data/reports/analisis/
-.\.venv\Scripts\python.exe src\viz.py               #            -> data/figures/ + data/reports/reporte.html
+copy .env.example .env   # edita con tus credenciales
 ```
 
-## 4. Modo nube (Supabase + MongoDB Atlas reales)
+- Supabase: usa el **Session pooler** (`aws-0-<region>.pooler.supabase.com`, `PG_SSLMODE=require`).
+  El host directo resuelve solo por IPv6.
+- MongoDB Atlas: `MONGO_URI=mongodb+srv://<usuario>:<clave>@<cluster>.mongodb.net/?appName=<app>`, `MONGO_DB=juc`.
+- Forzar modo local: `SIN_POSTGRES=1`, `SIN_MONGO=1` (o `FORZAR_SQLITE=1`).
+- `.env` nunca se versiona (en `.gitignore`); `.env.example` viaja como plantilla.
 
-El pipeline intenta conectar automáticamente **solo si hay credenciales
-válidas** en `.env`; si no existen (o fallan), degrada a SQLite + NDJSON sin
-romperse. Nunca sube datos a cuentas ajenas: usa únicamente el `.env` que usted
-defina.
+## Estructura
 
-```powershell
-copy .env.example .env   # y edita los valores
+```text
+src/            generate_sources → etl_extract → etl_transform → etl_load
+                → integration → analysis → viz   (+ run_all.py, config.py, utils.py)
+tests/          167 pruebas (analysis, integration, run_all, transform)
+data/raw/       fuentes crudas (CSV / JSON / Sheets)
+data/processed/ tablas normalizadas 3FN + datasets para cada motor
+data/sql/       DDL, consultas, EXPLAIN ANALYZE (layout del enunciado)
+data/nosql/     colecciones NDJSON, índices, pipelines y consultas
+data/reports/   evidencia + KPIs + reporte.html
+data/figures/   13 HTML interactivos + plotly.min.js
 ```
 
-**Supabase:** use el **Session pooler** (`aws-0-<region>.pooler.supabase.com`,
-usuario `postgres.<proyecto>`, `PG_SSLMODE=require`) o la conexión directa si su
-red tiene IPv6 (`db.<proyecto>.supabase.co` solo resuelve por IPv6).
-
-```env
-SUPABASE_HOST=aws-0-us-east-1.pooler.supabase.com
-SUPABASE_PORT=5432
-SUPABASE_DATABASE=postgres
-SUPABASE_USER=postgres.<su_proyecto_id>
-SUPABASE_PASSWORD=<su_password>
-PG_SSLMODE=require
-```
-
-(`SUPABASE_HOST` tiene prioridad sobre `PG_HOST`; una conexión directa
-`PG_HOST=db.<proyecto>.supabase.co` funciona si hay IPv6.)
-
-**MongoDB Atlas:**
-
-```env
-MONGO_URI=mongodb+srv://<USUARIO>:<PASSWORD>@<CLUSTER>.mongodb.net/?appName=<APP>
-MONGO_DB=juc
-```
-
-**Forzar modo local** aunque haya credenciales:
-
-```env
-SIN_POSTGRES=1   # SQLite en lugar de Supabase
-SIN_MONGO=1      # NDJSON local en lugar de Atlas
-FORZAR_SQLITE=1  # no intentar PostgreSQL
-```
-
-**Pasos para probar con sus propias cuentas:** crear proyecto gratuito en
-Supabase (usar Session Pooler) y cluster M0 gratuito en MongoDB Atlas con un
-usuario DB; permitir acceso desde su IP (o `0.0.0.0/0` para pruebas); copiar
-`.env.example` a `.env` y ejecutar `src\run_all.py`. En consola aparecerá
-`Supabase conectado...` y/o `MongoDB conectado...`.
-
-> Nunca comitee `.env` (ya está en `.gitignore`); `.env.example` sí viaja al
-> repositorio. Con credenciales se crean las 9 tablas + vista `v_resumen_ventas`
-> en Supabase y las colecciones `productos`, `resenas`, `actividad_usuario` en
-> Atlas. `pytest` siempre usa SQLite temporal: no requiere nube.
-
-## 5. Pruebas
-
-```powershell
-.\.venv\Scripts\python.exe -m pytest -q    # 167 pruebas
-```
-
-Las pruebas no comparan contra valores fijos del dataset (cambia al ajustar el
-generador), sino contra un **cálculo independiente hecho a mano** sobre fixtures
-mínimos: lo que se valida es que el análisis no devuelva números plausibles y
-equivocados.
-
-## 6. Qué obtiene al terminar
-
-```
-data/raw/                    3 fuentes crudas con errores (CSV/JSON/XLSX)
-data/processed/              tablas 3FN + dataset_postgresql.csv + dataset_mongodb.json
-data/sql/                    DDL, consultas, EXPLAIN (punto 26 del enunciado)
-data/nosql/                  colecciones NDJSON, pipelines, consultas, índices
-data/reports/                evidencia: SQL (Q01..Q20), Mongo (A01..A12, B01..B15),
-                             análisis (21 CSV), KPIs, reporte.html
-data/figures/                13 HTML interactivos + plotly.min.js
-```
-
-El reporte unificado es `data/reports/reporte.html`: bloque **Principales
-(01-07)** y bloque **Anexo (08-13)**. Pulse sobre cada serie para aislarla o use
-zoom con la rueda del ratón. Para imprimirlo: navegador → Imprimir → Guardar
-como PDF.
-
-## 7. Cifras clave de la última corrida (semilla `SEED = 20260904`)
+## Resultados de la última corrida (semilla `SEED = 20260904`)
 
 | Indicador | Valor |
 |---|---|
 | Facturación | $127,336,206.51 |
 | Pedidos completados / totales | 1,483 / 2,259 |
 | Ticket promedio | $85,863.93 |
-| Tasa de cancelación | 34.35% |
-| Utilidad bruta / margen real | $37,982,053.12 / 29.46% |
+| Cancelación | 34.35% |
+| Margen real ponderado | 29.46% |
 | Clientes activos | 1,314 |
 | Productos vendidos | 514 de 606 (Pareto: 124 explican el 80%) |
-| Calificación promedio | 3.01 (2,475 reseñas) |
 
-Detalle completo, decisiones, evidencia y mapa de la rúbrica: **`informe.md`**.
+## Notas
 
-## 8. Verificado
-
-Corrida en vivo del 2026-11-09 contra **Supabase** (PostgreSQL 17, pooler
-IPv4) y **MongoDB Atlas** (cluster M0): 5/5 etapas OK, 47/47 consultas OK,
-167 pruebas en verde, 13/13 gráficos OK. Detalle y notas en `informe.md`
-(por ejemplo, Atlas puede fallar transitoriamente y el pipeline degrada a
-modo local con un `WARNING`).
+- **Datos sintéticos**: las conclusiones describen la empresa ficticia, no un negocio real.
+- Verificado en vivo el 2026-11-09 contra Supabase + Atlas: 5/5 etapas OK, 47/47
+  consultas OK, 167 pruebas, 13/13 gráficos. Si la red falla, degrada a local y
+  sigue funcionando.
+- Documentación completa: **[`informe.md`](informe.md)** · reporte interactivo:
+  **`data/reports/reporte.html`** · evidencia: `data/reports/`.
