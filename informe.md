@@ -16,9 +16,9 @@ dividido y funcione concepto a concepto.
 > Cómo leer el documento: las secciones 1–5 explican el proyecto de forma
 > general; 6–12 siguen la estructura del enunciado (Partes I–VII); 13–16 son
 > decisiones, verificación y detalles prácticos; 17–19 cubren limitaciones y los
-> anexos; 20–26 son la guía operativa completa: flujo de ejecución, comandos,
+> anexos; 20–27 son la guía operativa completa: flujo de ejecución, comandos,
 > qué hace cada archivo, justificación de cada decisión, preguntas probables
-> del jurado, guion de exposición y qué hace cada dependencia.
+> del jurado, guion de exposición, dependencias y herramientas usadas.
 
 ---
 
@@ -409,22 +409,27 @@ con **7 tablas** (Q19: "detalle 360 del pedido"), agregaciones
 | Q19 | Detalle 360 del pedido (JOIN de 7 tablas) |
 | Q20 | Resumen mensual vía vista `v_resumen_ventas` |
 
-### 8.3.1 Distribución por nivel (criterio del equipo)
+### 8.3.1 Distribución por nivel (alineada con los ejemplos de la rúbrica)
 
 El enunciado pide que las consultas se distribuyan entre nivel **básico,
-intermedio y avanzado**. El equipo asigna el nivel así:
+intermedio y avanzado**. La asignación recomendada toma como referencia los
+**ejemplos textuales del propio enunciado**:
 
-| Nivel | Criterio | Consultas |
+| Nivel | Análogo directo de un ejemplo de la rúbrica | Consultas |
 |---|---|---|
-| **Básico** (12) | Lectura/filtro con agregación simple sobre 1–2 tablas | Q01, Q02, Q04, Q05, Q06, Q07, Q08, Q09, Q10, Q11, Q14, Q18 |
-| **Intermedio** (6) | Cruces con lógica compuesta (series, ranking, pivot, clasificación) | Q03 (serie temporal), Q12 (Pareto/ventana), Q13 (margen real), Q15 (nuevos vs recurrentes), Q16 (pivot trimestral), Q17 (HAVING) |
-| **Avanzado** (2) | Multi-tabla extremo o encapsulamiento | Q19 (JOIN de 7 tablas), Q20 (resumen sobre la vista) |
+| **Básico** (7) | Filtros y conteos simples | Q06 (catálogo muerto), Q07 (clientes cancelados), Q08 (métodos de pago), Q09 (descuento promedio), Q11 (premium vs estándar), Q14 (pago no conciliado), Q18 (cobertura por sucursal y estado) |
+| **Intermedio** (6) | "Ventas por categoría / ciudad; productos más vendidos; promedio de compra" | Q01 (productos más vendidos — rúbrica), Q04 (ventas por categoría — rúbrica), Q05 (promedio por canal ≈ promedio de compra — rúbrica), Q10 (ventas por ciudad — rúbrica), Q16 (pivot trimestral), Q17 (alto valor baja rotación, con `HAVING`) |
+| **Avanzado** (7) | "Cliente que más ha gastado; producto más rentable; ventas por mes; clientes frecuentes" + requisito 4+ tablas | Q02 (cliente que más gasta — rúbrica), Q03 (ventas por mes — rúbrica), Q12 (Pareto, ventana), Q13 (producto más rentable — rúbrica), Q15 (clientes frecuentes/recurrentes — rúbrica), **Q19** (**JOIN de 7 tablas**), Q20 (ventas mensuales vía vista) |
 
-20 = 12 + 6 + 2. El archivo `02_consultas.sql` no etiqueta el nivel en cada
-consulta (ver sección 16, "Rúbrica vs repo: detalle de etiquetas"); si el
-jurado lo exige señalado dentro del propio SQL, es un cambio de comentarios en
-`integration.py` + regenerar `02_consultas.sql` — el equipo lo puede hacer y
-el resultado es el mismo.
+20 = 7 + 6 + 7. Esta distribución está amarrada, consulta por consulta, a los
+ejemplos que da el profesor para cada nivel (y a su exigencia de 4+ tablas
+inscrita sobre Q19), por lo que el equipo la defiende sin ambigüedad.
+
+El archivo `02_consultas.sql` no etiqueta el nivel en cada consulta (es un
+**archivo generado**, no se edita a mano); el nivel vive documentado aquí, en
+la fuente de verdad del proyecto. Si el jurado lo exige dentro del propio SQL,
+es un cambio de metadatos en `integration.py` + regenerar `02_consultas.sql`;
+el resultado entregable es el mismo.
 
 ## 9. Parte IV — MongoDB
 
@@ -803,12 +808,14 @@ activos": cualquier pedido registrado. Son cifras distintas a propósito.
 sin una visita; 55 sin una línea en ningún pedido (Q06); 92 sin una venta
 completada (606 − 514). Contextos distintos, no equivalentes.
 
-**Rúbrica vs repo: detalle de etiquetas.** El enunciado pide las 15 consultas
-"distribuidas entre nivel básico, intermedio y avanzado"; el SQL tiene las 20
-con complejidad creciente (simples Q01–Q06; intermedias Q10–Q18; avanzadas
-Q19 con 7 tablas, Q20 sobre vista, Q12 Pareto) pero **no las etiqueta por
-nivel** en el archivo; si el jurado lo exige señalado, añadir una cabecera de
-nivel por consulta es un cambio cosmético de 5 minutos.
+**Rúbrica vs repo: detalle de etiquetas.** El enunciado pide las consultas
+"distribuidas entre nivel básico, intermedio y avanzado"; este informe reparte
+las 20 con criterio amarrado a los **ejemplos de la rúbrica** (§ 8.3.1:
+**básico 7 · intermedio 6 · avanzado 7**). El archivo SQL no lleva la etiqueta
+en cada consulta porque es un **archivo generado** por `integration.py`; si el
+jurado lo exige señalado dentro del propio SQL, es un cambio de metadatos en
+el generador + regenerar `02_consultas.sql` — el contenido entregable es el
+mismo.
 
 **Campo `dia`.** El enunciado *recomienda* (no exige) derivar `dia`; el
 dataset deriva `anio/mes/trimestre/anio_mes` pero no `dia`.
@@ -838,6 +845,24 @@ Word de apoyo se desarrolla desde **este informe**.
 Artefactos que **sí** permanecen (no son `.md`): `modelo_relacional.png`,
 `reporte.html`, `figuras_indice.csv`, Q/A/B CSVs, `04_explain_analyze.csv`,
 todas las evidencias `01_*.csv`–`21_*.csv`.
+
+### 17.1 Flujo git y versionado (cómo se construyó la entrega)
+
+- **Un único trabajo incremental en `main`** (no ramas conflictivas): cada
+  etapa de trabajo se entregó como commit con mensaje que describe la
+  intención, y cada hito de calidad terminó con el árbol limpio.
+- **Lo que se commitea es evidencia auditable**: el jurado abre cualquier
+  Q/A/B CSV o `reporte.html` sin montar nada.
+- **Lo que se ignora en `.gitignore`** está documentado: `.env`/`.venv`,
+  `__pycache__`/`.pytest_cache`, `logs/*.log` (local), `data/processed/
+  integracion/` (fallback local) y los `.md` que cada corrida regenera.
+- **Los artefactos con ruido no se commitean**: tras una corrida que solo
+  trae diferencias por UUIDs/ObjectIds/timings, se restauran los auditados;
+  nunca se pisa una entrega auditada con ruido y el historial queda legible.
+- **Subida a GitHub**: la rama `main` se sincroniza con `origin` después de
+  cada verificación (`pytest`, consultas OK, figuras OK).
+- Si alguien clona el repo sin infraestructura: `pytest` → 167 verdes;
+  `run_all.py` corre en modo local; `reporte.html` abre con doble clic.
 
 ## 18. Limitaciones y trabajo futuro
 
@@ -903,9 +928,9 @@ EXPLAIN, consultas) · 9. MongoDB (colecciones, índices, pipelines y consultas)
 layout) · 12. Indicadores y hallazgos · 13. Visualizaciones y reporte ·
 14. Pruebas y verificación · 15. Comandos y flujo de ejecución (secciones
 20–22) · 16. Preguntas de defensa y justificación de decisiones (secciones
-23–24) · 17. Entorno y dependencias (sección 26) · 18. Limitaciones y trabajo
-futuro · 19. Anexos (diccionario, rutas de evidencia, cifras, guion de
-exposición).
+23–24) · 17. Entorno, dependencias y herramientas (secciones 26–27) ·
+18. Limitaciones y trabajo futuro · 19. Anexos (diccionario, rutas de
+evidencia, cifras, guion de exposición).
 
 Nota para el maquetado: las figuras del Word deben ser imágenes estáticas
 (embebidas o enlazadas) o capturas del reporte; el HTML interactivo no se
@@ -1224,6 +1249,17 @@ copy .env.example .env
 31. *¿Dónde está el reporte?* `data/reports/reporte.html` (doble clic) + 13 figuras individuales en `data/figures/`.
 32. *¿Qué vieron mal en el modelo relacional?* Nada de fondo: es un artefacto estático para el documento; se detectó solape de cajas al crecer el esquema y se corrigió — la lección: los layouts manuales se desincronizan del esquema.
 
+**Sobre git, el repo y el entorno**
+
+33. *¿Por qué no hay `docs/` ni más archivos de documentación?* Solo quedan 2 `.md` (este informe y el README): la rúbrica pide contenido trazable, no variedad de archivos; el resto se eliminó o consolidó aquí.
+34. *¿Por qué las pruebas pasaron 167 y no un número fijo de asserts?* Porque el dataset cambia con la semilla y el generador; las pruebas construyen fixtures pequeños y calculan a mano el resultado esperado.
+35. *¿Por qué limitaron las dependencias a 22 paquetes?* Todo lo que se usa, `import` directo o driver imprescindible (p. ej. `psycopg2-binary` es el conductor de SQLAlchemy para PostgreSQL); se retiraron 8 que ya nadie importaba y se verificó 167/167 verdes después.
+36. *¿Qué hace el `.gitignore` y por qué esas cosas?* Fuera quedan `.env` (secretos), el `.venv` (300 MB), caches de Python y los `.md` que la corrida regenera (llevarlos mete ruido de UUIDs/timings); en él vive documentado en `informe.md § 17`.
+37. *¿Qué pasa si Atlas o Supabase caen en vivo?* El pipeline degrada a SQLite/NDJSON local con un `WARNING` y termina en 0; `reporte.html` abre sin internet; `pytest` corre offline. Nada "se cae".
+38. *¿Por qué no editar el SQL a mano?* Porque `02_consultas.sql` es **generado** por `integration.py`; los niveles viven en este informe (§ 8.3.1); editarlo a mano se sobrescribiría en la siguiente corrida.
+39. *¿Cómo se garantiza que lo mostrado no cambió entre la audición y la corrida en vivo?* Los artefactos se restauran a la versión auditada tras corridas de ruido; este `informe.md` documenta cada restauración y la razón.
+40. *¿El pipeline corre en minutos o segundos?* `generar` ≈ 2 s · `etl` ≈ 4 s · `integracion` ≈ 45–60 s · análisis y gráficos, segundos (dominada por la carga masiva a los motores cloud).
+
 ## 25. Guion de explicación para el equipo (12–15 min)
 
 **Minuto 0–1 — El problema.** "Somos consultores de datos de Corporativo JUC
@@ -1301,3 +1337,33 @@ tiempo de ejecución aunque no aparezca en el código: driver de conexión,
 lector de XLSX, resolver SRV, dependencias de pytest). Si un paquete no tiene
 cómo justificar su lugar, **no está**: se eliminaron 8 por eso, y la
 verificación (167 verdes) confirmó que nada los necesita.
+
+## 27. Herramientas usadas y su para qué (entorno y flujo de trabajo)
+
+Todo lo que facilitó construir este proyecto, con su justificación de uso:
+
+| Herramienta / pieza | Para qué se usó | Por qué, en una frase |
+|---|---|---|
+| **Python 3.12** + `venv` propio | Lenguaje y aislamiento del entorno | Proporcionar una versión única del intérprete y traducir el pipeline sin colisionar con otras instalaciones ni con la máquina |
+| **pip** + `requirements.txt` congelado | Instalar dependencias reproducibles | Que `pip install -r requirements.txt` en cualquier equipo produzca exactamente este conjunto (misma pin, misma versión) y la suite verifique |
+| **SQLite** temporal | Simular el fallback local sin servidor | Que la integración y las pruebas corran íntegramente offline y deterministas; cero infraestructura pesada |
+| **PostgreSQL (Supabase)** | Motor relacional cloud real | El enunciado exige cloud; Postgres gobierna esquema, PK/FK/UNIQUE/CHECK y EXPLAIN |
+| **MongoDB Atlas** | Almacén de documentos cloud real | Catálogos de forma variable (por familia), reseñas anidadas, eventos de navegación |
+| **git** + **GitHub** (`main`) | Entrega y evidencia versionada | Historial auditable; cada iteración sana deja el árbol limpio y el repo apto para compartir |
+| **`.env` / `.env.example`** | Credenciales locales, plantilla pública | Seguridad básica: secretos fuera del repo; cualquiera puede configurar la suya |
+| **`.gitignore`** | Higiene del versionado | Impide que el histórico se llene de caches, el `.env` y resultados regenerables |
+| **`run_all.py`** | Orquestador de etapas | Una orden reproduce el pipeline y una falla corta (sin artefactos a medio escribir) |
+| **Windows + PowerShell** | Plataforma de desarrollo y exposición | Entorno del equipo; los comandos del README son los del entorno real |
+| **VS Code** | Edición e inspección de código y datos | Visores de CSV/NDJSON, búsqueda en el repo, vista previa de HTML y Markdown |
+| **`pytest`** | 167 pruebas de análisis/integración/orquestador | Garantiza que los números salgan bien — comprobar ausencia de excepciones no basta |
+| **Artefactos auditados** | Evidencia de entregas | Commit de los CSVs/Q/A/B analizados; lo volátil (timings, ObjectIds, caches) vive en `.gitignore` o se restaura |
+| **Semilla fija (`SEED`)** | Reproducibilidad exacta | Dos corridas producen el mismo dataset base; las diferencias son por entorno, no por azar |
+| **Plotly + `plotly.min.js`** | Visualización interactiva offline | Valores exactos en hover y cero dependencia de red; abre con doble clic |
+| **Este informe (`informe.md`)** | Fuente única para el documento de apoyo real | Contiene rúbrica, ejecución, comandos, justificación y defensas; el Word deriva de aquí |
+
+**Nota sobre lo que no se usó y por qué:** Google Colab se descartó por el
+equipo (efímero, sin SLAs, sin orquestación — ver sección 11.3); Power BI y
+Looker Studio eran alternativas válidas del enunciado, pero Plotly/HTML gana
+en reproducibilidad por script y valores exactos en el tooltip; Streamlit no
+apareció porque la rúbrica no exige ni es necesaria (el reporte ya cumple
+con 13 figuras y 22 KPIs).
