@@ -15,8 +15,10 @@ dividido y funcione concepto a concepto.
 
 > Cómo leer el documento: las secciones 1–5 explican el proyecto de forma
 > general; 6–12 siguen la estructura del enunciado (Partes I–VII); 13–16 son
-> decisiones, verificación y detalles prácticos; 17–18 cubren limitaciones y el
-> índice propuesto para el Word.
+> decisiones, verificación y detalles prácticos; 17–19 cubren limitaciones y los
+> anexos; 20–25 son la guía operativa completa: flujo de ejecución, comandos,
+> qué hace cada archivo, justificación de cada decisión, preguntas probables
+> del jurado y guion de exposición.
 
 ---
 
@@ -843,10 +845,361 @@ datos · 7. ETL y transformaciones · 8. PostgreSQL (modelo, 3FN, índices,
 EXPLAIN, consultas) · 9. MongoDB (colecciones, índices, pipelines y consultas)
 · 10. Integración SQL+NoSQL y correlación · 11. Cloud (Supabase, Atlas,
 layout) · 12. Indicadores y hallazgos · 13. Visualizaciones y reporte ·
-14. Pruebas y verificación · 15. Limitaciones y trabajo futuro · 16. Anexos
-(diccionario, rutas de evidencia, cifras).
+14. Pruebas y verificación · 15. Comandos y flujo de ejecución (secciones
+20–22) · 16. Preguntas de defensa y justificación de decisiones (secciones
+23–24) · 17. Limitaciones y trabajo futuro · 18. Anexos (diccionario, rutas de
+evidencia, cifras, guion de exposición).
 
 Nota para el maquetado: las figuras del Word deben ser imágenes estáticas
 (embebidas o enlazadas) o capturas del reporte; el HTML interactivo no se
 incrusta en Word. El diagrama ER (`modelo_relacional.png`) ya es una imagen
 lista para insertar.
+
+## 20. Flujo de ejecución (qué pasa, en qué orden y por qué)
+
+Comando de extremo a extremo:
+
+```powershell
+.\.venv\Scripts\python.exe src\run_all.py
+```
+
+`run_all.py` ejecuta las etapas **en el orden del pipeline** y se **detiene en
+la primera que falla**: un pipeline que sigue tras un error produce datasets a
+medio escribir e informes que mienten; cada etapa es una transacción: o deja
+sus artefactos completos, o el proceso sale con código 1.
+
+### 20.1 Etapa `generar` — fuentes crudas con errores
+
+`generate_sources.main()` construye las tres fuentes con **errores
+intencionales** (la práctica de calidad del enunciado): duplicados, nulos,
+mayúsculas inconsistentes, categorías con varias grafías, fechas en varios
+formatos, precios como texto, ciudades con varias grafías, cantidades inválidas
+y columnas innecesarias (más detalle en sección 6 y 23). La semilla
+`SEED = 20260904` fija cualquier aleatoriedad, así que dos corridas producen
+el mismo crudo.
+
+Detalle de diseño clave: los errores se inyectan a propósito y se documentan en
+los datos crudos; el ETL los corrige y deja evidencia (sección 7). Nada se
+"pierde" como magia: cada corrección aparece en
+`data/reports/calidad_transformaciones.csv`.
+
+### 20.2 Etapa `etl` — extraer, transformar, cargar
+
+Se invoca **en el proceso** (no vía `subprocess`) para que el traceback apunte
+a la línea real del error:
+
+1. `etl_extract.extraer()` — lee las 3 fuentes, **infiere tipos** y captura
+   evidencia por archivo y por columna: fuente, archivo, formato, sistema de
+   origen, registros, columnas, nulos, duplicados exactos y muestra de valores
+   crudos; y, columna por columna, el `tipo_inferido`. Produce
+   `evidencia_extraccion.csv` y `evidencia_extraccion_columnas.csv`.
+2. `etl_transform.transformar(extraer())` — aplica las **10 transformaciones**
+   (T01..T10) y registra filas antes/después, registros afectados y regla.
+   Produce las tablas normalizadas 3FN en `data/processed/tablas/`.
+3. `etl_load.cargar(datos)` — escribe el **dataset analítico** desnormalizado
+   (`data/processed/dataset_postgresql.csv`, 47 columnas, una fila por línea de
+   venta), los documentos para MongoDB (`dataset_mongodb.json`) y valida contra
+   los **mínimos del enunciado** (`validacion_minimos.csv`); `tracker.guardar()`
+   persiste la evidencia de calidad.
+
+### 20.3 Etapa `integracion` — SQL + NoSQL + verificación
+
+`integration.main()` hace, en orden:
+
+1. **DDL**: crea el esquema (9 objetos: 8 tablas + `fact_ventas` analítica +
+   vista `v_resumen_ventas`, 19 índices, restricciones PK/FK/UNIQUE/NOT NULL/CHECK — ver sección 8).
+2. **Carga masiva** en **Supabase** (real) o SQLite local (si falla la conexión
+   → degradación con `WARNING`; nunca aborta).
+3. **20 consultas SQL** (Q01..Q20) → CSVs en `data/reports/consultas_sql/`, y
+   `EXPLAIN ANALYZE` del índice `ix_fact_anio_mes` antes y después:
+   recorrido completo → `Index Scan`, **4.17x** más rápido en promedio de
+   servidor (`04_explain_analyze.csv` como evidencia medida).
+4. **MongoDB**: **Atlas** real (o NDJSON local) — 12 índices, **12 pipelines**
+   (`$match/$group/$sort/$project/$limit/$unwind/$lookup`) y **15 consultas
+   `find`** con `$gt/$lt/$gte/$lte/$in/$and/$or` → CSVs `A01..A12` y `B01..B15`.
+5. **Layout punto 26** en `data/sql/` (DDL/consultas/EXPLAIN) y `data/nosql/`
+   (colecciones NDJSON, índices, pipelines/consultas) — réplica del almacén
+   cloud, para auditar sin tocar la nube.
+6. **Resumen** `integracion_resumen.csv` (47 consultas, estado, filas, más
+   `integracion_entorno.md` — regenerable por corrida, por eso fuera del git).
+
+### 20.4 Etapa `analisis` — las 21 preguntas de negocio
+
+`analysis.main()` calcula todo sobre los datasets procesados: KPIs, serie
+temporal, mixes, RFM, correlación navegación↔venta, Pareto, cuadrantes
+visitas/ventas, satisfacción, inventario muerto, under-exposure, calidad de
+pagos, embudo. Produce `data/reports/analisis/*.csv` (+ `analisis_resumen.md`,
+también regenerable).
+
+### 20.5 Etapa `graficos` — las 13 figuras y el reporte
+
+`viz.main()` regenera **13 figuras Plotly** (HTML interactivo) y las
+**reúne** en `data/reports/reporte.html` con los bloques *Principales (1-7)* y
+*Anexo (8-13)*, más `figuras_indice.csv` (estado/peso de cada una). Se sirve
+offline: doble clic sobre el archivo, sin servidor ni internet. Las figuras
+individuales viven en `data/figures/` y comparten `plotly.min.js`.
+
+### 20.6 Etapa opcional `tests`
+
+`--con-tests` corre `pytest tests -q` como subproceso; su código de salida es el
+código de la etapa. `pytest` usa SQLite temporal: **no requiere nube** y
+confirma 167 pruebas antes de exponer.
+
+### 20.7 Ejemplos de ejecución y tiempos
+
+```powershell
+.\.venv\Scripts\python.exe src\run_all.py --listar
+.\.venv\Scripts\python.exe src\run_all.py --solo analisis graficos   # orden del pipeline, no del CLI
+.\.venv\Scripts\python.exe src\run_all.py --sin-generar              # reutiliza data/raw existente
+```
+
+Tiempos de la última corrida verificada (2026-11-09; orientativos, varían por
+máquina y por red): `generar` ≈ 2 s · `etl` ≈ 4 s · `integracion` ≈ 45–60 s
+(dominado por la carga masiva a los motores cloud) · análisis y gráficos,
+segundos.
+
+### 20.8 Diagrama del flujo
+
+```
+python src/run_all.py
+        |
+        v
+ generar ──> etl ──> integracion ──> analisis ──> graficos ──> (tests si --con-tests)
+ crudo con   3FN +     Supabase/SQLite    21 CSV      13 HTML     167 pruebas
+ errores     fact +    Atlas/NDJSON       de análisis + reporte.html + KPIs
+ txt         JSON      47 consultas       y KPIs      interactivo
+```
+
+## 21. Comandos de referencia (guía rápida para quien clona el repo)
+
+### 21.1 Preparación única
+
+```powershell
+cd Proyecto_BigData
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+### 21.2 Ejecución
+
+| Objetivo | Comando |
+|---|---|
+| Pipeline completo | `.\.venv\Scripts\python.exe src\run_all.py` |
+| Ver etapas | `.\.venv\Scripts\python.exe src\run_all.py --listar` |
+| Reutilizar crudo existente | `.\.venv\Scripts\python.exe src\run_all.py --sin-generar` |
+| Solo algunas etapas | `.\.venv\Scripts\python.exe src\run_all.py --solo analisis graficos` |
+| Pipeline + suite | `.\.venv\Scripts\python.exe src\run_all.py --con-tests` |
+| Suite suelta | `.\.venv\Scripts\python.exe -m pytest -q` |
+| Etapas sueltas | `python src\{generate_sources,etl_extract,integration,analysis,viz}.py` |
+
+### 21.3 Modo nube (Supabase + Atlas) — opcional
+
+Sin `.env` el pipeline corre en **modo local** (SQLite + NDJSON) sin tocar
+nada; con `.env` válido usa los motores reales.
+
+```powershell
+copy .env.example .env
+# editar .env con credenciales de SU proyecto (ver README/sección 4 y 11)
+```
+
+- Supabase: usar el **Session pooler** (`aws-0-<region>.pooler.supabase.com`,
+  `PG_SSLMODE=require`). El host directo (`db.<proyecto>.supabase.co`) solo
+  resuelve por **IPv6**.
+- Atlas: `MONGO_URI=mongodb+srv://<usuario>:<clave>@<cluster>.mongodb.net/?appName=<app>`,
+  `MONGO_DB=juc`.
+- Forzar local aunque haya credenciales: `SIN_POSTGRES=1`, `SIN_MONGO=1`,
+  `FORZAR_SQLITE=1` (en `.env`).
+- Nunca commitear `.env`; `.env.example` sí viaja.
+
+### 21.4 Verificación y exploración de resultados
+
+| Qué | Dónde |
+|---|---|
+| Estado de las 47 consultas | `data/reports/integracion_resumen.csv` |
+| Pruebas | `.\.venv\Scripts\python.exe -m pytest -q` (167 passed) |
+| Reporte interactivo | doble clic `data/reports/reporte.html` |
+| Gráficos individuales | `data/figures/*.html` (doble clic) |
+| KPIs | `data/reports/analisis/01_kpis_generales.csv` |
+| Evidencia ETL | `evidencia_extraccion*.csv`, `calidad_transformaciones.csv`, `validacion_minimos.csv` |
+| SQL (antes/después índice) | `data/sql/03_explain_analyze.md` / `04_explain_analyze.csv` |
+| Resultados Q/A/B | `data/reports/consultas_sql/Q*.csv`, `consultas_mongodb/A*.csv`, `B*.csv` |
+
+### 21.5 Qué hacer si algo falla
+
+| Síntoma | Causa probable y acción |
+|---|---|
+| `Supabase` no conecta | Red sin IPv6 → usar pooler; o `.env` incompleto → correr sin `.env` (local) y validar primero así |
+| `Atlas` no responde | Tránsito de red/DNS → reintentar; el pipeline degrada a local con un `WARNING`; `pytest` sigue verde |
+| `--solo` dice "etapa desconocida" | Etapas válidas: `generar etl integracion analisis graficos tests` |
+| `pytest` no pasa tras editar | Revisar el fixture tocado; las pruebas comparan contra cálculo a mano, no contra el dataset real |
+| Gráficos en blanco al copiar el HTML | Falta `plotly.min.js`/estructura: llevar siempre `data/` completa (el reporte y las figuras referencian esa librería local) |
+
+## 22. Qué hace cada archivo (para no perderse)
+
+### 22.1 `src/`
+
+| Archivo | Responsabilidad | Entradas (lee) | Salidas (escribe) |
+|---|---|---|---|
+| `config.py` | Configuración central: rutas, semilla `20260904`, catálogos, mínimos del enunciado, conexión Supabase/Atlas, layout | `.env` | Estructuras de constantes para el resto del pipeline |
+| `utils.py` | Logging (consola + `logs/pipeline.log`), tablas para consola, tracker de calidad (`tracker.registrar(...)`) | — | `logs/pipeline.log` |
+| `generate_sources.py` | Parte I: genera las 3 fuentes con **errores intencionales** (T01–T10 los resolverán) | — (usa config) | `data/raw/csv/*`, `data/raw/json/*`, `data/raw/sheets/*` |
+| `etl_extract.py` | Extracción con evidencia: lectura, tipado a petición, nulos/duplicados por archivo y tipo por columna | `data/raw/*` | `evidencia_extraccion.csv`, `evidencia_extraccion_columnas.csv` |
+| `etl_transform.py` | Las 10 transformaciones T01..T10 con reglas y evidencia | datos crudos | tablas 3FN (`data/processed/tablas/*.csv`), `calidad_transformaciones.csv` |
+| `etl_load.py` | Dataset analítico (fact desnormalizada) + documentos + mínimos | tablas 3FN | `dataset_postgresql.csv`, `dataset_mongodb.json`, `validacion_minimos.csv` |
+| `integration.py` | DDL + índices + EXPLAIN + DDL/consultas SQL + pipelines/consultas Mongo + verificación + layout punto 26 | datasets procesados | `data/sql/*`, `data/nosql/*`, `data/reports/consultas_*`, resultados Q/A/B + resúmenes |
+| `analysis.py` | Los 21 análisis de negocio (KPIs, Pareto, RFM, correlación, embudo…) | datasets procesados | `data/reports/analisis/*.csv` |
+| `viz.py` | Construye las 13 figuras Plotly y el reporte combinado | resultados del análisis | `data/figures/*.html`, `data/reports/reporte.html`, `figuras_indice.csv` |
+| `run_all.py` | Orquestador: orden, flags (`--listar`, `--solo`, `--sin-generar`, `--con-tests`), detente en el primer fallo | — | Resumen por etapa con tiempos |
+
+### 22.2 `tests/` (167 pruebas)
+
+| Archivo | Cubre |
+|---|---|
+| `tests/test_transform.py` | T01..T10, imputación de nulos, limpieza, reglas de negocio |
+| `tests/test_integration.py` | DDL/FK/UNIQUE/VIEW, índices, EXPLAIN, SQL, pipelines, simulación Pandas (SQLite temporal) |
+| `tests/test_analysis.py` | KPIs, correlación, inventario muerto, under-exposure, cuadrantes, Pareto |
+| `tests/test_run_all.py` | Selección de etapas del orquestador, orden, flags |
+
+### 22.3 `data/`
+
+| Carpeta | Qué contiene | Regenerable |
+|---|---|---|
+| `data/raw/` | Fuentes crudas (con errores): `csv/` (A), `json/` (B), `sheets/` (C, XLSX) | sí (`run_all` genera) |
+| `data/processed/tablas/` | Tablas 3FN (8 CSV) | sí |
+| `data/processed/` | `dataset_postgresql.csv`, `dataset_mongodb.json` | sí |
+| `data/sql/` | DDL, consultas, EXPLAIN (punto 26; réplica de `data/reports/consultas_sql/`) | sí |
+| `data/nosql/` | NDJSON, `indices.json`, `01_pipelines.js`, `02_consultas.js` | sí |
+| `data/reports/` | Evidencia: CSV indicadores, evidencia ETL, Q/A/B, `reporte.html`, `figuras_indice.csv`, `modelo_relacional.png`, KPIs | casi todo sí; `modelo_relacional.png` commiteado |
+| `data/figures/` | 13 HTML + `plotly.min.js` | sí |
+
+## 23. Justificación de cada decisión (para "por qué hiciste X")
+
+| Decisión / acción | Por qué (justificación) |
+|---|---|
+| **Semilla fija** (`SEED = 20260904`) | Reproducibilidad bit a bit: dos corridas producen el mismo crudo y los mismos KPIs; la evaluación puede confiar en los números y comparar corridas. |
+| **Errores intencionales** en las fuentes | Es lo que pide el enunciado (calidad de datos) y demuestra que el ETL **detecta y corrige**, no que "limpia lo limpio". Cada error tiene su regla y su evidencia. |
+| **Fuente C exportada de Google Sheets** | El enunciado exige Google Sheets; para que el pipeline sea reproducible sin credenciales se parte de la exportación `.xlsx` (mismas columnas); en producción se leería con la Sheets API. |
+| **10 transformaciones T01..T10** | Son las obligatorias de la rúbrica; cada una deja evidencia (93 filas) y una regla de negocio auditable. |
+| **Campos derivados** (`subtotal`, `total`, `anio`, `mes`…) | El enunciado los **exige** (`subtotal = precio × cantidad`; `total = subtotal − descuento`); el resto (margen, rango_precio, anio_mes, conciliado, trimestre) soporta las preguntas de negocio sin re-calcular. El `dia`, aunque recomendado, se omitió por no aportar a las 21 preguntas resueltas — nota honesta. |
+| **Modelo 3FN** (6 tablas + 2 dimensiones + fav) | Las tablas mínimas del enunciado más `dim_ciudades` y `dim_sucursales` (lookup geográfico/operacional); se elimina redundancia y se respetan PK/FK/UNIQUE/CHECK. |
+| **`fact_ventas` desnormalizada** | Evita reescribir JOINs en cada indicador y en cada figura; es la excepción documentada al 3FN (vive la analítica, las dimensiones viven su entidad). |
+| **Vista `v_resumen_ventas`** | Encapsula el JOIN de 5 tablas para el resumen mensual; Q20 la usa tal como el enunciado sugiere ("VIEW de resumen de ventas"). |
+| **19 índices + `EXPLAIN ANALYZE`** | Exigencia del enunciado (comparar plan antes/después); resultado medido: 4.17x promedio servidor (`04_explain_analyze.csv`). |
+| **MongoDB para el catálogo** | Estructura **variable por familia**: un esquema fijo obligaría a columnas casi vacías por documento; documento semiestructurado es el uso correcto. |
+| **12 pipelines + 15 find** | Cubren las preguntas del enunciado (rating por categoría, vistos no vendidos, dispositivos…) y la sintaxis exigida (`$match`, `$group`, `$sort`, `$project`, `$limit`, `$unwind`, `$lookup`; `find/sort/limit/countDocuments` y operadores `$gt/$lt/$gte/$lte/$in/$and/$or`). |
+| **Integración en Pandas (Parte V)** | Responde la pregunta central del enunciado (¿más vistos = más vendidos?) — los datos viven en dos motores; ninguno responde solo. |
+| **Tres poblaciones para la correlación** | Evita engañar al lector: la correlación "visitados-y-vendidos" es la favorecida (+0.323), pero la general es +0.146/+0.104; Spearman +0.270 confirma relación débil y no monótona. |
+| **RFM sobre 1,010 completadas** | "Clientes activos" (KPI, 1,314) cuenta cualquier pedido; la segmentación de valor requiere compras completadas — cita cada cifra con su contexto. |
+| **13 figuras en 2 bloques** | Rúbrica pide ≥5; se entregan 13: 7 principales (relato de negocio) + 6 anexo (evidencia técnica); navegación doble (`<ol>` start=1 y start=8). |
+| **Plotly / HTML offline** | Formato libre en el enunciado; HTML da valores exactos en hover y abre sin internet ni servidor; `plotly.min.js` local (sin CDN). |
+| **Supabase + Atlas reales** | El enunciado exige servicios cloud; se usan alternativas gratuitas/académicas y se justifica: el mix soporta PG17 + M0 dentro de la cuota. |
+| **Cloud Storage/Compute simulados** | El enunciado permite **utilizar o simular**; se documenta explícitamente qué es real y qué simulado, sin fingir infraestructura que no existe. |
+| **Colab descartado** | El enunciado lo ofrece como recomendación, no obligatorio; se explicita el porqué (efímero, sin SLAs ni orquestación) y el sustituto (cómputo portable + dos Cloud DBs reales). |
+| **Degradación local (SQLite/NDJSON)** | Resiliencia: el pipeline nunca deja al operador sin resultados si la red/credenciales fallan; el error es un `WARNING`, no un aborto. |
+| **`.env` fuera del repo / `.env.example` dentro** | Seguridad básica de secretos; `.env.example` sirve de plantilla sin exponer claves. |
+| **Artefactos commiteados (Q/A/B CSV, figuras…)** | Evidencia auditable sin re-ejecutar nada; si alguien clona el repo, ve los resultados sin montar la infraestructura. |
+| **Artefactos regenerables ignorados (`.md` EXPLAIN, resúmenes…)** | Son salidas de cada corrida: commitearlas solo mete ruido de timestamps/UUIDs; su contenido vive en `informe.md`. |
+| **Restaurar artefactos tras corridas con ruido** | Evita contaminar el repo con diferencias cosméticas (UUIDs, ObjectIds, timings); se conserva la versión auditada. |
+| **Doble conteo (línea de fact)** | La fact tiene una fila por línea; todo agregado a nivel pedido deduplica por `id_pedido` — si no, las métricas inflan por líneas. |
+| **Embudo solo con eventos** | Suma **eventos** en los tres pasos; mezclar personas×productos rompe el orden. |
+| **63 ≠ 92 ≠ 55 ≠ 122** | Visto≠pedido≠vacío: 63 con tráfico cero ventas; 92 sin venta completada; 55 sin líneas en ningún pedido; 122 vendidos sin una visita. Contextos distintos del mismo fenómeno. |
+| **13 campos innecesarios eliminados** | Columnas redundantes/vacías; evidencia en `calidad_transformaciones.csv` (93 filas). |
+| **Diagrama ER como artefacto estático** | El enunciado exige el diagrama y la explicación 3FN, no su automatización; se quitó la generación automática para que el PNG sea un entregable estable. |
+
+## 24. Preguntas probables del jurado (y respuestas)
+
+**Sobre el problema y el objetivo**
+
+1. *¿Qué problema resuelve?* Los datos de una empresa ficticia estaban dispersos en CSV, JSON y hojas de cálculo, sin unificación, indicadores ni trazabilidad; este proyecto construye el prototipo que integra, almacena, analiza y visualiza de extremo a extremo.
+2. *¿Por qué PostgreSQL y MongoDB y no uno solo?* Porque hay datos estructurados transaccionales (clientes/pedidos/pagos → integridad referencial y JOINs → SQL) y datos semiestructurados de forma variable (catálogo con atributos por familia, reseñas, eventos → documentos → NoSQL). Cada uno donde tiene sentido; la Parte V los integra.
+3. *¿No es redundante mantener ambos?* Es la integración que exige la rúbrica y la que resuelve la pregunta de negocio (¿más vistos = más vendidos?); cada motor responde lo suyo y Pandas los cruza.
+4. *¿Qué ventaja real tiene la nube aquí?* Servicios administrados sin mantener servidores: Supabase (PostgreSQL 17) y Atlas (M0), con HA y respaldo del proveedor dentro de la cuota gratuita; el costo es dependencia de red y credenciales.
+
+**Sobre los datos y el crudo**
+
+5. *¿Los datos son reales?* No: son sintéticos, generados con semilla fija y errores intencionales; describen la empresa ficticia (como pide el enunciado) y las cifras son las del dataset, no de un negocio real.
+6. *¿Por qué tantos errores en las fuentes crudas?* Porque el enunciado pide que las fuentes **lleven** errores (duplicados, nulos, formatos…) precisamente para demostrar que el ETL los corrige con evidencia.
+7. *¿Cómo sabe que los errores estaban?* `evidencia_extraccion*.csv` (nulos/duplicados por archivo) y `evidencia_extraccion_columnas.csv` (tipo inferido por columna) muestran el estado crudo; el tracker de calidad registra cada corrección con regla aplicada.
+8. *¿Cómo valida los mínimos de la rúbrica?* `validacion_minimos.csv`: clientes 1,862 (1.86x el mínimo), productos 606, pedidos 3,277, detalles 3,891, reseñas 2,475, navegación 4,236 — todos sobre el mínimo, con holgura documentada.
+
+**Sobre el ETL**
+
+9. *¿Cuáles son las 10 transformaciones?* Las obligatorias: duplicados, normalización de texto, nulos, tipos, fechas, precios, cantidades, unificación de categorías, columnas innecesarias, derivadas (ver sección 7).
+10. *¿Qué es el tracker de calidad?* El registro de cada decisión de limpieza: filas antes/después, registros afectados y la regla, en `calidad_transformaciones.csv` — sin esto no sabría si limpió de más o de menos.
+11. *¿Por qué `subtotal = precio × cantidad` y `total = subtotal − descuento` importan?* Son los campos derivados obligatorios; sin ellos no hay márgenes, conciliación ni revenue por línea, y las preguntas de negocio no se responden.
+
+**Sobre PostgreSQL**
+
+12. *¿Está en 3FN?* Sí: cada tabla cubre una entidad con dependencias funcionales solo sobre su llave; la fact desnormalizada es la excepción intencional; el diagrama ER y la explicación breve están en este informe (sección 8). Por la rúbrica 3FN es lo mínimo.
+13. *¿Qué restricciones implementó?* 9 PK, 13 FK, 4 UNIQUE (llaves naturales), 15 NOT NULL, 9 CHECK (precios, descuentos, coherencia `total = subtotal − descuento`) más 19 índices.
+14. *¿Por qué la vista `v_resumen_ventas`?* Encapsula el JOIN de 5 tablas para el resumen mensual sin reescribirlo; Q20 la usa tal cual.
+15. *¿Cómo demostraron que el índice sirve?* `EXPLAIN ANALYZE` antes/después sobre `ix_fact_anio_mes`: recorrido completo → `Index Scan`, **4.17x** más rápido (promedio del servidor). Sin evidencia, "un índice ayuda" es un deseo.
+16. *¿Qué consultas hace?* 20 (Q01..Q20): desde agregaciones simples (top productos) hasta JOIN de 7 tablas (Q19) y resumen sobre la vista (Q20); INNER y LEFT JOIN, HAVING, etc.
+
+**Sobre MongoDB**
+
+17. *¿Por qué documentos para el catálogo?* Los atributos cambian por familia (procesador/RAM vs cámara/batería); columnas fijas desperdiciarían el 80% del almacenamiento; el documento semiestructurado es el modelo natural.
+18. *¿Qué demuestran con los pipelines?* Que saben agrupar y relacionar (`$group`, `$lookup`): ratings por categoría, vistos no vendidos, correlación, dispositivos, ciudad. Y con `find`+operadores: filtros y conteos reales (`$gt/$lt/$gte/$lte/$in/$and/$or`).
+19. *¿Por qué `$lookup` no reemplaza un JOIN transaccional?* Porque está pensado para agregaciones, no para integridad referencial; el DDL/SQL mantiene las restricciones, Mongo mantiene la flexibilidad.
+
+**Sobre la integración**
+
+20. *¿Cómo conectan ambos motores?* Con Python/Pandas: ventas (PostgreSQL: id_producto, cantidad_vendida, ingresos) × navegación (MongoDB: numero_visualizaciones), cruce por `id_producto`.
+21. *¿Cuál es la conclusión más importante?* La navegación ayuda pero no garantiza la venta: relación débil (+0.323 en la población favorable). Hay 63 productos con tráfico y cero ventas — operar eso es trabajo de negocio, no de "más publicidad".
+
+**Sobre Cloud**
+
+22. *¿Qué parte es cloud real y cuál simulada?* Cloud Database (SQL y NoSQL): **real** (Supabase/Atlas). Cloud Storage y Cloud Computing: **simulados** con árbol portable — permitido por el enunciado ("utilizar o simular"); no se finge infraestructura.
+23. *¿Por qué no Colab?* Es recomendación, no obligación; se descartó por ser efímero y sin SLAs ni orquestación. En su lugar: cómputo portable + dos Cloud DBs administradas.
+24. *¿Qué pasa si la demo en vivo falla (red de la escuela)?* El pipeline degrada a local y sigue; `pytest` (167) corre 100% offline en segundos; y `reporte.html` abre sin internet con doble clic.
+
+**Sobre calidad, pruebas y reproducibilidad**
+
+25. *¿Cómo garantizan que los números son correctos?* Pruebas contra **cálculo independiente a mano** sobre fixtures mínimos; ningún test compara contra valores fijos del dataset (cambia con el generador); protegen contra doble conteo y mezcla de órdenes en el embudo.
+26. *¿Cómo reproducen lo presentado?* Semilla fija + `run_all.py`: dos corridas producen el mismo dato; los artefactos commiteados son byte-idénticos a los auditados.
+27. *¿Por qué commitean los resultados?* Como evidencia auditable: el jurado puede ver cualquier Q/A/B/KPI sin infraestructura ni pipeline.
+28. *¿Qué diferencia hay entre 1,010 y 1,314 "clientes activos"?* RFM segmenta a quienes **compraron completado** (1,010); el KPI "Clientes activos" cuenta cualquier pedido (1,314). Ambos citan su contexto.
+29. *¿Por qué 92, 55, 63 y 122?* Vistas≠ventas en cuatro sentidos distintos (sección 15); son predicados diferentes del mismo problema de inventario.
+30. *¿Puedo confiar en los KPIs?* Son el output de la corrida con semilla fija y están en CSVs commiteados; cualquiera puede recalcularlos.
+
+**Sobre entrega**
+
+31. *¿Dónde está el reporte?* `data/reports/reporte.html` (doble clic) + 13 figuras individuales en `data/figures/`.
+32. *¿Qué vieron mal en el modelo relacional?* Nada de fondo: es un artefacto estático para el documento; se detectó solape de cajas al crecer el esquema y se corrigió — la lección: los layouts manuales se desincronizan del esquema.
+
+## 25. Guion de explicación para el equipo (12–15 min)
+
+**Minuto 0–1 — El problema.** "Somos consultores de datos de Corporativo JUC
+(electrónica, México). Sus datos viven en CSV, hojas de cálculo, SQL y JSON;
+queremos integrarlos, analizarlos y visualizarlos como prototipo."
+
+**Minuto 1–3 — Las fuentes.** Mostrar `data/raw/`: CSV sucio (a propósito),
+JSON con atributos variables por familia, Sheets→XLSX. "Toda fuente genera
+errores intencionales; ustedes ven la evidencia en `evidencia_extraccion*.csv`."
+
+**Minuto 3–5 — El ETL.** Mostrar `calidad_transformaciones.csv`: 93 filas de
+evidencia, reglas aplicadas, antes/después. "El ETL no limpia en secreto:
+documenta cada decisión. Importante: el subtotal/total y los campos de fecha
+están como exige el enunciado."
+
+**Minuto 5–7 — PostgreSQL.** Mostrar `01_ddl.sql` (3FN + restricciones +
+índices), `03/04 explain` (índice 4.17x antes/después), `v_resumen_ventas`.
+"Misma tabla-resumen tres veces: la vista no duplica lógica."
+
+**Minuto 7–9 — MongoDB.** Mostrar `productos` con atributos por familia, luego
+`A11` (rating por categoría), `A02` (vistos nunca vendidos) y `B13`
+(`countDocuments`). "El catálogo no cabe en columnas fijas; por eso documentos."
+
+**Minuto 9–11 — Integración + Cloud.** Mostrar `integracion_resumen.csv`:
+47/47 OK. "SQL→Atlas: si la red falla, degrada a local; nunca sale sin
+resultados. En vivo: Supabase si la escuela lo permite."
+
+**Minuto 11–13 — Análisis y KPIs.** Mostrar `01_kpis_generales.csv`:
+$127.3M facturados, 34.35% cancelación, Pareto 24.1%→80%, margen 29.46%.
+"La navegación ayuda pero no pide: 63 productos con tráfico no vendieron nada."
+
+**Minuto 13–15 — Visualizaciones y cierre.** Abrir `reporte.html` (doble
+clic): recorrer Principales 1–7 y Anexo 8–13. "13 figuras interactivas; el
+jurado puede aislar series; todo funciona offline. Lo que pedimos: apoyo al
+equipos para defender decisiones; lo que nos llevamos: un pipeline completo,
+reproducible y verificado."
