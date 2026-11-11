@@ -191,7 +191,7 @@ Notas operativas:
 | Visualizaciones | 13/13 OK |
 | Motor relacional | Supabase (PostgreSQL 17) |
 | Motor NoSQL | MongoDB Atlas (M0) |
-| Diagrama ER | generado (`data/reports/modelo_relacional.png`) |
+| Diagrama ER | presente (`data/reports/modelo_relacional.png`, commiteado) |
 
 Detalle de incidencias reales: sección 14 y 16.
 
@@ -214,7 +214,6 @@ Proyecto_BigData/
 │   ├── etl_transform.py      las 10 transformaciones (T01..T10)
 │   ├── etl_load.py           3FN + dataset analítico + documentos
 │   ├── integration.py        DDL, carga, verificación, 20 SQL, 12 pipelines, 15 find
-│   ├── er_diagram.py         diagrama ER (PNG) + justificación 3FN
 │   ├── analysis.py           21 análisis de negocio
 │   ├── viz.py                13 gráficos Plotly -> HTML
 │   └── run_all.py            orquestador de etapas
@@ -348,9 +347,11 @@ mensual).
 | `NOT NULL` (columnas clave) | 15 |
 | `CHECK` (precios > 0, margen en [0,1], cantidades, descuentos, `total = subtotal - descuento`) | 9 |
 
-Diagrama ER y justificación 3FN: generados en cada corrida
-(`data/reports/modelo_relacional.png`); el DDL completo vive en
-`data/sql/01_ddl.sql` (copia en `data/reports/consultas_sql/01_ddl.sql`).
+Diagrama ER (`data/reports/modelo_relacional.png`, commiteado y estable):
+artefacto estático para mostrar la estructura de la base de datos; el DDL
+completo vive en `data/sql/01_ddl.sql` (copia en
+`data/reports/consultas_sql/01_ddl.sql`). El PNG se dibujó a partir del esquema
+real y se puede reexportar manualmente si el modelo cambia.
 
 **¿Por qué 3FN?** Cada tabla representa una entidad con dependencias
 funcionales solo sobre su llave: nada describe un atributo de otra entidad
@@ -761,12 +762,15 @@ cosmético.
 ## 17. Documentación, archivos regenerables y git
 
 `data/sql/03_explain_analyze.md`, `data/reports/consultas_sql/03_explain_analyze.md`,
-`data/reports/modelo_relacional.md`, `data/reports/integracion_entorno.md` y
+`data/reports/integracion_entorno.md` y
 `data/reports/analisis/analisis_resumen.md` son **artefactos regenerados por
 cada corrida** (verificado por sus timestamps en corridas anteriores). Por
 eso quedaron fuera del índice git (`.gitignore` los registra como
 regenerables) y su contenido vive resumido en este informe; la evidencia
 medición cuantitativa se conserva en `04_explain_analyze.csv` y los Q/A/B CSV.
+El antiguo `modelo_relacional.md` ya no se regenera (el generador del ER se
+eliminó); el diagrama quedó como `modelo_relacional.png` estático y la
+justificación 3FN vive en este informe (sección 8).
 
 **Solo 2 archivos `.md` en el repositorio** (`README.md` e `informe.md`): el
 resto se eliminó (README_CARPETAS, GUIA_CONEXION_NUBE, skills de

@@ -2231,11 +2231,6 @@ def main() -> None:
     resumen.to_csv(destino, index=False, encoding="utf-8-sig")
     LOG.info("  Resumen -> %s", destino)
 
-    # ---- Diagrama ER y justificacion 3FN --------------------------------
-    from er_diagram import generar_modelo
-
-    generar_modelo(REPORTS)
-
     (REPORTS / "integracion_entorno.md").write_text(_texto_entorno(sql, mongo), encoding="utf-8")
     LOG.info("  Entorno -> %s", REPORTS / "integracion_entorno.md")
 
