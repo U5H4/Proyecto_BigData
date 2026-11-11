@@ -20,6 +20,13 @@ logs/*.log
 # Fallback local (SQLite) del modo simulado — nunca se commitea
 data/processed/integracion/
 
+# Artefactos .md que cada corrida regenera (su contenido vive en informe.md)
+data/sql/03_explain_analyze.md
+data/reports/consultas_sql/03_explain_analyze.md
+data/reports/modelo_relacional.md
+data/reports/integracion_entorno.md
+data/reports/analisis/analisis_resumen.md
+
 # IDE
 .vscode/
 .idea/
